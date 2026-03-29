@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਉਧਾਰ ਮੈਚ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਕਿਰਿਆਵਾਂ ਨਾਲ ਆਈਟਮਾਂ ਦਾ ਮੇਲ ਕਰੋ ({{matched}}/{{total}} ਮੇਲ ਖਾਂਦਾ)",
+  "itemsTitle": "ਉਧਾਰ ਆਈਟਮਾਂ",
+  "categoriesTitle": "Actions",
+  "selectedLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "selectItem": "ਇੱਕ ਆਈਟਮ ਚੁਣੋ",
+  "matchButton": "Match",
+  "scoreLabel": "ਸਕੋਰ:",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultGreatDescription": "ਤੁਸੀਂ ਕਾਰਵਾਈਆਂ ਨਾਲ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ!",
+  "coinsLabel": "Coins",
+  "resultLesson": "ਸਬਕ: ਉਧਾਰ ਲਈਆਂ ਚੀਜ਼ਾਂ ਨੂੰ ਵਾਪਸ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ ਜਾਂ ਜ਼ਿੰਮੇਵਾਰੀ ਨਾਲ ਸੰਭਾਲਣਾ ਚਾਹੀਦਾ ਹੈ।",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultKeepDescription": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਵਿੱਚ ਜ਼ਿੰਮੇਵਾਰ ਉਧਾਰ ਕਿਹੋ ਜਿਹਾ ਲੱਗਦਾ ਹੈ।",
+  "items": [
+    {
+      "id": 1,
+      "name": "Notebook",
+      "emoji": "📓"
+    },
+    {
+      "id": 2,
+      "name": "ਬੋਰਡ ਗੇਮ",
+      "emoji": "🎲"
+    },
+    {
+      "id": 3,
+      "name": "Eraser",
+      "emoji": "🩹"
+    },
+    {
+      "id": 4,
+      "name": "ਪਾਕੇਟ ਮਨੀ",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "Lunchbox",
+      "emoji": "🥪"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "ਵਾਪਸ ਦਿਓ",
+      "emoji": "↩️",
+      "description": "ਉਧਾਰ ਲਈਆਂ ਚੀਜ਼ਾਂ ਵਾਪਸ ਕਰੋ"
+    },
+    {
+      "id": 7,
+      "name": "ਦੋਸਤ ਨਾਲ ਸਾਂਝਾ ਕਰੋ",
+      "emoji": "🤝",
+      "description": "ਵਰਤਦੇ ਹੋਏ ਨਿਰਪੱਖਤਾ ਨਾਲ ਸਾਂਝਾ ਕਰੋ"
+    },
+    {
+      "id": 8,
+      "name": "ਪੈਸੇ ਵਾਪਸ ਕਰੋ",
+      "emoji": "💳",
+      "description": "ਉਧਾਰ ਲਏ ਪੈਸੇ ਵਾਪਸ ਕਰੋ"
+    },
+    {
+      "id": 9,
+      "name": "ਧੰਨਵਾਦ ਕਹੋ",
+      "emoji": "🙏",
+      "description": "ਰਿਣਦਾਤਾ ਲਈ ਧੰਨਵਾਦ ਦਿਖਾਓ"
+    },
+    {
+      "id": 10,
+      "name": "ਧਿਆਨ ਨਾਲ ਉਧਾਰ ਦਿਓ",
+      "emoji": "🛡️",
+      "description": "ਦੇਖਭਾਲ ਅਤੇ ਨਿਯਮਾਂ ਨਾਲ ਹੈਂਡਲ ਕਰੋ"
+    }
+  ]
+}

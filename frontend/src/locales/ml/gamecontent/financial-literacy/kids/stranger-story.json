@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "അപരിചിതൻ്റെ കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionLabel": "ചോദ്യം {{current}}/{{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "അപരിചിതൻ നിങ്ങളുടെ വിലാസത്തിനായി ഒരു കളിപ്പാട്ടം വാഗ്ദാനം ചെയ്യുന്നു. നീ എന്ത് ചെയ്യുന്നു?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "Refuse",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "accept",
+          "text": "Accept",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "തീരുമാനം വൈകുക",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ആരോ നിങ്ങളുടെ ബാങ്ക് വിശദാംശങ്ങൾ ചോദിക്കുന്നു. ഇപ്പോൾ എന്ത്?",
+      "options": [
+        {
+          "id": "give",
+          "text": "വിവരം തരൂ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "partial",
+          "text": "ഭാഗികമായ വിവരങ്ങൾ നൽകുക",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ഇല്ല എന്ന് പറയുക",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "അപരിചിതൻ ഒരു ഡീൽ വാഗ്ദാനം ചെയ്യുന്നു. എന്താണ് സുരക്ഷിതം?",
+      "options": [
+        {
+          "id": "walk",
+          "text": "നടക്കൂ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "engage",
+          "text": "Engage",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "കാത്തിരുന്ന് കാണുക",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങൾ ഒരു സംശയാസ്പദമായ ഓഫർ കാണുന്നു. നീ എന്ത് ചെയ്യുന്നു?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "മുതിർന്നവരോട് പറയുക",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "quiet",
+          "text": "നിശബ്ദത പാലിക്കുക",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "അവഗണിക്കുക",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "നിങ്ങൾക്ക് ഒരു വിചിത്രമായ സന്ദേശം ലഭിക്കും. എന്താണ് നല്ലത്?",
+      "options": [
+        {
+          "id": "reply",
+          "text": "Reply",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forward",
+          "text": "സുഹൃത്തുക്കൾക്ക് കൈമാറുക",
+          "emoji": "📤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

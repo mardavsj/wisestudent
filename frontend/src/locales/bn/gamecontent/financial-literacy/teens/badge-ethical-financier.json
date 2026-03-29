@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ব্যাজ: নৈতিক অর্থদাতা",
+  "subtitleComplete": "ব্যাজ সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর মধ্যে {{current}} চ্যালেঞ্জ",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "resultSuccessTitle": "নৈতিক ফিনান্সার ব্যাজ অর্জিত!",
+  "resultSuccessText": "আপনি {{total}} চ্যালেঞ্জের মধ্যে {{score}} পেয়েছেন সঠিক! আপনি একজন সত্যিকারের নৈতিক অর্থদাতা!",
+  "resultSuccessLesson": "পাঠ: আর্থিক লেনদেনের ক্ষেত্রে সততা এবং নৈতিকতা বিশ্বাস এবং একটি শক্তিশালী খ্যাতি তৈরি করে।",
+  "resultFailTitle": "শিখতে থাকুন!",
+  "resultFailText": "আপনি {{total}} চ্যালেঞ্জের মধ্যে {{score}}টি সঠিক পেয়েছেন। নৈতিক পছন্দ করার অনুশীলন করুন!",
+  "resultFailTip": "টিপ: দ্রুত লাভের চেয়ে সর্বদা সততা বেছে নিন এবং আপনার সম্মুখীন হওয়া যেকোনো অনৈতিক আচরণের প্রতিবেদন করুন!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "নৈতিক দ্বিধা 1",
+      "question": "আপনি অতিরিক্ত টাকা খুঁজে. আপনি কি করবেন?",
+      "options": [
+        {
+          "text": "মালিকের কাছে ফিরে যান",
+          "emoji": "🤗",
+          "isCorrect": true
+        },
+        {
+          "text": "রাখো",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "এটি ব্যয় করুন",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "text": "বন্ধুদের সাথে শেয়ার করুন",
+          "emoji": "👥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "নৈতিক দ্বিধা 2",
+      "question": "বন্ধু আপনাকে আর্থিক লাভের জন্য মিথ্যা বলতে বলে। আপনার প্রতিক্রিয়া?",
+      "options": [
+        {
+          "text": "মিথ্যা বলতে রাজি",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "মিথ্যা বলতে অস্বীকার করুন",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "text": "হয়তো সাহায্য করবে",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "শেয়ারের জন্য জিজ্ঞাসা করুন",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "নৈতিক দ্বিধা 3",
+      "question": "আপনি কাউকে আর্থিক লেনদেনে প্রতারণা করতে দেখেন। আপনি কি করবেন?",
+      "options": [
+        {
+          "text": "উপেক্ষা করুন",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "তাদের সাথে যোগ দিন",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "রিপোর্ট করুন",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "text": "চুপচাপ দেখ",
+          "emoji": "👀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "নৈতিক দ্বিধা 4",
+      "question": "অনৈতিক কিছু করার জন্য আপনাকে অর্থের প্রস্তাব দেওয়া হয়েছে। আপনার পছন্দ?",
+      "options": [
+        {
+          "text": "এটা মেনে নিন",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "text": "আরো আলোচনা",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "text": "এটা সম্পর্কে চিন্তা করুন",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "প্রস্তাব প্রত্যাখ্যান",
+          "emoji": "🛑",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "নৈতিক দ্বিধা 5",
+      "question": "আপনি অসৎ হয়ে অর্থ উপার্জন করতে পারেন। আপনার সিদ্ধান্ত কি?",
+      "options": [
+        {
+          "text": "সততা বেছে নিন",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "text": "টাকা চয়ন করুন",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "দুটোই করুন",
+          "emoji": "🎭",
+          "isCorrect": false
+        },
+        {
+          "text": "সিদ্ধান্ত এড়িয়ে চলুন",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

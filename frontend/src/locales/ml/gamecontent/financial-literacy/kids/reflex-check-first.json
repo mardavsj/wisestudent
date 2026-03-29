@@ -1,1 +1,167 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ്: ആദ്യം പരിശോധിക്കുക",
+  "subtitleComplete": "ഗെയിം പൂർത്തിയായി!",
+  "roundLabel": "റൗണ്ട് {{current}}/{{total}}",
+  "timeUp": "സമയം കഴിഞ്ഞു!",
+  "readyEmoji": "🔍",
+  "readyTitle": "തയ്യാറാകൂ!",
+  "readyDescription": "വാങ്ങുന്നതിന് മുമ്പ് പരിശോധിക്കുന്നതിനെക്കുറിച്ചുള്ള ചോദ്യങ്ങൾക്ക് ഉത്തരം നൽകുക!",
+  "readyTimeInfo": "ഓരോ ചോദ്യത്തിനും നിങ്ങൾക്ക് {{time}} സെക്കൻഡ് ഉണ്ട്.",
+  "readyQuestionInfo": "നിങ്ങൾക്ക് {{time}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "gameRoundLabel": "റൗണ്ട്:",
+  "gameTimeLabel": "സമയം:",
+  "gameScoreLabel": "സ്കോർ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "എന്തെങ്കിലും വാങ്ങുന്നതിന് മുമ്പ് നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "correctAnswer": "വില ചോദിക്കുക",
+      "options": [
+        {
+          "text": "വില ചോദിക്കുക",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "അന്ധമായി വിശ്വസിക്കുക",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ഉടൻ വാങ്ങുക",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ചെലവ് അവഗണിക്കുക",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ഒരു വാങ്ങൽ നടത്തുന്നതിന് മുമ്പ് നിങ്ങൾ എന്താണ് പരിശോധിക്കേണ്ടത്?",
+      "correctAnswer": "ചെലവ് പരിശോധിക്കുക",
+      "options": [
+        {
+          "text": "ഇപ്പോൾ വാങ്ങുക",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "പരിശോധന ഒഴിവാക്കുക",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "ചെലവ് പരിശോധിക്കുക",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "വില ഊഹിക്കുക",
+          "isCorrect": false,
+          "emoji": "🎲"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ഷോപ്പിംഗ് നടത്താനുള്ള മികച്ച മാർഗം എന്താണ്?",
+      "correctAnswer": "വിലകൾ താരതമ്യം ചെയ്യുക",
+      "options": [
+        {
+          "text": "വേഗത്തിൽ പണമടയ്ക്കുക",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "വിലകൾ താരതമ്യം ചെയ്യുക",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "ആദ്യ സ്റ്റോർ വാങ്ങുക",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "താരതമ്യം ചെയ്യരുത്",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "വാങ്ങുന്നതിന് മുമ്പ് നിങ്ങൾ എന്താണ് പരിശോധിക്കേണ്ടത്?",
+      "correctAnswer": "ഗുണനിലവാരം പരിശോധിക്കുക",
+      "options": [
+        {
+          "text": "ഗുണനിലവാരം പരിശോധിക്കുക",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "പരിശോധിക്കാതെ വാങ്ങുക",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "വിൽപ്പനക്കാരനെ മാത്രം വിശ്വസിക്കുക",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ഓൺലൈനിൽ വാങ്ങുന്നതിന് മുമ്പ് നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "correctAnswer": "അവലോകനങ്ങൾ വായിക്കുക",
+      "options": [
+        {
+          "text": "Rush",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "അവലോകനങ്ങൾ ഒഴിവാക്കുക",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "തൽക്ഷണം വാങ്ങുക",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "അവലോകനങ്ങൾ വായിക്കുക",
+          "isCorrect": true,
+          "emoji": "⭐"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "സ്മാർട്ട് ഷോപ്പർ!",
+    "description": "അത്ഭുതം! നിങ്ങൾക്ക് {{score}}/{{total}} ശരിയാണ്! വാങ്ങുന്നതിന് മുമ്പ് നിങ്ങൾ എപ്പോഴും പരിശോധിക്കുക!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "നല്ല ശീലങ്ങൾ!",
+    "description": "നന്നായി ചെയ്തു! നിങ്ങൾ {{score}}/{{total}} സ്കോർ ചെയ്തു! സ്മാർട്ട് ഷോപ്പിംഗ് ശീലങ്ങൾ പരിശീലിക്കുന്നത് തുടരുക!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "പരിശീലിക്കുന്നത് തുടരുക!",
+    "description": "നിങ്ങൾ {{score}}/{{total}} സ്കോർ ചെയ്തു. വാങ്ങുന്നതിന് മുമ്പ് എപ്പോഴും പരിശോധിച്ച് താരതമ്യം ചെയ്യാൻ ഓർമ്മിക്കുക!"
+  }
+}

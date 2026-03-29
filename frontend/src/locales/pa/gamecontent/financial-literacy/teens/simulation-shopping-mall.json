@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "ਸਿਮੂਲੇਸ਼ਨ: ਸ਼ਾਪਿੰਗ ਮਾਲ",
+  "subtitleComplete": "ਸਿਮੂਲੇਸ਼ਨ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਦ੍ਰਿਸ਼",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "budgetLabel": "ਬਜਟ:",
+  "perfectScoreTitle": "ਮਹਾਨ ਵਿੱਤੀ ਫੈਸਲੇ!",
+  "perfectScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਦ੍ਰਿਸ਼ ਸਹੀ ਮਿਲੇ ਹਨ! ਤੁਸੀਂ ਸਮਾਰਟ ਖਰੀਦਦਾਰੀ ਫੈਸਲਿਆਂ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+  "lessonLabel": "ਸਬਕ: ਲੋੜਾਂ, ਇੱਛਾਵਾਂ ਅਤੇ ਬੱਚਤਾਂ ਨੂੰ ਸੰਤੁਲਿਤ ਕਰਨ ਨਾਲ ਸਮਾਰਟ ਵਿੱਤੀ ਵਿਕਲਪ ਹੁੰਦੇ ਹਨ!",
+  "keepLearningTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+  "lowScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਦ੍ਰਿਸ਼ ਸਹੀ ਮਿਲੇ ਹਨ। ਲੋੜਾਂ, ਇੱਛਾਵਾਂ ਅਤੇ ਬੱਚਤਾਂ ਨੂੰ ਸੰਤੁਲਿਤ ਕਰਨਾ ਯਾਦ ਰੱਖੋ!",
+  "tipLabel": "ਸੁਝਾਅ: ਹਮੇਸ਼ਾ ਪਹਿਲਾਂ ਲੋੜਾਂ ਨੂੰ ਪਹਿਲ ਦਿਓ, ਫਿਰ ਕੁਝ ਲੋੜਾਂ, ਅਤੇ ਬਾਕੀ ਨੂੰ ਬਚਾਓ!",
+  "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "coinsLabel": "+{{count}} ਸਿੱਕੇ",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "ਸਕੂਲ ਸ਼ਾਪਿੰਗ 'ਤੇ ਵਾਪਸ ਜਾਓ",
+      "description": "ਤੁਹਾਡੇ ਕੋਲ ਸਕੂਲ ਦੀ ਸਪਲਾਈ ਲਈ ₹150 ਹਨ। ਸਭ ਤੋਂ ਵਧੀਆ ਪਹੁੰਚ ਕੀ ਹੈ?",
+      "budget": 150,
+      "options": [
+        {
+          "id": "everything",
+          "text": "ਉਹ ਸਭ ਕੁਝ ਖਰੀਦੋ ਜੋ ਮੈਂ ਚਾਹੁੰਦਾ ਹਾਂ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "needs-only",
+          "text": "ਸਿਰਫ਼ ਜ਼ਰੂਰੀ ਚੀਜ਼ਾਂ ਹੀ ਖਰੀਦੋ",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "ਕੁਝ ਨਾ ਖਰੀਦੋ, ਸਭ ਬਚਾਓ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "ਬੇਤਰਤੀਬ ਚੀਜ਼ਾਂ ਖਰੀਦੋ",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ਛੁੱਟੀਆਂ ਦੇ ਤੋਹਫ਼ੇ ਦੀ ਖਰੀਦਦਾਰੀ",
+      "description": "ਤੁਹਾਡੇ ਕੋਲ ਛੁੱਟੀਆਂ ਦੇ ਤੋਹਫ਼ਿਆਂ ਲਈ ₹100 ਹਨ। ਸਭ ਤੋਂ ਚੁਸਤ ਵਿਕਲਪ ਕੀ ਹੈ?",
+      "budget": 100,
+      "options": [
+        {
+          "id": "thoughtful",
+          "text": "ਬਜਟ ਦੇ ਅੰਦਰ ਵਿਚਾਰਸ਼ੀਲ ਤੋਹਫ਼ੇ",
+          "emoji": "💝",
+          "isCorrect": true
+        },
+        {
+          "id": "expensive",
+          "text": "ਸਭ ਤੋਂ ਮਹਿੰਗੇ ਤੋਹਫ਼ੇ ਸੰਭਵ ਹਨ",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "ਪੈਸੇ ਬਚਾਉਣ ਲਈ ਸਭ ਤੋਂ ਸਸਤੇ ਤੋਹਫ਼ੇ",
+          "emoji": "🏷️",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "ਕੋਈ ਤੋਹਫ਼ੇ ਨਹੀਂ, ਪੈਸੇ ਰੱਖੋ",
+          "emoji": "🤐",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ਐਮਰਜੈਂਸੀ ਕੱਪੜਿਆਂ ਦੀਆਂ ਲੋੜਾਂ",
+      "description": "ਦੁਰਘਟਨਾ ਤੋਂ ਬਾਅਦ ਤੁਹਾਨੂੰ ਨਵੇਂ ਕੱਪੜੇ ਚਾਹੀਦੇ ਹਨ। ਤੁਸੀਂ ਤਰਜੀਹ ਕਿਵੇਂ ਦਿੰਦੇ ਹੋ?",
+      "budget": 110,
+      "options": [
+        {
+          "id": "brand-new",
+          "text": "ਸਾਰੇ ਬਿਲਕੁਲ ਨਵੇਂ ਡਿਜ਼ਾਈਨਰ ਕੱਪੜੇ",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "essentials-first",
+          "text": "ਪਹਿਲਾਂ ਜ਼ਰੂਰੀ ਚੀਜ਼ਾਂ, ਫਿਰ ਵਾਧੂ",
+          "emoji": "👕",
+          "isCorrect": true
+        },
+        {
+          "id": "secondhand",
+          "text": "ਪੈਸੇ ਬਚਾਉਣ ਲਈ ਸਾਰੇ ਸੈਕਿੰਡਹੈਂਡ",
+          "emoji": "📦",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ਦੋਸਤਾਂ ਤੋਂ ਉਧਾਰ ਲਓ",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ਮਨੋਰੰਜਨ ਅਤੇ ਸਮਾਜੀਕਰਨ",
+      "description": "ਤੁਹਾਡੇ ਕੋਲ ਮਨੋਰੰਜਨ ਲਈ ₹60 ਹਨ। ਤੁਸੀਂ ਮਨੋਰੰਜਨ ਅਤੇ ਵਿੱਤ ਨੂੰ ਕਿਵੇਂ ਸੰਤੁਲਿਤ ਕਰਦੇ ਹੋ?",
+      "budget": 60,
+      "options": [
+        {
+          "id": "all-fun",
+          "text": "ਮਨੋਰੰਜਨ 'ਤੇ ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "no-fun",
+          "text": "ਸਭ ਨੂੰ ਬਚਾਓ, ਕੋਈ ਮਨੋਰੰਜਨ ਨਹੀਂ",
+          "emoji": "📵",
+          "isCorrect": false
+        },
+        {
+          "id": "balanced-fun",
+          "text": "ਕੁਝ ਮਜ਼ੇਦਾਰ, ਕੁਝ ਬਚਤ",
+          "emoji": "🎬",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-fun",
+          "text": "ਮਨੋਰੰਜਨ ਲਈ ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ਸੰਤੁਲਿਤ ਖਰੀਦਦਾਰੀ ਦਿਨ",
+      "description": "ਤੁਹਾਡੇ ਕੋਲ ਵੱਖ-ਵੱਖ ਲੋੜਾਂ ਲਈ ₹200 ਹਨ। ਸਭ ਤੋਂ ਵਧੀਆ ਵੰਡ ਕੀ ਹੈ?",
+      "budget": 200,
+      "options": [
+        {
+          "id": "all-needs",
+          "text": "ਸਾਰੀਆਂ ਲੋੜਾਂ, ਕੋਈ ਇੱਛਾ ਜਾਂ ਬੱਚਤ ਨਹੀਂ",
+          "emoji": "🧾",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "ਜੋ ਵੀ ਮੈਂ ਪਸੰਦ ਕਰਦਾ ਹਾਂ ਉਸਨੂੰ ਖਰੀਦਣਾ ਆਗਾਜ਼",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "all-wants",
+          "text": "ਸਭ ਚਾਹੁੰਦੇ ਹਨ, ਕੋਈ ਲੋੜ ਨਹੀਂ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "smart-mix",
+          "text": "ਲੋੜਾਂ ਦਾ ਮਿਸ਼ਰਣ, ਕੁਝ ਚਾਹੁੰਦਾ ਹੈ, ਆਰਾਮ ਬਚਾਓ",
+          "emoji": "🛒",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

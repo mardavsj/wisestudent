@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "టాయ్ vs సేవింగ్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీకు ఇష్టమైన బొమ్మ ఒక వారం తర్వాత విరిగిపోతుంది. ఇది మీకు ఏమి బోధిస్తుంది?",
+      "options": [
+        {
+          "id": "buy",
+          "text": "త్వరగా మరిన్ని బొమ్మలు కొనండి",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "డబ్బు ఎంపికలు పట్టింపు లేదు",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "value",
+          "text": "డబ్బు ఖర్చు చేసే ముందు ఆలోచించండి",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు ప్రతి వారం నాణేలను ఆదా చేస్తారు మరియు మొత్తం పెరగడాన్ని చూస్తారు. మీరు ఏమి నేర్చుకుంటారు?",
+      "options": [
+        {
+          "id": "patience",
+          "text": "పొదుపులో ఓపిక అవసరం",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "boring",
+          "text": "పొదుపు చేయడం విసుగు తెప్పిస్తుంది",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "నాణేలు పనికిరావు",
+          "emoji": "🪙",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీరు తర్వాత ఖరీదైనది కావాలి. ఉత్తమ అలవాటు ఏమిటి?",
+      "options": [
+        {
+          "id": "rush",
+          "text": "మీరు చూసిన ఏదైనా కొనండి",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "నెమ్మదిగా ప్లాన్ చేసి ఆదా చేసుకోండి",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "ఎల్లప్పుడూ డబ్బు అప్పుగా తీసుకోండి",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు కొనుగోలు చేసే ముందు ధరలను సరిపోల్చండి. మీరు ఏ నైపుణ్యాన్ని ఉపయోగిస్తున్నారు?",
+      "options": [
+        {
+          "id": "slow",
+          "text": "చాలా నెమ్మదిగా ఉండటం",
+          "emoji": "🐢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lazy",
+          "text": "షాపింగ్‌ను నివారించడం",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "స్మార్ట్ మనీ థింకింగ్",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీరు ప్రతి బొమ్మను కొనుగోలు చేయడానికి బదులుగా పొదుపును ఎంచుకుంటారు. ఇది ఏమి నిర్మిస్తుంది?",
+      "options": [
+        {
+          "id": "habit",
+          "text": "మంచి పొదుపు అలవాట్లు",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "అస్సలు సరదా లేదు",
+          "emoji": "😢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "ఖర్చు చేయాలంటే భయం",
+          "emoji": "😨",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

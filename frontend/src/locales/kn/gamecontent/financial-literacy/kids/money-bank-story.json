@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ಮನಿ ಬ್ಯಾಂಕ್ ಕಥೆ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನಿಮ್ಮ ಅಜ್ಜಿಯಿಂದ ನೀವು 10 ರೂಪಾಯಿಗಳನ್ನು ಉಡುಗೊರೆಯಾಗಿ ಸ್ವೀಕರಿಸಿದ್ದೀರಿ. ನೀವು ಏನು ಮಾಡಲು ಬಯಸುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "5 ರೂಪಾಯಿ ಉಳಿಸಿ",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "save-all",
+          "text": "ಎಲ್ಲಾ ರೂ 10 ಉಳಿಸಿ",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನೀವು 20 ರೂಪಾಯಿಗಳನ್ನು ಉಳಿಸಿದ್ದೀರಿ. 15 ರೂಪಾಯಿ ವೆಚ್ಚದ ಚಲನಚಿತ್ರಗಳಿಗೆ ನಿಮ್ಮ ಸ್ನೇಹಿತರು ನಿಮ್ಮನ್ನು ಆಹ್ವಾನಿಸುತ್ತಾರೆ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ನಂತರಕ್ಕಾಗಿ ಉಳಿಸಿ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ಚಲನಚಿತ್ರಗಳಿಗೆ ಹೋಗಿ",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ವೆಚ್ಚವನ್ನು ವಿಭಜಿಸಿ",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ಬೀದಿಯಲ್ಲಿ 5 ರೂ. ಅದರೊಂದಿಗೆ ಮಾಡಲು ಉತ್ತಮವಾದ ವಿಷಯ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಕ್ಯಾಂಡಿ ಖರೀದಿಸಿ",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ಪೋಷಕರಿಗೆ ನೀಡಿ",
+          "emoji": "👨‍👩‍👧",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಅದನ್ನು ಉಳಿಸಿ",
+          "emoji": "🫙",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನಿಮ್ಮ ಜನ್ಮದಿನವು ಬರುತ್ತಿದೆ ಮತ್ತು ನಿಮಗೆ 500 ರೂಪಾಯಿ ಬೆಲೆಯ ಹೊಸ ಬೈಸಿಕಲ್ ಬೇಕು. ಪ್ರಸ್ತುತ ನಿಮ್ಮ ಬಳಿ 200 ರೂಪಾಯಿ ಇದೆ. ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ಇನ್ನಷ್ಟು ಉಳಿಸಿ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ಈಗ ಖರೀದಿಸಿ",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ಹಣವನ್ನು ಎರವಲು ಪಡೆಯಿರಿ",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನೀವು ರೂ 30 ಉಳಿಸಿದ್ದೀರಿ ಮತ್ತು ರೂ 25 ಗೆ ನೀವು ನಿಜವಾಗಿಯೂ ಬಯಸುವ ಆಟಿಕೆ ನೋಡಿ. ಸ್ಮಾರ್ಟ್ ಆಯ್ಕೆ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಆಟಿಕೆ ಖರೀದಿಸಿ",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ದೊಡ್ಡದಕ್ಕಾಗಿ ಉಳಿಸಿ",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "ಮಾರಾಟಕ್ಕಾಗಿ ನಿರೀಕ್ಷಿಸಿ",
+          "emoji": "⏰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

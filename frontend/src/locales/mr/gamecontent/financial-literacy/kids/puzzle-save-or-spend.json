@@ -1,1 +1,72 @@
-﻿{}
+{
+  "title": "कोडे: बचत करा किंवा खर्च करा",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "क्रियांसह आयटम जुळवा ({{matched}}/{{total}} जुळले)",
+  "itemsTitle": "Items",
+  "actionsTitle": "Actions",
+  "selectedLabel": "निवडले: {{name}}",
+  "selectItem": "एक आयटम निवडा",
+  "matchButton": "Match",
+  "scoreLabel": "स्कोअर:",
+  "matchedLabel": "जुळले:",
+  "resultGreatTitle": "ग्रेट जॉब!",
+  "resultGreatDescription": "तुम्ही क्रियांसह {{total}} आयटमपैकी {{score}} बरोबर जुळले!",
+  "resultLesson": "धडा: महत्त्वाच्या गोष्टींसाठी बचत केल्याने सुरक्षित भविष्य तयार करण्यात मदत होते!",
+  "resultKeepTitle": "सराव करत राहा!",
+  "resultKeepDescription": "तुम्ही {{total}} पैकी {{score}} आयटम बरोबर जुळले.",
+  "resultTip": "टीप: प्रत्येक आयटम आवश्यक आहे की विवेकाधीन आहे याचा विचार करा!",
+  "items": [
+    {
+      "id": 1,
+      "name": "मनी बँक",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "आईस्क्रीम",
+      "emoji": "🍦"
+    },
+    {
+      "id": 3,
+      "name": "नवीन सायकल",
+      "emoji": "🚲"
+    },
+    {
+      "id": 4,
+      "name": "Candy",
+      "emoji": "🍬"
+    },
+    {
+      "id": 5,
+      "name": "शाळेची पुस्तके",
+      "emoji": "📚"
+    }
+  ],
+  "actions": [
+    {
+      "id": 6,
+      "name": "Save",
+      "emoji": "📥"
+    },
+    {
+      "id": 7,
+      "name": "Spend",
+      "emoji": "📤"
+    },
+    {
+      "id": 8,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 9,
+      "name": "Donate",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "Budget",
+      "emoji": "📋"
+    }
+  ]
+}

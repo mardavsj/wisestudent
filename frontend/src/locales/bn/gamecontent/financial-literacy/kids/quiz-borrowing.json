@@ -1,1 +1,145 @@
-﻿{}
+﻿{
+    "title": "ধার করার উপর কুইজ",
+    "subtitleComplete": "কুইজ সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "stageEmoji": "🤝",
+    "questions": [
+        {
+            "id": 1,
+            "text": "ধার করার মানে কী?",
+            "options": [
+                {
+                    "id": "without",
+                    "text": "না জিজ্ঞেস করে নেওয়া",
+                    "emoji": "🙈",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "return",
+                    "text": "ব্যবহার করে ফেরত দেওয়া",
+                    "emoji": "🔁",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "steal",
+                    "text": "চুরি করা",
+                    "emoji": "😈",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "একটি বই ধার করার পর কী করবে?",
+            "options": [
+                {
+                    "id": "return",
+                    "text": "ফেরত দাও",
+                    "emoji": "↩️",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "keep",
+                    "text": "চিরতরে রেখে দাও",
+                    "emoji": "📚",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "sell",
+                    "text": "বিক্রি করো",
+                    "emoji": "💰",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "ব্যাংক থেকে টাকা ধার করা কেন ঠিক আছে?",
+            "options": [
+                {
+                    "id": "repay",
+                    "text": "সুদসহ পরিশোধ করতে হয়",
+                    "emoji": "💳",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "free",
+                    "text": "এটি বিনামূল্যে টাকা",
+                    "emoji": "🎁",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "no",
+                    "text": "কখনো পরিশোধ করতে হয় না",
+                    "emoji": "🙃",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "ধার করা জিনিস ফেরত না দিলে কী হয়?",
+            "options": [
+                {
+                    "id": "more",
+                    "text": "আরও জিনিস পাওয়া যায়",
+                    "emoji": "🎁",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "rewards",
+                    "text": "পুরস্কার পাওয়া যায়",
+                    "emoji": "🏆",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "trust",
+                    "text": "মানুষ বিশ্বাস হারায়",
+                    "emoji": "😞",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "সৎ ধার করা কেন গুরুত্বপূর্ণ?",
+            "options": [
+                {
+                    "id": "toys",
+                    "text": "বেশি খেলনা পাওয়া যায়",
+                    "emoji": "🧸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "trust",
+                    "text": "এটি অন্যদের সাথে বিশ্বাস গড়ে",
+                    "emoji": "🤝",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "fun",
+                    "text": "ধার করা মজাদার হয়",
+                    "emoji": "😊",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

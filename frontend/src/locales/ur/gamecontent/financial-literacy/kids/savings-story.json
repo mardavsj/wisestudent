@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "بچت کی کہانی",
+  "subtitleComplete": "مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کو ₹1000 بطور تحفہ ملا ہے۔ اسے محفوظ رکھنے کا بہترین طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "home",
+          "text": "گھر پر رکھیں",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "بینک اکاؤنٹ کھولیں۔",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "wallet",
+          "text": "والیٹ میں لے جائیں۔",
+          "emoji": "👛",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "اپنی سالگرہ کی رقم استعمال کرنے کا بہترین طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "split",
+          "text": "50/50 تقسیم کریں۔",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "تازہ ترین گیجٹس خریدیں۔",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "spend_all",
+          "text": "ابھی سب خرچ کریں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کو ₹200 ہفتہ وار الاؤنس ملتا ہے۔ بہترین منصوبہ کیا ہے؟",
+      "options": [
+        {
+          "id": "treats",
+          "text": "اسنیکس خریدیں۔",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "save_half",
+          "text": "50% بچائیں",
+          "emoji": "💲",
+          "isCorrect": true
+        },
+        {
+          "id": "save_all",
+          "text": "سب کچھ محفوظ کریں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کو وہ پیسہ کہاں رکھنا چاہئے جو آپ نے کام کاج سے بچایا ہے؟",
+      "options": [
+        {
+          "id": "piggy",
+          "text": "پگی بینک",
+          "emoji": "🐷",
+          "isCorrect": false
+        },
+        {
+          "id": "pocket",
+          "text": "آپ کی جیب",
+          "emoji": "👖",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "بچت اکاؤنٹ",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ کے پیسے کو بڑھانے کا بہترین طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "زیادہ سود والا اکاؤنٹ",
+          "emoji": "💹",
+          "isCorrect": true
+        },
+        {
+          "id": "invest",
+          "text": "اسٹاک میں سرمایہ کاری کریں۔",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "جمع کرنے والی چیزیں خریدیں۔",
+          "emoji": "🏀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

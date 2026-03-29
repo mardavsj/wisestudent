@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "સ્ટ્રેન્જર સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "અજાણી વ્યક્તિ તમારા સરનામા માટે એક રમકડું આપે છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "Refuse",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "accept",
+          "text": "Accept",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "વિલંબ નિર્ણય",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "કોઈ તમારી બેંક વિગતો પૂછે છે. હવે શું?",
+      "options": [
+        {
+          "id": "give",
+          "text": "માહિતી આપો",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "partial",
+          "text": "આંશિક માહિતી આપો",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ના કહો",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "અજાણી વ્યક્તિ સોદો ઓફર કરે છે. શું વધુ સુરક્ષિત છે?",
+      "options": [
+        {
+          "id": "walk",
+          "text": "વોક અવે",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "engage",
+          "text": "Engage",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "રાહ જુઓ અને જુઓ",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે એક શંકાસ્પદ ઓફર જુઓ છો. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "પુખ્તને કહો",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "quiet",
+          "text": "શાંત રહો",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "તેને અવગણો",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમને એક વિચિત્ર સંદેશ મળે છે. શ્રેષ્ઠ શું છે?",
+      "options": [
+        {
+          "id": "reply",
+          "text": "Reply",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forward",
+          "text": "મિત્રોને ફોરવર્ડ કરો",
+          "emoji": "📤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

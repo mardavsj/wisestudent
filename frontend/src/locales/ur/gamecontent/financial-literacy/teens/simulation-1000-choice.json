@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "نقلی: ₹1000 کا انتخاب",
+  "subtitleComplete": "تخروپن مکمل!",
+  "subtitleProgress": "منظر نامہ {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "amountLabel": "رقم:",
+  "perfectScoreMsg": "آپ نے {{total}} میں سے {{score}} منظرنامے درست کئے ہیں! آپ سمارٹ انویسٹمنٹ ایلوکیشن کو سمجھتے ہیں!",
+  "lowScoreMsg": "آپ کو {{total}} میں سے {{score}} منظرنامے درست ہیں۔ یاد رکھیں، ایف ڈی اور اسٹاک کو ملانا بہترین حکمت عملی ہے!",
+  "lessonLabel": "سبق: بہترین حکمت عملی یہ ہے کہ فکسڈ ڈپازٹ (حفاظت کے لیے) اور اسٹاکس (ترقی کے لیے) کو ملایا جائے تاکہ خطرے اور واپسی کو متوازن کیا جا سکے۔",
+  "tryAgain": "دوبارہ کوشش کریں۔",
+  "tipLabel": "ٹپ: بہترین انتخاب یہ ہے کہ متوازن نمو کے لیے فکسڈ ڈپازٹ (محفوظ، کم واپسی) کو اسٹاک (خطرناک، زیادہ منافع) کے ساتھ ملایا جائے!",
+  "coinsLabel": "+{{count}} سکے",
+  "excellentTitle": "بہترین انتخاب!",
+  "keepLearningTitle": "سیکھتے رہیں!",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "₹1000 اور افراط زر کی حقیقت",
+      "description": "قیمتوں میں اضافے کے دوران آپ ایک سال کے لیے ₹1000 نقد رکھیں۔ سب سے ہوشیار اقدام کیا ہے؟",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "cash",
+          "text": "گھر میں نقد رقم رکھیں",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "فوراً خرچ کریں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "صرف بچت اکاؤنٹ",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "invest",
+          "text": "سرمایہ کاری کریں جہاں منافع مہنگائی کو ہرا دیں۔",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "رسک بمقابلہ سیفٹی چوائس",
+      "description": "آپ کو 3 ماہ میں اس ₹1000 کی ضرورت ہو سکتی ہے۔ بہترین آپشن کیا ہے؟",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "fd",
+          "text": "قلیل مدتی محفوظ بچت",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "stocks",
+          "text": "زیادہ خطرہ والے اسٹاک",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "text": "کرپٹو ٹریڈنگ",
+          "emoji": "🪙",
+          "isCorrect": false
+        },
+        {
+          "id": "lock",
+          "text": "طویل مدتی مقفل سرمایہ کاری",
+          "emoji": "🔒",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "تاخیر شدہ انعام کا منظر",
+      "description": "آپ آج ₹1000 سے لطف اندوز ہو سکتے ہیں یا اسے آہستہ آہستہ بڑھا سکتے ہیں۔ دولت کیا بناتی ہے؟",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "enjoy",
+          "text": "فوری خوشی کے لیے خرچ کریں۔",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "compound",
+          "text": "سرمایہ کاری کریں اور اسے مرکب ہونے دیں۔",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "loan",
+          "text": "دوستوں کو قرض دیں۔",
+          "emoji": "🤝",
+          "isCorrect": false
+        },
+        {
+          "id": "idle",
+          "text": "حفاظت کے لیے بیکار رکھیں",
+          "emoji": "😐",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "تنوع ٹیسٹ",
+      "description": "ایک سرمایہ کاری ناکام ہو جاتی ہے۔ آپ اپنے ₹1000 کی حفاظت کیسے کرتے ہیں؟",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "allone",
+          "text": "تمام پیسے ایک جگہ پر رکھیں",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "سرمایہ کاری سے مکمل پرہیز کریں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "gamble",
+          "text": "تیزی سے صحت یاب ہونے کا خطرہ بڑھائیں۔",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "مختلف اثاثوں میں تقسیم",
+          "emoji": "⚖️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "اسمارٹ ٹین فیصلہ",
+      "description": "آپ پاکٹ منی کے طور پر ₹1000 کماتے ہیں۔ مالی پختگی کو کیا ظاہر کرتا ہے؟",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "spendall",
+          "text": "تمام رجحانات پر خرچ کریں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "saveall",
+          "text": "سرمایہ کاری سیکھے بغیر بچت کریں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "تقسیم: بچائیں، سرمایہ کاری کریں، سیکھیں۔",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "پیسوں سے کچھ نہ کرو",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

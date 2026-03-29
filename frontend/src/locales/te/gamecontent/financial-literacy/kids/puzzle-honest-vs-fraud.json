@@ -1,1 +1,99 @@
-﻿{}
+{
+  "title": "పజిల్: నిజాయితీ vs మోసం",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}}ని సరిపోల్చండి: నిజాయితీ/మోసం షాప్‌లను వాటి ఫలితాలతో కనెక్ట్ చేయండి!",
+  "leftTitle": "షాప్ రకాలు",
+  "rightTitle": "Outcomes",
+  "instruction": "దుకాణాన్ని ఎంచుకుని, సరిపోలే ఫలితాన్ని ఎంచుకోండి!",
+  "items": [
+    {
+      "id": 1,
+      "name": "ఫెయిర్ షాప్",
+      "emoji": "🏪"
+    },
+    {
+      "id": 2,
+      "name": "చీట్ షాప్",
+      "emoji": "🍬"
+    },
+    {
+      "id": 3,
+      "name": "నిజాయితీ విక్రేత",
+      "emoji": "🙋"
+    },
+    {
+      "id": 4,
+      "name": "మోసం దుకాణం",
+      "emoji": "🎭"
+    },
+    {
+      "id": 5,
+      "name": "స్థానిక మార్కెట్",
+      "emoji": "🛍️"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "Trust",
+      "emoji": "🤝"
+    },
+    {
+      "id": 7,
+      "name": "Loss",
+      "emoji": "😞"
+    },
+    {
+      "id": 8,
+      "name": "Gain",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Scam",
+      "emoji": "🚨"
+    },
+    {
+      "id": 10,
+      "name": "Savings",
+      "emoji": "💸"
+    }
+  ],
+  "correctMatches": [
+    {
+      "itemId": 1,
+      "outcomeId": 6
+    },
+    {
+      "itemId": 2,
+      "outcomeId": 7
+    },
+    {
+      "itemId": 3,
+      "outcomeId": 8
+    },
+    {
+      "itemId": 4,
+      "outcomeId": 9
+    },
+    {
+      "itemId": 5,
+      "outcomeId": 10
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "మ్యాచింగ్ మాస్టర్!",
+    "description": "పర్ఫెక్ట్! మీరు అన్ని {{score}}/{{total}}ని సరిగ్గా సరిపోల్చారు! మీరు నిజాయితీ మరియు మోసాన్ని బాగా అర్థం చేసుకున్నారు!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "మంచి ఉద్యోగం!",
+    "description": "బాగా చేసారు! మీరు {{score}}/{{total}}ని సరిగ్గా సరిపోల్చారు! నిజాయితీ గల వ్యాపార పద్ధతుల గురించి నేర్చుకుంటూ ఉండండి!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "సాధన కొనసాగించండి!",
+    "description": "మీరు {{score}}/{{total}}తో సరిపోలారు. చర్యలు మరియు ఫలితాల మధ్య కనెక్షన్‌లను సమీక్షించి, ఆపై మళ్లీ ప్రయత్నించండి!"
+  }
+}

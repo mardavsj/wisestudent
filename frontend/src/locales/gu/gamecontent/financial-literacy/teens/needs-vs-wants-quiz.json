@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "નીડ્સ વિ વોન્ટ્સ ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "જે જોઈએ છે?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "લક્ઝરી ઘડિયાળ",
+          "emoji": "⌚",
+          "isCorrect": true
+        },
+        {
+          "id": "medicine",
+          "text": "Medicine",
+          "emoji": "💊",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "શાળાના કપડાં",
+          "emoji": "👕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "કઈ જરૂરિયાત છે?",
+      "options": [
+        {
+          "id": "game",
+          "text": "વિડીયો ગેમ",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "food",
+          "text": "Groceries",
+          "emoji": "🍎",
+          "isCorrect": true
+        },
+        {
+          "id": "phone",
+          "text": "નવો સ્માર્ટફોન",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "જે જોઈએ છે?",
+      "options": [
+        {
+          "id": "rent",
+          "text": "Rent",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "books",
+          "text": "Textbooks",
+          "emoji": "📚",
+          "isCorrect": false
+        },
+        {
+          "id": "concert",
+          "text": "કોન્સર્ટ ટિકિટ",
+          "emoji": "🎤",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "કઈ જરૂરિયાત છે?",
+      "options": [
+        {
+          "id": "water",
+          "text": "પાણીનું બિલ",
+          "emoji": "💧",
+          "isCorrect": true
+        },
+        {
+          "id": "shoes",
+          "text": "ડિઝાઇનર જૂતા",
+          "emoji": "👟",
+          "isCorrect": false
+        },
+        {
+          "id": "party",
+          "text": "પાર્ટી પુરવઠો",
+          "emoji": "🎉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "જે જોઈએ છે?",
+      "options": [
+        {
+          "id": "internet",
+          "text": "ઈન્ટરનેટ બિલ",
+          "emoji": "🌐",
+          "isCorrect": false
+        },
+        {
+          "id": "headphones",
+          "text": "વાયરલેસ હેડફોન",
+          "emoji": "🎧",
+          "isCorrect": true
+        },
+        {
+          "id": "transport",
+          "text": "બસ પાસ",
+          "emoji": "🚌",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ગ્રેટ જોબ!",
+    "winMessage": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે! તમે જરૂરિયાતો અને ઇચ્છાઓ વચ્ચેનો તફાવત સમજો છો!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: જીવન ટકાવી રાખવા અને શીખવા માટે જરૂરિયાતો આવશ્યક છે, જ્યારે જરૂરિયાતો એવી વસ્તુઓ છે જે આપણે મેળવવા માંગીએ છીએ પરંતુ તેની જરૂર નથી!",
+    "loseEmoji": "😔",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, જરૂરિયાતો એ ખોરાક, કપડાં અને ઉપયોગિતાઓ જેવી આવશ્યક વસ્તુઓ છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટીપ: જરૂરિયાતો એવી વસ્તુઓ છે જે તમારે ટકી રહેવા અને શીખવા માટે હોવી જોઈએ, જ્યારે ઈચ્છાઓ વૈકલ્પિક લક્ઝરી છે."
+  }
+}

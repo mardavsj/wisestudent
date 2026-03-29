@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "منی بینک کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کو اپنی دادی کی طرف سے 10 روپے بطور تحفہ ملے۔ آپ کیا کرنا چاہیں گے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "سب خرچ کریں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "5 روپے بچائیں۔",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "save-all",
+          "text": "تمام 10 روپے بچائیں۔",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کے پاس 20 روپے کی بچت ہے۔ آپ کا دوست آپ کو فلموں میں مدعو کرتا ہے جس کی قیمت 15 روپے ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "بعد کے لیے محفوظ کریں۔",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "فلموں پر جائیں۔",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "لاگت کو تقسیم کریں۔",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کو سڑک پر 5 روپے ملے۔ اس کے ساتھ سب سے اچھی چیز کیا ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "کینڈی خریدیں۔",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "والدین کو دیں۔",
+          "emoji": "👨‍👩‍👧",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "اسے محفوظ کریں۔",
+          "emoji": "🫙",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کی سالگرہ آنے والی ہے اور آپ کو ایک نئی سائیکل چاہیے جس کی قیمت 500 روپے ہے۔ آپ کے پاس فی الحال 200 روپے ہیں۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "مزید محفوظ کریں۔",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ابھی خریدیں۔",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "رقم ادھار لیں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ کے پاس 30 روپے بچ گئے ہیں اور ایک کھلونا دیکھیں جو آپ واقعی 25 روپے میں چاہتے ہیں۔ اسمارٹ چوائس کیا ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "کھلونا خریدیں۔",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "بڑے کے لیے محفوظ کریں۔",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "فروخت کا انتظار کریں۔",
+          "emoji": "⏰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

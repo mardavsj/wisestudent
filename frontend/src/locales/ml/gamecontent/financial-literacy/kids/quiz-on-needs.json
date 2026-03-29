@@ -1,1 +1,143 @@
-﻿{}
+{
+  "title": "ആവശ്യങ്ങളെക്കുറിച്ചുള്ള ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "{{current}} of {{total}}: ആവശ്യങ്ങളെക്കുറിച്ചുള്ള നിങ്ങളുടെ അറിവ് പരിശോധിക്കുക!",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "നിങ്ങളുടെ ശരീരത്തെ എല്ലാ ദിവസവും പ്രവർത്തിക്കാൻ സഹായിക്കുന്ന ഇനം ഏതാണ്?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "Chips",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "ശുദ്ധമായ കുടിവെള്ളം",
+          "emoji": "🚰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "toy",
+          "text": "റിമോട്ട് കൺട്രോൾ കാർ",
+          "emoji": "🚗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "സ്കൂളിൽ ശരിയായി പഠിക്കാൻ എന്താണ് വേണ്ടത്?",
+      "options": [
+        {
+          "id": "bag",
+          "text": "സ്കൂൾ ബാഗും പുസ്തകങ്ങളും",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "game",
+          "text": "മൊബൈൽ ഗെയിമുകൾ",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cartoon",
+          "text": "കാർട്ടൂൺ വീഡിയോകൾ",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ചൂടിൽ നിന്നും തണുപ്പിൽ നിന്നും സുരക്ഷിതമായിരിക്കാൻ നിങ്ങളെ സഹായിക്കുന്ന തിരഞ്ഞെടുപ്പ് ഏതാണ്?",
+      "options": [
+        {
+          "id": "cap",
+          "text": "ഫാഷൻ തൊപ്പി",
+          "emoji": "🧢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shoes",
+          "text": "പാർട്ടി ഷൂസ്",
+          "emoji": "👟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "ശരിയായ വസ്ത്രം",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "വിശ്രമത്തിനും താമസത്തിനും അടിസ്ഥാനപരമായി ആവശ്യമുള്ള സ്ഥലം ഏതാണ്?",
+      "options": [
+        {
+          "id": "house",
+          "text": "സുരക്ഷിതമായ ഒരു വീട്",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mall",
+          "text": "ഷോപ്പിംഗ് മാൾ",
+          "emoji": "🏬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "park",
+          "text": "Playground",
+          "emoji": "🛝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "എന്തുകൊണ്ടാണ് ആളുകൾ ആഗ്രഹങ്ങൾക്ക് മുമ്പ് ആവശ്യങ്ങൾ തിരഞ്ഞെടുക്കുന്നത്?",
+      "options": [
+        {
+          "id": "fun",
+          "text": "ആഗ്രഹങ്ങൾ കൂടുതൽ രസകരമാണ്",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "important",
+          "text": "ദൈനംദിന ജീവിതത്തിന് ആവശ്യങ്ങൾ ആവശ്യമാണ്",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "സുഹൃത്തുക്കൾ ആഗ്രഹങ്ങൾ ഇഷ്ടപ്പെടുന്നു",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

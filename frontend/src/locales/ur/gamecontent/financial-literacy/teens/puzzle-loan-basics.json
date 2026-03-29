@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "پہیلی: قرض کی بنیادی باتیں",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "قرض کی شرائط کو تصورات کے ساتھ ملائیں ({{current}}/{{total}} مماثل)",
+  "termsTitle": "قرض کی شرائط",
+  "conceptsTitle": "قرض کے تصورات",
+  "matchButton": "Match",
+  "selectTermLabel": "قرض کی مدت منتخب کریں۔",
+  "selectedTermLabel": "منتخب کردہ: {{name}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "matchedLabel": "مماثل: {{current}}/{{total}}",
+  "resultSuccessHeader": "بہت اچھا کام!",
+  "resultSuccessSubheader": "آپ نے {{total}} قرض کی شرائط میں سے {{score}} کو ان کے تصورات کے ساتھ درست طریقے سے ملایا!",
+  "resultSuccessLesson": "سبق: قرض کی بنیادی باتوں کو سمجھنا قرض لینے کے باخبر فیصلے کرنے میں مدد کرتا ہے!",
+  "resultTryAgainHeader": "مشق کرتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} قرض کی شرائط میں سے {{score}} کو درست طریقے سے ملایا۔",
+  "resultTryAgainTip": "ٹپ: اس بارے میں سوچیں کہ ہر قرض کی اصطلاح دراصل کیا نمائندگی کرتی ہے!",
+  "coinsEarned": "+{{coins}} سکے",
+  "terms": [
+    {
+      "id": 1,
+      "name": "Principal",
+      "emoji": "💵"
+    },
+    {
+      "id": 2,
+      "name": "Interest",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "قرض کی مدت",
+      "emoji": "📅"
+    },
+    {
+      "id": 4,
+      "name": "EMI",
+      "emoji": "📊"
+    },
+    {
+      "id": 5,
+      "name": "Default",
+      "emoji": "⚠️"
+    }
+  ],
+  "concepts": [
+    {
+      "id": 6,
+      "name": "اصل رقم",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "اضافی لاگت",
+      "emoji": "➕"
+    },
+    {
+      "id": 8,
+      "name": "وقت کی مدت",
+      "emoji": "⏱️"
+    },
+    {
+      "id": 9,
+      "name": "باقاعدہ ادائیگی",
+      "emoji": "💳"
+    },
+    {
+      "id": 10,
+      "name": "چھوٹی ہوئی ادائیگیاں",
+      "emoji": "🚫"
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স স্মার্ট পিক",
+    "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: স্মার্ট পিকের জ্ঞান পরীক্ষা করো!",
+    "subtitleReady": "স্মার্ট পিকের জ্ঞান পরীক্ষা করো!",
+    "readyEmoji": "🧠",
+    "readyTitle": "স্মার্ট পিকের দক্ষতা পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "বুদ্ধিমান পছন্দ ও সিদ্ধান্ত গ্রহণ নিয়ে প্রশ্নের উত্তর দাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "রাউন্ড:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "সুস্থ থাকার স্মার্ট পিক কী?",
+            "correctAnswer": "খাবার",
+            "options": [
+                {
+                    "text": "খাবার",
+                    "isCorrect": true,
+                    "emoji": "🍎"
+                },
+                {
+                    "text": "অতিরিক্ত আইসক্রিম",
+                    "isCorrect": false,
+                    "emoji": "🍦"
+                },
+                {
+                    "text": "ভিডিও গেম",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "ফ্যান্সি খেলনা",
+                    "isCorrect": false,
+                    "emoji": "🧸"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "শেখার জন্য কোনটি বেছে নেবে?",
+            "correctAnswer": "স্কুলের সরঞ্জাম",
+            "options": [
+                {
+                    "text": "নতুন গেম",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "স্কুলের সরঞ্জাম",
+                    "isCorrect": true,
+                    "emoji": "📚"
+                },
+                {
+                    "text": "মিষ্টি",
+                    "isCorrect": false,
+                    "emoji": "🍬"
+                },
+                {
+                    "text": "কুল গ্যাজেট",
+                    "isCorrect": false,
+                    "emoji": "⌚"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "দৈনন্দিন জীবনের জন্য অপরিহার্য কোনটি?",
+            "correctAnswer": "পোশাক",
+            "options": [
+                {
+                    "text": "ফ্যান্সি খেলনা",
+                    "isCorrect": false,
+                    "emoji": "🧸"
+                },
+                {
+                    "text": "পোশাক",
+                    "isCorrect": true,
+                    "emoji": "👕"
+                },
+                {
+                    "text": "আইসক্রিম",
+                    "isCorrect": false,
+                    "emoji": "🍦"
+                },
+                {
+                    "text": "অ্যাকশন ফিগার",
+                    "isCorrect": false,
+                    "emoji": "🤖"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "জ্ঞান অর্জনে কী সাহায্য করে?",
+            "correctAnswer": "বই",
+            "options": [
+                {
+                    "text": "মিষ্টি",
+                    "isCorrect": false,
+                    "emoji": "🍬"
+                },
+                {
+                    "text": "ভিডিও গেম",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "ধাঁধার খেলা",
+                    "isCorrect": false,
+                    "emoji": "🧩"
+                },
+                {
+                    "text": "বই",
+                    "isCorrect": true,
+                    "emoji": "📖"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "স্কুলে যেতে কী দরকার?",
+            "correctAnswer": "বাস টিকেট",
+            "options": [
+                {
+                    "text": "কুল গ্যাজেট",
+                    "isCorrect": false,
+                    "emoji": "⌚"
+                },
+                {
+                    "text": "মিউজিক প্লেয়ার",
+                    "isCorrect": false,
+                    "emoji": "🎵"
+                },
+                {
+                    "text": "বাস টিকেট",
+                    "isCorrect": true,
+                    "emoji": "🚌"
+                },
+                {
+                    "text": "স্মার্ট ওয়াচ",
+                    "isCorrect": false,
+                    "emoji": "⌚"
+                }
+            ]
+        }
+    ]
+}

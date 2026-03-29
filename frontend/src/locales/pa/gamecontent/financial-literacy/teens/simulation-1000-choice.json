@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "ਸਿਮੂਲੇਸ਼ਨ: ₹1000 ਦੀ ਚੋਣ",
+  "subtitleComplete": "ਸਿਮੂਲੇਸ਼ਨ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਦ੍ਰਿਸ਼",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "amountLabel": "ਰਕਮ:",
+  "perfectScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਦ੍ਰਿਸ਼ ਸਹੀ ਮਿਲੇ ਹਨ! ਤੁਸੀਂ ਸਮਾਰਟ ਨਿਵੇਸ਼ ਵੰਡ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+  "lowScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਦ੍ਰਿਸ਼ ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, FD ਅਤੇ ਸਟਾਕ ਨੂੰ ਮਿਲਾਉਣਾ ਸਭ ਤੋਂ ਵਧੀਆ ਰਣਨੀਤੀ ਹੈ!",
+  "lessonLabel": "ਸਬਕ: ਜੋਖਮ ਅਤੇ ਵਾਪਸੀ ਨੂੰ ਸੰਤੁਲਿਤ ਕਰਨ ਲਈ ਫਿਕਸਡ ਡਿਪਾਜ਼ਿਟ (ਸੁਰੱਖਿਆ ਲਈ) ਅਤੇ ਸਟਾਕ (ਵਿਕਾਸ ਲਈ) ਨੂੰ ਮਿਲਾਉਣਾ ਸਭ ਤੋਂ ਵਧੀਆ ਰਣਨੀਤੀ ਹੈ!",
+  "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "tipLabel": "ਸੁਝਾਅ: ਸੰਤੁਲਿਤ ਵਿਕਾਸ ਲਈ ਸਟਾਕ (ਜੋਖਮ ਭਰਿਆ, ਉੱਚ ਰਿਟਰਨ) ਨਾਲ ਫਿਕਸਡ ਡਿਪਾਜ਼ਿਟ (ਸੁਰੱਖਿਅਤ, ਘੱਟ ਰਿਟਰਨ) ਨੂੰ ਮਿਲਾਉਣਾ ਸਭ ਤੋਂ ਵਧੀਆ ਵਿਕਲਪ ਹੈ!",
+  "coinsLabel": "+{{count}} ਸਿੱਕੇ",
+  "excellentTitle": "ਸ਼ਾਨਦਾਰ ਚੋਣ!",
+  "keepLearningTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "₹1000 ਅਤੇ ਮਹਿੰਗਾਈ ਅਸਲੀਅਤ",
+      "description": "ਕੀਮਤਾਂ ਵਧਣ ਦੇ ਦੌਰਾਨ ਤੁਸੀਂ ਇੱਕ ਸਾਲ ਲਈ ₹1000 ਨਕਦ ਰੱਖਦੇ ਹੋ। ਸਭ ਤੋਂ ਚੁਸਤ ਚਾਲ ਕੀ ਹੈ?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "cash",
+          "text": "ਘਰ ਵਿੱਚ ਨਕਦੀ ਰੱਖੋ",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਤੁਰੰਤ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "ਸਿਰਫ਼ ਬਚਤ ਖਾਤਾ",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "invest",
+          "text": "ਨਿਵੇਸ਼ ਕਰੋ ਜਿੱਥੇ ਰਿਟਰਨ ਮਹਿੰਗਾਈ ਨੂੰ ਹਰਾਉਂਦਾ ਹੈ",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ਜੋਖਮ ਬਨਾਮ ਸੁਰੱਖਿਆ ਵਿਕਲਪ",
+      "description": "ਤੁਹਾਨੂੰ 3 ਮਹੀਨਿਆਂ ਵਿੱਚ ਇਸ ₹1000 ਦੀ ਲੋੜ ਪੈ ਸਕਦੀ ਹੈ। ਸਭ ਤੋਂ ਵਧੀਆ ਵਿਕਲਪ ਕੀ ਹੈ?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "fd",
+          "text": "ਥੋੜ੍ਹੇ ਸਮੇਂ ਲਈ ਸੁਰੱਖਿਅਤ ਬਚਤ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "stocks",
+          "text": "ਉੱਚ-ਜੋਖਮ ਵਾਲੇ ਸਟਾਕ",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "text": "ਕ੍ਰਿਪਟੋ ਵਪਾਰ",
+          "emoji": "🪙",
+          "isCorrect": false
+        },
+        {
+          "id": "lock",
+          "text": "ਲੰਬੇ ਸਮੇਂ ਲਈ ਲੌਕਡ ਨਿਵੇਸ਼",
+          "emoji": "🔒",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ਦੇਰੀ ਵਾਲਾ ਇਨਾਮ ਦ੍ਰਿਸ਼",
+      "description": "ਤੁਸੀਂ ਜਾਂ ਤਾਂ ਅੱਜ ₹1000 ਦਾ ਆਨੰਦ ਲੈ ਸਕਦੇ ਹੋ ਜਾਂ ਇਸਨੂੰ ਹੌਲੀ-ਹੌਲੀ ਵਧਾ ਸਕਦੇ ਹੋ। ਦੌਲਤ ਕੀ ਬਣਾਉਂਦੀ ਹੈ?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "enjoy",
+          "text": "ਤੁਰੰਤ ਖੁਸ਼ੀ ਲਈ ਖਰਚ ਕਰੋ",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "compound",
+          "text": "ਨਿਵੇਸ਼ ਕਰੋ ਅਤੇ ਇਸ ਨੂੰ ਮਿਸ਼ਰਤ ਹੋਣ ਦਿਓ",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "loan",
+          "text": "ਦੋਸਤਾਂ ਨੂੰ ਉਧਾਰ ਦਿਓ",
+          "emoji": "🤝",
+          "isCorrect": false
+        },
+        {
+          "id": "idle",
+          "text": "ਸੁਰੱਖਿਆ ਲਈ ਵਿਹਲੇ ਰੱਖੋ",
+          "emoji": "😐",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ਵਿਭਿੰਨਤਾ ਟੈਸਟ",
+      "description": "ਇੱਕ ਨਿਵੇਸ਼ ਅਸਫਲ ਹੁੰਦਾ ਹੈ। ਤੁਸੀਂ ਆਪਣੇ ₹1000 ਦੀ ਸੁਰੱਖਿਆ ਕਿਵੇਂ ਕਰਦੇ ਹੋ?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "allone",
+          "text": "ਸਾਰੇ ਪੈਸੇ ਇੱਕ ਥਾਂ ਤੇ ਰੱਖੋ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "ਨਿਵੇਸ਼ ਕਰਨ ਤੋਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਬਚੋ",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "gamble",
+          "text": "ਤੇਜ਼ੀ ਨਾਲ ਠੀਕ ਹੋਣ ਲਈ ਜੋਖਮ ਵਧਾਓ",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "ਵੱਖ-ਵੱਖ ਸੰਪਤੀਆਂ ਵਿੱਚ ਵੰਡੋ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ਸਮਾਰਟ ਟੀਨ ਦਾ ਫੈਸਲਾ",
+      "description": "ਤੁਸੀਂ ਪਾਕੇਟ ਮਨੀ ਵਜੋਂ ₹1000 ਕਮਾਉਂਦੇ ਹੋ। ਵਿੱਤੀ ਪਰਿਪੱਕਤਾ ਕੀ ਦਿਖਾਉਂਦਾ ਹੈ?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "spendall",
+          "text": "ਸਾਰੇ ਰੁਝਾਨਾਂ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "saveall",
+          "text": "ਨਿਵੇਸ਼ ਸਿੱਖਣ ਤੋਂ ਬਿਨਾਂ ਬਚਤ ਕਰੋ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ਵੰਡੋ: ਬਚਾਓ, ਨਿਵੇਸ਼ ਕਰੋ, ਸਿੱਖੋ",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ਪੈਸੇ ਨਾਲ ਕੁਝ ਨਾ ਕਰੋ",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

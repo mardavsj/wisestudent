@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "నిజాయితీపై క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ఎవరు నిజాయితీపరుడు?",
+      "options": [
+        {
+          "id": "cheat",
+          "text": "కస్టమర్‌ని మోసం చేస్తాడు",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "change",
+          "text": "సరైన మార్పును అందిస్తుంది",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lies",
+          "text": "Lies",
+          "emoji": "🙊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "నిజాయితీగల దుకాణదారుడు ఏమి చేస్తాడు?",
+      "options": [
+        {
+          "id": "fair",
+          "text": "సరసమైన ధరలు వసూలు చేస్తుంది",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "overcharge",
+          "text": "Overcharges",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ఉత్పత్తులను దాచిపెడుతుంది",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "షాపింగ్‌లో నిజాయితీ ఎలా సహాయపడుతుంది?",
+      "options": [
+        {
+          "id": "free",
+          "text": "మీకు ఉచిత వస్తువులను అందజేస్తుంది",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ఎక్కువ ఖర్చు పెట్టేలా చేస్తుంది",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "నమ్మకాన్ని పెంచుతుంది",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "రుణం తీసుకోవడానికి నిజాయితీ మార్గం ఏమిటి?",
+      "options": [
+        {
+          "id": "return",
+          "text": "సమయానికి తిరిగి వెళ్ళు",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "ఎప్పటికీ ఉంచండి",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "more",
+          "text": "మరింత రుణం తీసుకోండి",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "డబ్బు విషయంలో నిజాయితీ ఎందుకు ముఖ్యం?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ఇది మీకు బొమ్మలను అందజేస్తుంది",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "famous",
+          "text": "ఇది మీకు ప్రసిద్ధి చెందుతుంది",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ఇది నమ్మకాన్ని సంపాదిస్తుంది",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

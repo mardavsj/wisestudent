@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ಪೋಷಕರಿಗೆ ಸಹಾಯ ಮಾಡುವ ಕಥೆ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನಿಮ್ಮ ಪೋಷಕರಿಗೆ ದಿನಸಿಗಾಗಿ ₹ 50 ಅಗತ್ಯವಿದೆ. ನಿಮ್ಮ ಬಳಿ ₹20 ಇದೆ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "give",
+          "text": "ಸಹಾಯ ಮಾಡಲು ನಿಮ್ಮ ₹20 ನೀಡಿ",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ಕ್ಯಾಂಡಿಗಾಗಿ ಅದನ್ನು ಇರಿಸಿ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ಅವರ ಮನವಿಯನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಮನೆಯಲ್ಲಿ ಸಹಾಯ ಮಾಡುವ ಮೂಲಕ ನೀವು ₹10 ಗಳಿಸುತ್ತೀರಿ. ನೀವು ಅದನ್ನು ಉಳಿಸಬೇಕೇ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ಅದನ್ನು ಆಟಿಕೆಗಳಿಗೆ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಹೌದು, ಉಳಿತಾಯಕ್ಕೆ ಸೇರಿಸಿ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "ಅದನ್ನು ಕೊಡು",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "₹15ಕ್ಕೆ ಹಾಲು ಖರೀದಿಸುವಂತೆ ನಿಮ್ಮ ಪೋಷಕರು ಕೇಳುತ್ತಾರೆ. ನಿಮ್ಮ ಬಳಿ ₹20 ಇದೆ. ಮುಂದೇನು?",
+      "options": [
+        {
+          "id": "change",
+          "text": "ಹಾಲು ಖರೀದಿಸಿ ಮತ್ತು ಬದಲಾವಣೆಯನ್ನು ಹಿಂತಿರುಗಿ",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ಬದಲಾವಣೆಯೊಂದಿಗೆ ಕ್ಯಾಂಡಿ ಖರೀದಿಸಿ",
+          "emoji": "🍭",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "keep",
+          "text": "ಎಲ್ಲಾ ₹20 ಇಟ್ಟುಕೊಳ್ಳಿ",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನಿಮಗೆ ₹10 ಸಿಗುತ್ತದೆ. ಪ್ರಾಮಾಣಿಕವಾಗಿರಿ ಎಂದು ಪೋಷಕರು ಹೇಳುತ್ತಾರೆ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "snacks",
+          "text": "ಅದನ್ನು ತಿಂಡಿಗಳಿಗೆ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ಅದನ್ನು ನಿಮ್ಮ ಜೇಬಿನಲ್ಲಿ ಮರೆಮಾಡಿ",
+          "emoji": "🧥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "find",
+          "text": "ಮಾಲೀಕರನ್ನು ಹುಡುಕಲು ಪ್ರಯತ್ನಿಸಿ",
+          "emoji": "🕵️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಪೋಷಕರಿಗೆ ಹಣದ ಸಹಾಯ ಮಾಡುವುದರಿಂದ ನಿಮಗೆ ಅನಿಸುತ್ತದೆ...",
+      "options": [
+        {
+          "id": "proud",
+          "text": "ಹೆಮ್ಮೆ ಮತ್ತು ಜವಾಬ್ದಾರಿ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ಕಡಿಮೆ ಹಣಕ್ಕಾಗಿ ದುಃಖ",
+          "emoji": "😔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ವಿಶೇಷವೇನೂ ಇಲ್ಲ",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

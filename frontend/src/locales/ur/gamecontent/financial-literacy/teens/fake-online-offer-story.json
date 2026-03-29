@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "جعلی آن لائن پیشکش کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "اگر آپ ₹ 100 ادا کرتے ہیں تو ویب سائٹ مفت فون پیش کرتی ہے۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "انکار کریں، یہ ایک دھوکہ ہے۔",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "pay",
+          "text": "100 روپے ادا کریں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "شاید، پہلے چیک کریں۔",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "جعلی آن لائن پیشکش کی علامت کیا ہے؟",
+      "options": [
+        {
+          "id": "normal",
+          "text": "عام قیمتیں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "too-good",
+          "text": "سچ ہونا بہت اچھا ہے۔",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "expensive",
+          "text": "بہت مہنگا",
+          "emoji": "💎",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کو مشکوک پیشکشوں کے ساتھ کیا کرنا چاہئے؟",
+      "options": [
+        {
+          "id": "try",
+          "text": "اسے بہرحال آزمائیں۔",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "دوستوں کے ساتھ شئیر کریں۔",
+          "emoji": "📢",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "نظر انداز کریں اور رپورٹ کریں۔",
+          "emoji": "🚫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "'مفت' پیشکشیں اکثر گھوٹالے کیوں ہوتی ہیں؟",
+      "options": [
+        {
+          "id": "trick",
+          "text": "وہ آپ کو ادائیگی کرنے کے لیے دھوکہ دیتے ہیں۔",
+          "emoji": "🎭",
+          "isCorrect": true
+        },
+        {
+          "id": "real",
+          "text": "وہ ہمیشہ حقیقی ہوتے ہیں۔",
+          "emoji": "✅",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "کبھی کبھی حقیقی",
+          "emoji": "🤷",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آن لائن پیشکشوں کے ساتھ سب سے محفوظ کارروائی کیا ہے؟",
+      "options": [
+        {
+          "id": "pay-fast",
+          "text": "جلدی ادائیگی کریں۔",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "verify",
+          "text": "ادائیگی کرنے سے پہلے تصدیق کریں۔",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-all",
+          "text": "تمام پیشکشوں کو نظر انداز کریں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "کہانی مکمل!",
+    "winMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ جانتے ہیں کہ جعلی پیشکشوں کو کیسے تلاش کرنا ہے!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: جعلی آن لائن پیشکشیں اکثر درست ہونے کے لیے بہت اچھی لگتی ہیں۔ ادائیگی کرنے سے پہلے ہمیشہ تصدیق کریں، اور مشکوک پیشکشوں سے انکار کریں!",
+    "loseEmoji": "💪",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، اگر کوئی پیشکش بہت اچھی لگتی ہے، تو یہ شاید ایک دھوکہ ہے!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "ٹپ: اگر کوئی ویب سائٹ صرف ₹100 میں مفت فون پیش کرتی ہے، تو یہ ممکنہ طور پر ایک دھوکہ ہے۔ ہمیشہ پیشکشوں کی تصدیق کریں اور مشکوک سے انکار کریں!"
+  }
+}

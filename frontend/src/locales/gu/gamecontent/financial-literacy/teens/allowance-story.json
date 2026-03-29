@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ભથ્થું વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમને સાપ્તાહિક ભથ્થા તરીકે ₹500 મળે છે. તમારે તેનું સંચાલન કેવી રીતે કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "પુસ્તકો માટે રાખો",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "કપડાં પર બધો ખર્ચ કરો",
+          "emoji": "👕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "તે બધું બગાડો",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે ₹300 ની રમત ખરીદવા માંગો છો પરંતુ શાળાના પુરવઠા માટે ₹200ની જરૂર છે. સ્માર્ટ પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "રમત ખરીદો",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "પ્રથમ પુરવઠો ખરીદો",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ક્રેડિટ પર બંને ખરીદો",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારા મિત્રો દરરોજ મોંઘા નાસ્તા ખરીદે છે. તમે તે પરવડી શકતા નથી. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "મોંઘા નાસ્તા ખરીદો",
+          "emoji": "🍕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "પૈસા ઉછીના",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ઘરે બનાવેલો નાસ્તો લાવો",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે ₹400ની બચત કરી પરંતુ ₹600ની આઇટમ માટે મર્યાદિત સમયની ઑફર જુઓ. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "રાહ જુઓ અને વધુ સાચવો",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "આંશિક ચુકવણી સાથે ખરીદો",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "બચતને અવગણો",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "કામકાજમાં મદદ કરવા બદલ તમને ₹100નું બોનસ મળે છે. તમારે તેનો ઉપયોગ કેવી રીતે કરવો જોઈએ?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "કચરો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "બચતમાં ઉમેરો",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "મિજબાનીઓ પર ખર્ચ કરો",
+          "emoji": "🍭",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ধাঁধা: লক্ষ্য সংরক্ষণ",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "উদ্দেশ্যগুলির সাথে লক্ষ্যগুলি মিলান ({{current}}/{{total}} মিলেছে)",
+  "goalsTitle": "লক্ষ্য সংরক্ষণ",
+  "purposesTitle": "উদ্দেশ্য সংরক্ষণ",
+  "matchButton": "Match",
+  "selectGoalLabel": "একটি সংরক্ষণ লক্ষ্য নির্বাচন করুন",
+  "selectedGoalLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি সঠিকভাবে {{score}} এর মধ্যে {{total}} সংরক্ষণের লক্ষ্য তাদের উদ্দেশ্যের সাথে মিলেছেন!",
+  "resultSuccessLesson": "পাঠ: পরিষ্কার সঞ্চয় লক্ষ্য নির্ধারণ আর্থিক নিরাপত্তা অর্জনে সাহায্য করে!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি {{total}} গোলের মধ্যে {{score}}টি সঠিকভাবে সংরক্ষণ করেছেন।",
+  "resultTryAgainTip": "টিপ: প্রতিটি সঞ্চয় লক্ষ্যের প্রাথমিক সুবিধা সম্পর্কে চিন্তা করুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "goals": [
+    {
+      "id": 1,
+      "name": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 2,
+      "name": "জরুরী তহবিল",
+      "emoji": "🚑"
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "emoji": "🏠"
+    },
+    {
+      "id": 5,
+      "name": "Retirement",
+      "emoji": "🌅"
+    }
+  ],
+  "purposes": [
+    {
+      "id": 6,
+      "name": "ভবিষ্যৎ বৃদ্ধি",
+      "emoji": "📈"
+    },
+    {
+      "id": 7,
+      "name": "নিরাপত্তা নেট",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 8,
+      "name": "Mobility",
+      "emoji": "🛣️"
+    },
+    {
+      "id": 9,
+      "name": "Stability",
+      "emoji": "🏛️"
+    },
+    {
+      "id": 10,
+      "name": "মনের শান্তি",
+      "emoji": "🧘"
+    }
+  ]
+}

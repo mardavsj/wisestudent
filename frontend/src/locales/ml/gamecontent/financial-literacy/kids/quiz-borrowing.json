@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "കടം വാങ്ങുന്നതിനെക്കുറിച്ചുള്ള ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "🤝",
+  "questions": [
+    {
+      "id": 1,
+      "text": "കടം വാങ്ങുന്നത് എന്താണ് അർത്ഥമാക്കുന്നത്?",
+      "options": [
+        {
+          "id": "without",
+          "text": "ചോദിക്കാതെ എടുക്കുന്നു",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ഉപയോഗിക്കുകയും മടങ്ങുകയും ചെയ്യുന്നു",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "steal",
+          "text": "Stealing",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ഒരു പുസ്തകം കടം വാങ്ങിയ ശേഷം, നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "options": [
+        {
+          "id": "return",
+          "text": "അത് തിരികെ നൽകുക",
+          "emoji": "↩️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "എന്നേക്കും സൂക്ഷിക്കുക",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sell",
+          "text": "അത് വിൽക്കുക",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "എന്തുകൊണ്ടാണ് ബാങ്കിൽ നിന്ന് പണം കടം വാങ്ങുന്നത്?",
+      "options": [
+        {
+          "id": "repay",
+          "text": "നിങ്ങൾ പലിശ സഹിതം തിരിച്ചടയ്ക്കുക",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "ഇത് സൗജന്യ പണമാണ്",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "നിങ്ങൾ ഒരിക്കലും തിരിച്ചടയ്ക്കില്ല",
+          "emoji": "🙃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "കടം വാങ്ങിയ സാധനങ്ങൾ തിരികെ നൽകിയില്ലെങ്കിൽ എന്ത് സംഭവിക്കും?",
+      "options": [
+        {
+          "id": "more",
+          "text": "നിങ്ങൾക്ക് കൂടുതൽ ഇനങ്ങൾ ലഭിക്കും",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rewards",
+          "text": "നിങ്ങൾക്ക് പ്രതിഫലം ലഭിക്കും",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ആളുകൾക്ക് നിങ്ങളിലുള്ള വിശ്വാസം നഷ്ടപ്പെടുന്നു",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "സത്യസന്ധമായ കടം വാങ്ങുന്നത് പ്രധാനമായിരിക്കുന്നത് എന്തുകൊണ്ട്?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "നിങ്ങൾക്ക് കൂടുതൽ കളിപ്പാട്ടങ്ങൾ ലഭിക്കും",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "അത് മറ്റുള്ളവരുമായി വിശ്വാസം വളർത്തുന്നു",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ഇത് കടം വാങ്ങുന്നത് രസകരമാക്കുന്നു",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

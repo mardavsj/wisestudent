@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "પઝલ: વાસ્તવિક પ્રાથમિકતાઓ",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "શ્રેણીઓ સાથે આઇટમ્સ મેળવો ({{current}}/{{total}} મેળ ખાતી)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchButton": "Match",
+  "selectItemLabel": "એક આઇટમ પસંદ કરો",
+  "selectedItemLabel": "પસંદ કરેલ: {{name}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "matchedLabel": "મેળ ખાતી: {{current}}/{{total}}",
+  "resultSuccessHeader": "ગ્રેટ જોબ!",
+  "resultSuccessSubheader": "તમે {{total}} માંથી {{score}} ને તેમની શ્રેણીઓ સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultSuccessLesson": "પાઠ: નાણાકીય પ્રાથમિકતાઓને સમજવાથી સ્માર્ટ નિર્ણયો લેવામાં મદદ મળે છે!",
+  "resultTryAgainHeader": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultTryAgainSubheader": "તમે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTryAgainTip": "ટીપ: દરેક વસ્તુ આવશ્યક છે કે વિવેકાધીન છે તે વિશે વિચારો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "items": [
+    {
+      "id": 1,
+      "name": "હેલ્ધી બ્રેકફાસ્ટ",
+      "emoji": "🍳"
+    },
+    {
+      "id": 2,
+      "name": "સ્ટેશનરી કીટ",
+      "emoji": "✏️"
+    },
+    {
+      "id": 3,
+      "name": "શાળા પછીના વર્ગો",
+      "emoji": "📚"
+    },
+    {
+      "id": 4,
+      "name": "વિટામિન સપ્લિમેન્ટ્સ",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "બસ પાસ",
+      "emoji": "🚌"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "દૈનિક જરૂરિયાત",
+      "emoji": "😅"
+    },
+    {
+      "id": 7,
+      "name": "વૈકલ્પિક પ્રવૃત્તિ",
+      "emoji": "🎯"
+    },
+    {
+      "id": 8,
+      "name": "સ્માર્ટ ખર્ચ",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "આરોગ્ય અગ્રતા",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "પરિવહન ખર્ચ",
+      "emoji": "🚌"
+    }
+  ]
+}

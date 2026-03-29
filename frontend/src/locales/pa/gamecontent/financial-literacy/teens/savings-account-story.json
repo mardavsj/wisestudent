@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "ਬਚਤ ਖਾਤੇ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "perfectScoreMsg": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਤੁਸੀਂ ਸਮਝਦੇ ਹੋ ਕਿ ਬਚਤ ਖਾਤੇ ਕਿਵੇਂ ਕੰਮ ਕਰਦੇ ਹਨ!",
+  "lowScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਬਚਤ ਖਾਤੇ ਵਿਆਜ ਅਦਾ ਕਰਦੇ ਹਨ, ਜੋ ਤੁਹਾਡੇ ਪੈਸੇ ਨੂੰ ਵਧਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "lessonLabel": "ਸਬਕ: ਬਚਤ ਖਾਤੇ ਤੁਹਾਡੇ ਪੈਸੇ ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੱਖਦੇ ਹਨ ਅਤੇ ਵਿਆਜ ਅਦਾ ਕਰਦੇ ਹਨ, ਤੁਹਾਡੇ ਪੈਸੇ ਨੂੰ ਸਮੇਂ ਦੇ ਨਾਲ ਵਧਣ ਵਿੱਚ ਮਦਦ ਕਰਦੇ ਹਨ!",
+  "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "tipLabel": "ਸੁਝਾਅ: ਜਦੋਂ ਤੁਸੀਂ ਬਚਤ ਖਾਤੇ ਵਿੱਚ ਪੈਸੇ ਜਮ੍ਹਾਂ ਕਰਦੇ ਹੋ, ਤਾਂ ਬੈਂਕ ਤੁਹਾਨੂੰ ਵਿਆਜ ਅਦਾ ਕਰਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਤੁਹਾਡੇ ਪੈਸੇ ਸਮੇਂ ਦੇ ਨਾਲ ਵਧਦੇ ਹਨ!",
+  "coinsLabel": "+{{count}} ਸਿੱਕੇ",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ₹1000 ਜਮ੍ਹਾਂ ਕਰੋ। ਇੱਕ ਸਾਲ ਬਾਅਦ, ਇਹ ₹1050 ਹੋ ਜਾਂਦਾ ਹੈ। ਕਿਉਂ?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "magic",
+          "text": "Magic",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "error",
+          "text": "ਬੈਂਕ ਗਲਤੀ",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਜਦੋਂ ਤੁਸੀਂ ਬਚਤ ਖਾਤੇ ਵਿੱਚ ਪੈਸੇ ਰੱਖਦੇ ਹੋ ਤਾਂ ਕੀ ਹੁੰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "loses",
+          "text": "ਇਹ ਮੁੱਲ ਗੁਆ ਦਿੰਦਾ ਹੈ",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "ਇਹ ਦਿਲਚਸਪੀ ਨਾਲ ਵਧਦਾ ਹੈ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "stays",
+          "text": "ਇਹ ਇੱਕੋ ਜਿਹਾ ਰਹਿੰਦਾ ਹੈ",
+          "emoji": "➡️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਬੈਂਕ ਬੱਚਤਾਂ 'ਤੇ ਵਿਆਜ ਕਿਉਂ ਦਿੰਦੇ ਹਨ?",
+      "options": [
+        {
+          "id": "use",
+          "text": "ਉਹ ਤੁਹਾਡੇ ਪੈਸੇ ਦੀ ਵਰਤੋਂ ਉਧਾਰ ਦੇਣ ਲਈ ਕਰਦੇ ਹਨ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "ਇਹ ਇੱਕ ਤੋਹਫ਼ਾ ਹੈ",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "rule",
+          "text": "ਸਰਕਾਰੀ ਨਿਯਮ",
+          "emoji": "📜",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਬਚਤ ਖਾਤੇ ਦਾ ਕੀ ਫਾਇਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "ਸੁਰੱਖਿਅਤ ਅਤੇ ਵਿਆਜ ਕਮਾਉਂਦਾ ਹੈ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "quick",
+          "text": "ਸਿਰਫ਼ ਤੁਰੰਤ ਪਹੁੰਚ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "text": "ਮੁਫ਼ਤ ਪੈਸੇ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਜੇਕਰ ਤੁਸੀਂ ₹500 ਜਮ੍ਹਾਂ ਕਰਦੇ ਹੋ ਅਤੇ ਇੱਕ ਸਾਲ ਬਾਅਦ ₹525 ਪ੍ਰਾਪਤ ਕਰਦੇ ਹੋ, ਤਾਂ ਵਾਧੂ ₹25 ਕੀ ਹਨ?",
+      "options": [
+        {
+          "id": "bonus",
+          "text": "ਬੋਨਸ ਭੁਗਤਾਨ",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "interest2",
+          "text": "ਵਿਆਜ ਕਮਾਇਆ",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "fee",
+          "text": "ਬੈਂਕ ਫੀਸ",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

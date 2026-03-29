@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ਈਮਾਨਦਾਰੀ 'ਤੇ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਇਮਾਨਦਾਰ ਕੌਣ ਹੈ?",
+      "options": [
+        {
+          "id": "cheat",
+          "text": "ਗਾਹਕ ਨੂੰ ਠੱਗਦਾ ਹੈ",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "change",
+          "text": "ਸਹੀ ਤਬਦੀਲੀ ਦਿੰਦਾ ਹੈ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lies",
+          "text": "Lies",
+          "emoji": "🙊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਇੱਕ ਇਮਾਨਦਾਰ ਦੁਕਾਨਦਾਰ ਕੀ ਕਰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "fair",
+          "text": "ਉਚਿਤ ਭਾਅ ਵਸੂਲਦਾ ਹੈ",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "overcharge",
+          "text": "Overcharges",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ਉਤਪਾਦਾਂ ਨੂੰ ਲੁਕਾਉਂਦਾ ਹੈ",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਈਮਾਨਦਾਰੀ ਖਰੀਦਦਾਰੀ ਵਿੱਚ ਕਿਵੇਂ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "free",
+          "text": "ਤੁਹਾਨੂੰ ਮੁਫਤ ਆਈਟਮਾਂ ਮਿਲਦੀਆਂ ਹਨ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਤੁਹਾਨੂੰ ਹੋਰ ਖਰਚ ਕਰਦਾ ਹੈ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ਭਰੋਸਾ ਪੈਦਾ ਕਰਦਾ ਹੈ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਉਧਾਰ ਲੈਣ ਦਾ ਇਮਾਨਦਾਰ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ਸਮੇਂ ਸਿਰ ਵਾਪਸੀ ਕਰੋ",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "ਇਸ ਨੂੰ ਸਦਾ ਲਈ ਰੱਖੋ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "more",
+          "text": "ਹੋਰ ਉਧਾਰ ਲਓ",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਪੈਸੇ ਦੇ ਮਾਮਲਿਆਂ ਵਿਚ ਈਮਾਨਦਾਰੀ ਕਿਉਂ ਜ਼ਰੂਰੀ ਹੈ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ਇਹ ਤੁਹਾਨੂੰ ਖਿਡੌਣੇ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "famous",
+          "text": "ਇਹ ਤੁਹਾਨੂੰ ਮਸ਼ਹੂਰ ਬਣਾਉਂਦਾ ਹੈ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ਇਹ ਭਰੋਸਾ ਕਮਾਉਂਦਾ ਹੈ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

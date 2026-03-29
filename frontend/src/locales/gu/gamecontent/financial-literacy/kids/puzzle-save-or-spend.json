@@ -1,1 +1,72 @@
-﻿{}
+{
+  "title": "કોયડો: સાચવો અથવા ખર્ચો",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "ક્રિયાઓ સાથે આઇટમ્સ મેળવો ({{matched}}/{{total}} મેળ ખાતી)",
+  "itemsTitle": "Items",
+  "actionsTitle": "Actions",
+  "selectedLabel": "પસંદ કરેલ: {{name}}",
+  "selectItem": "એક આઇટમ પસંદ કરો",
+  "matchButton": "Match",
+  "scoreLabel": "સ્કોર:",
+  "matchedLabel": "મેળ ખાતી:",
+  "resultGreatTitle": "ગ્રેટ જોબ!",
+  "resultGreatDescription": "તમે ક્રિયાઓ સાથે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે!",
+  "resultLesson": "પાઠ: મહત્વપૂર્ણ વસ્તુઓ માટે બચત સુરક્ષિત ભવિષ્ય બનાવવામાં મદદ કરે છે!",
+  "resultKeepTitle": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultKeepDescription": "તમે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTip": "ટીપ: દરેક વસ્તુ આવશ્યક છે કે વિવેકાધીન છે તે વિશે વિચારો!",
+  "items": [
+    {
+      "id": 1,
+      "name": "મની બેંક",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "આઈસ્ક્રીમ",
+      "emoji": "🍦"
+    },
+    {
+      "id": 3,
+      "name": "નવી સાયકલ",
+      "emoji": "🚲"
+    },
+    {
+      "id": 4,
+      "name": "Candy",
+      "emoji": "🍬"
+    },
+    {
+      "id": 5,
+      "name": "શાળાના પુસ્તકો",
+      "emoji": "📚"
+    }
+  ],
+  "actions": [
+    {
+      "id": 6,
+      "name": "Save",
+      "emoji": "📥"
+    },
+    {
+      "id": 7,
+      "name": "Spend",
+      "emoji": "📤"
+    },
+    {
+      "id": 8,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 9,
+      "name": "Donate",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "Budget",
+      "emoji": "📋"
+    }
+  ]
+}

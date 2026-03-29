@@ -1,1 +1,144 @@
-﻿{}
+﻿{
+    "title": "নাস্তার গল্প",
+    "subtitleComplete": "গল্প সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "টিফিন দরকার কিন্তু চিপস খেতে চাও। কোনটা বেছে নেবে?",
+            "options": [
+                {
+                    "id": "chips",
+                    "text": "শুধু চিপস",
+                    "emoji": "🍟",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "lunch",
+                    "text": "সুষম টিফিন",
+                    "emoji": "🍱",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "sweets",
+                    "text": "শুধু মিষ্টি",
+                    "emoji": "🍰",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "ক্ষুধার্ত লাগছে। বুদ্ধিমান পছন্দ কী?",
+            "options": [
+                {
+                    "id": "healthy",
+                    "text": "পুষ্টিকর নাস্তা",
+                    "emoji": "🥗",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "candy",
+                    "text": "চকোলেট বার",
+                    "emoji": "🍫",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "chips",
+                    "text": "আলুর চিপস",
+                    "emoji": "🥔",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "তৃষ্ণার্ত লাগছে। কী বেছে নেবে?",
+            "options": [
+                {
+                    "id": "soda",
+                    "text": "সোডা",
+                    "emoji": "🥤",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "water",
+                    "text": "জল",
+                    "emoji": "💧",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "juice",
+                    "text": "ফ্লেভার্ড জুস",
+                    "emoji": "🧃",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "নাস্তা চাও। সবচেয়ে স্বাস্থ্যকর পছন্দ কী?",
+            "options": [
+                {
+                    "id": "cookies",
+                    "text": "প্যাকেটের কুকি",
+                    "emoji": "🍪",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "candy",
+                    "text": "গামি বেয়ার",
+                    "emoji": "🐻",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "fruit",
+                    "text": "তাজা ফল",
+                    "emoji": "🍎",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "খাবারের জন্য টাকা আছে। সেরা সিদ্ধান্ত কী?",
+            "options": [
+                {
+                    "id": "balanced",
+                    "text": "পূর্ণ খাবার",
+                    "emoji": "🍽️",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "icecream",
+                    "text": "শুধু আইসক্রিম",
+                    "emoji": "🍦",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "sweets",
+                    "text": "মিষ্টি ও সোডা",
+                    "emoji": "🍭",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

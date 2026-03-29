@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "রিফ্লেক্স স্মার্ট খরচ",
+  "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: আপনার খরচের প্রতিফলন পরীক্ষা করুন!",
+  "subtitleReady": "আপনার ব্যয় প্রতিফলন পরীক্ষা করুন!",
+  "readyHeader": "আপনার ব্যয় প্রতিফলন পরীক্ষা করতে প্রস্তুত?",
+  "readyDescription": "স্মার্ট খরচের পছন্দ সম্পর্কে প্রশ্নের উত্তর দিন।",
+  "readyTip": "আপনার কাছে প্রতিটি {{time}} সেকেন্ডের {{total}} প্রশ্ন আছে!",
+  "startButton": "খেলা শুরু করুন",
+  "roundLabel": "বৃত্তাকার:",
+  "timeLabel": "সময়:",
+  "scoreLabel": "স্কোর:",
+  "greatJob": "দারুণ কাজ!",
+  "finalScore": "আপনি {{total}} এর মধ্যে {{score}} স্কোর করেছেন!",
+  "growthSkills": "আপনি শক্তিশালী আর্থিক সিদ্ধান্ত নেওয়ার দক্ষতা বিকাশ করছেন!",
+  "playAgain": "আবার খেলুন",
+  "questions": [
+    {
+      "id": 1,
+      "question": "সবচেয়ে স্মার্ট খরচ পছন্দ কি?",
+      "options": [
+        {
+          "id": "pay_rent",
+          "text": "ভাড়া দিন",
+          "emoji": "🏠"
+        },
+        {
+          "id": "luxury_party",
+          "text": "বিলাসবহুল পার্টি",
+          "emoji": "🎉"
+        },
+        {
+          "id": "designer_shoes",
+          "text": "ডিজাইনার জুতা কিনুন",
+          "emoji": "👟"
+        },
+        {
+          "id": "impulse_purchase",
+          "text": "ইমপালস ক্রয়",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "কোন খরচ প্রথমে আসা উচিত?",
+      "options": [
+        {
+          "id": "new_gadgets",
+          "text": "নতুন গ্যাজেট",
+          "emoji": "📱"
+        },
+        {
+          "id": "buy_groceries",
+          "text": "মুদি কিনুন",
+          "emoji": "🛒"
+        },
+        {
+          "id": "expensive_restaurant",
+          "text": "দামি রেস্তোরাঁ",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "entertainment",
+          "text": "Entertainment",
+          "emoji": "🎬"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "অতিরিক্ত টাকা দিয়ে কি করা উচিত?",
+      "options": [
+        {
+          "id": "movie_night",
+          "text": "মুভি নাইট",
+          "emoji": "🎬"
+        },
+        {
+          "id": "buy_video_games",
+          "text": "ভিডিও গেম কিনুন",
+          "emoji": "🎮"
+        },
+        {
+          "id": "save_money",
+          "text": "টাকা বাঁচান",
+          "emoji": "💰"
+        },
+        {
+          "id": "shopping_spree",
+          "text": "শপিং স্প্রী",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "কোনটি অগ্রাধিকার ব্যয়?",
+      "options": [
+        {
+          "id": "pay_bills",
+          "text": "বিল পরিশোধ করুন",
+          "emoji": "📄"
+        },
+        {
+          "id": "designer_clothes",
+          "text": "ডিজাইনার পোশাক",
+          "emoji": "👔"
+        },
+        {
+          "id": "weekend_trip",
+          "text": "উইকএন্ড ট্রিপ",
+          "emoji": "✈️"
+        },
+        {
+          "id": "gourmet_dinner",
+          "text": "গুরমেট ডিনার",
+          "emoji": "🍷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "কি দীর্ঘমেয়াদী আর্থিক নিরাপত্তা তৈরি করে?",
+      "options": [
+        {
+          "id": "concert_ticket",
+          "text": "কনসার্টের টিকিট",
+          "emoji": "🎫"
+        },
+        {
+          "id": "fund_education",
+          "text": "তহবিল শিক্ষা",
+          "emoji": "📚"
+        },
+        {
+          "id": "buy_jewelry",
+          "text": "গয়না কিনুন",
+          "emoji": "💍"
+        },
+        {
+          "id": "luxury_vacation",
+          "text": "বিলাসবহুল ছুটি",
+          "emoji": "🏖️"
+        }
+      ]
+    }
+  ]
+}

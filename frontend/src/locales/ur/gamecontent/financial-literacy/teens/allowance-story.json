@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "الاؤنس کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کو ₹500 بطور ہفتہ وار الاؤنس ملتا ہے۔ آپ کو اس کا انتظام کیسے کرنا چاہئے؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "کتابوں کے لیے رکھیں",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "سب کپڑوں پر خرچ کریں۔",
+          "emoji": "👕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "یہ سب ضائع کریں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ ₹300 کی گیم خریدنا چاہتے ہیں لیکن اسکول کے سامان کے لیے ₹200 کی ضرورت ہے۔ ہوشیار انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "کھیل خریدیں۔",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "پہلے سامان خریدیں۔",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "کریڈٹ پر دونوں خریدیں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کے دوست ہر روز مہنگے نمکین خرید رہے ہیں۔ تم اس کے متحمل نہیں ہو سکتے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "مہنگے نمکین خریدیں۔",
+          "emoji": "🍕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "پیسے ادھار لیں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "گھر کا بنا ہوا ناشتہ لائیں۔",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ نے ₹400 کی بچت کی لیکن ₹600 کے آئٹم کے لیے ایک محدود مدت کی پیشکش دیکھیں۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "انتظار کریں اور مزید محفوظ کریں۔",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "جزوی ادائیگی کے ساتھ خریدیں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "بچت کو نظر انداز کریں۔",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "کام کاج میں مدد کرنے پر آپ کو ₹100 کا بونس ملتا ہے۔ آپ کو اسے کیسے استعمال کرنا چاہئے؟",
+      "options": [
+        {
+          "id": "waste",
+          "text": "اسے ضائع کرو",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "بچت میں شامل کریں۔",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "دعوتوں پر خرچ کریں۔",
+          "emoji": "🍭",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

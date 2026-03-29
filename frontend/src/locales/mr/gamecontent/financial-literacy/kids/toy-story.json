@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "टॉय स्टोरी",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "एक मित्र तुम्हाला एक खेळणी देतो. आपण काय करावे?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "ते सुरक्षित ठेवा",
+          "emoji": "🛡️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "break",
+          "text": "तोडून टाका",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "त्याकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "आपण एक खेळणी उधार घेतली. आता काय?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ठेवा",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "तो हरवतो",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "खेळणी परत करा",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमच्याकडे तुमच्या मित्राचे खेळणे आहे. सर्वोत्तम काय आहे?",
+      "options": [
+        {
+          "id": "care",
+          "text": "त्याची काळजी घ्या",
+          "emoji": "💝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "तो हरवतो",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "break",
+          "text": "तोडून टाका",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "मालक खेळणी परत मागतो. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "ते लपवा",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "परत द्या",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "delay",
+          "text": "परत येण्यास विलंब",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "जेव्हा तुम्ही खेळणी उसने घेता तेव्हा तुमचे कर्तव्य काय असते?",
+      "options": [
+        {
+          "id": "careless",
+          "text": "बेफिकीर राहा",
+          "emoji": "😓",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "त्याबद्दल विसरून जा",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "responsible",
+          "text": "जबाबदार रहा",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

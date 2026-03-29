@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स प्रथम आवश्यक आहे",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: गरजा वि इच्छा ओळखा!",
+  "subtitleReady": "गरजा विरुद्ध इच्छा ओळखा!",
+  "readyEmoji": "✅",
+  "readyTitle": "तुमच्या गरजा वि वांट्स स्किल्स तपासण्यासाठी तयार आहात?",
+  "readyDescription": "गरजा विरुद्ध इच्छा ओळखण्याच्या प्रश्नांची उत्तरे द्या.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "यापैकी कोणती मूलभूत गरज आहे?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "व्हिडिओ गेम्स",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍲"
+        },
+        {
+          "text": "डिझायनर कपडे",
+          "isCorrect": false,
+          "emoji": "👗"
+        },
+        {
+          "text": "लक्झरी कार",
+          "isCorrect": false,
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "कोणती बाब शिक्षणाची गरज दर्शवते?",
+      "correctAnswer": "शाळेची पुस्तके",
+      "options": [
+        {
+          "text": "शाळेची पुस्तके",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "महागडी खेळणी",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Gadgets",
+          "isCorrect": false,
+          "emoji": "📱"
+        },
+        {
+          "text": "Snacks",
+          "isCorrect": false,
+          "emoji": "🍪"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "आरोग्यासाठी कोणते आवश्यक आहे?",
+      "correctAnswer": "Medicine",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        },
+        {
+          "text": "Medicine",
+          "isCorrect": true,
+          "emoji": "💊"
+        },
+        {
+          "text": "Jewelry",
+          "isCorrect": false,
+          "emoji": "💎"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "कोणती वस्तू मूलभूत गरज आहे?",
+      "correctAnswer": "Shelter",
+      "options": [
+        {
+          "text": "Vacation",
+          "isCorrect": false,
+          "emoji": "✈️"
+        },
+        {
+          "text": "Entertainment",
+          "isCorrect": false,
+          "emoji": "🎬"
+        },
+        {
+          "text": "लक्झरी जेवण",
+          "isCorrect": false,
+          "emoji": "🍽️"
+        },
+        {
+          "text": "Shelter",
+          "isCorrect": true,
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कोणती मूलभूत गरज आहे?",
+      "correctAnswer": "स्वच्छ पाणी",
+      "options": [
+        {
+          "text": "स्वच्छ पाणी",
+          "isCorrect": true,
+          "emoji": "🚰"
+        },
+        {
+          "text": "आईस्क्रीम",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "डिझायनर बॅग",
+          "isCorrect": false,
+          "emoji": "👜"
+        },
+        {
+          "text": "मैफिलीची तिकिटे",
+          "isCorrect": false,
+          "emoji": "🎟️"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ చిన్న వ్యాపారం",
+  "subtitlePlaying": "రౌండ్ {{current}}/{{total}}: మీ చిన్న వ్యాపార రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "subtitleReady": "మీ చిన్న వ్యాపార రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "readyEmoji": "🏪",
+  "readyTitle": "చిన్న వ్యాపార నైపుణ్యాలను పరీక్షించడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "చిన్న వ్యాపారాన్ని ప్రారంభించడం మరియు నడపడం గురించి ప్రశ్నలకు సమాధానం ఇవ్వండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "రౌండ్:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "చిన్న వ్యాపారాన్ని ప్రారంభించడానికి మంచి మార్గం ఏమిటి?",
+      "correctAnswer": "కాల్చు & అమ్ము",
+      "options": [
+        {
+          "text": "కొనండి & వృధా చేయండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "కాల్చు & అమ్ము",
+          "isCorrect": true,
+          "emoji": "🍰"
+        },
+        {
+          "text": "ఏమీ చేయవద్దు",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "మీ నైపుణ్యాల నుండి మీరు ఎలా డబ్బు సంపాదించవచ్చు?",
+      "correctAnswer": "క్రాఫ్ట్స్ చేయండి",
+      "options": [
+        {
+          "text": "క్రాఫ్ట్స్ చేయండి",
+          "isCorrect": true,
+          "emoji": "🎨"
+        },
+        {
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "వృధా సమయం",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "నైపుణ్యాలను విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ఇతరుల నుండి డబ్బు సంపాదించడంలో మీకు ఏది సహాయపడుతుంది?",
+      "correctAnswer": "ఆఫర్ సర్వీస్",
+      "options": [
+        {
+          "text": "ఏమీ చేయవద్దు",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ఎప్పటికీ వేచి ఉండండి",
+          "isCorrect": false,
+          "emoji": "⏳"
+        },
+        {
+          "text": "పనిని నివారించండి",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ఆఫర్ సర్వీస్",
+          "isCorrect": true,
+          "emoji": "🛠️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "వ్యాపార లాభాలతో మీరు ఏమి చేయాలి?",
+      "correctAnswer": "లాభాలను ఆదా చేయండి",
+      "options": [
+        {
+          "text": "లాభాలను ఆదా చేయండి",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "లాభాలు వెచ్చించండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "వేస్ట్ మనీ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "దానిని పోగొట్టుకోండి",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "మీ వ్యాపారం విజయవంతం కావడానికి ఏది సహాయపడుతుంది?",
+      "correctAnswer": "వ్యాపారాన్ని పెంచుకోండి",
+      "options": [
+        {
+          "text": "వేస్ట్ మనీ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "వ్యాపారాన్ని పెంచుకోండి",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "వదులుకో",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "చిన్నగా ఉండండి",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "లంచ్ బాక్స్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "🍽️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు స్నేహితుడి భోజనం అప్పుగా తీసుకుంటారు. మరుసటి రోజు మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "భాగస్వామ్యం చేయండి లేదా తిరిగి వెళ్లండి",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "మీ కోసం ఉంచండి",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "దాని గురించి మరచిపోండి",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీ స్నేహితుడు భోజనం పంచుకుంటాడు. మీరు ఎలా స్పందించాలి?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "ఏమీ అనకండి",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "ఏదైనా తిరిగి పంచుకోండి",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "more",
+          "text": "ఇంకా ఎక్కువ భోజనం తీసుకోండి",
+          "emoji": "🍴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీకు భోజనం కోసం ₹10 ఉంది. స్నేహితుడికి ₹5 అవసరం. ఏది ఉత్తమమైనది?",
+      "options": [
+        {
+          "id": "share",
+          "text": "స్నేహితునితో ₹5 షేర్ చేయండి",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "all",
+          "text": "అన్నీ నీకే ఖర్చు పెట్టు",
+          "emoji": "🍔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "మీ డబ్బు దాచుకోండి",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు లంచ్ డబ్బు అప్పుగా తీసుకుంటారు. మీరు ఎప్పుడు తిరిగి చెల్లించాలి?",
+      "options": [
+        {
+          "id": "never",
+          "text": "ఎప్పుడూ తిరిగి చెల్లించవద్దు",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "స్నాక్స్ కోసం ఖర్చు చేయండి",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "next",
+          "text": "వాగ్దానం చేసినట్లు మరుసటి రోజు",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మధ్యాహ్న భోజనం ఎందుకు ముఖ్యమైనది?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "ఇది నమ్మకాన్ని మరియు దయను పెంచుతుంది",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "food",
+          "text": "మీకు ఎక్కువ ఆహారం లభిస్తుంది",
+          "emoji": "🍽️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "popular",
+          "text": "ఇది మిమ్మల్ని పాపులర్ చేస్తుంది",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "ಬೆಳವಣಿಗೆಯ ಒಗಟು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಫಲಿತಾಂಶಗಳೊಂದಿಗೆ ಐಟಂಗಳನ್ನು ಹೊಂದಿಸಿ ({{matched}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "itemsTitle": "ಬೆಳವಣಿಗೆಯ ವಸ್ತುಗಳು",
+  "categoriesTitle": "Outcomes",
+  "selectedLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "selectItem": "ಐಟಂ ಆಯ್ಕೆಮಾಡಿ",
+  "matchButton": "Match",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultGreatDescription": "ನೀವು ಫಲಿತಾಂಶಗಳೊಂದಿಗೆ {{total}} ಐಟಂಗಳಲ್ಲಿ {{score}} ಅನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ!",
+  "coinsLabel": "Coins",
+  "resultLesson": "ಪಾಠ: ಸಸ್ಯಗಳಂತೆಯೇ, ಉಳಿತಾಯ ಮತ್ತು ಹೂಡಿಕೆಗಳು ಕಾಲಾನಂತರದಲ್ಲಿ ಬೆಳೆಯುತ್ತವೆ.",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultKeepDescription": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTip": "ಸಲಹೆ: ಪ್ರತಿಯೊಂದು ಐಟಂ ಸ್ವಾಭಾವಿಕವಾಗಿ ಬೆಳೆಯುತ್ತದೆ ಎಂಬುದರ ಕುರಿತು ಯೋಚಿಸಿ.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Seed",
+      "emoji": "🌱"
+    },
+    {
+      "id": 2,
+      "name": "Savings",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "Plant",
+      "emoji": "🌿"
+    },
+    {
+      "id": 4,
+      "name": "Sapling",
+      "emoji": "🌳"
+    },
+    {
+      "id": 5,
+      "name": "Bulb",
+      "emoji": "🌻"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Tree",
+      "emoji": "🌲",
+      "description": "ಬೀಜವು ಮರವಾಗಬಹುದು"
+    },
+    {
+      "id": 7,
+      "name": "Growth",
+      "emoji": "📈",
+      "description": "ಉಳಿತಾಯವು ಮೌಲ್ಯದಲ್ಲಿ ಬೆಳೆಯಬಹುದು"
+    },
+    {
+      "id": 8,
+      "name": "Flower",
+      "emoji": "🌸",
+      "description": "ಸಸ್ಯವು ಹೂವಾಗಿ ಅರಳಬಹುದು"
+    },
+    {
+      "id": 9,
+      "name": "Forest",
+      "emoji": "🌲",
+      "description": "ಅನೇಕ ಸಸಿಗಳು ಕಾಡನ್ನು ಮಾಡಬಹುದು"
+    },
+    {
+      "id": 10,
+      "name": "Wealth",
+      "emoji": "🏦",
+      "description": "ಹಣದ ಅಭ್ಯಾಸಗಳು ಸಂಪತ್ತನ್ನು ನಿರ್ಮಿಸಬಹುದು"
+    }
+  ]
+}

@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਉਦਯੋਗਪਤੀ ਗੁਣ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਉੱਦਮੀ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਉੱਦਮੀ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyHeader": "ਆਪਣੇ ਉੱਦਮੀ ਹੁਨਰ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਮੁੱਖ ਉੱਦਮੀ ਗੁਣਾਂ ਅਤੇ ਮਾਨਸਿਕਤਾ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyTip": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{time}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "greatJob": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "finalScore": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਸਕੋਰ ਕੀਤੇ!",
+  "thinkingSkills": "ਤੁਸੀਂ ਮਜ਼ਬੂਤ ​​ਉੱਦਮੀ ਸੋਚ ਦੇ ਹੁਨਰ ਨੂੰ ਵਿਕਸਿਤ ਕਰ ਰਹੇ ਹੋ!",
+  "playAgain": "ਦੁਬਾਰਾ ਖੇਡੋ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਸਫਲ ਉੱਦਮੀਆਂ ਲਈ ਕਿਹੜਾ ਗੁਣ ਜ਼ਰੂਰੀ ਹੈ?",
+      "options": [
+        {
+          "text": "ਜੋਖਮ ਤੋਂ ਬਚਣਾ",
+          "id": "risk_avoidance",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "Innovation",
+          "id": "innovation",
+          "emoji": "💡"
+        },
+        {
+          "text": "ਰੁਝਾਨਾਂ ਦਾ ਅਨੁਸਰਣ ਕਰ ਰਹੇ ਹਨ",
+          "id": "following_trends",
+          "emoji": "📈"
+        },
+        {
+          "text": "ਮੌਕਿਆਂ ਦੀ ਉਡੀਕ ਕਰ ਰਿਹਾ ਹੈ",
+          "id": "waiting_opportunities",
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਚੁਣੌਤੀਆਂ ਦਾ ਸਾਹਮਣਾ ਕਰਦੇ ਸਮੇਂ ਉੱਦਮੀਆਂ ਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "text": "ਜਲਦੀ ਛੱਡ ਦਿਓ",
+          "id": "give_up",
+          "emoji": "😔"
+        },
+        {
+          "text": "ਦੂਜਿਆਂ ਨੂੰ ਦੋਸ਼ੀ ਠਹਿਰਾਓ",
+          "id": "blame_others",
+          "emoji": "😠"
+        },
+        {
+          "text": "ਕਾਇਮ ਰਹੋ ਅਤੇ ਅਨੁਕੂਲ ਬਣਾਓ",
+          "id": "persist_adapt",
+          "emoji": "💪"
+        },
+        {
+          "text": "ਚੁਣੌਤੀਆਂ ਤੋਂ ਬਚੋ",
+          "id": "avoid_challenges",
+          "emoji": "跑"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਸਫਲ ਉੱਦਮੀ ਸਮੱਸਿਆ ਹੱਲ ਕਰਨ ਲਈ ਕਿਵੇਂ ਪਹੁੰਚਦੇ ਹਨ?",
+      "options": [
+        {
+          "text": "ਸਮੱਸਿਆਵਾਂ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "id": "ignore_problems",
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਮੁੱਦਿਆਂ ਬਾਰੇ ਸ਼ਿਕਾਇਤ ਕਰੋ",
+          "id": "complain_issues",
+          "emoji": "😤"
+        },
+        {
+          "text": "ਰਚਨਾਤਮਕ ਹੱਲ",
+          "id": "creative_solutions",
+          "emoji": "🔧"
+        },
+        {
+          "text": "ਦੂਜਿਆਂ ਦੇ ਤਰੀਕਿਆਂ ਦੀ ਨਕਲ ਕਰੋ",
+          "id": "copy_others",
+          "emoji": "📋"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਉੱਦਮੀ ਆਮ ਤੌਰ 'ਤੇ ਕਿਹੜੀ ਮਾਨਸਿਕਤਾ ਨੂੰ ਅਪਣਾਉਂਦੇ ਹਨ?",
+      "options": [
+        {
+          "text": "ਸਥਿਰ ਮਾਨਸਿਕਤਾ",
+          "id": "fixed_mindset",
+          "emoji": "🔒"
+        },
+        {
+          "text": "ਵਿਕਾਸ ਦੀ ਮਾਨਸਿਕਤਾ",
+          "id": "growth_mindset",
+          "emoji": "🌱"
+        },
+        {
+          "text": "ਨਕਾਰਾਤਮਕ ਸੋਚ",
+          "id": "negative_thinking",
+          "emoji": "😞"
+        },
+        {
+          "text": "ਸਿੱਖਣ ਤੋਂ ਬਚਣਾ",
+          "id": "avoid_learning",
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਉਦਮੀਆਂ ਨੂੰ ਗਣਨਾ ਕੀਤੇ ਜੋਖਮਾਂ ਪ੍ਰਤੀ ਕੀ ਪਹੁੰਚ ਅਪਣਾਉਣੀ ਚਾਹੀਦੀ ਹੈ?",
+      "options": [
+        {
+          "text": "ਸਾਰੇ ਜੋਖਮਾਂ ਤੋਂ ਬਚੋ",
+          "id": "avoid_all_risks",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "ਲਾਪਰਵਾਹੀ ਨਾਲ ਕੰਮ ਕਰੋ",
+          "id": "act_recklessly",
+          "emoji": "🤯"
+        },
+        {
+          "text": "ਜੋਖਮ ਭਰੇ ਵਿਵਹਾਰ ਦੀ ਨਕਲ ਕਰੋ",
+          "id": "copy_risky",
+          "emoji": "🔁"
+        },
+        {
+          "text": "ਮੁਲਾਂਕਣ ਕਰੋ ਅਤੇ ਸਮਾਰਟ ਜੋਖਮ ਲਓ",
+          "id": "smart_risks",
+          "emoji": "🎲"
+        }
+      ]
+    }
+  ]
+}

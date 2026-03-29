@@ -1,1 +1,38 @@
-﻿{}
+{
+  "title": "कोडे: बँक वापरते",
+  "subtitleComplete": "पूर्ण!",
+  "subtitleProgress": "आयटम जुळवा ({{matched}}/{{total}} जुळले)",
+  "scoreLabel": "स्कोअर:",
+  "items": [
+    {
+      "id": 1,
+      "name": "बचत खाते",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "Loan",
+      "emoji": "📝"
+    },
+    {
+      "id": 3,
+      "name": "ATM",
+      "emoji": "🏧"
+    },
+    {
+      "id": 4,
+      "name": "Interest",
+      "emoji": "📈"
+    },
+    {
+      "id": 5,
+      "name": "आर्थिक शिक्षण",
+      "emoji": "📚"
+    }
+  ],
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchedLabel": "जुळले:",
+  "selectItem": "एक आयटम निवडा",
+  "matchButton": "Match"
+}

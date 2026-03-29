@@ -1,1 +1,72 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਬਚਾਓ ਜਾਂ ਖਰਚ ਕਰੋ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਕਿਰਿਆਵਾਂ ਨਾਲ ਆਈਟਮਾਂ ਦਾ ਮੇਲ ਕਰੋ ({{matched}}/{{total}} ਮੇਲ ਖਾਂਦਾ)",
+  "itemsTitle": "Items",
+  "actionsTitle": "Actions",
+  "selectedLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "selectItem": "ਇੱਕ ਆਈਟਮ ਚੁਣੋ",
+  "matchButton": "Match",
+  "scoreLabel": "ਸਕੋਰ:",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ:",
+  "resultGreatTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultGreatDescription": "ਤੁਸੀਂ ਕਾਰਵਾਈਆਂ ਨਾਲ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ!",
+  "resultLesson": "ਸਬਕ: ਮਹੱਤਵਪੂਰਨ ਚੀਜ਼ਾਂ ਲਈ ਬੱਚਤ ਕਰਨਾ ਇੱਕ ਸੁਰੱਖਿਅਤ ਭਵਿੱਖ ਬਣਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "resultKeepTitle": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultKeepDescription": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਕੀ ਹਰੇਕ ਆਈਟਮ ਜ਼ਰੂਰੀ ਹੈ ਜਾਂ ਅਖਤਿਆਰੀ!",
+  "items": [
+    {
+      "id": 1,
+      "name": "ਮਨੀ ਬੈਂਕ",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "ਆਇਸ ਕਰੀਮ",
+      "emoji": "🍦"
+    },
+    {
+      "id": 3,
+      "name": "ਨਵਾਂ ਸਾਈਕਲ",
+      "emoji": "🚲"
+    },
+    {
+      "id": 4,
+      "name": "Candy",
+      "emoji": "🍬"
+    },
+    {
+      "id": 5,
+      "name": "ਸਕੂਲ ਦੀਆਂ ਕਿਤਾਬਾਂ",
+      "emoji": "📚"
+    }
+  ],
+  "actions": [
+    {
+      "id": 6,
+      "name": "Save",
+      "emoji": "📥"
+    },
+    {
+      "id": 7,
+      "name": "Spend",
+      "emoji": "📤"
+    },
+    {
+      "id": 8,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 9,
+      "name": "Donate",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "Budget",
+      "emoji": "📋"
+    }
+  ]
+}

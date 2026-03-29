@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "قرض لینے پر کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "🤝",
+  "questions": [
+    {
+      "id": 1,
+      "text": "قرض لینے کا کیا مطلب ہے؟",
+      "options": [
+        {
+          "id": "without",
+          "text": "بغیر پوچھے لینا",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "استعمال کرنا اور لوٹنا",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "steal",
+          "text": "Stealing",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "کتاب ادھار لینے کے بعد، آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "return",
+          "text": "اسے واپس کر دو",
+          "emoji": "↩️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "اسے ہمیشہ کے لیے رکھو",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sell",
+          "text": "اسے بیچ دو",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "بینک سے قرض لینا کیوں ٹھیک ہے؟",
+      "options": [
+        {
+          "id": "repay",
+          "text": "آپ سود کے ساتھ واپس کریں۔",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "یہ مفت پیسہ ہے۔",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "تم نے کبھی ادا نہیں کیا",
+          "emoji": "🙃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "اگر آپ ادھار شدہ اشیاء واپس نہیں کرتے ہیں تو کیا ہوگا؟",
+      "options": [
+        {
+          "id": "more",
+          "text": "آپ کو مزید اشیاء ملتی ہیں۔",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rewards",
+          "text": "آپ کو انعامات ملتے ہیں۔",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "لوگ آپ پر سے اعتماد کھو دیتے ہیں۔",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ایماندارانہ قرض لینا کیوں ضروری ہے؟",
+      "options": [
+        {
+          "id": "toys",
+          "text": "آپ کو مزید کھلونے ملتے ہیں۔",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "یہ دوسروں کے ساتھ اعتماد پیدا کرتا ہے۔",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "یہ قرض لینے کو مزہ دیتا ہے۔",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

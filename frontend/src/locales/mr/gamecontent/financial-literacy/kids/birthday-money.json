@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "वाढदिवस मनी कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्हाला वाढदिवसाचे पैसे म्हणून 100 रुपये मिळतात. काय करणार?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "सर्व खेळणी आणि कँडीजवर खर्च करा",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "हे सर्व आईला सुरक्षित ठेवण्यासाठी द्या",
+          "emoji": "👩",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ते विभाजित करा: काही मनोरंजनासाठी, काही बचत करण्यासाठी",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "'बुद्धीने विभाजित' म्हणजे काय?",
+      "options": [
+        {
+          "id": "gifts",
+          "text": "मित्रांच्या भेटवस्तूंवर अर्धा खर्च करा",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "काही बचतीसाठी तर काही मौजमजेसाठी ठेवा",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "needs",
+          "text": "फक्त गरजा खरेदी करा, इच्छा नाही",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमच्या भेटवस्तूंच्या पैशाचा काही भाग जतन केल्याने तुम्हाला मदत होते...",
+      "options": [
+        {
+          "id": "forget",
+          "text": "पैशाबद्दल विसरून जा",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "आता अधिक खर्च करा",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bigger",
+          "text": "नंतर मोठ्या वस्तू खरेदी करा",
+          "emoji": "🚲",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "आपण नंतर काहीतरी मोठे खरेदी करू इच्छित असल्यास, स्मार्ट काय आहे?",
+      "options": [
+        {
+          "id": "save",
+          "text": "नियमितपणे थोड्या प्रमाणात बचत करा",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "मित्रांकडून कर्ज घ्या",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "पुढच्या वाढदिवसाची वाट पहा",
+          "emoji": "🎂",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "संतुलित निर्णय म्हणजे काय?",
+      "options": [
+        {
+          "id": "all",
+          "text": "आज सर्व खर्च करा",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "enjoy",
+          "text": "ट्रीटचा आनंद घ्या आणि बाकीचे जतन करा",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "none",
+          "text": "सर्व काही जतन करा, मजा नाही",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

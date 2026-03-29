@@ -1,1 +1,165 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్: స్కామ్ హెచ్చరిక",
+  "subtitleComplete": "గేమ్ పూర్తి!",
+  "roundLabel": "రౌండ్ {{current}}/{{total}}",
+  "timeUp": "సమయం ముగిసింది!",
+  "readyTitle": "మీ స్కామ్ హెచ్చరికను పరీక్షించడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "స్కామ్‌లు మరియు మోసాల నుండి సురక్షితంగా ఉండటం గురించి ప్రశ్నలకు సమాధానం ఇవ్వండి.",
+  "readyInfo": "మీకు {{time}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "gameRoundLabel": "రౌండ్:",
+  "gameTimeLabel": "సమయం:",
+  "gameScoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "మీరు బిల్లును స్వీకరించినప్పుడు మీరు ఏమి చేయాలి?",
+      "correctAnswer": "బిల్లును తనిఖీ చేయండి",
+      "options": [
+        {
+          "text": "బిల్లును తనిఖీ చేయండి",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "వెంటనే చెల్లించండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "దీన్ని తొలగించండి",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "అనుమానాస్పద ఆఫర్‌తో మీరు ఏమి చేయాలి?",
+      "correctAnswer": "ఆఫర్‌ని ధృవీకరించండి",
+      "options": [
+        {
+          "text": "వేగంగా అంగీకరించండి",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ఆఫర్‌ని ధృవీకరించండి",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "వెంటనే నమ్మండి",
+          "isCorrect": false,
+          "emoji": "🤝"
+        },
+        {
+          "text": "హెచ్చరికను విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ఏదైనా నిజమని అనిపించినప్పుడు మీరు ఏమి చేయాలి?",
+      "correctAnswer": "ప్రశ్నలు అడగండి",
+      "options": [
+        {
+          "text": "గుడ్డిగా నమ్మండి",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "త్వరగా అంగీకరించండి",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "సందేహాలను పట్టించుకోకండి",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ప్రశ్నలు అడగండి",
+          "isCorrect": true,
+          "emoji": "❓"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "చెల్లింపు చేయడానికి ముందు మీరు ఏమి చేయాలి?",
+      "correctAnswer": "వివరాలను నిర్ధారించండి",
+      "options": [
+        {
+          "text": "ఇప్పుడే చెల్లించండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ధృవీకరణను దాటవేయి",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "వివరాలను నిర్ధారించండి",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "చెక్ లేకుండా నమ్మండి",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "మీరు స్కామ్‌ని కనుగొంటే మీరు ఏమి చేయాలి?",
+      "correctAnswer": "స్కామ్‌ని నివేదించండి",
+      "options": [
+        {
+          "text": "ఏమీ చేయవద్దు",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ఇగ్నోర్ ఇట్",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "నిశ్శబ్దంగా ఉండండి",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "స్కామ్‌ని నివేదించండి",
+          "isCorrect": true,
+          "emoji": "🚨"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "స్కామ్-స్పాటింగ్ ప్రో!",
+    "description": "అద్భుతం! మీరు {{score}}/{{total}} సరైనది! మీరు మోసాలను గుర్తించడంలో అద్భుతమైనవారు!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "మంచి అవగాహన!",
+    "description": "బాగా చేసారు! మీరు {{score}}/{{total}} స్కోర్ చేసారు! స్కామ్ నిపుణుడిగా మారడానికి సాధన కొనసాగించండి!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "సాధన కొనసాగించండి!",
+    "description": "మీరు {{score}}/{{total}} స్కోర్ చేసారు. చిట్కాలను సమీక్షించండి మరియు మీ స్కామ్-స్పాటింగ్ నైపుణ్యాలను మెరుగుపరచడానికి మళ్లీ ప్రయత్నించండి!"
+  }
+}

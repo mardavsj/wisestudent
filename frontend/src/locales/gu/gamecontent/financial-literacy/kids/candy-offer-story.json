@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "કેન્ડી ઓફર સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે દુકાન પર મોટી કેન્ડી ડિસ્કાઉન્ટ જુઓ છો, પરંતુ તમે પહેલેથી જ ભરપૂર અનુભવો છો. શ્રેષ્ઠ પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "b",
+          "text": "કેન્ડી ખરીદો કારણ કે તે સસ્તી છે",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "તમારા સ્વાસ્થ્ય વિશે વિચારો અને કેન્ડી ખરીદવાનું છોડી દો",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "કેન્ડી ખરીદો કારણ કે અન્ય લોકો તેને ખરીદે છે",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "જો તમે વધુ ખરીદો તો સ્ટોર વધારાની કેન્ડી ઓફર કરે છે. નિર્ણય લેતા પહેલા તમારે શું તપાસવું જોઈએ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "તમને ખરેખર તેની જરૂર છે કે નહીં",
+          "emoji": "🤔",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "પેકેટ કેટલું રંગીન લાગે છે",
+          "emoji": "🌈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "કેટલી જાહેરાતો તેનો પ્રચાર કરે છે",
+          "emoji": "📢",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમને કેન્ડી જોઈએ છે, પરંતુ તમે શાળાની સફર માટે પૈસા બચાવવા પણ માંગો છો. સ્માર્ટ નિર્ણય શું છે?",
+      "options": [
+        {
+          "id": "b",
+          "text": "અત્યારે પૈસા ખર્ચો અને પછી ચિંતા કરો",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "અન્ય કોઈને કેન્ડી માટે ચૂકવણી કરવા કહો",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "કોઈ મહત્વપૂર્ણ વસ્તુ માટે પૈસા બચાવો",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે ચેકઆઉટ કાઉન્ટર પાસે કેન્ડી ઑફર જોશો. દુકાનો તેને ત્યાં શા માટે મૂકે છે?",
+      "options": [
+        {
+          "id": "b",
+          "text": "ગ્રાહકોને નાણાં બચાવવામાં મદદ કરવા માટે",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "ઝડપી અને બિનઆયોજિત ખરીદીને પ્રોત્સાહિત કરવા",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "તંદુરસ્ત ખોરાક વિકલ્પો બદલવા માટે",
+          "emoji": "🥗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમે ઓફર દરમિયાન કેન્ડી ન ખરીદવાનું નક્કી કરો છો. તમે કઈ કુશળતાનો અભ્યાસ કરો છો?",
+      "options": [
+        {
+          "id": "a",
+          "text": "સ્વ-નિયંત્રણ અને સ્માર્ટ નિર્ણય લેવાની",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "મસ્તી ચૂકી ગઈ",
+          "emoji": "🎈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "કાયમ માટે બધી વસ્તુઓની અવગણના કરવી",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

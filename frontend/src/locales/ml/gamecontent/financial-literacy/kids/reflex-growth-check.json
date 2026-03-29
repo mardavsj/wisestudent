@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് വളർച്ച പരിശോധന",
+  "subtitlePlaying": "{{current}} / {{total}} ചോദ്യം: നിങ്ങളുടെ വളർച്ചാ റിഫ്ലെക്സുകൾ പരീക്ഷിക്കുക!",
+  "subtitleReady": "നിങ്ങളുടെ വളർച്ച റിഫ്ലെക്സുകൾ പരിശോധിക്കുക!",
+  "readyEmoji": "📈",
+  "readyTitle": "നിങ്ങളുടെ വളർച്ചാ പരിജ്ഞാനം പരിശോധിക്കാൻ തയ്യാറാണോ?",
+  "readyDescription": "ഓരോ ചോദ്യത്തിനും ശരിയായ വളർച്ചാ ഫലം തിരഞ്ഞെടുക്കുക.",
+  "readyInfo": "നിങ്ങൾക്ക് {{seconds}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "ചോദ്യം:",
+  "timeLabel": "സമയം:",
+  "scoreLabel": "സ്കോർ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "നിങ്ങളുടെ പണം പലിശ നേടുമ്പോൾ എന്ത് സംഭവിക്കും?",
+      "correctAnswer": "പലിശ ലഭിച്ചു",
+      "options": [
+        {
+          "text": "പണം നഷ്ടപ്പെട്ടു",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "പലിശ ലഭിച്ചു",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "മാറ്റമില്ല",
+          "isCorrect": false,
+          "emoji": "😐"
+        },
+        {
+          "text": "പണം അപഹരിച്ചു",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "നിങ്ങൾ സമയം ലാഭിക്കുമ്പോൾ എന്ത് സംഭവിക്കും?",
+      "correctAnswer": "സമ്പാദ്യം വളർന്നു",
+      "options": [
+        {
+          "text": "സമ്പാദ്യം വളർന്നു",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "പണം ചെലവഴിച്ചു",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "പണം അപ്രത്യക്ഷമാകുന്നു",
+          "isCorrect": false,
+          "emoji": "👻"
+        },
+        {
+          "text": "ഒന്നും സംഭവിക്കുന്നില്ല",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "നിങ്ങളുടെ നിക്ഷേപം വിജയിക്കുമ്പോൾ എന്ത് സംഭവിക്കും?",
+      "correctAnswer": "ലാഭമുണ്ടാക്കി",
+      "options": [
+        {
+          "text": "നഷ്ടം സംഭവിച്ചു",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "പണം മരവിപ്പിച്ചു",
+          "isCorrect": false,
+          "emoji": "🧊"
+        },
+        {
+          "text": "നിക്ഷേപം പോയി",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "ലാഭമുണ്ടാക്കി",
+          "isCorrect": true,
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "നിക്ഷേപ മൂല്യം കൂടുമ്പോൾ എന്ത് സംഭവിക്കും?",
+      "correctAnswer": "നിക്ഷേപം ഉയർന്നു",
+      "options": [
+        {
+          "text": "നിക്ഷേപം ഉയർന്നു",
+          "isCorrect": true,
+          "emoji": "🚀"
+        },
+        {
+          "text": "പണം കുറഞ്ഞു",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "നിക്ഷേപം മുടങ്ങി",
+          "isCorrect": false,
+          "emoji": "🔒"
+        },
+        {
+          "text": "മൂല്യം പൂജ്യം",
+          "isCorrect": false,
+          "emoji": "0️⃣"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "നിങ്ങൾ ദീർഘകാലത്തേക്ക് വിവേകത്തോടെ നിക്ഷേപിക്കുമ്പോൾ എന്ത് സംഭവിക്കും?",
+      "correctAnswer": "സമ്പത്ത് വർദ്ധിക്കുന്നു",
+      "options": [
+        {
+          "text": "ഫണ്ടുകൾ ചുരുങ്ങുന്നു",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "സമ്പത്ത് അതേപടി നിലനിൽക്കും",
+          "isCorrect": false,
+          "emoji": "➡️"
+        },
+        {
+          "text": "സമ്പത്ത് വർദ്ധിക്കുന്നു",
+          "isCorrect": true,
+          "emoji": "🌳"
+        },
+        {
+          "text": "സമ്പത്ത് അപ്രത്യക്ഷമാകുന്നു",
+          "isCorrect": false,
+          "emoji": "👻"
+        }
+      ]
+    }
+  ]
+}

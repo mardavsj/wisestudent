@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "సినిమా vs బస్ ఛార్జీల కథ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీ వద్ద ₹100 ఉంది. మీరు దానిని ఎలా ఉపయోగించాలి?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "బస్ పాస్ కోసం ఆదా చేసుకోండి",
+          "emoji": "🚌",
+          "isCorrect": true
+        },
+        {
+          "id": "movie",
+          "text": "సినిమాకి ఖర్చు పెట్టండి",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ఇద్దరి మధ్య చీలిపోయింది",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీ వద్ద ₹150 ఉంది. ఉత్తమ ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "చిరుతిండి కొనండి",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "బస్ ఛార్జీల పొదుపుకు జోడించండి",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "ప్రతిదీ సేవ్ చేయండి",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీ వద్ద ₹200 ఉంది. మీరు దేనికి ప్రాధాన్యత ఇవ్వాలి?",
+      "options": [
+        {
+          "id": "movie",
+          "text": "సినిమా రాత్రి",
+          "emoji": "🎥",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ఇద్దరి మధ్య చీలిపోయింది",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "వీక్లీ బస్ పాస్",
+          "emoji": "🎫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీ వద్ద ₹120 ఉంది. తెలివైన నిర్ణయం ఏమిటి?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "బస్ టికెట్",
+          "emoji": "🎟️",
+          "isCorrect": true
+        },
+        {
+          "id": "popcorn",
+          "text": "సినిమాల్లో పాప్‌కార్న్",
+          "emoji": "🍿",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "అన్నింటినీ సేవ్ చేయండి",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీ దగ్గర ₹300 ఉంది. ఉత్తమ ఉపయోగం ఏమిటి?",
+      "options": [
+        {
+          "id": "cinema",
+          "text": "సినిమా టిక్కెట్లు",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "నెలవారీ బస్ పాస్",
+          "emoji": "Ⓜ️",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "ఇద్దరి మధ్య చీలిపోయింది",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "గ్రేట్ జాబ్!",
+    "winMessage": "మీరు {{total}} ప్రశ్నలలో {{score}}ని పొందారు! అవసరమైన ఖర్చులకు ప్రాధాన్యత ఇవ్వడం యొక్క ప్రాముఖ్యతను మీరు అర్థం చేసుకున్నారు!",
+    "coinsEarned": "+{{score}} నాణేలు",
+    "lesson": "పాఠం: వినోదం కంటే రవాణా వంటి ముఖ్యమైన ఖర్చులకు ప్రాధాన్యత ఇవ్వండి!",
+    "loseEmoji": "😔",
+    "loseTitle": "నేర్చుకుంటూ ఉండండి!",
+    "loseMessage": "మీరు {{total}} ప్రశ్నలలో {{score}}ని సరిగ్గా పొందారు. అవసరాల కంటే రవాణా వంటి ముఖ్యమైన ఖర్చులకు ప్రాధాన్యత ఇవ్వాలని గుర్తుంచుకోండి!",
+    "tryAgain": "మళ్లీ ప్రయత్నించండి",
+    "tip": "చిట్కా: వినోద అవసరాల కంటే రవాణా వంటి ముఖ్యమైన ఖర్చులకు ఎల్లప్పుడూ ప్రాధాన్యత ఇవ్వండి."
+  }
+}

@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "లాస్ట్ కాయిన్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు ప్లేగ్రౌండ్ సమీపంలో ఒక మెరిసే నాణెం కనుగొంటారు. సరైన పని ఏమిటి?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "మీ కోసం ఉంచండి",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "ask_teacher",
+          "text": "గురువుగారికి ఇవ్వండి",
+          "emoji": "🧑‍🏫",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "దానిని నేలపై వదిలేయండి",
+          "emoji": "🍂",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు లైబ్రరీలో ₹15 కనుగొంటారు. చుట్టూ ఎవరూ లేరు. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "return",
+          "text": "లైబ్రేరియన్‌కి ఇవ్వండి",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "మీ సంచిలో దాచుకోండి",
+          "emoji": "🎒",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "వెంటనే స్నాక్స్ కొనండి",
+          "emoji": "🍿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ఒక స్నేహితుడు ₹20ని కనుగొన్నాడు మరియు దానిని ఉంచాలనుకుంటున్నాడు. మీరు ఏమి సూచిస్తారు?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "నిశ్శబ్దంగా ఉంచండి",
+          "emoji": "😶",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ఆటలకు ఖర్చు పెట్టండి",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "కలిసి యజమానిని కనుగొనడానికి ప్రయత్నించండి",
+          "emoji": "🕵️‍♂️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు దుకాణంలో పొరపాటున అదనపు మార్పును స్వీకరిస్తారు. నిజాయితీ ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "అదనపు డబ్బు ఉంచండి",
+          "emoji": "🤑",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "దానిని దుకాణదారునికి తిరిగి ఇవ్వండి",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "స్నేహితుడికి ఇవ్వండి",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "దొరికిన డబ్బుతో నిజాయితీగా ఎందుకు ప్రవర్తించాలి?",
+      "options": [
+        {
+          "id": "respect",
+          "text": "ఇది నమ్మకాన్ని పెంచుతుంది మరియు బాధ్యతను చూపుతుంది",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "buy_more",
+          "text": "మీరు మరిన్ని వస్తువులను కొనుగోలు చేయవచ్చు",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "ఇది తక్షణ అదృష్టం తెస్తుంది",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "परीक्षेच्या तयारीची कथा",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुमच्याकडे ₹200 शिल्लक आहेत. ट्यूशनसाठी पैसे द्या किंवा स्नॅक्स खरेदी करा?",
+      "options": [
+        {
+          "id": "tuition",
+          "text": "शिकवणी द्या",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "स्नॅक्स खरेदी करा",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "दोघांमध्ये फूट पडली",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमच्याकडे ₹300 आहेत. परीक्षेचे शुल्क की चित्रपटाचे तिकीट?",
+      "options": [
+        {
+          "id": "movie",
+          "text": "चित्रपटाचे तिकीट",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "fees",
+          "text": "परीक्षा शुल्क भरा",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "सर्व काही जतन करा",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमच्याकडे ₹400 आहेत. अभ्यासाचे साहित्य की नवीन कपडे?",
+      "options": [
+        {
+          "id": "clothes",
+          "text": "कपडे खरेदी करा",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "दोघांमध्ये फूट पडली",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "study",
+          "text": "अभ्यासाचे साहित्य खरेदी करा",
+          "emoji": "📖",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुमच्याकडे ₹250 आहेत. शिकवणी किंवा पार्टी स्नॅक्स?",
+      "options": [
+        {
+          "id": "tutoring",
+          "text": "शिकवणीसाठी पैसे द्या",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "पार्टी स्नॅक्स",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "सर्व काही जतन करा",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुमच्याकडे ₹500 आहेत. परीक्षेची तयारी अभ्यासक्रम की गेमिंग कन्सोल?",
+      "options": [
+        {
+          "id": "console",
+          "text": "गेमिंग कन्सोल",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "course",
+          "text": "परीक्षेची तयारी अभ्यासक्रम",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "दोघांमध्ये फूट पडली",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ग्रेट जॉब!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत! शैक्षणिक खर्चाला प्राधान्य देण्याचे महत्त्व तुम्हाला समजले आहे!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: नेहमी ट्यूशन, परीक्षा फी, आणि अभ्यास साहित्य यांसारख्या शैक्षणिक खर्चांना स्नॅक्स आणि मनोरंजन यांसारख्या गरजांना प्राधान्य द्या!",
+    "loseEmoji": "😔",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत. गरजांपेक्षा शिक्षणाच्या खर्चाला प्राधान्य देण्याचे लक्षात ठेवा!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: शैक्षणिक खर्च (शिक्षण, परीक्षा शुल्क, अभ्यास साहित्य) ही तुमच्या भविष्यातील गुंतवणूक आहे आणि ती गरजेपुर्वी आली पाहिजे."
+  }
+}

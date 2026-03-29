@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "कोडे: बजेट आयटम",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "श्रेण्यांसह आयटम जुळवा ({{matched}}/{{total}} जुळले)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "निवडले: {{name}}",
+  "selectItem": "एक आयटम निवडा",
+  "matchButton": "Match",
+  "scoreLabel": "स्कोअर:",
+  "matchedLabel": "जुळले:",
+  "resultGreatEmoji": "🏆",
+  "resultGreatTitle": "ग्रेट जॉब!",
+  "resultGreatDescription": "तुम्ही श्रेण्यांसह {{total}} आयटमपैकी {{score}} बरोबर जुळले!",
+  "coinsLabel": "Coins",
+  "resultLesson": "धडा: गरजा विरुद्ध इच्छा समजून घेणे बजेटमध्ये मदत करते!",
+  "resultKeepEmoji": "🧩",
+  "resultKeepTitle": "सराव करत राहा!",
+  "resultKeepDescription": "तुम्ही {{total}} पैकी {{score}} आयटम बरोबर जुळले.",
+  "resultTip": "टीप: जगण्यासाठी गरजा आवश्यक आहेत, इच्छा असणे छान आहे!",
+  "items": [
+    {
+      "id": 1,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 2,
+      "name": "वाढदिवसाची भेट",
+      "emoji": "🎁"
+    },
+    {
+      "id": 3,
+      "name": "शालेय साहित्य",
+      "emoji": "✏️"
+    },
+    {
+      "id": 4,
+      "name": "व्हिडिओ गेम कन्सोल",
+      "emoji": "🎮"
+    },
+    {
+      "id": 5,
+      "name": "अतिरिक्त स्नॅक्स",
+      "emoji": "🍿"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Essential",
+      "emoji": "✅",
+      "description": "दैनंदिन जीवनासाठी असणे आवश्यक आहे"
+    },
+    {
+      "id": 7,
+      "name": "Non-Essential",
+      "emoji": "➖",
+      "description": "पर्यायी, आवश्यक नाही"
+    },
+    {
+      "id": 8,
+      "name": "शाळेसाठी आवश्यक",
+      "emoji": "🎒",
+      "description": "शिकण्यासाठी आवश्यक आहे"
+    },
+    {
+      "id": 9,
+      "name": "Luxury",
+      "emoji": "💎",
+      "description": "छान, महाग"
+    },
+    {
+      "id": 10,
+      "name": "पर्यायी उपचार",
+      "emoji": "🍭",
+      "description": "लहान मजेदार खर्च"
+    }
+  ]
+}

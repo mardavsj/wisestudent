@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "બેજ: સમજદાર પસંદગીકાર",
+  "subtitleComplete": "બેજ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પડકાર",
+  "challengeLabel": "પડકાર {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "શાળા પુરવઠો મૂંઝવણ",
+      "question": "તમારે શાળાના પુરવઠાની જરૂર છે. શાણપણની પસંદગી કઈ છે?",
+      "options": [
+        {
+          "id": "designer",
+          "text": "ડિઝાઇનર બેકપેક અને ટ્રેન્ડી એસેસરીઝ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "બંને - તમે ઇચ્છો તે બધું ખરીદો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "કંઈપણ ખરીદવાનું છોડી દો",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "basic",
+          "text": "મૂળભૂત શાળા પુરવઠો (પેન, નોટબુક)",
+          "emoji": "📝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ફોન અપગ્રેડ દુવિધા",
+      "question": "તમારો ફોન જૂનો અને ધીમો છે. શાણા પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "wants-first",
+          "text": "જરૂરિયાતો પહેલા માંગ ખરીદો",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "basic-phone",
+          "text": "કૉલ્સ અને સંદેશા માટે મૂળભૂત ફોન",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "latest",
+          "text": "તમામ સુવિધાઓ સાથે નવીનતમ સ્માર્ટફોન",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "no-phone",
+          "text": "કોઈપણ ફોન ખરીદશો નહીં",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ફિટનેસ દ્વિધા",
+      "question": "તમે ફિટ રહેવા માંગો છો. શાણપણની પસંદગી કઈ છે?",
+      "options": [
+        {
+          "id": "gym",
+          "text": "નિયમિત કસરત માટે જિમ સભ્યપદ",
+          "emoji": "💪",
+          "isCorrect": true
+        },
+        {
+          "id": "tracker",
+          "text": "મોંઘા ફિટનેસ ટ્રેકર અને સ્માર્ટવોચ",
+          "emoji": "⌚",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "જિમ અને ટ્રેકર બંને",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "skip-fitness",
+          "text": "ફિટનેસને સંપૂર્ણપણે છોડી દો",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "અભ્યાસ સેટઅપ દ્વિધા",
+      "question": "તમે પરીક્ષાની તૈયારી કરી રહ્યા છો. શાણા પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "premium-setup",
+          "text": "અવાજ-રદ કરનાર હેડફોન અને પ્રીમિયમ ડેસ્ક સેટઅપ",
+          "emoji": "🎧",
+          "isCorrect": false
+        },
+        {
+          "id": "buy-premium",
+          "text": "બધું પ્રીમિયમ ખરીદો",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "quiet-study",
+          "text": "શાંત અભ્યાસ જગ્યા અને પાઠ્યપુસ્તકો",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "no-materials",
+          "text": "કોઈપણ સામગ્રી વિના અભ્યાસ કરો",
+          "emoji": "📖",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "કપડાંની મૂંઝવણ",
+      "question": "તમારે શાળા માટે કપડાંની જરૂર છે. શાણપણની પસંદગી કઈ છે?",
+      "options": [
+        {
+          "id": "designer-clothes",
+          "text": "ડિઝાઇનર કપડાં અને ટ્રેન્ડી ફેશન વસ્તુઓ",
+          "emoji": "👔",
+          "isCorrect": false
+        },
+        {
+          "id": "only-designer",
+          "text": "માત્ર ડિઝાઇનર વસ્તુઓ ખરીદો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "no-clothes",
+          "text": "કોઈપણ કપડાં ખરીદશો નહીં",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "essential",
+          "text": "શાળા અને હવામાન માટે આવશ્યક કપડાં",
+          "emoji": "👕",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "વાઈસ ચુઝર બેજ મેળવ્યો!",
+    "winMessage": "તમને {{total}}માંથી {{score}} પડકારો સાચા મળ્યા છે! તમે સાચા વાઈસ ચુઝર છો!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: સમજદાર પસંદગીઓ જરૂરિયાતો કરતાં જરૂરિયાતોને પ્રાધાન્ય આપે છે, તમને નાણાકીય સુખાકારી પ્રાપ્ત કરવામાં અને સુરક્ષિત ભવિષ્ય બનાવવામાં મદદ કરે છે!",
+    "loseEmoji": "💪",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}}માંથી {{score}} પડકારો સાચા મળ્યા. પ્રેક્ટિસ મુજબની પસંદગી સાથે સંપૂર્ણ બનાવે છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટીપ: સમજદાર નાણાકીય પસંદગીઓ કરવા માટે જરૂરિયાતો (આવશ્યક વસ્તુઓ) ને જરૂરિયાતો (લક્ઝરી વસ્તુઓ) પર પ્રાથમિકતા આપવાનું યાદ રાખો!"
+  }
+}

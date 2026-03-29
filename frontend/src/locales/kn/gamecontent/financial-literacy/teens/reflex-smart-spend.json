@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಸ್ಮಾರ್ಟ್ ಖರ್ಚು",
+  "subtitlePlaying": "ಸುತ್ತು {{current}}/{{total}}: ನಿಮ್ಮ ಖರ್ಚು ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಖರ್ಚು ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyHeader": "ನಿಮ್ಮ ಖರ್ಚು ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಸ್ಮಾರ್ಟ್ ಖರ್ಚು ಆಯ್ಕೆಗಳ ಕುರಿತು ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ.",
+  "readyTip": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{time}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಸುತ್ತು:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "greatJob": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "finalScore": "ನೀವು {{total}} ರಲ್ಲಿ {{score}} ಗಳಿಸಿದ್ದೀರಿ!",
+  "growthSkills": "ನೀವು ಬಲವಾದ ಆರ್ಥಿಕ ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳುವ ಕೌಶಲ್ಯಗಳನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸುತ್ತಿದ್ದೀರಿ!",
+  "playAgain": "ಮತ್ತೆ ಪ್ಲೇ ಮಾಡಿ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಸ್ಮಾರ್ಟೆಸ್ಟ್ ಖರ್ಚು ಆಯ್ಕೆ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "pay_rent",
+          "text": "ಬಾಡಿಗೆ ಪಾವತಿಸಿ",
+          "emoji": "🏠"
+        },
+        {
+          "id": "luxury_party",
+          "text": "ಐಷಾರಾಮಿ ಪಾರ್ಟಿ",
+          "emoji": "🎉"
+        },
+        {
+          "id": "designer_shoes",
+          "text": "ಡಿಸೈನರ್ ಶೂಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "👟"
+        },
+        {
+          "id": "impulse_purchase",
+          "text": "ಇಂಪಲ್ಸ್ ಖರೀದಿ",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಯಾವ ಖರ್ಚು ಮೊದಲು ಬರಬೇಕು?",
+      "options": [
+        {
+          "id": "new_gadgets",
+          "text": "ಹೊಸ ಗ್ಯಾಜೆಟ್‌ಗಳು",
+          "emoji": "📱"
+        },
+        {
+          "id": "buy_groceries",
+          "text": "ದಿನಸಿ ಖರೀದಿಸಿ",
+          "emoji": "🛒"
+        },
+        {
+          "id": "expensive_restaurant",
+          "text": "ದುಬಾರಿ ರೆಸ್ಟೋರೆಂಟ್",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "entertainment",
+          "text": "Entertainment",
+          "emoji": "🎬"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ಹೆಚ್ಚುವರಿ ಹಣದೊಂದಿಗೆ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "movie_night",
+          "text": "ಚಲನಚಿತ್ರ ರಾತ್ರಿ",
+          "emoji": "🎬"
+        },
+        {
+          "id": "buy_video_games",
+          "text": "ವೀಡಿಯೊ ಗೇಮ್‌ಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🎮"
+        },
+        {
+          "id": "save_money",
+          "text": "ಹಣವನ್ನು ಉಳಿಸಿ",
+          "emoji": "💰"
+        },
+        {
+          "id": "shopping_spree",
+          "text": "ಶಾಪಿಂಗ್ ಸ್ಪ್ರೀ",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಆದ್ಯತೆಯ ವೆಚ್ಚ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "pay_bills",
+          "text": "ಬಿಲ್‌ಗಳನ್ನು ಪಾವತಿಸಿ",
+          "emoji": "📄"
+        },
+        {
+          "id": "designer_clothes",
+          "text": "ಡಿಸೈನರ್ ಬಟ್ಟೆ",
+          "emoji": "👔"
+        },
+        {
+          "id": "weekend_trip",
+          "text": "ವಾರಾಂತ್ಯದ ಪ್ರವಾಸ",
+          "emoji": "✈️"
+        },
+        {
+          "id": "gourmet_dinner",
+          "text": "ಗೌರ್ಮೆಟ್ ಡಿನ್ನರ್",
+          "emoji": "🍷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ದೀರ್ಘಾವಧಿಯ ಆರ್ಥಿಕ ಭದ್ರತೆಯನ್ನು ಯಾವುದು ನಿರ್ಮಿಸುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "concert_ticket",
+          "text": "ಕನ್ಸರ್ಟ್ ಟಿಕೆಟ್",
+          "emoji": "🎫"
+        },
+        {
+          "id": "fund_education",
+          "text": "ನಿಧಿ ಶಿಕ್ಷಣ",
+          "emoji": "📚"
+        },
+        {
+          "id": "buy_jewelry",
+          "text": "ಆಭರಣಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "💍"
+        },
+        {
+          "id": "luxury_vacation",
+          "text": "ಐಷಾರಾಮಿ ರಜೆ",
+          "emoji": "🏖️"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,34 @@
-﻿{}
+{
+  "title": "कर्ज घेण्याचे जर्नल",
+  "subtitleComplete": "जर्नल पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न: जबाबदार कर्ज घेण्यावर विचार करा!",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "📝",
+  "minLengthLabel": "किमान {{count}} वर्ण लिहा",
+  "placeholder": "तुमची जर्नल एंट्री इथे लिहा...",
+  "characterCount": "{{count}}/{{required}} वर्ण",
+  "submitContinueButton": "सबमिट करा आणि सुरू ठेवा",
+  "submitFinalButton": "अंतिम एंट्री सबमिट करा",
+  "stages": [
+    {
+      "question": "लिहा: \"मी एक गोष्ट उधार घेतली आणि परत केली ती ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"मी जे कर्ज घेतले ते परत केल्यावर मला ___ वाटले.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"जबाबदारीने कर्ज घेणे म्हणजे ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"मी उधार घेतलेले पैसे ___ पर्यंत परत करण्याची खात्री केली.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"कर्ज घेण्याने मला ___ पैशाबद्दल शिकवले.\"",
+      "minLength": 10
+    }
+  ]
+}

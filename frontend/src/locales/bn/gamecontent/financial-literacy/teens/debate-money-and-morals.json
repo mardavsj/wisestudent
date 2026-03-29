@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "বিতর্ক: অর্থ ও নৈতিকতা",
+  "subtitleComplete": "বিতর্ক সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} রাউন্ড",
+  "roundLabel": "রাউন্ড {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "টাকা কি চরিত্র পরীক্ষা করে?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "হ্যাঁ, নৈতিকতা বেশি গুরুত্বপূর্ণ",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "না, টাকা কোন ব্যাপার না",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "হয়তো, নির্ভর করে",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "আপনার কি অর্থের জন্য নৈতিকতার সাথে আপস করা উচিত?",
+      "options": [
+        {
+          "id": "sometimes",
+          "text": "মাঝে মাঝে ঠিক আছে",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "কখনো আপস করবেন না",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "অর্থ অগ্রাধিকার",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "আরও গুরুত্বপূর্ণ কি: সম্পদ বা সততা?",
+      "options": [
+        {
+          "id": "wealth",
+          "text": "Wealth",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "উভয়ই সমানভাবে",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "integrity",
+          "text": "Integrity",
+          "emoji": "💎",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "আপনি ধনী এবং নৈতিক হতে পারেন?",
+      "options": [
+        {
+          "id": "yes2",
+          "text": "হ্যাঁ, একেবারে",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "id": "no2",
+          "text": "না, অসম্ভব",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "rarely",
+          "text": "খুব কমই সম্ভব",
+          "emoji": "😕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "কি স্থায়ী সাফল্য গড়ে তোলে?",
+      "options": [
+        {
+          "id": "shortcuts",
+          "text": "শর্টকাট এবং কৌশল",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "ethics",
+          "text": "নৈতিকতা এবং সততা",
+          "emoji": "🏆",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "শুধু ভাগ্য",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

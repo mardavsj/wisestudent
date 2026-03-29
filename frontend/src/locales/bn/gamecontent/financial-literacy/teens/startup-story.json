@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "স্টার্টআপ স্টোরি",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "perfectScoreTitle": "গল্প সম্পূর্ণ!",
+  "perfectScoreMsg": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন! আপনি স্টার্টআপ বিনিয়োগ বোঝেন!",
+  "coinsLabel": "+{{count}} কয়েন",
+  "lessonLabel": "পাঠ: স্টার্টআপ বিনিয়োগগুলি যখন ভালভাবে গবেষণা এবং পরিকল্পিত হয় তখন স্মার্ট হতে পারে, তবে সবসময় বৈচিত্র্য আনুন এবং ঝুঁকিগুলি বুঝতে পারেন!",
+  "keepLearningTitle": "শিখতে থাকুন!",
+  "lowScoreMsg": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন। মনে রাখবেন, স্টার্টআপ বিনিয়োগের জন্য গবেষণা, পরিকল্পনা এবং বৈচিত্র্য প্রয়োজন!",
+  "tryAgain": "আবার চেষ্টা করুন",
+  "tipLabel": "টিপ: আপনি যখন গবেষণা করেন, পরিকল্পনা করেন এবং বৈচিত্র্য আনেন তখন স্টার্টআপ বিনিয়োগগুলি স্মার্ট হতে পারে। ₹100→₹150-এর মতো 50% রিটার্ন ভাল!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "বন্ধু একটি লেমনেড স্ট্যান্ডে ₹100 বিনিয়োগ করে। ₹150 উপার্জন করে। স্মার্ট?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "হ্যাঁ, ভাল রিটার্ন",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "না, খুব ঝুঁকিপূর্ণ",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "হয়তো, নির্ভর করে",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "কি একটি স্টার্টআপ বিনিয়োগ স্মার্ট করে তোলে?",
+      "options": [
+        {
+          "id": "research",
+          "text": "গবেষণা এবং পরিকল্পনা",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "বিশুদ্ধ ভাগ্য",
+          "emoji": "🍀",
+          "isCorrect": false
+        },
+        {
+          "id": "quick",
+          "text": "দ্রুত সিদ্ধান্ত",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "আপনার কি একটি স্টার্টআপে আপনার সমস্ত অর্থ বিনিয়োগ করা উচিত?",
+      "options": [
+        {
+          "id": "all",
+          "text": "হ্যাঁ, সব ভিতরে যান",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "না, বৈচিত্র্য আনুন",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "স্টার্টআপ এড়িয়ে চলুন",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "স্টার্টআপ বিনিয়োগে একটি ভাল রিটার্ন কি?",
+      "options": [
+        {
+          "id": "high",
+          "text": "উচ্চ রিটার্ন সম্ভাবনা",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "guaranteed",
+          "text": "ফেরার নিশ্চয়তা",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "low",
+          "text": "কম রিটার্ন শুধুমাত্র",
+          "emoji": "📉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "কখন একটি স্টার্টআপে বিনিয়োগ করা একটি ভাল ধারণা?",
+      "options": [
+        {
+          "id": "never",
+          "text": "Never",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "text": "যখন সুপরিকল্পিত",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "Always",
+          "emoji": "🙂",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

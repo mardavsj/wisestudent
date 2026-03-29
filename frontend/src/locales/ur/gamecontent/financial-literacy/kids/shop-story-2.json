@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "دکان کی کہانی 2",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کو دکان میں دو قلم نظر آتے ہیں۔ ایک کی قیمت 50 روپے اور دوسرے کی قیمت 15 روپے ہے۔ دونوں کام ایک جیسے ہیں۔ آپ کو کون سا خریدنا چاہئے؟",
+      "options": [
+        {
+          "id": "costly",
+          "text": "مہنگا قلم",
+          "emoji": "🖊️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "text": "پہلے جائزے چیک کریں۔",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "سستی قلم",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کے پاس کپڑوں پر خرچ کرنے کے لیے 100 روپے ہیں۔ آپ کو اپنی پسند کی قمیض 80 روپے میں ملتی ہے اور اسی طرح کی دوسری 30 روپے میں۔ کیا سمارٹ ہے؟",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "سستی شرٹ خریدیں۔",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "مہنگی قمیض خریدیں۔",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "فروخت کا انتظار کریں۔",
+          "emoji": "🏷️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ پارٹی کے لیے نمکین خرید رہے ہیں۔ برانڈ اے کی قیمت 200 روپے اور برانڈ بی کی قیمت 120 روپے ہے۔ دونوں کا ذائقہ ایک جیسا ہے۔ کونسا؟",
+      "options": [
+        {
+          "id": "costly",
+          "text": "برانڈ اے خریدیں۔",
+          "emoji": "📦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "برانڈ B خریدیں۔",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mix",
+          "text": "ہر ایک میں سے کچھ خریدیں۔",
+          "emoji": "➗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کو اسکول کے لیے ایک بیگ کی ضرورت ہے۔ ایک کی قیمت 800 روپے اور دوسرے کی قیمت 400 روپے ہے۔ دونوں اچھے معیار کے ہیں۔ عقلمندی کیا ہے؟",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "400 روپے کا بیگ خریدیں۔",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "800 روپے کا بیگ خریدیں۔",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ابھی کے لیے قرض لیں۔",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ گروسری خرید رہے ہیں۔ نامیاتی سبزیوں کی قیمت 300 روپے اور عام سبزیوں کی قیمت 150 روپے ہے۔ دونوں غذائیت سے بھرپور ہیں۔ کونسا؟",
+      "options": [
+        {
+          "id": "costly",
+          "text": "نامیاتی سبزیاں خریدیں۔",
+          "emoji": "🥦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "selective",
+          "text": "دونوں اقسام کو مکس کریں۔",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "باقاعدہ سبزیاں خریدیں۔",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

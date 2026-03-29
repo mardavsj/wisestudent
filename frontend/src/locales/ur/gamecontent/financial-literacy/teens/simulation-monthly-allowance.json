@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "نقلی: ماہانہ الاؤنس",
+  "subtitleComplete": "تخروپن مکمل!",
+  "subtitleProgress": "منظر نامہ {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "amountLabel": "رقم:",
+  "perfectScoreTitle": "شاندار بجٹنگ!",
+  "perfectScoreMsg": "آپ نے {{total}} میں سے {{score}} منظرنامے درست کئے ہیں! آپ متوازن بجٹ سازی کے فن میں مہارت حاصل کر رہے ہیں!",
+  "lessonLabel": "سبق: ایک متوازن بجٹ ضروریات (کھانے، ٹرانسپورٹ) کو ترجیح دیتا ہے جبکہ مستقبل کے لیے بچت اور کچھ تفریح ​​کی اجازت دیتا ہے!",
+  "keepLearningTitle": "سیکھتے رہیں!",
+  "lowScoreMsg": "آپ کو {{total}} میں سے {{score}} منظرنامے درست ہیں۔ متوازن بجٹ کا فارمولہ یاد رکھیں: 40% خوراک، 30% ٹرانسپورٹ، 20% بچت، 10% تفریح!",
+  "tipLabel": "مشورہ: پہلے ضروری ضروریات کو پورا کرنے کے لیے رقم مختص کریں، پھر بچت کریں، اور آخر میں کچھ تفریحی رقم کی اجازت دیں۔",
+  "tryAgain": "دوبارہ کوشش کریں۔",
+  "coinsLabel": "+{{count}} سکے",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "ماہانہ الاؤنس کے انتخاب",
+      "description": "آپ کو ₹1000 بطور الاؤنس ملتا ہے۔ آپ اسے دانشمندی سے کیسے استعمال کر سکتے ہیں؟",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "splurge",
+          "text": "صرف رجحان ساز اشیاء خریدیں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "budget-smart",
+          "text": "لوازم، تفریح، اور بچت کے لیے ایک طرف رکھیں",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "تمام نقدی گھر میں چھپا کر رکھیں",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "random-spending",
+          "text": "بغیر سوچے سمجھے خرچ کریں۔",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "پارٹ ٹائم ملازمت کی آمدنی",
+      "description": "آپ ویک اینڈ جاب سے ₹1500 کماتے ہیں۔ ایک سمارٹ نقطہ نظر کیا ہے؟",
+      "amount": 1500,
+      "options": [
+        {
+          "id": "plan-smart",
+          "text": "اہداف، ضروریات اور تفریح ​​کے لیے تقسیم کریں۔",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury-only",
+          "text": "صرف گیجٹ یا کپڑوں پر خرچ کریں۔",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "بھول جاؤ یہ موجود ہے۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "invest-all",
+          "text": "تحقیق کے بغیر سرمایہ کاری کریں۔",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "اسکالرشپ بونس",
+      "description": "آپ کو ₹2000 کی اسکالرشپ ملتی ہے۔ اسے استعمال کرنے کا بہترین طریقہ کیا ہے؟",
+      "amount": 2000,
+      "options": [
+        {
+          "id": "trip",
+          "text": "لگژری ٹرپ پر جائیں۔",
+          "emoji": "✈️",
+          "isCorrect": false
+        },
+        {
+          "id": "hide-money",
+          "text": "اسے گھر میں چھپائیں۔",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "donate",
+          "text": "یہ سب فوری طور پر عطیہ کریں۔",
+          "emoji": "💝",
+          "isCorrect": false
+        },
+        {
+          "id": "self-invest",
+          "text": "سیکھنے کے لیے کتابیں، کورسز یا ٹولز خریدیں۔",
+          "emoji": "🎓",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "سالگرہ کے تحفے کی رقم",
+      "description": "آپ کو ₹800 سالگرہ کی رقم کے طور پر ملتے ہیں۔ سوچ سمجھ کر انتخاب کیا ہے؟",
+      "amount": 800,
+      "options": [
+        {
+          "id": "impulse-buy",
+          "text": "صرف فوری تفریح ​​پر خرچ کریں۔",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "جو بھی مزہ آتا ہے خریدیں۔",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "plan-future",
+          "text": "کسی بڑے مقصد یا ضرورت کے لیے بچت کریں۔",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "share-friends",
+          "text": "یہ سب دوستوں کو دیں۔",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "سمر جاب ونڈ فال",
+      "description": "آپ سمر جاب سے ₹2500 کماتے ہیں۔ زیادہ سے زیادہ فوائد کیسے حاصل کیے جائیں؟",
+      "amount": 2500,
+      "options": [
+        {
+          "id": "balanced-plan",
+          "text": "بچت، سیکھنے، اور چھوٹے علاج کے لیے تقسیم کریں۔",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "debt-payment",
+          "text": "قرض ادا کرنے کے لیے جلدی کریں جسے آپ پوری طرح سے نہیں سمجھتے",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse-buying",
+          "text": "تسلسل کی خریداری پر خرچ کریں۔",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save-all",
+          "text": "بغیر کسی منصوبے کے سب کو بچائیں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਆਈਸ ਕਰੀਮ ਬਨਾਮ ਸਕੂਲ ਬੁੱਕ ਸਟੋਰੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "📘",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ਸਕੂਲ ਖਤਮ ਕਰਦੇ ਹੋ ਅਤੇ ਭੁੱਖ ਮਹਿਸੂਸ ਕਰਦੇ ਹੋ, ਪਰ ਤੁਹਾਨੂੰ ਇੱਕ ਵਰਕਬੁੱਕ ਦੀ ਵੀ ਲੋੜ ਹੁੰਦੀ ਹੈ। ਸਭ ਤੋਂ ਵਧੀਆ ਚੋਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "ਹੁਣ ਲਈ ਆਈਸ ਕਰੀਮ ਖਰੀਦੋ",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "ਵਰਕਬੁੱਕ ਖਰੀਦੋ",
+          "emoji": "📘",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "ਕੁਝ ਨਾ ਖਰੀਦੋ ਅਤੇ ਛੱਡੋ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ਅੱਜ ਆਈਸਕ੍ਰੀਮ ਖਾਓ ਅਤੇ ਕੱਲ੍ਹ ਨੂੰ ਕਿਤਾਬ ਲਈ ਪੈਸੇ ਨਹੀਂ ਬਚੇ। ਤੁਸੀਂ ਕੀ ਸਿੱਖਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "lesson",
+          "text": "ਪੈਸੇ ਦੀ ਯੋਜਨਾ ਬਣਾਉਣਾ ਮਹੱਤਵਪੂਰਨ ਹੈ",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ਆਈਸ ਕਰੀਮ ਹਮੇਸ਼ਾ ਵਧੀਆ ਹੁੰਦੀ ਹੈ",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ਅਗਲੀ ਵਾਰ ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਇੱਕ ਕਿਤਾਬ ਇਮਤਿਹਾਨਾਂ ਵਿੱਚ ਮਦਦ ਕਰਦੀ ਹੈ, ਅਤੇ ਆਈਸਕ੍ਰੀਮ ਜਲਦੀ ਪਿਘਲ ਜਾਂਦੀ ਹੈ। ਕੀ ਹੁਣ ਰਹਿੰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "ਆਈਸ ਕਰੀਮ ਦੀ ਖੁਸ਼ੀ",
+          "emoji": "🍨",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "ਇੱਕ ਕਿਤਾਬ ਤੋਂ ਗਿਆਨ",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "both",
+          "text": "ਦੋਵੇਂ ਇੱਕੋ ਜਿਹੇ ਰਹਿੰਦੇ ਹਨ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਅੱਜ ਇੱਕ ਕਿਤਾਬ ਖਰੀਦਣ ਦਾ ਫੈਸਲਾ ਕਰੋ ਅਤੇ ਕਿਸੇ ਹੋਰ ਦਿਨ ਆਈਸਕ੍ਰੀਮ ਦਾ ਆਨੰਦ ਲਓ। ਤੁਸੀਂ ਕਿਹੜਾ ਹੁਨਰ ਦਿਖਾਉਂਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "luck",
+          "text": "ਖੁਸ਼ਕਿਸਮਤੀ",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "speed",
+          "text": "ਤੇਜ਼ੀ ਨਾਲ ਫੈਸਲਾ ਲੈਣਾ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "patience",
+          "text": "Self-control",
+          "emoji": "🧘",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਜਦੋਂ ਤੁਸੀਂ ਕੋਈ ਕਿਤਾਬ ਚੁਣਦੇ ਹੋ ਤਾਂ ਤੁਹਾਡੇ ਮਾਪੇ ਮੁਸਕਰਾਉਂਦੇ ਹਨ। ਉਹ ਖੁਸ਼ ਕਿਉਂ ਮਹਿਸੂਸ ਕਰਦੇ ਹਨ?",
+      "options": [
+        {
+          "id": "cheap",
+          "text": "ਕਿਤਾਬਾਂ ਸਸਤੀਆਂ ਹਨ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "ਤੁਸੀਂ ਇੱਕ ਜ਼ਿੰਮੇਵਾਰ ਚੋਣ ਕਰਦੇ ਹੋ",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "ਕਿਤਾਬਾਂ ਵਰਗੇ ਦੋਸਤ",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

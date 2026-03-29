@@ -1,1 +1,159 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് നീഡ് vs വാണ്ട്",
+  "subtitlePlaying": "റൗണ്ട് {{current}}/{{total}}: ആവശ്യങ്ങളും ആവശ്യങ്ങളും സംബന്ധിച്ച നിങ്ങളുടെ അറിവ് പരിശോധിക്കുക!",
+  "subtitleReady": "ആവശ്യങ്ങളും ആവശ്യങ്ങളും സംബന്ധിച്ച നിങ്ങളുടെ അറിവ് പരിശോധിക്കുക!",
+  "readyEmoji": "📋",
+  "readyTitle": "നിങ്ങളുടെ ആവശ്യങ്ങൾ vs അറിവ് വേണോ എന്ന് പരിശോധിക്കാൻ തയ്യാറാണോ?",
+  "readyDescription": "ആവശ്യങ്ങളും ആഗ്രഹങ്ങളും തമ്മിലുള്ള വ്യത്യാസത്തെക്കുറിച്ചുള്ള ചോദ്യങ്ങൾക്ക് ഉത്തരം നൽകുക.",
+  "readyInfo": "നിങ്ങൾക്ക് {{seconds}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "റൗണ്ട്:",
+  "timeLabel": "സമയം:",
+  "scoreLabel": "സ്കോർ:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "മികച്ച ജോലി!",
+  "resultGreatDescription": "നിങ്ങൾക്ക് {{total}} ചോദ്യങ്ങളിൽ {{score}} ലഭിച്ചു!",
+  "resultGreatLesson": "പാഠം: നിലനിൽപ്പിനും പഠനത്തിനും ആവശ്യങ്ങൾ അത്യന്താപേക്ഷിതമാണ്, ആഗ്രഹങ്ങൾ നമുക്ക് ലഭിക്കാൻ ആഗ്രഹിക്കുന്നതും എന്നാൽ ആവശ്യമില്ലാത്തതുമായ കാര്യങ്ങളാണ്!",
+  "resultKeepEmoji": "😔",
+  "resultKeepTitle": "പഠിക്കുന്നത് തുടരുക!",
+  "resultKeepDescription": "നിങ്ങൾക്ക് {{total}} ചോദ്യങ്ങളിൽ {{score}} ലഭിച്ചു. ഓർമ്മിക്കുക, ഭക്ഷണം, വസ്ത്രങ്ങൾ, സ്കൂൾ സാമഗ്രികൾ എന്നിവ പോലുള്ള അവശ്യ വസ്തുക്കളാണ് ആവശ്യങ്ങൾ!",
+  "resultKeepTip": "നുറുങ്ങ്: ഭക്ഷണം, വസ്ത്രങ്ങൾ, സ്കൂൾ സാമഗ്രികൾ എന്നിവ പോലെ നിങ്ങൾ അതിജീവിക്കേണ്ടതും പഠിക്കേണ്ടതുമായ കാര്യങ്ങളാണ് ആവശ്യങ്ങൾ.",
+  "tryAgainButton": "വീണ്ടും ശ്രമിക്കുക",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ഏതാണ് ആവശ്യം?",
+      "correctAnswer": "സ്കൂളിനുള്ള ഷൂസ്",
+      "options": [
+        {
+          "text": "സ്കൂളിനുള്ള ഷൂസ്",
+          "isCorrect": true,
+          "emoji": "👟"
+        },
+        {
+          "text": "പത്താമത്തെ കളിപ്പാട്ട കാർ",
+          "isCorrect": false,
+          "emoji": "🚗"
+        },
+        {
+          "text": "വീഡിയോ ഗെയിം",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ഫാൻസി സൺഗ്ലാസുകൾ",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ആരോഗ്യം നിലനിർത്തുന്നതിന് എന്താണ് വേണ്ടത്?",
+      "correctAnswer": "ആരോഗ്യകരമായ ഭക്ഷണം",
+      "options": [
+        {
+          "text": "അധിക മിഠായി",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ആരോഗ്യകരമായ ഭക്ഷണം",
+          "isCorrect": true,
+          "emoji": "🥗"
+        },
+        {
+          "text": "ഐസ്ക്രീം",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ഏത് ഇനം പഠനത്തിന് അത്യന്താപേക്ഷിതമാണ്?",
+      "correctAnswer": "സ്കൂൾ പുസ്തകങ്ങൾ",
+      "options": [
+        {
+          "text": "വീഡിയോ ഗെയിം",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ആക്ഷൻ ചിത്രം",
+          "isCorrect": false,
+          "emoji": "🤖"
+        },
+        {
+          "text": "പസിൽ ഗെയിം",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "സ്കൂൾ പുസ്തകങ്ങൾ",
+          "isCorrect": true,
+          "emoji": "📚"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "തണുത്ത കാലാവസ്ഥയിൽ നിങ്ങൾക്ക് എന്താണ് വേണ്ടത്?",
+      "correctAnswer": "വിൻ്റർ ജാക്കറ്റ്",
+      "options": [
+        {
+          "text": "ഫാൻസി സൺഗ്ലാസുകൾ",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        },
+        {
+          "text": "നീന്തൽകുളം",
+          "isCorrect": false,
+          "emoji": "🏊"
+        },
+        {
+          "text": "വിൻ്റർ ജാക്കറ്റ്",
+          "isCorrect": true,
+          "emoji": "🧥"
+        },
+        {
+          "text": "ബീച്ച് ബോൾ",
+          "isCorrect": false,
+          "emoji": "🏐"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "സ്കൂളിൽ എത്താൻ എന്താണ് വേണ്ടത്?",
+      "correctAnswer": "ബസ് നിരക്ക്",
+      "options": [
+        {
+          "text": "ബസ് നിരക്ക്",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "പുതിയ ഹെഡ്ഫോണുകൾ",
+          "isCorrect": false,
+          "emoji": "🎧"
+        },
+        {
+          "text": "മ്യൂസിക് പ്ലെയർ",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "സ്മാർട്ട് വാച്ച്",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

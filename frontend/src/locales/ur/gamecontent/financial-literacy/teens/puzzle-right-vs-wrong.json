@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "پہیلی: صحیح بمقابلہ غلط",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "اعمال کو نتائج کے ساتھ میچ کریں ({{current}}/{{total}} مماثل)",
+  "actionsTitle": "مالی اقدامات",
+  "outcomesTitle": "مالیاتی نتائج",
+  "matchButton": "Match",
+  "selectActionLabel": "فنانشل ایکشن منتخب کریں۔",
+  "selectedActionLabel": "منتخب کردہ: {{name}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "matchedLabel": "مماثل: {{current}}/{{total}}",
+  "resultSuccessHeader": "بہت اچھا کام!",
+  "resultSuccessSubheader": "آپ نے {{total}} میں سے {{score}} کو ان کے نتائج کے ساتھ درست طریقے سے ملایا!",
+  "resultSuccessLesson": "سبق: اخلاقی مالی فیصلے ہر ایک کے لیے مثبت نتائج کا باعث بنتے ہیں!",
+  "resultTryAgainHeader": "مشق کرتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} مالی اعمال میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultTryAgainTip": "مشورہ: ہر مالی اقدام کے نتائج کے بارے میں سوچیں!",
+  "coinsEarned": "+{{coins}} سکے",
+  "actions": [
+    {
+      "id": 1,
+      "name": "چیریٹی کو عطیہ کرنا",
+      "emoji": "💝"
+    },
+    {
+      "id": 2,
+      "name": "پیسہ چوری کرنا",
+      "emoji": "😈"
+    },
+    {
+      "id": 3,
+      "name": "ایماندارانہ رپورٹنگ",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "رشوت دینا",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "فیئر ڈیل",
+      "emoji": "🤝"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "مثبت اثر",
+      "emoji": "🌟"
+    },
+    {
+      "id": 7,
+      "name": "قانونی نتائج",
+      "emoji": "⛓️"
+    },
+    {
+      "id": 8,
+      "name": "ٹرسٹ بلڈنگ",
+      "emoji": "🤝"
+    },
+    {
+      "id": 9,
+      "name": "Corruption",
+      "emoji": "🐍"
+    },
+    {
+      "id": 10,
+      "name": "باہمی فائدہ",
+      "emoji": "🤝"
+    }
+  ]
+}

@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "સ્ટાર્ટઅપ આઈડિયા સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "perfectScoreTitle": "વાર્તા પૂર્ણ!",
+  "perfectScoreMsg": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે ઉદ્યોગસાહસિકતાને સમજો છો!",
+  "coinsLabel": "+{{count}} સિક્કા",
+  "lessonLabel": "પાઠ: ઉદ્યોગસાહસિકતા એ વ્યવસાયનું સર્જન અને સંચાલન છે. કિશોરો સહિત કોઈપણ, સારા વિચારો અને પ્રયત્નો સાથે ઉદ્યોગસાહસિક બની શકે છે!",
+  "keepLearningTitle": "શીખતા રહો!",
+  "lowScoreMsg": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, ઉદ્યોગસાહસિકતા એક નવો વ્યવસાય બનાવે છે, અને તે કોઈપણ કરી શકે છે!",
+  "tryAgain": "ફરી પ્રયાસ કરો",
+  "tipLabel": "ટીપ: એક ઉદ્યોગસાહસિક એવી વ્યક્તિ છે જે નવો વ્યવસાય બનાવે છે અને ચલાવે છે. હાથથી બનાવેલી હસ્તકલા ઓનલાઈન વેચવી એ ઉદ્યોગસાહસિકતા છે!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ટીન હાથથી બનાવેલી હસ્તકલા ઓનલાઈન વેચે છે. શું આ સાહસિકતા છે?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "હા, તે ઉદ્યોગસાહસિકતા છે",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ના, તે માત્ર વેચાણ છે",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "કદાચ, આધાર રાખે છે",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "શું કોઈ વ્યક્તિને ઉદ્યોગસાહસિક બનાવે છે?",
+      "options": [
+        {
+          "id": "spends",
+          "text": "માત્ર પૈસા ખર્ચે છે",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "creates",
+          "text": "નવો ધંધો બનાવે છે",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "કશું જ કરતું નથી",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "શું કિશોરો ઉદ્યોગસાહસિક બની શકે છે?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "ના, ફક્ત પુખ્ત વયના લોકો",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "કદાચ, પરવાનગી સાથે",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "હા, ઉંમરથી કોઈ ફરક પડતો નથી",
+          "emoji": "👍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "વ્યવસાય શરૂ કરવા માટે શું જરૂરી છે?",
+      "options": [
+        {
+          "id": "money",
+          "text": "માત્ર ઘણા પૈસા",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "idea",
+          "text": "સારો વિચાર અને પ્રયત્ન",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "માત્ર નસીબ",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "શું ઓનલાઈન વેચાણ એ ઉદ્યોગસાહસિકતાનું એક સ્વરૂપ છે?",
+      "options": [
+        {
+          "id": "no3",
+          "text": "ના, વાસ્તવિક વ્યવસાય નથી",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "yes3",
+          "text": "હા, તે એક વ્યવસાય છે",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe3",
+          "text": "કદાચ, જો નફાકારક",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

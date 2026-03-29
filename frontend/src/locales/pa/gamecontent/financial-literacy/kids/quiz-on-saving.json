@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ਸੇਵਿੰਗ 'ਤੇ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਸਭ ਤੋਂ ਵਧੀਆ ਬਚਾਉਣ ਵਾਲਾ ਕੌਣ ਹੈ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ਕੋਈ ਵਿਅਕਤੀ ਜੋ ਆਪਣਾ ਸਾਰਾ ਪੈਸਾ ਖਰਚ ਕਰਦਾ ਹੈ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ਕੋਈ ਜੋ ਪੈਸਾ ਬਰਬਾਦ ਕਰਦਾ ਹੈ",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ਕੋਈ ਵਿਅਕਤੀ ਜੋ ਆਪਣੇ ਪੈਸੇ ਦਾ ਕੁਝ ਹਿੱਸਾ ਬਚਾਉਂਦਾ ਹੈ",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਨੂੰ ਆਪਣੇ ਜੇਬ ਪੈਸੇ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ਇਹ ਸਭ ਤੁਰੰਤ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ਕੁਝ ਬਚਾਓ ਅਤੇ ਕੁਝ ਖਰਚ ਕਰੋ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ਇਸਨੂੰ ਛੁਪਾਓ ਅਤੇ ਇਸਨੂੰ ਕਦੇ ਨਹੀਂ ਵਰਤੋ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਪੈਸਾ ਬਚਾਉਣਾ ਮਹੱਤਵਪੂਰਨ ਕਿਉਂ ਹੈ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ਇਸ ਲਈ ਤੁਸੀਂ ਬਾਅਦ ਵਿੱਚ ਲੋੜੀਂਦੀਆਂ ਚੀਜ਼ਾਂ ਖਰੀਦ ਸਕਦੇ ਹੋ",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "ਇਸ ਲਈ ਤੁਸੀਂ ਦੋਸਤਾਂ ਨੂੰ ਦਿਖਾ ਸਕਦੇ ਹੋ",
+          "emoji": "😎",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ਇਹ ਬਿਲਕੁਲ ਵੀ ਮਹੱਤਵਪੂਰਨ ਨਹੀਂ ਹੈ",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਮਨੀ ਬੈਂਕ ਕਿਸ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ਖਿਡੌਣੇ ਰੱਖਣਾ",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ਪੈਸੇ ਦੀ ਬਚਤ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ਭੋਜਨ ਸਟੋਰ ਕਰਨਾ",
+          "emoji": "🍕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਜੇਕਰ ਤੁਸੀਂ ਹਰ ਹਫ਼ਤੇ 10 ਰੁਪਏ ਬਚਾਉਂਦੇ ਹੋ, ਤਾਂ ਤੁਹਾਡੇ ਕੋਲ 4 ਹਫ਼ਤਿਆਂ ਵਿੱਚ ਕਿੰਨੇ ਹੋਣਗੇ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "20 ਰੁਪਏ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "30 ਰੁਪਏ",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "40 ਰੁ",
+          "emoji": "💴",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

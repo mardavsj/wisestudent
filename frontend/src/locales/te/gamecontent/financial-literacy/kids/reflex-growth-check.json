@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ గ్రోత్ చెక్",
+  "subtitlePlaying": "{{total}}లో {{current}} ప్రశ్న: మీ గ్రోత్ రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "subtitleReady": "మీ పెరుగుదల రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "readyEmoji": "📈",
+  "readyTitle": "మీ వృద్ధి జ్ఞానాన్ని తనిఖీ చేయడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "ప్రతి ప్రశ్నకు సరైన వృద్ధి ఫలితాన్ని ఎంచుకోండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "ప్రశ్న:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "మీ డబ్బు వడ్డీని సంపాదించినప్పుడు ఏమి జరుగుతుంది?",
+      "correctAnswer": "వడ్డీ లభించింది",
+      "options": [
+        {
+          "text": "డబ్బు పోగొట్టుకున్నారు",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "వడ్డీ లభించింది",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "మార్పు లేదు",
+          "isCorrect": false,
+          "emoji": "😐"
+        },
+        {
+          "text": "డబ్బు దోచుకున్నారు",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "మీరు కాలక్రమేణా ఆదా చేసినప్పుడు ఏమి జరుగుతుంది?",
+      "correctAnswer": "పొదుపు పెరిగింది",
+      "options": [
+        {
+          "text": "పొదుపు పెరిగింది",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "డబ్బు ఖర్చయింది",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "డబ్బు మాయమవుతుంది",
+          "isCorrect": false,
+          "emoji": "👻"
+        },
+        {
+          "text": "ఏమీ జరగదు",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "మీ పెట్టుబడి విజయవంతమైతే ఏమి జరుగుతుంది?",
+      "correctAnswer": "లాభం పొందింది",
+      "options": [
+        {
+          "text": "నష్టం జరిగింది",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "డబ్బు స్తంభించిపోయింది",
+          "isCorrect": false,
+          "emoji": "🧊"
+        },
+        {
+          "text": "పెట్టుబడి పోయింది",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "లాభం పొందింది",
+          "isCorrect": true,
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "పెట్టుబడి విలువ పెరిగినప్పుడు ఏమి జరుగుతుంది?",
+      "correctAnswer": "పెట్టుబడి పెరిగింది",
+      "options": [
+        {
+          "text": "పెట్టుబడి పెరిగింది",
+          "isCorrect": true,
+          "emoji": "🚀"
+        },
+        {
+          "text": "డబ్బు తగ్గింది",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "పెట్టుబడి నిలిచిపోయింది",
+          "isCorrect": false,
+          "emoji": "🔒"
+        },
+        {
+          "text": "విలువ సున్నా",
+          "isCorrect": false,
+          "emoji": "0️⃣"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "మీరు దీర్ఘకాలానికి తెలివిగా పెట్టుబడి పెట్టినప్పుడు ఏమి జరుగుతుంది?",
+      "correctAnswer": "సంపద వృద్ధి చెందుతుంది",
+      "options": [
+        {
+          "text": "నిధులు తగ్గిపోతాయి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "సంపద అలాగే ఉంటుంది",
+          "isCorrect": false,
+          "emoji": "➡️"
+        },
+        {
+          "text": "సంపద వృద్ధి చెందుతుంది",
+          "isCorrect": true,
+          "emoji": "🌳"
+        },
+        {
+          "text": "సంపద నశిస్తుంది",
+          "isCorrect": false,
+          "emoji": "👻"
+        }
+      ]
+    }
+  ]
+}

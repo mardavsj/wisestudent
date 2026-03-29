@@ -1,1 +1,122 @@
-﻿{}
+{
+  "title": "ڈیجیٹل منی پر کوئز",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "subtitleComplete": "کوئز مکمل!",
+  "questionCount": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "resultSuccessHeader": "ڈیجیٹل منی کوئز اسٹار!",
+  "resultSuccessSubheader": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ ڈیجیٹل ادائیگی کی حفاظت میں مہارت حاصل کر رہے ہیں!",
+  "coinsEarned": "+{{coins}} سکے",
+  "resultSuccessLesson": "سبق: اپنا PIN خفیہ رکھیں، OTP استعمال کریں، CVV چھپائیں، مضبوط پاس ورڈ استعمال کریں، اور محفوظ ڈیجیٹل ادائیگیوں کے لیے HTTPS چیک کریں!",
+  "resultTryAgainHeader": "سیکھتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ پریکٹس ڈیجیٹل ادائیگی کی حفاظت کے ساتھ کامل بناتی ہے!",
+  "tryAgainButton": "دوبارہ کوشش کریں۔",
+  "resultTryAgainTip": "مشورہ: کبھی بھی اپنا PIN یا CVV شیئر نہ کریں، ہمیشہ OTP تصدیق کا استعمال کریں، مضبوط پاس ورڈ بنائیں، اور ویب سائٹس پر HTTPS چیک کریں!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "کون سا محفوظ ہے؟",
+      "options": [
+        {
+          "id": "secret",
+          "text": "PIN خفیہ رکھیں",
+          "emoji": "🔒"
+        },
+        {
+          "id": "share",
+          "text": "PIN کا اشتراک کریں۔",
+          "emoji": "🔓"
+        },
+        {
+          "id": "both",
+          "text": "دوستوں کے ساتھ شئیر کریں۔",
+          "emoji": "👥"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آن لائن ادائیگیوں کے لیے کیا محفوظ ہے؟",
+      "options": [
+        {
+          "id": "nootp",
+          "text": "OTP کو چھوڑیں۔",
+          "emoji": "🚫"
+        },
+        {
+          "id": "otp",
+          "text": "OTP استعمال کریں۔",
+          "emoji": "🔐"
+        },
+        {
+          "id": "ignore",
+          "text": "تصدیق کو نظر انداز کریں۔",
+          "emoji": "⚠️"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "جو آپ کے کارڈ کی حفاظت کرتا ہے؟",
+      "options": [
+        {
+          "id": "cvv",
+          "text": "CVV چھپائیں۔",
+          "emoji": "🛡️"
+        },
+        {
+          "id": "sharecvv",
+          "text": "CVV شیئر کریں۔",
+          "emoji": "📢"
+        },
+        {
+          "id": "post",
+          "text": "CVV آن لائن پوسٹ کریں۔",
+          "emoji": "🌐"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ایک محفوظ مشق کیا ہے؟",
+      "options": [
+        {
+          "id": "weak",
+          "text": "'1234' استعمال کریں",
+          "emoji": "⚠️"
+        },
+        {
+          "id": "strong",
+          "text": "مضبوط پاس ورڈ",
+          "emoji": "🔑"
+        },
+        {
+          "id": "name",
+          "text": "اپنا نام استعمال کریں۔",
+          "emoji": "👤"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ویب سائٹ کی تصدیق کیسے کریں؟",
+      "options": [
+        {
+          "id": "nohttps",
+          "text": "HTTPS کو نظر انداز کریں۔",
+          "emoji": "🌐"
+        },
+        {
+          "id": "https",
+          "text": "HTTPS چیک کریں۔",
+          "emoji": "🔒"
+        },
+        {
+          "id": "trust",
+          "text": "تمام سائٹوں پر بھروسہ کریں۔",
+          "emoji": "😊"
+        }
+      ]
+    }
+  ]
+}

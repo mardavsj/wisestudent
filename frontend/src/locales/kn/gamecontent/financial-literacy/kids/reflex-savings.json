@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಉಳಿತಾಯ",
+  "subtitlePlaying": "ಸುತ್ತು {{current}}/{{total}}: ನಿಮ್ಮ ಉಳಿತಾಯ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಉಳಿತಾಯ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyTitle": "ನಿಮ್ಮ ಉಳಿತಾಯ ಕೌಶಲ್ಯಗಳನ್ನು ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಸ್ಮಾರ್ಟ್ ಉಳಿತಾಯ ತಂತ್ರಗಳ ಕುರಿತು ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಸುತ್ತು:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಹಣವನ್ನು ಉಳಿಸಲು ಉತ್ತಮ ಮಾರ್ಗ ಯಾವುದು?",
+      "correctAnswer": "ಉಳಿತಾಯ ಗುರಿಯನ್ನು ಹೊಂದಿಸಿ",
+      "options": [
+        {
+          "text": "ಯಾದೃಚ್ಛಿಕವಾಗಿ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಉಳಿತಾಯ ಗುರಿಯನ್ನು ಹೊಂದಿಸಿ",
+          "isCorrect": true,
+          "emoji": "🎯"
+        },
+        {
+          "text": "ಹಣವನ್ನು ಎರವಲು ಪಡೆಯಿರಿ",
+          "isCorrect": false,
+          "emoji": "💳"
+        },
+        {
+          "text": "ಉಳಿತಾಯವನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಹೆಚ್ಚುವರಿ ಹಣದೊಂದಿಗೆ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಅದನ್ನು ಉಳಿಸಿ",
+      "options": [
+        {
+          "text": "ಅದನ್ನು ಉಳಿಸಿ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "ಅದರ ಬಗ್ಗೆ ಮರೆತುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ಸ್ಥಿರವಾಗಿ ಉಳಿಸಲು ನಿಮಗೆ ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "ಸ್ವಯಂಚಾಲಿತ ವರ್ಗಾವಣೆಗಳು",
+      "options": [
+        {
+          "text": "ಹಠಾತ್ ಆಗಿ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ಸ್ವಯಂಚಾಲಿತ ವರ್ಗಾವಣೆಗಳು",
+          "isCorrect": true,
+          "emoji": "🔄"
+        },
+        {
+          "text": "ಯೋಜನೆ ಇಲ್ಲ",
+          "isCorrect": false,
+          "emoji": "📋"
+        },
+        {
+          "text": "ಪ್ರೇರಣೆಗಾಗಿ ನಿರೀಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಉತ್ತಮ ಉಳಿತಾಯ ಅಭ್ಯಾಸ ಯಾವುದು?",
+      "correctAnswer": "ಮೊದಲು ಉಳಿಸಿ, ನಂತರ ಖರ್ಚು ಮಾಡಿ",
+      "options": [
+        {
+          "text": "ಮೊದಲು ಖರ್ಚು ಮಾಡಿ, ನಂತರ ಉಳಿಸಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಎಂದಿಗೂ ಉಳಿಸಬೇಡಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ಮೊದಲು ಉಳಿಸಿ, ನಂತರ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "ಕೆಲವೊಮ್ಮೆ ಉಳಿಸಿ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ಹಣವನ್ನು ಉಳಿಸುವುದು ಏಕೆ ಮುಖ್ಯ?",
+      "correctAnswer": "ತುರ್ತು ಸಿದ್ಧತೆ",
+      "options": [
+        {
+          "text": "ಪ್ರದರ್ಶಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🏆"
+        },
+        {
+          "text": "ಇಂಪಲ್ಸ್ ಬೈಯಿಂಗ್",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ಕಾರಣವಿಲ್ಲ",
+          "isCorrect": false,
+          "emoji": "❓"
+        },
+        {
+          "text": "ತುರ್ತು ಸಿದ್ಧತೆ",
+          "isCorrect": true,
+          "emoji": "🚑"
+        }
+      ]
+    }
+  ]
+}

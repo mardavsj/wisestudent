@@ -1,1 +1,33 @@
-﻿{}
+{
+  "title": "એથિક્સ જર્નલ",
+  "subtitleComplete": "જર્નલ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "minLengthPrompt": "ઓછામાં ઓછા {{minLength}} અક્ષરો લખો",
+  "textareaPlaceholder": "તમારી જર્નલ એન્ટ્રી અહીં લખો...",
+  "charactersLabel": "characters",
+  "submitFinalButton": "ફાઈનલ એન્ટ્રી સબમિટ કરો",
+  "submitContinueButton": "સબમિટ કરો અને ચાલુ રાખો",
+  "stages": [
+    {
+      "question": "લખો: \"એક વખત મેં પૈસાનો પ્રામાણિકપણે ઉપયોગ કર્યો હતો ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"મેં ___ દ્વારા કોઈને પૈસાથી મદદ કરી.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"પૈસા બચાવવા વિશે મને સારું લાગ્યું તે સમય ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"મેં ___ દ્વારા ખોટી રીતે પૈસા ખર્ચવાનું ટાળ્યું.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"પૈસા પ્રત્યે પ્રમાણિક બનવું મને ___ અનુભવે છે.\"",
+      "minLength": 10
+    }
+  ]
+}

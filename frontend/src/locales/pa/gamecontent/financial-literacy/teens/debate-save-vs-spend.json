@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ਬਹਿਸ: ਬਚਾਓ ਬਨਾਮ ਖਰਚ",
+  "subtitleComplete": "ਬਹਿਸ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਕੀ ਪੈਸਾ ਬਚਾਉਣਾ ਜਾਂ ਸਾਰਾ ਖਰਚ ਕਰਨਾ ਬਿਹਤਰ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਪੈਸੇ ਬਚਾਓ",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ਇਸ ਨੂੰ ਬਰਬਾਦ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਕੀ ਕਿਸ਼ੋਰਾਂ ਨੂੰ ਹੁਣ ਆਪਣੇ ਪੈਸੇ ਬਚਾਉਣ ਜਾਂ ਆਨੰਦ ਲੈਣ 'ਤੇ ਧਿਆਨ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਬਚਾਉਣ 'ਤੇ ਧਿਆਨ ਦਿਓ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਹੁਣ ਆਨੰਦ ਲਓ",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਇਸ ਬਾਰੇ ਨਾ ਸੋਚੋ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਜਦੋਂ ਤੁਹਾਨੂੰ ਬੋਨਸ ਜਾਂ ਵਾਧੂ ਪੈਸੇ ਮਿਲਦੇ ਹਨ, ਤਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਇਹ ਸਭ ਖਰਚ ਕਰੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ਇਸ ਨੂੰ ਬਰਬਾਦ",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਇਸਦਾ ਬਹੁਤਾ ਹਿੱਸਾ ਬਚਾਓ",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਕੀ ਮਹਿੰਗੇ ਬ੍ਰਾਂਡ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ ਜਾਂ ਕਿਫਾਇਤੀ ਗੁਣਵੱਤਾ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ ਖਰੀਦਣਾ ਬਿਹਤਰ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਬ੍ਰਾਂਡ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ ਖਰੀਦੋ",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਬ੍ਰਾਂਡ ਨਾਲੋਂ ਗੁਣਵੱਤਾ ਦੀ ਚੋਣ ਕਰੋ",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "cheap",
+          "text": "ਸਭ ਤੋਂ ਸਸਤਾ ਖਰੀਦੋ",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਕੀ ਤੁਹਾਨੂੰ ਉਹ ਚੀਜ਼ਾਂ ਖਰੀਦਣ ਲਈ ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਦੀ ਵਰਤੋਂ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ ਜੋ ਤੁਸੀਂ ਬਰਦਾਸ਼ਤ ਨਹੀਂ ਕਰ ਸਕਦੇ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਹਾਂ, ਕ੍ਰੈਡਿਟ ਦੀ ਵਰਤੋਂ ਕਰੋ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਨਹੀਂ, ਕਰਜ਼ੇ ਤੋਂ ਬਚੋ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

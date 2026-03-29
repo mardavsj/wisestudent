@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਬੱਚਤ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਬੱਚਤ ਗਿਆਨ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਬੱਚਤ ਗਿਆਨ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyTitle": "ਆਪਣੇ ਬਚਤ ਹੁਨਰ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਸਮਾਰਟ ਬੱਚਤ ਰਣਨੀਤੀਆਂ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਪੈਸੇ ਬਚਾਉਣ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "correctAnswer": "ਇੱਕ ਬੱਚਤ ਟੀਚਾ ਸੈੱਟ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਬੇਤਰਤੀਬੇ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਇੱਕ ਬੱਚਤ ਟੀਚਾ ਸੈੱਟ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "🎯"
+        },
+        {
+          "text": "ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "isCorrect": false,
+          "emoji": "💳"
+        },
+        {
+          "text": "ਬਚਤ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਹਾਨੂੰ ਵਾਧੂ ਪੈਸੇ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਇਸ ਨੂੰ ਸੰਭਾਲੋ",
+      "options": [
+        {
+          "text": "ਇਸ ਨੂੰ ਸੰਭਾਲੋ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ਇਹ ਸਭ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਗੁਆ ਦਿਓ",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "ਇਸ ਬਾਰੇ ਭੁੱਲ ਜਾਓ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਕਿਹੜੀ ਚੀਜ਼ ਤੁਹਾਨੂੰ ਲਗਾਤਾਰ ਬੱਚਤ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "correctAnswer": "ਆਟੋਮੈਟਿਕ ਟ੍ਰਾਂਸਫਰ",
+      "options": [
+        {
+          "text": "ਅਵੇਸਲੇ ਢੰਗ ਨਾਲ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ਆਟੋਮੈਟਿਕ ਟ੍ਰਾਂਸਫਰ",
+          "isCorrect": true,
+          "emoji": "🔄"
+        },
+        {
+          "text": "ਕੋਈ ਯੋਜਨਾ ਨਹੀਂ",
+          "isCorrect": false,
+          "emoji": "📋"
+        },
+        {
+          "text": "ਪ੍ਰੇਰਣਾ ਲਈ ਉਡੀਕ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਇੱਕ ਚੰਗੀ ਬੱਚਤ ਆਦਤ ਕੀ ਹੈ?",
+      "correctAnswer": "ਪਹਿਲਾਂ ਬਚਾਓ, ਬਾਅਦ ਵਿੱਚ ਖਰਚ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਪਹਿਲਾਂ ਖਰਚ ਕਰੋ, ਬਾਅਦ ਵਿੱਚ ਬਚਾਓ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਕਦੇ ਵੀ ਸੇਵ ਨਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ਪਹਿਲਾਂ ਬਚਾਓ, ਬਾਅਦ ਵਿੱਚ ਖਰਚ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "ਕਈ ਵਾਰ ਬਚਾਓ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਪੈਸਾ ਬਚਾਉਣਾ ਮਹੱਤਵਪੂਰਨ ਕਿਉਂ ਹੈ?",
+      "correctAnswer": "ਸੰਕਟਕਾਲੀਨ ਤਿਆਰੀ",
+      "options": [
+        {
+          "text": "ਵਖਾਵਾ",
+          "isCorrect": false,
+          "emoji": "🏆"
+        },
+        {
+          "text": "ਇੰਪਲਸ ਖਰੀਦਦਾਰੀ",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ਕੋਈ ਕਾਰਨ ਨਹੀਂ",
+          "isCorrect": false,
+          "emoji": "❓"
+        },
+        {
+          "text": "ਸੰਕਟਕਾਲੀਨ ਤਿਆਰੀ",
+          "isCorrect": true,
+          "emoji": "🚑"
+        }
+      ]
+    }
+  ]
+}

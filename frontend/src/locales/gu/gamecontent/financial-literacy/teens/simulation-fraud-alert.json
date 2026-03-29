@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "સિમ્યુલેશન: છેતરપિંડી ચેતવણી",
+  "subtitleComplete": "સિમ્યુલેશન પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} દૃશ્ય",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "શંકાસ્પદ એપ્લિકેશન વિનંતી",
+      "description": "એક નવી એપ 'એકાઉન્ટ ચકાસવા' માટે તમારી બેંકનો OTP માંગે છે. વૉલેટ ₹500. સ્માર્ટ શું છે?",
+      "options": [
+        {
+          "id": "share-otp",
+          "text": "તરત જ OTP શેર કરો",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "check-forum",
+          "text": "નિર્ણય લેતા પહેલા એપ્લિકેશન સમીક્ષાઓ અને ફોરમ તપાસો",
+          "emoji": "🧐",
+          "isCorrect": false
+        },
+        {
+          "id": "install-anyway",
+          "text": "ઇન્સ્ટોલ કરો અને જુઓ કે તે કામ કરે છે કે નહીં",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-app",
+          "text": "એપ્લિકેશનને અવગણો અને તેને અનઇન્સ્ટોલ કરો",
+          "emoji": "📴",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "નકલી શિષ્યવૃત્તિ ઇમેઇલ",
+      "description": "ઈમેઈલ દાવો કરે છે કે 'સ્કોલરશિપ ₹50,000, નોંધણી કરવા માટે ક્લિક કરો.' શું સલામત છે?",
+      "options": [
+        {
+          "id": "click-link",
+          "text": "ઝડપથી નોંધણી કરવા માટે લિંક પર ક્લિક કરો",
+          "emoji": "🔗",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-university",
+          "text": "સત્તાવાર યુનિવર્સિટી સાઇટ સાથે ઇમેઇલ ચકાસો",
+          "emoji": "🏫",
+          "isCorrect": true
+        },
+        {
+          "id": "share-email",
+          "text": "મિત્રો સાથે ઈમેલ શેર કરો",
+          "emoji": "📤",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-and-forget",
+          "text": "તપાસ કર્યા વિના તેને સંપૂર્ણપણે અવગણો",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "નકલી મિત્ર વિનંતી",
+      "description": "કોઈ અજાણી વ્યક્તિ 'ફ્રી ગેમ પોઈન્ટ્સ' ઓફર કરતી ફ્રેન્ડ રિક્વેસ્ટ મોકલે છે. સલામત પસંદગી?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "પોઈન્ટ મેળવવા માટે સ્વીકારો",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "share-data",
+          "text": "પોઈન્ટ માટે તમારા રમત ઓળખપત્રો મોકલો",
+          "emoji": "🔑",
+          "isCorrect": false
+        },
+        {
+          "id": "block-report",
+          "text": "બ્લોક કરો અને એકાઉન્ટની જાણ કરો",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-only",
+          "text": "જાણ કર્યા વિના અવગણો",
+          "emoji": "🙅",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ઑનલાઇન સ્ટોર કૌભાંડ",
+      "description": "વેબસાઇટ 90% ડિસ્કાઉન્ટ પર ફોન ઓફર કરે છે. માત્ર UPI દ્વારા ચુકવણી. કિશોર નિર્ણય?",
+      "options": [
+        {
+          "id": "research-store",
+          "text": "કોઈપણ ચુકવણી પહેલાં વેબસાઇટની કાયદેસરતા અને સમીક્ષાઓ તપાસો",
+          "emoji": "🧐",
+          "isCorrect": true
+        },
+        {
+          "id": "pay-now",
+          "text": "તરત જ ચૂકવણી કરો, સોદો ચૂકી જવા માટે ખૂબ જ સારો છે",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-money",
+          "text": "ઝડપી ખરીદવા માટે વધારાના ઉધાર લો",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "share-link",
+          "text": "મિત્રો સાથે સોદો શેર કરો",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "સોશિયલ મીડિયા ઇન્વેસ્ટમેન્ટ કૌભાંડ",
+      "description": "પ્રભાવક અઠવાડિયામાં 200% વળતરનું વચન આપે છે, Paytm દ્વારા ₹500 માંગે છે. શું સાચું છે?",
+      "options": [
+        {
+          "id": "invest-quick",
+          "text": "ઝડપથી પૈસા મોકલો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "consult-unknown",
+          "text": "અજાણ્યા મિત્રને ચકાસવા માટે કહો",
+          "emoji": "👤",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-source",
+          "text": "કાયદેસરતા ચકાસો, રોકાણ કરતા પહેલા સંશોધન કરો",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "share-link",
+          "text": "અન્યને લિંક ફોરવર્ડ કરો",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

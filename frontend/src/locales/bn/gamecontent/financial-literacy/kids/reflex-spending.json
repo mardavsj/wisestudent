@@ -1,1 +1,149 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স ব্যয়",
+    "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: ব্যয়ের রিফ্লেক্স পরীক্ষা করো!",
+    "subtitleReady": "ব্যয়ের রিফ্লেক্স পরীক্ষা করো!",
+    "readyTitle": "ব্যয়ের দক্ষতা পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "বুদ্ধিমান ব্যয় ও টাকা ব্যবস্থাপনার প্রশ্নের উত্তর দাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "রাউন্ড:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "বড় কেনাকাটার আগে কী করবে?",
+            "correctAnswer": "আগে পরিকল্পনা করো",
+            "options": [
+                {
+                    "text": "সাথে সাথে কিনো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "আগে পরিকল্পনা করো",
+                    "isCorrect": true,
+                    "emoji": "📋"
+                },
+                {
+                    "text": "বন্ধুদের জিজ্ঞেস করো",
+                    "isCorrect": false,
+                    "emoji": "👥"
+                },
+                {
+                    "text": "দাম উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "পকেটমানি খরচের সবচেয়ে বুদ্ধিমান উপায় কী?",
+            "correctAnswer": "আগে কিছু সঞ্চয় করো",
+            "options": [
+                {
+                    "text": "সব খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "🛍️"
+                },
+                {
+                    "text": "যা ইচ্ছা কিনো",
+                    "isCorrect": false,
+                    "emoji": "🛒"
+                },
+                {
+                    "text": "আগে কিছু সঞ্চয় করো",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "নষ্ট করো",
+                    "isCorrect": false,
+                    "emoji": "🔥"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "আবেগে কেনাকাটা এড়াতে কী সাহায্য করে?",
+            "correctAnswer": "কেনার আগে অপেক্ষা করো",
+            "options": [
+                {
+                    "text": "কেনার আগে অপেক্ষা করো",
+                    "isCorrect": true,
+                    "emoji": "⏳"
+                },
+                {
+                    "text": "সাথে সাথে কিনো",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                },
+                {
+                    "text": "প্রায়ই কেনাকাটা করো",
+                    "isCorrect": false,
+                    "emoji": "🏪"
+                },
+                {
+                    "text": "না ভেবে খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "🤔"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "কেনাকাটার সময় কী তুলনা করবে?",
+            "correctAnswer": "দাম ও মান",
+            "options": [
+                {
+                    "text": "শুধু রং",
+                    "isCorrect": false,
+                    "emoji": "🎨"
+                },
+                {
+                    "text": "শুধু ব্র্যান্ড",
+                    "isCorrect": false,
+                    "emoji": "🏷️"
+                },
+                {
+                    "text": "প্যাকেজিং",
+                    "isCorrect": false,
+                    "emoji": "📦"
+                },
+                {
+                    "text": "দাম ও মান",
+                    "isCorrect": true,
+                    "emoji": "🔍"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "বুদ্ধিমান ব্যয়ের প্রথম পদক্ষেপ কী?",
+            "correctAnswer": "বাজেট নির্ধারণ করো",
+            "options": [
+                {
+                    "text": "যা ইচ্ছা খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "বাজেট নির্ধারণ করো",
+                    "isCorrect": true,
+                    "emoji": "📊"
+                },
+                {
+                    "text": "সব কিছু কিনো",
+                    "isCorrect": false,
+                    "emoji": "🛍️"
+                },
+                {
+                    "text": "সীমা উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                }
+            ]
+        }
+    ]
+}

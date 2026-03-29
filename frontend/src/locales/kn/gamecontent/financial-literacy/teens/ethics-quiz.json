@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ನೀತಿಶಾಸ್ತ್ರ ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionLabel": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಅಂಕಗಳಿಗಾಗಿ ಲಂಚ ಕೊಡುವುದು ನೈತಿಕವೇ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ಹೌದು, ಅಗತ್ಯವಿದ್ದರೆ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ಇಲ್ಲ, ಇದು ತಪ್ಪು",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "ಬಹುಶಃ, ಅವಲಂಬಿಸಿರುತ್ತದೆ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಲಂಚ ಕೊಡುವುದರಲ್ಲಿ ತಪ್ಪೇನು?",
+      "options": [
+        {
+          "id": "unfair",
+          "text": "ಇದು ಅನ್ಯಾಯ ಮತ್ತು ಅಪ್ರಾಮಾಣಿಕವಾಗಿದೆ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "ಏನೂ ತಪ್ಪಿಲ್ಲ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "expensive",
+          "text": "ತುಂಬಾ ದುಬಾರಿ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ಉತ್ತಮ ಅಂಕಗಳನ್ನು ಹೇಗೆ ಗಳಿಸಬೇಕು?",
+      "options": [
+        {
+          "id": "study",
+          "text": "ಕಷ್ಟಪಟ್ಟು ಅಧ್ಯಯನ ಮಾಡಿ",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "bribe",
+          "text": "ಅಂಕಗಳಿಗಾಗಿ ಪಾವತಿಸಿ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "ಪರೀಕ್ಷೆಗಳಲ್ಲಿ ಮೋಸ",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಲಂಚದ ಪರಿಣಾಮಗಳೇನು?",
+      "options": [
+        {
+          "id": "no-consequences",
+          "text": "ಯಾವುದೇ ಪರಿಣಾಮಗಳಿಲ್ಲ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-trust",
+          "text": "ನಂಬಿಕೆಯನ್ನು ಕಳೆದುಕೊಂಡು ಶಿಕ್ಷೆಯನ್ನು ಎದುರಿಸಬೇಕಾಗುತ್ತದೆ",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "get-reward",
+          "text": "ಬಹುಮಾನ ಪಡೆಯಿರಿ",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಯಶಸ್ವಿಯಾಗಲು ನೈತಿಕ ಮಾರ್ಗ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "honest-effort",
+          "text": "ಪ್ರಾಮಾಣಿಕ ಪ್ರಯತ್ನ ಮತ್ತು ಸಮಗ್ರತೆ",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "shortcuts",
+          "text": "ಶಾರ್ಟ್‌ಕಟ್‌ಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat-way",
+          "text": "ನಿಮ್ಮ ರೀತಿಯಲ್ಲಿ ಮೋಸ ಮಾಡಿ",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ಗ್ರೇಟ್ ಜಾಬ್!",
+    "winMessage": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ! ನೀವು ನೈತಿಕ ಚಾಂಪಿಯನ್!",
+    "coinsEarned": "+{{score}} ನಾಣ್ಯಗಳು",
+    "lesson": "ಪಾಠ: ಸಮಗ್ರತೆ ಮತ್ತು ಪ್ರಾಮಾಣಿಕ ಪ್ರಯತ್ನ ಮಾತ್ರ ಯಶಸ್ವಿಯಾಗಲು ನಿಜವಾದ ಮಾರ್ಗವಾಗಿದೆ. ಲಂಚವು ನಂಬಿಕೆಯ ನಷ್ಟ ಮತ್ತು ಪರಿಣಾಮಗಳಿಗೆ ಕಾರಣವಾಗುತ್ತದೆ.",
+    "loseEmoji": "😔",
+    "loseTitle": "ಕಲಿಯುತ್ತಲೇ ಇರಿ!",
+    "loseMessage": "ನೀವು {{total}} ರಲ್ಲಿ {{score}} ಅನ್ನು ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ. ನೆನಪಿಡಿ, ಪ್ರಾಮಾಣಿಕತೆಯು ಅತ್ಯುತ್ತಮ ನೀತಿಯಾಗಿದೆ!",
+    "tryAgain": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "tip": "ಸಲಹೆ: ಕಠಿಣ ಪರಿಶ್ರಮ ಮತ್ತು ಪ್ರಾಮಾಣಿಕತೆಯಿಂದ ಗಳಿಸಿದ ಯಶಸ್ಸು ಅತ್ಯಂತ ಲಾಭದಾಯಕವಾಗಿದೆ. ಅನೈತಿಕ ಶಾರ್ಟ್‌ಕಟ್‌ಗಳನ್ನು ಎಂದಿಗೂ ತೆಗೆದುಕೊಳ್ಳಬೇಡಿ."
+  }
+}

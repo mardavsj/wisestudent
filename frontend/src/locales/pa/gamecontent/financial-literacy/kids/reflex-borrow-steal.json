@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਉਧਾਰ/ਚੋਰੀ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਉਧਾਰ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਉਧਾਰ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyEmoji": "🤝",
+  "readyTitle": "ਤਿਆਰ ਰਹੋ!",
+  "readyDescription": "ਉਧਾਰ ਲੈਣ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਸਹੀ ਜਵਾਬ ਦਿਓ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਤੁਹਾਨੂੰ ਉਧਾਰ ਆਈਟਮਾਂ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਉਧਾਰ ਲਈਆਂ ਚੀਜ਼ਾਂ ਵਾਪਸ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਉਧਾਰ ਲਈਆਂ ਚੀਜ਼ਾਂ ਵਾਪਸ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "ਉਹਨਾਂ ਨੂੰ ਸਦਾ ਲਈ ਰੱਖੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ਉਹਨਾਂ ਨੂੰ ਲੁਕਾਓ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਉਨ੍ਹਾਂ ਬਾਰੇ ਭੁੱਲ ਜਾਓ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਕਰਜ਼ੇ ਨਾਲ ਕੀ ਕਰਨਾ ਸਹੀ ਹੈ?",
+      "correctAnswer": "ਕਰਜ਼ਾ ਮੋੜੋ",
+      "options": [
+        {
+          "text": "ਭੁਗਤਾਨ ਤੋਂ ਬਚੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ਕਰਜ਼ਾ ਮੋੜੋ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਇਸਨੂੰ ਭੁੱਲ ਜਾਓ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਜਦੋਂ ਤੁਸੀਂ ਕੁਝ ਉਧਾਰ ਲੈਂਦੇ ਹੋ, ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਇਸ ਨੂੰ ਵਾਪਸ ਦਿਓ",
+      "options": [
+        {
+          "text": "ਇਸ ਨੂੰ ਲੁਕਾਓ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਰੱਖੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਵਾਪਸ ਦਿਓ",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਗੁਆ",
+          "isCorrect": false,
+          "emoji": "❌"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਉਧਾਰ ਲੈਣ ਦਾ ਇਮਾਨਦਾਰ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "correctAnswer": "ਇਮਾਨਦਾਰ ਰਹੋ",
+      "options": [
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ਇਮਾਨਦਾਰ ਰਹੋ",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "🎭"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਤੁਹਾਨੂੰ ਉਧਾਰ ਲਈਆਂ ਚੀਜ਼ਾਂ ਕਦੋਂ ਵਾਪਸ ਕਰਨੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ?",
+      "correctAnswer": "ਸਮੇਂ ਸਿਰ ਵਾਪਸੀ ਕਰੋ",
+      "options": [
+        {
+          "text": "Delay",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "Never",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ਸ਼ਾਇਦ ਬਾਅਦ ਵਿੱਚ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "ਸਮੇਂ ਸਿਰ ਵਾਪਸੀ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "⏱️"
+        }
+      ]
+    }
+  ]
+}

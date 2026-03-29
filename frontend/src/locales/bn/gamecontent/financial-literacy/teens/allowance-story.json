@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ভাতা গল্প",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "আপনি সাপ্তাহিক ভাতা হিসাবে ₹500 পাবেন। আপনি কিভাবে এটি পরিচালনা করা উচিত?",
+      "options": [
+        {
+          "id": "save",
+          "text": "বইয়ের জন্য রাখুন",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "কাপড়ের জন্য সব খরচ",
+          "emoji": "👕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "এটা সব নষ্ট",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "আপনি একটি ₹300 মূল্যের গেম কিনতে চান কিন্তু স্কুল সরবরাহের জন্য ₹200 লাগবে। স্মার্ট পছন্দ কি?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "গেমটি কিনুন",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "প্রথমে সরবরাহ কিনুন",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ক্রেডিট উভয় কিনুন",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "আপনার বন্ধুরা প্রতিদিন দামী স্ন্যাকস কিনছে। আপনি এটা বহন করতে পারবেন না. আপনি কি করবেন?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "দামী স্ন্যাকস কিনুন",
+          "emoji": "🍕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "টাকা ধার",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "বাড়িতে তৈরি স্ন্যাকস আনুন",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "আপনি ₹400 বাঁচিয়েছেন কিন্তু ₹600 আইটেমের জন্য একটি সীমিত সময়ের অফার দেখুন। আপনার কি করা উচিত?",
+      "options": [
+        {
+          "id": "save",
+          "text": "অপেক্ষা করুন এবং আরো সংরক্ষণ করুন",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "আংশিক পেমেন্ট দিয়ে কিনুন",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "সঞ্চয় উপেক্ষা করুন",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "কাজের কাজে সাহায্য করার জন্য আপনি ₹100 বোনাস পাবেন। কিভাবে আপনি এটি ব্যবহার করা উচিত?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "নষ্ট করুন",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "সঞ্চয় যোগ করুন",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ট্রিট খরচ",
+          "emoji": "🍭",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

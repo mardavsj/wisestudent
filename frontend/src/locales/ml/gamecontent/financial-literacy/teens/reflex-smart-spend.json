@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് സ്മാർട്ട് ചെലവ്",
+  "subtitlePlaying": "റൗണ്ട് {{current}}/{{total}}: നിങ്ങളുടെ ചെലവ് റിഫ്ലെക്സുകൾ പരിശോധിക്കുക!",
+  "subtitleReady": "നിങ്ങളുടെ ചെലവ് റിഫ്ലെക്സുകൾ പരിശോധിക്കുക!",
+  "readyHeader": "നിങ്ങളുടെ ചെലവ് റിഫ്ലെക്സുകൾ പരീക്ഷിക്കാൻ തയ്യാറാണോ?",
+  "readyDescription": "സ്‌മാർട്ട് ചെലവിടൽ തിരഞ്ഞെടുപ്പുകളെക്കുറിച്ചുള്ള ചോദ്യങ്ങൾക്ക് ഉത്തരം നൽകുക.",
+  "readyTip": "നിങ്ങൾക്ക് {{time}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "റൗണ്ട്:",
+  "timeLabel": "സമയം:",
+  "scoreLabel": "സ്കോർ:",
+  "greatJob": "മികച്ച ജോലി!",
+  "finalScore": "നിങ്ങൾ {{score}} ൽ {{total}} സ്കോർ ചെയ്തു!",
+  "growthSkills": "നിങ്ങൾ ശക്തമായ സാമ്പത്തിക തീരുമാനമെടുക്കൽ കഴിവുകൾ വികസിപ്പിക്കുകയാണ്!",
+  "playAgain": "വീണ്ടും കളിക്കുക",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ഏറ്റവും മികച്ച ചെലവ് തിരഞ്ഞെടുക്കൽ എന്താണ്?",
+      "options": [
+        {
+          "id": "pay_rent",
+          "text": "വാടക കൊടുക്കുക",
+          "emoji": "🏠"
+        },
+        {
+          "id": "luxury_party",
+          "text": "ലക്ഷ്വറി പാർട്ടി",
+          "emoji": "🎉"
+        },
+        {
+          "id": "designer_shoes",
+          "text": "ഡിസൈനർ ഷൂസ് വാങ്ങുക",
+          "emoji": "👟"
+        },
+        {
+          "id": "impulse_purchase",
+          "text": "ഇംപൾസ് വാങ്ങൽ",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ഏത് ചെലവാണ് ആദ്യം വരേണ്ടത്?",
+      "options": [
+        {
+          "id": "new_gadgets",
+          "text": "പുതിയ ഗാഡ്‌ജെറ്റുകൾ",
+          "emoji": "📱"
+        },
+        {
+          "id": "buy_groceries",
+          "text": "പലചരക്ക് സാധനങ്ങൾ വാങ്ങുക",
+          "emoji": "🛒"
+        },
+        {
+          "id": "expensive_restaurant",
+          "text": "ചെലവേറിയ റെസ്റ്റോറൻ്റ്",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "entertainment",
+          "text": "Entertainment",
+          "emoji": "🎬"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "അധിക പണം ഉപയോഗിച്ച് നിങ്ങൾ എന്തുചെയ്യണം?",
+      "options": [
+        {
+          "id": "movie_night",
+          "text": "സിനിമാ രാത്രി",
+          "emoji": "🎬"
+        },
+        {
+          "id": "buy_video_games",
+          "text": "വീഡിയോ ഗെയിമുകൾ വാങ്ങുക",
+          "emoji": "🎮"
+        },
+        {
+          "id": "save_money",
+          "text": "പണം ലാഭിക്കുക",
+          "emoji": "💰"
+        },
+        {
+          "id": "shopping_spree",
+          "text": "ഷോപ്പിംഗ് സ്പ്രീ",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "മുൻഗണനാ ചെലവ് ഏതാണ്?",
+      "options": [
+        {
+          "id": "pay_bills",
+          "text": "ബില്ലുകൾ അടയ്ക്കുക",
+          "emoji": "📄"
+        },
+        {
+          "id": "designer_clothes",
+          "text": "ഡിസൈനർ വസ്ത്രങ്ങൾ",
+          "emoji": "👔"
+        },
+        {
+          "id": "weekend_trip",
+          "text": "വാരാന്ത്യ യാത്ര",
+          "emoji": "✈️"
+        },
+        {
+          "id": "gourmet_dinner",
+          "text": "രുചികരമായ അത്താഴം",
+          "emoji": "🍷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "എന്താണ് ദീർഘകാല സാമ്പത്തിക സുരക്ഷിതത്വം നിർമ്മിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "concert_ticket",
+          "text": "കച്ചേരി ടിക്കറ്റ്",
+          "emoji": "🎫"
+        },
+        {
+          "id": "fund_education",
+          "text": "ഫണ്ട് വിദ്യാഭ്യാസം",
+          "emoji": "📚"
+        },
+        {
+          "id": "buy_jewelry",
+          "text": "ആഭരണങ്ങൾ വാങ്ങുക",
+          "emoji": "💍"
+        },
+        {
+          "id": "luxury_vacation",
+          "text": "ആഡംബര അവധി",
+          "emoji": "🏖️"
+        }
+      ]
+    }
+  ]
+}

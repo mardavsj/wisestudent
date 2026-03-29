@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਉਧਾਰ ਲੈਣ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਕਿਸ਼ੋਰ ਇੱਕ ਨਵੇਂ ਫ਼ੋਨ ਲਈ ਉਧਾਰ ਲੈਂਦਾ ਹੈ। ਵਾਪਸ ਨਹੀਂ ਕਰ ਸਕਦੇ? ਨਤੀਜਾ →",
+      "options": [
+        {
+          "id": "free",
+          "text": "ਮੁਫ਼ਤ ਪੈਸੇ",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "Debt",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "ਕੁਝ ਨਹੀਂ ਹੁੰਦਾ",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ₹500 ਉਧਾਰ ਲੈਂਦੇ ਹੋ ਪਰ ਵਾਪਸ ਨਹੀਂ ਕਰ ਸਕਦੇ। ਨਤੀਜਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "forgiven",
+          "text": "ਕਰਜ਼ਾ ਮਾਫ਼ ਹੋ ਜਾਂਦਾ ਹੈ",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "ignored",
+          "text": "ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ਵਿਆਜ ਅਤੇ ਜੁਰਮਾਨੇ ਵਧ ਜਾਂਦੇ ਹਨ",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਲੋੜ ਲਈ ਉਧਾਰ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "ਯੋਜਨਾ ਬਣਾਓ ਕਿ ਪਹਿਲਾਂ ਭੁਗਤਾਨ ਕਿਵੇਂ ਕਰਨਾ ਹੈ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "ਪਹਿਲਾਂ ਉਧਾਰ ਲਓ, ਬਾਅਦ ਵਿੱਚ ਸੋਚੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਮੁੜ-ਭੁਗਤਾਨ ਯੋਜਨਾ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਇੱਕ ਮੁੜ-ਭੁਗਤਾਨ ਯੋਜਨਾ ਦੇ ਬਗੈਰ ਉਧਾਰ ਲੈਣ ਦੀ ਅਗਵਾਈ ਕਰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "success",
+          "text": "ਵਿੱਤੀ ਸਫਲਤਾ",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "text": "ਵਿੱਤੀ ਆਜ਼ਾਦੀ",
+          "emoji": "🕊️",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "ਕਰਜ਼ੇ ਦੀਆਂ ਸਮੱਸਿਆਵਾਂ",
+          "emoji": "⚠️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਉਧਾਰ ਲੈਣ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "ਲੋੜਾਂ ਲਈ ਅਕਸਰ ਉਧਾਰ ਲਓ",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "ਲੋੜ ਪੈਣ 'ਤੇ ਹੀ ਉਧਾਰ ਲਓ ਅਤੇ ਮੁੜ ਅਦਾਇਗੀ ਦੀ ਯੋਜਨਾ ਬਣਾਓ",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "ਉਧਾਰ ਲਓ ਪਰ ਕਦੇ ਵਾਪਸ ਨਾ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਉਧਾਰ ਲੈਣ ਦੀ ਕਹਾਣੀ ਪੂਰੀ!",
+    "winMessage": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਜ਼ਿੰਮੇਵਾਰ ਉਧਾਰ ਲੈਣ ਬਾਰੇ ਸਿੱਖਣ ਲਈ ਵਧੀਆ ਕੰਮ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਮੁੜ ਅਦਾਇਗੀ ਯੋਜਨਾ ਤੋਂ ਬਿਨਾਂ ਉਧਾਰ ਲੈਣ ਨਾਲ ਕਰਜ਼ਾ ਹੁੰਦਾ ਹੈ। ਉਧਾਰ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਹਮੇਸ਼ਾਂ ਯੋਜਨਾ ਬਣਾਓ ਕਿ ਕਿਵੇਂ ਵਾਪਸ ਕਰਨਾ ਹੈ, ਖਾਸ ਤੌਰ 'ਤੇ ਲੋੜਾਂ ਲਈ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਬਿਨਾਂ ਯੋਜਨਾ ਦੇ ਉਧਾਰ ਲੈਣ ਨਾਲ ਕਰਜ਼ੇ ਦੀਆਂ ਸਮੱਸਿਆਵਾਂ ਪੈਦਾ ਹੁੰਦੀਆਂ ਹਨ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਨੁਕਤਾ: ਉਧਾਰ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਹਮੇਸ਼ਾ ਯੋਜਨਾ ਬਣਾਓ ਕਿ ਕਿਵੇਂ ਵਾਪਸ ਕਰਨਾ ਹੈ। ਮੁੜ-ਭੁਗਤਾਨ ਯੋਜਨਾ ਤੋਂ ਬਿਨਾਂ ਉਧਾਰ ਲੈਣਾ ਕਰਜ਼ੇ ਅਤੇ ਵਿੱਤੀ ਮੁਸੀਬਤ ਵੱਲ ਖੜਦਾ ਹੈ!"
+  }
+}

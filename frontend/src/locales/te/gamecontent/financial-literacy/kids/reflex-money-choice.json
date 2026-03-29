@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ మనీ ఎంపిక",
+  "subtitlePlaying": "{{total}}లో {{current}} ప్రశ్న: మీ డబ్బు ఎంపిక రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "subtitleReady": "మీ డబ్బు ఎంపిక రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "readyTitle": "మీ డబ్బు ఎంపికలను పరీక్షించడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "ప్రతి ప్రశ్నకు స్మార్ట్ మనీ ఎంపికను ఎంచుకోండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "questionLabel": "ప్రశ్న:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "మీ డబ్బును సురక్షితంగా ఉంచడానికి మీరు ఏమి చేయాలి?",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "త్రో అవే",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "దానిని పోగొట్టుకోండి",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "📥"
+        },
+        {
+          "text": "దాని గురించి మర్చిపో",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "మీ డబ్బును నిర్వహించడానికి తెలివైన మార్గం ఏమిటి?",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ఇగ్నోర్ ఇట్",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "మీరు మీ డబ్బును ఎక్కడ సురక్షితంగా ఉంచాలి?",
+      "correctAnswer": "Bank",
+      "options": [
+        {
+          "text": "Bank",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Hide",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "కాలక్రమేణా మీ డబ్బు పెరగడానికి ఏది సహాయపడుతుంది?",
+      "correctAnswer": "Invest",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "వేగంగా ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "Invest",
+          "isCorrect": true,
+          "emoji": "📈"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "మీ డబ్బు కోసం ఉత్తమ ఎంపిక ఏమిటి?",
+      "correctAnswer": "సేవ్ & గ్రో",
+      "options": [
+        {
+          "text": "సేవ్ & గ్రో",
+          "isCorrect": true,
+          "emoji": "🌱"
+        },
+        {
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "వేస్ట్ మనీ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "దానిని పోగొట్టుకోండి",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    }
+  ]
+}

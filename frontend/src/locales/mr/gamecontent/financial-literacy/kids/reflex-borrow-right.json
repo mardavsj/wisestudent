@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स उधार योग्य",
+  "subtitlePlaying": "{{total}} पैकी {{current}} प्रश्न: आपल्या उधारी प्रतिक्षेपांची चाचणी घ्या!",
+  "subtitleReady": "आपल्या उधार प्रतिक्षेपांची चाचणी घ्या!",
+  "readyEmoji": "🤝",
+  "readyTitle": "योग्य कर्ज घेण्याबद्दल जाणून घेण्यासाठी तयार आहात?",
+  "readyDescription": "वस्तू किंवा पैसे उधार घेताना योग्य कृती निवडा.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "प्रश्न:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "काहीतरी कर्ज घेण्यापूर्वी तुम्ही काय करावे?",
+      "correctAnswer": "परवानगी विचारा",
+      "options": [
+        {
+          "text": "ते पकडा",
+          "isCorrect": false,
+          "emoji": "🤏"
+        },
+        {
+          "text": "न विचारता घ्या",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "परवानगी विचारा",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "मालकाकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "आपण काहीतरी कर्ज कसे घ्यावे?",
+      "correctAnswer": "नम्रपणे कर्ज घ्या",
+      "options": [
+        {
+          "text": "नम्रपणे कर्ज घ्या",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "जबरदस्तीने घ्या",
+          "isCorrect": false,
+          "emoji": "💪"
+        },
+        {
+          "text": "पटकन पकडा",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ते चोरा",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "उधार घेतलेल्या वस्तूचे काय करावे?",
+      "correctAnswer": "आयटम परत करा",
+      "options": [
+        {
+          "text": "ठेवा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ते लपवा",
+          "isCorrect": false,
+          "emoji": "🫥"
+        },
+        {
+          "text": "त्याबद्दल विसरून जा",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "आयटम परत करा",
+          "isCorrect": true,
+          "emoji": "↩️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "कर्जाचे काय करावे?",
+      "correctAnswer": "कर्जाची परतफेड करा",
+      "options": [
+        {
+          "text": "पेमेंटकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "कर्जाची परतफेड करा",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ते टाळा",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "विसरून जा",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "आपण कर्ज कसे हाताळावे?",
+      "correctAnswer": "प्रामाणिक रहा",
+      "options": [
+        {
+          "text": "प्रामाणिक रहा",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "त्याबद्दल खोटे बोल",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "😏"
+        }
+      ]
+    }
+  ]
+}

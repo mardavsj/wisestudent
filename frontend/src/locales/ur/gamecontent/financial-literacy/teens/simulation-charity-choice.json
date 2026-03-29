@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "نقلی: چیریٹی چوائس",
+  "subtitleComplete": "تخروپن مکمل!",
+  "subtitleProgress": "منظر نامہ {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "اثر بمقابلہ جذبات",
+      "description": "آپ ₹1000 عطیہ کرنا چاہتے ہیں۔ کون سا انتخاب سب سے زیادہ حقیقی اثر پیدا کرتا ہے؟",
+      "options": [
+        {
+          "id": "street",
+          "text": "سڑک پر تصادفی طور پر نقد رقم دیں۔",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "trusted",
+          "text": "واضح رپورٹوں کے ساتھ تصدیق شدہ خیراتی ادارے کو عطیہ کریں۔",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "viral",
+          "text": "ٹرینڈنگ آن لائن مہمات کے لیے عطیہ کریں۔",
+          "emoji": "🔥",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "کامل لمحے کے لیے ہمیشہ انتظار کریں۔",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "قلیل مدتی مدد بمقابلہ طویل مدتی تبدیلی",
+      "description": "ایک خیراتی ادارہ یا تو آج کھانا فراہم کر سکتا ہے یا مہینوں تک تعلیمی مدد فراہم کر سکتا ہے۔ کیا ہوشیار ہے؟",
+      "options": [
+        {
+          "id": "education",
+          "text": "تعلیم اور ہنر کی تعمیر میں معاونت کریں۔",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "meals",
+          "text": "ایک وقت کے کھانے کی تقسیم",
+          "emoji": "🍱",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "تصادفی طور پر رقم تقسیم کریں۔",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "عطیہ دینے سے گریز کریں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "شفافیت کی جانچ",
+      "description": "عطیہ کرنے سے پہلے، آپ کو پہلے کیا چیک کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "celebrity",
+          "text": "مشہور شخصیت کی توثیق",
+          "emoji": "🌟",
+          "isCorrect": false
+        },
+        {
+          "id": "emotional",
+          "text": "صرف جذباتی کہانیاں",
+          "emoji": "😢",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "text": "سماجی دباؤ",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "reports",
+          "text": "مالی شفافیت اور اثرات کی رپورٹس",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "چیریٹی بمقابلہ ذاتی ترقی",
+      "description": "آپ کے پاس پیسے محدود ہیں۔ ہمدردی اور مالی احساس دونوں کو کیا بناتا ہے؟",
+      "options": [
+        {
+          "id": "donate-blind",
+          "text": "بغیر سمجھے عطیہ کریں۔",
+          "emoji": "🙃",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "سب کچھ اپنے اوپر خرچ کریں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "وجوہات کے بارے میں جانیں، پھر سوچ سمجھ کر عطیہ کریں۔",
+          "emoji": "🧠",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "صدقہ خیرات سے مکمل پرہیز کریں۔",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "پائیدار دینا",
+      "description": "صدقہ کو کونسی عادت زندگی بھر موثر بناتی ہے؟",
+      "options": [
+        {
+          "id": "big-once",
+          "text": "ایک بار ایک بڑا عطیہ",
+          "emoji": "💥",
+          "isCorrect": false
+        },
+        {
+          "id": "consistent",
+          "text": "چھوٹا، باقاعدہ، منصوبہ بند دینا",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "guilt",
+          "text": "صرف اس وقت عطیہ کریں جب احساس جرم ہو۔",
+          "emoji": "😬",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "متاثر کن عطیات",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,167 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ: પ્રથમ તપાસો",
+  "subtitleComplete": "રમત પૂર્ણ!",
+  "roundLabel": "રાઉન્ડ {{current}}/{{total}}",
+  "timeUp": "સમય પૂરો થયો!",
+  "readyEmoji": "🔍",
+  "readyTitle": "તૈયાર થાઓ!",
+  "readyDescription": "ખરીદતા પહેલા તપાસ કરવા અંગેના પ્રશ્નોના જવાબ આપો!",
+  "readyTimeInfo": "દરેક પ્રશ્ન માટે તમારી પાસે {{time}} સેકન્ડ છે.",
+  "readyQuestionInfo": "તમારી પાસે દરેકમાં {{time}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "gameRoundLabel": "રાઉન્ડ:",
+  "gameTimeLabel": "સમય:",
+  "gameScoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "કોઈ વસ્તુ ખરીદતા પહેલા તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "ભાવ પૂછો",
+      "options": [
+        {
+          "text": "ભાવ પૂછો",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "આંધળો વિશ્વાસ કરો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "તરત જ ખરીદો",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ખર્ચ અવગણો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ખરીદી કરતા પહેલા તમારે શું તપાસવું જોઈએ?",
+      "correctAnswer": "કિંમત તપાસો",
+      "options": [
+        {
+          "text": "હવે ખરીદો",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "તપાસ કરવાનું છોડો",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "કિંમત તપાસો",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "ભાવ ધારી",
+          "isCorrect": false,
+          "emoji": "🎲"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ખરીદી કરવાની સ્માર્ટ રીત કઈ છે?",
+      "correctAnswer": "કિંમતોની સરખામણી કરો",
+      "options": [
+        {
+          "text": "ઝડપી ચૂકવો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "કિંમતોની સરખામણી કરો",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "ફર્સ્ટ સ્ટોર ખરીદો",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "સરખામણી કરશો નહીં",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ખરીદતા પહેલા તમારે શું ચકાસવું જોઈએ?",
+      "correctAnswer": "ગુણવત્તા ચકાસો",
+      "options": [
+        {
+          "text": "ગુણવત્તા ચકાસો",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "તપાસ કર્યા વિના ખરીદો",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "માત્ર વિક્રેતા પર વિશ્વાસ કરો",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ઓનલાઈન ખરીદતા પહેલા તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "સમીક્ષાઓ વાંચો",
+      "options": [
+        {
+          "text": "Rush",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "સમીક્ષાઓ છોડો",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "ઝટપટ ખરીદો",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "સમીક્ષાઓ વાંચો",
+          "isCorrect": true,
+          "emoji": "⭐"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "સ્માર્ટ દુકાનદાર!",
+    "description": "અમેઝિંગ! તમે {{score}}/{{total}} સાચા છો! તમે હંમેશા ખરીદી પહેલાં તપાસો!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "સારી આદતો!",
+    "description": "શાબાશ! તમે {{score}}/{{total}} સ્કોર કર્યો! સ્માર્ટ શોપિંગની આદતોનો અભ્યાસ કરતા રહો!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "પ્રેક્ટિસ ચાલુ રાખો!",
+    "description": "તમે {{score}}/{{total}} સ્કોર કર્યો. ખરીદતા પહેલા હંમેશા તપાસ અને સરખામણી કરવાનું યાદ રાખો!"
+  }
+}

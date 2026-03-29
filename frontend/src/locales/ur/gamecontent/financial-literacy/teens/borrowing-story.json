@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ادھار کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "نوعمر ایک نئے فون کے لیے قرض لیتا ہے۔ ادا نہیں کر سکتے؟ نتیجہ →",
+      "options": [
+        {
+          "id": "free",
+          "text": "مفت پیسے",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "Debt",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "کچھ نہیں ہوتا",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ ₹500 ادھار لیتے ہیں لیکن واپس نہیں کر سکتے۔ نتیجہ کیا ہے؟",
+      "options": [
+        {
+          "id": "forgiven",
+          "text": "قرض معاف ہو جاتا ہے۔",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "ignored",
+          "text": "نظر انداز کیا جا سکتا ہے۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "سود اور جرمانے بڑھ جاتے ہیں۔",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ضرورت کے لیے قرض لینے سے پہلے آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "plan",
+          "text": "پہلے ادائیگی کرنے کا طریقہ بنائیں",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "پہلے قرض لیں، بعد میں سوچیں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ادائیگی کے منصوبے کو نظر انداز کریں۔",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "واپسی کی منصوبہ بندی کے بغیر قرض لینے کی طرف جاتا ہے؟",
+      "options": [
+        {
+          "id": "success",
+          "text": "مالی کامیابی",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "text": "مالی آزادی",
+          "emoji": "🕊️",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "قرض کے مسائل",
+          "emoji": "⚠️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "قرض لینے کا بہترین طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "خواہشات کے لیے اکثر ادھار لیں۔",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "ضرورت پڑنے پر ہی قرض لیں اور ادائیگی کی منصوبہ بندی کریں۔",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "قرض لیں لیکن واپس نہ کریں۔",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "قرض لینے کی کہانی مکمل!",
+    "winMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا! ذمہ دارانہ قرض لینے کے بارے میں سیکھنے کا زبردست کام!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: واپسی کے منصوبے کے بغیر قرض لینا قرض کی طرف لے جاتا ہے۔ ہمیشہ منصوبہ بنائیں کہ قرض لینے سے پہلے ادائیگی کیسے کی جائے، خاص طور پر خواہشات کے لیے!",
+    "loseEmoji": "💪",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، بغیر کسی منصوبے کے قرض لینے سے قرض کے مسائل پیدا ہوتے ہیں!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "مشورہ: قرض لینے سے پہلے ہمیشہ یہ منصوبہ بنائیں کہ کس طرح واپس کرنا ہے۔ واپسی کے منصوبے کے بغیر قرض لینا قرض اور مالی پریشانی کا باعث بنتا ہے!"
+  }
+}

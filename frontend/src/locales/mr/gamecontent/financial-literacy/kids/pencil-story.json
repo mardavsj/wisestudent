@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "पेन्सिल कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "✏️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्ही मित्राकडून पेन्सिल घ्या. आपण काय करावे?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "वापरल्यानंतर परत करा",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ठेवा",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "तो हरवतो",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला पेन्सिलची गरज आहे पण ती नाही. बरोबर काय आहे?",
+      "options": [
+        {
+          "id": "take",
+          "text": "न विचारता घ्या",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ask",
+          "text": "कर्ज घेण्यास आणि परत करण्यास सांगा",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "लेखन वगळा",
+          "emoji": "✍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्ही उधार घेतलेली पेन्सिल तोडता. प्रामाणिक म्हणजे काय?",
+      "options": [
+        {
+          "id": "replace",
+          "text": "ते एका नवीनसह बदला",
+          "emoji": "🆕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ते लपवा",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "दुसऱ्याला दोष द्या",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुमचा मित्र तुम्हाला पेन्सिलसाठी ₹5 देतो. आपण काय करावे?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "मिठाईवर खर्च करा",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "परतफेड करणे विसरून जा",
+          "emoji": "😕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "₹5 वेळेवर परत करा",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "उधार घेतलेल्या वस्तू परत करणे महत्वाचे का आहे?",
+      "options": [
+        {
+          "id": "pencils",
+          "text": "तुम्हाला आणखी पेन्सिल मिळतात",
+          "emoji": "✏️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "त्यातून विश्वास निर्माण होतो",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "popular",
+          "text": "ते तुम्हाला लोकप्रिय बनवते",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

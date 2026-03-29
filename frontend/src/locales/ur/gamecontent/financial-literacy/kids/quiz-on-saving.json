@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "بچت پر کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "بہترین بچانے والا کون ہے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "کوئی ہے جو اپنا سارا پیسہ خرچ کرتا ہے۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "کوئی جو پیسہ ضائع کرتا ہے۔",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "کوئی ہے جو اپنے پیسے کا کچھ حصہ بچاتا ہے۔",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کو اپنی پاکٹ منی کا کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "یہ سب فوری طور پر خرچ کریں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "کچھ بچائیں اور کچھ خرچ کریں۔",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "اسے چھپائیں اور اسے کبھی استعمال نہ کریں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "پیسہ بچانا کیوں ضروری ہے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "لہذا آپ بعد میں اپنی ضرورت کی چیزیں خرید سکتے ہیں۔",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "تاکہ آپ دوستوں کو دکھا سکیں",
+          "emoji": "😎",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "یہ بالکل بھی اہم نہیں ہے۔",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "منی بینک کس کے لیے استعمال ہوتا ہے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "کھلونے رکھنا",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "پیسہ بچانا",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "کھانا ذخیرہ کرنا",
+          "emoji": "🍕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "اگر آپ ہر ہفتے 10 روپے بچاتے ہیں تو 4 ہفتوں میں آپ کے پاس کتنے ہوں گے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "20 روپے",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "30 روپے",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "40 روپے",
+          "emoji": "💴",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

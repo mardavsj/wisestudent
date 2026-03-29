@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "व्यवसाय जोखीम कथा",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्ही विक्रीसाठी स्नॅक्समध्ये ₹200 ची गुंतवणूक करता. ₹300 मिळवा. चांगले?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "होय, 50% नफा",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "नाही, खूप धोकादायक",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "कदाचित, अवलंबून आहे",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "लहान व्यवसायासाठी चांगला नफा मार्जिन काय आहे?",
+      "options": [
+        {
+          "id": "low",
+          "text": "5% नफा",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "high",
+          "text": "30-50% नफा",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "loss",
+          "text": "नुकसान ठीक आहे",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "व्यवसायात जोखीम घ्यावी का?",
+      "options": [
+        {
+          "id": "all",
+          "text": "सर्व जोखीम घ्या",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "सर्व धोके टाळा",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "calculated",
+          "text": "होय, मोजलेले धोके",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "व्यवसाय सुरू करण्यापूर्वी काय महत्त्वाचे आहे?",
+      "options": [
+        {
+          "id": "jump",
+          "text": "लगेच आत जा",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "योजना आणि संशोधन",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "कायमची वाट पहा",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "₹200→₹300 चांगला व्यवसाय परिणाम आहे का?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "नाही, खूप लहान",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "कदाचित, सुसंगत असल्यास",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "होय, 50% परतावा",
+          "emoji": "🙂",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Story Complete!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! तुम्हाला व्यवसायातील जोखीम आणि नफा समजतात!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: 50% नफा (₹200→₹300) उत्कृष्ट आहे! मोजलेली जोखीम घ्या, सुरू करण्यापूर्वी योजना करा आणि निरोगी नफा मार्जिनचे लक्ष्य ठेवा!",
+    "loseEmoji": "💪",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, 50% नफा उत्कृष्ट आहे आणि नियोजनासह मोजलेले धोके महत्त्वाचे आहेत!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: ₹200 ची गुंतवणूक करून ₹300 (50% नफा) मिळवणे उत्तम आहे! व्यवसाय सुरू करण्यापूर्वी नेहमी योजना करा आणि जोखीम घ्या!"
+  }
+}

@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "সিমুলেশন: শপিং মল",
+  "subtitleComplete": "সিমুলেশন সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} দৃশ্যকল্প",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "budgetLabel": "বাজেট:",
+  "perfectScoreTitle": "মহান আর্থিক সিদ্ধান্ত!",
+  "perfectScoreMsg": "আপনি {{total}} পরিস্থিতির মধ্যে {{score}} সঠিক পেয়েছেন! আপনি স্মার্ট শপিং সিদ্ধান্ত বুঝতে!",
+  "lessonLabel": "পাঠ: চাহিদা, চাওয়া এবং সঞ্চয় ভারসাম্য বজায় রাখা স্মার্ট আর্থিক পছন্দের দিকে নিয়ে যায়!",
+  "keepLearningTitle": "শিখতে থাকুন!",
+  "lowScoreMsg": "আপনি {{total}} পরিস্থিতির মধ্যে {{score}} সঠিক পেয়েছেন। চাহিদা, চাওয়া এবং সঞ্চয় ভারসাম্য মনে রাখবেন!",
+  "tipLabel": "টিপ: সর্বদা প্রথমে প্রয়োজনগুলিকে অগ্রাধিকার দিন, তারপর কিছু চায় এবং বাকিগুলি সংরক্ষণ করুন!",
+  "tryAgain": "আবার চেষ্টা করুন",
+  "coinsLabel": "+{{count}} কয়েন",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "স্কুল শপিং ফিরে",
+      "description": "স্কুল সরবরাহের জন্য আপনার কাছে ₹150 আছে। সেরা পদ্ধতির কি?",
+      "budget": 150,
+      "options": [
+        {
+          "id": "everything",
+          "text": "আমি যা চাই সব কিনুন",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "needs-only",
+          "text": "শুধুমাত্র প্রয়োজনীয় জিনিস কিনুন",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "কিছুই কিনুন না, সব সংরক্ষণ করুন",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "র্যান্ডম আইটেম কিনুন",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "হলিডে গিফট শপিং",
+      "description": "ছুটির দিনে উপহারের জন্য আপনার কাছে ₹100 আছে। সবচেয়ে স্মার্ট পছন্দ কি?",
+      "budget": 100,
+      "options": [
+        {
+          "id": "thoughtful",
+          "text": "বাজেটের মধ্যে চিন্তাশীল উপহার",
+          "emoji": "💝",
+          "isCorrect": true
+        },
+        {
+          "id": "expensive",
+          "text": "সম্ভাব্য সবচেয়ে দামী উপহার",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "টাকা বাঁচাতে সস্তার উপহার",
+          "emoji": "🏷️",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "উপহার নেই, টাকা রাখুন",
+          "emoji": "🤐",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "জরুরি পোশাকের প্রয়োজন",
+      "description": "দুর্ঘটনার পর নতুন জামাকাপড় দরকার। আপনি কিভাবে অগ্রাধিকার করবেন?",
+      "budget": 110,
+      "options": [
+        {
+          "id": "brand-new",
+          "text": "একদম নতুন ডিজাইনার পোশাক",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "essentials-first",
+          "text": "প্রথমে প্রয়োজনীয় জিনিস, তারপর অতিরিক্ত",
+          "emoji": "👕",
+          "isCorrect": true
+        },
+        {
+          "id": "secondhand",
+          "text": "সব সেকেন্ডহ্যান্ড টাকা বাঁচাতে",
+          "emoji": "📦",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "বন্ধুদের কাছ থেকে ধার নিন",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "বিনোদন এবং সামাজিকীকরণ",
+      "description": "আপনার বিনোদনের জন্য ₹60 আছে। আপনি কিভাবে মজা এবং আর্থিক ভারসাম্য করবেন?",
+      "budget": 60,
+      "options": [
+        {
+          "id": "all-fun",
+          "text": "বিনোদনের জন্য সমস্ত ব্যয় করুন",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "no-fun",
+          "text": "সব সংরক্ষণ করুন, কোন বিনোদন",
+          "emoji": "📵",
+          "isCorrect": false
+        },
+        {
+          "id": "balanced-fun",
+          "text": "কিছু মজা, কিছু সঞ্চয়",
+          "emoji": "🎬",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-fun",
+          "text": "মজা করার জন্য টাকা ধার",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "সুষম কেনাকাটার দিন",
+      "description": "বিভিন্ন প্রয়োজনের জন্য আপনার কাছে ₹200 আছে। সেরা বরাদ্দ কি?",
+      "budget": 200,
+      "options": [
+        {
+          "id": "all-needs",
+          "text": "সব প্রয়োজন, কোন ইচ্ছা বা সঞ্চয়",
+          "emoji": "🧾",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "আমি যা পছন্দ করি তা কেনা ইম্পালস",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "all-wants",
+          "text": "সব চায়, প্রয়োজন নেই",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "smart-mix",
+          "text": "প্রয়োজনের মিশ্রণ, কিছু চায়, বিশ্রাম বাঁচান",
+          "emoji": "🛒",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

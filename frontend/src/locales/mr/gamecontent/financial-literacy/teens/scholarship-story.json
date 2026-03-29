@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "शिष्यवृत्ती कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "perfectScoreMsg": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! तुम्हाला ॲप्लिकेशन्समधील प्रामाणिकपणाचे महत्त्व समजले आहे!",
+  "lowScoreMsg": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, शिष्यवृत्तीसाठी प्रामाणिकपणा हे सर्वोत्तम धोरण आहे!",
+  "lessonLabel": "धडा: शिष्यवृत्ती आणि इतर संधींसाठी अर्ज करताना प्रामाणिकपणा आणि सचोटी महत्त्वाची आहे.",
+  "tryAgain": "पुन्हा प्रयत्न करा",
+  "tipLabel": "टीप: विश्वास निर्माण करण्यासाठी तुमच्या शिष्यवृत्ती अर्जांवर नेहमी अचूक आणि सत्य माहिती द्या.",
+  "coinsLabel": "+{{count}} नाणी",
+  "questions": [
+    {
+      "id": 1,
+      "text": "एक विद्यार्थी अतिरिक्त शिष्यवृत्ती मिळविण्यासाठी खोटे बोलतो. योग्य कृती कोणती?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "पैसे मिळवण्यासाठी खोटे बोला",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "truthful",
+          "text": "सत्यवादी व्हा",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "कदाचित, आवश्यक असल्यास",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "शिष्यवृत्ती अर्जावर खोटे बोलल्यास काय होईल?",
+      "options": [
+        {
+          "id": "get-money",
+          "text": "अधिक पैसे मिळवा",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-opportunity",
+          "text": "संधी आणि विश्वास गमावा",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "काही होत नाही",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "अर्जांमध्ये प्रामाणिकपणा का महत्त्वाचा आहे?",
+      "options": [
+        {
+          "id": "builds-trust",
+          "text": "विश्वास आणि सचोटी निर्माण करते",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "not-important",
+          "text": "महत्वाचे नाही",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "waste-time",
+          "text": "वेळ वाया घालवतो",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "अर्जात चूक झाल्यास काय करावे?",
+      "options": [
+        {
+          "id": "hide-mistake",
+          "text": "चूक लपवा",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-it",
+          "text": "ते प्रामाणिकपणे दुरुस्त करा",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "त्याकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "शिष्यवृत्तीसाठी सर्वोत्तम दृष्टीकोन कोणता आहे?",
+      "options": [
+        {
+          "id": "honest-application",
+          "text": "प्रामाणिक आणि पूर्ण अर्ज",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "exaggerate",
+          "text": "अतिशयोक्ती सिद्धी",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "copy-others",
+          "text": "इतरांकडून कॉपी करा",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

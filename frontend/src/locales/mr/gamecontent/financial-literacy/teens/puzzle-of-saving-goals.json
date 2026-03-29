@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "Puzzle: Saving Goals",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "Match Goals with Purposes ({{current}}/{{total}} matched)",
+  "goalsTitle": "Saving Goals",
+  "purposesTitle": "Saving Purposes",
+  "matchButton": "Match",
+  "selectGoalLabel": "Select a Saving Goal",
+  "selectedGoalLabel": "निवडले: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "जुळले: {{current}}/{{total}}",
+  "resultSuccessHeader": "ग्रेट जॉब!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} saving goals with their purposes!",
+  "resultSuccessLesson": "Lesson: Setting clear saving goals helps achieve financial security!",
+  "resultTryAgainHeader": "सराव करत राहा!",
+  "resultTryAgainSubheader": "You matched {{score}} out of {{total}} saving goals correctly.",
+  "resultTryAgainTip": "Tip: Think about the primary benefit of each saving goal!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "goals": [
+    {
+      "id": 1,
+      "name": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 2,
+      "name": "Emergency Fund",
+      "emoji": "🚑"
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "emoji": "🏠"
+    },
+    {
+      "id": 5,
+      "name": "Retirement",
+      "emoji": "🌅"
+    }
+  ],
+  "purposes": [
+    {
+      "id": 6,
+      "name": "Future Growth",
+      "emoji": "📈"
+    },
+    {
+      "id": 7,
+      "name": "Safety Net",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 8,
+      "name": "Mobility",
+      "emoji": "🛣️"
+    },
+    {
+      "id": 9,
+      "name": "Stability",
+      "emoji": "🏛️"
+    },
+    {
+      "id": 10,
+      "name": "Peace of Mind",
+      "emoji": "🧘"
+    }
+  ]
+}

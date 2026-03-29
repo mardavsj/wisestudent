@@ -1,1 +1,34 @@
-﻿{}
+{
+  "title": "જર્નલ ઓફ ગ્રોથ",
+  "subtitleComplete": "જર્નલ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન: તમારા પૈસા વધારવા પર વિચાર કરો!",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "📝",
+  "minLengthLabel": "ઓછામાં ઓછા {{count}} અક્ષરો લખો",
+  "placeholder": "તમારી જર્નલ એન્ટ્રી અહીં લખો...",
+  "characterCount": "{{count}}/{{required}} અક્ષરો",
+  "submitContinueButton": "સબમિટ કરો અને ચાલુ રાખો",
+  "submitFinalButton": "ફાઈનલ એન્ટ્રી સબમિટ કરો",
+  "stages": [
+    {
+      "question": "લખો: \"જો હું ₹100નું રોકાણ કરું, તો હું ઈચ્છું છું કે તે ___ માં વધે.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"પૈસાનું રોકાણ કરવાથી મને ___ લાગે છે.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"રોકાણ વિશે મેં એક વસ્તુ શીખી છે ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"હું ___ ને મદદ કરવા માટે ₹100નું રોકાણ કરીશ.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"વધતા પૈસાએ મને ___ ધીરજ વિશે શીખવ્યું.\"",
+      "minLength": 10
+    }
+  ]
+}

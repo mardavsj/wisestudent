@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "आईस्क्रीम वि शाळा पुस्तक कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "📘",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्ही शाळा पूर्ण करता आणि भूक लागते, पण तुम्हाला वर्कबुकचीही गरज असते. सर्वोत्तम निवड काय आहे?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "आतासाठी आइस्क्रीम खरेदी करा",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "वर्कबुक विकत घ्या",
+          "emoji": "📘",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "काहीही विकत घेऊ नका आणि निघून जा",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्ही आज आईस्क्रीम खा आणि उद्या पुस्तकासाठी पैसे नाहीत. तुम्ही काय शिकता?",
+      "options": [
+        {
+          "id": "lesson",
+          "text": "पैशाचे नियोजन महत्त्वाचे आहे",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "आइस्क्रीम केव्हाही उत्तम",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "पुढच्या वेळी पैसे उधार घ्या",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "एखादे पुस्तक परीक्षेत मदत करते आणि आईस्क्रीम लवकर वितळते. काय जास्त काळ टिकते?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "आईस्क्रीम आनंद",
+          "emoji": "🍨",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "पुस्तकातून मिळालेले ज्ञान",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "both",
+          "text": "दोन्ही सारखेच टिकतात",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही आज एखादे पुस्तक विकत घ्यायचे आणि दुसऱ्या दिवशी आइस्क्रीमचा आनंद घ्यायचे ठरव. तुम्ही कोणते कौशल्य दाखवता?",
+      "options": [
+        {
+          "id": "luck",
+          "text": "शुभेच्छा",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "speed",
+          "text": "जलद निर्णय घेणे",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "patience",
+          "text": "Self-control",
+          "emoji": "🧘",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "जेव्हा तुम्ही पुस्तक निवडता तेव्हा तुमचे पालक हसतात. त्यांना आनंद का वाटतो?",
+      "options": [
+        {
+          "id": "cheap",
+          "text": "पुस्तके स्वस्त आहेत",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "तुम्ही एक जबाबदार निवड करा",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "मित्रांना पुस्तके आवडतात",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "పజిల్: డిజిటల్ సాధనాలు",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "ఫంక్షన్‌లతో డిజిటల్ సాధనాలను సరిపోల్చండి ({{current}}/{{total}} సరిపోలింది)",
+  "toolsTitle": "డిజిటల్ సాధనాలు",
+  "functionsTitle": "డిజిటల్ విధులు",
+  "matchButton": "Match",
+  "selectToolLabel": "డిజిటల్ సాధనాన్ని ఎంచుకోండి",
+  "selectedToolLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}} డిజిటల్ సాధనాల్లో {{score}}ని వాటి ఫంక్షన్‌లతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: డిజిటల్ సాధనాలను అర్థం చేసుకోవడం మీకు సురక్షితమైన ఆన్‌లైన్ లావాదేవీలు చేయడంలో సహాయపడుతుంది!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}} డిజిటల్ సాధనాల్లో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి డిజిటల్ సాధనం వాస్తవానికి ఏమి చేస్తుందో ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "tools": [
+    {
+      "id": 1,
+      "name": "UPI",
+      "emoji": "📱"
+    },
+    {
+      "id": 2,
+      "name": "డెబిట్ కార్డ్",
+      "emoji": "💳"
+    },
+    {
+      "id": 3,
+      "name": "OTP",
+      "emoji": "🔐"
+    },
+    {
+      "id": 4,
+      "name": "QR కోడ్",
+      "emoji": "📷"
+    },
+    {
+      "id": 5,
+      "name": "CVV",
+      "emoji": "🔒"
+    }
+  ],
+  "functions": [
+    {
+      "id": 6,
+      "name": "తక్షణ బదిలీ",
+      "emoji": "⚡"
+    },
+    {
+      "id": 7,
+      "name": "బ్యాంకు ఖర్చు",
+      "emoji": "🏦"
+    },
+    {
+      "id": 8,
+      "name": "భద్రతా కోడ్",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 9,
+      "name": "స్కాన్ చేసి చెల్లించండి",
+      "emoji": "📲"
+    },
+    {
+      "id": 10,
+      "name": "కార్డ్ రక్షణ",
+      "emoji": "🧾"
+    }
+  ]
+}

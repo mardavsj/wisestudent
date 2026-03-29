@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ਬੈਜ: ਨੈਤਿਕ ਵਿੱਤਕਰਤਾ",
+  "subtitleComplete": "ਬੈਜ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਚੁਣੌਤੀ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "resultSuccessTitle": "ਨੈਤਿਕ ਫਾਈਨਾਂਸਰ ਬੈਜ ਕਮਾਇਆ!",
+  "resultSuccessText": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਚੁਣੌਤੀਆਂ ਸਹੀ ਮਿਲੀਆਂ ਹਨ! ਤੁਸੀਂ ਇੱਕ ਸੱਚੇ ਨੈਤਿਕ ਵਿੱਤਕਰਤਾ ਹੋ!",
+  "resultSuccessLesson": "ਸਬਕ: ਵਿੱਤੀ ਲੈਣ-ਦੇਣ ਵਿੱਚ ਇਮਾਨਦਾਰੀ ਅਤੇ ਨੈਤਿਕਤਾ ਭਰੋਸੇ ਅਤੇ ਮਜ਼ਬੂਤ ​​ਪ੍ਰਤਿਸ਼ਠਾ ਦਾ ਨਿਰਮਾਣ ਕਰਦੀ ਹੈ।",
+  "resultFailTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+  "resultFailText": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਚੁਣੌਤੀਆਂ ਸਹੀ ਮਿਲੀਆਂ ਹਨ। ਨੈਤਿਕ ਚੋਣਾਂ ਕਰਨ ਦਾ ਅਭਿਆਸ ਕਰੋ!",
+  "resultFailTip": "ਨੁਕਤਾ: ਤੁਰੰਤ ਲਾਭਾਂ ਨਾਲੋਂ ਹਮੇਸ਼ਾ ਈਮਾਨਦਾਰੀ ਦੀ ਚੋਣ ਕਰੋ, ਅਤੇ ਤੁਹਾਡੇ ਸਾਹਮਣੇ ਆਉਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਅਨੈਤਿਕ ਵਿਵਹਾਰ ਦੀ ਰਿਪੋਰਟ ਕਰੋ!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "ਨੈਤਿਕ ਦੁਬਿਧਾ 1",
+      "question": "ਤੁਹਾਨੂੰ ਵਾਧੂ ਪੈਸੇ ਮਿਲਦੇ ਹਨ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "text": "ਮਾਲਕ 'ਤੇ ਵਾਪਸ ਜਾਓ",
+          "emoji": "🤗",
+          "isCorrect": true
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਰੱਖੋ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਖਰਚ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "text": "ਦੋਸਤਾਂ ਨਾਲ ਸਾਂਝਾ ਕਰੋ",
+          "emoji": "👥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ਨੈਤਿਕ ਦੁਬਿਧਾ 2",
+      "question": "ਦੋਸਤ ਤੁਹਾਨੂੰ ਵਿੱਤੀ ਲਾਭ ਲਈ ਝੂਠ ਬੋਲਣ ਲਈ ਕਹਿੰਦਾ ਹੈ। ਤੁਹਾਡਾ ਜਵਾਬ?",
+      "options": [
+        {
+          "text": "ਝੂਠ ਬੋਲਣ ਲਈ ਸਹਿਮਤ ਹੋਵੋ",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "ਝੂਠ ਬੋਲਣ ਤੋਂ ਇਨਕਾਰ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "text": "ਸ਼ਾਇਦ ਮਦਦ ਕਰੋ",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "ਸ਼ੇਅਰ ਮੰਗੋ",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ਨੈਤਿਕ ਦੁਬਿਧਾ 3",
+      "question": "ਤੁਸੀਂ ਕਿਸੇ ਨੂੰ ਵਿੱਤੀ ਲੈਣ-ਦੇਣ ਵਿੱਚ ਧੋਖਾਧੜੀ ਕਰਦੇ ਦੇਖਦੇ ਹੋ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "text": "ਇਸ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "ਉਹਨਾਂ ਨਾਲ ਜੁੜੋ",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "ਇਸਦੀ ਰਿਪੋਰਟ ਕਰੋ",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "text": "ਚੁੱਪਚਾਪ ਦੇਖੋ",
+          "emoji": "👀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ਨੈਤਿਕ ਦੁਬਿਧਾ 4",
+      "question": "ਤੁਹਾਨੂੰ ਕੁਝ ਅਨੈਤਿਕ ਕਰਨ ਲਈ ਪੈਸੇ ਦੀ ਪੇਸ਼ਕਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਤੁਹਾਡੀ ਪਸੰਦ?",
+      "options": [
+        {
+          "text": "ਇਸ ਨੂੰ ਸਵੀਕਾਰ ਕਰੋ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "text": "ਹੋਰ ਗੱਲਬਾਤ ਕਰੋ",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "text": "ਇਸ ਬਾਰੇ ਸੋਚੋ",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "ਪੇਸ਼ਕਸ਼ ਨੂੰ ਇਨਕਾਰ",
+          "emoji": "🛑",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ਨੈਤਿਕ ਦੁਬਿਧਾ 5",
+      "question": "ਤੁਸੀਂ ਬੇਈਮਾਨ ਹੋ ਕੇ ਪੈਸਾ ਕਮਾ ਸਕਦੇ ਹੋ। ਤੁਹਾਡਾ ਕੀ ਫੈਸਲਾ ਹੈ?",
+      "options": [
+        {
+          "text": "ਇਮਾਨਦਾਰੀ ਦੀ ਚੋਣ ਕਰੋ",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "text": "ਪੈਸੇ ਦੀ ਚੋਣ ਕਰੋ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "ਦੋਨੋ ਕਰੋ",
+          "emoji": "🎭",
+          "isCorrect": false
+        },
+        {
+          "text": "ਫੈਸਲੇ ਤੋਂ ਬਚੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,159 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ నీడ్ vs వాంట్",
+  "subtitlePlaying": "రౌండ్ {{current}}/{{total}}: అవసరాలకు వ్యతిరేకంగా మీ జ్ఞానాన్ని పరీక్షించుకోండి!",
+  "subtitleReady": "అవసరాలకు వ్యతిరేకంగా మీ జ్ఞానాన్ని పరీక్షించుకోండి!",
+  "readyEmoji": "📋",
+  "readyTitle": "మీ అవసరాలు vs నాలెడ్జ్ కావాలా పరీక్షించడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "అవసరాలు మరియు కోరికల మధ్య వ్యత్యాసం గురించి ప్రశ్నలకు సమాధానం ఇవ్వండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "రౌండ్:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "గ్రేట్ జాబ్!",
+  "resultGreatDescription": "మీరు {{total}} ప్రశ్నలలో {{score}}ని పొందారు!",
+  "resultGreatLesson": "పాఠం: మనుగడకు మరియు నేర్చుకోవడానికి అవసరాలు చాలా అవసరం, అయితే కోరికలు మనం కలిగి ఉండాలనుకునేవి కానీ అవసరం లేనివి!",
+  "resultKeepEmoji": "😔",
+  "resultKeepTitle": "నేర్చుకుంటూ ఉండండి!",
+  "resultKeepDescription": "మీరు {{total}} ప్రశ్నలలో {{score}}ని సరిగ్గా పొందారు. గుర్తుంచుకోండి, అవసరాలు ఆహారం, బట్టలు మరియు పాఠశాల సామాగ్రి వంటి ముఖ్యమైన వస్తువులు!",
+  "resultKeepTip": "చిట్కా: అవసరాలు అంటే ఆహారం, బట్టలు మరియు పాఠశాల సామాగ్రి వంటి మీరు జీవించి, నేర్చుకోవాల్సిన విషయాలు.",
+  "tryAgainButton": "మళ్లీ ప్రయత్నించండి",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ఏది అవసరం?",
+      "correctAnswer": "పాఠశాల కోసం బూట్లు",
+      "options": [
+        {
+          "text": "పాఠశాల కోసం బూట్లు",
+          "isCorrect": true,
+          "emoji": "👟"
+        },
+        {
+          "text": "10వ బొమ్మ కారు",
+          "isCorrect": false,
+          "emoji": "🚗"
+        },
+        {
+          "text": "వీడియో గేమ్",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ఫ్యాన్సీ సన్ గ్లాసెస్",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ఆరోగ్యంగా ఉండాల్సిన అవసరం ఏమిటి?",
+      "correctAnswer": "ఆరోగ్యకరమైన ఆహారం",
+      "options": [
+        {
+          "text": "అదనపు మిఠాయి",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ఆరోగ్యకరమైన ఆహారం",
+          "isCorrect": true,
+          "emoji": "🥗"
+        },
+        {
+          "text": "ఐస్ క్రీమ్",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "నేర్చుకోవడానికి ఏ అంశం అవసరం?",
+      "correctAnswer": "పాఠశాల పుస్తకాలు",
+      "options": [
+        {
+          "text": "వీడియో గేమ్",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "యాక్షన్ ఫిగర్",
+          "isCorrect": false,
+          "emoji": "🤖"
+        },
+        {
+          "text": "పజిల్ గేమ్",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "పాఠశాల పుస్తకాలు",
+          "isCorrect": true,
+          "emoji": "📚"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "చల్లని వాతావరణంలో మీకు ఏమి కావాలి?",
+      "correctAnswer": "శీతాకాలపు జాకెట్",
+      "options": [
+        {
+          "text": "ఫ్యాన్సీ సన్ గ్లాసెస్",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        },
+        {
+          "text": "స్విమ్మింగ్ పూల్",
+          "isCorrect": false,
+          "emoji": "🏊"
+        },
+        {
+          "text": "శీతాకాలపు జాకెట్",
+          "isCorrect": true,
+          "emoji": "🧥"
+        },
+        {
+          "text": "బీచ్ బాల్",
+          "isCorrect": false,
+          "emoji": "🏐"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "పాఠశాలకు వెళ్లడానికి ఏమి అవసరం?",
+      "correctAnswer": "బస్ ఛార్జీ",
+      "options": [
+        {
+          "text": "బస్ ఛార్జీ",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "కొత్త హెడ్‌ఫోన్‌లు",
+          "isCorrect": false,
+          "emoji": "🎧"
+        },
+        {
+          "text": "మ్యూజిక్ ప్లేయర్",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "స్మార్ట్ వాచ్",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

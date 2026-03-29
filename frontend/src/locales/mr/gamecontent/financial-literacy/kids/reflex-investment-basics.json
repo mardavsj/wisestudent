@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स गुंतवणूक मूलभूत",
+  "subtitlePlaying": "{{total}} पैकी {{current}} प्रश्न: आपल्या गुंतवणुकीच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "subtitleReady": "तुमच्या गुंतवणुकीच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "readyEmoji": "💰",
+  "readyTitle": "गुंतवणुकीच्या मूलभूत गोष्टी शिकण्यास तयार आहात?",
+  "readyDescription": "प्रत्येक प्रश्नासाठी योग्य गुंतवणूक कृती निवडा.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "प्रश्न:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ते वाढण्यासाठी तुम्ही पैशाचे काय करावे?",
+      "correctAnswer": "जतन करा आणि वाढवा",
+      "options": [
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ते लपवा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "त्याबद्दल विसरून जा",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "जतन करा आणि वाढवा",
+          "isCorrect": true,
+          "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "तुम्ही पैसा हुशारीने कसा हाताळावा?",
+      "correctAnswer": "हुशारीने गुंतवणूक करा",
+      "options": [
+        {
+          "text": "हुशारीने गुंतवणूक करा",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "वेगाने खर्च करा",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "वाया घालवा",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "तो हरवतो",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "संपत्ती निर्माण करण्याचा सर्वोत्तम मार्ग कोणता आहे?",
+      "correctAnswer": "संपत्ती वाढवा",
+      "options": [
+        {
+          "text": "पैसे गमावले",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "संपत्ती वाढवा",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "सर्व काही खर्च करा",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "बचतीकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "😑"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "तुमचे पैसे तुमच्यासाठी कसे काम करू शकतात?",
+      "correctAnswer": "व्याज मिळवा",
+      "options": [
+        {
+          "text": "रोख वाया घालवणे",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "लगेच खर्च करा",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "व्याज मिळवा",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "त्याबद्दल विसरून जा",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "तुमचे भविष्य सुरक्षित करण्यात काय मदत होते?",
+      "correctAnswer": "बचत तयार करा",
+      "options": [
+        {
+          "text": "बचत तयार करा",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "आता खर्च करा",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "पैसे वाया घालवतात",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "भविष्याकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    }
+  ]
+}

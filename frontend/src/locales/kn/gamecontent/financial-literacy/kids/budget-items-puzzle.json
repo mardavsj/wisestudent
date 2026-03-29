@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "ಒಗಟು: ಬಜೆಟ್ ಐಟಂಗಳು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ವರ್ಗಗಳೊಂದಿಗೆ ಐಟಂಗಳನ್ನು ಹೊಂದಿಸಿ ({{matched}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "selectItem": "ಐಟಂ ಆಯ್ಕೆಮಾಡಿ",
+  "matchButton": "Match",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ:",
+  "resultGreatEmoji": "🏆",
+  "resultGreatTitle": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultGreatDescription": "ವಿಭಾಗಗಳೊಂದಿಗೆ {{total}} ಐಟಂಗಳಲ್ಲಿ {{score}} ಅನ್ನು ನೀವು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ!",
+  "coinsLabel": "Coins",
+  "resultLesson": "ಪಾಠ: ಅಗತ್ಯಗಳ ವಿರುದ್ಧ ಅರ್ಥ ಮಾಡಿಕೊಳ್ಳುವುದು ಬಜೆಟ್‌ನಲ್ಲಿ ಸಹಾಯ ಮಾಡುತ್ತದೆ!",
+  "resultKeepEmoji": "🧩",
+  "resultKeepTitle": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultKeepDescription": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTip": "ಸಲಹೆ: ಬದುಕುಳಿಯಲು ಅಗತ್ಯಗಳು ಅತ್ಯಗತ್ಯ, ಬಯಸುವುದು ಸಂತೋಷವಾಗಿದೆ!",
+  "items": [
+    {
+      "id": 1,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 2,
+      "name": "ಜನ್ಮದಿನದ ಉಡುಗೊರೆ",
+      "emoji": "🎁"
+    },
+    {
+      "id": 3,
+      "name": "ಶಾಲಾ ಸಾಮಗ್ರಿಗಳು",
+      "emoji": "✏️"
+    },
+    {
+      "id": 4,
+      "name": "ವೀಡಿಯೊ ಗೇಮ್ ಕನ್ಸೋಲ್",
+      "emoji": "🎮"
+    },
+    {
+      "id": 5,
+      "name": "ಹೆಚ್ಚುವರಿ ತಿಂಡಿಗಳು",
+      "emoji": "🍿"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Essential",
+      "emoji": "✅",
+      "description": "ದೈನಂದಿನ ಜೀವನಕ್ಕೆ-ಹೊಂದಿರಬೇಕು"
+    },
+    {
+      "id": 7,
+      "name": "Non-Essential",
+      "emoji": "➖",
+      "description": "ಐಚ್ಛಿಕ, ಅಗತ್ಯವಿಲ್ಲ"
+    },
+    {
+      "id": 8,
+      "name": "ಶಾಲೆಗೆ ಅವಶ್ಯಕ",
+      "emoji": "🎒",
+      "description": "ಕಲಿಕೆಗೆ ಅಗತ್ಯವಿದೆ"
+    },
+    {
+      "id": 9,
+      "name": "Luxury",
+      "emoji": "💎",
+      "description": "ಹೊಂದಲು ಉತ್ತಮ, ದುಬಾರಿ"
+    },
+    {
+      "id": 10,
+      "name": "ಐಚ್ಛಿಕ ಚಿಕಿತ್ಸೆ",
+      "emoji": "🍭",
+      "description": "ಸಣ್ಣ ಮೋಜಿನ ಖರ್ಚು"
+    }
+  ]
+}

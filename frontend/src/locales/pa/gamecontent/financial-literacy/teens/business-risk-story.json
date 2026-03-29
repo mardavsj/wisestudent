@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਕਾਰੋਬਾਰੀ ਜੋਖਮ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ਵੇਚਣ ਲਈ ਸਨੈਕਸ ਵਿੱਚ ₹200 ਦਾ ਨਿਵੇਸ਼ ਕਰਦੇ ਹੋ। ₹300 ਕਮਾਓ। ਚੰਗਾ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ਹਾਂ, 50% ਲਾਭ",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ਨਹੀਂ, ਬਹੁਤ ਜੋਖਮ ਭਰਿਆ",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਨਿਰਭਰ ਕਰਦਾ ਹੈ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਇੱਕ ਛੋਟੇ ਕਾਰੋਬਾਰ ਲਈ ਇੱਕ ਚੰਗਾ ਲਾਭ ਮਾਰਜਿਨ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "low",
+          "text": "5% ਲਾਭ",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "high",
+          "text": "30-50% ਲਾਭ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "loss",
+          "text": "ਨੁਕਸਾਨ ਠੀਕ ਹੈ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਕੀ ਤੁਹਾਨੂੰ ਕਾਰੋਬਾਰ ਵਿੱਚ ਜੋਖਮ ਲੈਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "all",
+          "text": "ਸਾਰੇ ਜੋਖਮ ਲਓ",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "ਸਾਰੇ ਜੋਖਮਾਂ ਤੋਂ ਬਚੋ",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "calculated",
+          "text": "ਹਾਂ, ਗਣਨਾ ਕੀਤੇ ਜੋਖਮ",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਕੀ ਜ਼ਰੂਰੀ ਹੈ?",
+      "options": [
+        {
+          "id": "jump",
+          "text": "ਤੁਰੰਤ ਅੰਦਰ ਛਾਲ ਮਾਰੋ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ਯੋਜਨਾ ਅਤੇ ਖੋਜ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "ਸਦਾ ਲਈ ਉਡੀਕ ਕਰੋ",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਕੀ ₹200→₹300 ਇੱਕ ਚੰਗਾ ਕਾਰੋਬਾਰੀ ਨਤੀਜਾ ਹੈ?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "ਨਹੀਂ, ਬਹੁਤ ਛੋਟਾ",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਜੇਕਰ ਇਕਸਾਰ ਹੋਵੇ",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "ਹਾਂ, 50% ਵਾਪਸੀ",
+          "emoji": "🙂",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਕਹਾਣੀ ਪੂਰੀ!",
+    "winMessage": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਤੁਸੀਂ ਵਪਾਰਕ ਜੋਖਮਾਂ ਅਤੇ ਮੁਨਾਫ਼ਿਆਂ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਪਾਠ: ਇੱਕ 50% ਲਾਭ (₹200→₹300) ਸ਼ਾਨਦਾਰ ਹੈ! ਗਣਨਾ ਕੀਤੇ ਜੋਖਮਾਂ ਨੂੰ ਲਓ, ਸ਼ੁਰੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਯੋਜਨਾ ਬਣਾਓ, ਅਤੇ ਸਿਹਤਮੰਦ ਲਾਭ ਹਾਸ਼ੀਏ ਲਈ ਟੀਚਾ ਰੱਖੋ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਇੱਕ 50% ਲਾਭ ਸ਼ਾਨਦਾਰ ਹੈ, ਅਤੇ ਯੋਜਨਾਬੰਦੀ ਦੇ ਨਾਲ ਗਣਨਾ ਕੀਤੇ ਜੋਖਮ ਮੁੱਖ ਹਨ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੁਝਾਅ: ₹200 ਦਾ ਨਿਵੇਸ਼ ਕਰਨਾ ਅਤੇ ₹300 (50% ਲਾਭ) ਕਮਾਉਣਾ ਬਹੁਤ ਵਧੀਆ ਹੈ! ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਹਮੇਸ਼ਾਂ ਯੋਜਨਾ ਬਣਾਓ ਅਤੇ ਗਣਨਾ ਕੀਤੇ ਜੋਖਮਾਂ ਨੂੰ ਲਓ!"
+  }
+}

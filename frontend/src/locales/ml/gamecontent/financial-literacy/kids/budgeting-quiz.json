@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ബജറ്റിംഗിനെക്കുറിച്ചുള്ള ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "iconKey": "calculator",
+      "text": "ഒരു ബജറ്റ് എന്താണ്?",
+      "options": [
+        {
+          "id": "list",
+          "text": "ഒരു ഷോപ്പിംഗ് ലിസ്റ്റ്",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ഒരു ചെലവ് പദ്ധതി",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "സൗജന്യ പണം",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "iconKey": "target",
+      "text": "എന്തിനാണ് ഒരു ബജറ്റ് ഉണ്ടാക്കുന്നത്?",
+      "options": [
+        {
+          "id": "track",
+          "text": "ചെലവുകൾ ട്രാക്ക് ചെയ്ത് ലാഭിക്കുക",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "എല്ലാ പണവും വേഗത്തിൽ ചെലവഴിക്കുക",
+          "emoji": "💥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fun",
+          "text": "വിനോദത്തിന് വേണ്ടി മാത്രം",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "iconKey": "trendingUp",
+      "text": "100 രൂപ സമ്പാദിക്കുക, 120 രൂപ ചെലവഴിക്കുക. എന്താണ് സംഭവിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "save",
+          "text": "നിങ്ങൾ 20 രൂപ ലാഭിക്കുന്നു",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "prize",
+          "text": "നിങ്ങൾ ഒരു സമ്മാനം നേടൂ",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "നിങ്ങൾ കടത്തിലേക്ക് പോകുന്നു",
+          "emoji": "⚠️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "iconKey": "checkCircle",
+      "text": "നല്ല ബജറ്റ് ശീലം ഏതാണ്?",
+      "options": [
+        {
+          "id": "guess",
+          "text": "ക്രമരഹിതമായി ഊഹിച്ച് ചെലവഴിക്കുക",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ചെലവുകളും പ്ലാനും ലിസ്റ്റ് ചെയ്യുക",
+          "emoji": "📝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ചെലവഴിക്കുന്നത് അവഗണിക്കുക",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "iconKey": "piggyBank",
+      "text": "നിങ്ങൾ ബജറ്റ് പിന്തുടരുകയാണെങ്കിൽ, നിങ്ങൾക്ക്...",
+      "options": [
+        {
+          "id": "goals",
+          "text": "സമ്മർദ്ദമില്ലാതെ ലക്ഷ്യങ്ങൾ നേടുക",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "unnecessary",
+          "text": "ആവശ്യമില്ലാത്ത സാധനങ്ങൾ വാങ്ങുക",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "പണത്തിൻ്റെ ട്രാക്ക് നഷ്ടപ്പെടുക",
+          "emoji": "🌀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

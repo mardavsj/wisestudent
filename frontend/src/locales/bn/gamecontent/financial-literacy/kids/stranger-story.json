@@ -1,1 +1,145 @@
-﻿{}
+﻿{
+    "title": "অপরিচিত ব্যক্তির গল্প",
+    "subtitleComplete": "গল্প সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "অপরিচিত ব্যক্তি তোমার ঠিকানার বিনিময়ে খেলনা দেওয়ার প্রস্তাব দিচ্ছে। কী করবে?",
+            "options": [
+                {
+                    "id": "refuse",
+                    "text": "অস্বীকার করো",
+                    "emoji": "❌",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "accept",
+                    "text": "গ্রহণ করো",
+                    "emoji": "🎁",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "delay",
+                    "text": "সিদ্ধান্ত পিছিয়ে দাও",
+                    "emoji": "⏰",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "কেউ তোমার ব্যাংকের তথ্য চাইছে। এখন কী?",
+            "options": [
+                {
+                    "id": "give",
+                    "text": "তথ্য দাও",
+                    "emoji": "💳",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "partial",
+                    "text": "আংশিক তথ্য দাও",
+                    "emoji": "🤷",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "no",
+                    "text": "না বলো",
+                    "emoji": "🚫",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "অপরিচিত ব্যক্তি একটি ডিল অফার করছে। কোনটি বেশি নিরাপদ?",
+            "options": [
+                {
+                    "id": "walk",
+                    "text": "চলে যাও",
+                    "emoji": "🚶",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "engage",
+                    "text": "কথা বলো",
+                    "emoji": "💬",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "wait",
+                    "text": "দেখতে থাকো",
+                    "emoji": "⏳",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "সন্দেহজনক অফার দেখলে। কী করবে?",
+            "options": [
+                {
+                    "id": "tell",
+                    "text": "প্রাপ্তবয়স্ককে জানাও",
+                    "emoji": "👨‍👩‍👧",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "quiet",
+                    "text": "চুপ থাকো",
+                    "emoji": "🤫",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "ignore",
+                    "text": "উপেক্ষা করো",
+                    "emoji": "🙈",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "অদ্ভুত বার্তা পেলে। সেরা পদক্ষেপ কী?",
+            "options": [
+                {
+                    "id": "reply",
+                    "text": "উত্তর দাও",
+                    "emoji": "💬",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "ignore",
+                    "text": "উপেক্ষা করো",
+                    "emoji": "🚫",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "forward",
+                    "text": "বন্ধুদের ফরোয়ার্ড করো",
+                    "emoji": "📤",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

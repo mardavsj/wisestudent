@@ -1,1 +1,150 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স টাকার পরিকল্পনা",
+    "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: টাকা পরিকল্পনার দক্ষতা পরীক্ষা করো!",
+    "subtitleReady": "টাকা পরিকল্পনার দক্ষতা পরীক্ষা করো!",
+    "readyEmoji": "⚡",
+    "readyTitle": "টাকা পরিকল্পনার দক্ষতা পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "বুদ্ধিমান টাকা পরিকল্পনা ও বাজেটিং নিয়ে প্রশ্নের উত্তর দাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "রাউন্ড:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "দোকানে নতুন পেন্সিল বক্স দেখলে। কেনার আগে কী ভাববে?",
+            "correctAnswer": "সত্যিই দরকার কিনা দেখো",
+            "options": [
+                {
+                    "text": "সুন্দর দেখায় বলে কিনবো",
+                    "isCorrect": false,
+                    "emoji": "✨"
+                },
+                {
+                    "text": "সত্যিই দরকার কিনা দেখো",
+                    "isCorrect": true,
+                    "emoji": "🧐"
+                },
+                {
+                    "text": "দুটো কিনবো",
+                    "isCorrect": false,
+                    "emoji": "📦"
+                },
+                {
+                    "text": "দাম উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "প্রতি সপ্তাহে পকেটমানি পাও। ভালো অভ্যাস কী?",
+            "correctAnswer": "কিছু টাকা আলাদা রাখো",
+            "options": [
+                {
+                    "text": "কিছু টাকা আলাদা রাখো",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "একই দিনে খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "হিসাব হারাও",
+                    "isCorrect": false,
+                    "emoji": "🌀"
+                },
+                {
+                    "text": "সব দিয়ে দাও",
+                    "isCorrect": false,
+                    "emoji": "🎁"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "পরের মাসে দামি কিছু কিনতে চাও। কী সবচেয়ে বেশি সাহায্য করবে?",
+            "correctAnswer": "খরচ পরিকল্পনা করো",
+            "options": [
+                {
+                    "text": "প্রতিদিন ছোট্ট জিনিস কিনো",
+                    "isCorrect": false,
+                    "emoji": "🧁"
+                },
+                {
+                    "text": "অন্যকে দিয়ে কেনাও",
+                    "isCorrect": false,
+                    "emoji": "🙏"
+                },
+                {
+                    "text": "সঞ্চয়ের কথা ভুলো",
+                    "isCorrect": false,
+                    "emoji": "🙃"
+                },
+                {
+                    "text": "খরচ পরিকল্পনা করো",
+                    "isCorrect": true,
+                    "emoji": "📝"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "কোথায় টাকা খরচ করছ লিখে রাখলে কী সাহায্য হয়?",
+            "correctAnswer": "খরচ বোঝা যায়",
+            "options": [
+                {
+                    "text": "বেশি টাকা খরচ হয়",
+                    "isCorrect": false,
+                    "emoji": "💥"
+                },
+                {
+                    "text": "ভুল লুকানো যায়",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "খরচ বোঝা যায়",
+                    "isCorrect": true,
+                    "emoji": "📊"
+                },
+                {
+                    "text": "দ্রুত কেনা যায়",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "প্রতিদিন টাকার ব্যাপারে সাবধান থাকতে কী করবে?",
+            "correctAnswer": "খরচ করার আগে ভাবো",
+            "options": [
+                {
+                    "text": "না ভেবে খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "খরচ করার আগে ভাবো",
+                    "isCorrect": true,
+                    "emoji": "🧠"
+                },
+                {
+                    "text": "বন্ধুদের খরচ নকল করো",
+                    "isCorrect": false,
+                    "emoji": "👥"
+                },
+                {
+                    "text": "দ্রুত টাকা ব্যবহার করো",
+                    "isCorrect": false,
+                    "emoji": "🏃"
+                }
+            ]
+        }
+    ]
+}

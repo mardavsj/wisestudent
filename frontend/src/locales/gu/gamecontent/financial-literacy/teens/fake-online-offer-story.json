@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "નકલી ઓનલાઈન ઓફર સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "જો તમે ₹100 ચૂકવો તો વેબસાઇટ મફત ફોન ઓફર કરે છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "ઇનકાર કરો, તે એક કૌભાંડ છે",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "pay",
+          "text": "₹100 ચૂકવો",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "કદાચ, પહેલા તપાસો",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "નકલી ઓનલાઈન ઓફરની નિશાની શું છે?",
+      "options": [
+        {
+          "id": "normal",
+          "text": "સામાન્ય કિંમતો",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "too-good",
+          "text": "સાચું હોવું ખૂબ સારું છે",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "expensive",
+          "text": "ખૂબ ખર્ચાળ",
+          "emoji": "💎",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારે શંકાસ્પદ ઑફર્સ સાથે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "try",
+          "text": "કોઈપણ રીતે પ્રયાસ કરો",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "મિત્રો સાથે શેર કરો",
+          "emoji": "📢",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "અવગણો અને જાણ કરો",
+          "emoji": "🚫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "શા માટે 'મફત' ઓફર વારંવાર કૌભાંડો થાય છે?",
+      "options": [
+        {
+          "id": "trick",
+          "text": "તેઓ તમને પૈસા ચૂકવવા માટે છેતરે છે",
+          "emoji": "🎭",
+          "isCorrect": true
+        },
+        {
+          "id": "real",
+          "text": "તેઓ હંમેશા વાસ્તવિક હોય છે",
+          "emoji": "✅",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "ક્યારેક વાસ્તવિક",
+          "emoji": "🤷",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ઓનલાઈન ઓફર્સ સાથે સૌથી સુરક્ષિત કાર્યવાહી કઈ છે?",
+      "options": [
+        {
+          "id": "pay-fast",
+          "text": "ઝડપથી ચૂકવણી કરો",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "verify",
+          "text": "ચૂકવણી કરતા પહેલા ચકાસો",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-all",
+          "text": "બધી ઑફર્સને અવગણો",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "વાર્તા પૂર્ણ!",
+    "winMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે જાણો છો કે નકલી ઑફર્સ કેવી રીતે શોધવી!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: નકલી ઓનલાઈન ઑફરો ઘણીવાર સાચી હોવા માટે ખૂબ સારી લાગે છે. ચૂકવણી કરતા પહેલા હંમેશા ચકાસો અને શંકાસ્પદ ઑફર્સનો ઇનકાર કરો!",
+    "loseEmoji": "💪",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, જો કોઈ ઑફર સાચી નથી લાગતી, તો તે કદાચ એક કૌભાંડ છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટિપ: જો કોઈ વેબસાઇટ માત્ર ₹100માં મફત ફોન ઑફર કરે છે, તો તે સંભવતઃ કૌભાંડ છે. હંમેશા ઑફર્સ ચકાસો અને શંકાસ્પદને નકારો!"
+  }
+}

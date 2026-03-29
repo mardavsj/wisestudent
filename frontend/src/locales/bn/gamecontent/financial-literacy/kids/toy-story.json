@@ -1,1 +1,145 @@
-﻿{}
+﻿{
+    "title": "খেলনার গল্প",
+    "subtitleComplete": "গল্প সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "stageEmoji": "🧸",
+    "questions": [
+        {
+            "id": 1,
+            "text": "বন্ধু খেলনা ধার দিয়েছে। কী করবে?",
+            "options": [
+                {
+                    "id": "safe",
+                    "text": "নিরাপদ রাখো",
+                    "emoji": "🛡️",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "break",
+                    "text": "ভেঙে দাও",
+                    "emoji": "💔",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "ignore",
+                    "text": "উপেক্ষা করো",
+                    "emoji": "😴",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "খেলনা ধার করেছ। এখন কী?",
+            "options": [
+                {
+                    "id": "keep",
+                    "text": "রেখে দাও",
+                    "emoji": "🙈",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "lose",
+                    "text": "হারিয়ে ফেলো",
+                    "emoji": "😞",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "return",
+                    "text": "খেলনা ফেরত দাও",
+                    "emoji": "🔁",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "বন্ধুর খেলনা তোমার কাছে আছে। সেরা কাজ কী?",
+            "options": [
+                {
+                    "id": "care",
+                    "text": "যত্নে রাখো",
+                    "emoji": "💝",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "lose",
+                    "text": "হারিয়ে ফেলো",
+                    "emoji": "😞",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "break",
+                    "text": "ভেঙে ফেলো",
+                    "emoji": "💔",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "মালিক খেলনা ফেরত চাইছে। কী করবে?",
+            "options": [
+                {
+                    "id": "hide",
+                    "text": "লুকাও",
+                    "emoji": "🫥",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "give",
+                    "text": "ফেরত দাও",
+                    "emoji": "🤝",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "delay",
+                    "text": "ফেরত দেওয়া পিছিয়ে দাও",
+                    "emoji": "⏰",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "খেলনা ধার করলে তোমার দায়িত্ব কী?",
+            "options": [
+                {
+                    "id": "careless",
+                    "text": "অসাবধান থাকো",
+                    "emoji": "😓",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "forget",
+                    "text": "ভুলে যাও",
+                    "emoji": "🤷",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "responsible",
+                    "text": "দায়িত্বশীল থাকো",
+                    "emoji": "🔒",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        }
+    ]
+}

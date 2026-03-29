@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ચર્ચા: બચત વિ ખર્ચ",
+  "subtitleComplete": "ચર્ચા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "પૈસા બચાવવા અથવા તે બધા ખર્ચવા વધુ સારું છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "બધા ખર્ચો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "પૈસા બચાવો",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "કચરો",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "શું કિશોરોએ હવે તેમના પૈસા બચાવવા કે આનંદ માણવા પર ધ્યાન કેન્દ્રિત કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "બચત પર ધ્યાન આપો",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "હવે આનંદ કરો",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "તેના વિશે વિચારશો નહીં",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "જ્યારે તમને બોનસ અથવા વધારાના પૈસા મળે, ત્યારે તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "તે બધા ખર્ચો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "કચરો",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "તેમાંથી મોટા ભાગની બચત કરો",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "શું મોંઘી બ્રાન્ડેડ વસ્તુઓ કે પોસાય તેવી ગુણવત્તાવાળી વસ્તુઓ ખરીદવી વધુ સારી છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "બ્રાન્ડેડ વસ્તુઓ ખરીદો",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "બ્રાન્ડ પર ગુણવત્તા પસંદ કરો",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "cheap",
+          "text": "સૌથી સસ્તું ખરીદો",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમે જે વસ્તુઓ ખરીદી શકતા નથી તે ખરીદવા માટે તમારે ક્રેડિટ કાર્ડનો ઉપયોગ કરવો જોઈએ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "હા, ક્રેડિટનો ઉપયોગ કરો",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "પૈસા ઉછીના",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ના, દેવું ટાળો",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

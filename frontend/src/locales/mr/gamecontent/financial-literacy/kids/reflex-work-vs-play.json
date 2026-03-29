@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स वर्क वि प्ले",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: तुमच्या कामाची चाचणी करा विरुद्ध प्ले रिफ्लेक्सेस!",
+  "subtitleReady": "तुमच्या कामाची चाचणी करा विरुद्ध प्ले रिफ्लेक्सेस!",
+  "readyEmoji": "💼",
+  "readyTitle": "काम विरुद्ध प्ले चाचणीसाठी तयार आहात?",
+  "readyDescription": "काम आणि खेळ यांच्यातील योग्य कृती निवडा.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "तुम्हाला पैसे कमविण्यास काय मदत करते?",
+      "correctAnswer": "Work",
+      "options": [
+        {
+          "text": "वाया वेळ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "दिवसभर खेळा",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Work",
+          "isCorrect": true,
+          "emoji": "💼"
+        },
+        {
+          "text": "काहीही करू नका",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "शिकण्यासाठी आणि वाढण्यासाठी तुम्ही काय केले पाहिजे?",
+      "correctAnswer": "Study",
+      "options": [
+        {
+          "text": "Study",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "दिवसभर खेळा",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "शिकणे वगळा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "शिक्षणाकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुम्ही तुमच्या कमाईचे काय करावे?",
+      "correctAnswer": "कमाई वाचवा",
+      "options": [
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "कमाई वाचवा",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "पैशाचा अपव्यय",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "तो गमावा",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "घरी मदत करण्यासाठी आपण काय करावे?",
+      "correctAnswer": "कामे करा",
+      "options": [
+        {
+          "text": "कामे करा",
+          "isCorrect": true,
+          "emoji": "🧹"
+        },
+        {
+          "text": "कामे वगळा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "काम टाळा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "आळशी व्हा",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "तुम्हाला उत्पादक होण्यास काय मदत करते?",
+      "correctAnswer": "कामाची योजना करा",
+      "options": [
+        {
+          "text": "निष्क्रिय व्हा",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "वाया वेळ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "काहीही करू नका",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "कामाची योजना करा",
+          "isCorrect": true,
+          "emoji": "📋"
+        }
+      ]
+    }
+  ]
+}

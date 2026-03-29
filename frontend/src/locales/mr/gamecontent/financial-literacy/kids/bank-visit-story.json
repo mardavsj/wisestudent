@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "बँक भेट कथा",
+  "subtitleComplete": "पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "पालक तुम्हाला बँकेत घेऊन जातात. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "पहा आणि शांतपणे शिका",
+          "emoji": "👀",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "आजूबाजूला धावा आणि खेळा",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "touch",
+          "text": "प्रत्येक गोष्टीला स्पर्श करा",
+          "emoji": "👆",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बँक कर्मचारी तुम्हाला अभिवादन करतात. प्रतिसाद कसा द्यायचा?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "त्यांच्याकडे पूर्णपणे दुर्लक्ष करा",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "polite",
+          "text": "सभ्य आणि आदरणीय व्हा",
+          "emoji": "🙏",
+          "isCorrect": true
+        },
+        {
+          "id": "rude",
+          "text": "त्यांच्याशी असभ्य वागा",
+          "emoji": "😠",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "पालक एटीएम वापरतात. आपण काय करावे?",
+      "options": [
+        {
+          "id": "privacy",
+          "text": "मागे उभे राहा आणि गोपनीयता द्या",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "watch",
+          "text": "पिन बारकाईने पहा",
+          "emoji": "👁️",
+          "isCorrect": false
+        },
+        {
+          "id": "buttons",
+          "text": "यादृच्छिक बटणे दाबा",
+          "emoji": "🔘",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "सुरक्षा रक्षक बॅग तपासत आहे. तुमची प्रतिक्रिया?",
+      "options": [
+        {
+          "id": "angry",
+          "text": "गार्डवर रागावणे",
+          "emoji": "😠",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "धनादेश नाकारणे",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "understand",
+          "text": "हे सुरक्षिततेसाठी आहे हे समजून घ्या",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "बँकेत लांबच लांब रांगा. सर्वोत्तम काय आहे?",
+      "options": [
+        {
+          "id": "push",
+          "text": "प्रथम जाण्यासाठी दाबा",
+          "emoji": "👊",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "संयमाने रांगेत थांबा",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "complain",
+          "text": "मोठ्याने तक्रार करा",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

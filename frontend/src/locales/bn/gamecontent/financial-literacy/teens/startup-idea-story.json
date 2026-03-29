@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "স্টার্টআপ আইডিয়া গল্প",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "perfectScoreTitle": "গল্প সম্পূর্ণ!",
+  "perfectScoreMsg": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন! বুঝলেন উদ্যোক্তা!",
+  "coinsLabel": "+{{count}} কয়েন",
+  "lessonLabel": "পাঠ: উদ্যোক্তা একটি ব্যবসা তৈরি এবং পরিচালনা করা। যে কেউ, কিশোর সহ, ভাল ধারণা এবং প্রচেষ্টার সাথে উদ্যোক্তা হতে পারে!",
+  "keepLearningTitle": "শিখতে থাকুন!",
+  "lowScoreMsg": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন। মনে রাখবেন, উদ্যোক্তা একটি নতুন ব্যবসা তৈরি করছে, এবং যে কেউ এটি করতে পারে!",
+  "tryAgain": "আবার চেষ্টা করুন",
+  "tipLabel": "পরামর্শ: একজন উদ্যোক্তা হলেন এমন একজন যিনি একটি নতুন ব্যবসা তৈরি করেন এবং পরিচালনা করেন। অনলাইনে হস্তনির্মিত কারুশিল্প বিক্রি হচ্ছে উদ্যোক্তা!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "কিশোর অনলাইনে হস্তনির্মিত কারুশিল্প বিক্রি করে। এটাই কি উদ্যোক্তা?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "হ্যাঁ, এটি উদ্যোক্তা",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "না, এটা শুধু বিক্রি",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "হয়তো, নির্ভর করে",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "কি কাউকে উদ্যোক্তা করে?",
+      "options": [
+        {
+          "id": "spends",
+          "text": "শুধু টাকা খরচ করে",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "creates",
+          "text": "নতুন ব্যবসা তৈরি করে",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "কিছুই করে না",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "কিশোররা কি উদ্যোক্তা হতে পারে?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "না, শুধুমাত্র প্রাপ্তবয়স্কদের",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "হয়তো, অনুমতি নিয়ে",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "হ্যাঁ, বয়স কোন ব্যাপার না",
+          "emoji": "👍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "একটি ব্যবসা শুরু করার জন্য কি প্রয়োজন?",
+      "options": [
+        {
+          "id": "money",
+          "text": "প্রচুর টাকা মাত্র",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "idea",
+          "text": "ভাল ধারণা এবং প্রচেষ্টা",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "শুধু ভাগ্য",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "অনলাইন বিক্রি কি উদ্যোক্তার একটি ফর্ম?",
+      "options": [
+        {
+          "id": "no3",
+          "text": "না, আসল ব্যবসা নয়",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "yes3",
+          "text": "হ্যাঁ, এটা একটা ব্যবসা",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe3",
+          "text": "হয়তো, লাভজনক হলে",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

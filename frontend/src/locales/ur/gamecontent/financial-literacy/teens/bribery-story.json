@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "رشوت کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "اہلکار درخواست پر کارروائی کے لیے رشوت مانگتا ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "pay",
+          "text": "رشوت دیں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "Refuse",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "Maybe",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "کلرک تیز سروس کے لیے ₹500 کا مطالبہ کرتا ہے۔ آپ کا عمل؟",
+      "options": [
+        {
+          "id": "refuse2",
+          "text": "Refuse",
+          "emoji": "🛑",
+          "isCorrect": true
+        },
+        {
+          "id": "pay2",
+          "text": "500 روپے ادا کریں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "negotiate",
+          "text": "Negotiate",
+          "emoji": "💬",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "افسر منظوری کے لیے رشوت کا اشارہ کرتا ہے۔ آپ کی پسند کیا ہے؟",
+      "options": [
+        {
+          "id": "pay3",
+          "text": "رشوت دیں۔",
+          "emoji": "📜",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "Wait",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse3",
+          "text": "Refuse",
+          "emoji": "🙅",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ایجنٹ کاغذی کارروائی کو صاف کرنے کے لیے اضافی فیس مانگتا ہے۔ کیا آپ ادائیگی کرتے ہیں؟",
+      "options": [
+        {
+          "id": "refuse4",
+          "text": "Refuse",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "pay4",
+          "text": "فیس ادا کریں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "بعد میں شکایت کریں۔",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "سرکاری لائسنس کے لیے 1000 روپے مانگتا ہے۔ آپ کی چال کیا ہے؟",
+      "options": [
+        {
+          "id": "pay5",
+          "text": "1000 روپے ادا کریں۔",
+          "emoji": "📝",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse5",
+          "text": "Refuse",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "id": "partial",
+          "text": "جزوی ادائیگی کریں۔",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

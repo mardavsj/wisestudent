@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ಒಗಟು: ನಿಜವಾದ ಆದ್ಯತೆಗಳು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ವರ್ಗಗಳೊಂದಿಗೆ ಐಟಂಗಳನ್ನು ಹೊಂದಿಸಿ ({{current}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchButton": "Match",
+  "selectItemLabel": "ಐಟಂ ಆಯ್ಕೆಮಾಡಿ",
+  "selectedItemLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultSuccessSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಅವುಗಳ ವರ್ಗಗಳೊಂದಿಗೆ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿದ್ದೀರಿ!",
+  "resultSuccessLesson": "ಪಾಠ: ಹಣಕಾಸಿನ ಆದ್ಯತೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ಸ್ಮಾರ್ಟ್ ನಿರ್ಧಾರಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ!",
+  "resultTryAgainHeader": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultTryAgainSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTryAgainTip": "ಸಲಹೆ: ಪ್ರತಿಯೊಂದು ಐಟಂ ಅತ್ಯಗತ್ಯವೇ ಅಥವಾ ವಿವೇಚನೆಯೇ ಎಂಬುದನ್ನು ಯೋಚಿಸಿ!",
+  "coinsEarned": "+{{coins}} ನಾಣ್ಯಗಳು",
+  "items": [
+    {
+      "id": 1,
+      "name": "ಆರೋಗ್ಯಕರ ಉಪಹಾರ",
+      "emoji": "🍳"
+    },
+    {
+      "id": 2,
+      "name": "ಸ್ಟೇಷನರಿ ಕಿಟ್",
+      "emoji": "✏️"
+    },
+    {
+      "id": 3,
+      "name": "ಶಾಲೆಯ ನಂತರ ತರಗತಿಗಳು",
+      "emoji": "📚"
+    },
+    {
+      "id": 4,
+      "name": "ವಿಟಮಿನ್ ಪೂರಕಗಳು",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "ಬಸ್ ಪಾಸ್",
+      "emoji": "🚌"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "ದೈನಂದಿನ ಅಗತ್ಯ",
+      "emoji": "😅"
+    },
+    {
+      "id": 7,
+      "name": "ಐಚ್ಛಿಕ ಚಟುವಟಿಕೆ",
+      "emoji": "🎯"
+    },
+    {
+      "id": 8,
+      "name": "ಸ್ಮಾರ್ಟ್ ಖರ್ಚು",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "ಆರೋಗ್ಯ ಆದ್ಯತೆ",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "ಸಾರಿಗೆ ವೆಚ್ಚ",
+      "emoji": "🚌"
+    }
+  ]
+}

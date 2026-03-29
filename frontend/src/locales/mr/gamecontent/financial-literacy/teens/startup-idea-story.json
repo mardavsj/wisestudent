@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "स्टार्टअप आयडिया स्टोरी",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "perfectScoreTitle": "कथा पूर्ण!",
+  "perfectScoreMsg": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! तुम्हाला उद्योजकता समजते!",
+  "coinsLabel": "+{{count}} नाणी",
+  "lessonLabel": "धडा: उद्योजकता म्हणजे व्यवसाय तयार करणे आणि चालवणे. किशोरवयीन मुलांसह कोणीही, चांगल्या कल्पना आणि प्रयत्नांनी उद्योजक होऊ शकते!",
+  "keepLearningTitle": "शिकत राहा!",
+  "lowScoreMsg": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, उद्योजकता एक नवीन व्यवसाय तयार करत आहे आणि कोणीही करू शकतो!",
+  "tryAgain": "पुन्हा प्रयत्न करा",
+  "tipLabel": "टीप: उद्योजक हा असा असतो जो नवीन व्यवसाय तयार करतो आणि चालवतो. हस्तनिर्मित हस्तकला ऑनलाइन विकणे म्हणजे उद्योजकता!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "किशोर हस्तनिर्मित हस्तकला ऑनलाइन विकतो. ही उद्योजकता आहे का?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "होय, ती उद्योजकता आहे",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "नाही, ते फक्त विक्री आहे",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "कदाचित, अवलंबून आहे",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "एखाद्याला उद्योजक काय बनवते?",
+      "options": [
+        {
+          "id": "spends",
+          "text": "फक्त पैसे खर्च करतो",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "creates",
+          "text": "नवीन व्यवसाय निर्माण करतो",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "काहीच करत नाही",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "किशोरवयीन मुले उद्योजक होऊ शकतात का?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "नाही, फक्त प्रौढ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "कदाचित, परवानगीने",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "होय, वय काही फरक पडत नाही",
+          "emoji": "👍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "व्यवसाय सुरू करण्यासाठी काय आवश्यक आहे?",
+      "options": [
+        {
+          "id": "money",
+          "text": "भरपूर पैसे फक्त",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "idea",
+          "text": "चांगली कल्पना आणि प्रयत्न",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "फक्त नशीब",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ऑनलाइन विक्री हा उद्योजकतेचा एक प्रकार आहे का?",
+      "options": [
+        {
+          "id": "no3",
+          "text": "नाही, वास्तविक व्यवसाय नाही",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "yes3",
+          "text": "होय, तो एक व्यवसाय आहे",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe3",
+          "text": "कदाचित, फायदेशीर असल्यास",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

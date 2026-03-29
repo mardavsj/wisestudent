@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "اضطراری چھوٹے کاروبار",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: اپنے چھوٹے کاروباری اضطراب کی جانچ کریں!",
+  "subtitleReady": "اپنے چھوٹے کاروباری اضطراب کی جانچ کریں!",
+  "readyEmoji": "🏪",
+  "readyTitle": "چھوٹے کاروباری مہارتوں کو جانچنے کے لیے تیار ہیں؟",
+  "readyDescription": "ایک چھوٹا کاروبار شروع کرنے اور چلانے کے بارے میں سوالات کے جوابات دیں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ایک چھوٹا کاروبار شروع کرنے کا ایک اچھا طریقہ کیا ہے؟",
+      "correctAnswer": "پکانا اور بیچنا",
+      "options": [
+        {
+          "text": "خریدیں اور ضائع کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "سب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "پکانا اور بیچنا",
+          "isCorrect": true,
+          "emoji": "🍰"
+        },
+        {
+          "text": "کچھ نہ کرو",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ اپنی صلاحیتوں سے پیسہ کیسے کما سکتے ہیں؟",
+      "correctAnswer": "دستکاری بنائیں",
+      "options": [
+        {
+          "text": "دستکاری بنائیں",
+          "isCorrect": true,
+          "emoji": "🎨"
+        },
+        {
+          "text": "سب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "وقت ضائع کرنا",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "ہنر کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "آپ کو دوسروں سے پیسہ کمانے میں کیا مدد ملتی ہے؟",
+      "correctAnswer": "پیشکش سروس",
+      "options": [
+        {
+          "text": "کچھ نہ کرو",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ہمیشہ کے لیے انتظار کریں۔",
+          "isCorrect": false,
+          "emoji": "⏳"
+        },
+        {
+          "text": "کام سے گریز کریں۔",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "پیشکش سروس",
+          "isCorrect": true,
+          "emoji": "🛠️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "آپ کو کاروباری منافع کے ساتھ کیا کرنا چاہئے؟",
+      "correctAnswer": "منافع بچائیں۔",
+      "options": [
+        {
+          "text": "منافع بچائیں۔",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "منافع خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "پیسہ ضائع کرنا",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "اسے کھو دو",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آپ کے کاروبار کو کامیاب کرنے میں کیا مدد کرتا ہے؟",
+      "correctAnswer": "کاروبار بڑھائیں۔",
+      "options": [
+        {
+          "text": "پیسہ ضائع کرنا",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "کاروبار بڑھائیں۔",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ہار ماننا",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "چھوٹے رہو",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    }
+  ]
+}

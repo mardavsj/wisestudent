@@ -1,1 +1,33 @@
-﻿{}
+{
+  "title": "नीतिशास्त्र जर्नल",
+  "subtitleComplete": "जर्नल पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "minLengthPrompt": "किमान {{minLength}} वर्ण लिहा",
+  "textareaPlaceholder": "तुमची जर्नल एंट्री इथे लिहा...",
+  "charactersLabel": "characters",
+  "submitFinalButton": "अंतिम एंट्री सबमिट करा",
+  "submitContinueButton": "सबमिट करा आणि सुरू ठेवा",
+  "stages": [
+    {
+      "question": "लिहा: \"एकदा मी प्रामाणिकपणे पैसे वापरले होते ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"मी ___ द्वारे एखाद्याला पैशाची मदत केली.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"एक वेळ मला पैसे वाचवण्याबद्दल चांगले वाटले ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"मी ___ द्वारे चुकीच्या पद्धतीने पैसे खर्च करणे टाळले.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"पैशाशी प्रामाणिक राहिल्याने मला ___ वाटते.\"",
+      "minLength": 10
+    }
+  ]
+}

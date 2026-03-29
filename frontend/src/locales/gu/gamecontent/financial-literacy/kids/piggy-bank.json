@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "પિગી બેંક સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "🐷",
+  "questions": [
+    {
+      "id": 1,
+      "text": "પિગી બેંકમાં કોઈ વ્યાજ મળતું નથી. બેંક એકાઉન્ટ કરે છે. જે વધુ સારું છે?",
+      "options": [
+        {
+          "id": "bank",
+          "text": "બેંક ખાતું",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "પિગી બેંક",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "mattress",
+          "text": "ગાદલું હેઠળ",
+          "emoji": "🛏️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારી પાસે ₹50 છે. તેને વધવા માટે તમારે ક્યાં સાચવવું જોઈએ?",
+      "options": [
+        {
+          "id": "jar",
+          "text": "ઘરે જાર",
+          "emoji": "🏺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "બેંક બચત ખાતું",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "હવે ખર્ચો",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "બેંક 5% વ્યાજ આપે છે. પિગી બેંક 0% ઓફર કરે છે. સમજદારીપૂર્વક પસંદ કરો.",
+      "options": [
+        {
+          "id": "bank",
+          "text": "વ્યાજ માટે બેંક",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "આનંદ માટે પિગી બેંક",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "તે દૂર આપો",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે બેંકમાં ₹100 બચાવો. તે વધીને ₹105 થાય છે. શા માટે?",
+      "options": [
+        {
+          "id": "magic",
+          "text": "પિગી બેંક જાદુ",
+          "emoji": "🪄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "added",
+          "text": "તમે વધુ પૈસા ઉમેર્યા છે",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "બેંક વ્યાજ ચૂકવે છે",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "શા માટે બેંક ઘણીવાર પિગી બેંક કરતા વધુ સારી હોય છે?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "તે સલામત છે અને પૈસા વધારી શકે છે",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "cool",
+          "text": "તે માત્ર ઠંડી લાગે છે",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "carry",
+          "text": "તેને વહન કરવું સરળ છે",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

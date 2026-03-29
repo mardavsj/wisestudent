@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ સ્માર્ટ પિક",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારા સ્માર્ટ પિક જ્ઞાનનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા સ્માર્ટ પિક જ્ઞાનનું પરીક્ષણ કરો!",
+  "readyEmoji": "🧠",
+  "readyTitle": "તમારી સ્માર્ટ પિક સ્કીલ્સ ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "સ્માર્ટ પસંદગીઓ અને નિર્ણય લેવા વિશે પ્રશ્નોના જવાબ આપો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "સ્વસ્થ રહેવા માટે સ્માર્ટ પિક શું છે?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍎"
+        },
+        {
+          "text": "વધારાની આઈસ્ક્રીમ",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "વિડિઓ ગેમ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ફેન્સી ટોય",
+          "isCorrect": false,
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમારે શીખવા માટે શું પસંદ કરવું જોઈએ?",
+      "correctAnswer": "શાળા પુરવઠો",
+      "options": [
+        {
+          "text": "નવી રમત",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "શાળા પુરવઠો",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "કૂલ ગેજેટ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "રોજિંદા જીવન માટે શું જરૂરી છે?",
+      "correctAnswer": "Clothes",
+      "options": [
+        {
+          "text": "ફેન્સી ટોય",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Clothes",
+          "isCorrect": true,
+          "emoji": "👕"
+        },
+        {
+          "text": "આઈસ્ક્રીમ",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ક્રિયા આકૃતિ",
+          "isCorrect": false,
+          "emoji": "🤖"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "તમને જ્ઞાન મેળવવામાં શું મદદ કરે છે?",
+      "correctAnswer": "Books",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "વિડિઓ ગેમ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "પઝલ ગેમ",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "Books",
+          "isCorrect": true,
+          "emoji": "📖"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "તમારે શાળામાં જવા માટે શું કરવાની જરૂર છે?",
+      "correctAnswer": "બસ ટિકિટ",
+      "options": [
+        {
+          "text": "કૂલ ગેજેટ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        },
+        {
+          "text": "સંગીત પ્લેયર",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "બસ ટિકિટ",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "સ્માર્ટ વોચ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ਸਕੂਲ ਮੇਲੇ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਮੇਲਾ ਜਲਦੀ ਸ਼ੁਰੂ ਹੁੰਦਾ ਹੈ ਅਤੇ ਤੁਸੀਂ ਉਤਸ਼ਾਹਿਤ ਮਹਿਸੂਸ ਕਰਦੇ ਹੋ. ਤੁਸੀਂ ਪਹਿਲਾਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "run",
+          "text": "ਪਹਿਲੇ ਸਟਾਲ ਵੱਲ ਦੌੜੋ",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shout",
+          "text": "ਜੋਸ਼ ਨਾਲ ਚੀਕਣਾ",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "look",
+          "text": "ਮੇਲੇ ਦੇ ਆਲੇ-ਦੁਆਲੇ ਦੇਖੋ",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਪ੍ਰਸਿੱਧ ਗੇਮ ਲਈ ਇੱਕ ਲੰਬੀ ਲਾਈਨ ਦੇਖਦੇ ਹੋ। ਸਹੀ ਚੋਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "push",
+          "text": "ਸਾਹਮਣੇ ਵੱਲ ਧੱਕੋ",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ਆਪਣੀ ਵਾਰੀ ਦੀ ਉਡੀਕ ਕਰੋ",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "leave",
+          "text": "ਗੁੱਸੇ ਨਾਲ ਛੱਡੋ",
+          "emoji": "😤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਇੱਕ ਦੁਕਾਨਦਾਰ ਤੁਹਾਨੂੰ ਗਲਤੀ ਨਾਲ ਵਾਧੂ ਬਦਲਾਵ ਦੇ ਦਿੰਦਾ ਹੈ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ਵਾਧੂ ਪੈਸੇ ਵਾਪਸ ਕਰੋ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "ਵਾਧੂ ਪੈਸੇ ਰੱਖੋ",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਚੁੱਪਚਾਪ ਚਲੇ ਜਾਓ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਬਹੁਤ ਸਾਰੀਆਂ ਸਵਾਰੀਆਂ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ ਪਰ ਥਕਾਵਟ ਮਹਿਸੂਸ ਕਰਦੇ ਹੋ। ਇੱਕ ਸਮਾਰਟ ਐਕਸ਼ਨ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "force",
+          "text": "ਆਪਣੇ ਆਪ ਨੂੰ ਸਵਾਰੀ ਕਰਨ ਲਈ ਮਜਬੂਰ ਕਰੋ",
+          "emoji": "😣",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "ਸਭ ਕੁਝ ਛੱਡ ਦਿਓ",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rest",
+          "text": "ਥੋੜਾ ਆਰਾਮ ਕਰੋ",
+          "emoji": "🪑",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਮੇਲਾ ਸਮਾਪਤ ਹੋ ਰਿਹਾ ਹੈ ਅਤੇ ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਟਿਕਟ ਬਾਕੀ ਹੈ। ਤੁਸੀਂ ਕੀ ਚੁਣਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "favorite",
+          "text": "ਆਪਣੀ ਮਨਪਸੰਦ ਗਤੀਵਿਧੀ ਚੁਣੋ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "random",
+          "text": "ਇਸ ਨੂੰ ਬੇਤਰਤੀਬੇ ਵਰਤੋ",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ਇਸ ਨੂੰ ਦੂਰ ਸੁੱਟ ਦਿਓ",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

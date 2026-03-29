@@ -1,1 +1,33 @@
-﻿{}
+{
+  "title": "ਜਰਨਲ ਆਫ਼ ਅਰਨਿੰਗ",
+  "subtitleComplete": "ਜਰਨਲ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ: ਪੈਸੇ ਕਮਾਉਣ ਦੇ ਤਰੀਕਿਆਂ ਬਾਰੇ ਸੋਚੋ!",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "minLengthLabel": "ਘੱਟੋ-ਘੱਟ {{min}} ਅੱਖਰ ਲਿਖੋ",
+  "placeholder": "ਆਪਣੀ ਜਰਨਲ ਐਂਟਰੀ ਇੱਥੇ ਲਿਖੋ...",
+  "charCountLabel": "{{current}}/{{min}} ਅੱਖਰ",
+  "submitFinalButton": "ਫਾਈਨਲ ਐਂਟਰੀ ਜਮ੍ਹਾਂ ਕਰੋ",
+  "submitContinueButton": "ਸਪੁਰਦ ਕਰੋ ਅਤੇ ਜਾਰੀ ਰੱਖੋ",
+  "stages": [
+    {
+      "question": "ਲਿਖੋ: \"ਮੈਂ ਪੈਸੇ ਕਮਾਉਣ ਦਾ ਇੱਕ ਤਰੀਕਾ ਹੈ ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਪੈਸੇ ਕਮਾਉਣ ਨਾਲ ਮੈਨੂੰ ਮਹਿਸੂਸ ਹੁੰਦਾ ਹੈ ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਮੈਂ ___ ਦੁਆਰਾ ਪੈਸਾ ਕਮਾਇਆ ਅਤੇ ___ ਸਿੱਖਿਆ।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਪੈਸੇ ਕਮਾਉਣ ਬਾਰੇ ਇੱਕ ਚੰਗੀ ਗੱਲ ਹੈ ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਪੈਸੇ ਦੀ ਕਮਾਈ ਨੇ ਮੈਨੂੰ ___ ਜ਼ਿੰਮੇਵਾਰੀ ਬਾਰੇ ਸਿਖਾਇਆ।\"",
+      "minLength": 10
+    }
+  ]
+}

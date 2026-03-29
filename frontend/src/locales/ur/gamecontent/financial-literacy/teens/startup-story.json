@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "آغاز کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "perfectScoreTitle": "کہانی مکمل!",
+  "perfectScoreMsg": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ ابتدائی سرمایہ کاری کو سمجھتے ہیں!",
+  "coinsLabel": "+{{count}} سکے",
+  "lessonLabel": "سبق: جب اچھی طرح سے تحقیق اور منصوبہ بندی کی جائے تو اسٹارٹ اپ سرمایہ کاری ہوشیار ہوسکتی ہے، لیکن ہمیشہ متنوع اور خطرات کو سمجھیں!",
+  "keepLearningTitle": "سیکھتے رہیں!",
+  "lowScoreMsg": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، ابتدائی سرمایہ کاری کے لیے تحقیق، منصوبہ بندی اور تنوع کی ضرورت ہوتی ہے!",
+  "tryAgain": "دوبارہ کوشش کریں۔",
+  "tipLabel": "مشورہ: جب آپ تحقیق کرتے ہیں، منصوبہ بندی کرتے ہیں اور متنوع بناتے ہیں تو ابتدائی سرمایہ کاری ہوشیار ہو سکتی ہے۔ ₹100→₹150 جیسا 50% منافع اچھا ہے!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "دوست لیمونیڈ اسٹینڈ میں ₹100 کی سرمایہ کاری کرتا ہے۔ ₹150 کماتا ہے۔ ہوشیار؟",
+      "options": [
+        {
+          "id": "yes",
+          "text": "جی ہاں، اچھی واپسی",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "نہیں، بہت خطرناک",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "شاید، منحصر ہے",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ایک اسٹارٹ اپ سرمایہ کاری کو کیا چیز بناتی ہے؟",
+      "options": [
+        {
+          "id": "research",
+          "text": "تحقیق اور منصوبہ بندی",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "خالص قسمت",
+          "emoji": "🍀",
+          "isCorrect": false
+        },
+        {
+          "id": "quick",
+          "text": "فوری فیصلہ",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "کیا آپ کو اپنے تمام پیسے ایک اسٹارٹ اپ میں لگانا چاہیے؟",
+      "options": [
+        {
+          "id": "all",
+          "text": "ہاں، سب اندر جاؤ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "نہیں، تنوع پیدا کریں۔",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "شروع کرنے سے بچیں",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "اسٹارٹ اپ انویسٹمنٹ پر اچھی واپسی کیا ہے؟",
+      "options": [
+        {
+          "id": "high",
+          "text": "اعلی واپسی کی صلاحیت",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "guaranteed",
+          "text": "واپسی کی ضمانت",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "low",
+          "text": "صرف کم واپسی۔",
+          "emoji": "📉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "اسٹارٹ اپ میں سرمایہ کاری کب اچھا خیال ہے؟",
+      "options": [
+        {
+          "id": "never",
+          "text": "Never",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "text": "جب اچھی طرح سے منصوبہ بندی کی جائے۔",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "Always",
+          "emoji": "🙂",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

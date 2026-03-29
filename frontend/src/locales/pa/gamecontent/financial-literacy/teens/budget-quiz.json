@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਬਜਟ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ₹1000 ਕਮਾਉਂਦੇ ਹੋ, ਭੋਜਨ 'ਤੇ ₹400 ਖਰਚ ਕਰਦੇ ਹੋ। ਭੋਜਨ 'ਤੇ ਕਿੰਨਾ % ਖਰਚ ਕੀਤਾ ਜਾਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "60",
+          "text": "60%",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "40%",
+          "emoji": "🍽️",
+          "isCorrect": true
+        },
+        {
+          "id": "35",
+          "text": "35%",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ₹600 ਤੋਂ ₹300 ਦੀ ਬਚਤ ਕਰਦੇ ਹੋ। ਕੀ% ਬਚਾਇਆ ਗਿਆ ਹੈ?",
+      "options": [
+        {
+          "id": "50",
+          "text": "50%",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "25",
+          "text": "25%",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "40%",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਸੀਂ ਟ੍ਰਾਂਸਪੋਰਟ 'ਤੇ ₹500 ਵਿੱਚੋਂ ₹150 ਖਰਚ ਕਰਦੇ ਹੋ। ਕੀ% ਖਰਚ ਕੀਤਾ ਗਿਆ ਹੈ?",
+      "options": [
+        {
+          "id": "20",
+          "text": "20%",
+          "emoji": "🚗",
+          "isCorrect": false
+        },
+        {
+          "id": "35",
+          "text": "35%",
+          "emoji": "🚲",
+          "isCorrect": false
+        },
+        {
+          "id": "30",
+          "text": "30%",
+          "emoji": "🚍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ₹800 ਵਿੱਚੋਂ ₹200 ਦੀ ਬਚਤ ਕਰਦੇ ਹੋ। ਕੀ% ਬਚਾਇਆ ਗਿਆ ਹੈ?",
+      "options": [
+        {
+          "id": "30",
+          "text": "30%",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "25",
+          "text": "25%",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "50",
+          "text": "50%",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਸੀਂ ਕੱਪੜਿਆਂ 'ਤੇ ₹600 ਵਿੱਚੋਂ ₹240 ਖਰਚ ਕਰਦੇ ਹੋ। ਕੀ% ਖਰਚ ਕੀਤਾ ਗਿਆ ਹੈ?",
+      "options": [
+        {
+          "id": "35",
+          "text": "35%",
+          "emoji": "👔",
+          "isCorrect": false
+        },
+        {
+          "id": "45",
+          "text": "45%",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "40%",
+          "emoji": "👗",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+    "winMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ! ਤੁਸੀਂ ਬਜਟ ਪ੍ਰਤੀਸ਼ਤ ਨੂੰ ਚੰਗੀ ਤਰ੍ਹਾਂ ਸਮਝਦੇ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਪਾਠ: ਪ੍ਰਤੀਸ਼ਤ ਨੂੰ ਸਮਝਣਾ ਤੁਹਾਨੂੰ ਬਿਹਤਰ ਬਜਟ ਬਣਾਉਣ ਅਤੇ ਤੁਹਾਡੇ ਖਰਚਿਆਂ ਨੂੰ ਟਰੈਕ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+    "loseEmoji": "😔",
+    "loseTitle": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਪ੍ਰਤੀਸ਼ਤ ਤੁਹਾਨੂੰ ਇਹ ਸਮਝਣ ਵਿੱਚ ਮਦਦ ਕਰਦੇ ਹਨ ਕਿ ਤੁਸੀਂ ਕਿੰਨਾ ਖਰਚ ਜਾਂ ਬਚਤ ਕਰ ਰਹੇ ਹੋ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੰਕੇਤ: ਪ੍ਰਤੀਸ਼ਤ ਦੀ ਗਣਨਾ ਕਰਨ ਲਈ, ਹਿੱਸੇ ਨੂੰ ਪੂਰੇ ਨਾਲ ਵੰਡੋ ਅਤੇ 100 ਨਾਲ ਗੁਣਾ ਕਰੋ।"
+  }
+}

@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "پہیلی: سمارٹ خرچ",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "تصورات کو معنی کے ساتھ ملاپ کریں ({{current}}/{{total}} مماثل)",
+  "conceptsTitle": "اخراجات کے تصورات",
+  "meaningsTitle": "مالی معانی",
+  "matchButton": "Match",
+  "selectConceptLabel": "خرچ کرنے کا تصور منتخب کریں۔",
+  "selectedConceptLabel": "منتخب کردہ: {{name}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "matchedLabel": "مماثل: {{current}}/{{total}}",
+  "resultSuccessHeader": "بہت اچھا کام!",
+  "resultSuccessSubheader": "آپ نے {{total}} میں سے {{score}} کو ان کے معانی کے ساتھ صحیح طریقے سے ملایا!",
+  "resultSuccessLesson": "سبق: اخراجات کے تصورات کو سمجھنا بہتر مالی فیصلوں کا باعث بنتا ہے!",
+  "resultTryAgainHeader": "مشق کرتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} میں سے {{score}} کو خرچ کرنے کے تصورات کو درست طریقے سے ملایا۔",
+  "resultTryAgainTip": "ٹپ: اس بارے میں سوچیں کہ ہر خرچ کا تصور دراصل کیا نمائندگی کرتا ہے!",
+  "coinsEarned": "+{{coins}} سکے",
+  "concepts": [
+    {
+      "id": 1,
+      "name": "Budget",
+      "emoji": "📋"
+    },
+    {
+      "id": 2,
+      "name": "Waste",
+      "emoji": "🗑️"
+    },
+    {
+      "id": 3,
+      "name": "Needs",
+      "emoji": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Wants",
+      "emoji": "🎁"
+    },
+    {
+      "id": 5,
+      "name": "ایمرجنسی فنڈ",
+      "emoji": "🛡️"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "فنانشل پلاننگ",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "وسائل کا غلط استعمال",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "ضروری ترجیحات",
+      "emoji": "⭐"
+    },
+    {
+      "id": 9,
+      "name": "صوابدیدی اخراجات",
+      "emoji": "💎"
+    },
+    {
+      "id": 10,
+      "name": "رسک پروٹیکشن",
+      "emoji": "🔒"
+    }
+  ]
+}

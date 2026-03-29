@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "పెట్ సిట్టింగ్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "🐶",
+  "questions": [
+    {
+      "id": 1,
+      "text": "పెంపుడు జంతువుకు ఆహారం ఇవ్వడం మరియు నడవడం కోసం మీరు రోజువారీ దినచర్య చేస్తారు. మీరు ఏ నైపుణ్యాన్ని అభ్యసిస్తున్నారు?",
+      "options": [
+        {
+          "id": "playing",
+          "text": "జంతువులతో మాత్రమే ఆడుతున్నారు",
+          "emoji": "🎾",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "అదృష్టాన్ని బట్టి",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "planning",
+          "text": "ప్రణాళిక మరియు సంస్థ",
+          "emoji": "📋",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు కాలక్రమేణా పెంపుడు జంతువులను కూర్చోబెట్టడం ద్వారా డబ్బు సంపాదిస్తారు. తెలివైన తదుపరి దశ ఏమిటి?",
+      "options": [
+        {
+          "id": "track",
+          "text": "మీరు ఎంత సంపాదిస్తున్నారో ట్రాక్ చేయండి",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "వెంటనే ఖర్చు పెట్టండి",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "దాని గురించి మరచిపోండి",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "పెంపుడు జంతువు మీ సంరక్షణలో ఉన్నప్పుడు అనారోగ్యంగా ఉన్నట్లు అనిపిస్తుంది. మీరు ముందుగా ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "wait",
+          "text": "వేచి ఉండండి మరియు ఇది మెరుగుపడుతుందని ఆశిస్తున్నాము",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "inform",
+          "text": "యజమానికి త్వరగా తెలియజేయండి",
+          "emoji": "📞",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "సంకేతాలను విస్మరించండి",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు పెట్ సిట్టింగ్‌ని విజయవంతంగా పూర్తి చేసారు. మీరు మళ్లీ విశ్వసించటానికి ఏది సహాయపడుతుంది?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "ఎక్కువ డబ్బు అడుగుతున్నారు",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rush",
+          "text": "పనుల్లో హడావుడి చేస్తారు",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "reliable",
+          "text": "విశ్వసనీయంగా మరియు జాగ్రత్తగా ఉండటం",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "పెట్ సిట్టింగ్ మీకు డబ్బు సంపాదించడం అంటే కూడా నేర్పుతుందా?",
+      "options": [
+        {
+          "id": "care",
+          "text": "ఇతరులను బాధ్యతాయుతంగా చూసుకోవడం",
+          "emoji": "❤️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ఆనందించండి మాత్రమే",
+          "emoji": "😄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spending",
+          "text": "ఎక్కువ డబ్బు ఖర్చు చేస్తున్నారు",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

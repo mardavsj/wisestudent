@@ -1,1 +1,108 @@
-﻿{}
+{
+  "title": "پوسٹر: اسمارٹ شاپنگ",
+  "subtitleComplete": "سرگرمی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stages": [
+    {
+      "question": "سمارٹ شاپنگ کے لیے بہترین پوسٹر کا انتخاب کریں:",
+      "choices": [
+        {
+          "text": "آپ جو چاہیں خرچ کریں۔",
+          "design": "💸",
+          "correct": false
+        },
+        {
+          "text": "خرچ کرنے سے پہلے سوچیں۔",
+          "design": "🧠",
+          "correct": true
+        },
+        {
+          "text": "اب سب کچھ خریدیں۔",
+          "design": "🛒",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "کون سا پوسٹر ہوشیار خریداری کی عادات کو فروغ دیتا ہے؟",
+      "choices": [
+        {
+          "text": "خریداری کی فہرست بنائیں",
+          "design": "📝",
+          "correct": true
+        },
+        {
+          "text": "سوچے سمجھے بغیر خریدیں۔",
+          "design": "🤦",
+          "correct": false
+        },
+        {
+          "text": "فوری طور پر خرچ کریں۔",
+          "design": "⚡",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "بہترین شاپنگ پوسٹر منتخب کریں:",
+      "choices": [
+        {
+          "text": "پہلے خریدیں، بعد میں سوچیں۔",
+          "design": "🛍️",
+          "correct": false
+        },
+        {
+          "text": "منصوبہ بندی کے بغیر خرچ کریں۔",
+          "design": "🙈",
+          "correct": false
+        },
+        {
+          "text": "قیمتوں کا موازنہ کریں۔",
+          "design": "⚖️",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "question": "سمارٹ شاپنگ پوسٹر کا انتخاب کریں:",
+      "choices": [
+        {
+          "text": "فروخت پر کیا ہے خریدیں۔",
+          "design": "🏷️",
+          "correct": true
+        },
+        {
+          "text": "ہمیشہ پوری قیمت ادا کریں۔",
+          "design": "💰",
+          "correct": false
+        },
+        {
+          "text": "کبھی بھی پیسہ نہ بچائیں۔",
+          "design": "🚫",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "سمارٹ شاپنگ کے لیے بہترین پوسٹر کون سا ہے؟",
+      "choices": [
+        {
+          "text": "امپلس سب کچھ خریدیں۔",
+          "design": "💥",
+          "correct": false
+        },
+        {
+          "text": "بجٹ کے بغیر خرچ کریں۔",
+          "design": "📉",
+          "correct": false
+        },
+        {
+          "text": "آگے کی خریداریوں کا منصوبہ بنائیں",
+          "design": "🧾",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

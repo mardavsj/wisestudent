@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "നാരങ്ങാവെള്ളത്തിൻ്റെ കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "🍋",
+  "questions": [
+    {
+      "id": 1,
+      "text": "നിങ്ങൾ ഒരു നാരങ്ങാവെള്ളം സ്റ്റാൻഡിൽ നിന്ന് ₹50 സമ്പാദിക്കുന്നു. എന്താണ് മികച്ച തിരഞ്ഞെടുപ്പ്?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "കളിപ്പാട്ടങ്ങൾക്കായി എല്ലാം ചെലവഴിക്കുക",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ലഘുഭക്ഷണം വാങ്ങുക",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "സാധനങ്ങൾക്കായി പകുതി ലാഭിക്കുക",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നാരങ്ങയ്ക്ക് 20 രൂപ വേണം. നിങ്ങൾക്ക് ₹15 ഉണ്ട്. നീ എന്ത് ചെയ്യുന്നു?",
+      "options": [
+        {
+          "id": "save",
+          "text": "₹5 കൂടി ലാഭിക്കൂ",
+          "emoji": "🙂",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "₹5 കടം വാങ്ങുക",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "നാരങ്ങ വാങ്ങുന്നത് ഒഴിവാക്കുക",
+          "emoji": "🍋",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ഒരു ഉപഭോക്താവ് ₹5-ന് പകരം ₹10 നൽകുന്നു. എന്താണ് സത്യസന്ധത?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "₹10 സൂക്ഷിക്കുക",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "അധികമായി ₹5 തിരികെ നൽകുക",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "അത് മിഠായിയിൽ ചെലവഴിക്കുക",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങൾ ₹30 സമ്പാദിക്കുന്നു. ഇന്ന് അതെല്ലാം ചെലവഴിക്കണോ?",
+      "options": [
+        {
+          "id": "no",
+          "text": "ഇല്ല, അടുത്ത സ്റ്റാൻഡിനായി സംരക്ഷിക്കുക",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "അതെ, ഗെയിമുകൾ വാങ്ങുക",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "വിട്ടുകൊടുക്കൂ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "എന്തുകൊണ്ടാണ് നിങ്ങളുടെ ലെമനേഡ് സ്റ്റാൻഡ് വരുമാനം ആസൂത്രണം ചെയ്യുന്നത്?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "കൂടുതൽ ചെലവഴിക്കാൻ നിങ്ങളെ അനുവദിക്കുന്നു",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "running",
+          "text": "നിങ്ങളുടെ സ്റ്റാൻഡ് പ്രവർത്തിപ്പിക്കുന്നത് നിലനിർത്തുന്നു",
+          "emoji": "☀️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "customers",
+          "text": "നിങ്ങൾക്ക് കൂടുതൽ ഉപഭോക്താക്കളെ ലഭിക്കുന്നു",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

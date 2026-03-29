@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ સ્માર્ટ સ્પેન્ડ",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારા ખર્ચની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા ખર્ચની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "readyHeader": "તમારા ખર્ચના પ્રતિબિંબને ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "સ્માર્ટ ખર્ચ પસંદગીઓ વિશે પ્રશ્નોના જવાબ આપો.",
+  "readyTip": "તમારી પાસે દરેકમાં {{time}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "greatJob": "ગ્રેટ જોબ!",
+  "finalScore": "તમે {{total}} માંથી {{score}} સ્કોર કર્યો!",
+  "growthSkills": "તમે મજબૂત નાણાકીય નિર્ણય લેવાની કુશળતા વિકસાવી રહ્યાં છો!",
+  "playAgain": "ફરી રમો",
+  "questions": [
+    {
+      "id": 1,
+      "question": "સૌથી સ્માર્ટ ખર્ચ પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "pay_rent",
+          "text": "ભાડું ચૂકવો",
+          "emoji": "🏠"
+        },
+        {
+          "id": "luxury_party",
+          "text": "લક્ઝરી પાર્ટી",
+          "emoji": "🎉"
+        },
+        {
+          "id": "designer_shoes",
+          "text": "ડિઝાઇનર શૂઝ ખરીદો",
+          "emoji": "👟"
+        },
+        {
+          "id": "impulse_purchase",
+          "text": "આવેગ ખરીદી",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "કયો ખર્ચ પ્રથમ આવવો જોઈએ?",
+      "options": [
+        {
+          "id": "new_gadgets",
+          "text": "નવા ગેજેટ્સ",
+          "emoji": "📱"
+        },
+        {
+          "id": "buy_groceries",
+          "text": "કરિયાણા ખરીદો",
+          "emoji": "🛒"
+        },
+        {
+          "id": "expensive_restaurant",
+          "text": "મોંઘી રેસ્ટોરન્ટ",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "entertainment",
+          "text": "Entertainment",
+          "emoji": "🎬"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "તમારે વધારાના પૈસા સાથે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "movie_night",
+          "text": "મૂવી નાઇટ",
+          "emoji": "🎬"
+        },
+        {
+          "id": "buy_video_games",
+          "text": "વિડિઓ ગેમ્સ ખરીદો",
+          "emoji": "🎮"
+        },
+        {
+          "id": "save_money",
+          "text": "પૈસા બચાવો",
+          "emoji": "💰"
+        },
+        {
+          "id": "shopping_spree",
+          "text": "શોપિંગ પળોજણ",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "કયો અગ્રતા ખર્ચ છે?",
+      "options": [
+        {
+          "id": "pay_bills",
+          "text": "બીલ ચૂકવો",
+          "emoji": "📄"
+        },
+        {
+          "id": "designer_clothes",
+          "text": "ડિઝાઇનર કપડાં",
+          "emoji": "👔"
+        },
+        {
+          "id": "weekend_trip",
+          "text": "વીકએન્ડ ટ્રીપ",
+          "emoji": "✈️"
+        },
+        {
+          "id": "gourmet_dinner",
+          "text": "દારૂનું ડિનર",
+          "emoji": "🍷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "લાંબા ગાળાની નાણાકીય સુરક્ષા શું બનાવે છે?",
+      "options": [
+        {
+          "id": "concert_ticket",
+          "text": "કોન્સર્ટ ટિકિટ",
+          "emoji": "🎫"
+        },
+        {
+          "id": "fund_education",
+          "text": "ફંડ શિક્ષણ",
+          "emoji": "📚"
+        },
+        {
+          "id": "buy_jewelry",
+          "text": "જ્વેલરી ખરીદો",
+          "emoji": "💍"
+        },
+        {
+          "id": "luxury_vacation",
+          "text": "વૈભવી વેકેશન",
+          "emoji": "🏖️"
+        }
+      ]
+    }
+  ]
+}

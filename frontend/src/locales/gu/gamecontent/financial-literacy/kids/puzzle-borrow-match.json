@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "કોયડો: મેળ ઉધાર",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "ક્રિયાઓ સાથે આઇટમ્સ મેળવો ({{matched}}/{{total}} મેળ ખાતી)",
+  "itemsTitle": "ઉછીની વસ્તુઓ",
+  "categoriesTitle": "Actions",
+  "selectedLabel": "પસંદ કરેલ: {{name}}",
+  "selectItem": "એક આઇટમ પસંદ કરો",
+  "matchButton": "Match",
+  "scoreLabel": "સ્કોર:",
+  "matchedLabel": "મેળ ખાતી:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ગ્રેટ જોબ!",
+  "resultGreatDescription": "તમે ક્રિયાઓ સાથે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે!",
+  "coinsLabel": "Coins",
+  "resultLesson": "પાઠ: ઉછીની વસ્તુઓ પાછી આપવી જોઈએ અથવા જવાબદારીપૂર્વક સંભાળવી જોઈએ.",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultKeepDescription": "તમે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTip": "ટીપ: રોજિંદા જીવનમાં જવાબદાર ઉધાર કેવું લાગે છે તે વિશે વિચારો.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Notebook",
+      "emoji": "📓"
+    },
+    {
+      "id": 2,
+      "name": "બોર્ડ ગેમ",
+      "emoji": "🎲"
+    },
+    {
+      "id": 3,
+      "name": "Eraser",
+      "emoji": "🩹"
+    },
+    {
+      "id": 4,
+      "name": "પોકેટ મની",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "Lunchbox",
+      "emoji": "🥪"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "પાછા આપો",
+      "emoji": "↩️",
+      "description": "ઉધાર લીધેલી વસ્તુઓ પરત કરો"
+    },
+    {
+      "id": 7,
+      "name": "મિત્ર સાથે શેર કરો",
+      "emoji": "🤝",
+      "description": "ઉપયોગ કરતી વખતે એકદમ શેર કરો"
+    },
+    {
+      "id": 8,
+      "name": "પૈસા ચૂકવો",
+      "emoji": "💳",
+      "description": "ઉછીના લીધેલા પૈસા પરત કરો"
+    },
+    {
+      "id": 9,
+      "name": "આભાર કહો",
+      "emoji": "🙏",
+      "description": "શાહુકાર પ્રત્યે કૃતજ્ઞતા દર્શાવો"
+    },
+    {
+      "id": 10,
+      "name": "ધ્યાનપૂર્વક ઉધાર આપો",
+      "emoji": "🛡️",
+      "description": "કાળજી અને નિયમો સાથે હેન્ડલ કરો"
+    }
+  ]
+}

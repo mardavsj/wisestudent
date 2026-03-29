@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "वाद: रोख विरुद्ध ऑनलाइन सुरक्षितता",
+  "subtitleComplete": "वादविवाद पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} फेरी",
+  "roundLabel": "फेरी {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "रोख रकमेपेक्षा ऑनलाइन पैसे जास्त धोकादायक आहेत का?",
+      "options": [
+        {
+          "id": "online-riskier",
+          "text": "ऑनलाइन धोकादायक आहे",
+          "emoji": "💻",
+          "isCorrect": false
+        },
+        {
+          "id": "both-safe",
+          "text": "दोघांनाही सुरक्षितता हवी आहे",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "cash-riskier",
+          "text": "रोख अधिक धोकादायक आहे",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "मोठ्या प्रमाणात कोणते सुरक्षित आहे?",
+      "options": [
+        {
+          "id": "both-safe2",
+          "text": "दोन्ही सावधगिरीने",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "only-cash",
+          "text": "फक्त रोख",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "only-online",
+          "text": "फक्त ऑनलाइन",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "ऑनलाइन पैशाचा मुख्य धोका काय आहे?",
+      "options": [
+        {
+          "id": "no-risk",
+          "text": "कोणताही धोका नाही",
+          "emoji": "😓",
+          "isCorrect": false
+        },
+        {
+          "id": "too-easy",
+          "text": "वापरण्यास खूप सोपे",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "hacking",
+          "text": "हॅकिंग आणि फसवणूक",
+          "emoji": "👾",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "आपण ऑनलाइन पैशाचे संरक्षण कसे करू शकता?",
+      "options": [
+        {
+          "id": "strong-password",
+          "text": "मजबूत पासवर्ड आणि OTP",
+          "emoji": "🔐",
+          "isCorrect": true
+        },
+        {
+          "id": "no-protection",
+          "text": "संरक्षणाची गरज नाही",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "share-details",
+          "text": "तपशील मुक्तपणे सामायिक करा",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "सर्वोत्तम दृष्टीकोन कोणता आहे?",
+      "options": [
+        {
+          "id": "only-one",
+          "text": "फक्त एक पद्धत वापरा",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "दोन्ही सुरक्षितपणे संतुलित करा",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid-all",
+          "text": "सर्व पैसे टाळा",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

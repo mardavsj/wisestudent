@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ਕਮਾਈ 'ਤੇ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਪੈਸਾ ਕਮਾਉਣ ਦਾ ਸਹੀ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "working",
+          "text": "ਕੰਮ ਕਰਕੇ",
+          "emoji": "💼",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wasting",
+          "text": "ਬਰਬਾਦ ਕਰ ਕੇ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sleeping",
+          "text": "ਸੌਣ ਦੁਆਰਾ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਕਿਸਾਨ ਪੈਸਾ ਕਿਵੇਂ ਕਮਾਉਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "games",
+          "text": "ਖੇਡਾਂ ਖੇਡਣਾ",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "crops",
+          "text": "ਫਸਲਾਂ ਵੇਚ ਰਿਹਾ ਹੈ",
+          "emoji": "🌾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "ਭੋਜਨ ਦੇਣਾ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਕਿਹੜਾ ਕੰਮ ਪੜ੍ਹਾ ਕੇ ਪੈਸੇ ਕਮਾਏ?",
+      "options": [
+        {
+          "id": "toymaker",
+          "text": "ਖਿਡੌਣਾ ਬਣਾਉਣ ਵਾਲਾ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "ਕੈਂਡੀ ਵੇਚਣ ਵਾਲਾ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "teacher",
+          "text": "Teacher",
+          "emoji": "👨‍🏫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਬੱਚੇ ਪੈਸੇ ਕਿਵੇਂ ਕਮਾ ਸਕਦੇ ਹਨ?",
+      "options": [
+        {
+          "id": "chores",
+          "text": "ਕੰਮ ਕਰਦੇ ਹਨ",
+          "emoji": "🧹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "tv",
+          "text": "ਟੀਵੀ ਦੇਖਣਾ",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ਸਨੈਕਸ ਖਾਣਾ",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਪੈਸਾ ਕਮਾਉਣਾ ਮਹੱਤਵਪੂਰਨ ਕਿਉਂ ਹੈ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ਤੁਹਾਨੂੰ ਮੁਫਤ ਖਿਡੌਣੇ ਮਿਲਦੇ ਹਨ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "needs",
+          "text": "ਤੁਹਾਡੀਆਂ ਜ਼ਰੂਰਤਾਂ ਨੂੰ ਪੂਰਾ ਕਰਦਾ ਹੈ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sleep",
+          "text": "ਤੁਹਾਨੂੰ ਬਿਹਤਰ ਨੀਂਦ ਲਿਆਉਂਦਾ ਹੈ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

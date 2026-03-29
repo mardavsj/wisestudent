@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "جعلی کال کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "کال کرنے والا آپ کے بینک کی تفصیلات طلب کرتا ہے۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "share",
+          "text": "تفصیلات شیئر کریں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "شاید، اگر وہ سرکاری لگتے ہیں",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "انکار کریں، کبھی شیئر نہ کریں۔",
+          "emoji": "🚫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "جعلی کال کی علامت کیا ہے؟",
+      "options": [
+        {
+          "id": "urgent",
+          "text": "عمل کرنے کے لیے فوری دباؤ",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "polite",
+          "text": "شائستہ اور صابر",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "normal",
+          "text": "عام گفتگو",
+          "emoji": "💬",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "اگر کوئی OTP مانگے تو آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "give",
+          "text": "OTP دیں۔",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "OTP کبھی بھی شیئر نہ کریں۔",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe2",
+          "text": "اگر وہ اچھی طرح سے پوچھیں تو شیئر کریں۔",
+          "emoji": "🤷",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ بینک کال کی تصدیق کیسے کر سکتے ہیں؟",
+      "options": [
+        {
+          "id": "call-back",
+          "text": "بینک کو براہ راست کال کریں۔",
+          "emoji": "📞",
+          "isCorrect": true
+        },
+        {
+          "id": "trust",
+          "text": "کال کرنے والے پر بھروسہ کریں۔",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-all",
+          "text": "تمام کالوں کو نظر انداز کریں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "مشکوک کالوں کا سب سے محفوظ جواب کیا ہے؟",
+      "options": [
+        {
+          "id": "engage",
+          "text": "باتیں کرتے رہیں",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "share-info",
+          "text": "کچھ معلومات شیئر کریں۔",
+          "emoji": "📝",
+          "isCorrect": false
+        },
+        {
+          "id": "hang-up",
+          "text": "انتظار کرو اور رپورٹ کرو",
+          "emoji": "📞",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "بہت اچھا کام!",
+    "winMessage": "آپ نے {{total}} میں سے {{score}} سوالات درست کئے ہیں! آپ جانتے ہیں کہ مشکوک کالوں کو کیسے ہینڈل کرنا ہے!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: کبھی بھی حساس معلومات جیسے OTPs یا بینک کی تفصیلات فون پر شیئر نہ کریں۔ ہمیشہ ہینگ اپ کریں اور اگر مشکوک ہو تو سرکاری بینک نمبر پر کال کریں۔",
+    "loseEmoji": "😔",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ نے {{total}} سوالات میں سے {{score}} درست کئے ہیں۔ فون کالز کے ساتھ محتاط رہنا یاد رکھیں!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "اشارہ: گھوٹالے کال کرنے والے اکثر مصنوعی عجلت پیدا کرتے ہیں۔ OTP یا بینک کی تفصیلات کبھی بھی شیئر نہ کریں۔ بند کر دیں اور اپنے بینک سے براہ راست رابطہ کریں۔"
+  }
+}

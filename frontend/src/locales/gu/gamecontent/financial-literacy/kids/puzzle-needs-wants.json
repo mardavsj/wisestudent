@@ -1,1 +1,79 @@
-﻿{}
+{
+  "title": "પઝલ ઓફ નીડ્સ/વોન્ટ્સ",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "શ્રેણીઓ સાથે આઇટમ્સ મેળવો ({{matched}}/{{total}} મેળ ખાતી)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "પસંદ કરેલ: {{name}}",
+  "selectItem": "એક આઇટમ પસંદ કરો",
+  "matchButton": "Match",
+  "scoreLabel": "સ્કોર:",
+  "matchedLabel": "મેળ ખાતી:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ગ્રેટ જોબ!",
+  "resultGreatDescription": "તમે {{total}} માંથી {{score}} ને તેમની શ્રેણીઓ સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultGreatLesson": "પાઠ: જરૂરિયાતો વિ માંગને સમજવું સ્માર્ટ મની નિર્ણયો લેવામાં મદદ કરે છે!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultKeepDescription": "તમે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે.",
+  "resultKeepTip": "ટીપ: દરેક વસ્તુ આવશ્યક છે કે વિવેકાધીન છે તે વિશે વિચારો!",
+  "items": [
+    {
+      "id": 1,
+      "name": "પીવાનું પાણી",
+      "emoji": "💧"
+    },
+    {
+      "id": 2,
+      "name": "શાળા શુઝ",
+      "emoji": "👟"
+    },
+    {
+      "id": 3,
+      "name": "રમકડાની કાર",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "પોકેટ મની",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "નાણાકીય જ્ઞાન",
+      "emoji": "📚"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅",
+      "description": "જીવન અથવા શીખવા માટે આવશ્યક"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁",
+      "description": "હોવું સરસ છે, આવશ્યક નથી"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "🏦",
+      "description": "ભાવિ ઉપયોગ માટે બાજુ પર સેટ કરો"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈",
+      "description": "મૂલ્ય વધારવા માટે પૈસાનો ઉપયોગ કરો"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲",
+      "description": "અન્યને ટેકો આપવા માટે ઉપયોગ કરો"
+    }
+  ]
+}

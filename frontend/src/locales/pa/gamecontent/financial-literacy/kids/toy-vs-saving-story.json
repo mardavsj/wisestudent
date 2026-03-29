@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਖਿਡੌਣਾ ਬਨਾਮ ਸੇਵਿੰਗ ਸਟੋਰੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਡਾ ਮਨਪਸੰਦ ਖਿਡੌਣਾ ਇੱਕ ਹਫ਼ਤੇ ਬਾਅਦ ਟੁੱਟ ਜਾਂਦਾ ਹੈ। ਇਹ ਤੁਹਾਨੂੰ ਕੀ ਸਿਖਾਉਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "buy",
+          "text": "ਜਲਦੀ ਹੋਰ ਖਿਡੌਣੇ ਖਰੀਦੋ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਪੈਸੇ ਦੀ ਚੋਣ ਕੋਈ ਮਾਇਨੇ ਨਹੀਂ ਰੱਖਦੀ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "value",
+          "text": "ਪੈਸੇ ਖਰਚਣ ਤੋਂ ਪਹਿਲਾਂ ਸੋਚੋ",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ਹਰ ਹਫ਼ਤੇ ਸਿੱਕਿਆਂ ਦੀ ਬਚਤ ਕਰਦੇ ਹੋ ਅਤੇ ਰਕਮ ਵਧਦੀ ਹੋਈ ਦੇਖਦੇ ਹੋ। ਤੁਸੀਂ ਕੀ ਸਿੱਖਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "patience",
+          "text": "ਬਚਾਉਣ ਲਈ ਧੀਰਜ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "boring",
+          "text": "ਬਚਤ ਕਰਨਾ ਬੋਰਿੰਗ ਹੈ",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ਸਿੱਕੇ ਬੇਕਾਰ ਹਨ",
+          "emoji": "🪙",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਸੀਂ ਬਾਅਦ ਵਿੱਚ ਕੁਝ ਮਹਿੰਗਾ ਚਾਹੁੰਦੇ ਹੋ। ਸਭ ਤੋਂ ਵਧੀਆ ਆਦਤ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "rush",
+          "text": "ਜੋ ਵੀ ਤੁਸੀਂ ਦੇਖਦੇ ਹੋ ਖਰੀਦੋ",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ਯੋਜਨਾ ਬਣਾਓ ਅਤੇ ਹੌਲੀ-ਹੌਲੀ ਬਚਾਓ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "ਹਮੇਸ਼ਾ ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਕੀਮਤਾਂ ਦੀ ਤੁਲਨਾ ਕਰਦੇ ਹੋ। ਤੁਸੀਂ ਕਿਹੜਾ ਹੁਨਰ ਵਰਤ ਰਹੇ ਹੋ?",
+      "options": [
+        {
+          "id": "slow",
+          "text": "ਬਹੁਤ ਹੌਲੀ ਹੋਣਾ",
+          "emoji": "🐢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lazy",
+          "text": "ਖਰੀਦਦਾਰੀ ਤੋਂ ਬਚਣਾ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "ਸਮਾਰਟ ਪੈਸੇ ਦੀ ਸੋਚ",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਸੀਂ ਹਰ ਖਿਡੌਣਾ ਖਰੀਦਣ ਦੀ ਬਜਾਏ ਬੱਚਤ ਦੀ ਚੋਣ ਕਰਦੇ ਹੋ। ਇਹ ਕੀ ਬਣਾਉਂਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "habit",
+          "text": "ਬੱਚਤ ਦੀਆਂ ਚੰਗੀਆਂ ਆਦਤਾਂ",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ਕੋਈ ਮਜ਼ਾਕ ਨਹੀਂ",
+          "emoji": "😢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "ਖਰਚਣ ਦਾ ਡਰ",
+          "emoji": "😨",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

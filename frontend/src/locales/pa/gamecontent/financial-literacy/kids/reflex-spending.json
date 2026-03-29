@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਖਰਚ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਖਰਚ ਪ੍ਰਤੀਬਿੰਬ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਖਰਚ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyTitle": "ਆਪਣੇ ਖਰਚੇ ਦੇ ਹੁਨਰ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਸਮਾਰਟ ਖਰਚੇ ਅਤੇ ਪੈਸੇ ਦੇ ਪ੍ਰਬੰਧਨ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਵੱਡੀ ਖਰੀਦਦਾਰੀ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਅੱਗੇ ਦੀ ਯੋਜਨਾ ਬਣਾਓ",
+      "options": [
+        {
+          "text": "ਤੁਰੰਤ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਅੱਗੇ ਦੀ ਯੋਜਨਾ ਬਣਾਓ",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "ਦੋਸਤਾਂ ਨੂੰ ਪੁੱਛੋ",
+          "isCorrect": false,
+          "emoji": "👥"
+        },
+        {
+          "text": "ਲਾਗਤ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਹਾਡਾ ਭੱਤਾ ਖਰਚਣ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "correctAnswer": "ਪਹਿਲਾਂ ਕੁਝ ਬਚਾਓ",
+      "options": [
+        {
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ਜੋ ਵੀ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ਪਹਿਲਾਂ ਕੁਝ ਬਚਾਓ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਬਰਬਾਦ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਆਗਾਮੀ ਖਰੀਦਦਾਰੀ ਤੋਂ ਬਚਣ ਲਈ ਕਿਹੜੀ ਚੀਜ਼ ਤੁਹਾਡੀ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "correctAnswer": "ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਉਡੀਕ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਉਡੀਕ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "⏳"
+        },
+        {
+          "text": "ਤੁਰੰਤ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ਅਕਸਰ ਖਰੀਦਦਾਰੀ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🤔"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਖਰੀਦਦਾਰੀ ਕਰਦੇ ਸਮੇਂ ਤੁਹਾਨੂੰ ਕੀ ਤੁਲਨਾ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ?",
+      "correctAnswer": "ਕੀਮਤਾਂ ਅਤੇ ਗੁਣਵੱਤਾ",
+      "options": [
+        {
+          "text": "ਸਿਰਫ਼ ਰੰਗ",
+          "isCorrect": false,
+          "emoji": "🎨"
+        },
+        {
+          "text": "ਸਿਰਫ਼ ਬ੍ਰਾਂਡਸ",
+          "isCorrect": false,
+          "emoji": "🏷️"
+        },
+        {
+          "text": "Packaging",
+          "isCorrect": false,
+          "emoji": "📦"
+        },
+        {
+          "text": "ਕੀਮਤਾਂ ਅਤੇ ਗੁਣਵੱਤਾ",
+          "isCorrect": true,
+          "emoji": "🔍"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਸਮਾਰਟ ਖਰਚਿਆਂ ਵਿੱਚ ਪਹਿਲਾ ਕਦਮ ਕੀ ਹੈ?",
+      "correctAnswer": "ਇੱਕ ਬਜਟ ਸੈੱਟ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਖੁੱਲ੍ਹ ਕੇ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਇੱਕ ਬਜਟ ਸੈੱਟ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "ਸਭ ਕੁਝ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ਸੀਮਾਵਾਂ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    }
+  ]
+}

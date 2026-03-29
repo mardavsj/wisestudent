@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਛੋਟਾ ਕਾਰੋਬਾਰ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਛੋਟੇ ਕਾਰੋਬਾਰੀ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਛੋਟੇ ਕਾਰੋਬਾਰੀ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyEmoji": "🏪",
+  "readyTitle": "ਛੋਟੇ ਕਾਰੋਬਾਰੀ ਹੁਨਰਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਇੱਕ ਛੋਟਾ ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨ ਅਤੇ ਚਲਾਉਣ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਇੱਕ ਛੋਟਾ ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨ ਦਾ ਇੱਕ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "correctAnswer": "ਬੇਕ ਅਤੇ ਵੇਚੋ",
+      "options": [
+        {
+          "text": "ਖਰੀਦੋ ਅਤੇ ਵੇਸਟ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ਬੇਕ ਅਤੇ ਵੇਚੋ",
+          "isCorrect": true,
+          "emoji": "🍰"
+        },
+        {
+          "text": "ਕੁਝ ਨਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਸੀਂ ਆਪਣੇ ਹੁਨਰਾਂ ਤੋਂ ਪੈਸਾ ਕਿਵੇਂ ਕਮਾ ਸਕਦੇ ਹੋ?",
+      "correctAnswer": "ਸ਼ਿਲਪਕਾਰੀ ਬਣਾਓ",
+      "options": [
+        {
+          "text": "ਸ਼ਿਲਪਕਾਰੀ ਬਣਾਓ",
+          "isCorrect": true,
+          "emoji": "🎨"
+        },
+        {
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਵੇਸਟ ਟਾਈਮ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "ਹੁਨਰ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਦੂਸਰਿਆਂ ਤੋਂ ਪੈਸਾ ਕਮਾਉਣ ਵਿੱਚ ਕਿਹੜੀ ਚੀਜ਼ ਤੁਹਾਡੀ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "correctAnswer": "ਸੇਵਾ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਕੁਝ ਨਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ਸਦਾ ਲਈ ਉਡੀਕ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "⏳"
+        },
+        {
+          "text": "ਕੰਮ ਤੋਂ ਬਚੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ਸੇਵਾ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "🛠️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਤੁਹਾਨੂੰ ਵਪਾਰਕ ਮੁਨਾਫ਼ਿਆਂ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਲਾਭ ਬਚਾਓ",
+      "options": [
+        {
+          "text": "ਲਾਭ ਬਚਾਓ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ਮੁਨਾਫ਼ਾ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਪੈਸੇ ਦੀ ਬਰਬਾਦੀ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਗੁਆ ਦਿਓ",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਤੁਹਾਡੇ ਕਾਰੋਬਾਰ ਨੂੰ ਕਾਮਯਾਬ ਕਰਨ ਵਿੱਚ ਕੀ ਮਦਦ ਕਰਦਾ ਹੈ?",
+      "correctAnswer": "ਵਪਾਰ ਵਧਾਓ",
+      "options": [
+        {
+          "text": "ਪੈਸੇ ਦੀ ਬਰਬਾਦੀ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ਵਪਾਰ ਵਧਾਓ",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ਛੱਡਣਾ",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "ਛੋਟੇ ਰਹੋ",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    }
+  ]
+}

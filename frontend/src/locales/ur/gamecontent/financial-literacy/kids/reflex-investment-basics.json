@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "اضطراری سرمایہ کاری کی بنیادی باتیں",
+  "subtitlePlaying": "سوال {{current}} از {{total}}: اپنے سرمایہ کاری کے اضطراب کی جانچ کریں!",
+  "subtitleReady": "اپنی سرمایہ کاری کے اضطراب کی جانچ کریں!",
+  "readyEmoji": "💰",
+  "readyTitle": "سرمایہ کاری کی بنیادی باتیں سیکھنے کے لیے تیار ہیں؟",
+  "readyDescription": "ہر سوال کے لیے صحیح سرمایہ کاری کا انتخاب کریں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "سوال:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "اسے بڑھنے کے لیے آپ کو پیسے کے ساتھ کیا کرنا چاہیے؟",
+      "correctAnswer": "بچائیں اور بڑھیں۔",
+      "options": [
+        {
+          "text": "سب خرچ کرو",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "اسے چھپائیں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "اس کے بارے میں بھول جاؤ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "بچائیں اور بڑھیں۔",
+          "isCorrect": true,
+          "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ کو پیسے کو سمجھداری سے کیسے ہینڈل کرنا چاہئے؟",
+      "correctAnswer": "سمجھداری سے سرمایہ کاری کریں۔",
+      "options": [
+        {
+          "text": "سمجھداری سے سرمایہ کاری کریں۔",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "تیزی سے خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "اسے ضائع کرو",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "اسے کھو دیں۔",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "دولت بنانے کا بہترین طریقہ کیا ہے؟",
+      "correctAnswer": "دولت بڑھائیں۔",
+      "options": [
+        {
+          "text": "پیسے کھونا",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "دولت بڑھائیں۔",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "سب کچھ خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "بچت کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "😑"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "آپ کا پیسہ آپ کے لیے کیسے کام کر سکتا ہے؟",
+      "correctAnswer": "سود کمائیں۔",
+      "options": [
+        {
+          "text": "نقد ضائع کرنا",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "فوراً خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "سود کمائیں۔",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "اس کے بارے میں بھول جاؤ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آپ کے مستقبل کو محفوظ بنانے میں کیا مدد کرتا ہے؟",
+      "correctAnswer": "بچت بنائیں",
+      "options": [
+        {
+          "text": "بچت بنائیں",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "ابھی خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "پیسہ ضائع کرنا",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "مستقبل کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    }
+  ]
+}

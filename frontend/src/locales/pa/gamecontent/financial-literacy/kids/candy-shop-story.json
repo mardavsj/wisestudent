@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਕੈਂਡੀ ਦੀ ਦੁਕਾਨ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "🍬",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਦੁਕਾਨਦਾਰ 10 ਰੁਪਏ ਦੀ ਬਜਾਏ 20 ਰੁਪਏ ਵਸੂਲਦਾ ਹੈ। ਕੀ ਤੁਸੀਂ ਬਿੱਲ ਦੀ ਜਾਂਚ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ਹਾਂ, ਮੈਂ ਬਿੱਲ ਦੀ ਜਾਂਚ ਕਰਦਾ ਹਾਂ",
+          "emoji": "📜",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ਨਹੀਂ, ਮੈਂ ਬਸ ਭੁਗਤਾਨ ਕਰਦਾ ਹਾਂ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "friend",
+          "text": "ਕਿਸੇ ਦੋਸਤ ਨੂੰ ਜਾਂਚ ਕਰਨ ਲਈ ਕਹੋ",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹50 ਹਨ। ਕੈਂਡੀ ਦੀ ਕੀਮਤ 15 ਰੁਪਏ ਹੈ। ਤੁਹਾਨੂੰ ਕਿੰਨੀ ਤਬਦੀਲੀ ਪ੍ਰਾਪਤ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "25",
+          "text": "₹25",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "₹40",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "35",
+          "text": "₹35",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਦੁਕਾਨਦਾਰ 35 ਰੁਪਏ ਦੀ ਬਜਾਏ 30 ਰੁਪਏ ਬਦਲ ਦਿੰਦਾ ਹੈ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "ਨਿਮਰਤਾ ਨਾਲ ਸਹੀ ਤਬਦੀਲੀ ਲਈ ਪੁੱਛੋ",
+          "emoji": "🗣️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "take",
+          "text": "₹30 ਲਓ ਅਤੇ ਚਲੇ ਜਾਓ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "buy",
+          "text": "ਹੋਰ ਕੈਂਡੀ ਖਰੀਦੋ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਹਰ ਇੱਕ ₹10 ਵਿੱਚ ਦੋ ਕੈਂਡੀ ਖਰੀਦਣਾ ਚਾਹੁੰਦੇ ਹੋ। ਕੀ ਤੁਸੀਂ ਇਸਨੂੰ 15 ਰੁਪਏ ਵਿੱਚ ਬਰਦਾਸ਼ਤ ਕਰ ਸਕਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ਹਾਂ, ਮੇਰੇ ਕੋਲ ਕਾਫ਼ੀ ਹੈ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ਨਹੀਂ, ਮੈਨੂੰ ₹20 ਦੀ ਲੋੜ ਹੈ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "discount",
+          "text": "ਛੂਟ ਲਈ ਪੁੱਛੋ",
+          "emoji": "🎟️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਸਮਝਦਾਰੀ ਨਾਲ ਖਰੀਦਦਾਰੀ ਕਰਨ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "everything",
+          "text": "ਹਰ ਚੀਜ਼ ਖਰੀਦੋ ਜੋ ਤੁਸੀਂ ਦੇਖਦੇ ਹੋ",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "ਕੀਮਤਾਂ ਅਤੇ ਬਿੱਲਾਂ ਦੀ ਧਿਆਨ ਨਾਲ ਜਾਂਚ ਕਰੋ",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "ਸਿਰਫ ਦੋਸਤਾਂ ਨਾਲ ਖਰੀਦਦਾਰੀ ਕਰੋ",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

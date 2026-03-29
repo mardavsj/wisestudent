@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ਦੁਕਾਨ ਦੀ ਕਹਾਣੀ 2",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ਸਟੋਰ ਵਿੱਚ ਦੋ ਪੈਨ ਵੇਖਦੇ ਹੋ. ਇੱਕ ਦੀ ਕੀਮਤ 50 ਰੁਪਏ ਅਤੇ ਦੂਜੇ ਦੀ ਕੀਮਤ 15 ਰੁਪਏ ਹੈ। ਦੋਵੇਂ ਇੱਕੋ ਜਿਹੇ ਕੰਮ ਕਰਦੇ ਹਨ। ਤੁਹਾਨੂੰ ਕਿਹੜਾ ਖਰੀਦਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ਮਹਿੰਗਾ ਪੈੱਨ",
+          "emoji": "🖊️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "text": "ਪਹਿਲਾਂ ਸਮੀਖਿਆਵਾਂ ਦੀ ਜਾਂਚ ਕਰੋ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "ਕਿਫਾਇਤੀ ਪੈੱਨ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ਕੱਪੜਿਆਂ 'ਤੇ ਖਰਚ ਕਰਨ ਲਈ 100 ਰੁਪਏ ਹਨ। ਤੁਹਾਨੂੰ ਆਪਣੀ ਪਸੰਦ ਦੀ ਕਮੀਜ਼ 80 ਰੁਪਏ ਵਿੱਚ ਮਿਲਦੀ ਹੈ ਅਤੇ ਇੱਕ ਹੋਰ ਸਮਾਨ 30 ਰੁਪਏ ਵਿੱਚ। ਕੀ ਸਮਾਰਟ ਹੈ?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "ਸਸਤੀ ਕਮੀਜ਼ ਖਰੀਦੋ",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "ਮਹਿੰਗੀ ਕਮੀਜ਼ ਖਰੀਦੋ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ਵਿਕਰੀ ਲਈ ਉਡੀਕ ਕਰੋ",
+          "emoji": "🏷️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਸੀਂ ਪਾਰਟੀ ਲਈ ਸਨੈਕਸ ਖਰੀਦ ਰਹੇ ਹੋ। ਬ੍ਰਾਂਡ ਏ ਦੀ ਕੀਮਤ 200 ਰੁਪਏ ਅਤੇ ਬ੍ਰਾਂਡ ਬੀ ਦੀ ਕੀਮਤ 120 ਰੁਪਏ ਹੈ। ਦੋਵਾਂ ਦਾ ਸਵਾਦ ਇੱਕੋ ਜਿਹਾ ਹੈ। ਕਿਹੜਾ?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ਬ੍ਰਾਂਡ ਏ ਖਰੀਦੋ",
+          "emoji": "📦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "ਬ੍ਰਾਂਡ ਬੀ ਖਰੀਦੋ",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mix",
+          "text": "ਹਰੇਕ ਵਿੱਚੋਂ ਕੁਝ ਖਰੀਦੋ",
+          "emoji": "➗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਨੂੰ ਸਕੂਲ ਲਈ ਇੱਕ ਬੈਕਪੈਕ ਦੀ ਲੋੜ ਹੈ। ਇੱਕ ਦੀ ਕੀਮਤ 800 ਰੁਪਏ ਹੈ ਅਤੇ ਦੂਜੇ ਦੀ ਕੀਮਤ 400 ਰੁਪਏ ਹੈ। ਦੋਵੇਂ ਵਧੀਆ ਗੁਣਵੱਤਾ ਵਾਲੇ ਹਨ। ਬੁੱਧੀਮਾਨ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "400 ਰੁਪਏ ਦਾ ਬੈਕਪੈਕ ਖਰੀਦੋ",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "800 ਰੁਪਏ ਦਾ ਬੈਕਪੈਕ ਖਰੀਦੋ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ਹੁਣ ਲਈ ਉਧਾਰ ਲਓ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਸੀਂ ਕਰਿਆਨੇ ਦਾ ਸਮਾਨ ਖਰੀਦ ਰਹੇ ਹੋ। ਆਰਗੈਨਿਕ ਸਬਜ਼ੀਆਂ ਦੀ ਕੀਮਤ 300 ਰੁਪਏ ਅਤੇ ਰੈਗੂਲਰ ਸਬਜ਼ੀਆਂ ਦੀ ਕੀਮਤ 150 ਰੁਪਏ ਹੈ। ਦੋਵੇਂ ਪੌਸ਼ਟਿਕ ਹਨ। ਕਿਹੜਾ?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ਜੈਵਿਕ ਸਬਜ਼ੀਆਂ ਖਰੀਦੋ",
+          "emoji": "🥦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "selective",
+          "text": "ਦੋਵਾਂ ਕਿਸਮਾਂ ਨੂੰ ਮਿਲਾਓ",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "ਨਿਯਮਤ ਸਬਜ਼ੀਆਂ ਖਰੀਦੋ",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

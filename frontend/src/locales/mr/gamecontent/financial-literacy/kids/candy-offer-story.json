@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "कँडी ऑफर कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्हाला दुकानात कँडीची मोठी सवलत दिसते, पण तुम्हाला आधीच भरलेले वाटत आहे. सर्वोत्तम निवड काय आहे?",
+      "options": [
+        {
+          "id": "b",
+          "text": "कँडी खरेदी करा कारण ती स्वस्त आहे",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "तुमच्या आरोग्याचा विचार करा आणि कँडी खरेदी करणे वगळा",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "कँडी खरेदी करा कारण इतर ते विकत घेत आहेत",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्ही अधिक खरेदी केल्यास स्टोअर अतिरिक्त कँडी ऑफर करते. निर्णय घेण्यापूर्वी आपण काय तपासले पाहिजे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "आपल्याला त्याची खरोखर गरज आहे की नाही",
+          "emoji": "🤔",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "पाकिट किती रंगीबेरंगी दिसते",
+          "emoji": "🌈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "किती जाहिराती त्याचा प्रचार करतात",
+          "emoji": "📢",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्हाला कँडी हवी आहे, पण तुम्हाला शाळेच्या सहलीसाठी पैसेही वाचवायचे आहेत. स्मार्ट निर्णय म्हणजे काय?",
+      "options": [
+        {
+          "id": "b",
+          "text": "आता पैसे खर्च करा आणि नंतर काळजी करा",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "दुसऱ्याला कँडीसाठी पैसे देण्यास सांगा",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "महत्त्वाच्या गोष्टीसाठी पैसे वाचवा",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "चेकआउट काउंटरजवळ तुम्हाला कँडी ऑफर दिसते. दुकाने तिथे का ठेवतात?",
+      "options": [
+        {
+          "id": "b",
+          "text": "ग्राहकांना पैसे वाचविण्यात मदत करण्यासाठी",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "जलद आणि अनियोजित खरेदीला प्रोत्साहन देण्यासाठी",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "निरोगी अन्न पर्याय पुनर्स्थित करण्यासाठी",
+          "emoji": "🥗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुम्ही ऑफर दरम्यान कँडी खरेदी न करण्याचे ठरवता. तुम्ही कोणत्या कौशल्याचा सराव करत आहात?",
+      "options": [
+        {
+          "id": "a",
+          "text": "आत्म-नियंत्रण आणि स्मार्ट निर्णय घेणे",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "मजा गमावली",
+          "emoji": "🎈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "सर्व उपचारांकडे कायमचे दुर्लक्ष करणे",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

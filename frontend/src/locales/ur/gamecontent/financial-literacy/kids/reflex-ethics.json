@@ -1,1 +1,152 @@
-﻿{}
+{
+  "title": "اضطراری: اخلاقیات",
+  "subtitleComplete": "کھیل مکمل!",
+  "roundLabel": "راؤنڈ {{current}}/{{total}}",
+  "timeUp": "وقت ختم ہو گیا ہے!",
+  "readyEmoji": "🎯",
+  "readyTitle": "تیار ہو جاؤ!",
+  "readyDescription": "پیسے کے اخلاقی رویے کے بارے میں سوالات کے جواب دیں!",
+  "readyTimeInfo": "آپ کے پاس ہر سوال کے لیے {{time}} سیکنڈ ہیں۔",
+  "readyQuestionInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{time}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "gameRoundLabel": "گول:",
+  "gameTimeLabel": "وقت:",
+  "gameScoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "آپ کو ہمیشہ پیسے کے ساتھ کیا ہونا چاہئے؟",
+      "correctAnswer": "Truth",
+      "options": [
+        {
+          "text": "Truth",
+          "isCorrect": true,
+          "emoji": "🗣️"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Deceive",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ کو مالی معاملات کو کیسے ہینڈل کرنا چاہئے؟",
+      "correctAnswer": "Honest",
+      "options": [
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Honest",
+          "isCorrect": true,
+          "emoji": "💯"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Trick",
+          "isCorrect": false,
+          "emoji": "🃏"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "آپ کے مالی فیصلے کیا ہونے چاہئیں؟",
+      "correctAnswer": "Fair",
+      "options": [
+        {
+          "text": "Unfair",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Biased",
+          "isCorrect": false,
+          "emoji": "🎯"
+        },
+        {
+          "text": "Fair",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "Partial",
+          "isCorrect": false,
+          "emoji": "📊"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "آپ کو مالی تعلقات میں کیا بنانا چاہئے؟",
+      "correctAnswer": "Trust",
+      "options": [
+        {
+          "text": "Trust",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "Deceive",
+          "isCorrect": false,
+          "emoji": "😈"
+        },
+        {
+          "text": "Manipulate",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Exploit",
+          "isCorrect": false,
+          "emoji": "💔"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آپ کو پیسے کے ساتھ کیسا سلوک کرنا چاہئے؟",
+      "correctAnswer": "Ethical",
+      "options": [
+        {
+          "text": "Dishonest",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Unfair",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Corrupt",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Ethical",
+          "isCorrect": true,
+          "emoji": "🌟"
+        }
+      ]
+    }
+  ]
+}

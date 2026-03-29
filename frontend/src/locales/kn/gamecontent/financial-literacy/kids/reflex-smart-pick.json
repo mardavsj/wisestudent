@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಸ್ಮಾರ್ಟ್ ಪಿಕ್",
+  "subtitlePlaying": "ರೌಂಡ್ {{current}}/{{total}}: ನಿಮ್ಮ ಸ್ಮಾರ್ಟ್ ಪಿಕ್ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಸ್ಮಾರ್ಟ್ ಪಿಕ್ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyEmoji": "🧠",
+  "readyTitle": "ನಿಮ್ಮ ಸ್ಮಾರ್ಟ್ ಪಿಕ್ ಕೌಶಲ್ಯಗಳನ್ನು ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಸ್ಮಾರ್ಟ್ ಆಯ್ಕೆಗಳು ಮತ್ತು ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಸುತ್ತು:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಆರೋಗ್ಯವಾಗಿರಲು ಸ್ಮಾರ್ಟ್ ಪಿಕ್ ಯಾವುದು?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍎"
+        },
+        {
+          "text": "ಹೆಚ್ಚುವರಿ ಐಸ್ ಕ್ರೀಮ್",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ವಿಡಿಯೋ ಗೇಮ್",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ಅಲಂಕಾರಿಕ ಆಟಿಕೆ",
+          "isCorrect": false,
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಕಲಿಕೆಗಾಗಿ ನೀವು ಯಾವುದನ್ನು ಆರಿಸಿಕೊಳ್ಳಬೇಕು?",
+      "correctAnswer": "ಶಾಲಾ ಸಾಮಗ್ರಿಗಳು",
+      "options": [
+        {
+          "text": "ಹೊಸ ಆಟ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ಶಾಲಾ ಸಾಮಗ್ರಿಗಳು",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ಕೂಲ್ ಗ್ಯಾಜೆಟ್",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ದೈನಂದಿನ ಜೀವನಕ್ಕೆ ಯಾವುದು ಅತ್ಯಗತ್ಯ?",
+      "correctAnswer": "Clothes",
+      "options": [
+        {
+          "text": "ಅಲಂಕಾರಿಕ ಆಟಿಕೆ",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Clothes",
+          "isCorrect": true,
+          "emoji": "👕"
+        },
+        {
+          "text": "ಐಸ್ ಕ್ರೀಮ್",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ಕ್ರಿಯೆಯ ಚಿತ್ರ",
+          "isCorrect": false,
+          "emoji": "🤖"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಜ್ಞಾನವನ್ನು ಪಡೆಯಲು ನಿಮಗೆ ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "Books",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ವಿಡಿಯೋ ಗೇಮ್",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ಪಜಲ್ ಗೇಮ್",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "Books",
+          "isCorrect": true,
+          "emoji": "📖"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ನೀವು ಶಾಲೆಗೆ ಹೋಗಲು ಏನು ಬೇಕು?",
+      "correctAnswer": "ಬಸ್ ಟಿಕೆಟ್",
+      "options": [
+        {
+          "text": "ಕೂಲ್ ಗ್ಯಾಜೆಟ್",
+          "isCorrect": false,
+          "emoji": "⌚"
+        },
+        {
+          "text": "ಮ್ಯೂಸಿಕ್ ಪ್ಲೇಯರ್",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "ಬಸ್ ಟಿಕೆಟ್",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "ಸ್ಮಾರ್ಟ್ ವಾಚ್",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

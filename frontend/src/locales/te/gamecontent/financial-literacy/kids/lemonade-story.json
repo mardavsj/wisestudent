@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "నిమ్మరసం కథ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "🍋",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు నిమ్మరసం స్టాండ్ నుండి ₹50 సంపాదిస్తారు. స్మార్ట్ ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "అంతా బొమ్మలకే ఖర్చు పెట్టండి",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "స్నాక్స్ కొనండి",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "సరఫరా కోసం సగం ఆదా చేయండి",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "నిమ్మకాయలకు ₹20 కావాలి. మీ వద్ద ₹15 ఉంది. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "save",
+          "text": "మరో ₹5 ఆదా చేసుకోండి",
+          "emoji": "🙂",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "₹5 అప్పు తీసుకోండి",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "నిమ్మకాయలు కొనడం మానేయండి",
+          "emoji": "🍋",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ఒక కస్టమర్ ₹5కి బదులుగా ₹10 చెల్లిస్తారు. ఏది నిజాయితీ?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "₹10 ఉంచండి",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "అదనంగా ₹5 తిరిగి ఇవ్వండి",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "మిఠాయి కోసం ఖర్చు చేయండి",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు ₹30 సంపాదిస్తారు. ఈరోజు అంతా ఖర్చు పెట్టాలా?",
+      "options": [
+        {
+          "id": "no",
+          "text": "లేదు, తదుపరి స్టాండ్ కోసం సేవ్ చేయండి",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "అవును, గేమ్‌లను కొనండి",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ఇవ్వండి",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీ నిమ్మరసం స్టాండ్ ఆదాయాలు ఎందుకు స్మార్ట్‌గా ఉన్నాయి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "మరింత ఖర్చు చేయడానికి మిమ్మల్ని అనుమతిస్తుంది",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "running",
+          "text": "మీ స్టాండ్ అమలులో ఉంచుతుంది",
+          "emoji": "☀️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "customers",
+          "text": "మీకు మరింత మంది కస్టమర్‌లను అందజేస్తుంది",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

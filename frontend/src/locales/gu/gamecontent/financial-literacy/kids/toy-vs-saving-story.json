@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ટોય વિ સેવિંગ સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમારું મનપસંદ રમકડું એક અઠવાડિયા પછી તૂટી જાય છે. આ તમને શું શીખવે છે?",
+      "options": [
+        {
+          "id": "buy",
+          "text": "ઝડપથી વધુ રમકડાં ખરીદો",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "પૈસાની પસંદગીથી કોઈ ફરક પડતો નથી",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "value",
+          "text": "પૈસા ખર્ચતા પહેલા વિચારો",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે દર અઠવાડિયે સિક્કા બચાવો અને રકમ વધતી જુઓ. તમે શું શીખો છો?",
+      "options": [
+        {
+          "id": "patience",
+          "text": "બચત માટે ધીરજની જરૂર છે",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "boring",
+          "text": "બચત કંટાળાજનક છે",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "સિક્કા નકામા છે",
+          "emoji": "🪙",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમને પછીથી કંઈક મોંઘુ જોઈએ છે. શ્રેષ્ઠ આદત શું છે?",
+      "options": [
+        {
+          "id": "rush",
+          "text": "તમે જે જુઓ છો તે ખરીદો",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "યોજના બનાવો અને ધીમે ધીમે બચત કરો",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "હંમેશા પૈસા ઉધાર લો",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે ખરીદતા પહેલા કિંમતોની તુલના કરો છો. તમે કઈ કુશળતાનો ઉપયોગ કરો છો?",
+      "options": [
+        {
+          "id": "slow",
+          "text": "ખૂબ ધીમું હોવું",
+          "emoji": "🐢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lazy",
+          "text": "ખરીદી કરવાનું ટાળવું",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "સ્માર્ટ મની વિચાર",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમે દરેક રમકડું ખરીદવાને બદલે બચત કરવાનું પસંદ કરો છો. આ શું બાંધે છે?",
+      "options": [
+        {
+          "id": "habit",
+          "text": "સારી બચતની ટેવ",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "બિલકુલ મજા નથી",
+          "emoji": "😢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "ખર્ચનો ડર",
+          "emoji": "😨",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

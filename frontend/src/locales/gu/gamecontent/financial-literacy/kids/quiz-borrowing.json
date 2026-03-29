@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ઉધાર પર ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "🤝",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ઉધાર લેવાનો અર્થ શું છે?",
+      "options": [
+        {
+          "id": "without",
+          "text": "પૂછ્યા વગર લેવું",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ઉપયોગ અને પરત",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "steal",
+          "text": "Stealing",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "પુસ્તક ઉધાર લીધા પછી, તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "return",
+          "text": "તે પરત કરો",
+          "emoji": "↩️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "તેને કાયમ રાખો",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sell",
+          "text": "તેને વેચો",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "બેંકમાંથી પૈસા ઉછીના લેવા કેમ ઠીક છે?",
+      "options": [
+        {
+          "id": "repay",
+          "text": "તમે વ્યાજ સાથે ચુકવણી કરો",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "તે મફત પૈસા છે",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "તમે ક્યારેય ચુકવતા નથી",
+          "emoji": "🙃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "જો તમે ઉછીની વસ્તુઓ પરત ન કરો તો શું થશે?",
+      "options": [
+        {
+          "id": "more",
+          "text": "તમને વધુ વસ્તુઓ મળે છે",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rewards",
+          "text": "તમને પુરસ્કારો મળે છે",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "લોકો તમારા પરથી વિશ્વાસ ગુમાવે છે",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "પ્રામાણિક ઉધાર શા માટે મહત્વપૂર્ણ છે?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "તમને વધુ રમકડાં મળે છે",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "તે અન્ય લોકો સાથે વિશ્વાસ બનાવે છે",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "તે ઉધાર લેવાની મજા બનાવે છે",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

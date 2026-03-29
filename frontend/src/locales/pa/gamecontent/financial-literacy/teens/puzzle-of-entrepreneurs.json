@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ਉੱਦਮੀਆਂ ਦੀ ਬੁਝਾਰਤ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਫੀਲਡਾਂ ਨਾਲ ਉੱਦਮੀਆਂ ਦਾ ਮੇਲ ਕਰੋ ({{current}}/{{total}} ਮੇਲ ਖਾਂਦਾ)",
+  "itemsTitle": "Entrepreneurs",
+  "fieldsTitle": "Fields",
+  "matchButton": "Match",
+  "selectItemLabel": "ਇੱਕ ਉਦਯੋਗਪਤੀ ਚੁਣੋ",
+  "selectedItemLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultSuccessSubheader": "ਤੁਸੀਂ {{total}} ਉੱਦਮੀਆਂ ਵਿੱਚੋਂ {{score}} ਨੂੰ ਉਹਨਾਂ ਦੇ ਖੇਤਰਾਂ ਨਾਲ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਹੋ!",
+  "resultSuccessLesson": "ਸਬਕ: ਉੱਦਮੀ ਖੇਤਰਾਂ ਨੂੰ ਸਮਝਣਾ ਨਵੀਨਤਾ ਨੂੰ ਪ੍ਰੇਰਿਤ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "resultTryAgainHeader": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultTryAgainSubheader": "ਤੁਸੀਂ {{total}} ਉੱਦਮੀਆਂ ਵਿੱਚੋਂ {{score}} ਨਾਲ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਹੋ।",
+  "resultTryAgainTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਹਰੇਕ ਉਦਯੋਗਪਤੀ ਕਿਸ ਖੇਤਰ ਲਈ ਸਭ ਤੋਂ ਵੱਧ ਜਾਣਿਆ ਜਾਂਦਾ ਹੈ!",
+  "coinsEarned": "+{{coins}} ਸਿੱਕੇ",
+  "items": [
+    {
+      "id": 1,
+      "name": "ਰਤਨ ਟਾਟਾ",
+      "emoji": "👔"
+    },
+    {
+      "id": 2,
+      "name": "ਐਲੋਨ ਮਸਕ",
+      "emoji": "🚀"
+    },
+    {
+      "id": 3,
+      "name": "ਨਰਾਇਣ ਮੂਰਤੀ",
+      "emoji": "💻"
+    },
+    {
+      "id": 4,
+      "name": "ਕਿਰਨ ਮਜ਼ੂਮਦਾਰ",
+      "emoji": "🔬"
+    },
+    {
+      "id": 5,
+      "name": "ਫਾਲਗੁਨੀ ਨਾਇਰ",
+      "emoji": "💄"
+    }
+  ],
+  "fields": [
+    {
+      "id": 6,
+      "name": "Industry",
+      "emoji": "🏭"
+    },
+    {
+      "id": 7,
+      "name": "Innovation",
+      "emoji": "💡"
+    },
+    {
+      "id": 8,
+      "name": "IT",
+      "emoji": "💻"
+    },
+    {
+      "id": 9,
+      "name": "Biotech",
+      "emoji": "🧬"
+    },
+    {
+      "id": 10,
+      "name": "E-commerce",
+      "emoji": "🛒"
+    }
+  ]
+}

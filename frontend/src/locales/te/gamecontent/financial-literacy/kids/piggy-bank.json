@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "పిగ్గీ బ్యాంక్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "🐷",
+  "questions": [
+    {
+      "id": 1,
+      "text": "పిగ్గీ బ్యాంకు ఎటువంటి వడ్డీని పొందదు. బ్యాంకు ఖాతా చేస్తుంది. ఏది మంచిది?",
+      "options": [
+        {
+          "id": "bank",
+          "text": "బ్యాంకు ఖాతా",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "పిగ్గీ బ్యాంకు",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "mattress",
+          "text": "mattress కింద",
+          "emoji": "🛏️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీ వద్ద ₹50 ఉంది. అది పెరగడానికి మీరు ఎక్కడ సేవ్ చేయాలి?",
+      "options": [
+        {
+          "id": "jar",
+          "text": "ఇంట్లో కూజా",
+          "emoji": "🏺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "బ్యాంకు పొదుపు ఖాతా",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ఇప్పుడే ఖర్చు పెట్టండి",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "బ్యాంక్ 5% వడ్డీని అందిస్తుంది. పిగ్గీ బ్యాంక్ 0% అందిస్తుంది. తెలివిగా ఎంచుకోండి.",
+      "options": [
+        {
+          "id": "bank",
+          "text": "వడ్డీ కోసం బ్యాంకు",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "వినోదం కోసం పిగ్గీ బ్యాంకు",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ఇవ్వండి",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు బ్యాంక్‌లో ₹100 ఆదా చేస్తారు. ఇది ₹105 వరకు పెరుగుతుంది. ఎందుకు?",
+      "options": [
+        {
+          "id": "magic",
+          "text": "పిగ్గీ బ్యాంకు మాయాజాలం",
+          "emoji": "🪄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "added",
+          "text": "మీరు మరింత డబ్బు జోడించారు",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "బ్యాంకు వడ్డీ చెల్లిస్తుంది",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "పిగ్గీ బ్యాంకు కంటే బ్యాంకు తరచుగా ఎందుకు మెరుగ్గా ఉంటుంది?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "ఇది సురక్షితమైనది మరియు డబ్బును పెంచుకోవచ్చు",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "cool",
+          "text": "ఇది చల్లగా మాత్రమే కనిపిస్తుంది",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "carry",
+          "text": "తీసుకువెళ్లడం సులభం",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

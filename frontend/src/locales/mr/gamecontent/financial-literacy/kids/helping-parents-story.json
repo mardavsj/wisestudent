@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "मदत पालक कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुमच्या पालकांना किराणा सामानासाठी ₹50 आवश्यक आहेत. तुमच्याकडे ₹20 आहेत. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "give",
+          "text": "मदतीसाठी तुमचे ₹20 द्या",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "कँडी साठी ठेवा",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "त्यांच्या विनंतीकडे दुर्लक्ष करा",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्ही घरबसल्या मदत करून ₹10 मिळवा. आपण ते जतन करावे?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "खेळण्यांवर खर्च करा",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "होय, बचतीमध्ये जोडा",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "ते दूर द्या",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमचे पालक तुम्हाला ₹15 ला दूध खरेदी करण्यास सांगतात. तुमच्याकडे ₹20 आहेत. पुढे काय?",
+      "options": [
+        {
+          "id": "change",
+          "text": "दूध खरेदी करा आणि बदला परत करा",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "बदलासह कँडी खरेदी करा",
+          "emoji": "🍭",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "keep",
+          "text": "सर्व ₹20 ठेवा",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्हाला ₹10 सापडतील. आई-वडील म्हणतात प्रामाणिक राहा. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "snacks",
+          "text": "स्नॅक्सवर खर्च करा",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ते तुमच्या खिशात लपवा",
+          "emoji": "🧥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "find",
+          "text": "मालक शोधण्याचा प्रयत्न करा",
+          "emoji": "🕵️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "पालकांना पैशाने मदत केल्याने तुम्हाला वाटते...",
+      "options": [
+        {
+          "id": "proud",
+          "text": "अभिमान आणि जबाबदार",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "कमी पैशासाठी दुःखी",
+          "emoji": "😔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "विशेष काही नाही",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

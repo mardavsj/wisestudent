@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "ਵਿਕਾਸ ਦੀ ਬੁਝਾਰਤ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਨਤੀਜਿਆਂ ਨਾਲ ਆਈਟਮਾਂ ਦਾ ਮੇਲ ਕਰੋ ({{matched}}/{{total}} ਮੇਲ ਖਾਂਦਾ)",
+  "itemsTitle": "ਵਿਕਾਸ ਦੀਆਂ ਵਸਤੂਆਂ",
+  "categoriesTitle": "Outcomes",
+  "selectedLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "selectItem": "ਇੱਕ ਆਈਟਮ ਚੁਣੋ",
+  "matchButton": "Match",
+  "scoreLabel": "ਸਕੋਰ:",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultGreatDescription": "ਤੁਸੀਂ ਨਤੀਜਿਆਂ ਦੇ ਨਾਲ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ!",
+  "coinsLabel": "Coins",
+  "resultLesson": "ਸਬਕ: ਪੌਦਿਆਂ ਦੀ ਤਰ੍ਹਾਂ, ਬਚਤ ਅਤੇ ਨਿਵੇਸ਼ ਸਮੇਂ ਦੇ ਨਾਲ ਵਧਦੇ ਹਨ।",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultKeepDescription": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਹਰ ਆਈਟਮ ਕੁਦਰਤੀ ਤੌਰ 'ਤੇ ਕਿਸ ਚੀਜ਼ ਵਿੱਚ ਵਧਦੀ ਹੈ।",
+  "items": [
+    {
+      "id": 1,
+      "name": "Seed",
+      "emoji": "🌱"
+    },
+    {
+      "id": 2,
+      "name": "Savings",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "Plant",
+      "emoji": "🌿"
+    },
+    {
+      "id": 4,
+      "name": "Sapling",
+      "emoji": "🌳"
+    },
+    {
+      "id": 5,
+      "name": "Bulb",
+      "emoji": "🌻"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Tree",
+      "emoji": "🌲",
+      "description": "ਬੀਜ ਇੱਕ ਰੁੱਖ ਬਣ ਸਕਦਾ ਹੈ"
+    },
+    {
+      "id": 7,
+      "name": "Growth",
+      "emoji": "📈",
+      "description": "ਬਚਤ ਦਾ ਮੁੱਲ ਵਧ ਸਕਦਾ ਹੈ"
+    },
+    {
+      "id": 8,
+      "name": "Flower",
+      "emoji": "🌸",
+      "description": "ਪੌਦਾ ਫੁੱਲ ਵਿੱਚ ਖਿੜ ਸਕਦਾ ਹੈ"
+    },
+    {
+      "id": 9,
+      "name": "Forest",
+      "emoji": "🌲",
+      "description": "ਕਈ ਬੂਟੇ ਜੰਗਲ ਬਣਾ ਸਕਦੇ ਹਨ"
+    },
+    {
+      "id": 10,
+      "name": "Wealth",
+      "emoji": "🏦",
+      "description": "ਪੈਸੇ ਦੀ ਆਦਤ ਦੌਲਤ ਬਣਾ ਸਕਦੀ ਹੈ"
+    }
+  ]
+}

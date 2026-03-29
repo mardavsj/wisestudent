@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "వృద్ధిపై క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "📈",
+  "questions": [
+    {
+      "id": 1,
+      "text": "డబ్బు పెరగడానికి ఏది సహాయపడుతుంది?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "అదంతా ఖర్చు పెడుతున్నారు",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "అది వృధా",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "పొదుపు + వడ్డీ",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "డబ్బు పెరగడానికి బ్యాంక్ ఎలా సహాయపడుతుంది?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "బొమ్మలు ఇవ్వడం ద్వారా",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "వడ్డీ చెల్లించడం ద్వారా",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "మీ డబ్బును దాచడం ద్వారా",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "డబ్బు పెరగడానికి సురక్షితమైన మార్గం ఏమిటి?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "మిఠాయి కొనుగోలు",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "home",
+          "text": "ఇంట్లో నగదు ఉంచడం",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "బ్యాంక్ సేవింగ్స్ ఖాతాను ఉపయోగించడం",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "పెట్టుబడి ఏమి చేస్తుంది?",
+      "options": [
+        {
+          "id": "grows",
+          "text": "మీ డబ్బు పెరుగుతుంది",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spends",
+          "text": "మీ డబ్బు ఖర్చు చేస్తుంది",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "loses",
+          "text": "ఎల్లప్పుడూ మీ డబ్బును కోల్పోతుంది",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "బ్యాంకులో డబ్బు ఎందుకు ఆదా చేయాలి?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "వెంటనే బొమ్మలు కొనడానికి",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ఇది ఆసక్తితో పెరుగుతుంది",
+          "emoji": "💹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ఇది సరదాగా ఉన్నందున మాత్రమే",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

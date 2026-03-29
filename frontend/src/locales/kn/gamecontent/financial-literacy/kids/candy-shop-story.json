@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಕ್ಯಾಂಡಿ ಶಾಪ್ ಸ್ಟೋರಿ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "🍬",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಅಂಗಡಿಯವರು ₹10ರ ಬದಲು ₹20 ವಿಧಿಸುತ್ತಾರೆ. ನೀವು ಬಿಲ್ ಪರಿಶೀಲಿಸುತ್ತೀರಾ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ಹೌದು, ನಾನು ಬಿಲ್ ಪರಿಶೀಲಿಸುತ್ತೇನೆ",
+          "emoji": "📜",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ಇಲ್ಲ, ನಾನು ಪಾವತಿಸುತ್ತೇನೆ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "friend",
+          "text": "ಪರಿಶೀಲಿಸಲು ಸ್ನೇಹಿತರಿಗೆ ಕೇಳಿ",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನಿಮ್ಮ ಬಳಿ ₹50 ಇದೆ. ಮಿಠಾಯಿ ಬೆಲೆ ₹15. ನೀವು ಎಷ್ಟು ಬದಲಾವಣೆಯನ್ನು ಪಡೆಯಬೇಕು?",
+      "options": [
+        {
+          "id": "25",
+          "text": "₹25",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "₹40",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "35",
+          "text": "₹35",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಅಂಗಡಿಯವರು ₹35ರ ಬದಲು ₹30 ಚೇಂಜ್ ಕೊಡುತ್ತಾರೆ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "ಸರಿಯಾದ ಬದಲಾವಣೆಗಾಗಿ ನಯವಾಗಿ ಕೇಳಿ",
+          "emoji": "🗣️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "take",
+          "text": "₹30 ತೆಗೆದುಕೊಂಡು ಹೊರಟೆ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "buy",
+          "text": "ಹೆಚ್ಚು ಕ್ಯಾಂಡಿ ಖರೀದಿಸಿ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ಎರಡು ಮಿಠಾಯಿಗಳನ್ನು ತಲಾ ₹10 ದರದಲ್ಲಿ ಖರೀದಿಸಲು ಬಯಸುತ್ತೀರಿ. ನೀವು ₹ 15 ರಲ್ಲಿ ಅದನ್ನು ನಿಭಾಯಿಸಬಹುದೇ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ಹೌದು, ನನಗೆ ಸಾಕಷ್ಟು ಇದೆ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ಇಲ್ಲ, ನನಗೆ ₹20 ಬೇಕು",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "discount",
+          "text": "ರಿಯಾಯಿತಿಗಾಗಿ ಕೇಳಿ",
+          "emoji": "🎟️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಅಚ್ಚುಕಟ್ಟಾಗಿ ಶಾಪಿಂಗ್ ಮಾಡಲು ಉತ್ತಮ ಮಾರ್ಗ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "everything",
+          "text": "ನೀವು ನೋಡುವ ಎಲ್ಲವನ್ನೂ ಖರೀದಿಸಿ",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "ಬೆಲೆಗಳು ಮತ್ತು ಬಿಲ್‌ಗಳನ್ನು ಎಚ್ಚರಿಕೆಯಿಂದ ಪರಿಶೀಲಿಸಿ",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "ಸ್ನೇಹಿತರೊಂದಿಗೆ ಮಾತ್ರ ಶಾಪಿಂಗ್ ಮಾಡಿ",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

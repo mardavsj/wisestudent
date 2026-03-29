@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ಬ್ಯಾಂಕ್ ವಿಸಿಟ್ ಸ್ಟೋರಿ",
+  "subtitleComplete": "ಸಂಪೂರ್ಣ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಪೋಷಕರು ನಿಮ್ಮನ್ನು ಬ್ಯಾಂಕಿಗೆ ಕರೆದೊಯ್ಯುತ್ತಾರೆ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "ಸದ್ದಿಲ್ಲದೆ ವೀಕ್ಷಿಸಿ ಮತ್ತು ಕಲಿಯಿರಿ",
+          "emoji": "👀",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "ಓಡಿ ಹೋಗಿ ಆಟವಾಡಿ",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "touch",
+          "text": "ಎಲ್ಲವನ್ನೂ ಸ್ಪರ್ಶಿಸಿ",
+          "emoji": "👆",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಬ್ಯಾಂಕ್ ಸಿಬ್ಬಂದಿ ನಿಮ್ಮನ್ನು ಸ್ವಾಗತಿಸುತ್ತಾರೆ. ಹೇಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಬೇಕು?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "ಅವರನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "polite",
+          "text": "ಸಭ್ಯ ಮತ್ತು ಗೌರವಾನ್ವಿತರಾಗಿರಿ",
+          "emoji": "🙏",
+          "isCorrect": true
+        },
+        {
+          "id": "rude",
+          "text": "ಅವರೊಂದಿಗೆ ಅಸಭ್ಯವಾಗಿ ವರ್ತಿಸಿ",
+          "emoji": "😠",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಪೋಷಕರು ಎಟಿಎಂ ಬಳಸುತ್ತಾರೆ. ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "privacy",
+          "text": "ಹಿಂದೆ ನಿಂತು ಗೌಪ್ಯತೆಯನ್ನು ನೀಡಿ",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "watch",
+          "text": "ಪಿನ್ ಅನ್ನು ಹತ್ತಿರದಿಂದ ವೀಕ್ಷಿಸಿ",
+          "emoji": "👁️",
+          "isCorrect": false
+        },
+        {
+          "id": "buttons",
+          "text": "ಯಾದೃಚ್ಛಿಕ ಗುಂಡಿಗಳನ್ನು ಒತ್ತಿರಿ",
+          "emoji": "🔘",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಭದ್ರತಾ ಸಿಬ್ಬಂದಿ ಚೀಲಗಳನ್ನು ಪರಿಶೀಲಿಸುತ್ತಾರೆ. ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆ?",
+      "options": [
+        {
+          "id": "angry",
+          "text": "ಕಾವಲುಗಾರನ ಮೇಲೆ ಕೋಪಗೊಳ್ಳಿ",
+          "emoji": "😠",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "ಚೆಕ್ ಅನ್ನು ನಿರಾಕರಿಸು",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "understand",
+          "text": "ಇದು ಸುರಕ್ಷತೆಗಾಗಿ ಎಂದು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಬ್ಯಾಂಕಿನಲ್ಲಿ ಉದ್ದನೆಯ ಸರತಿ ಸಾಲು. ಯಾವುದು ಉತ್ತಮ?",
+      "options": [
+        {
+          "id": "push",
+          "text": "ಮೊದಲು ಹೋಗಲು ತಳ್ಳಿರಿ",
+          "emoji": "👊",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ಸಾಲಿನಲ್ಲಿ ತಾಳ್ಮೆಯಿಂದ ಕಾಯಿರಿ",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "complain",
+          "text": "ಜೋರಾಗಿ ದೂರಿ",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

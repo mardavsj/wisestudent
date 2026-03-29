@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ਬਹਿਸ: ਨਕਦ ਬਨਾਮ ਔਨਲਾਈਨ ਸੁਰੱਖਿਆ",
+  "subtitleComplete": "ਬਹਿਸ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਦਾ ਦੌਰ {{current}}",
+  "roundLabel": "ਦੌਰ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "ਕੀ ਔਨਲਾਈਨ ਪੈਸਾ ਨਕਦ ਨਾਲੋਂ ਵਧੇਰੇ ਜੋਖਮ ਭਰਿਆ ਹੈ?",
+      "options": [
+        {
+          "id": "online-riskier",
+          "text": "ਔਨਲਾਈਨ ਜੋਖਮ ਭਰਿਆ ਹੈ",
+          "emoji": "💻",
+          "isCorrect": false
+        },
+        {
+          "id": "both-safe",
+          "text": "ਦੋਵਾਂ ਨੂੰ ਸੁਰੱਖਿਆ ਦੀ ਲੋੜ ਹੈ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "cash-riskier",
+          "text": "ਨਕਦੀ ਜੋਖਮ ਭਰੀ ਹੁੰਦੀ ਹੈ",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "ਵੱਡੀ ਮਾਤਰਾ ਲਈ ਕਿਹੜਾ ਸੁਰੱਖਿਅਤ ਹੈ?",
+      "options": [
+        {
+          "id": "both-safe2",
+          "text": "ਦੋਵੇਂ ਸਾਵਧਾਨੀ ਨਾਲ",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "only-cash",
+          "text": "ਸਿਰਫ਼ ਨਕਦ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "only-online",
+          "text": "ਸਿਰਫ਼ ਔਨਲਾਈਨ",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "ਔਨਲਾਈਨ ਪੈਸੇ ਨਾਲ ਮੁੱਖ ਜੋਖਮ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "no-risk",
+          "text": "ਕੋਈ ਜੋਖਮ ਨਹੀਂ",
+          "emoji": "😓",
+          "isCorrect": false
+        },
+        {
+          "id": "too-easy",
+          "text": "ਵਰਤਣ ਲਈ ਬਹੁਤ ਆਸਾਨ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "hacking",
+          "text": "ਹੈਕਿੰਗ ਅਤੇ ਧੋਖਾਧੜੀ",
+          "emoji": "👾",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "ਤੁਸੀਂ ਔਨਲਾਈਨ ਪੈਸੇ ਦੀ ਰੱਖਿਆ ਕਿਵੇਂ ਕਰ ਸਕਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "strong-password",
+          "text": "ਮਜ਼ਬੂਤ ​​ਪਾਸਵਰਡ ਅਤੇ OTP",
+          "emoji": "🔐",
+          "isCorrect": true
+        },
+        {
+          "id": "no-protection",
+          "text": "ਸੁਰੱਖਿਆ ਦੀ ਲੋੜ ਨਹੀਂ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "share-details",
+          "text": "ਵੇਰਵੇ ਨੂੰ ਖੁੱਲ੍ਹ ਕੇ ਸਾਂਝਾ ਕਰੋ",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "ਸਭ ਤੋਂ ਵਧੀਆ ਪਹੁੰਚ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "only-one",
+          "text": "ਸਿਰਫ਼ ਇੱਕ ਢੰਗ ਦੀ ਵਰਤੋਂ ਕਰੋ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "ਦੋਵਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਸੰਤੁਲਿਤ ਕਰੋ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid-all",
+          "text": "ਸਾਰੇ ਪੈਸੇ ਤੋਂ ਬਚੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,146 @@
-﻿{}
+{
+  "title": "టాయ్ షాప్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "questionIndicator": "ప్రశ్న {{current}}/{{total}}",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "విక్రేత, 'త్వరపడండి లేదా బొమ్మను పోగొట్టుకోండి!' మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "quick",
+          "text": "త్వరగా కొనండి",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "ధరను తనిఖీ చేయండి",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "విక్రేతను విస్మరించండి",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు రెండు బొమ్మల దుకాణాలు చూస్తారు. ఏది తెలివైనది?",
+      "options": [
+        {
+          "id": "compare",
+          "text": "ధరలను సరిపోల్చండి",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "pay",
+          "text": "ఇప్పుడే చెల్లించండి",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "రెండింటినీ దాటవేయి",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "బొమ్మ బాగుంది. మీరు ఏమి తనిఖీ చేస్తారు?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "వేగంగా కొనండి",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "quality",
+          "text": "నాణ్యత అడగండి",
+          "emoji": "🔍",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "guess",
+          "text": "నాణ్యతను అంచనా వేయండి",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ఆన్‌లైన్‌లో బొమ్మల విక్రయం. మొదటిది ఏమిటి?",
+      "options": [
+        {
+          "id": "reviews",
+          "text": "సమీక్షలను చదవండి",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "Rush",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "విక్రయాన్ని విస్మరించండి",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "నీకు బొమ్మ కావాలి. ప్లాన్ ఏమిటి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "రుణం డబ్బు",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "మొదట బడ్జెట్",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,102 @@
-﻿{}
+{
+  "title": "ఉద్యోగాల పజిల్",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "వారు అందించే వాటితో ఉద్యోగాలను సరిపోల్చండి ({{matched}}/{{total}} సరిపోలింది)",
+  "jobsTitle": "Jobs",
+  "providedTitle": "వారు ఏమి అందిస్తారు",
+  "selectedLabel": "ఎంచుకోబడింది: {{name}}",
+  "selectJob": "ఉద్యోగాన్ని ఎంచుకోండి",
+  "matchButton": "Match",
+  "scoreLabel": "స్కోర్:",
+  "matchedLabel": "సరిపోలినది:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "గ్రేట్ జాబ్!",
+  "resultGreatDescription": "మీరు {{total}} ఉద్యోగాలలో {{score}}ని వారు అందించే వాటితో సరిగ్గా సరిపోలారు!",
+  "coinsLabel": "Coins",
+  "resultLesson": "పాఠం: ప్రతి ఉద్యోగం ప్రజల అవసరాలను తీర్చడం ద్వారా విలువను అందిస్తుంది!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "సాధన కొనసాగించండి!",
+  "resultKeepDescription": "మీరు {{total}} ఉద్యోగాలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTip": "చిట్కా: ప్రతి ఉద్యోగం సమాజానికి ఏమి సృష్టిస్తుంది లేదా అందిస్తుంది అనే దాని గురించి ఆలోచించండి!",
+  "jobs": [
+    {
+      "id": 1,
+      "name": "Farmer",
+      "emoji": "🌾"
+    },
+    {
+      "id": 2,
+      "name": "Teacher",
+      "emoji": "📚"
+    },
+    {
+      "id": 3,
+      "name": "Doctor",
+      "emoji": "🩺"
+    },
+    {
+      "id": 4,
+      "name": "Chef",
+      "emoji": "👩‍🍳"
+    },
+    {
+      "id": 5,
+      "name": "Engineer",
+      "emoji": "🔧"
+    }
+  ],
+  "provided": [
+    {
+      "id": 8,
+      "name": "Healthcare",
+      "emoji": "💊",
+      "description": ""
+    },
+    {
+      "id": 10,
+      "name": "Infrastructure",
+      "emoji": "🏗️",
+      "description": ""
+    },
+    {
+      "id": 7,
+      "name": "Education",
+      "emoji": "📖",
+      "description": ""
+    },
+    {
+      "id": 6,
+      "name": "Food",
+      "emoji": "🍎",
+      "description": ""
+    },
+    {
+      "id": 9,
+      "name": "Meals",
+      "emoji": "🍽️",
+      "description": ""
+    }
+  ],
+  "correctMatches": [
+    {
+      "jobId": 1,
+      "providedId": 6
+    },
+    {
+      "jobId": 2,
+      "providedId": 7
+    },
+    {
+      "jobId": 3,
+      "providedId": 8
+    },
+    {
+      "jobId": 4,
+      "providedId": 9
+    },
+    {
+      "jobId": 5,
+      "providedId": 10
+    }
+  ]
+}

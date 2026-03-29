@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਵਿਕਾਸ 'ਤੇ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "📈",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਪੈਸਾ ਵਧਣ ਵਿੱਚ ਕੀ ਮਦਦ ਕਰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਇਹ ਸਾਰਾ ਖਰਚ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ਇਸ ਨੂੰ ਬਰਬਾਦ",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "ਬਚਤ + ਵਿਆਜ",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਬੈਂਕ ਪੈਸੇ ਨੂੰ ਵਧਾਉਣ ਵਿੱਚ ਕਿਵੇਂ ਮਦਦ ਕਰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ਖਿਡੌਣੇ ਦੇ ਕੇ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ਵਿਆਜ ਦੇ ਕੇ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ਆਪਣਾ ਪੈਸਾ ਛੁਪਾ ਕੇ",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਪੈਸਾ ਵਧਾਉਣ ਦਾ ਇੱਕ ਸੁਰੱਖਿਅਤ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "ਕੈਂਡੀ ਖਰੀਦਣਾ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "home",
+          "text": "ਘਰ ਵਿੱਚ ਨਕਦੀ ਰੱਖਣਾ",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ਬੈਂਕ ਬਚਤ ਖਾਤੇ ਦੀ ਵਰਤੋਂ ਕਰਨਾ",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਨਿਵੇਸ਼ ਕੀ ਕਰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "grows",
+          "text": "ਤੁਹਾਡਾ ਪੈਸਾ ਵਧਾਉਂਦਾ ਹੈ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spends",
+          "text": "ਆਪਣਾ ਪੈਸਾ ਖਰਚ ਕਰਦਾ ਹੈ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "loses",
+          "text": "ਹਮੇਸ਼ਾ ਆਪਣੇ ਪੈਸੇ ਗੁਆ ਦਿੰਦਾ ਹੈ",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਬੈਂਕ ਵਿੱਚ ਪੈਸੇ ਕਿਉਂ ਬਚਾਉਂਦੇ ਹਨ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ਖਿਡੌਣੇ ਤੁਰੰਤ ਖਰੀਦਣ ਲਈ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ਇਹ ਦਿਲਚਸਪੀ ਨਾਲ ਵਧ ਸਕਦਾ ਹੈ",
+          "emoji": "💹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ਕੇਵਲ ਇਸ ਲਈ ਕਿ ਇਹ ਮਜ਼ੇਦਾਰ ਹੈ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

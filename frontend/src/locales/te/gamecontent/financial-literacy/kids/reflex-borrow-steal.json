@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ బారో/దొంగతనం",
+  "subtitlePlaying": "రౌండ్ {{current}}/{{total}}: మీ అరువు రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "subtitleReady": "మీ అరువు రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "readyEmoji": "🤝",
+  "readyTitle": "సిద్ధంగా ఉండండి!",
+  "readyDescription": "రుణం తీసుకోవడం గురించిన ప్రశ్నలకు సరిగ్గా సమాధానం ఇవ్వండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "రౌండ్:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "అరువు తెచ్చుకున్న వస్తువులతో మీరు ఏమి చేయాలి?",
+      "correctAnswer": "అరువు తెచ్చుకున్న వస్తువులను తిరిగి ఇవ్వండి",
+      "options": [
+        {
+          "text": "అరువు తెచ్చుకున్న వస్తువులను తిరిగి ఇవ్వండి",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "వాటిని ఎప్పటికీ ఉంచండి",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "వాటిని దాచిపెట్టు",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "వాటిని మర్చిపో",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "రుణం తీసుకోవడం సరైనది ఏమిటి?",
+      "correctAnswer": "రుణం తిరిగి చెల్లించండి",
+      "options": [
+        {
+          "text": "చెల్లింపును నివారించండి",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "రుణం తిరిగి చెల్లించండి",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "పట్టించుకోవద్దు",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "అది మర్చిపో",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "మీరు ఏదైనా అప్పు తీసుకున్నప్పుడు, మీరు ఏమి చేయాలి?",
+      "correctAnswer": "తిరిగి ఇవ్వండి",
+      "options": [
+        {
+          "text": "దాచు",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ఉంచుకో",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "తిరిగి ఇవ్వండి",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "పోగొట్టుకోండి",
+          "isCorrect": false,
+          "emoji": "❌"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "రుణం తీసుకోవడానికి నిజాయితీ గల మార్గం ఏమిటి?",
+      "correctAnswer": "నిజాయితీగా ఉండండి",
+      "options": [
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "నిజాయితీగా ఉండండి",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "🎭"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "మీరు అప్పుగా తీసుకున్న వస్తువులను ఎప్పుడు తిరిగి ఇవ్వాలి?",
+      "correctAnswer": "సమయానికి తిరిగి వెళ్ళు",
+      "options": [
+        {
+          "text": "Delay",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "Never",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "బహుశా తర్వాత",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "సమయానికి తిరిగి వెళ్ళు",
+          "isCorrect": true,
+          "emoji": "⏱️"
+        }
+      ]
+    }
+  ]
+}

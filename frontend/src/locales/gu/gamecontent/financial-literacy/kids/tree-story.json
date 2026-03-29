@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "વૃક્ષ વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "🌳",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે આજે એક નાનું વૃક્ષ વાવો. સમય જતાં તેને મજબૂત થવામાં શું મદદ કરે છે?",
+      "options": [
+        {
+          "id": "care",
+          "text": "નિયમિતપણે પાણી અને સંભાળ રાખો",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "ઝડપથી વધવા માટે તેને ખેંચો",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "તેને છોડી દો અને ભૂલી જાઓ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "પૈસો એક વૃક્ષ જેવો છે. શું તે ધીમે ધીમે અને સુરક્ષિત રીતે વૃદ્ધિ કરે છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "બધું ઝડપથી ખર્ચવું",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "તેને છુપાવો અને ક્યારેય તેનો ઉપયોગ કરશો નહીં",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "સમય જતાં સમજદારીપૂર્વક ઉપયોગ કરો અને બચત કરો",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમને વધારાના પોકેટ મની મળે છે. સ્માર્ટ ટ્રી-શૈલીની પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "વિચાર્યા વગર ખર્ચ કરો",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "ભાગ સાચવો જેથી તે પાછળથી વધે",
+          "emoji": "🌱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "તેને બેદરકારીથી રાખો",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ફળનું ઝાડ દર વર્ષે ફળ આપે છે. આ પૈસા વિશે શું શીખવે છે?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "પૈસાનો ઉપયોગ ફક્ત એક જ વાર કરવો જોઈએ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "માત્ર નસીબ જ મહત્વનું છે",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "સારી પસંદગીઓ વારંવાર પુરસ્કારો આપે છે",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "જો તમે વહેલું ઝાડ કાપો છો, તો શું થાય છે?",
+      "options": [
+        {
+          "id": "loss",
+          "text": "તમે ભાવિ લાભ ગુમાવશો",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "gain",
+          "text": "તમે હંમેશા વધુ મેળવો છો",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "કંઈ બદલાતું નથી",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് ആദ്യം ആവശ്യമാണ്",
+  "subtitlePlaying": "റൗണ്ട് {{current}}/{{total}}: ആവശ്യങ്ങളും ആവശ്യങ്ങളും തിരിച്ചറിയുക!",
+  "subtitleReady": "ആവശ്യങ്ങളും ആവശ്യങ്ങളും തിരിച്ചറിയുക!",
+  "readyEmoji": "✅",
+  "readyTitle": "നിങ്ങളുടെ ആവശ്യങ്ങൾ vs Wants Skills പരീക്ഷിക്കാൻ തയ്യാറാണോ?",
+  "readyDescription": "ആവശ്യങ്ങളും ആവശ്യങ്ങളും തിരിച്ചറിയുന്നതിനെക്കുറിച്ചുള്ള ചോദ്യങ്ങൾക്ക് ഉത്തരം നൽകുക.",
+  "readyInfo": "നിങ്ങൾക്ക് {{seconds}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "റൗണ്ട്:",
+  "timeLabel": "സമയം:",
+  "scoreLabel": "സ്കോർ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ഇതിൽ ഏതാണ് അടിസ്ഥാന ആവശ്യം?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "വീഡിയോ ഗെയിമുകൾ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍲"
+        },
+        {
+          "text": "ഡിസൈനർ വസ്ത്രങ്ങൾ",
+          "isCorrect": false,
+          "emoji": "👗"
+        },
+        {
+          "text": "ആഡംബര കാർ",
+          "isCorrect": false,
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ഏത് ഇനം വിദ്യാഭ്യാസത്തിൻ്റെ ആവശ്യകതയെ പ്രതിനിധീകരിക്കുന്നു?",
+      "correctAnswer": "സ്കൂൾ പുസ്തകങ്ങൾ",
+      "options": [
+        {
+          "text": "സ്കൂൾ പുസ്തകങ്ങൾ",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "വിലകൂടിയ കളിപ്പാട്ടങ്ങൾ",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Gadgets",
+          "isCorrect": false,
+          "emoji": "📱"
+        },
+        {
+          "text": "Snacks",
+          "isCorrect": false,
+          "emoji": "🍪"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ആരോഗ്യത്തിന് അത്യാവശ്യമായത് ഏതാണ്?",
+      "correctAnswer": "Medicine",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        },
+        {
+          "text": "Medicine",
+          "isCorrect": true,
+          "emoji": "💊"
+        },
+        {
+          "text": "Jewelry",
+          "isCorrect": false,
+          "emoji": "💎"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ഏത് ഇനമാണ് അടിസ്ഥാന ആവശ്യം?",
+      "correctAnswer": "Shelter",
+      "options": [
+        {
+          "text": "Vacation",
+          "isCorrect": false,
+          "emoji": "✈️"
+        },
+        {
+          "text": "Entertainment",
+          "isCorrect": false,
+          "emoji": "🎬"
+        },
+        {
+          "text": "ലക്ഷ്വറി ഡൈനിംഗ്",
+          "isCorrect": false,
+          "emoji": "🍽️"
+        },
+        {
+          "text": "Shelter",
+          "isCorrect": true,
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "എന്താണ് അടിസ്ഥാന ആവശ്യം?",
+      "correctAnswer": "ശുദ്ധജലം",
+      "options": [
+        {
+          "text": "ശുദ്ധജലം",
+          "isCorrect": true,
+          "emoji": "🚰"
+        },
+        {
+          "text": "ഐസ്ക്രീം",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ഡിസൈനർ ബാഗ്",
+          "isCorrect": false,
+          "emoji": "👜"
+        },
+        {
+          "text": "കച്ചേരി ടിക്കറ്റുകൾ",
+          "isCorrect": false,
+          "emoji": "🎟️"
+        }
+      ]
+    }
+  ]
+}

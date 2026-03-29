@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ಒಗಟು: ಡಿಜಿಟಲ್ ಪರಿಕರಗಳು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಕಾರ್ಯಗಳೊಂದಿಗೆ ಡಿಜಿಟಲ್ ಪರಿಕರಗಳನ್ನು ಹೊಂದಿಸಿ ({{current}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "toolsTitle": "ಡಿಜಿಟಲ್ ಪರಿಕರಗಳು",
+  "functionsTitle": "ಡಿಜಿಟಲ್ ಕಾರ್ಯಗಳು",
+  "matchButton": "Match",
+  "selectToolLabel": "ಡಿಜಿಟಲ್ ಉಪಕರಣವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "selectedToolLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultSuccessSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಡಿಜಿಟಲ್ ಪರಿಕರಗಳನ್ನು ಅವುಗಳ ಕಾರ್ಯಗಳೊಂದಿಗೆ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿದ್ದೀರಿ!",
+  "resultSuccessLesson": "ಪಾಠ: ಡಿಜಿಟಲ್ ಪರಿಕರಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ಸುರಕ್ಷಿತ ಆನ್‌ಲೈನ್ ವಹಿವಾಟುಗಳನ್ನು ಮಾಡಲು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ!",
+  "resultTryAgainHeader": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultTryAgainSubheader": "ನೀವು {{total}} ಡಿಜಿಟಲ್ ಪರಿಕರಗಳಲ್ಲಿ {{score}} ಅನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTryAgainTip": "ಸಲಹೆ: ಪ್ರತಿಯೊಂದು ಡಿಜಿಟಲ್ ಉಪಕರಣವು ನಿಜವಾಗಿ ಏನು ಮಾಡುತ್ತದೆ ಎಂಬುದರ ಕುರಿತು ಯೋಚಿಸಿ!",
+  "coinsEarned": "+{{coins}} ನಾಣ್ಯಗಳು",
+  "tools": [
+    {
+      "id": 1,
+      "name": "UPI",
+      "emoji": "📱"
+    },
+    {
+      "id": 2,
+      "name": "ಡೆಬಿಟ್ ಕಾರ್ಡ್",
+      "emoji": "💳"
+    },
+    {
+      "id": 3,
+      "name": "OTP",
+      "emoji": "🔐"
+    },
+    {
+      "id": 4,
+      "name": "QR ಕೋಡ್",
+      "emoji": "📷"
+    },
+    {
+      "id": 5,
+      "name": "CVV",
+      "emoji": "🔒"
+    }
+  ],
+  "functions": [
+    {
+      "id": 6,
+      "name": "ತ್ವರಿತ ವರ್ಗಾವಣೆ",
+      "emoji": "⚡"
+    },
+    {
+      "id": 7,
+      "name": "ಬ್ಯಾಂಕ್ ಖರ್ಚು",
+      "emoji": "🏦"
+    },
+    {
+      "id": 8,
+      "name": "ಭದ್ರತಾ ಕೋಡ್",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 9,
+      "name": "ಸ್ಕ್ಯಾನ್ ಮಾಡಿ ಮತ್ತು ಪಾವತಿಸಿ",
+      "emoji": "📲"
+    },
+    {
+      "id": 10,
+      "name": "ಕಾರ್ಡ್ ರಕ್ಷಣೆ",
+      "emoji": "🧾"
+    }
+  ]
+}

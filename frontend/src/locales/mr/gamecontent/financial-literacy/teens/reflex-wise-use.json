@@ -1,1 +1,152 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स वाईज वापर",
+  "subtitleReady": "तुमच्या आर्थिक शहाणपणाची चाचणी घ्या!",
+  "challengeTitle": "रिफ्लेक्स वाईज युज चॅलेंज",
+  "challengeDescription": "पैशाच्या सुज्ञ वापराबद्दल प्रश्नांची उत्तरे द्या. तुमच्याकडे प्रति प्रश्न {{time}} सेकंद आहेत!",
+  "wiseChoicesLabel": "सुज्ञ निवडी",
+  "wiseChoicesList": "वाढ, आपत्कालीन निधी, चक्रवाढ व्याज, आर्थिक योजना, दीर्घकालीन उद्दिष्टांसाठी गुंतवणूक करा",
+  "poorChoicesLabel": "गरीब निवडी",
+  "poorChoicesList": "जंक वर कचरा, आवेग खरेदी, FOMO वर खर्च, लक्झरी स्प्लर्ज, पीअर प्रेशर",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "gameComplete": "खेळ पूर्ण!",
+  "perfectScore": "परिपूर्ण! आपण आर्थिक शहाणपणाचे मास्टर आहात!",
+  "goodScore": "छान काम! पैशाचा सुज्ञ वापर समजला!",
+  "lowScore": "सुज्ञ आर्थिक निर्णयांबद्दल शिकत रहा!",
+  "coinsLabel": "+{{count}} नाणी",
+  "playAgain": "पुन्हा खेळा",
+  "questions": [
+    {
+      "id": 1,
+      "question": "तुमचा पैसा वापरण्याचा सर्वात शहाणा मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "invest",
+          "text": "वाढीसाठी गुंतवणूक करा",
+          "emoji": "📈"
+        },
+        {
+          "id": "waste",
+          "text": "जंक वर कचरा",
+          "emoji": "🗑️"
+        },
+        {
+          "id": "impulse",
+          "text": "आवेग खरेदी",
+          "emoji": "⚡"
+        },
+        {
+          "id": "fomo",
+          "text": "FOMO वर खर्च करा",
+          "emoji": "😱"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "आर्थिक सुरक्षिततेसाठी तुम्ही कशाला प्राधान्य द्यावे?",
+      "options": [
+        {
+          "id": "luxury",
+          "text": "लक्झरी स्प्लर्ज",
+          "emoji": "💎"
+        },
+        {
+          "id": "emergency",
+          "text": "आपत्कालीन निधी",
+          "emoji": "🛡️"
+        },
+        {
+          "id": "peer",
+          "text": "पीअर प्रेशर",
+          "emoji": "👥"
+        },
+        {
+          "id": "spend_all",
+          "text": "सर्व खर्च करा",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुमचा पैसा कालांतराने वाढण्यास काय मदत करते?",
+      "options": [
+        {
+          "id": "no_plan",
+          "text": "नियोजन नाही",
+          "emoji": "🚫"
+        },
+        {
+          "id": "compound",
+          "text": "चक्रवाढ व्याज",
+          "emoji": "💰"
+        },
+        {
+          "id": "quick_spend",
+          "text": "जलद खर्च",
+          "emoji": "⚡"
+        },
+        {
+          "id": "ignore",
+          "text": "बचतीकडे दुर्लक्ष करा",
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "तुमच्या आर्थिक निर्णयांना काय मार्गदर्शन करावे?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "आर्थिक योजना",
+          "emoji": "📋"
+        },
+        {
+          "id": "emotions",
+          "text": "Emotions",
+          "emoji": "😢"
+        },
+        {
+          "id": "peer",
+          "text": "पीअर प्रेशर",
+          "emoji": "👥"
+        },
+        {
+          "id": "impulse",
+          "text": "Impulse",
+          "emoji": "🎲"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "दीर्घकालीन यशासाठी तुम्ही कशावर लक्ष केंद्रित केले पाहिजे?",
+      "options": [
+        {
+          "id": "instant",
+          "text": "Instant Gratification",
+          "emoji": "🎁"
+        },
+        {
+          "id": "short_term",
+          "text": "Short-term Wants",
+          "emoji": "🛍️"
+        },
+        {
+          "id": "long_term",
+          "text": "Long-term Goals",
+          "emoji": "🎯"
+        },
+        {
+          "id": "no_plan",
+          "text": "नियोजन नाही",
+          "emoji": "🚫"
+        }
+      ]
+    }
+  ]
+}

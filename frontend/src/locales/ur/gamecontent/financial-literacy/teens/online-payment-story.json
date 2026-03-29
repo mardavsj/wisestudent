@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "آن لائن ادائیگی کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ آن لائن کتاب خریدتے ہیں۔ نقد یا UPI سے محفوظ طریقے سے ادائیگی کریں؟",
+      "options": [
+        {
+          "id": "upi",
+          "text": "UPI کو محفوظ طریقے سے منتخب کریں۔",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "نقد رقم سے ادائیگی کریں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "دونوں طریقے استعمال کریں۔",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "کھانا آن لائن آرڈر کرنا۔ ڈیبٹ کارڈ استعمال کریں یا کیش آن ڈیلیوری؟",
+      "options": [
+        {
+          "id": "cash",
+          "text": "کیش آن ڈیلیوری",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "debit",
+          "text": "ڈیبٹ کارڈ استعمال کریں۔",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "ادائیگی چھوڑ دیں۔",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آن لائن گیجٹ خریدنا۔ UPI یا بینک ٹرانسفر کے ذریعے ادائیگی کریں؟",
+      "options": [
+        {
+          "id": "bank",
+          "text": "بینک ٹرانسفر",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "upi",
+          "text": "UPI کے ذریعے ادائیگی کریں۔",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "ڈاک کے ذریعے نقد رقم بھیجیں۔",
+          "emoji": "✉️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "سبسکرپشن کی ادائیگی۔ کریڈٹ کارڈ استعمال کریں یا نقد؟",
+      "options": [
+        {
+          "id": "credit",
+          "text": "کریڈٹ کارڈ استعمال کریں۔",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "نقد رقم سے ادائیگی کریں۔",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "ایک چیک بھیجیں۔",
+          "emoji": "📄",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آن لائن خریداری۔ OTP کے ساتھ UPI استعمال کریں یا PIN کا اشتراک کریں؟",
+      "options": [
+        {
+          "id": "pin",
+          "text": "PIN کا اشتراک کریں۔",
+          "emoji": "🔓",
+          "isCorrect": false
+        },
+        {
+          "id": "upi",
+          "text": "OTP کے ساتھ UPI استعمال کریں۔",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "تصدیق کو چھوڑ دیں۔",
+          "emoji": "⚠️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "آن لائن ادائیگی ستارہ!",
+    "winMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا! محفوظ آن لائن ادائیگیوں کے بارے میں سیکھنے کا زبردست کام!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: آن لائن خریداریوں کے لیے ہمیشہ محفوظ ڈیجیٹل ادائیگی کے طریقے استعمال کریں جیسے UPI، OTP کے ساتھ ڈیبٹ/کریڈٹ کارڈ!",
+    "loseEmoji": "💪",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ آن لائن لین دین کے لیے محفوظ ادائیگی کے طریقے استعمال کرنا یاد رکھیں!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "مشورہ: UPI، OTP کے ساتھ ڈیبٹ/کریڈٹ کارڈ آن لائن ادائیگیوں کے لیے سب سے محفوظ طریقے ہیں۔ اپنا PIN کبھی بھی شیئر نہ کریں!"
+  }
+}

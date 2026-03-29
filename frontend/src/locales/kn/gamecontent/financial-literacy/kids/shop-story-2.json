@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ಅಂಗಡಿ ಕಥೆ 2",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನೀವು ಅಂಗಡಿಯಲ್ಲಿ ಎರಡು ಪೆನ್ನುಗಳನ್ನು ನೋಡುತ್ತೀರಿ. ಒಂದರ ಬೆಲೆ 50 ರೂ. ಮತ್ತೊಂದಕ್ಕೆ 15 ರೂ. ಎರಡೂ ಒಂದೇ ಕೆಲಸ. ನೀವು ಯಾವುದನ್ನು ಖರೀದಿಸಬೇಕು?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ದುಬಾರಿ ಪೆನ್",
+          "emoji": "🖊️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "text": "ಮೊದಲು ವಿಮರ್ಶೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "ಕೈಗೆಟುಕುವ ಪೆನ್",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಬಟ್ಟೆಗೆ ಖರ್ಚು ಮಾಡಲು ನಿಮ್ಮ ಬಳಿ 100 ರೂ. ನೀವು ಇಷ್ಟಪಡುವ ಶರ್ಟ್ 80 ರೂ.ಗೆ ಮತ್ತು ಅದೇ ರೀತಿಯ ಇನ್ನೊಂದು ಶರ್ಟ್ ಅನ್ನು 30 ರೂ.ಗೆ ನೀವು ಕಂಡುಕೊಳ್ಳುತ್ತೀರಿ. ಯಾವುದು ಸ್ಮಾರ್ಟ್?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "ಅಗ್ಗದ ಶರ್ಟ್ ಖರೀದಿಸಿ",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "ದುಬಾರಿ ಶರ್ಟ್ ಖರೀದಿಸಿ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ಮಾರಾಟಕ್ಕೆ ನಿರೀಕ್ಷಿಸಿ",
+          "emoji": "🏷️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ಪಾರ್ಟಿಗಾಗಿ ತಿಂಡಿಗಳನ್ನು ಖರೀದಿಸುತ್ತಿದ್ದೀರಿ. ಬ್ರಾಂಡ್ ಎ 200 ರೂ ಮತ್ತು ಬ್ರಾಂಡ್ ಬಿ 120 ರೂ. ಎರಡೂ ಒಂದೇ ರುಚಿ. ಯಾವುದು?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ಬ್ರಾಂಡ್ ಎ ಖರೀದಿಸಿ",
+          "emoji": "📦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "ಬ್ರಾಂಡ್ ಬಿ ಖರೀದಿಸಿ",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mix",
+          "text": "ಪ್ರತಿಯೊಂದನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "➗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನಿಮಗೆ ಶಾಲೆಗೆ ಬೆನ್ನುಹೊರೆಯ ಅಗತ್ಯವಿದೆ. ಒಂದಕ್ಕೆ 800 ರೂ., ಇನ್ನೊಂದಕ್ಕೆ 400 ರೂ. ಇವೆರಡೂ ಉತ್ತಮ ಗುಣಮಟ್ಟದ್ದಾಗಿದೆ. ಯಾವುದು ಬುದ್ಧಿವಂತಿಕೆ?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "ರೂ 400 ಬ್ಯಾಕ್‌ಪ್ಯಾಕ್ ಖರೀದಿಸಿ",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "ರೂ 800 ಬ್ಯಾಕ್‌ಪ್ಯಾಕ್ ಖರೀದಿಸಿ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ಸದ್ಯಕ್ಕೆ ಸಾಲ ಮಾಡಿ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನೀವು ದಿನಸಿ ವಸ್ತುಗಳನ್ನು ಖರೀದಿಸುತ್ತಿದ್ದೀರಿ. ಸಾವಯವ ತರಕಾರಿಗಳು 300 ರೂ. ಮತ್ತು ಸಾಮಾನ್ಯ ತರಕಾರಿಗಳ ಬೆಲೆ 150 ರೂ. ಇವೆರಡೂ ಪೌಷ್ಟಿಕವಾಗಿದೆ. ಯಾವುದು?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ಸಾವಯವ ತರಕಾರಿಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🥦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "selective",
+          "text": "ಎರಡೂ ಪ್ರಕಾರಗಳನ್ನು ಮಿಶ್ರಣ ಮಾಡಿ",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "ಸಾಮಾನ್ಯ ತರಕಾರಿಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "बॅज: शहाणा निवडकर्ता",
+  "subtitleComplete": "बॅज पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} आव्हान",
+  "challengeLabel": "आव्हान {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "शालेय पुरवठा संदिग्धता",
+      "question": "तुम्हाला शालेय साहित्याची गरज आहे. सुज्ञ निवड कोणती?",
+      "options": [
+        {
+          "id": "designer",
+          "text": "डिझायनर बॅकपॅक आणि ट्रेंडी ॲक्सेसरीज",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "दोन्ही - आपल्याला पाहिजे असलेली प्रत्येक गोष्ट खरेदी करा",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "काहीही खरेदी करणे वगळा",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "basic",
+          "text": "मूलभूत शालेय साहित्य (पेन, वही)",
+          "emoji": "📝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "फोन अपग्रेड दुविधा",
+      "question": "तुमचा फोन जुना आणि स्लो आहे. सुज्ञ निवड काय आहे?",
+      "options": [
+        {
+          "id": "wants-first",
+          "text": "गरजा आधी खरेदी करा",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "basic-phone",
+          "text": "कॉल आणि संदेशांसाठी मूलभूत फोन",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "latest",
+          "text": "सर्व वैशिष्ट्यांसह नवीनतम स्मार्टफोन",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "no-phone",
+          "text": "कोणताही फोन खरेदी करू नका",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "फिटनेस कोंडी",
+      "question": "तुम्हाला तंदुरुस्त राहायचे आहे. सुज्ञ निवड कोणती?",
+      "options": [
+        {
+          "id": "gym",
+          "text": "नियमित व्यायामासाठी जिम सदस्यत्व",
+          "emoji": "💪",
+          "isCorrect": true
+        },
+        {
+          "id": "tracker",
+          "text": "महागडे फिटनेस ट्रॅकर आणि स्मार्टवॉच",
+          "emoji": "⌚",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "जिम आणि ट्रॅकर दोन्ही",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "skip-fitness",
+          "text": "फिटनेस पूर्णपणे वगळा",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "अभ्यास सेटअप दुविधा",
+      "question": "तुम्ही परीक्षेची तयारी करत आहात. सुज्ञ निवड काय आहे?",
+      "options": [
+        {
+          "id": "premium-setup",
+          "text": "आवाज रद्द करणारे हेडफोन आणि प्रीमियम डेस्क सेटअप",
+          "emoji": "🎧",
+          "isCorrect": false
+        },
+        {
+          "id": "buy-premium",
+          "text": "सर्व काही प्रीमियम खरेदी करा",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "quiet-study",
+          "text": "शांत अभ्यास जागा आणि पाठ्यपुस्तके",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "no-materials",
+          "text": "कोणत्याही साहित्याशिवाय अभ्यास करा",
+          "emoji": "📖",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "कपड्यांची कोंडी",
+      "question": "तुम्हाला शाळेसाठी कपडे हवे आहेत. सुज्ञ निवड कोणती?",
+      "options": [
+        {
+          "id": "designer-clothes",
+          "text": "डिझायनर कपडे आणि ट्रेंडी फॅशन आयटम",
+          "emoji": "👔",
+          "isCorrect": false
+        },
+        {
+          "id": "only-designer",
+          "text": "फक्त डिझायनर वस्तू खरेदी करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "no-clothes",
+          "text": "कोणतेही कपडे खरेदी करू नका",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "essential",
+          "text": "शाळा आणि हवामानासाठी आवश्यक कपडे",
+          "emoji": "👕",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "हुशार निवडक बॅज मिळवला!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} आव्हाने योग्य मिळाली आहेत! तुम्ही खरे शहाणे निवडक आहात!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: सुज्ञ निवडी गरजांपेक्षा गरजांना प्राधान्य देतात, ज्यामुळे तुम्हाला आर्थिक कल्याण साधण्यात आणि सुरक्षित भविष्य निर्माण करण्यात मदत होते!",
+    "loseEmoji": "💪",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} आव्हाने योग्य मिळाली आहेत. सराव सुज्ञ निवडीने परिपूर्ण बनवते!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: सुज्ञ आर्थिक निवडी करण्यासाठी गरजा (आवश्यक वस्तू) गरजांपेक्षा (लक्झरी वस्तू) प्राधान्य देण्याचे लक्षात ठेवा!"
+  }
+}

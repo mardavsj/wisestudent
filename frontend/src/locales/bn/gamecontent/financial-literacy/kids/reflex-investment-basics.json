@@ -1,1 +1,150 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স বিনিয়োগ বেসিক",
+    "subtitlePlaying": "প্রশ্ন {{current}} / {{total}}: বিনিয়োগ রিফ্লেক্স পরীক্ষা করো!",
+    "subtitleReady": "বিনিয়োগ রিফ্লেক্স পরীক্ষা করো!",
+    "readyEmoji": "💰",
+    "readyTitle": "বিনিয়োগ বেসিক শিখতে প্রস্তুত?",
+    "readyDescription": "প্রতিটি প্রশ্নের সঠিক বিনিয়োগের পদক্ষেপ বেছে নাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "প্রশ্ন:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "টাকা বাড়াতে কী করবে?",
+            "correctAnswer": "সঞ্চয় ও বাড়াও",
+            "options": [
+                {
+                    "text": "সব খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "লুকিয়ে রাখো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "ভুলে যাও",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "সঞ্চয় ও বাড়াও",
+                    "isCorrect": true,
+                    "emoji": "🌱"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "বুদ্ধিমানের সাথে টাকা কীভাবে সামলাবে?",
+            "correctAnswer": "বুদ্ধিমানের সাথে বিনিয়োগ করো",
+            "options": [
+                {
+                    "text": "বুদ্ধিমানের সাথে বিনিয়োগ করো",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "দ্রুত খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                },
+                {
+                    "text": "অপচয় করো",
+                    "isCorrect": false,
+                    "emoji": "🔥"
+                },
+                {
+                    "text": "হারাও",
+                    "isCorrect": false,
+                    "emoji": "📉"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "সম্পদ গড়ার সেরা উপায় কী?",
+            "correctAnswer": "সম্পদ বাড়াও",
+            "options": [
+                {
+                    "text": "টাকা হারাও",
+                    "isCorrect": false,
+                    "emoji": "💔"
+                },
+                {
+                    "text": "সম্পদ বাড়াও",
+                    "isCorrect": true,
+                    "emoji": "📈"
+                },
+                {
+                    "text": "সব খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "🛍️"
+                },
+                {
+                    "text": "সঞ্চয় উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "😑"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "তোমার টাকা তোমার জন্য কীভাবে কাজ করতে পারে?",
+            "correctAnswer": "সুদ অর্জন করো",
+            "options": [
+                {
+                    "text": "নগদ অপচয় করো",
+                    "isCorrect": false,
+                    "emoji": "🔥"
+                },
+                {
+                    "text": "সাথে সাথে খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                },
+                {
+                    "text": "সুদ অর্জন করো",
+                    "isCorrect": true,
+                    "emoji": "💵"
+                },
+                {
+                    "text": "ভুলে যাও",
+                    "isCorrect": false,
+                    "emoji": "🤷"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "তোমার ভবিষ্যৎ সুরক্ষিত করতে কী সাহায্য করে?",
+            "correctAnswer": "সঞ্চয় গড়ো",
+            "options": [
+                {
+                    "text": "সঞ্চয় গড়ো",
+                    "isCorrect": true,
+                    "emoji": "🏦"
+                },
+                {
+                    "text": "এখনই খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "🛒"
+                },
+                {
+                    "text": "টাকা অপচয় করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "ভবিষ্যৎ উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        }
+    ]
+}

@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "اضطراری کاروباری خصوصیات",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: اپنے کاروباری اضطراب کی جانچ کریں!",
+  "subtitleReady": "اپنے کاروباری اضطراب کی جانچ کریں!",
+  "readyHeader": "اپنی کاروباری صلاحیتوں کو جانچنے کے لیے تیار ہیں؟",
+  "readyDescription": "اہم کاروباری خصوصیات اور ذہنیت کے بارے میں سوالات کے جوابات دیں۔",
+  "readyTip": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{time}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "greatJob": "بہت اچھا کام!",
+  "finalScore": "آپ نے {{total}} میں سے {{score}} اسکور کیا!",
+  "thinkingSkills": "آپ مضبوط کاروباری سوچ کی مہارتیں تیار کر رہے ہیں!",
+  "playAgain": "دوبارہ کھیلیں",
+  "questions": [
+    {
+      "id": 1,
+      "question": "کامیاب کاروباری افراد کے لیے کون سی خصلت ضروری ہے؟",
+      "options": [
+        {
+          "text": "خطرے سے بچنا",
+          "id": "risk_avoidance",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "Innovation",
+          "id": "innovation",
+          "emoji": "💡"
+        },
+        {
+          "text": "رجحانات کی پیروی کرنا",
+          "id": "following_trends",
+          "emoji": "📈"
+        },
+        {
+          "text": "مواقع کا انتظار",
+          "id": "waiting_opportunities",
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "چیلنجز کا سامنا کرتے وقت تاجروں کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "text": "جلدی چھوڑ دو",
+          "id": "give_up",
+          "emoji": "😔"
+        },
+        {
+          "text": "دوسروں پر الزام لگانا",
+          "id": "blame_others",
+          "emoji": "😠"
+        },
+        {
+          "text": "برقرار رہیں اور اپنائیں",
+          "id": "persist_adapt",
+          "emoji": "💪"
+        },
+        {
+          "text": "چیلنجز سے بچیں۔",
+          "id": "avoid_challenges",
+          "emoji": "跑"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "کامیاب کاروباری افراد مسائل کو حل کرنے کے لیے کیسے رجوع کرتے ہیں؟",
+      "options": [
+        {
+          "text": "مسائل کو نظر انداز کریں۔",
+          "id": "ignore_problems",
+          "emoji": "🙈"
+        },
+        {
+          "text": "مسائل کے بارے میں شکایت کریں۔",
+          "id": "complain_issues",
+          "emoji": "😤"
+        },
+        {
+          "text": "تخلیقی حل",
+          "id": "creative_solutions",
+          "emoji": "🔧"
+        },
+        {
+          "text": "دوسروں کے طریقے کاپی کریں۔",
+          "id": "copy_others",
+          "emoji": "📋"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "کاروباری افراد عام طور پر کس ذہنیت کو اپناتے ہیں؟",
+      "options": [
+        {
+          "text": "فکسڈ مائنڈ سیٹ",
+          "id": "fixed_mindset",
+          "emoji": "🔒"
+        },
+        {
+          "text": "گروتھ مائنڈ سیٹ",
+          "id": "growth_mindset",
+          "emoji": "🌱"
+        },
+        {
+          "text": "منفی سوچ",
+          "id": "negative_thinking",
+          "emoji": "😞"
+        },
+        {
+          "text": "سیکھنے سے گریز کرنا",
+          "id": "avoid_learning",
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "کاروباری افراد کو حسابی خطرات کے لیے کیا طریقہ اختیار کرنا چاہیے؟",
+      "options": [
+        {
+          "text": "تمام خطرات سے بچیں۔",
+          "id": "avoid_all_risks",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "لاپرواہی سے کام لینا",
+          "id": "act_recklessly",
+          "emoji": "🤯"
+        },
+        {
+          "text": "خطرناک رویوں کو کاپی کریں۔",
+          "id": "copy_risky",
+          "emoji": "🔁"
+        },
+        {
+          "text": "سمارٹ خطرات کا اندازہ کریں اور لیں۔",
+          "id": "smart_risks",
+          "emoji": "🎲"
+        }
+      ]
+    }
+  ]
+}

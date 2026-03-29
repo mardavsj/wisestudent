@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "نقلی: شاپنگ مال",
+  "subtitleComplete": "تخروپن مکمل!",
+  "subtitleProgress": "منظر نامہ {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "budgetLabel": "بجٹ:",
+  "perfectScoreTitle": "عظیم مالیاتی فیصلے!",
+  "perfectScoreMsg": "آپ نے {{total}} میں سے {{score}} منظرنامے درست کئے ہیں! آپ سمارٹ شاپنگ فیصلوں کو سمجھتے ہیں!",
+  "lessonLabel": "سبق: ضروریات، خواہشات اور بچتوں میں توازن رکھنا ہوشیار مالیاتی انتخاب کا باعث بنتا ہے!",
+  "keepLearningTitle": "سیکھتے رہیں!",
+  "lowScoreMsg": "آپ کو {{total}} میں سے {{score}} منظرنامے درست ہیں۔ ضروریات، خواہشات اور بچتوں میں توازن رکھنا یاد رکھیں!",
+  "tipLabel": "مشورہ: ہمیشہ پہلے ضروریات کو ترجیح دیں، پھر کچھ چاہیں، اور باقی بچائیں!",
+  "tryAgain": "دوبارہ کوشش کریں۔",
+  "coinsLabel": "+{{count}} سکے",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "واپس اسکول شاپنگ پر",
+      "description": "آپ کے پاس اسکول کے سامان کے لیے ₹150 ہیں۔ بہترین طریقہ کیا ہے؟",
+      "budget": 150,
+      "options": [
+        {
+          "id": "everything",
+          "text": "ہر چیز خرید لو جو میں چاہتا ہوں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "needs-only",
+          "text": "صرف ضروری اشیاء خریدیں۔",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "کچھ نہ خریدیں، سب بچائیں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "بے ترتیب اشیاء خریدیں۔",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "چھٹیوں کے تحفے کی خریداری",
+      "description": "آپ کے پاس چھٹیوں کے تحائف کے لیے ₹100 ہیں۔ سب سے ہوشیار انتخاب کیا ہے؟",
+      "budget": 100,
+      "options": [
+        {
+          "id": "thoughtful",
+          "text": "بجٹ کے اندر سوچے سمجھے تحائف",
+          "emoji": "💝",
+          "isCorrect": true
+        },
+        {
+          "id": "expensive",
+          "text": "سب سے مہنگے تحفے ممکن ہیں۔",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "پیسے بچانے کے لیے سب سے سستے تحائف",
+          "emoji": "🏷️",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "کوئی تحفہ نہیں، پیسے رکھو",
+          "emoji": "🤐",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ہنگامی لباس کی ضروریات",
+      "description": "آپ کو ایک حادثے کے بعد نئے کپڑوں کی ضرورت ہے۔ آپ کس طرح ترجیح دیتے ہیں؟",
+      "budget": 110,
+      "options": [
+        {
+          "id": "brand-new",
+          "text": "تمام نئے ڈیزائنر کپڑے",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "essentials-first",
+          "text": "پہلے ضروری اشیاء، پھر اضافی چیزیں",
+          "emoji": "👕",
+          "isCorrect": true
+        },
+        {
+          "id": "secondhand",
+          "text": "پیسے بچانے کے لیے سب سیکنڈ ہینڈ",
+          "emoji": "📦",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "دوستوں سے ادھار لیں۔",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "تفریح ​​اور سماجی",
+      "description": "آپ کے پاس تفریح ​​کے لیے ₹60 ہیں۔ آپ تفریح ​​اور مالیات میں توازن کیسے رکھتے ہیں؟",
+      "budget": 60,
+      "options": [
+        {
+          "id": "all-fun",
+          "text": "تفریح ​​پر سب خرچ کریں۔",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "no-fun",
+          "text": "سب کو بچائیں، کوئی تفریح ​​نہیں۔",
+          "emoji": "📵",
+          "isCorrect": false
+        },
+        {
+          "id": "balanced-fun",
+          "text": "کچھ تفریح، کچھ بچت",
+          "emoji": "🎬",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-fun",
+          "text": "تفریح ​​​​کے لئے رقم ادھار لیں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "متوازن خریداری کا دن",
+      "description": "آپ کے پاس مختلف ضروریات کے لیے 200 روپے ہیں۔ بہترین مختص کیا ہے؟",
+      "budget": 200,
+      "options": [
+        {
+          "id": "all-needs",
+          "text": "تمام ضروریات، کوئی خواہش یا بچت نہیں۔",
+          "emoji": "🧾",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "مجھے جو بھی پسند ہے وہ خریدنا تسلسل",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "all-wants",
+          "text": "سب چاہتے ہیں، کوئی ضرورت نہیں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "smart-mix",
+          "text": "ضروریات کا مرکب، کچھ چاہتا ہے، آرام کو بچاؤ",
+          "emoji": "🛒",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

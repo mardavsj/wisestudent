@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "నీడ్స్ vs వాంట్స్ క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ఏది కావాలి?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "లగ్జరీ వాచ్",
+          "emoji": "⌚",
+          "isCorrect": true
+        },
+        {
+          "id": "medicine",
+          "text": "Medicine",
+          "emoji": "💊",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "పాఠశాల బట్టలు",
+          "emoji": "👕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ఏది అవసరం?",
+      "options": [
+        {
+          "id": "game",
+          "text": "వీడియో గేమ్",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "food",
+          "text": "Groceries",
+          "emoji": "🍎",
+          "isCorrect": true
+        },
+        {
+          "id": "phone",
+          "text": "కొత్త స్మార్ట్‌ఫోన్",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ఏది కావాలి?",
+      "options": [
+        {
+          "id": "rent",
+          "text": "Rent",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "books",
+          "text": "Textbooks",
+          "emoji": "📚",
+          "isCorrect": false
+        },
+        {
+          "id": "concert",
+          "text": "కచేరీ టిక్కెట్",
+          "emoji": "🎤",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ఏది అవసరం?",
+      "options": [
+        {
+          "id": "water",
+          "text": "నీటి బిల్లు",
+          "emoji": "💧",
+          "isCorrect": true
+        },
+        {
+          "id": "shoes",
+          "text": "డిజైనర్ బూట్లు",
+          "emoji": "👟",
+          "isCorrect": false
+        },
+        {
+          "id": "party",
+          "text": "పార్టీ సామాగ్రి",
+          "emoji": "🎉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ఏది కావాలి?",
+      "options": [
+        {
+          "id": "internet",
+          "text": "ఇంటర్నెట్ బిల్లు",
+          "emoji": "🌐",
+          "isCorrect": false
+        },
+        {
+          "id": "headphones",
+          "text": "వైర్లెస్ హెడ్ఫోన్స్",
+          "emoji": "🎧",
+          "isCorrect": true
+        },
+        {
+          "id": "transport",
+          "text": "బస్ పాస్",
+          "emoji": "🚌",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "గ్రేట్ జాబ్!",
+    "winMessage": "మీరు {{total}} ప్రశ్నలలో {{score}}ని పొందారు! అవసరాలు మరియు కోరికల మధ్య వ్యత్యాసాన్ని మీరు అర్థం చేసుకున్నారు!",
+    "coinsEarned": "+{{score}} నాణేలు",
+    "lesson": "పాఠం: మనుగడకు మరియు నేర్చుకోవడానికి అవసరాలు చాలా అవసరం, అయితే కోరికలు మనం కలిగి ఉండాలనుకునేవి కానీ అవసరం లేనివి!",
+    "loseEmoji": "😔",
+    "loseTitle": "నేర్చుకుంటూ ఉండండి!",
+    "loseMessage": "మీరు {{total}} ప్రశ్నలలో {{score}}ని సరిగ్గా పొందారు. గుర్తుంచుకోండి, అవసరాలు ఆహారం, బట్టలు మరియు యుటిలిటీల వంటి ముఖ్యమైన వస్తువులు!",
+    "tryAgain": "మళ్లీ ప్రయత్నించండి",
+    "tip": "చిట్కా: అవసరాలు మీరు జీవించి, నేర్చుకోవాల్సిన అంశాలు, అయితే కోరికలు ఐచ్ఛిక విలాసాలు."
+  }
+}

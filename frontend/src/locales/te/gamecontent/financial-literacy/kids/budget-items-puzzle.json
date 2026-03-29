@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "పజిల్: బడ్జెట్ అంశాలు",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "వర్గాలతో ఐటెమ్‌లను సరిపోల్చండి ({{matched}}/{{total}} సరిపోలింది)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "ఎంచుకోబడింది: {{name}}",
+  "selectItem": "ఒక అంశాన్ని ఎంచుకోండి",
+  "matchButton": "Match",
+  "scoreLabel": "స్కోర్:",
+  "matchedLabel": "సరిపోలినది:",
+  "resultGreatEmoji": "🏆",
+  "resultGreatTitle": "గ్రేట్ జాబ్!",
+  "resultGreatDescription": "మీరు {{total}} అంశాలలో {{score}}ని వర్గాలతో సరిగ్గా సరిపోల్చారు!",
+  "coinsLabel": "Coins",
+  "resultLesson": "పాఠం: అవసరాలు మరియు కోరికలను అర్థం చేసుకోవడం బడ్జెట్‌లో సహాయపడుతుంది!",
+  "resultKeepEmoji": "🧩",
+  "resultKeepTitle": "సాధన కొనసాగించండి!",
+  "resultKeepDescription": "మీరు {{total}} అంశాలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTip": "చిట్కా: మనుగడకు అవసరాలు చాలా అవసరం, కోరికలు కలిగి ఉండటం మంచిది!",
+  "items": [
+    {
+      "id": 1,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 2,
+      "name": "పుట్టినరోజు బహుమతి",
+      "emoji": "🎁"
+    },
+    {
+      "id": 3,
+      "name": "పాఠశాల సామాగ్రి",
+      "emoji": "✏️"
+    },
+    {
+      "id": 4,
+      "name": "వీడియో గేమ్ కన్సోల్",
+      "emoji": "🎮"
+    },
+    {
+      "id": 5,
+      "name": "అదనపు స్నాక్స్",
+      "emoji": "🍿"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Essential",
+      "emoji": "✅",
+      "description": "రోజువారీ జీవితంలో తప్పనిసరిగా కలిగి ఉండాలి"
+    },
+    {
+      "id": 7,
+      "name": "Non-Essential",
+      "emoji": "➖",
+      "description": "ఐచ్ఛికం, అవసరం లేదు"
+    },
+    {
+      "id": 8,
+      "name": "పాఠశాలకు అవసరం",
+      "emoji": "🎒",
+      "description": "నేర్చుకోవడానికి అవసరం"
+    },
+    {
+      "id": 9,
+      "name": "Luxury",
+      "emoji": "💎",
+      "description": "మంచివి, ఖరీదైనవి"
+    },
+    {
+      "id": 10,
+      "name": "ఐచ్ఛిక చికిత్స",
+      "emoji": "🍭",
+      "description": "చిన్న సరదా ఖర్చు"
+    }
+  ]
+}

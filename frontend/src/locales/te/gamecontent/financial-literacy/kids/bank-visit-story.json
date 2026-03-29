@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "బ్యాంక్ విజిట్ స్టోరీ",
+  "subtitleComplete": "పూర్తి!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "తల్లిదండ్రులు మిమ్మల్ని బ్యాంకుకు తీసుకువెళతారు. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "నిశ్శబ్దంగా చూసి నేర్చుకోండి",
+          "emoji": "👀",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "చుట్టూ పరిగెత్తి ఆడుకోండి",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "touch",
+          "text": "ప్రతిదీ తాకండి",
+          "emoji": "👆",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "బ్యాంక్ సిబ్బంది మిమ్మల్ని అభినందించారు. ఎలా స్పందించాలి?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "వాటిని పూర్తిగా విస్మరించండి",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "polite",
+          "text": "మర్యాదగా మరియు గౌరవంగా ఉండండి",
+          "emoji": "🙏",
+          "isCorrect": true
+        },
+        {
+          "id": "rude",
+          "text": "వారితో అసభ్యంగా ప్రవర్తించండి",
+          "emoji": "😠",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "తల్లిదండ్రులు ATMని ఉపయోగిస్తున్నారు. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "privacy",
+          "text": "వెనుకకు నిలబడి గోప్యత ఇవ్వండి",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "watch",
+          "text": "పిన్‌ను నిశితంగా పరిశీలించండి",
+          "emoji": "👁️",
+          "isCorrect": false
+        },
+        {
+          "id": "buttons",
+          "text": "యాదృచ్ఛిక బటన్లను నొక్కండి",
+          "emoji": "🔘",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "సెక్యూరిటీ గార్డు బ్యాగులను తనిఖీ చేస్తాడు. మీ స్పందన?",
+      "options": [
+        {
+          "id": "angry",
+          "text": "గార్డుపై కోపం తెచ్చుకోండి",
+          "emoji": "😠",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "చెక్కును తిరస్కరించండి",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "understand",
+          "text": "ఇది భద్రత కోసం అని అర్థం చేసుకోండి",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "బ్యాంకు వద్ద పొడవైన క్యూ. ఏది ఉత్తమమైనది?",
+      "options": [
+        {
+          "id": "push",
+          "text": "ముందుగా వెళ్ళడానికి పుష్",
+          "emoji": "👊",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "వరుసలో ఓపికగా వేచి ఉండండి",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "complain",
+          "text": "గట్టిగా ఫిర్యాదు చేయండి",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

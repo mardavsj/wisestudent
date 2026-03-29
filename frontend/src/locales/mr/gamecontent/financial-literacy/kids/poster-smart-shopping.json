@@ -1,1 +1,108 @@
-﻿{}
+{
+  "title": "पोस्टर: स्मार्ट शॉपिंग",
+  "subtitleComplete": "क्रियाकलाप पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stages": [
+    {
+      "question": "स्मार्ट शॉपिंगसाठी सर्वोत्तम पोस्टर निवडा:",
+      "choices": [
+        {
+          "text": "तुम्हाला पाहिजे ते सर्व खर्च करा",
+          "design": "💸",
+          "correct": false
+        },
+        {
+          "text": "खर्च करण्यापूर्वी विचार करा",
+          "design": "🧠",
+          "correct": true
+        },
+        {
+          "text": "आता सर्वकाही खरेदी करा",
+          "design": "🛒",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "कोणते पोस्टर स्मार्ट शॉपिंग सवयींना प्रोत्साहन देते?",
+      "choices": [
+        {
+          "text": "खरेदीची यादी बनवा",
+          "design": "📝",
+          "correct": true
+        },
+        {
+          "text": "विचार न करता खरेदी करा",
+          "design": "🤦",
+          "correct": false
+        },
+        {
+          "text": "तत्काळ खर्च करा",
+          "design": "⚡",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "सर्वोत्तम खरेदी पोस्टर निवडा:",
+      "choices": [
+        {
+          "text": "प्रथम खरेदी करा, नंतर विचार करा",
+          "design": "🛍️",
+          "correct": false
+        },
+        {
+          "text": "योजनेशिवाय खर्च करा",
+          "design": "🙈",
+          "correct": false
+        },
+        {
+          "text": "किंमतींची तुलना करा",
+          "design": "⚖️",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "question": "स्मार्ट शॉपिंग पोस्टर निवडा:",
+      "choices": [
+        {
+          "text": "विक्रीवर काय आहे ते खरेदी करा",
+          "design": "🏷️",
+          "correct": true
+        },
+        {
+          "text": "नेहमी पूर्ण किंमत द्या",
+          "design": "💰",
+          "correct": false
+        },
+        {
+          "text": "कधीही पैसे वाचवू नका",
+          "design": "🚫",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "स्मार्ट शॉपिंगसाठी सर्वोत्तम पोस्टर कोणते आहे?",
+      "choices": [
+        {
+          "text": "आवेगाने सर्वकाही खरेदी करा",
+          "design": "💥",
+          "correct": false
+        },
+        {
+          "text": "बजेटशिवाय खर्च करा",
+          "design": "📉",
+          "correct": false
+        },
+        {
+          "text": "पुढे खरेदीची योजना करा",
+          "design": "🧾",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

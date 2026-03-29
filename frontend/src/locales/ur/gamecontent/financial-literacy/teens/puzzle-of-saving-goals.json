@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "پہیلی: اہداف کو بچانا",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "مقاصد کے ساتھ اہداف کا مقابلہ کریں ({{current}}/{{total}} مماثل)",
+  "goalsTitle": "سیونگ گولز",
+  "purposesTitle": "بچت کے مقاصد",
+  "matchButton": "Match",
+  "selectGoalLabel": "بچت کا ہدف منتخب کریں۔",
+  "selectedGoalLabel": "منتخب کردہ: {{name}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "matchedLabel": "مماثل: {{current}}/{{total}}",
+  "resultSuccessHeader": "بہت اچھا کام!",
+  "resultSuccessSubheader": "آپ نے {{total}} میں سے {{score}} کو محفوظ کرنے کے اہداف کو ان کے مقاصد کے ساتھ درست طریقے سے ملایا!",
+  "resultSuccessLesson": "سبق: بچت کے واضح اہداف طے کرنے سے مالی تحفظ حاصل کرنے میں مدد ملتی ہے!",
+  "resultTryAgainHeader": "مشق کرتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} میں سے {{score}} کو محفوظ کرنے کے اہداف کا صحیح طریقے سے مقابلہ کیا۔",
+  "resultTryAgainTip": "ٹپ: ہر بچتی مقصد کے بنیادی فائدے کے بارے میں سوچیں!",
+  "coinsEarned": "+{{coins}} سکے",
+  "goals": [
+    {
+      "id": 1,
+      "name": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 2,
+      "name": "ایمرجنسی فنڈ",
+      "emoji": "🚑"
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "emoji": "🏠"
+    },
+    {
+      "id": 5,
+      "name": "Retirement",
+      "emoji": "🌅"
+    }
+  ],
+  "purposes": [
+    {
+      "id": 6,
+      "name": "مستقبل کی ترقی",
+      "emoji": "📈"
+    },
+    {
+      "id": 7,
+      "name": "سیفٹی نیٹ",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 8,
+      "name": "Mobility",
+      "emoji": "🛣️"
+    },
+    {
+      "id": 9,
+      "name": "Stability",
+      "emoji": "🏛️"
+    },
+    {
+      "id": 10,
+      "name": "ذہنی سکون",
+      "emoji": "🧘"
+    }
+  ]
+}

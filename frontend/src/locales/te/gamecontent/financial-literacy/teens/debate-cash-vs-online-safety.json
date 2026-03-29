@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "చర్చ: నగదు vs ఆన్‌లైన్ భద్రత",
+  "subtitleComplete": "చర్చ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} రౌండ్",
+  "roundLabel": "రౌండ్ {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "ఆన్‌లైన్ డబ్బు నగదు కంటే ప్రమాదకరమా?",
+      "options": [
+        {
+          "id": "online-riskier",
+          "text": "ఆన్‌లైన్ ప్రమాదకరం",
+          "emoji": "💻",
+          "isCorrect": false
+        },
+        {
+          "id": "both-safe",
+          "text": "ఇద్దరికీ భద్రత అవసరం",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "cash-riskier",
+          "text": "నగదు ప్రమాదకరం",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "పెద్ద మొత్తాలకు ఏది సురక్షితమైనది?",
+      "options": [
+        {
+          "id": "both-safe2",
+          "text": "రెండూ జాగ్రత్తలతో",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "only-cash",
+          "text": "నగదు మాత్రమే",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "only-online",
+          "text": "ఆన్‌లైన్‌లో మాత్రమే",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "ఆన్‌లైన్ డబ్బుతో ప్రధాన ప్రమాదం ఏమిటి?",
+      "options": [
+        {
+          "id": "no-risk",
+          "text": "ప్రమాదాలు లేవు",
+          "emoji": "😓",
+          "isCorrect": false
+        },
+        {
+          "id": "too-easy",
+          "text": "ఉపయోగించడానికి చాలా సులభం",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "hacking",
+          "text": "హ్యాకింగ్ మరియు మోసం",
+          "emoji": "👾",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "మీరు ఆన్‌లైన్ డబ్బును ఎలా రక్షించుకోవచ్చు?",
+      "options": [
+        {
+          "id": "strong-password",
+          "text": "బలమైన పాస్‌వర్డ్‌లు మరియు OTP",
+          "emoji": "🔐",
+          "isCorrect": true
+        },
+        {
+          "id": "no-protection",
+          "text": "రక్షణ అవసరం లేదు",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "share-details",
+          "text": "వివరాలను ఉచితంగా పంచుకోండి",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "ఉత్తమ విధానం ఏమిటి?",
+      "options": [
+        {
+          "id": "only-one",
+          "text": "ఒకే ఒక పద్ధతిని ఉపయోగించండి",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "రెండింటినీ సురక్షితంగా బ్యాలెన్స్ చేయండి",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid-all",
+          "text": "అన్ని డబ్బును నివారించండి",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

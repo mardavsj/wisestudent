@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "પગાર વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "એક યુવાન કાર્યકર દર મહિને ₹2000 કમાય છે. તેઓએ તેમના પગારનું શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "બધા ખર્ચો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "₹400 (20%) બચાવો",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "પૈસાનો બગાડ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "કાર્યકરને ₹500 બોનસ મળે છે. તેઓએ તેને કેવી રીતે હેન્ડલ કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "તેમાંથી મોટા ભાગની બચત કરો",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "લક્ઝરી પાછળ બધો ખર્ચ કરો",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "બોનસ અવગણો",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "કામદારનો ખર્ચ વધીને ₹1800 પ્રતિ મહિને થાય છે. સ્માર્ટ અભિગમ શું છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "બચત કરવાનું બંધ કરો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "વધુ ખર્ચ કરો",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "બચત જાળવી રાખો",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "કામદારને 10% પગાર વધારો મળે છે. તેઓએ વધારાના પૈસા સાથે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "જીવનશૈલી અપગ્રેડ કરો",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "બચત વધારો",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "તે બધું બગાડો",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "કાર્યકર ₹10,000 નું ગેજેટ ખરીદવા માંગે છે. શ્રેષ્ઠ અભિગમ શું છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "EMI પર ખરીદો",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "પૈસા ઉછીના",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "સમય જતાં બચત કરો",
+          "emoji": "⏳",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,143 @@
-﻿{}
+{
+  "title": "ਲੋੜਾਂ 'ਤੇ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ: ਲੋੜਾਂ ਬਾਰੇ ਆਪਣੇ ਗਿਆਨ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਕਿਹੜੀ ਚੀਜ਼ ਤੁਹਾਡੇ ਸਰੀਰ ਨੂੰ ਹਰ ਰੋਜ਼ ਕੰਮ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "Chips",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "ਪੀਣ ਵਾਲਾ ਸਾਫ਼ ਪਾਣੀ",
+          "emoji": "🚰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "toy",
+          "text": "ਰਿਮੋਟ ਕੰਟਰੋਲ ਕਾਰ",
+          "emoji": "🚗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਨੂੰ ਸਕੂਲ ਵਿੱਚ ਸਹੀ ਢੰਗ ਨਾਲ ਸਿੱਖਣ ਲਈ ਕੀ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "bag",
+          "text": "ਸਕੂਲ ਬੈਗ ਅਤੇ ਕਿਤਾਬਾਂ",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "game",
+          "text": "ਮੋਬਾਈਲ ਗੇਮਾਂ",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cartoon",
+          "text": "ਕਾਰਟੂਨ ਵੀਡੀਓਜ਼",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਕਿਹੜੀ ਚੋਣ ਤੁਹਾਨੂੰ ਗਰਮੀ ਅਤੇ ਠੰਢ ਤੋਂ ਸੁਰੱਖਿਅਤ ਰਹਿਣ ਵਿੱਚ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "cap",
+          "text": "ਫੈਸ਼ਨ ਕੈਪ",
+          "emoji": "🧢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shoes",
+          "text": "ਪਾਰਟੀ ਦੇ ਜੁੱਤੇ",
+          "emoji": "👟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "ਸਹੀ ਕੱਪੜੇ",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਆਰਾਮ ਕਰਨ ਅਤੇ ਰਹਿਣ ਲਈ ਕਿਹੜੀ ਜਗ੍ਹਾ ਬੁਨਿਆਦੀ ਲੋੜ ਹੈ?",
+      "options": [
+        {
+          "id": "house",
+          "text": "ਇੱਕ ਸੁਰੱਖਿਅਤ ਘਰ",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mall",
+          "text": "ਸ਼ਾਪਿੰਗ ਮਾਲ",
+          "emoji": "🏬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "park",
+          "text": "Playground",
+          "emoji": "🛝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਲੋਕ ਲੋੜਾਂ ਤੋਂ ਪਹਿਲਾਂ ਲੋੜਾਂ ਦੀ ਚੋਣ ਕਿਉਂ ਕਰਦੇ ਹਨ?",
+      "options": [
+        {
+          "id": "fun",
+          "text": "ਇੱਛਾਵਾਂ ਹੋਰ ਮਜ਼ੇਦਾਰ ਹਨ",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "important",
+          "text": "ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਲਈ ਲੋੜਾਂ ਜ਼ਰੂਰੀ ਹਨ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "ਦੋਸਤ ਚਾਹੁੰਦੇ ਹਨ",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

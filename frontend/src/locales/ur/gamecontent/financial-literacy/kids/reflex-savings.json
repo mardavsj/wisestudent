@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "اضطراری بچت",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: اپنی بچت کے علم کی جانچ کریں!",
+  "subtitleReady": "اپنے بچت کے علم کی جانچ کریں!",
+  "readyTitle": "اپنی بچت کی مہارت کو جانچنے کے لیے تیار ہیں؟",
+  "readyDescription": "سمارٹ بچت کی حکمت عملیوں کے بارے میں سوالات کے جوابات دیں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "پیسہ بچانے کا بہترین طریقہ کیا ہے؟",
+      "correctAnswer": "بچت کا ہدف مقرر کریں۔",
+      "options": [
+        {
+          "text": "بے ترتیب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "بچت کا ہدف مقرر کریں۔",
+          "isCorrect": true,
+          "emoji": "🎯"
+        },
+        {
+          "text": "رقم ادھار لیں۔",
+          "isCorrect": false,
+          "emoji": "💳"
+        },
+        {
+          "text": "بچت کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ کو اضافی رقم کے ساتھ کیا کرنا چاہئے؟",
+      "correctAnswer": "اسے محفوظ کریں۔",
+      "options": [
+        {
+          "text": "اسے محفوظ کریں۔",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "یہ سب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "اسے کھو دو",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "اس کے بارے میں بھول جاؤ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "آپ کو مسلسل بچت کرنے میں کیا مدد ملتی ہے؟",
+      "correctAnswer": "خودکار ٹرانسفرز",
+      "options": [
+        {
+          "text": "زبردستی خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "خودکار ٹرانسفرز",
+          "isCorrect": true,
+          "emoji": "🔄"
+        },
+        {
+          "text": "کوئی منصوبہ نہیں۔",
+          "isCorrect": false,
+          "emoji": "📋"
+        },
+        {
+          "text": "حوصلہ افزائی کا انتظار کریں۔",
+          "isCorrect": false,
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "بچت کی اچھی عادت کیا ہے؟",
+      "correctAnswer": "پہلے بچت کریں، بعد میں خرچ کریں۔",
+      "options": [
+        {
+          "text": "پہلے خرچ کریں، بعد میں بچت کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "کبھی محفوظ نہ کریں۔",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "پہلے بچت کریں، بعد میں خرچ کریں۔",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "کبھی کبھی محفوظ کریں۔",
+          "isCorrect": false,
+          "emoji": "⏰"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "پیسہ بچانا کیوں ضروری ہے؟",
+      "correctAnswer": "ہنگامی تیاری",
+      "options": [
+        {
+          "text": "دکھاوا",
+          "isCorrect": false,
+          "emoji": "🏆"
+        },
+        {
+          "text": "امپلس خریدنا",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "کوئی وجہ نہیں۔",
+          "isCorrect": false,
+          "emoji": "❓"
+        },
+        {
+          "text": "ہنگامی تیاری",
+          "isCorrect": true,
+          "emoji": "🚑"
+        }
+      ]
+    }
+  ]
+}

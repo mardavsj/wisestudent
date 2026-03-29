@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "উদ্যোক্তাদের ধাঁধা",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "ক্ষেত্রগুলির সাথে উদ্যোক্তাদের ম্যাচ করুন ({{current}}/{{total}} মিলেছে)",
+  "itemsTitle": "Entrepreneurs",
+  "fieldsTitle": "Fields",
+  "matchButton": "Match",
+  "selectItemLabel": "একজন উদ্যোক্তা নির্বাচন করুন",
+  "selectedItemLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি সঠিকভাবে {{total}} উদ্যোক্তাদের মধ্যে {{score}} তাদের ক্ষেত্রের সাথে মিলেছেন!",
+  "resultSuccessLesson": "পাঠ: উদ্যোক্তা ক্ষেত্রগুলি বোঝা উদ্ভাবনকে অনুপ্রাণিত করতে সহায়তা করে!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি সঠিকভাবে {{total}} উদ্যোক্তাদের মধ্যে {{score}} এর সাথে মিলেছেন।",
+  "resultTryAgainTip": "টিপ: প্রতিটি উদ্যোক্তা কোন ক্ষেত্রে সবচেয়ে বেশি পরিচিত সে সম্পর্কে চিন্তা করুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "items": [
+    {
+      "id": 1,
+      "name": "রতন টাটা",
+      "emoji": "👔"
+    },
+    {
+      "id": 2,
+      "name": "ইলন মাস্ক",
+      "emoji": "🚀"
+    },
+    {
+      "id": 3,
+      "name": "নারায়ণ মূর্তি",
+      "emoji": "💻"
+    },
+    {
+      "id": 4,
+      "name": "কিরণ মজুমদার",
+      "emoji": "🔬"
+    },
+    {
+      "id": 5,
+      "name": "ফাল্গুনী নায়ার",
+      "emoji": "💄"
+    }
+  ],
+  "fields": [
+    {
+      "id": 6,
+      "name": "Industry",
+      "emoji": "🏭"
+    },
+    {
+      "id": 7,
+      "name": "Innovation",
+      "emoji": "💡"
+    },
+    {
+      "id": 8,
+      "name": "IT",
+      "emoji": "💻"
+    },
+    {
+      "id": 9,
+      "name": "Biotech",
+      "emoji": "🧬"
+    },
+    {
+      "id": 10,
+      "name": "E-commerce",
+      "emoji": "🛒"
+    }
+  ]
+}

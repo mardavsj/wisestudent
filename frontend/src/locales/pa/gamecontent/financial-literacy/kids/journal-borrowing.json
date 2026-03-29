@@ -1,1 +1,34 @@
-﻿{}
+{
+  "title": "ਉਧਾਰ ਦਾ ਜਰਨਲ",
+  "subtitleComplete": "ਜਰਨਲ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ: ਜ਼ਿੰਮੇਵਾਰ ਉਧਾਰ ਲੈਣ ਬਾਰੇ ਸੋਚੋ!",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "📝",
+  "minLengthLabel": "ਘੱਟੋ-ਘੱਟ {{count}} ਅੱਖਰ ਲਿਖੋ",
+  "placeholder": "ਆਪਣੀ ਜਰਨਲ ਐਂਟਰੀ ਇੱਥੇ ਲਿਖੋ...",
+  "characterCount": "{{count}}/{{required}} ਅੱਖਰ",
+  "submitContinueButton": "ਸਪੁਰਦ ਕਰੋ ਅਤੇ ਜਾਰੀ ਰੱਖੋ",
+  "submitFinalButton": "ਫਾਈਨਲ ਐਂਟਰੀ ਜਮ੍ਹਾਂ ਕਰੋ",
+  "stages": [
+    {
+      "question": "ਲਿਖੋ: \"ਇੱਕ ਚੀਜ਼ ਜੋ ਮੈਂ ਉਧਾਰ ਲਈ ਸੀ ਅਤੇ ਵਾਪਸ ਕੀਤੀ ਸੀ ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਮੈਂ ਮਹਿਸੂਸ ਕੀਤਾ ___ ਜਦੋਂ ਮੈਂ ਵਾਪਸ ਕੀਤਾ ਜੋ ਮੈਂ ਉਧਾਰ ਲਿਆ ਸੀ।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਜ਼ਿੰਮੇਵਾਰੀ ਨਾਲ ਉਧਾਰ ਲੈਣ ਦਾ ਮਤਲਬ ਹੈ ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਮੈਂ ___ ਦੁਆਰਾ ਉਧਾਰ ਲਏ ਪੈਸੇ ਨੂੰ ਵਾਪਸ ਕਰਨਾ ਯਕੀਨੀ ਬਣਾਇਆ ਹੈ।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਉਧਾਰ ਲੈਣ ਨੇ ਮੈਨੂੰ ___ ਪੈਸੇ ਬਾਰੇ ਸਿਖਾਇਆ।\"",
+      "minLength": 10
+    }
+  ]
+}

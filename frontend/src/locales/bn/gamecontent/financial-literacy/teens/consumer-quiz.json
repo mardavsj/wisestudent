@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ভোক্তা কুইজ",
+  "subtitleComplete": "কুইজ সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "দোকানদার যদি প্রতারণা করে, কোথায় অভিযোগ করবেন?",
+      "options": [
+        {
+          "id": "court",
+          "text": "ভোক্তা আদালত",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "Playground",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "Nowhere",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ভোক্তা অধিকার কি?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "কোন অধিকার নেই",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "প্রতারণা থেকে সুরক্ষা",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "খরচ করার অধিকার",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "আপনি যদি একটি ত্রুটিপূর্ণ পণ্য পান তাহলে আপনার কি করা উচিত?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "এটা মেনে নিন",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "উপেক্ষা করুন",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "বিক্রেতার কাছে অভিযোগ করুন",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "তথ্যের অধিকার কি?",
+      "options": [
+        {
+          "id": "know",
+          "text": "পণ্যের বিবরণ জানুন",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "তথ্য লুকান",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "মিথ্যা মেনে নিন",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "আপনি কোথায় একটি ভোক্তা অভিযোগ দায়ের করতে পারেন?",
+      "options": [
+        {
+          "id": "police",
+          "text": "থানা",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "ভোক্তা আদালত",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "School",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "কুইজ সম্পূর্ণ!",
+    "winMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন! আপনি ভোক্তা অধিকার বোঝেন!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: ভোক্তাদের অধিকার আছে! প্রতারিত হলে আপনি ভোক্তা আদালতে অভিযোগ করতে পারেন, নিরাপদ পণ্য দাবি করতে পারেন এবং সৎ তথ্য পেতে পারেন!",
+    "loseEmoji": "💪",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন। মনে রাখবেন, ভোক্তা আদালত যেখানে দোকানদার প্রতারণা করলে আপনি অভিযোগ করেন!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "টিপ: যদি কোনও দোকানদার আপনাকে প্রতারণা করে, আপনি খেলার মাঠে নয়, ভোক্তা আদালতে অভিযোগ করতে পারেন! ভোক্তাদের অধিকার আছে!"
+  }
+}

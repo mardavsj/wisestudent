@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ഐസ്ക്രീം vs സ്കൂൾ ബുക്ക് സ്റ്റോറി",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "📘",
+  "questions": [
+    {
+      "id": 1,
+      "text": "നിങ്ങൾക്ക് സ്കൂൾ പൂർത്തിയാക്കി വിശപ്പ് തോന്നുന്നു, എന്നാൽ നിങ്ങൾക്ക് ഒരു വർക്ക്ബുക്കും ആവശ്യമാണ്. ഏതാണ് മികച്ച തിരഞ്ഞെടുപ്പ്?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "തൽക്കാലം ഐസ് ക്രീം വാങ്ങൂ",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "വർക്ക്ബുക്ക് വാങ്ങുക",
+          "emoji": "📘",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "ഒന്നും വാങ്ങി പോകരുത്",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിങ്ങൾ ഇന്ന് ഐസ്ക്രീം കഴിക്കുന്നു, നാളെ ഒരു പുസ്തകത്തിന് പണമില്ല. നിങ്ങൾ എന്താണ് പഠിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "lesson",
+          "text": "പണം ആസൂത്രണം ചെയ്യുന്നത് പ്രധാനമാണ്",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ഐസ്ക്രീം എപ്പോഴും മികച്ചതാണ്",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "അടുത്ത തവണ പണം കടം വാങ്ങുക",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ഒരു പുസ്തകം പരീക്ഷകളിൽ സഹായിക്കുന്നു, ഐസ്ക്രീം വേഗത്തിൽ ഉരുകുന്നു. എന്താണ് കൂടുതൽ കാലം നിലനിൽക്കുന്നത്?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "ഐസ് ക്രീം സന്തോഷം",
+          "emoji": "🍨",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "ഒരു പുസ്തകത്തിൽ നിന്നുള്ള അറിവ്",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "both",
+          "text": "രണ്ടും ഒരുപോലെ നിലനിൽക്കുന്നു",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ഇന്ന് ഒരു പുസ്തകം വാങ്ങാനും മറ്റൊരു ദിവസം ഐസ്ക്രീം ആസ്വദിക്കാനും നിങ്ങൾ തീരുമാനിക്കുന്നു. എന്ത് കഴിവാണ് നിങ്ങൾ കാണിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "luck",
+          "text": "നല്ലതുവരട്ടെ",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "speed",
+          "text": "വേഗത്തിൽ തീരുമാനമെടുക്കൽ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "patience",
+          "text": "Self-control",
+          "emoji": "🧘",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "നിങ്ങൾ ഒരു പുസ്തകം തിരഞ്ഞെടുക്കുമ്പോൾ നിങ്ങളുടെ മാതാപിതാക്കൾ പുഞ്ചിരിക്കും. എന്തുകൊണ്ടാണ് അവർക്ക് സന്തോഷം തോന്നുന്നത്?",
+      "options": [
+        {
+          "id": "cheap",
+          "text": "പുസ്തകങ്ങൾക്ക് വില കുറവാണ്",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "നിങ്ങൾ ഉത്തരവാദിത്തമുള്ള ഒരു തിരഞ്ഞെടുപ്പ് നടത്തുക",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "സുഹൃത്തുക്കൾക്ക് പുസ്തകങ്ങൾ ഇഷ്ടമാണ്",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

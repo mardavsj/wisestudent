@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "गुंतवणूक प्रश्नमंजुषा",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कोणते धोकादायक परंतु जास्त परतावा आहे?",
+      "options": [
+        {
+          "id": "fd",
+          "text": "मुदत ठेव",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "stocks",
+          "text": "शेअर बाजार",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "savings",
+          "text": "बचत खाते",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कोणती गुंतवणूक सर्वात सुरक्षित आहे?",
+      "options": [
+        {
+          "id": "fd2",
+          "text": "मुदत ठेव",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "stocks2",
+          "text": "Stocks",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "text": "Cryptocurrency",
+          "emoji": "₿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "विविधीकरण म्हणजे काय?",
+      "options": [
+        {
+          "id": "one",
+          "text": "सर्व एकाच गुंतवणुकीत ठेवा",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "सर्व गुंतवणूक टाळा",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "spread",
+          "text": "विविध गुंतवणुकीमध्ये पसरलेले",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "म्युच्युअल फंड म्हणजे काय?",
+      "options": [
+        {
+          "id": "mix",
+          "text": "साठा आणि रोखे यांचे मिश्रण",
+          "emoji": "📦",
+          "isCorrect": true
+        },
+        {
+          "id": "single",
+          "text": "एकल कंपनी स्टॉक",
+          "emoji": "📄",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "बँक खाते",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "बचत करण्याऐवजी गुंतवणूक का करावी?",
+      "options": [
+        {
+          "id": "same",
+          "text": "बचत सारखेच",
+          "emoji": "➡️",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "हरण्याची हमी",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "वेगाने वाढण्याची शक्यता",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "क्विझ पूर्ण!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! तुम्हाला गुंतवणूक समजते!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: स्टॉक अधिक जोखमीचे असतात परंतु जास्त परतावा देतात. मुदत ठेवी अधिक सुरक्षित असतात परंतु परतावा कमी असतो. विविधीकरणामुळे धोका कमी होतो!",
+    "loseEmoji": "💪",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, स्टॉक हे जोखमीचे असतात पण जास्त परतावा देतात, तर एफडी सुरक्षित असतात पण परतावा कमी असतो!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: शेअर बाजार जोखमीचा आहे पण जास्त परतावा देतो. मुदत ठेवी अधिक सुरक्षित असतात परंतु परतावा कमी असतो. जोखीम कमी करण्यासाठी विविधता आणा!"
+  }
+}

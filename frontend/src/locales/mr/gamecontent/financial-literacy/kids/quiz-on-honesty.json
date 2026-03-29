@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "प्रामाणिकपणावर प्रश्नमंजुषा",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "प्रामाणिक कोण आहे?",
+      "options": [
+        {
+          "id": "cheat",
+          "text": "फसवणूक ग्राहक",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "change",
+          "text": "योग्य बदल देतो",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lies",
+          "text": "Lies",
+          "emoji": "🙊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "प्रामाणिक दुकानदार काय करतो?",
+      "options": [
+        {
+          "id": "fair",
+          "text": "रास्त भाव आकारतो",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "overcharge",
+          "text": "Overcharges",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "उत्पादने लपवते",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "खरेदीमध्ये प्रामाणिकपणा कसा मदत करतो?",
+      "options": [
+        {
+          "id": "free",
+          "text": "तुम्हाला मोफत वस्तू मिळतात",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "तुम्हाला अधिक खर्च करण्यास प्रवृत्त करते",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "विश्वास निर्माण करतो",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "कर्ज घेण्याचा प्रामाणिक मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "return",
+          "text": "वेळेवर परत या",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "कायम ठेवा",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "more",
+          "text": "अधिक कर्ज घ्या",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "पैशाच्या बाबतीत प्रामाणिकपणा महत्त्वाचा का आहे?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "त्यातून तुम्हाला खेळणी मिळतात",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "famous",
+          "text": "ते तुम्हाला प्रसिद्ध बनवते",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "त्यातून विश्वास निर्माण होतो",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

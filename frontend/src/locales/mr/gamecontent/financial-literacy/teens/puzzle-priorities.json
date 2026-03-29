@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "Puzzle of Priorities",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "प्राधान्यक्रमांसह खर्च जुळवा ({{current}}/{{total}} जुळले)",
+  "itemsTitle": "Expenses",
+  "prioritiesTitle": "Priorities",
+  "matchButton": "Match",
+  "selectItemLabel": "खर्च निवडा",
+  "selectedItemLabel": "निवडले: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "जुळले: {{current}}/{{total}}",
+  "resultSuccessHeader": "ग्रेट जॉब!",
+  "resultSuccessSubheader": "तुम्ही {{total}} पैकी {{score}} खर्च त्यांच्या प्राधान्यक्रमांशी योग्यरित्या जुळले!",
+  "resultSuccessLesson": "धडा: खर्चाचे प्राधान्यक्रम समजून घेणे स्मार्ट आर्थिक निर्णय घेण्यास मदत करते!",
+  "resultTryAgainHeader": "सराव करत राहा!",
+  "resultTryAgainSubheader": "तुम्ही {{total}} पैकी {{score}} खर्च योग्यरित्या जुळले.",
+  "resultTryAgainTip": "Tip: Think about whether each expense is essential or discretionary!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "items": [
+    {
+      "id": 1,
+      "name": "School Fees",
+      "emoji": "🎓"
+    },
+    {
+      "id": 2,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 3,
+      "name": "Rent",
+      "emoji": "🏠"
+    },
+    {
+      "id": 4,
+      "name": "Medicine",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "Electricity",
+      "emoji": "💡"
+    }
+  ],
+  "priorities": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲"
+    }
+  ]
+}

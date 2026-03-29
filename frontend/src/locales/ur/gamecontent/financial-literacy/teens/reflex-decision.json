@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "اضطراری فیصلہ",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: اپنے مالیاتی فیصلے کی مہارت کو جانچیں!",
+  "subtitleReady": "اپنی مالیاتی فیصلے کی مہارت کو آزمائیں!",
+  "readyHeader": "اپنے مالیاتی فیصلوں کی جانچ کے لیے تیار ہیں؟",
+  "readyDescription": "سمارٹ مالیاتی انتخاب کے بارے میں سوالات کے جوابات دیں۔",
+  "readyTip": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{time}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "greatJob": "بہت اچھا کام!",
+  "finalScore": "آپ نے {{total}} میں سے {{score}} اسکور کیا!",
+  "developingSkills": "آپ مضبوط مالی فیصلہ سازی کی مہارتیں تیار کر رہے ہیں!",
+  "playAgain": "دوبارہ کھیلیں",
+  "questions": [
+    {
+      "id": 1,
+      "question": "آپ کے پاس پیسہ ہے۔ کیا آپ کو فیس ادا کرنی چاہیے یا گیجٹ کے لیے چھوڑنا چاہیے؟",
+      "options": [
+        {
+          "text": "فیس ادا کریں۔",
+          "id": "pay_fees",
+          "emoji": "💰"
+        },
+        {
+          "text": "گیجٹس کے لیے چھوڑیں۔",
+          "id": "skip_gadgets",
+          "emoji": "🎮"
+        },
+        {
+          "text": "سب کچھ محفوظ کریں۔",
+          "id": "save_everything",
+          "emoji": "🏦"
+        },
+        {
+          "text": "دونوں پر خرچ کریں۔",
+          "id": "spend_both",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ کو اضافی رقم کے ساتھ کیا کرنا چاہئے؟",
+      "options": [
+        {
+          "text": "گیمز خریدیں۔",
+          "id": "buy_games",
+          "emoji": "🎮"
+        },
+        {
+          "text": "پیسے بچائیں۔",
+          "id": "save_money",
+          "emoji": "💰"
+        },
+        {
+          "text": "فوراً خرچ کریں۔",
+          "id": "spend_immediately",
+          "emoji": "🛒"
+        },
+        {
+          "text": "دوستوں کو قرض دیں۔",
+          "id": "lend_friends",
+          "emoji": "👥"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "آپ کو اپنے بجٹ کا انتظام کیسے کرنا چاہئے؟",
+      "options": [
+        {
+          "text": "بجٹ کو ٹریک کریں۔",
+          "id": "track_budget",
+          "emoji": "📊"
+        },
+        {
+          "text": "بجٹ کو نظر انداز کریں۔",
+          "id": "ignore_budget",
+          "emoji": "🙈"
+        },
+        {
+          "text": "اخراجات کا اندازہ لگائیں۔",
+          "id": "guess_expenses",
+          "emoji": "🎲"
+        },
+        {
+          "text": "کبھی کبھی ٹریک کریں۔",
+          "id": "track_sometimes",
+          "emoji": "📅"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "جب آپ کے پاس بل ہوں تو ترجیح کیا ہے؟",
+      "options": [
+        {
+          "text": "پارٹی پر خرچ کریں۔",
+          "id": "spend_party",
+          "emoji": "🎉"
+        },
+        {
+          "text": "کرایہ ادا کریں۔",
+          "id": "pay_rent",
+          "emoji": "🏠"
+        },
+        {
+          "text": "کپڑے خریدیں۔",
+          "id": "buy_clothes",
+          "emoji": "👕"
+        },
+        {
+          "text": "بعد کے لیے محفوظ کریں۔",
+          "id": "save_later",
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "تعلیم کے لیے پیسے کا کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "text": "اسنیکس خریدیں۔",
+          "id": "buy_snacks",
+          "emoji": "🍕"
+        },
+        {
+          "text": "تفریح ​​پر خرچ کریں۔",
+          "id": "spend_entertainment",
+          "emoji": "🎬"
+        },
+        {
+          "text": "کتابوں کے لیے محفوظ کریں۔",
+          "id": "save_books",
+          "emoji": "📚"
+        },
+        {
+          "text": "دے دو",
+          "id": "give_away",
+          "emoji": "🎁"
+        }
+      ]
+    }
+  ]
+}

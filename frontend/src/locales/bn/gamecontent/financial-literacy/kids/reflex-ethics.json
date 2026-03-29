@@ -1,1 +1,152 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স: নৈতিকতা",
+    "subtitleComplete": "গেম সম্পন্ন!",
+    "roundLabel": "রাউন্ড {{current}}/{{total}}",
+    "timeUp": "সময় শেষ!",
+    "readyEmoji": "🎯",
+    "readyTitle": "প্রস্তুত হও!",
+    "readyDescription": "নৈতিক আর্থিক আচরণ নিয়ে প্রশ্নের উত্তর দাও!",
+    "readyTimeInfo": "প্রতিটি প্রশ্নে তোমার {{time}} সেকেন্ড।",
+    "readyQuestionInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{time}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "gameRoundLabel": "রাউন্ড:",
+    "gameTimeLabel": "সময়:",
+    "gameScoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "টাকার ব্যাপারে সবসময় কী থাকবে?",
+            "correctAnswer": "সত্য",
+            "options": [
+                {
+                    "text": "সত্য",
+                    "isCorrect": true,
+                    "emoji": "🗣️"
+                },
+                {
+                    "text": "প্রতারণা",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "মিথ্যা",
+                    "isCorrect": false,
+                    "emoji": "🤥"
+                },
+                {
+                    "text": "ধোঁকা",
+                    "isCorrect": false,
+                    "emoji": "😈"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "আর্থিক বিষয় কীভাবে সামলাবে?",
+            "correctAnswer": "সৎ",
+            "options": [
+                {
+                    "text": "মিথ্যা",
+                    "isCorrect": false,
+                    "emoji": "🤥"
+                },
+                {
+                    "text": "সৎ",
+                    "isCorrect": true,
+                    "emoji": "💯"
+                },
+                {
+                    "text": "প্রতারণা",
+                    "isCorrect": false,
+                    "emoji": "🎭"
+                },
+                {
+                    "text": "কৌশলী",
+                    "isCorrect": false,
+                    "emoji": "🃏"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "তোমার আর্থিক সিদ্ধান্ত কী হবে?",
+            "correctAnswer": "ন্যায্য",
+            "options": [
+                {
+                    "text": "অন্যায্য",
+                    "isCorrect": false,
+                    "emoji": "❌"
+                },
+                {
+                    "text": "পক্ষপাতমূলক",
+                    "isCorrect": false,
+                    "emoji": "🎯"
+                },
+                {
+                    "text": "ন্যায্য",
+                    "isCorrect": true,
+                    "emoji": "⚖️"
+                },
+                {
+                    "text": "আংশিক",
+                    "isCorrect": false,
+                    "emoji": "📊"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "আর্থিক সম্পর্কে কী গড়বে?",
+            "correctAnswer": "বিশ্বাস",
+            "options": [
+                {
+                    "text": "বিশ্বাস",
+                    "isCorrect": true,
+                    "emoji": "🤝"
+                },
+                {
+                    "text": "ধোঁকা",
+                    "isCorrect": false,
+                    "emoji": "😈"
+                },
+                {
+                    "text": "কারসাজি",
+                    "isCorrect": false,
+                    "emoji": "🎭"
+                },
+                {
+                    "text": "শোষণ",
+                    "isCorrect": false,
+                    "emoji": "💔"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "টাকার সাথে কীভাবে আচরণ করবে?",
+            "correctAnswer": "নৈতিক",
+            "options": [
+                {
+                    "text": "অসৎ",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "অন্যায্য",
+                    "isCorrect": false,
+                    "emoji": "❌"
+                },
+                {
+                    "text": "দুর্নীতিগ্রস্ত",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "নৈতিক",
+                    "isCorrect": true,
+                    "emoji": "🌟"
+                }
+            ]
+        }
+    ]
+}

@@ -1,1 +1,151 @@
-﻿{}
+{
+  "title": "ریفلیکس بینک کی بنیادی باتیں",
+  "subtitleComplete": "مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "question": "بینک میں رقم رکھنے کے لیے آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ کے پیسے کو محفوظ رکھنے کا سمارٹ طریقہ کیا ہے؟",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "آپ اپنے بینک اکاؤنٹ سے پیسے کیسے نکالتے ہیں؟",
+      "correctAnswer": "Withdraw",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "Withdraw",
+          "isCorrect": true,
+          "emoji": "🏦"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "بینک میں پیسے بچانے کے لیے آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "اکاؤنٹ کھولیں۔",
+      "options": [
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "سب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "اکاؤنٹ کھولیں۔",
+          "isCorrect": true,
+          "emoji": "📝"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آپ کو یہ جاننے کے لیے کیا کرنا چاہیے کہ آپ کے پاس کتنی رقم ہے؟",
+      "correctAnswer": "بیلنس چیک کریں۔",
+      "options": [
+        {
+          "text": "بیلنس چیک کریں۔",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "سب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    }
+  ],
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}",
+  "subtitleReady": "تیار ہو جاؤ!",
+  "readyTitle": "کھیلنے کے لیے تیار ہیں؟",
+  "readyDescription": "جلدی سے جواب دیں اور بہترین آپشن کا انتخاب کریں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:"
+}

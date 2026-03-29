@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ಸ್ಕೂಲ್ ಫೇರ್ ಸ್ಟೋರಿ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಜಾತ್ರೆ ಶೀಘ್ರದಲ್ಲೇ ಪ್ರಾರಂಭವಾಗುತ್ತದೆ ಮತ್ತು ನೀವು ಉತ್ಸುಕರಾಗಿದ್ದೀರಿ. ನೀವು ಮೊದಲು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "run",
+          "text": "ಮೊದಲ ಸ್ಟಾಲ್ಗೆ ಓಡಿ",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shout",
+          "text": "ಉತ್ಸಾಹದಿಂದ ಕೂಗು",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "look",
+          "text": "ಜಾತ್ರೆಯ ಸುತ್ತಲೂ ನೋಡಿ",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಜನಪ್ರಿಯ ಆಟಕ್ಕಾಗಿ ನೀವು ದೀರ್ಘ ರೇಖೆಯನ್ನು ನೋಡುತ್ತೀರಿ. ಸರಿಯಾದ ಆಯ್ಕೆ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "push",
+          "text": "ಮುಂಭಾಗಕ್ಕೆ ತಳ್ಳಿರಿ",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ನಿಮ್ಮ ಸರದಿಗಾಗಿ ಕಾಯಿರಿ",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "leave",
+          "text": "ಕೋಪದಿಂದ ಬಿಡಿ",
+          "emoji": "😤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಅಂಗಡಿಯವನು ನಿಮಗೆ ತಪ್ಪಾಗಿ ಹೆಚ್ಚುವರಿ ಬದಲಾವಣೆಯನ್ನು ನೀಡುತ್ತಾನೆ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ಹೆಚ್ಚುವರಿ ಹಣವನ್ನು ಹಿಂತಿರುಗಿಸಿ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "ಹೆಚ್ಚುವರಿ ಹಣವನ್ನು ಇರಿಸಿ",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ಸದ್ದಿಲ್ಲದೆ ಹೊರನಡೆ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ಅನೇಕ ಸವಾರಿಗಳನ್ನು ಪ್ರಯತ್ನಿಸಲು ಬಯಸುತ್ತೀರಿ ಆದರೆ ಆಯಾಸವನ್ನು ಅನುಭವಿಸುತ್ತೀರಿ. ಸ್ಮಾರ್ಟ್ ಕ್ರಿಯೆ ಎಂದರೇನು?",
+      "options": [
+        {
+          "id": "force",
+          "text": "ಸವಾರಿ ಮಾಡಲು ನಿಮ್ಮನ್ನು ಒತ್ತಾಯಿಸಿ",
+          "emoji": "😣",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "ಎಲ್ಲವನ್ನೂ ಬಿಟ್ಟುಬಿಡಿ",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rest",
+          "text": "ಸ್ವಲ್ಪ ವಿಶ್ರಾಂತಿ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "emoji": "🪑",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಜಾತ್ರೆ ಮುಗಿಯುತ್ತಿದೆ ಮತ್ತು ನಿಮಗೆ ಒಂದು ಟಿಕೆಟ್ ಉಳಿದಿದೆ. ನೀವು ಯಾವುದನ್ನು ಆರಿಸುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "favorite",
+          "text": "ನಿಮ್ಮ ನೆಚ್ಚಿನ ಚಟುವಟಿಕೆಯನ್ನು ಆರಿಸಿ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "random",
+          "text": "ಯಾದೃಚ್ಛಿಕವಾಗಿ ಬಳಸಿ",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ಅದನ್ನು ಎಸೆಯಿರಿ",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

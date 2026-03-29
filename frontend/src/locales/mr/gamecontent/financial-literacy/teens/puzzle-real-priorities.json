@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "Puzzle: Real Priorities",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "Match Items with Categories ({{current}}/{{total}} matched)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchButton": "Match",
+  "selectItemLabel": "Select an Item",
+  "selectedItemLabel": "निवडले: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "जुळले: {{current}}/{{total}}",
+  "resultSuccessHeader": "ग्रेट जॉब!",
+  "resultSuccessSubheader": "You correctly matched {{score}} out of {{total}} items with their categories!",
+  "resultSuccessLesson": "धडा: आर्थिक प्राधान्यक्रम समजून घेणे स्मार्ट निर्णय घेण्यास मदत करते!",
+  "resultTryAgainHeader": "सराव करत राहा!",
+  "resultTryAgainSubheader": "तुम्ही {{total}} पैकी {{score}} आयटम बरोबर जुळले.",
+  "resultTryAgainTip": "टीप: प्रत्येक आयटम आवश्यक आहे की विवेकाधीन आहे याचा विचार करा!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "items": [
+    {
+      "id": 1,
+      "name": "निरोगी नाश्ता",
+      "emoji": "🍳"
+    },
+    {
+      "id": 2,
+      "name": "स्टेशनरी किट",
+      "emoji": "✏️"
+    },
+    {
+      "id": 3,
+      "name": "शाळेनंतरचे वर्ग",
+      "emoji": "📚"
+    },
+    {
+      "id": 4,
+      "name": "जीवनसत्व पूरक",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "बस पास",
+      "emoji": "🚌"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "रोजची गरज",
+      "emoji": "😅"
+    },
+    {
+      "id": 7,
+      "name": "पर्यायी क्रियाकलाप",
+      "emoji": "🎯"
+    },
+    {
+      "id": 8,
+      "name": "स्मार्ट खर्च",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "आरोग्य प्राधान्य",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "वाहतूक खर्च",
+      "emoji": "🚌"
+    }
+  ]
+}

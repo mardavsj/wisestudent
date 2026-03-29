@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ ఇన్వెస్ట్‌మెంట్ బేసిక్స్",
+  "subtitlePlaying": "{{total}}లో {{current}} ప్రశ్న: మీ పెట్టుబడి రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "subtitleReady": "మీ పెట్టుబడి రిఫ్లెక్స్‌లను పరీక్షించుకోండి!",
+  "readyEmoji": "💰",
+  "readyTitle": "పెట్టుబడి బేసిక్స్ నేర్చుకోవడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "ప్రతి ప్రశ్నకు సరైన పెట్టుబడి చర్యను ఎంచుకోండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "ప్రశ్న:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "డబ్బు పెరగాలంటే ఏం చేయాలి?",
+      "correctAnswer": "సేవ్ చేయండి మరియు పెంచండి",
+      "options": [
+        {
+          "text": "అన్నీ ఖర్చు పెట్టండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "దాచు",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "దాని గురించి మరచిపోండి",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "సేవ్ చేయండి మరియు పెంచండి",
+          "isCorrect": true,
+          "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "మీరు డబ్బును తెలివిగా ఎలా నిర్వహించాలి?",
+      "correctAnswer": "తెలివిగా పెట్టుబడి పెట్టండి",
+      "options": [
+        {
+          "text": "తెలివిగా పెట్టుబడి పెట్టండి",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "వేగంగా ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "వృధా చేయండి",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "పోగొట్టుకోండి",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "సంపదను నిర్మించడానికి ఉత్తమ మార్గం ఏమిటి?",
+      "correctAnswer": "సంపదను పెంచుకోండి",
+      "options": [
+        {
+          "text": "డబ్బు పోగొట్టుకోండి",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "సంపదను పెంచుకోండి",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ప్రతిదీ ఖర్చు",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "పొదుపులను విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "😑"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "మీ డబ్బు మీ కోసం ఎలా పని చేస్తుంది?",
+      "correctAnswer": "వడ్డీ సంపాదించండి",
+      "options": [
+        {
+          "text": "నగదు వృధా",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "వెంటనే ఖర్చు పెట్టండి",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "వడ్డీ సంపాదించండి",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "దాని గురించి మరచిపోండి",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "మీ భవిష్యత్తును సురక్షితంగా ఉంచడంలో ఏది సహాయపడుతుంది?",
+      "correctAnswer": "పొదుపును నిర్మించండి",
+      "options": [
+        {
+          "text": "పొదుపును నిర్మించండి",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "ఇప్పుడు ఖర్చు పెట్టండి",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "డబ్బు వృధా",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "భవిష్యత్తును విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ગિફ્ટ મની સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમને તમારા જન્મદિવસ પર ભેટના પૈસા મળે છે. સ્માર્ટ પ્રથમ પગલું શું છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "તરત જ ખર્ચ કરો",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "show",
+          "text": "મિત્રોને બતાવો",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "think",
+          "text": "જરૂરિયાતો અને ધ્યેયો વિશે વિચારો",
+          "emoji": "🤔",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમને એક બેકપેક જોઈએ છે જેની કિંમત તમારા ભેટના પૈસા કરતાં વધુ હોય. સમજદાર પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "મિત્રો પાસેથી પૈસા ઉછીના લેશો",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "રાહ જુઓ અને વધુ પૈસા બચાવો",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "change",
+          "text": "તેના બદલે કંઈક રેન્ડમ ખરીદો",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમે એક નાનું રમકડું અને ઉપયોગી વસ્તુ જુઓ છો. તમને નક્કી કરવામાં શું મદદ કરે છે?",
+      "options": [
+        {
+          "id": "use",
+          "text": "તમને વધુ જોઈતી વસ્તુ પસંદ કરો",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "મનોરંજક લાગે તે પસંદ કરો",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "સૌથી સસ્તી વસ્તુ પસંદ કરો",
+          "emoji": "💲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમારા માતા-પિતા તમારા ભેટના નાણાંનો એક ભાગ બચાવવાનું સૂચન કરે છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "ઇનકાર કરો અને બધા ખર્ચ કરો",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "agree",
+          "text": "એક ભાગ સાચવો અને બાકીની યોજના બનાવો",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forget",
+          "text": "પૈસા વિશે ભૂલી જાઓ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ગિફ્ટ મની તમને શું શીખવે છે?",
+      "options": [
+        {
+          "id": "showoff",
+          "text": "ખરીદીઓ કેવી રીતે બતાવવી",
+          "emoji": "😎",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "વિચાર્યા વિના કેવી રીતે ખર્ચ કરવો",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "manage",
+          "text": "જવાબદારીપૂર્વક નાણાંનું સંચાલન કેવી રીતે કરવું",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

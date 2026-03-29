@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ਮਨੀ ਬੈਂਕ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਨੂੰ ਤੁਹਾਡੀ ਦਾਦੀ ਜੀ ਤੋਂ ਤੋਹਫ਼ੇ ਵਜੋਂ 10 ਰੁਪਏ ਮਿਲੇ ਹਨ। ਤੁਸੀਂ ਕੀ ਕਰਨਾ ਚਾਹੋਗੇ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "5 ਰੁਪਏ ਬਚਾਓ",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "save-all",
+          "text": "ਸਾਰੇ 10 ਰੁਪਏ ਬਚਾਓ",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ 20 ਰੁਪਏ ਬਚੇ ਹਨ। ਤੁਹਾਡਾ ਦੋਸਤ ਤੁਹਾਨੂੰ ਫਿਲਮਾਂ ਲਈ ਸੱਦਾ ਦਿੰਦਾ ਹੈ ਜਿਸਦੀ ਕੀਮਤ 15 ਰੁਪਏ ਹੈ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਬਾਅਦ ਵਿੱਚ ਲਈ ਸੁਰੱਖਿਅਤ ਕਰੋ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਫਿਲਮਾਂ 'ਤੇ ਜਾਓ",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ਲਾਗਤ ਨੂੰ ਵੰਡੋ",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਨੂੰ ਸੜਕ 'ਤੇ 5 ਰੁਪਏ ਮਿਲੇ ਹਨ। ਇਸ ਨਾਲ ਕੀ ਕਰਨਾ ਸਭ ਤੋਂ ਵਧੀਆ ਚੀਜ਼ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਕੈਂਡੀ ਖਰੀਦੋ",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ਮਾਪਿਆਂ ਨੂੰ ਦਿਓ",
+          "emoji": "👨‍👩‍👧",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਇਸ ਨੂੰ ਸੰਭਾਲੋ",
+          "emoji": "🫙",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਡਾ ਜਨਮਦਿਨ ਆ ਰਿਹਾ ਹੈ ਅਤੇ ਤੁਹਾਨੂੰ 500 ਰੁਪਏ ਦੀ ਨਵੀਂ ਸਾਈਕਲ ਚਾਹੀਦੀ ਹੈ। ਤੁਹਾਡੇ ਕੋਲ ਇਸ ਸਮੇਂ 200 ਰੁਪਏ ਹਨ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਹੋਰ ਬਚਾਓ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਹੁਣੇ ਖਰੀਦੋ",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ 30 ਰੁਪਏ ਬਚੇ ਹਨ ਅਤੇ ਇੱਕ ਖਿਡੌਣਾ ਦੇਖੋ ਜੋ ਤੁਸੀਂ ਅਸਲ ਵਿੱਚ 25 ਰੁਪਏ ਵਿੱਚ ਚਾਹੁੰਦੇ ਹੋ। ਸਮਾਰਟ ਵਿਕਲਪ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਖਿਡੌਣਾ ਖਰੀਦੋ",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਵੱਡੇ ਲਈ ਸੁਰੱਖਿਅਤ ਕਰੋ",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "ਵਿਕਰੀ ਲਈ ਉਡੀਕ ਕਰੋ",
+          "emoji": "⏰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "বৃত্তির গল্প",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "perfectScoreMsg": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন! আপনি আবেদন সততা গুরুত্ব বুঝতে!",
+  "lowScoreMsg": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন। মনে রাখবেন, বৃত্তির জন্য সততাই সেরা নীতি!",
+  "lessonLabel": "পাঠ: বৃত্তি এবং অন্যান্য সুযোগের জন্য আবেদন করার সময় সততা এবং সততা অত্যন্ত গুরুত্বপূর্ণ।",
+  "tryAgain": "আবার চেষ্টা করুন",
+  "tipLabel": "টিপ: বিশ্বাস তৈরি করতে আপনার স্কলারশিপ অ্যাপ্লিকেশনগুলিতে সর্বদা সঠিক এবং সত্য তথ্য প্রদান করুন।",
+  "coinsLabel": "+{{count}} কয়েন",
+  "questions": [
+    {
+      "id": 1,
+      "text": "একজন শিক্ষার্থী অতিরিক্ত বৃত্তি পাওয়ার জন্য মিথ্যা বলে। সঠিক কর্ম কি?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "টাকা পাওয়ার জন্য মিথ্যা",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "truthful",
+          "text": "সত্যবাদী হোন",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "হয়তো, প্রয়োজন হলে",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "আপনি একটি বৃত্তি আবেদন মিথ্যা হলে কি হবে?",
+      "options": [
+        {
+          "id": "get-money",
+          "text": "আরও টাকা পান",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-opportunity",
+          "text": "সুযোগ এবং বিশ্বাস হারান",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "কিছুই হয় না",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "কেন সততা অ্যাপ্লিকেশন গুরুত্বপূর্ণ?",
+      "options": [
+        {
+          "id": "builds-trust",
+          "text": "বিশ্বাস এবং সততা তৈরি করে",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "not-important",
+          "text": "গুরুত্বপূর্ণ নয়",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "waste-time",
+          "text": "সময় নষ্ট করে",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "আপনি একটি আবেদন একটি ভুল হলে কি করা উচিত?",
+      "options": [
+        {
+          "id": "hide-mistake",
+          "text": "ভুল লুকান",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-it",
+          "text": "সৎভাবে সংশোধন করুন",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "উপেক্ষা করুন",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "একটি বৃত্তি জন্য সেরা পদ্ধতির কি?",
+      "options": [
+        {
+          "id": "honest-application",
+          "text": "সৎ এবং সম্পূর্ণ আবেদন",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "exaggerate",
+          "text": "অতিরঞ্জিত অর্জন",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "copy-others",
+          "text": "অন্যদের থেকে কপি",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

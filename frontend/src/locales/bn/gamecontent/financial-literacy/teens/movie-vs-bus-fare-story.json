@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "সিনেমা বনাম বাস ভাড়ার গল্প",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "আপনার কাছে ₹100 আছে। কিভাবে আপনি এটি ব্যবহার করা উচিত?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "বাস পাসের জন্য সংরক্ষণ করুন",
+          "emoji": "🚌",
+          "isCorrect": true
+        },
+        {
+          "id": "movie",
+          "text": "চলচ্চিত্রে ব্যয় করুন",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "উভয়ের মধ্যে বিভক্তি",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "আপনার কাছে ₹150 আছে। সেরা পছন্দ কি?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "একটি জলখাবার কিনুন",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "বাস ভাড়া সঞ্চয় যোগ করুন",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "সবকিছু সংরক্ষণ করুন",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "আপনার কাছে ₹200 আছে। আপনি কি অগ্রাধিকার দেওয়া উচিত?",
+      "options": [
+        {
+          "id": "movie",
+          "text": "সিনেমার রাত",
+          "emoji": "🎥",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "উভয়ের মধ্যে বিভক্তি",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "সাপ্তাহিক বাস পাস",
+          "emoji": "🎫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "আপনার কাছে ₹120 আছে। স্মার্ট সিদ্ধান্ত কি?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "বাসের টিকিট",
+          "emoji": "🎟️",
+          "isCorrect": true
+        },
+        {
+          "id": "popcorn",
+          "text": "সিনেমা এ পপকর্ন",
+          "emoji": "🍿",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "এটা সব সংরক্ষণ করুন",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "আপনার কাছে ₹300 আছে। সর্বোত্তম ব্যবহার কি?",
+      "options": [
+        {
+          "id": "cinema",
+          "text": "সিনেমার টিকিট",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "মাসিক বাস পাস",
+          "emoji": "Ⓜ️",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "উভয়ের মধ্যে বিভক্তি",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "দারুণ কাজ!",
+    "winMessage": "আপনি {{total}} প্রশ্নের মধ্যে {{score}}টি সঠিক পেয়েছেন! অত্যাবশ্যকীয় ব্যয়কে অগ্রাধিকার দেওয়ার গুরুত্ব আপনি বোঝেন!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: বিনোদনের চাহিদার চেয়ে পরিবহনের মতো প্রয়োজনীয় ব্যয়কে অগ্রাধিকার দিন!",
+    "loseEmoji": "😔",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} প্রশ্নের মধ্যে {{score}}টি সঠিক পেয়েছেন। প্রয়োজনের চেয়ে পরিবহনের মতো প্রয়োজনীয় ব্যয়কে অগ্রাধিকার দিতে মনে রাখবেন!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "পরামর্শ: বিনোদনের চাহিদার চেয়ে পরিবহনের মতো প্রয়োজনীয় খরচগুলিকে সর্বদা অগ্রাধিকার দিন।"
+  }
+}

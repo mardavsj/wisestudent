@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "एटीएम कथा",
+  "subtitleComplete": "पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुमचे पालक तुम्हाला त्यांचे एटीएम कार्ड दाखवतात. आपण काय करावे?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "त्याकडे दुर्लक्ष करा",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "ते कसे कार्य करते ते जाणून घ्या",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "त्याच्याशी खेळा",
+          "emoji": "🎮",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमचे पालक एटीएममध्ये त्यांचा पिन टाकत आहेत. आपण काय करावे?",
+      "options": [
+        {
+          "id": "memorize",
+          "text": "पिन लक्षात ठेवण्याचा प्रयत्न करा",
+          "emoji": "🧠",
+          "isCorrect": false
+        },
+        {
+          "id": "tell",
+          "text": "त्याबद्दल मित्रांना सांगा",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "away",
+          "text": "गोपनीयता देण्यासाठी दूर पहा",
+          "emoji": "👀",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमच्याकडे 100 रुपये आहेत. सर्वात हुशार पर्याय कोणता आहे?",
+      "options": [
+        {
+          "id": "split",
+          "text": "50 रुपये वाचवा, 50 खर्च करा",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "toys",
+          "text": "सर्व खेळण्यांवर खर्च करा",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "friends",
+          "text": "सर्व मित्रांना द्या",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्हाला 200 रुपये किमतीचे एक खेळणी घ्यायची आहे पण तुमच्याकडे 150 आहेत. तुम्ही काय करावे?",
+      "options": [
+        {
+          "id": "save",
+          "text": "प्रथम अधिक पैसे वाचवा",
+          "emoji": "💾",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "मित्रांकडून कर्ज घ्या",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "demand",
+          "text": "पालकांकडून त्याची मागणी करा",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुमच्या मित्राने जेवणाचे पैसे गमावले. आपण काय करावे?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "त्यांच्याकडे दुर्लक्ष करा",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "laugh",
+          "text": "त्यांच्याकडे पाहून हसा",
+          "emoji": "😆",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "त्यांच्याबरोबर आपले दुपारचे जेवण सामायिक करा",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

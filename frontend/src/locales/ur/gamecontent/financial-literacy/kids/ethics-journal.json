@@ -1,1 +1,33 @@
-﻿{}
+{
+  "title": "اخلاقیات جرنل",
+  "subtitleComplete": "جرنل مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "minLengthPrompt": "کم از کم {{minLength}} حروف لکھیں۔",
+  "textareaPlaceholder": "اپنے جریدے کا اندراج یہاں لکھیں...",
+  "charactersLabel": "characters",
+  "submitFinalButton": "حتمی اندراج جمع کروائیں۔",
+  "submitContinueButton": "جمع کروائیں اور جاری رکھیں",
+  "stages": [
+    {
+      "question": "لکھیں: \"ایک بار جب میں نے پیسے کا ایمانداری سے استعمال کیا تھا ___۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"میں نے ___ کی طرف سے کسی کی رقم سے مدد کی۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"وہ وقت تھا جب میں نے پیسے بچانے کے بارے میں اچھا محسوس کیا ___۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"میں نے ___ کی طرف سے غلط طریقے سے پیسہ خرچ کرنے سے گریز کیا۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"پیسے کے ساتھ ایماندار ہونا مجھے ___ محسوس کرتا ہے۔\"",
+      "minLength": 10
+    }
+  ]
+}

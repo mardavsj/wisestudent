@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਖਪਤਕਾਰ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਜੇਕਰ ਦੁਕਾਨਦਾਰ ਠੱਗੀ ਮਾਰਦਾ ਹੈ ਤਾਂ ਤੁਸੀਂ ਸ਼ਿਕਾਇਤ ਕਿੱਥੇ ਕਰ ਸਕਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "court",
+          "text": "ਖਪਤਕਾਰ ਅਦਾਲਤ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "Playground",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "Nowhere",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਖਪਤਕਾਰ ਅਧਿਕਾਰ ਕੀ ਹਨ?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "ਕੋਈ ਅਧਿਕਾਰ ਨਹੀਂ",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "ਧੋਖਾਧੜੀ ਤੋਂ ਸੁਰੱਖਿਆ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਖਰਚਣ ਦਾ ਅਧਿਕਾਰ ਹੈ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਜੇਕਰ ਤੁਹਾਨੂੰ ਕੋਈ ਨੁਕਸਦਾਰ ਉਤਪਾਦ ਮਿਲਦਾ ਹੈ ਤਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "ਇਸ ਨੂੰ ਸਵੀਕਾਰ ਕਰੋ",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਇਸ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "ਵਿਕਰੇਤਾ ਨੂੰ ਸ਼ਿਕਾਇਤ ਕਰੋ",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਸੂਚਨਾ ਦਾ ਅਧਿਕਾਰ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "know",
+          "text": "ਉਤਪਾਦ ਦੇ ਵੇਰਵੇ ਜਾਣੋ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ਜਾਣਕਾਰੀ ਲੁਕਾਓ",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "ਝੂਠ ਨੂੰ ਸਵੀਕਾਰ ਕਰੋ",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਸੀਂ ਉਪਭੋਗਤਾ ਸ਼ਿਕਾਇਤ ਕਿੱਥੇ ਦਰਜ ਕਰ ਸਕਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "police",
+          "text": "ਥਾਣਾ ਸਦਰ",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "ਖਪਤਕਾਰ ਅਦਾਲਤ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "School",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਕਵਿਜ਼ ਪੂਰਾ!",
+    "winMessage": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਤੁਸੀਂ ਖਪਤਕਾਰਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਖਪਤਕਾਰਾਂ ਦੇ ਅਧਿਕਾਰ ਹਨ! ਧੋਖਾਧੜੀ ਹੋਣ 'ਤੇ ਤੁਸੀਂ ਖਪਤਕਾਰ ਅਦਾਲਤ ਨੂੰ ਸ਼ਿਕਾਇਤ ਕਰ ਸਕਦੇ ਹੋ, ਸੁਰੱਖਿਅਤ ਉਤਪਾਦਾਂ ਦੀ ਮੰਗ ਕਰ ਸਕਦੇ ਹੋ ਅਤੇ ਇਮਾਨਦਾਰ ਜਾਣਕਾਰੀ ਪ੍ਰਾਪਤ ਕਰ ਸਕਦੇ ਹੋ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਖਪਤਕਾਰ ਅਦਾਲਤ ਹੈ ਜਿੱਥੇ ਤੁਸੀਂ ਸ਼ਿਕਾਇਤ ਕਰਦੇ ਹੋ ਜੇਕਰ ਦੁਕਾਨਦਾਰ ਠੱਗੀ ਕਰਦਾ ਹੈ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੁਝਾਅ: ਜੇਕਰ ਕੋਈ ਦੁਕਾਨਦਾਰ ਤੁਹਾਨੂੰ ਧੋਖਾ ਦਿੰਦਾ ਹੈ, ਤਾਂ ਤੁਸੀਂ ਖਪਤਕਾਰ ਅਦਾਲਤ ਵਿੱਚ ਸ਼ਿਕਾਇਤ ਦਰਜ ਕਰ ਸਕਦੇ ਹੋ, ਖੇਡ ਦੇ ਮੈਦਾਨ ਵਿੱਚ ਨਹੀਂ! ਖਪਤਕਾਰਾਂ ਦੇ ਅਧਿਕਾਰ ਹਨ!"
+  }
+}

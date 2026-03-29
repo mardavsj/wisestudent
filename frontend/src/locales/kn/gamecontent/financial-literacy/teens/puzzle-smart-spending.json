@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ಒಗಟು: ಸ್ಮಾರ್ಟ್ ಖರ್ಚು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಅರ್ಥಗಳೊಂದಿಗೆ ಪರಿಕಲ್ಪನೆಗಳನ್ನು ಹೊಂದಿಸಿ ({{current}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "conceptsTitle": "ಖರ್ಚು ಪರಿಕಲ್ಪನೆಗಳು",
+  "meaningsTitle": "ಹಣಕಾಸಿನ ಅರ್ಥಗಳು",
+  "matchButton": "Match",
+  "selectConceptLabel": "ಖರ್ಚು ಮಾಡುವ ಪರಿಕಲ್ಪನೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "selectedConceptLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultSuccessSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಖರ್ಚು ಪರಿಕಲ್ಪನೆಗಳನ್ನು ಅವುಗಳ ಅರ್ಥಗಳೊಂದಿಗೆ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿದ್ದೀರಿ!",
+  "resultSuccessLesson": "ಪಾಠ: ಖರ್ಚು ಪರಿಕಲ್ಪನೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ಉತ್ತಮ ಆರ್ಥಿಕ ನಿರ್ಧಾರಗಳಿಗೆ ಕಾರಣವಾಗುತ್ತದೆ!",
+  "resultTryAgainHeader": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultTryAgainSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಖರ್ಚು ಮಾಡುವ ಪರಿಕಲ್ಪನೆಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTryAgainTip": "ಸಲಹೆ: ಪ್ರತಿ ಖರ್ಚು ಪರಿಕಲ್ಪನೆಯು ನಿಜವಾಗಿ ಏನನ್ನು ಪ್ರತಿನಿಧಿಸುತ್ತದೆ ಎಂಬುದರ ಕುರಿತು ಯೋಚಿಸಿ!",
+  "coinsEarned": "+{{coins}} ನಾಣ್ಯಗಳು",
+  "concepts": [
+    {
+      "id": 1,
+      "name": "Budget",
+      "emoji": "📋"
+    },
+    {
+      "id": 2,
+      "name": "Waste",
+      "emoji": "🗑️"
+    },
+    {
+      "id": 3,
+      "name": "Needs",
+      "emoji": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Wants",
+      "emoji": "🎁"
+    },
+    {
+      "id": 5,
+      "name": "ತುರ್ತು ನಿಧಿ",
+      "emoji": "🛡️"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "ಹಣಕಾಸು ಯೋಜನೆ",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "ಸಂಪನ್ಮೂಲ ದುರ್ಬಳಕೆ",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "ಅಗತ್ಯ ಆದ್ಯತೆಗಳು",
+      "emoji": "⭐"
+    },
+    {
+      "id": 9,
+      "name": "ವಿವೇಚನೆಯ ಖರ್ಚು",
+      "emoji": "💎"
+    },
+    {
+      "id": 10,
+      "name": "ಅಪಾಯದ ರಕ್ಷಣೆ",
+      "emoji": "🔒"
+    }
+  ]
+}

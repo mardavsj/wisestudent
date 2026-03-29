@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "বিতর্ক: সংরক্ষণ বনাম খরচ",
+  "subtitleComplete": "বিতর্ক সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "টাকা সঞ্চয় করা ভালো নাকি সব খরচ করা?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "সব খরচ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "টাকা বাঁচান",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "নষ্ট করুন",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "কিশোর-কিশোরীদের কি এখন তাদের অর্থ সঞ্চয় বা উপভোগ করার দিকে মনোনিবেশ করা উচিত?",
+      "options": [
+        {
+          "id": "save",
+          "text": "সংরক্ষণের দিকে মনোযোগ দিন",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "এখন উপভোগ করুন",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "এটা নিয়ে ভাববেন না",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "আপনি যখন বোনাস বা অতিরিক্ত টাকা পাবেন, তখন আপনার কী করা উচিত?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "সব খরচ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "নষ্ট করুন",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "এটির বেশিরভাগ সংরক্ষণ করুন",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "দামি ব্র্যান্ডের আইটেম কেনা ভালো নাকি সাশ্রয়ী মানের আইটেম?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ব্র্যান্ডেড আইটেম কিনুন",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ব্র্যান্ডের চেয়ে গুণমান চয়ন করুন",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "cheap",
+          "text": "সবচেয়ে কম দামে কিনুন",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "আপনি ক্রেডিট কার্ড ব্যবহার করা উচিত জিনিস কিনতে আপনি সামর্থ্য না?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "হ্যাঁ, ক্রেডিট ব্যবহার করুন",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "টাকা ধার",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "না, ঋণ এড়িয়ে চলুন",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

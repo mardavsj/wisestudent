@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "લંચ બોક્સ વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "🍽️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે મિત્રનું લંચ ઉધાર લો. તમારે બીજા દિવસે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "શેર કરો અથવા પરત કરો",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "તમારા માટે રાખો",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "તે વિશે ભૂલી જાઓ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારો મિત્ર લંચ વહેંચે છે. તમારે કેવો પ્રતિભાવ આપવો જોઈએ?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "કંઈ બોલો",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "કંઈક પાછા શેર કરો",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "more",
+          "text": "લંચ પણ વધુ લો",
+          "emoji": "🍴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારી પાસે લંચ માટે ₹10 છે. મિત્રને ₹5ની જરૂર છે. શ્રેષ્ઠ શું છે?",
+      "options": [
+        {
+          "id": "share",
+          "text": "મિત્ર સાથે ₹5 શેર કરો",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "all",
+          "text": "તમારી જાત પર બધું ખર્ચો",
+          "emoji": "🍔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "તમારા પૈસા છુપાવો",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે લંચના પૈસા ઉછીના લો. તમારે ક્યારે ચૂકવણી કરવી જોઈએ?",
+      "options": [
+        {
+          "id": "never",
+          "text": "ક્યારેય ચૂકવવું નહીં",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "તેને નાસ્તા પર ખર્ચો",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "next",
+          "text": "બીજા દિવસે વચન મુજબ",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "બપોરના ભોજનની વહેંચણી શા માટે મહત્વપૂર્ણ છે?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "તે વિશ્વાસ અને દયા બનાવે છે",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "food",
+          "text": "તમને વધુ ખોરાક મળે છે",
+          "emoji": "🍽️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "popular",
+          "text": "તે તમને લોકપ્રિય બનાવે છે",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स लहान व्यवसाय",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: आपल्या लहान व्यवसायाच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "subtitleReady": "आपल्या लहान व्यवसायाच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "readyEmoji": "🏪",
+  "readyTitle": "लहान व्यवसाय कौशल्यांची चाचणी घेण्यासाठी तयार आहात?",
+  "readyDescription": "एक लहान व्यवसाय सुरू करणे आणि चालवणे याबद्दल प्रश्नांची उत्तरे द्या.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "लहान व्यवसाय सुरू करण्याचा चांगला मार्ग कोणता आहे?",
+      "correctAnswer": "बेक करा आणि विक्री करा",
+      "options": [
+        {
+          "text": "खरेदी आणि कचरा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "बेक करा आणि विक्री करा",
+          "isCorrect": true,
+          "emoji": "🍰"
+        },
+        {
+          "text": "काहीही करू नका",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "तुम्ही तुमच्या कौशल्यातून पैसे कसे कमवू शकता?",
+      "correctAnswer": "हस्तकला बनवा",
+      "options": [
+        {
+          "text": "हस्तकला बनवा",
+          "isCorrect": true,
+          "emoji": "🎨"
+        },
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "वाया वेळ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "कौशल्याकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुम्हाला इतरांकडून पैसे कमावण्यास काय मदत होते?",
+      "correctAnswer": "ऑफर सेवा",
+      "options": [
+        {
+          "text": "काहीही करू नका",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "कायमची प्रतीक्षा करा",
+          "isCorrect": false,
+          "emoji": "⏳"
+        },
+        {
+          "text": "काम टाळा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ऑफर सेवा",
+          "isCorrect": true,
+          "emoji": "🛠️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "व्यवसायातील नफ्याचे तुम्ही काय करावे?",
+      "correctAnswer": "नफा वाचवा",
+      "options": [
+        {
+          "text": "नफा वाचवा",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "नफा खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "पैशाचा अपव्यय",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "तो गमावा",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "तुमचा व्यवसाय यशस्वी होण्यास काय मदत होते?",
+      "correctAnswer": "व्यवसाय वाढवा",
+      "options": [
+        {
+          "text": "पैशाचा अपव्यय",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "व्यवसाय वाढवा",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "सोडून द्या",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "लहान राहा",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    }
+  ]
+}

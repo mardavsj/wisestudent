@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਬਜਟ ਆਈਟਮਾਂ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਸ਼੍ਰੇਣੀਆਂ ਨਾਲ ਆਈਟਮਾਂ ਦਾ ਮੇਲ ਕਰੋ ({{matched}}/{{total}} ਮੇਲਿਆ)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "selectItem": "ਇੱਕ ਆਈਟਮ ਚੁਣੋ",
+  "matchButton": "Match",
+  "scoreLabel": "ਸਕੋਰ:",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ:",
+  "resultGreatEmoji": "🏆",
+  "resultGreatTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultGreatDescription": "ਤੁਸੀਂ ਸ਼੍ਰੇਣੀਆਂ ਦੇ ਨਾਲ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਮੇਲ ਕੀਤਾ ਹੈ!",
+  "coinsLabel": "Coins",
+  "resultLesson": "ਸਬਕ: ਲੋੜਾਂ ਬਨਾਮ ਇੱਛਾਵਾਂ ਨੂੰ ਸਮਝਣਾ ਬਜਟ ਬਣਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "resultKeepEmoji": "🧩",
+  "resultKeepTitle": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultKeepDescription": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTip": "ਸੁਝਾਅ: ਲੋੜਾਂ ਜਿਉਂਦੇ ਰਹਿਣ ਲਈ ਜ਼ਰੂਰੀ ਹਨ, ਇੱਛਾਵਾਂ ਹੋਣੀਆਂ ਚੰਗੀਆਂ ਹਨ!",
+  "items": [
+    {
+      "id": 1,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 2,
+      "name": "ਜਨਮਦਿਨ ਦਾ ਤੋਹਫ਼ਾ",
+      "emoji": "🎁"
+    },
+    {
+      "id": 3,
+      "name": "ਸਕੂਲ ਸਪਲਾਈ",
+      "emoji": "✏️"
+    },
+    {
+      "id": 4,
+      "name": "ਵੀਡੀਓ ਗੇਮ ਕੰਸੋਲ",
+      "emoji": "🎮"
+    },
+    {
+      "id": 5,
+      "name": "ਵਾਧੂ ਸਨੈਕਸ",
+      "emoji": "🍿"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Essential",
+      "emoji": "✅",
+      "description": "ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਲਈ ਜ਼ਰੂਰੀ ਹੈ"
+    },
+    {
+      "id": 7,
+      "name": "Non-Essential",
+      "emoji": "➖",
+      "description": "ਵਿਕਲਪਿਕ, ਲੋੜੀਂਦਾ ਨਹੀਂ"
+    },
+    {
+      "id": 8,
+      "name": "ਸਕੂਲ ਲਈ ਜ਼ਰੂਰੀ",
+      "emoji": "🎒",
+      "description": "ਸਿੱਖਣ ਦੀ ਲੋੜ ਹੈ"
+    },
+    {
+      "id": 9,
+      "name": "Luxury",
+      "emoji": "💎",
+      "description": "ਸੁਚੱਜਾ, ਮਹਿੰਗਾ"
+    },
+    {
+      "id": 10,
+      "name": "ਵਿਕਲਪਿਕ ਇਲਾਜ",
+      "emoji": "🍭",
+      "description": "ਛੋਟਾ ਮਜ਼ੇਦਾਰ ਖਰਚਾ"
+    }
+  ]
+}

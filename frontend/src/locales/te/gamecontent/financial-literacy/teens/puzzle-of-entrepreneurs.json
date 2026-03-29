@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "వ్యవస్థాపకుల పజిల్",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "ఫీల్డ్‌లతో ఎంట్రప్రెన్యూర్‌లను సరిపోల్చండి ({{current}}/{{total}} సరిపోలింది)",
+  "itemsTitle": "Entrepreneurs",
+  "fieldsTitle": "Fields",
+  "matchButton": "Match",
+  "selectItemLabel": "ఒక వ్యవస్థాపకుడిని ఎంచుకోండి",
+  "selectedItemLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}} వ్యవస్థాపకులలో {{score}}ని వారి ఫీల్డ్‌లతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: వ్యవస్థాపక రంగాలను అర్థం చేసుకోవడం ఆవిష్కరణను ప్రేరేపించడంలో సహాయపడుతుంది!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}} వ్యవస్థాపకులలో {{score}}తో సరిగ్గా సరిపోలారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి వ్యవస్థాపకుడు ఏ రంగంలో అత్యంత ప్రసిద్ధి చెందాడో ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "items": [
+    {
+      "id": 1,
+      "name": "రతన్ టాటా",
+      "emoji": "👔"
+    },
+    {
+      "id": 2,
+      "name": "ఎలోన్ మస్క్",
+      "emoji": "🚀"
+    },
+    {
+      "id": 3,
+      "name": "నారాయణ మూర్తి",
+      "emoji": "💻"
+    },
+    {
+      "id": 4,
+      "name": "కిరణ్ మజుందార్",
+      "emoji": "🔬"
+    },
+    {
+      "id": 5,
+      "name": "ఫల్గుణి నాయర్",
+      "emoji": "💄"
+    }
+  ],
+  "fields": [
+    {
+      "id": 6,
+      "name": "Industry",
+      "emoji": "🏭"
+    },
+    {
+      "id": 7,
+      "name": "Innovation",
+      "emoji": "💡"
+    },
+    {
+      "id": 8,
+      "name": "IT",
+      "emoji": "💻"
+    },
+    {
+      "id": 9,
+      "name": "Biotech",
+      "emoji": "🧬"
+    },
+    {
+      "id": 10,
+      "name": "E-commerce",
+      "emoji": "🛒"
+    }
+  ]
+}

@@ -1,1 +1,145 @@
-﻿{}
+﻿{
+    "title": "গাছের গল্প",
+    "subtitleComplete": "গল্প সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "stageEmoji": "🌳",
+    "questions": [
+        {
+            "id": 1,
+            "text": "আজ একটি ছোট গাছ লাগালে। সময়ের সাথে শক্তিশালী হতে কী সাহায্য করবে?",
+            "options": [
+                {
+                    "id": "care",
+                    "text": "নিয়মিত জল ও যত্ন করো",
+                    "emoji": "💧",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "rush",
+                    "text": "দ্রুত বাড়াতে টানো",
+                    "emoji": "⚡",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "ignore",
+                    "text": "রেখে ভুলে যাও",
+                    "emoji": "😴",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "টাকা একটি গাছের মতো। ধীরে ও নিরাপদে কী বাড়ায়?",
+            "options": [
+                {
+                    "id": "spend",
+                    "text": "সব দ্রুত খরচ করা",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "hide",
+                    "text": "লুকিয়ে রাখা ও কখনো ব্যবহার না করা",
+                    "emoji": "🙈",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "plan",
+                    "text": "সময়ের সাথে বুদ্ধিমানের সাথে ব্যবহার ও সঞ্চয়",
+                    "emoji": "📊",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "অতিরিক্ত পকেটমানি পেয়েছ। গাছের মতো বুদ্ধিমান পছন্দ কী?",
+            "options": [
+                {
+                    "id": "waste",
+                    "text": "না ভেবে খরচ করো",
+                    "emoji": "🔥",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "grow",
+                    "text": "একটি অংশ সঞ্চয় করো যাতে পরে বাড়ে",
+                    "emoji": "🌱",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "lose",
+                    "text": "অযত্নে রাখো",
+                    "emoji": "📉",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "ফলের গাছ প্রতি বছর ফল দেয়। এটি টাকা সম্পর্কে কী শেখায়?",
+            "options": [
+                {
+                    "id": "fast",
+                    "text": "টাকা একবারই ব্যবহার করতে হয়",
+                    "emoji": "⚡",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "luck",
+                    "text": "শুধু ভাগ্যই গুরুত্বপূর্ণ",
+                    "emoji": "🍀",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "return",
+                    "text": "ভালো পছন্দ বারবার পুরস্কার দেয়",
+                    "emoji": "🍎",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "গাছ তাড়াতাড়ি কেটে ফেললে কী হয়?",
+            "options": [
+                {
+                    "id": "loss",
+                    "text": "ভবিষ্যতের সুবিধা হারায়",
+                    "emoji": "📉",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "gain",
+                    "text": "সবসময় বেশি পাওয়া যায়",
+                    "emoji": "💰",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "nothing",
+                    "text": "কিছুই পরিবর্তন হয় না",
+                    "emoji": "😐",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "बचत खात्याची कथा",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreMsg": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! बचत खाती कशी कार्य करतात हे तुम्हाला समजले आहे!",
+  "lowScoreMsg": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, बचत खाती व्याज देतात, ज्यामुळे तुमचे पैसे वाढण्यास मदत होते!",
+  "lessonLabel": "धडा: बचत खाती तुमचे पैसे सुरक्षित ठेवतात आणि व्याज देतात, ज्यामुळे तुमचे पैसे कालांतराने वाढतात!",
+  "tryAgain": "पुन्हा प्रयत्न करा",
+  "tipLabel": "टीप: तुम्ही बचत खात्यात पैसे जमा करता तेव्हा, बँक तुम्हाला व्याज देते, ज्यामुळे तुमचे पैसे कालांतराने वाढतात!",
+  "coinsLabel": "+{{count}} नाणी",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्ही ₹1000 जमा करा. एका वर्षानंतर, ते ₹1050 होते. का?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "magic",
+          "text": "Magic",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "error",
+          "text": "बँक त्रुटी",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "जेव्हा तुम्ही बचत खात्यात पैसे ठेवता तेव्हा काय होते?",
+      "options": [
+        {
+          "id": "loses",
+          "text": "ते मूल्य गमावते",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "ते व्याजाने वाढते",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "stays",
+          "text": "तो तसाच राहतो",
+          "emoji": "➡️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "बँका बचतीवर व्याज का देतात?",
+      "options": [
+        {
+          "id": "use",
+          "text": "ते तुमचे पैसे कर्ज देण्यासाठी वापरतात",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "ही भेट आहे",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "rule",
+          "text": "सरकारी नियम",
+          "emoji": "📜",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बचत खात्याचा फायदा काय?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "सुरक्षित आणि व्याज कमावते",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "quick",
+          "text": "फक्त द्रुत प्रवेश",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "text": "फुकट पैसे",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुम्ही ₹500 जमा केल्यास आणि एका वर्षानंतर ₹525 मिळाले तर, अतिरिक्त ₹25 किती?",
+      "options": [
+        {
+          "id": "bonus",
+          "text": "बोनस पेमेंट",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "interest2",
+          "text": "व्याज मिळाले",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "fee",
+          "text": "बँक फी",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,145 @@
-﻿{}
+﻿{
+    "title": "খেলনা বনাম সঞ্চয়ের গল্প",
+    "subtitleComplete": "গল্প সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "stageEmoji": "🧸",
+    "questions": [
+        {
+            "id": 1,
+            "text": "এক সপ্তাহ পরে পছন্দের খেলনা ভেঙে গেল। এটি কী শেখায়?",
+            "options": [
+                {
+                    "id": "buy",
+                    "text": "আরও দ্রুত খেলনা কিনো",
+                    "emoji": "🛍️",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "ignore",
+                    "text": "টাকার পছন্দ গুরুত্বপূর্ণ নয়",
+                    "emoji": "🙈",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "value",
+                    "text": "টাকা খরচের আগে ভাবো",
+                    "emoji": "🧠",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "প্রতি সপ্তাহে কয়েন জমাও এবং পরিমাণ বাড়তে দেখো। কী শেখো?",
+            "options": [
+                {
+                    "id": "patience",
+                    "text": "সঞ্চয়ে ধৈর্য লাগে",
+                    "emoji": "⏳",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "boring",
+                    "text": "সঞ্চয় বিরক্তিকর",
+                    "emoji": "😐",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "waste",
+                    "text": "কয়েন অকেজো",
+                    "emoji": "🪙",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "পরে দামি কিছু চাও। সেরা অভ্যাস কী?",
+            "options": [
+                {
+                    "id": "rush",
+                    "text": "যা দেখো তাই কিনো",
+                    "emoji": "🏃",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "plan",
+                    "text": "পরিকল্পনা করো ও ধীরে সঞ্চয় করো",
+                    "emoji": "📊",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "borrow",
+                    "text": "সবসময় ধার করো",
+                    "emoji": "🤝",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "কেনার আগে দাম তুলনা করো। কোন দক্ষতা ব্যবহার করছ?",
+            "options": [
+                {
+                    "id": "slow",
+                    "text": "অনেক ধীর হওয়া",
+                    "emoji": "🐢",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "lazy",
+                    "text": "কেনাকাটা এড়ানো",
+                    "emoji": "😴",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "smart",
+                    "text": "বুদ্ধিমান টাকার চিন্তা",
+                    "emoji": "💡",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "প্রতিটি খেলনা না কিনে সঞ্চয় বেছে নাও। এটি কী গড়ে?",
+            "options": [
+                {
+                    "id": "habit",
+                    "text": "ভালো সঞ্চয়ের অভ্যাস",
+                    "emoji": "🏦",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "sad",
+                    "text": "একদম মজা নেই",
+                    "emoji": "😢",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "fear",
+                    "text": "খরচের ভয়",
+                    "emoji": "😨",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

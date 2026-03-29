@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "दुकानाची गोष्ट 2",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्हाला दुकानात दोन पेन दिसतात. एकाची किंमत 50 रुपये आणि दुसऱ्याची किंमत 15 रुपये आहे. दोन्ही सारखेच काम करतात. आपण कोणती खरेदी करावी?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "महागडा पेन",
+          "emoji": "🖊️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "text": "प्रथम पुनरावलोकने तपासा",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "परवडणारे पेन",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमच्याकडे कपड्यांवर खर्च करण्यासाठी 100 रुपये आहेत. तुम्हाला आवडणारा शर्ट 80 रुपयांना मिळतो आणि तसाच दुसरा 30 रुपयांना मिळतो. स्मार्ट म्हणजे काय?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "स्वस्त शर्ट खरेदी करा",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "महागडा शर्ट खरेदी करा",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "विक्रीसाठी प्रतीक्षा करा",
+          "emoji": "🏷️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्ही पार्टीसाठी स्नॅक्स खरेदी करत आहात. ब्रँड ए ची किंमत 200 रुपये आणि ब्रँड बी ची किंमत 120 रुपये आहे. दोन्हीची चव सारखीच आहे. कोणते?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ब्रँड ए खरेदी करा",
+          "emoji": "📦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "ब्रँड बी खरेदी करा",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mix",
+          "text": "प्रत्येकी काही खरेदी करा",
+          "emoji": "➗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्हाला शाळेसाठी बॅकपॅक आवश्यक आहे. एकाची किंमत 800 रुपये आणि दुसऱ्याची किंमत 400 रुपये आहे. दोन्ही दर्जेदार आहेत. शहाणे काय आहे?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "400 रुपयांची बॅकपॅक खरेदी करा",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "800 रुपयांची बॅकपॅक खरेदी करा",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "सध्या कर्ज घ्या",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुम्ही किराणा सामान खरेदी करत आहात. सेंद्रिय भाज्यांची किंमत 300 रुपये आणि नियमित भाजीची किंमत 150 रुपये आहे. दोन्ही पौष्टिक आहेत. कोणते?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "सेंद्रिय भाज्या खरेदी करा",
+          "emoji": "🥦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "selective",
+          "text": "दोन्ही प्रकार मिक्स करावे",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "नियमित भाज्या खरेदी करा",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,152 @@
-﻿{}
+{
+  "title": "اضطراری: منی سچائی",
+  "subtitleComplete": "کھیل مکمل!",
+  "roundLabel": "راؤنڈ {{current}}/{{total}}",
+  "timeUp": "وقت ختم ہو گیا ہے!",
+  "readyEmoji": "💰",
+  "readyTitle": "تیار ہو جاؤ!",
+  "readyDescription": "پیسے کی سچائی اور ایمانداری کے بارے میں سوالات کے جواب دیں!",
+  "readyTimeInfo": "آپ کے پاس ہر سوال کے لیے {{time}} سیکنڈ ہیں۔",
+  "readyQuestionInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{time}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "gameRoundLabel": "گول:",
+  "gameTimeLabel": "وقت:",
+  "gameScoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "آپ کو اسکول کے فرش پر ایک سکہ ملتا ہے۔ صحیح پہلا عمل کیا ہے؟",
+      "correctAnswer": "پوچھیں کہ کیا کسی نے اسے کھو دیا ہے۔",
+      "options": [
+        {
+          "text": "جلدی سے رکھ لو",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "پوچھیں کہ کیا کسی نے اسے کھو دیا ہے۔",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "نمکین خریدیں۔",
+          "isCorrect": false,
+          "emoji": "🍿"
+        },
+        {
+          "text": "اسے چھپائیں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "کوئی آپ کو اس کام کے لیے پیسے دیتا ہے جو آپ نے مکمل نہیں کیا۔ آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "حقیقت بیان کریں۔",
+      "options": [
+        {
+          "text": "حقیقت بیان کریں۔",
+          "isCorrect": true,
+          "emoji": "🗣️"
+        },
+        {
+          "text": "کچھ نہ بولو",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "دوسروں پر الزام لگانا",
+          "isCorrect": false,
+          "emoji": "👉"
+        },
+        {
+          "text": "چلو",
+          "isCorrect": false,
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "آپ اور آپ کے دوست نے مل کر پیسہ کمایا۔ کیا مسائل سے بچنے میں مدد کرتا ہے؟",
+      "correctAnswer": "جلدی شیئر کرنے پر متفق ہوں۔",
+      "options": [
+        {
+          "text": "اپنے آپ کو مزید لے لو",
+          "isCorrect": false,
+          "emoji": "🤑"
+        },
+        {
+          "text": "انتظار کرو اور بعد میں بحث کرو",
+          "isCorrect": false,
+          "emoji": "💢"
+        },
+        {
+          "text": "قسمت کو فیصلہ کرنے دیں۔",
+          "isCorrect": false,
+          "emoji": "🎲"
+        },
+        {
+          "text": "جلدی شیئر کرنے پر متفق ہوں۔",
+          "isCorrect": true,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "آپ ادھار کی رقم واپس کرنے کا وعدہ کرتے ہیں لیکن بھول جاتے ہیں۔ کیا اسے سب سے بہتر ٹھیک کرتا ہے؟",
+      "correctAnswer": "معافی مانگو اور اسے واپس کرو",
+      "options": [
+        {
+          "text": "معافی مانگو اور اسے واپس کرو",
+          "isCorrect": true,
+          "emoji": "🙏"
+        },
+        {
+          "text": "شخص سے پرہیز کریں۔",
+          "isCorrect": false,
+          "emoji": "🙄"
+        },
+        {
+          "text": "دکھاوا کریں کہ آپ نے ادائیگی کی۔",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "اسے ہنسا دو",
+          "isCorrect": false,
+          "emoji": "😅"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "کیا چیز لوگوں کو پیسے کے ساتھ آپ پر دوبارہ اعتماد کرتی ہے؟",
+      "correctAnswer": "وعدوں کی پاسداری کرنا",
+      "options": [
+        {
+          "text": "اونچی آواز میں بات کرنا",
+          "isCorrect": false,
+          "emoji": "📢"
+        },
+        {
+          "text": "بہانے بنانا",
+          "isCorrect": false,
+          "emoji": "🌀"
+        },
+        {
+          "text": "وعدوں کی پاسداری کرنا",
+          "isCorrect": true,
+          "emoji": "📌"
+        },
+        {
+          "text": "مزید مانگ رہا ہے۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        }
+      ]
+    }
+  ]
+}

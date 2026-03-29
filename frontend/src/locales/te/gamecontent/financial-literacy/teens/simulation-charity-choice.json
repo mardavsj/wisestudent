@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "అనుకరణ: ఛారిటీ ఎంపిక",
+  "subtitleComplete": "అనుకరణ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} దృశ్యం",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "ఇంపాక్ట్ vs ఎమోషన్",
+      "description": "మీరు ₹1000 విరాళం ఇవ్వాలనుకుంటున్నారు. ఏ ఎంపిక అత్యంత నిజమైన ప్రభావాన్ని సృష్టిస్తుంది?",
+      "options": [
+        {
+          "id": "street",
+          "text": "వీధిలో యాదృచ్ఛికంగా నగదు ఇవ్వండి",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "trusted",
+          "text": "స్పష్టమైన నివేదికలతో ధృవీకరించబడిన స్వచ్ఛంద సంస్థకు విరాళం ఇవ్వండి",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "viral",
+          "text": "ట్రెండింగ్ ఆన్‌లైన్ ప్రచారాలకు విరాళం ఇవ్వండి",
+          "emoji": "🔥",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "ఖచ్చితమైన క్షణం కోసం ఎప్పటికీ వేచి ఉండండి",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "స్వల్పకాలిక సహాయం vs దీర్ఘకాలిక మార్పు",
+      "description": "ఒక స్వచ్ఛంద సంస్థ ఈరోజు భోజనం లేదా నెలల తరబడి విద్యా సహాయాన్ని అందించగలదు. ఏది తెలివైనది?",
+      "options": [
+        {
+          "id": "education",
+          "text": "విద్య & నైపుణ్యాభివృద్ధికి మద్దతు",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "meals",
+          "text": "ఒకే సారి ఆహార పంపిణీ",
+          "emoji": "🍱",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "డబ్బును యాదృచ్ఛికంగా విభజించండి",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "దానం చేయడం మానుకోండి",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "పారదర్శకత తనిఖీ",
+      "description": "విరాళం ఇచ్చే ముందు, మీరు మొదట ఏమి తనిఖీ చేయాలి?",
+      "options": [
+        {
+          "id": "celebrity",
+          "text": "ప్రముఖుల ఆమోదం",
+          "emoji": "🌟",
+          "isCorrect": false
+        },
+        {
+          "id": "emotional",
+          "text": "ఎమోషనల్ కథలు మాత్రమే",
+          "emoji": "😢",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "text": "సామాజిక ఒత్తిడి",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "reports",
+          "text": "ఆర్థిక పారదర్శకత & ప్రభావ నివేదికలు",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ఛారిటీ vs వ్యక్తిగత వృద్ధి",
+      "description": "మీకు పరిమిత డబ్బు ఉంది. తాదాత్మ్యం మరియు ఆర్థిక భావన రెండింటినీ ఏది నిర్మిస్తుంది?",
+      "options": [
+        {
+          "id": "donate-blind",
+          "text": "అవగాహన లేకుండా దానం చేయండి",
+          "emoji": "🙃",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ప్రతిదీ మీ కోసం ఖర్చు చేయండి",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "కారణాల గురించి తెలుసుకోండి, ఆపై బుద్ధిపూర్వకంగా దానం చేయండి",
+          "emoji": "🧠",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "దానధర్మాలను పూర్తిగా మానుకోండి",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "సస్టైనబుల్ గివింగ్",
+      "description": "ఏ అలవాటు జీవితకాలంలో దాతృత్వాన్ని ప్రభావవంతంగా చేస్తుంది?",
+      "options": [
+        {
+          "id": "big-once",
+          "text": "ఒకసారి ఒక పెద్ద విరాళం",
+          "emoji": "💥",
+          "isCorrect": false
+        },
+        {
+          "id": "consistent",
+          "text": "చిన్న, సాధారణ, ప్రణాళిక ఇవ్వడం",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "guilt",
+          "text": "అపరాధ భావన కలిగినప్పుడు మాత్రమే దానం చేయండి",
+          "emoji": "😬",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "ప్రేరణ విరాళాలు",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

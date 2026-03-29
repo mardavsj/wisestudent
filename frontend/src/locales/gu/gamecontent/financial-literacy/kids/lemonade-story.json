@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "લેમોનેડ સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "🍋",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે લેમોનેડ સ્ટેન્ડમાંથી ₹50 કમાઓ છો. સ્માર્ટ પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "બધા રમકડાં પર ખર્ચો",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "નાસ્તો ખરીદો",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "પુરવઠા માટે અડધા સાચવો",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારે લીંબુ માટે ₹20ની જરૂર છે. તમારી પાસે ₹15 છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "save",
+          "text": "વધુ ₹5 બચાવો",
+          "emoji": "🙂",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "₹5 ઉધાર લો",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "લીંબુ ખરીદવાનું છોડી દો",
+          "emoji": "🍋",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ગ્રાહક ₹5ને બદલે ₹10 ચૂકવે છે. પ્રામાણિક શું છે?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "₹10 રાખો",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "વધારાના ₹5 પરત કરો",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "તે કેન્ડી પર ખર્ચો",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે ₹30 કમાઓ છો. તમારે આ બધું આજે ખર્ચવું જોઈએ?",
+      "options": [
+        {
+          "id": "no",
+          "text": "ના, આગલા સ્ટેન્ડ માટે સાચવો",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "હા, રમતો ખરીદો",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "તે દૂર આપો",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમારી લેમોનેડ સ્ટેન્ડની કમાણીનું આયોજન શા માટે સ્માર્ટ છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "તમને વધુ ખર્ચ કરવા દે છે",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "running",
+          "text": "તમારા સ્ટેન્ડને ચાલુ રાખે છે",
+          "emoji": "☀️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "customers",
+          "text": "તમને વધુ ગ્રાહકો મળે છે",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

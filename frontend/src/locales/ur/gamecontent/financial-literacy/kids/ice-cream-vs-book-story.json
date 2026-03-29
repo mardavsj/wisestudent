@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "آئس کریم بمقابلہ اسکول کی کتاب کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "📘",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ اسکول ختم کرتے ہیں اور بھوک محسوس کرتے ہیں، لیکن آپ کو ایک ورک بک کی بھی ضرورت ہے۔ بہترین انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "ابھی کے لیے آئس کریم خریدیں۔",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "ورک بک خریدیں۔",
+          "emoji": "📘",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "کچھ نہ خریدیں اور چھوڑ دیں۔",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "تم آج آئس کریم کھاؤ اور کل کتاب کے لیے پیسے نہیں بچے۔ آپ کیا سیکھتے ہیں؟",
+      "options": [
+        {
+          "id": "lesson",
+          "text": "رقم کی منصوبہ بندی اہم ہے۔",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "آئس کریم ہمیشہ بہترین ہوتی ہے۔",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "اگلی بار رقم ادھار لیں۔",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ایک کتاب امتحانات میں مدد کرتی ہے، اور آئس کریم جلدی پگھل جاتی ہے۔ کیا زیادہ دیر تک رہتا ہے؟",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "آئس کریم کی خوشی",
+          "emoji": "🍨",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "کتاب سے علم",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "both",
+          "text": "دونوں ایک جیسے چلتے ہیں۔",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ آج ایک کتاب خریدنے کا فیصلہ کرتے ہیں اور کسی اور دن آئس کریم سے لطف اندوز ہوتے ہیں۔ آپ کیا مہارت دکھاتے ہیں؟",
+      "options": [
+        {
+          "id": "luck",
+          "text": "گڈ لک",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "speed",
+          "text": "تیز فیصلہ سازی۔",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "patience",
+          "text": "Self-control",
+          "emoji": "🧘",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "جب آپ کتاب کا انتخاب کرتے ہیں تو آپ کے والدین مسکراتے ہیں۔ وہ خوش کیوں محسوس کرتے ہیں؟",
+      "options": [
+        {
+          "id": "cheap",
+          "text": "کتابیں سستی ہیں۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "آپ ذمہ دارانہ انتخاب کرتے ہیں۔",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "دوست کتابیں پسند کرتے ہیں۔",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

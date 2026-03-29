@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स ग्रोथ चेक",
+  "subtitlePlaying": "{{total}} पैकी {{current}} प्रश्न: आपल्या वाढीच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "subtitleReady": "आपल्या वाढीच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "readyEmoji": "📈",
+  "readyTitle": "तुमचे वाढीचे ज्ञान तपासण्यासाठी तयार आहात?",
+  "readyDescription": "प्रत्येक प्रश्नासाठी योग्य वाढ परिणाम निवडा.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "प्रश्न:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "जेव्हा तुमचे पैसे व्याज मिळवतात तेव्हा काय होते?",
+      "correctAnswer": "व्याज मिळाले",
+      "options": [
+        {
+          "text": "पैसा गमावला",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "व्याज मिळाले",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "बदल नाही",
+          "isCorrect": false,
+          "emoji": "😐"
+        },
+        {
+          "text": "पैसे चोरले",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "आपण वेळेवर बचत केल्यास काय होते?",
+      "correctAnswer": "बचत वाढली",
+      "options": [
+        {
+          "text": "बचत वाढली",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "पैसा खर्च झाला",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "पैसा गायब होतो",
+          "isCorrect": false,
+          "emoji": "👻"
+        },
+        {
+          "text": "काही होत नाही",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुमची गुंतवणूक यशस्वी झाल्यावर काय होते?",
+      "correctAnswer": "नफा झाला",
+      "options": [
+        {
+          "text": "नुकसान झाले",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "पैसे गोठवले",
+          "isCorrect": false,
+          "emoji": "🧊"
+        },
+        {
+          "text": "गुंतवणूक गेली",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "नफा झाला",
+          "isCorrect": true,
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "गुंतवणुकीचे मूल्य वाढते तेव्हा काय होते?",
+      "correctAnswer": "गुंतवणूक वाढली",
+      "options": [
+        {
+          "text": "गुंतवणूक वाढली",
+          "isCorrect": true,
+          "emoji": "🚀"
+        },
+        {
+          "text": "पैसे खाली",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "गुंतवणूक अडकली",
+          "isCorrect": false,
+          "emoji": "🔒"
+        },
+        {
+          "text": "मूल्य शून्य",
+          "isCorrect": false,
+          "emoji": "0️⃣"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "तुम्ही दीर्घ मुदतीसाठी शहाणपणाने गुंतवणूक केल्यास काय होते?",
+      "correctAnswer": "संपत्ती वाढते",
+      "options": [
+        {
+          "text": "निधी कमी होतो",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "संपत्ती तशीच राहते",
+          "isCorrect": false,
+          "emoji": "➡️"
+        },
+        {
+          "text": "संपत्ती वाढते",
+          "isCorrect": true,
+          "emoji": "🌳"
+        },
+        {
+          "text": "संपत्ती नाहीशी होते",
+          "isCorrect": false,
+          "emoji": "👻"
+        }
+      ]
+    }
+  ]
+}

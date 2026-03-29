@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ശമ്പള കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ഒരു യുവ തൊഴിലാളി പ്രതിമാസം 2000 രൂപ സമ്പാദിക്കുന്നു. അവരുടെ ശമ്പളം എന്തുചെയ്യണം?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "₹400 ലാഭിക്കൂ (20%)",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "പണം പാഴാക്കുക",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "തൊഴിലാളിക്ക് 500 രൂപ ബോണസ് ലഭിക്കും. അവർ അത് എങ്ങനെ കൈകാര്യം ചെയ്യണം?",
+      "options": [
+        {
+          "id": "save",
+          "text": "അതിൽ ഭൂരിഭാഗവും സംരക്ഷിക്കുക",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "എല്ലാം ആഡംബരത്തിനായി ചെലവഴിക്കുക",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ബോണസ് അവഗണിക്കുക",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "തൊഴിലാളിയുടെ ചെലവ് പ്രതിമാസം 1800 രൂപയായി വർദ്ധിക്കുന്നു. എന്താണ് സ്മാർട്ട് സമീപനം?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "സംരക്ഷിക്കുന്നത് നിർത്തുക",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "കൂടുതൽ ചെലവഴിക്കുക",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "സമ്പാദ്യം നിലനിർത്തുക",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "തൊഴിലാളിക്ക് 10% ശമ്പള വർദ്ധനവ് ലഭിക്കും. അധിക പണം അവർ എന്തുചെയ്യണം?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ജീവിതശൈലി നവീകരിക്കുക",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "സമ്പാദ്യം വർദ്ധിപ്പിക്കുക",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "അതെല്ലാം പാഴാക്കുക",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "10,000 രൂപയുടെ ഗാഡ്‌ജെറ്റ് വാങ്ങാൻ തൊഴിലാളി ആഗ്രഹിക്കുന്നു. എന്താണ് മികച്ച സമീപനം?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "EMI-യിൽ വാങ്ങുക",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "പണം കടം വാങ്ങുക",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "കാലക്രമേണ ലാഭിക്കുക",
+          "emoji": "⏳",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

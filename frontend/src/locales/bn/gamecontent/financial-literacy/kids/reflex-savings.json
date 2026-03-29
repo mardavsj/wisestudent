@@ -1,1 +1,149 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স সঞ্চয়",
+    "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: সঞ্চয়ের জ্ঞান পরীক্ষা করো!",
+    "subtitleReady": "সঞ্চয়ের জ্ঞান পরীক্ষা করো!",
+    "readyTitle": "সঞ্চয়ের দক্ষতা পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "বুদ্ধিমান সঞ্চয় কৌশল নিয়ে প্রশ্নের উত্তর দাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "রাউন্ড:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "টাকা সঞ্চয়ের সেরা উপায় কী?",
+            "correctAnswer": "সঞ্চয়ের লক্ষ্য নির্ধারণ করো",
+            "options": [
+                {
+                    "text": "এলোমেলোভাবে খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "সঞ্চয়ের লক্ষ্য নির্ধারণ করো",
+                    "isCorrect": true,
+                    "emoji": "🎯"
+                },
+                {
+                    "text": "টাকা ধার করো",
+                    "isCorrect": false,
+                    "emoji": "💳"
+                },
+                {
+                    "text": "সঞ্চয় উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "অতিরিক্ত টাকা দিয়ে কী করবে?",
+            "correctAnswer": "সঞ্চয় করো",
+            "options": [
+                {
+                    "text": "সঞ্চয় করো",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "সব খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "🛍️"
+                },
+                {
+                    "text": "হারাও",
+                    "isCorrect": false,
+                    "emoji": "📉"
+                },
+                {
+                    "text": "ভুলে যাও",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "নিয়মিত সঞ্চয়ে কী সাহায্য করে?",
+            "correctAnswer": "স্বয়ংক্রিয় ট্রান্সফার",
+            "options": [
+                {
+                    "text": "আবেগে কিনো",
+                    "isCorrect": false,
+                    "emoji": "🛒"
+                },
+                {
+                    "text": "স্বয়ংক্রিয় ট্রান্সফার",
+                    "isCorrect": true,
+                    "emoji": "🔄"
+                },
+                {
+                    "text": "কোনো পরিকল্পনা নেই",
+                    "isCorrect": false,
+                    "emoji": "📋"
+                },
+                {
+                    "text": "অনুপ্রেরণার অপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "⏳"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "একটি ভালো সঞ্চয়ের অভ্যাস কী?",
+            "correctAnswer": "আগে সঞ্চয়, পরে খরচ",
+            "options": [
+                {
+                    "text": "আগে খরচ, পরে সঞ্চয়",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "কখনো সঞ্চয় করো না",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "আগে সঞ্চয়, পরে খরচ",
+                    "isCorrect": true,
+                    "emoji": "🏦"
+                },
+                {
+                    "text": "কখনো কখনো সঞ্চয় করো",
+                    "isCorrect": false,
+                    "emoji": "⏰"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "টাকা সঞ্চয় কেন গুরুত্বপূর্ণ?",
+            "correctAnswer": "জরুরি প্রস্তুতি",
+            "options": [
+                {
+                    "text": "দেখানোর জন্য",
+                    "isCorrect": false,
+                    "emoji": "🏆"
+                },
+                {
+                    "text": "আবেগে কেনার জন্য",
+                    "isCorrect": false,
+                    "emoji": "🛒"
+                },
+                {
+                    "text": "কোনো কারণ নেই",
+                    "isCorrect": false,
+                    "emoji": "❓"
+                },
+                {
+                    "text": "জরুরি প্রস্তুতি",
+                    "isCorrect": true,
+                    "emoji": "🚑"
+                }
+            ]
+        }
+    ]
+}

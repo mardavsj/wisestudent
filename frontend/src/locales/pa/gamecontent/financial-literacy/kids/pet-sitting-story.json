@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਪਾਲਤੂ ਬੈਠਣ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "🐶",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ਪਾਲਤੂ ਜਾਨਵਰਾਂ ਨੂੰ ਖੁਆਉਣ ਅਤੇ ਤੁਰਨ ਲਈ ਰੋਜ਼ਾਨਾ ਰੁਟੀਨ ਬਣਾਉਂਦੇ ਹੋ। ਤੁਸੀਂ ਕਿਸ ਹੁਨਰ ਦਾ ਅਭਿਆਸ ਕਰ ਰਹੇ ਹੋ?",
+      "options": [
+        {
+          "id": "playing",
+          "text": "ਸਿਰਫ ਜਾਨਵਰਾਂ ਨਾਲ ਖੇਡਣਾ",
+          "emoji": "🎾",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "ਕਿਸਮਤ 'ਤੇ ਨਿਰਭਰ ਕਰਦਾ ਹੈ",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "planning",
+          "text": "ਯੋਜਨਾ ਅਤੇ ਸੰਗਠਨ",
+          "emoji": "📋",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ਸਮੇਂ ਦੇ ਨਾਲ ਪਾਲਤੂ ਜਾਨਵਰਾਂ ਦੇ ਬੈਠਣ ਤੋਂ ਪੈਸੇ ਕਮਾਉਂਦੇ ਹੋ। ਇੱਕ ਬੁੱਧੀਮਾਨ ਅਗਲਾ ਕਦਮ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "track",
+          "text": "ਟ੍ਰੈਕ ਕਰੋ ਕਿ ਤੁਸੀਂ ਕਿੰਨੀ ਕਮਾਈ ਕਰਦੇ ਹੋ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਇਸ ਨੂੰ ਤੁਰੰਤ ਖਰਚ ਕਰੋ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ਇਸ ਬਾਰੇ ਭੁੱਲ ਜਾਓ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਪਾਲਤੂ ਜਾਨਵਰ ਤੁਹਾਡੀ ਦੇਖਭਾਲ ਦੇ ਅਧੀਨ ਬਿਮਾਰ ਜਾਪਦਾ ਹੈ। ਤੁਹਾਨੂੰ ਪਹਿਲਾਂ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "wait",
+          "text": "ਉਡੀਕ ਕਰੋ ਅਤੇ ਉਮੀਦ ਕਰੋ ਕਿ ਇਸ ਵਿੱਚ ਸੁਧਾਰ ਹੋਵੇਗਾ",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "inform",
+          "text": "ਮਾਲਕ ਨੂੰ ਜਲਦੀ ਸੂਚਿਤ ਕਰੋ",
+          "emoji": "📞",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ਸੰਕੇਤਾਂ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਪਾਲਤੂ ਜਾਨਵਰ ਦੇ ਬੈਠਣ ਨੂੰ ਸਫਲਤਾਪੂਰਵਕ ਪੂਰਾ ਕਰਦੇ ਹੋ। ਤੁਹਾਨੂੰ ਦੁਬਾਰਾ ਭਰੋਸੇਮੰਦ ਹੋਣ ਵਿੱਚ ਕਿਹੜੀ ਚੀਜ਼ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "ਹੋਰ ਪੈਸੇ ਮੰਗ ਰਿਹਾ ਹੈ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rush",
+          "text": "ਕੰਮਾਂ ਵਿੱਚ ਕਾਹਲੀ",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "reliable",
+          "text": "ਭਰੋਸੇਯੋਗ ਅਤੇ ਸਾਵਧਾਨ ਹੋਣਾ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਪਾਲਤੂ ਬੈਠਾ ਤੁਹਾਨੂੰ ਸਿਖਾਉਂਦਾ ਹੈ ਕਿ ਪੈਸਾ ਕਮਾਉਣ ਦਾ ਵੀ ਮਤਲਬ ਹੈ?",
+      "options": [
+        {
+          "id": "care",
+          "text": "ਦੂਜਿਆਂ ਦੀ ਜ਼ਿੰਮੇਵਾਰੀ ਨਾਲ ਦੇਖਭਾਲ ਕਰਨਾ",
+          "emoji": "❤️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ਸਿਰਫ਼ ਮੌਜ-ਮਸਤੀ ਹੈ",
+          "emoji": "😄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spending",
+          "text": "ਜ਼ਿਆਦਾ ਪੈਸਾ ਖਰਚ ਕਰਨਾ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

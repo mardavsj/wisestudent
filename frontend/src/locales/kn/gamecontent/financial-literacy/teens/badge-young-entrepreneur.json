@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "ಬ್ಯಾಡ್ಜ್: ಯುವ ವಾಣಿಜ್ಯೋದ್ಯಮಿ",
+  "subtitleComplete": "ಬ್ಯಾಡ್ಜ್ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಸವಾಲು",
+  "challengeLabel": "ಸವಾಲು {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "ವ್ಯವಹಾರವನ್ನು ಪ್ರಾರಂಭಿಸುವುದು",
+      "question": "ವ್ಯವಹಾರವನ್ನು ಪ್ರಾರಂಭಿಸಲು ಮೊದಲ ಹಂತ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "ಒಳ್ಳೆಯ ಆಲೋಚನೆ ಮತ್ತು ಯೋಜನೆಯನ್ನು ಹೊಂದಿರಿ",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "ನಿಮ್ಮ ಎಲ್ಲಾ ಹಣವನ್ನು ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ಶಾಶ್ವತವಾಗಿ ನಿರೀಕ್ಷಿಸಿ",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "ಇತರರನ್ನು ನಿಖರವಾಗಿ ನಕಲಿಸಿ",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ವ್ಯಾಪಾರ ಯೋಜನೆ",
+      "question": "ಪ್ರಾರಂಭಿಸುವ ಮೊದಲು ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "ತಕ್ಷಣ ಪ್ರಾರಂಭಿಸಿ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "ಸಂಶೋಧನಾ ಮಾರುಕಟ್ಟೆ ಮತ್ತು ವೆಚ್ಚಗಳು",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ಯೋಜನೆಯನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ಯೋಚಿಸದೆ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ಹಣ ನಿರ್ವಹಣೆ",
+      "question": "ವ್ಯಾಪಾರದ ಹಣವನ್ನು ನೀವು ಹೇಗೆ ನಿರ್ವಹಿಸಬೇಕು?",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "ಹಣಕಾಸು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "ಆದಾಯ ಮತ್ತು ವೆಚ್ಚಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "ಟ್ರ್ಯಾಕಿಂಗ್ ಅಗತ್ಯವಿಲ್ಲ",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ಗ್ರಾಹಕ ಸೇವೆ",
+      "question": "ವ್ಯಾಪಾರದ ಯಶಸ್ಸಿಗೆ ಯಾವುದು ಮುಖ್ಯ?",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "ಗ್ರಾಹಕರನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "ಗ್ರಾಹಕರಿಗೆ ಮೋಸ",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "ಯಾವುದೇ ಸೇವೆ ಅಗತ್ಯವಿಲ್ಲ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "ಗ್ರಾಹಕರನ್ನು ತೃಪ್ತಿಪಡಿಸಿ",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ಬೆಳೆಯುತ್ತಿರುವ ವ್ಯಾಪಾರ",
+      "question": "ನಿಮ್ಮ ವ್ಯಾಪಾರವನ್ನು ಹೇಗೆ ಬೆಳೆಸಬೇಕು?",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "ಚಿಕ್ಕದಾಗಿ ಪ್ರಾರಂಭಿಸಿ ಕ್ರಮೇಣ ವಿಸ್ತರಿಸಿ",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "ತಕ್ಷಣವೇ ಬೃಹತ್ ಪ್ರಮಾಣದಲ್ಲಿ ಪ್ರಾರಂಭಿಸಿ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "ಎಂದಿಗೂ ಬೆಳೆಯುವುದಿಲ್ಲ",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "ಯೋಜನೆ ಇಲ್ಲದೆ ಬೆಳೆಯಿರಿ",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "ಯುವ ವಾಣಿಜ್ಯೋದ್ಯಮಿ ಬ್ಯಾಡ್ಜ್ ಗಳಿಸಲಾಗಿದೆ!",
+    "winMessage": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಸವಾಲುಗಳನ್ನು ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ! ನೀವು ನಿಜವಾದ ಯುವ ಉದ್ಯಮಿ ತಜ್ಞರು!",
+    "coinsEarned": "+{{score}} ನಾಣ್ಯಗಳು",
+    "lesson": "ಪಾಠ: ಯುವ ಉದ್ಯಮಿಗಳು ಉತ್ತಮ ಆಲೋಚನೆಗಳನ್ನು ಹೊಂದಿದ್ದಾರೆ, ಎಚ್ಚರಿಕೆಯಿಂದ ಯೋಜಿಸಿ, ಹಣಕಾಸುಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ, ಗ್ರಾಹಕರನ್ನು ತೃಪ್ತಿಪಡಿಸಿ ಮತ್ತು ಕ್ರಮೇಣವಾಗಿ ಬೆಳೆಯುತ್ತಾರೆ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ಕಲಿಯುತ್ತಲೇ ಇರಿ!",
+    "loseMessage": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಸವಾಲುಗಳನ್ನು ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ. ಉದ್ಯಮಶೀಲತೆಯೊಂದಿಗೆ ಅಭ್ಯಾಸವು ಪರಿಪೂರ್ಣವಾಗುತ್ತದೆ!",
+    "tryAgain": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "tip": "ಸಲಹೆ: ಯಾವಾಗಲೂ ಒಳ್ಳೆಯ ಆಲೋಚನೆ ಮತ್ತು ಯೋಜನೆ, ಸಂಶೋಧನಾ ಮಾರುಕಟ್ಟೆ ಮತ್ತು ವೆಚ್ಚಗಳು, ಹಣಕಾಸುಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ, ಗ್ರಾಹಕರನ್ನು ತೃಪ್ತಿಪಡಿಸಿ ಮತ್ತು ಸಣ್ಣದನ್ನು ಪ್ರಾರಂಭಿಸಿ!"
+  }
+}

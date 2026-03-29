@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स खर्च",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: आपल्या खर्चाच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "subtitleReady": "आपल्या खर्चाच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "readyTitle": "तुमच्या खर्च कौशल्याची चाचणी घेण्यासाठी तयार आहात?",
+  "readyDescription": "स्मार्ट खर्च आणि पैसे व्यवस्थापन बद्दल प्रश्नांची उत्तरे द्या.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "मोठी खरेदी करण्यापूर्वी तुम्ही काय करावे?",
+      "correctAnswer": "पुढे योजना करा",
+      "options": [
+        {
+          "text": "ताबडतोब खरेदी करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "पुढे योजना करा",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "मित्रांना विचारा",
+          "isCorrect": false,
+          "emoji": "👥"
+        },
+        {
+          "text": "खर्चाकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "तुमचा भत्ता खर्च करण्याचा सर्वात हुशार मार्ग कोणता आहे?",
+      "correctAnswer": "प्रथम काही जतन करा",
+      "options": [
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "जे काही विकत घ्या",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "प्रथम काही जतन करा",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "वाया घालवा",
+          "isCorrect": false,
+          "emoji": "🔥"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "आवेग खरेदी टाळण्यास काय मदत करते?",
+      "correctAnswer": "खरेदी करण्यापूर्वी प्रतीक्षा करा",
+      "options": [
+        {
+          "text": "खरेदी करण्यापूर्वी प्रतीक्षा करा",
+          "isCorrect": true,
+          "emoji": "⏳"
+        },
+        {
+          "text": "ताबडतोब खरेदी करा",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "अनेकदा खरेदी करा",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "विचार न करता खर्च करा",
+          "isCorrect": false,
+          "emoji": "🤔"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "खरेदी करताना आपण कशाची तुलना करावी?",
+      "correctAnswer": "किंमती आणि गुणवत्ता",
+      "options": [
+        {
+          "text": "फक्त रंग",
+          "isCorrect": false,
+          "emoji": "🎨"
+        },
+        {
+          "text": "फक्त ब्रँड",
+          "isCorrect": false,
+          "emoji": "🏷️"
+        },
+        {
+          "text": "Packaging",
+          "isCorrect": false,
+          "emoji": "📦"
+        },
+        {
+          "text": "किंमती आणि गुणवत्ता",
+          "isCorrect": true,
+          "emoji": "🔍"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "स्मार्ट खर्चाची पहिली पायरी काय आहे?",
+      "correctAnswer": "बजेट सेट करा",
+      "options": [
+        {
+          "text": "मुक्तपणे खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "बजेट सेट करा",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "सर्व काही खरेदी करा",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "मर्यादांकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    }
+  ]
+}

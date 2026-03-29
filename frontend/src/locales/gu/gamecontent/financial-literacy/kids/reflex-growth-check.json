@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ ગ્રોથ ચેક",
+  "subtitlePlaying": "{{total}} માંથી {{current}} પ્રશ્ન: તમારી વૃદ્ધિની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારી વૃદ્ધિની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "readyEmoji": "📈",
+  "readyTitle": "તમારા ગ્રોથ નોલેજ તપાસવા તૈયાર છો?",
+  "readyDescription": "દરેક પ્રશ્ન માટે યોગ્ય વૃદ્ધિ પરિણામ પસંદ કરો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "પ્રશ્ન:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "જ્યારે તમારા પૈસા વ્યાજ મેળવે છે ત્યારે શું થાય છે?",
+      "correctAnswer": "વ્યાજ મળ્યું",
+      "options": [
+        {
+          "text": "પૈસા ખોવાઈ ગયા",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "વ્યાજ મળ્યું",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "કોઈ ફેરફાર નથી",
+          "isCorrect": false,
+          "emoji": "😐"
+        },
+        {
+          "text": "પૈસા ચોરાઈ ગયા",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "જ્યારે તમે સમય સાથે બચત કરો છો ત્યારે શું થાય છે?",
+      "correctAnswer": "બચત વધી",
+      "options": [
+        {
+          "text": "બચત વધી",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "પૈસા ખર્ચ્યા",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "પૈસા અદૃશ્ય થઈ જાય છે",
+          "isCorrect": false,
+          "emoji": "👻"
+        },
+        {
+          "text": "કશું થતું નથી",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "જ્યારે તમારું રોકાણ સફળ થાય ત્યારે શું થાય છે?",
+      "correctAnswer": "નફો કર્યો",
+      "options": [
+        {
+          "text": "નુકસાન થયું",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "પૈસા સ્થિર",
+          "isCorrect": false,
+          "emoji": "🧊"
+        },
+        {
+          "text": "રોકાણ ગયું",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "નફો કર્યો",
+          "isCorrect": true,
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "જ્યારે રોકાણ મૂલ્ય વધે ત્યારે શું થાય છે?",
+      "correctAnswer": "રોકાણ વધ્યું",
+      "options": [
+        {
+          "text": "રોકાણ વધ્યું",
+          "isCorrect": true,
+          "emoji": "🚀"
+        },
+        {
+          "text": "પૈસા નીચે",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "રોકાણ અટક્યું",
+          "isCorrect": false,
+          "emoji": "🔒"
+        },
+        {
+          "text": "મૂલ્ય શૂન્ય",
+          "isCorrect": false,
+          "emoji": "0️⃣"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "જ્યારે તમે લાંબા ગાળા માટે સમજદારીપૂર્વક રોકાણ કરો છો ત્યારે શું થાય છે?",
+      "correctAnswer": "સંપત્તિ વધે છે",
+      "options": [
+        {
+          "text": "ભંડોળ સંકોચાય છે",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "સંપત્તિ સમાન રહે છે",
+          "isCorrect": false,
+          "emoji": "➡️"
+        },
+        {
+          "text": "સંપત્તિ વધે છે",
+          "isCorrect": true,
+          "emoji": "🌳"
+        },
+        {
+          "text": "સંપત્તિ અદૃશ્ય થઈ જાય છે",
+          "isCorrect": false,
+          "emoji": "👻"
+        }
+      ]
+    }
+  ]
+}

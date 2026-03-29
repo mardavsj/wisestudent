@@ -1,1 +1,143 @@
-﻿{}
+﻿{
+    "title": "প্রয়োজনের উপর কুইজ",
+    "subtitleComplete": "কুইজ সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}: প্রয়োজন সম্পর্কে তোমার জ্ঞান পরীক্ষা করো!",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "প্রতিদিন তোমার শরীর সচল রাখতে কোন জিনিসটি সাহায্য করে?",
+            "options": [
+                {
+                    "id": "snack",
+                    "text": "চিপস",
+                    "emoji": "🍟",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "water",
+                    "text": "পরিষ্কার পানীয় জল",
+                    "emoji": "🚰",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "toy",
+                    "text": "রিমোট কন্ট্রোল গাড়ি",
+                    "emoji": "🚗",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "স্কুলে সঠিকভাবে শিখতে কী দরকার?",
+            "options": [
+                {
+                    "id": "bag",
+                    "text": "স্কুলের ব্যাগ ও বই",
+                    "emoji": "🎒",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "game",
+                    "text": "মোবাইল গেম",
+                    "emoji": "🎮",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "cartoon",
+                    "text": "কার্টুন ভিডিও",
+                    "emoji": "📺",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "গরম ও ঠান্ডা থেকে কোনটি তোমাকে নিরাপদ রাখে?",
+            "options": [
+                {
+                    "id": "cap",
+                    "text": "ফ্যাশনের টুপি",
+                    "emoji": "🧢",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "shoes",
+                    "text": "পার্টির জুতা",
+                    "emoji": "👟",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "clothes",
+                    "text": "উপযুক্ত পোশাক",
+                    "emoji": "👕",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "বিশ্রাম ও বসবাসের জন্য মৌলিক প্রয়োজন কোনটি?",
+            "options": [
+                {
+                    "id": "house",
+                    "text": "একটি নিরাপদ বাড়ি",
+                    "emoji": "🏠",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "mall",
+                    "text": "শপিং মল",
+                    "emoji": "🏬",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "park",
+                    "text": "খেলার মাঠ",
+                    "emoji": "🛝",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "মানুষ কেন চাওয়ার আগে প্রয়োজনকে বেছে নেয়?",
+            "options": [
+                {
+                    "id": "fun",
+                    "text": "চাওয়া বেশি মজাদার",
+                    "emoji": "🎉",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "important",
+                    "text": "প্রয়োজন দৈনন্দিন জীবনের জন্য অপরিহার্য",
+                    "emoji": "⭐",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "friends",
+                    "text": "বন্ধুরা চাওয়া পছন্দ করে",
+                    "emoji": "👫",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

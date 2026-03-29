@@ -1,1 +1,150 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স প্রবৃদ্ধি চেক",
+    "subtitlePlaying": "প্রশ্ন {{current}} / {{total}}: প্রবৃদ্ধি রিফ্লেক্স পরীক্ষা করো!",
+    "subtitleReady": "প্রবৃদ্ধি রিফ্লেক্স পরীক্ষা করো!",
+    "readyEmoji": "📈",
+    "readyTitle": "প্রবৃদ্ধি জ্ঞান পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "প্রতিটি প্রশ্নের সঠিক প্রবৃদ্ধির ফলাফল বেছে নাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "প্রশ্ন:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "তোমার টাকায় সুদ পেলে কী হয়?",
+            "correctAnswer": "সুদ অর্জিত হয়",
+            "options": [
+                {
+                    "text": "টাকা হারায়",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "সুদ অর্জিত হয়",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "কোনো পরিবর্তন নেই",
+                    "isCorrect": false,
+                    "emoji": "😐"
+                },
+                {
+                    "text": "টাকা চুরি হয়",
+                    "isCorrect": false,
+                    "emoji": "😈"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "সময়ের সাথে সঞ্চয় করলে কী হয়?",
+            "correctAnswer": "সঞ্চয় বাড়ে",
+            "options": [
+                {
+                    "text": "সঞ্চয় বাড়ে",
+                    "isCorrect": true,
+                    "emoji": "📈"
+                },
+                {
+                    "text": "টাকা খরচ হয়",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "টাকা হারায়",
+                    "isCorrect": false,
+                    "emoji": "👻"
+                },
+                {
+                    "text": "কিছুই হয় না",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "বিনিয়োগ সফল হলে কী হয়?",
+            "correctAnswer": "মুনাফা হয়",
+            "options": [
+                {
+                    "text": "ক্ষতি হয়",
+                    "isCorrect": false,
+                    "emoji": "📉"
+                },
+                {
+                    "text": "টাকা জমে যায়",
+                    "isCorrect": false,
+                    "emoji": "🧊"
+                },
+                {
+                    "text": "বিনিয়োগ চলে যায়",
+                    "isCorrect": false,
+                    "emoji": "💔"
+                },
+                {
+                    "text": "মুনাফা হয়",
+                    "isCorrect": true,
+                    "emoji": "💵"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "বিনিয়োগের মূল্য বাড়লে কী হয়?",
+            "correctAnswer": "বিনিয়োগ বাড়ে",
+            "options": [
+                {
+                    "text": "বিনিয়োগ বাড়ে",
+                    "isCorrect": true,
+                    "emoji": "🚀"
+                },
+                {
+                    "text": "টাকা কমে",
+                    "isCorrect": false,
+                    "emoji": "📉"
+                },
+                {
+                    "text": "বিনিয়োগ আটকে যায়",
+                    "isCorrect": false,
+                    "emoji": "🔒"
+                },
+                {
+                    "text": "মূল্য শূন্য",
+                    "isCorrect": false,
+                    "emoji": "0️⃣"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "দীর্ঘমেয়াদে বুদ্ধিমানের সাথে বিনিয়োগ করলে কী হয়?",
+            "correctAnswer": "সম্পদ বাড়ে",
+            "options": [
+                {
+                    "text": "সম্পদ কমে",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "সম্পদ একই থাকে",
+                    "isCorrect": false,
+                    "emoji": "➡️"
+                },
+                {
+                    "text": "সম্পদ বাড়ে",
+                    "isCorrect": true,
+                    "emoji": "🌳"
+                },
+                {
+                    "text": "সম্পদ হারায়",
+                    "isCorrect": false,
+                    "emoji": "👻"
+                }
+            ]
+        }
+    ]
+}

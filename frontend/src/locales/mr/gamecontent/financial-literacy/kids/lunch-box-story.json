@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "लंच बॉक्स कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "🍽️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्ही मित्राचे जेवण उधार घ्या. पुढच्या दिवशी काय करावे?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "शेअर करा किंवा परत करा",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ते स्वतःसाठी ठेवा",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "त्याबद्दल विसरून जा",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमचा मित्र दुपारचे जेवण सामायिक करतो. तुम्ही कसा प्रतिसाद द्यावा?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "काहीही बोलू नका",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "परत काहीतरी शेअर करा",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "more",
+          "text": "आणखी दुपारचे जेवण घ्या",
+          "emoji": "🍴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमच्याकडे दुपारच्या जेवणासाठी ₹10 आहेत. मित्राला ₹5 आवश्यक आहेत. सर्वोत्तम काय आहे?",
+      "options": [
+        {
+          "id": "share",
+          "text": "मित्रासोबत ₹5 शेअर करा",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "all",
+          "text": "स्वतःवर सर्व खर्च करा",
+          "emoji": "🍔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "तुमचे पैसे लपवा",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही दुपारच्या जेवणाचे पैसे उधार घ्या. आपण परतफेड कधी करावी?",
+      "options": [
+        {
+          "id": "never",
+          "text": "कधीही परतफेड करू नका",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "स्नॅक्सवर खर्च करा",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "next",
+          "text": "वचन दिल्याप्रमाणे दुसऱ्या दिवशी",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "दुपारचे जेवण सामायिक करणे महत्वाचे का आहे?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "हे विश्वास आणि दयाळूपणा निर्माण करते",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "food",
+          "text": "तुम्हाला जास्त अन्न मिळते",
+          "emoji": "🍽️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "popular",
+          "text": "ते तुम्हाला लोकप्रिय बनवते",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

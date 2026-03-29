@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಮೊದಲು ಅಗತ್ಯವಿದೆ",
+  "subtitlePlaying": "ರೌಂಡ್ {{current}}/{{total}}: ಅಗತ್ಯಗಳ ವಿರುದ್ಧ ಅಗತ್ಯಗಳನ್ನು ಗುರುತಿಸಿ!",
+  "subtitleReady": "ಅಗತ್ಯಗಳ ವಿರುದ್ಧ ಅಗತ್ಯಗಳನ್ನು ಗುರುತಿಸಿ!",
+  "readyEmoji": "✅",
+  "readyTitle": "ನಿಮ್ಮ ಅಗತ್ಯಗಳನ್ನು ಮತ್ತು ವಾಂಟ್ಸ್ ಕೌಶಲ್ಯಗಳನ್ನು ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಅಗತ್ಯಗಳಿಗೆ ವಿರುದ್ಧವಾಗಿ ಅಗತ್ಯಗಳನ್ನು ಗುರುತಿಸುವ ಕುರಿತು ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಸುತ್ತು:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಇವುಗಳಲ್ಲಿ ಯಾವುದು ಮೂಲಭೂತ ಅವಶ್ಯಕತೆ?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "ವೀಡಿಯೊ ಆಟಗಳು",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍲"
+        },
+        {
+          "text": "ಡಿಸೈನರ್ ಬಟ್ಟೆ",
+          "isCorrect": false,
+          "emoji": "👗"
+        },
+        {
+          "text": "ಐಷಾರಾಮಿ ಕಾರು",
+          "isCorrect": false,
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಯಾವ ಐಟಂ ಶಿಕ್ಷಣದ ಅಗತ್ಯವನ್ನು ಪ್ರತಿನಿಧಿಸುತ್ತದೆ?",
+      "correctAnswer": "ಶಾಲಾ ಪುಸ್ತಕಗಳು",
+      "options": [
+        {
+          "text": "ಶಾಲಾ ಪುಸ್ತಕಗಳು",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "ದುಬಾರಿ ಆಟಿಕೆಗಳು",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Gadgets",
+          "isCorrect": false,
+          "emoji": "📱"
+        },
+        {
+          "text": "Snacks",
+          "isCorrect": false,
+          "emoji": "🍪"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ಆರೋಗ್ಯಕ್ಕೆ ಯಾವುದು ಅತ್ಯಗತ್ಯ?",
+      "correctAnswer": "Medicine",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        },
+        {
+          "text": "Medicine",
+          "isCorrect": true,
+          "emoji": "💊"
+        },
+        {
+          "text": "Jewelry",
+          "isCorrect": false,
+          "emoji": "💎"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಯಾವ ವಸ್ತುವು ಮೂಲಭೂತ ಅವಶ್ಯಕತೆಯಾಗಿದೆ?",
+      "correctAnswer": "Shelter",
+      "options": [
+        {
+          "text": "Vacation",
+          "isCorrect": false,
+          "emoji": "✈️"
+        },
+        {
+          "text": "Entertainment",
+          "isCorrect": false,
+          "emoji": "🎬"
+        },
+        {
+          "text": "ಐಷಾರಾಮಿ ಊಟ",
+          "isCorrect": false,
+          "emoji": "🍽️"
+        },
+        {
+          "text": "Shelter",
+          "isCorrect": true,
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ಮೂಲಭೂತ ಅವಶ್ಯಕತೆ ಯಾವುದು?",
+      "correctAnswer": "ಶುದ್ಧ ನೀರು",
+      "options": [
+        {
+          "text": "ಶುದ್ಧ ನೀರು",
+          "isCorrect": true,
+          "emoji": "🚰"
+        },
+        {
+          "text": "ಐಸ್ ಕ್ರೀಮ್",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ಡಿಸೈನರ್ ಬ್ಯಾಗ್",
+          "isCorrect": false,
+          "emoji": "👜"
+        },
+        {
+          "text": "ಕನ್ಸರ್ಟ್ ಟಿಕೆಟ್‌ಗಳು",
+          "isCorrect": false,
+          "emoji": "🎟️"
+        }
+      ]
+    }
+  ]
+}

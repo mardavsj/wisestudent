@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਖਿਡੌਣੇ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਇੱਕ ਦੋਸਤ ਤੁਹਾਨੂੰ ਇੱਕ ਖਿਡੌਣਾ ਉਧਾਰ ਦਿੰਦਾ ਹੈ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "ਇਸ ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੱਖੋ",
+          "emoji": "🛡️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "break",
+          "text": "ਇਸ ਨੂੰ ਤੋੜੋ",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਇਸ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਖਿਡੌਣਾ ਉਧਾਰ ਲਿਆ ਸੀ। ਹੁਣ ਕੀ?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ਇਸ ਨੂੰ ਰੱਖੋ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ਇਸ ਨੂੰ ਗੁਆ",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ਖਿਡੌਣਾ ਵਾਪਸ ਕਰੋ",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ਤੁਹਾਡੇ ਦੋਸਤ ਦਾ ਖਿਡੌਣਾ ਹੈ। ਸਭ ਤੋਂ ਵਧੀਆ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "care",
+          "text": "ਇਸ ਦੀ ਸੰਭਾਲ ਕਰੋ",
+          "emoji": "💝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "ਇਸ ਨੂੰ ਗੁਆ",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "break",
+          "text": "ਇਸ ਨੂੰ ਤੋੜੋ",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਮਾਲਕ ਖਿਡੌਣਾ ਵਾਪਸ ਮੰਗਦਾ ਹੈ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "ਇਸ ਨੂੰ ਲੁਕਾਓ",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ਇਸ ਨੂੰ ਵਾਪਸ ਦਿਓ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "delay",
+          "text": "ਵਾਪਸ ਆਉਣ ਵਿੱਚ ਦੇਰੀ",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਜਦੋਂ ਤੁਸੀਂ ਇੱਕ ਖਿਡੌਣਾ ਉਧਾਰ ਲੈਂਦੇ ਹੋ, ਤਾਂ ਤੁਹਾਡਾ ਕੀ ਫਰਜ਼ ਹੈ?",
+      "options": [
+        {
+          "id": "careless",
+          "text": "ਬੇਪਰਵਾਹ ਰਹੋ",
+          "emoji": "😓",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ਇਸ ਬਾਰੇ ਭੁੱਲ ਜਾਓ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "responsible",
+          "text": "ਜ਼ਿੰਮੇਵਾਰ ਬਣੋ",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

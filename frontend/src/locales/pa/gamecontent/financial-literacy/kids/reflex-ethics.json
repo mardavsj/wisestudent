@@ -1,1 +1,152 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ: ਨੈਤਿਕਤਾ",
+  "subtitleComplete": "ਖੇਡ ਪੂਰੀ!",
+  "roundLabel": "ਦੌਰ {{current}}/{{total}}",
+  "timeUp": "ਸਮਾਂ ਪੂਰਾ ਹੋ ਗਿਆ ਹੈ!",
+  "readyEmoji": "🎯",
+  "readyTitle": "ਤਿਆਰ ਰਹੋ!",
+  "readyDescription": "ਨੈਤਿਕ ਪੈਸੇ ਦੇ ਵਿਹਾਰ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ!",
+  "readyTimeInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰੇਕ ਸਵਾਲ ਲਈ {{time}} ਸਕਿੰਟ ਹਨ।",
+  "readyQuestionInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{time}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "gameRoundLabel": "ਗੋਲ:",
+  "gameTimeLabel": "ਸਮਾਂ:",
+  "gameScoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਤੁਹਾਨੂੰ ਹਮੇਸ਼ਾ ਪੈਸੇ ਨਾਲ ਕੀ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "Truth",
+      "options": [
+        {
+          "text": "Truth",
+          "isCorrect": true,
+          "emoji": "🗣️"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Deceive",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਹਾਨੂੰ ਵਿੱਤੀ ਮਾਮਲਿਆਂ ਨੂੰ ਕਿਵੇਂ ਸੰਭਾਲਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "Honest",
+      "options": [
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Honest",
+          "isCorrect": true,
+          "emoji": "💯"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Trick",
+          "isCorrect": false,
+          "emoji": "🃏"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਤੁਹਾਡੇ ਵਿੱਤੀ ਫੈਸਲੇ ਕੀ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ?",
+      "correctAnswer": "Fair",
+      "options": [
+        {
+          "text": "Unfair",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Biased",
+          "isCorrect": false,
+          "emoji": "🎯"
+        },
+        {
+          "text": "Fair",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "Partial",
+          "isCorrect": false,
+          "emoji": "📊"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਤੁਹਾਨੂੰ ਵਿੱਤੀ ਸਬੰਧਾਂ ਵਿੱਚ ਕੀ ਬਣਾਉਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "Trust",
+      "options": [
+        {
+          "text": "Trust",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "Deceive",
+          "isCorrect": false,
+          "emoji": "😈"
+        },
+        {
+          "text": "Manipulate",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Exploit",
+          "isCorrect": false,
+          "emoji": "💔"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਤੁਹਾਨੂੰ ਪੈਸੇ ਨਾਲ ਕਿਵੇਂ ਵਿਹਾਰ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "Ethical",
+      "options": [
+        {
+          "text": "Dishonest",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Unfair",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Corrupt",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Ethical",
+          "isCorrect": true,
+          "emoji": "🌟"
+        }
+      ]
+    }
+  ]
+}

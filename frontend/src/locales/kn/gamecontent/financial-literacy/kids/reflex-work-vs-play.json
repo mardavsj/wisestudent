@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ವರ್ಕ್ vs ಪ್ಲೇ",
+  "subtitlePlaying": "ಸುತ್ತು {{current}}/{{total}}: ನಿಮ್ಮ ಕೆಲಸವನ್ನು ಪರೀಕ್ಷಿಸಿ vs ಪ್ಲೇ ರಿಫ್ಲೆಕ್ಸ್‌ಗಳು!",
+  "subtitleReady": "ಪ್ಲೇ ರಿಫ್ಲೆಕ್ಸ್‌ಗಳ ವಿರುದ್ಧ ನಿಮ್ಮ ಕೆಲಸವನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyEmoji": "💼",
+  "readyTitle": "ಕೆಲಸ vs ಪ್ಲೇ ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಕೆಲಸ ಮತ್ತು ಆಟದ ನಡುವೆ ಸರಿಯಾದ ಕ್ರಮವನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಸುತ್ತು:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಹಣವನ್ನು ಗಳಿಸಲು ನಿಮಗೆ ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "Work",
+      "options": [
+        {
+          "text": "ಸಮಯ ವ್ಯರ್ಥ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ದಿನವಿಡೀ ಆಟವಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Work",
+          "isCorrect": true,
+          "emoji": "💼"
+        },
+        {
+          "text": "ಏನೂ ಮಾಡಬೇಡಿ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಕಲಿಯಲು ಮತ್ತು ಬೆಳೆಯಲು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "Study",
+      "options": [
+        {
+          "text": "Study",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "ದಿನವಿಡೀ ಆಟವಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ಕಲಿಕೆಯನ್ನು ಬಿಟ್ಟುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ಶಿಕ್ಷಣವನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ನಿಮ್ಮ ಗಳಿಕೆಯೊಂದಿಗೆ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಗಳಿಕೆಯನ್ನು ಉಳಿಸಿ",
+      "options": [
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಗಳಿಕೆಯನ್ನು ಉಳಿಸಿ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ವೇಸ್ಟ್ ಮನಿ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಮನೆಯಲ್ಲಿ ಸಹಾಯ ಮಾಡಲು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಕೆಲಸಗಳನ್ನು ಮಾಡಿ",
+      "options": [
+        {
+          "text": "ಕೆಲಸಗಳನ್ನು ಮಾಡಿ",
+          "isCorrect": true,
+          "emoji": "🧹"
+        },
+        {
+          "text": "ಕೆಲಸಗಳನ್ನು ಬಿಟ್ಟುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ಕೆಲಸವನ್ನು ತಪ್ಪಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ಸೋಮಾರಿಯಾಗಿರಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ಉತ್ಪಾದಕರಾಗಲು ನಿಮಗೆ ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "ಯೋಜನೆ ಕೆಲಸ",
+      "options": [
+        {
+          "text": "ಐಡಲ್ ಆಗಿರಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ಸಮಯ ವ್ಯರ್ಥ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "ಏನೂ ಮಾಡಬೇಡಿ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "ಯೋಜನೆ ಕೆಲಸ",
+          "isCorrect": true,
+          "emoji": "📋"
+        }
+      ]
+    }
+  ]
+}

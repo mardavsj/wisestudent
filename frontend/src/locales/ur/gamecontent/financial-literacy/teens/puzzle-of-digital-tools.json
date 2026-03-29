@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "پہیلی: ڈیجیٹل ٹولز",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "ڈیجیٹل ٹولز کو فنکشنز کے ساتھ میچ کریں ({{current}}/{{total}} مماثل)",
+  "toolsTitle": "ڈیجیٹل ٹولز",
+  "functionsTitle": "ڈیجیٹل افعال",
+  "matchButton": "Match",
+  "selectToolLabel": "ایک ڈیجیٹل ٹول منتخب کریں۔",
+  "selectedToolLabel": "منتخب کردہ: {{name}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "matchedLabel": "مماثل: {{current}}/{{total}}",
+  "resultSuccessHeader": "بہت اچھا کام!",
+  "resultSuccessSubheader": "آپ نے {{total}} ڈیجیٹل ٹولز میں سے {{score}} کو ان کے افعال کے ساتھ صحیح طریقے سے ملایا!",
+  "resultSuccessLesson": "سبق: ڈیجیٹل ٹولز کو سمجھنا آپ کو محفوظ آن لائن لین دین کرنے میں مدد کرتا ہے!",
+  "resultTryAgainHeader": "مشق کرتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} ڈیجیٹل ٹولز میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultTryAgainTip": "ٹپ: اس بارے میں سوچیں کہ ہر ڈیجیٹل ٹول اصل میں کیا کرتا ہے!",
+  "coinsEarned": "+{{coins}} سکے",
+  "tools": [
+    {
+      "id": 1,
+      "name": "UPI",
+      "emoji": "📱"
+    },
+    {
+      "id": 2,
+      "name": "ڈیبٹ کارڈ",
+      "emoji": "💳"
+    },
+    {
+      "id": 3,
+      "name": "OTP",
+      "emoji": "🔐"
+    },
+    {
+      "id": 4,
+      "name": "کیو آر کوڈ",
+      "emoji": "📷"
+    },
+    {
+      "id": 5,
+      "name": "CVV",
+      "emoji": "🔒"
+    }
+  ],
+  "functions": [
+    {
+      "id": 6,
+      "name": "فوری منتقلی",
+      "emoji": "⚡"
+    },
+    {
+      "id": 7,
+      "name": "بینک اخراجات",
+      "emoji": "🏦"
+    },
+    {
+      "id": 8,
+      "name": "سیکیورٹی کوڈ",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 9,
+      "name": "اسکین کریں اور ادائیگی کریں۔",
+      "emoji": "📲"
+    },
+    {
+      "id": 10,
+      "name": "کارڈ پروٹیکشن",
+      "emoji": "🧾"
+    }
+  ]
+}

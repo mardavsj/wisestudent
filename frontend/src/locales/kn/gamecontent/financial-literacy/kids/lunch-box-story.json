@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಲಂಚ್ ಬಾಕ್ಸ್ ಸ್ಟೋರಿ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "🍽️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನೀವು ಸ್ನೇಹಿತನ ಊಟವನ್ನು ಎರವಲು ಪಡೆಯುತ್ತೀರಿ. ಮರುದಿನ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ಹಂಚಿಕೊಳ್ಳಿ ಅಥವಾ ಹಿಂತಿರುಗಿ",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ಅದನ್ನು ನೀವೇ ಇಟ್ಟುಕೊಳ್ಳಿ",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ಅದನ್ನು ಮರೆತುಬಿಡಿ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನಿಮ್ಮ ಸ್ನೇಹಿತ ಊಟವನ್ನು ಹಂಚಿಕೊಳ್ಳುತ್ತಾನೆ. ನೀವು ಹೇಗೆ ಪ್ರತಿಕ್ರಿಯಿಸಬೇಕು?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "ಏನನ್ನೂ ಹೇಳಬೇಡ",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "ಮತ್ತೆ ಏನನ್ನಾದರೂ ಹಂಚಿಕೊಳ್ಳಿ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "more",
+          "text": "ಇನ್ನೂ ಹೆಚ್ಚಿನ ಊಟವನ್ನು ತೆಗೆದುಕೊಳ್ಳಿ",
+          "emoji": "🍴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನಿಮ್ಮ ಬಳಿ ಊಟಕ್ಕೆ ₹10 ಇದೆ. ಸ್ನೇಹಿತರಿಗೆ ₹5 ಬೇಕು. ಯಾವುದು ಉತ್ತಮ?",
+      "options": [
+        {
+          "id": "share",
+          "text": "₹5 ಅನ್ನು ಸ್ನೇಹಿತರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "all",
+          "text": "ಎಲ್ಲವನ್ನೂ ನಿಮಗಾಗಿ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🍔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ನಿಮ್ಮ ಹಣವನ್ನು ಮರೆಮಾಡಿ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ಊಟದ ಹಣವನ್ನು ಎರವಲು ಪಡೆಯುತ್ತೀರಿ. ನೀವು ಯಾವಾಗ ಮರುಪಾವತಿ ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "never",
+          "text": "ಎಂದಿಗೂ ಮರುಪಾವತಿ ಮಾಡಬೇಡಿ",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ಅದನ್ನು ತಿಂಡಿಗಳಿಗೆ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "next",
+          "text": "ಭರವಸೆಯಂತೆ ಮರುದಿನ",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಊಟವನ್ನು ಹಂಚಿಕೊಳ್ಳುವುದು ಏಕೆ ಮುಖ್ಯ?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "ಇದು ನಂಬಿಕೆ ಮತ್ತು ದಯೆಯನ್ನು ನಿರ್ಮಿಸುತ್ತದೆ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "food",
+          "text": "ನೀವು ಹೆಚ್ಚು ಆಹಾರವನ್ನು ಪಡೆಯುತ್ತೀರಿ",
+          "emoji": "🍽️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "popular",
+          "text": "ಇದು ನಿಮ್ಮನ್ನು ಜನಪ್ರಿಯಗೊಳಿಸುತ್ತದೆ",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

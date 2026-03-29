@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "પઝલ: ડિજિટલ ટૂલ્સ",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "ડિજિટલ ટૂલ્સને ફંક્શન્સ સાથે મેચ કરો ({{current}}/{{total}} મેચ થયેલ)",
+  "toolsTitle": "ડિજિટલ સાધનો",
+  "functionsTitle": "ડિજિટલ કાર્યો",
+  "matchButton": "Match",
+  "selectToolLabel": "ડિજિટલ ટૂલ પસંદ કરો",
+  "selectedToolLabel": "પસંદ કરેલ: {{name}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "matchedLabel": "મેળ ખાતી: {{current}}/{{total}}",
+  "resultSuccessHeader": "ગ્રેટ જોબ!",
+  "resultSuccessSubheader": "તમે {{total}} માંથી {{score}} ને તેમના કાર્યો સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultSuccessLesson": "પાઠ: ડિજિટલ ટૂલ્સને સમજવાથી તમને સુરક્ષિત ઑનલાઇન વ્યવહારો કરવામાં મદદ મળે છે!",
+  "resultTryAgainHeader": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultTryAgainSubheader": "તમે {{total}} માંથી {{score}} ને યોગ્ય રીતે મેળવ્યા છે.",
+  "resultTryAgainTip": "ટીપ: દરેક ડિજિટલ સાધન ખરેખર શું કરે છે તે વિશે વિચારો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "tools": [
+    {
+      "id": 1,
+      "name": "UPI",
+      "emoji": "📱"
+    },
+    {
+      "id": 2,
+      "name": "ડેબિટ કાર્ડ",
+      "emoji": "💳"
+    },
+    {
+      "id": 3,
+      "name": "OTP",
+      "emoji": "🔐"
+    },
+    {
+      "id": 4,
+      "name": "QR કોડ",
+      "emoji": "📷"
+    },
+    {
+      "id": 5,
+      "name": "CVV",
+      "emoji": "🔒"
+    }
+  ],
+  "functions": [
+    {
+      "id": 6,
+      "name": "ઇન્સ્ટન્ટ ટ્રાન્સફર",
+      "emoji": "⚡"
+    },
+    {
+      "id": 7,
+      "name": "બેંક ખર્ચ",
+      "emoji": "🏦"
+    },
+    {
+      "id": 8,
+      "name": "સુરક્ષા કોડ",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 9,
+      "name": "સ્કેન કરો અને ચૂકવો",
+      "emoji": "📲"
+    },
+    {
+      "id": 10,
+      "name": "કાર્ડ પ્રોટેક્શન",
+      "emoji": "🧾"
+    }
+  ]
+}

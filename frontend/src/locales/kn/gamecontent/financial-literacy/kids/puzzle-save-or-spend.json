@@ -1,1 +1,72 @@
-﻿{}
+{
+  "title": "ಒಗಟು: ಉಳಿಸಿ ಅಥವಾ ಖರ್ಚು ಮಾಡಿ",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಕ್ರಿಯೆಗಳೊಂದಿಗೆ ಐಟಂಗಳನ್ನು ಹೊಂದಿಸಿ ({{matched}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "itemsTitle": "Items",
+  "actionsTitle": "Actions",
+  "selectedLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "selectItem": "ಐಟಂ ಆಯ್ಕೆಮಾಡಿ",
+  "matchButton": "Match",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ:",
+  "resultGreatTitle": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultGreatDescription": "ನೀವು ಕ್ರಮಗಳೊಂದಿಗೆ {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ!",
+  "resultLesson": "ಪಾಠ: ಪ್ರಮುಖ ವಿಷಯಗಳಿಗಾಗಿ ಉಳಿತಾಯವು ಸುರಕ್ಷಿತ ಭವಿಷ್ಯವನ್ನು ನಿರ್ಮಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ!",
+  "resultKeepTitle": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultKeepDescription": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTip": "ಸಲಹೆ: ಪ್ರತಿಯೊಂದು ಐಟಂ ಅತ್ಯಗತ್ಯವೇ ಅಥವಾ ವಿವೇಚನೆಯೇ ಎಂಬುದನ್ನು ಯೋಚಿಸಿ!",
+  "items": [
+    {
+      "id": 1,
+      "name": "ಮನಿ ಬ್ಯಾಂಕ್",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "ಐಸ್ ಕ್ರೀಮ್",
+      "emoji": "🍦"
+    },
+    {
+      "id": 3,
+      "name": "ಹೊಸ ಬೈಸಿಕಲ್",
+      "emoji": "🚲"
+    },
+    {
+      "id": 4,
+      "name": "Candy",
+      "emoji": "🍬"
+    },
+    {
+      "id": 5,
+      "name": "ಶಾಲಾ ಪುಸ್ತಕಗಳು",
+      "emoji": "📚"
+    }
+  ],
+  "actions": [
+    {
+      "id": 6,
+      "name": "Save",
+      "emoji": "📥"
+    },
+    {
+      "id": 7,
+      "name": "Spend",
+      "emoji": "📤"
+    },
+    {
+      "id": 8,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 9,
+      "name": "Donate",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "Budget",
+      "emoji": "📋"
+    }
+  ]
+}

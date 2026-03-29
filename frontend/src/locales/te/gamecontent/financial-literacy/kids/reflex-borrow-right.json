@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ బారో రైట్",
+  "subtitlePlaying": "{{total}}లో {{current}} ప్రశ్న: మీ అరువు రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "subtitleReady": "మీ అరువు రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "readyEmoji": "🤝",
+  "readyTitle": "రుణం తీసుకోవడం గురించి తెలుసుకోవడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "వస్తువులు లేదా డబ్బును అప్పుగా తీసుకున్నప్పుడు సరైన చర్యను ఎంచుకోండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "ప్రశ్న:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ఏదైనా రుణం తీసుకునే ముందు మీరు ఏమి చేయాలి?",
+      "correctAnswer": "అనుమతి అడగండి",
+      "options": [
+        {
+          "text": "పట్టుకో",
+          "isCorrect": false,
+          "emoji": "🤏"
+        },
+        {
+          "text": "అడగకుండానే తీసుకోండి",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "అనుమతి అడగండి",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "యజమానిని విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "మీరు ఏదైనా రుణం ఎలా తీసుకోవాలి?",
+      "correctAnswer": "మర్యాదగా అప్పు తీసుకోండి",
+      "options": [
+        {
+          "text": "మర్యాదగా అప్పు తీసుకోండి",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "బలవంతంగా తీసుకోండి",
+          "isCorrect": false,
+          "emoji": "💪"
+        },
+        {
+          "text": "త్వరగా పట్టుకో",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "దాన్ని దొంగిలించండి",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "మీరు అరువు తెచ్చుకున్న వస్తువును ఏమి చేయాలి?",
+      "correctAnswer": "వస్తువును తిరిగి ఇవ్వండి",
+      "options": [
+        {
+          "text": "ఉంచుకో",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "దాచు",
+          "isCorrect": false,
+          "emoji": "🫥"
+        },
+        {
+          "text": "దాని గురించి మరచిపోండి",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "వస్తువును తిరిగి ఇవ్వండి",
+          "isCorrect": true,
+          "emoji": "↩️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "మీరు రుణంతో ఏమి చేయాలి?",
+      "correctAnswer": "రుణం తిరిగి చెల్లించండి",
+      "options": [
+        {
+          "text": "చెల్లింపును విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "రుణం తిరిగి చెల్లించండి",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "దానిని నివారించండి",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "అది మర్చిపో",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "మీరు రుణాన్ని ఎలా నిర్వహించాలి?",
+      "correctAnswer": "నిజాయితీగా ఉండండి",
+      "options": [
+        {
+          "text": "నిజాయితీగా ఉండండి",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "దాని గురించి అబద్ధం చెప్పండి",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "😏"
+        }
+      ]
+    }
+  ]
+}

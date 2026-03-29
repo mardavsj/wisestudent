@@ -1,1 +1,99 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਇਮਾਨਦਾਰ ਬਨਾਮ ਧੋਖਾਧੜੀ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਦਾ ਮੇਲ: ਇਮਾਨਦਾਰ/ਧੋਖਾਧੜੀ ਦੀਆਂ ਦੁਕਾਨਾਂ ਨੂੰ ਉਹਨਾਂ ਦੇ ਨਤੀਜਿਆਂ ਨਾਲ ਜੋੜੋ!",
+  "leftTitle": "ਦੁਕਾਨ ਦੀਆਂ ਕਿਸਮਾਂ",
+  "rightTitle": "Outcomes",
+  "instruction": "ਇੱਕ ਦੁਕਾਨ ਚੁਣੋ, ਫਿਰ ਮੈਚ ਕਰਨ ਲਈ ਇੱਕ ਨਤੀਜਾ ਚੁਣੋ!",
+  "items": [
+    {
+      "id": 1,
+      "name": "ਮੇਲੇ ਦੀ ਦੁਕਾਨ",
+      "emoji": "🏪"
+    },
+    {
+      "id": 2,
+      "name": "ਠੱਗੀ ਦੀ ਦੁਕਾਨ",
+      "emoji": "🍬"
+    },
+    {
+      "id": 3,
+      "name": "ਇਮਾਨਦਾਰ ਵਿਕਰੇਤਾ",
+      "emoji": "🙋"
+    },
+    {
+      "id": 4,
+      "name": "ਧੋਖਾਧੜੀ ਦੀ ਦੁਕਾਨ",
+      "emoji": "🎭"
+    },
+    {
+      "id": 5,
+      "name": "ਸਥਾਨਕ ਬਾਜ਼ਾਰ",
+      "emoji": "🛍️"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "Trust",
+      "emoji": "🤝"
+    },
+    {
+      "id": 7,
+      "name": "Loss",
+      "emoji": "😞"
+    },
+    {
+      "id": 8,
+      "name": "Gain",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Scam",
+      "emoji": "🚨"
+    },
+    {
+      "id": 10,
+      "name": "Savings",
+      "emoji": "💸"
+    }
+  ],
+  "correctMatches": [
+    {
+      "itemId": 1,
+      "outcomeId": 6
+    },
+    {
+      "itemId": 2,
+      "outcomeId": 7
+    },
+    {
+      "itemId": 3,
+      "outcomeId": 8
+    },
+    {
+      "itemId": 4,
+      "outcomeId": 9
+    },
+    {
+      "itemId": 5,
+      "outcomeId": 10
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "ਮੇਲ ਖਾਂਦਾ ਮਾਸਟਰ!",
+    "description": "ਸੰਪੂਰਣ! ਤੁਸੀਂ ਸਾਰੇ {{score}}/{{total}} ਨਾਲ ਸਹੀ ਤਰ੍ਹਾਂ ਮੇਲ ਖਾਂਦੇ ਹੋ! ਤੁਸੀਂ ਇਮਾਨਦਾਰੀ ਅਤੇ ਧੋਖਾਧੜੀ ਨੂੰ ਚੰਗੀ ਤਰ੍ਹਾਂ ਸਮਝਦੇ ਹੋ!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "ਅੱਛਾ ਕੰਮ!",
+    "description": "ਬਹੁਤ ਖੂਬ! ਤੁਸੀਂ {{score}}/{{total}} ਨਾਲ ਸਹੀ ਮੇਲ ਖਾਂਦੇ ਹੋ! ਇਮਾਨਦਾਰ ਕਾਰੋਬਾਰੀ ਅਭਿਆਸਾਂ ਬਾਰੇ ਸਿੱਖਦੇ ਰਹੋ!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+    "description": "ਤੁਸੀਂ {{score}}/{{total}} ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਹੋ। ਕਾਰਵਾਈਆਂ ਅਤੇ ਨਤੀਜਿਆਂ ਵਿਚਕਾਰ ਸਬੰਧਾਂ ਦੀ ਸਮੀਖਿਆ ਕਰੋ, ਫਿਰ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ!"
+  }
+}

@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "वादविवाद: बचत वि खर्च",
+  "subtitleComplete": "वादविवाद पूर्ण!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "पैसे वाचवणे किंवा ते सर्व खर्च करणे चांगले आहे का?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "सर्व खर्च करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "पैसे वाचवा",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "वाया घालवा",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "किशोरांनी आता त्यांचे पैसे वाचवण्यावर किंवा आनंद घेण्यावर लक्ष केंद्रित केले पाहिजे?",
+      "options": [
+        {
+          "id": "save",
+          "text": "बचत करण्यावर भर द्या",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "आता आनंद घ्या",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "याचा विचार करू नका",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "जेव्हा तुम्हाला बोनस किंवा अतिरिक्त पैसे मिळतात, तेव्हा तुम्ही काय करावे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ते सर्व खर्च करा",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "वाया घालवा",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "त्यातील बहुतांश बचत करा",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "महागड्या ब्रँडेड वस्तू किंवा परवडणाऱ्या दर्जाच्या वस्तू खरेदी करणे चांगले आहे का?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ब्रँडेड वस्तू खरेदी करा",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ब्रँडपेक्षा गुणवत्ता निवडा",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "cheap",
+          "text": "सर्वात स्वस्त खरेदी करा",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुम्हाला परवडत नसलेल्या गोष्टी खरेदी करण्यासाठी तुम्ही क्रेडिट कार्ड वापरावे का?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "होय, क्रेडिट वापरा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "पैसे उधार घ्या",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "नाही, कर्ज टाळा",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

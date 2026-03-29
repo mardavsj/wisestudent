@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ಚರ್ಚೆ: ನಗದು ವಿರುದ್ಧ ಆನ್‌ಲೈನ್ ಸುರಕ್ಷತೆ",
+  "subtitleComplete": "ಚರ್ಚೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ರೌಂಡ್",
+  "roundLabel": "ಸುತ್ತು {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "ಆನ್‌ಲೈನ್ ಹಣವು ನಗದುಗಿಂತ ಹೆಚ್ಚು ಅಪಾಯಕಾರಿಯೇ?",
+      "options": [
+        {
+          "id": "online-riskier",
+          "text": "ಆನ್‌ಲೈನ್ ಅಪಾಯಕಾರಿಯಾಗಿದೆ",
+          "emoji": "💻",
+          "isCorrect": false
+        },
+        {
+          "id": "both-safe",
+          "text": "ಇಬ್ಬರಿಗೂ ಸುರಕ್ಷತೆ ಬೇಕು",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "cash-riskier",
+          "text": "ನಗದು ಅಪಾಯಕಾರಿಯಾಗಿದೆ",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "ದೊಡ್ಡ ಮೊತ್ತಕ್ಕೆ ಯಾವುದು ಸುರಕ್ಷಿತವಾಗಿದೆ?",
+      "options": [
+        {
+          "id": "both-safe2",
+          "text": "ಎರಡೂ ಮುನ್ನೆಚ್ಚರಿಕೆಗಳೊಂದಿಗೆ",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "only-cash",
+          "text": "ನಗದು ಮಾತ್ರ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "only-online",
+          "text": "ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಮಾತ್ರ",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "ಆನ್‌ಲೈನ್ ಹಣದ ಮುಖ್ಯ ಅಪಾಯವೇನು?",
+      "options": [
+        {
+          "id": "no-risk",
+          "text": "ಯಾವುದೇ ಅಪಾಯಗಳಿಲ್ಲ",
+          "emoji": "😓",
+          "isCorrect": false
+        },
+        {
+          "id": "too-easy",
+          "text": "ಬಳಸಲು ತುಂಬಾ ಸುಲಭ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "hacking",
+          "text": "ಹ್ಯಾಕಿಂಗ್ ಮತ್ತು ವಂಚನೆ",
+          "emoji": "👾",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "ನೀವು ಆನ್‌ಲೈನ್ ಹಣವನ್ನು ಹೇಗೆ ರಕ್ಷಿಸಬಹುದು?",
+      "options": [
+        {
+          "id": "strong-password",
+          "text": "ಬಲವಾದ ಪಾಸ್‌ವರ್ಡ್‌ಗಳು ಮತ್ತು OTP",
+          "emoji": "🔐",
+          "isCorrect": true
+        },
+        {
+          "id": "no-protection",
+          "text": "ರಕ್ಷಣೆ ಅಗತ್ಯವಿಲ್ಲ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "share-details",
+          "text": "ವಿವರಗಳನ್ನು ಮುಕ್ತವಾಗಿ ಹಂಚಿಕೊಳ್ಳಿ",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "ಉತ್ತಮ ವಿಧಾನ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "only-one",
+          "text": "ಕೇವಲ ಒಂದು ವಿಧಾನವನ್ನು ಬಳಸಿ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "ಎರಡನ್ನೂ ಸುರಕ್ಷಿತವಾಗಿ ಸಮತೋಲನಗೊಳಿಸಿ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid-all",
+          "text": "ಎಲ್ಲಾ ಹಣವನ್ನು ತಪ್ಪಿಸಿ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

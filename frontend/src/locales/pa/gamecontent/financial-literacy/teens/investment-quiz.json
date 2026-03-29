@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਨਿਵੇਸ਼ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਕਿਹੜਾ ਜੋਖਮ ਭਰਿਆ ਪਰ ਉੱਚ ਰਿਟਰਨ ਹੈ?",
+      "options": [
+        {
+          "id": "fd",
+          "text": "ਫਿਕਸਡ ਡਿਪਾਜ਼ਿਟ",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "stocks",
+          "text": "ਸਟਾਕ ਮਾਰਕੀਟ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "savings",
+          "text": "ਬਚਤ ਖਾਤਾ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਕਿਹੜਾ ਨਿਵੇਸ਼ ਸਭ ਤੋਂ ਸੁਰੱਖਿਅਤ ਹੈ?",
+      "options": [
+        {
+          "id": "fd2",
+          "text": "ਫਿਕਸਡ ਡਿਪਾਜ਼ਿਟ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "stocks2",
+          "text": "Stocks",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "text": "Cryptocurrency",
+          "emoji": "₿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਵਿਭਿੰਨਤਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "one",
+          "text": "ਸਭ ਨੂੰ ਇੱਕ ਨਿਵੇਸ਼ ਵਿੱਚ ਪਾਓ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "ਸਾਰੇ ਨਿਵੇਸ਼ਾਂ ਤੋਂ ਬਚੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "spread",
+          "text": "ਵੱਖ-ਵੱਖ ਨਿਵੇਸ਼ਾਂ ਵਿੱਚ ਫੈਲਣਾ",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਮਿਉਚੁਅਲ ਫੰਡ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "mix",
+          "text": "ਸਟਾਕ ਅਤੇ ਬਾਂਡ ਦਾ ਮਿਸ਼ਰਣ",
+          "emoji": "📦",
+          "isCorrect": true
+        },
+        {
+          "id": "single",
+          "text": "ਸਿੰਗਲ ਕੰਪਨੀ ਸਟਾਕ",
+          "emoji": "📄",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ਬੈਂਕ ਖਾਤਾ",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਸਿਰਫ਼ ਬੱਚਤ ਕਰਨ ਦੀ ਬਜਾਏ ਨਿਵੇਸ਼ ਕਿਉਂ ਕਰੀਏ?",
+      "options": [
+        {
+          "id": "same",
+          "text": "ਬੱਚਤ ਦੇ ਸਮਾਨ",
+          "emoji": "➡️",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ਗੁਆਉਣ ਦੀ ਗਾਰੰਟੀ ਹੈ",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "ਤੇਜ਼ੀ ਨਾਲ ਵਧਣ ਦੀ ਸੰਭਾਵਨਾ",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਕਵਿਜ਼ ਪੂਰਾ!",
+    "winMessage": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਤੁਸੀਂ ਨਿਵੇਸ਼ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਸਟਾਕ ਜੋਖਮ ਭਰੇ ਹੁੰਦੇ ਹਨ ਪਰ ਉੱਚ ਰਿਟਰਨ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦੇ ਹਨ। ਫਿਕਸਡ ਡਿਪਾਜ਼ਿਟ ਸੁਰੱਖਿਅਤ ਹਨ ਪਰ ਘੱਟ ਰਿਟਰਨ ਹਨ। ਵਿਭਿੰਨਤਾ ਜੋਖਮ ਨੂੰ ਘਟਾਉਂਦੀ ਹੈ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਸਟਾਕ ਜੋਖਮ ਭਰੇ ਹੁੰਦੇ ਹਨ ਪਰ ਵੱਧ ਰਿਟਰਨ ਦਿੰਦੇ ਹਨ, ਜਦੋਂ ਕਿ FD ਸੁਰੱਖਿਅਤ ਹੁੰਦੇ ਹਨ ਪਰ ਘੱਟ ਰਿਟਰਨ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੰਕੇਤ: ਸਟਾਕ ਮਾਰਕੀਟ ਜੋਖਮ ਭਰਪੂਰ ਹੈ ਪਰ ਉੱਚ ਰਿਟਰਨ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਹੈ। ਫਿਕਸਡ ਡਿਪਾਜ਼ਿਟ ਸੁਰੱਖਿਅਤ ਹੁੰਦੇ ਹਨ ਪਰ ਰਿਟਰਨ ਘੱਟ ਹੁੰਦੇ ਹਨ। ਜੋਖਮ ਨੂੰ ਘਟਾਉਣ ਲਈ ਵਿਭਿੰਨਤਾ ਕਰੋ!"
+  }
+}

@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स बचत",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: आपल्या बचत ज्ञानाची चाचणी घ्या!",
+  "subtitleReady": "आपल्या बचत ज्ञानाची चाचणी घ्या!",
+  "readyTitle": "तुमच्या बचत कौशल्यांची चाचणी घेण्यासाठी तयार आहात?",
+  "readyDescription": "स्मार्ट बचत धोरणांबद्दल प्रश्नांची उत्तरे द्या.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "पैसे वाचवण्याचा सर्वोत्तम मार्ग कोणता आहे?",
+      "correctAnswer": "बचतीचे ध्येय सेट करा",
+      "options": [
+        {
+          "text": "यादृच्छिकपणे खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "बचतीचे ध्येय सेट करा",
+          "isCorrect": true,
+          "emoji": "🎯"
+        },
+        {
+          "text": "पैसे उधार घ्या",
+          "isCorrect": false,
+          "emoji": "💳"
+        },
+        {
+          "text": "बचतीकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "अतिरिक्त पैशाचे काय करावे?",
+      "correctAnswer": "ते जतन करा",
+      "options": [
+        {
+          "text": "ते जतन करा",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "तो गमावा",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "विसरून जा",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुम्हाला सातत्याने बचत करण्यात काय मदत होते?",
+      "correctAnswer": "स्वयंचलित हस्तांतरण",
+      "options": [
+        {
+          "text": "आवेगाने खर्च करा",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "स्वयंचलित हस्तांतरण",
+          "isCorrect": true,
+          "emoji": "🔄"
+        },
+        {
+          "text": "योजना नाही",
+          "isCorrect": false,
+          "emoji": "📋"
+        },
+        {
+          "text": "प्रेरणा साठी प्रतीक्षा करा",
+          "isCorrect": false,
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "बचतीची चांगली सवय काय आहे?",
+      "correctAnswer": "आधी बचत करा, नंतर खर्च करा",
+      "options": [
+        {
+          "text": "आधी खर्च करा, नंतर बचत करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "कधीही जतन करू नका",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "आधी बचत करा, नंतर खर्च करा",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "कधीकधी जतन करा",
+          "isCorrect": false,
+          "emoji": "⏰"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "पैसे वाचवणे महत्त्वाचे का आहे?",
+      "correctAnswer": "आणीबाणीची तयारी",
+      "options": [
+        {
+          "text": "दाखवा",
+          "isCorrect": false,
+          "emoji": "🏆"
+        },
+        {
+          "text": "आवेग खरेदी",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "कारण नाही",
+          "isCorrect": false,
+          "emoji": "❓"
+        },
+        {
+          "text": "आणीबाणीची तयारी",
+          "isCorrect": true,
+          "emoji": "🚑"
+        }
+      ]
+    }
+  ]
+}

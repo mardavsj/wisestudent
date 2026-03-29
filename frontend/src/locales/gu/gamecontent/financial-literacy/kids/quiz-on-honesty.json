@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "પ્રમાણિકતા પર ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "પ્રામાણિક કોણ છે?",
+      "options": [
+        {
+          "id": "cheat",
+          "text": "ગ્રાહકને છેતરે છે",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "change",
+          "text": "યોગ્ય ફેરફાર આપે છે",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lies",
+          "text": "Lies",
+          "emoji": "🙊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "પ્રામાણિક દુકાનદાર શું કરે છે?",
+      "options": [
+        {
+          "id": "fair",
+          "text": "વાજબી ભાવ વસૂલે છે",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "overcharge",
+          "text": "Overcharges",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ઉત્પાદનો છુપાવે છે",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "પ્રામાણિકતા ખરીદીમાં કેવી રીતે મદદ કરે છે?",
+      "options": [
+        {
+          "id": "free",
+          "text": "તમને મફત વસ્તુઓ મળે છે",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "તમને વધુ ખર્ચ કરે છે",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "વિશ્વાસ ઊભો કરે છે",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ઉધાર લેવાની પ્રામાણિક રીત કઈ છે?",
+      "options": [
+        {
+          "id": "return",
+          "text": "સમયસર પાછા ફરો",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "તેને કાયમ રાખો",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "more",
+          "text": "વધુ ઉધાર લો",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "પૈસાની બાબતોમાં પ્રામાણિકતા શા માટે મહત્ત્વની છે?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "તે તમને રમકડાં મેળવે છે",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "famous",
+          "text": "તે તમને પ્રખ્યાત બનાવે છે",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "તે વિશ્વાસ કમાય છે",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

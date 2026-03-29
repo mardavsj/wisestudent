@@ -1,1 +1,72 @@
-﻿{}
+{
+  "title": "پہیلی: بچائیں یا خرچ کریں۔",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "آئٹمز کو اعمال کے ساتھ میچ کریں ({{matched}}/{{total}} مماثل)",
+  "itemsTitle": "Items",
+  "actionsTitle": "Actions",
+  "selectedLabel": "منتخب کردہ: {{name}}",
+  "selectItem": "ایک آئٹم منتخب کریں۔",
+  "matchButton": "Match",
+  "scoreLabel": "سکور:",
+  "matchedLabel": "مماثل:",
+  "resultGreatTitle": "بہت اچھا کام!",
+  "resultGreatDescription": "آپ نے درست طریقے سے {{score}} میں سے {{total}} آئٹمز کو اعمال کے ساتھ ملایا!",
+  "resultLesson": "سبق: اہم چیزوں کے لیے بچت کرنا ایک محفوظ مستقبل کی تعمیر میں مدد کرتا ہے!",
+  "resultKeepTitle": "مشق کرتے رہیں!",
+  "resultKeepDescription": "آپ نے {{total}} آئٹمز میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultTip": "مشورہ: اس بارے میں سوچیں کہ آیا ہر چیز ضروری ہے یا صوابدیدی!",
+  "items": [
+    {
+      "id": 1,
+      "name": "منی بینک",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "آئس کریم",
+      "emoji": "🍦"
+    },
+    {
+      "id": 3,
+      "name": "نئی سائیکل",
+      "emoji": "🚲"
+    },
+    {
+      "id": 4,
+      "name": "Candy",
+      "emoji": "🍬"
+    },
+    {
+      "id": 5,
+      "name": "سکول کی کتابیں۔",
+      "emoji": "📚"
+    }
+  ],
+  "actions": [
+    {
+      "id": 6,
+      "name": "Save",
+      "emoji": "📥"
+    },
+    {
+      "id": 7,
+      "name": "Spend",
+      "emoji": "📤"
+    },
+    {
+      "id": 8,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 9,
+      "name": "Donate",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "Budget",
+      "emoji": "📋"
+    }
+  ]
+}

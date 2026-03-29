@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "बॅज: नैतिक वित्तपुरवठादार",
+  "subtitleComplete": "बॅज पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} आव्हान",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessTitle": "एथिकल फायनान्सर बॅज मिळवला!",
+  "resultSuccessText": "तुम्हाला {{total}} पैकी {{score}} आव्हाने योग्य मिळाली आहेत! तुम्ही खरे नैतिक फायनान्सर आहात!",
+  "resultSuccessLesson": "धडा: आर्थिक व्यवहारातील प्रामाणिकपणा आणि नैतिकता विश्वास आणि मजबूत प्रतिष्ठा निर्माण करतात.",
+  "resultFailTitle": "शिकत राहा!",
+  "resultFailText": "तुम्हाला {{total}} पैकी {{score}} आव्हाने योग्य मिळाली आहेत. नैतिक निवडी करण्याचा सराव करा!",
+  "resultFailTip": "टीप: झटपट नफ्यावर नेहमी प्रामाणिकपणा निवडा आणि तुम्हाला आढळणाऱ्या कोणत्याही अनैतिक वर्तनाची तक्रार करा!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "नैतिक दुविधा 1",
+      "question": "आपण अतिरिक्त पैसे शोधू. तुम्ही काय करता?",
+      "options": [
+        {
+          "text": "मालकाकडे परत या",
+          "emoji": "🤗",
+          "isCorrect": true
+        },
+        {
+          "text": "ठेवा",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "खर्च करा",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "text": "मित्रांसोबत शेअर करा",
+          "emoji": "👥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "नैतिक दुविधा 2",
+      "question": "मित्र तुम्हाला आर्थिक लाभासाठी खोटे बोलण्यास सांगतो. तुमचा प्रतिसाद?",
+      "options": [
+        {
+          "text": "खोटे बोलण्यास सहमत",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "खोटे बोलण्यास नकार द्या",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "text": "कदाचित मदत होईल",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "वाटा मागा",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "नैतिक दुविधा 3",
+      "question": "आर्थिक व्यवहारात कोणीतरी फसवणूक करताना दिसते. तुम्ही काय करता?",
+      "options": [
+        {
+          "text": "त्याकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "त्यांच्यात सामील व्हा",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "त्याची तक्रार करा",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "text": "शांतपणे पहा",
+          "emoji": "👀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "नैतिक दुविधा 4",
+      "question": "तुम्हाला काहीतरी अनैतिक करण्यासाठी पैसे दिले जातात. तुमची निवड?",
+      "options": [
+        {
+          "text": "ते मान्य करा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "text": "अधिक वाटाघाटी करा",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "text": "याचा विचार करा",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "ऑफर नाकारली",
+          "emoji": "🛑",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "नैतिक दुविधा 5",
+      "question": "तुम्ही अप्रामाणिक होऊन पैसे कमवू शकता. तुमचा निर्णय काय आहे?",
+      "options": [
+        {
+          "text": "प्रामाणिकपणा निवडा",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "text": "पैसे निवडा",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "दोन्ही करा",
+          "emoji": "🎭",
+          "isCorrect": false
+        },
+        {
+          "text": "निर्णय टाळा",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

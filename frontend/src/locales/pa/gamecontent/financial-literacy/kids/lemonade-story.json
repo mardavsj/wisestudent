@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਨਿੰਬੂ ਪਾਣੀ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "🍋",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਨਿੰਬੂ ਪਾਣੀ ਦੇ ਸਟੈਂਡ ਤੋਂ ₹50 ਕਮਾਉਂਦੇ ਹੋ। ਸਮਾਰਟ ਵਿਕਲਪ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ਖਿਡੌਣਿਆਂ 'ਤੇ ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ਸਨੈਕਸ ਖਰੀਦੋ",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਸਪਲਾਈ ਲਈ ਅੱਧਾ ਬਚਾਓ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਨੂੰ ਨਿੰਬੂ ਲਈ 20 ਰੁਪਏ ਦੀ ਲੋੜ ਹੈ। ਤੁਹਾਡੇ ਕੋਲ ₹15 ਹਨ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "₹5 ਹੋਰ ਬਚਾਓ",
+          "emoji": "🙂",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "₹5 ਉਧਾਰ ਲਓ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "ਨਿੰਬੂ ਖਰੀਦਣਾ ਛੱਡੋ",
+          "emoji": "🍋",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਇੱਕ ਗਾਹਕ ₹5 ਦੀ ਬਜਾਏ ₹10 ਦਾ ਭੁਗਤਾਨ ਕਰਦਾ ਹੈ। ਇਮਾਨਦਾਰ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "10 ਰੁਪਏ ਰੱਖੋ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ਵਾਧੂ ₹5 ਵਾਪਸ ਕਰੋ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ਇਸ ਨੂੰ ਕੈਂਡੀ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ₹30 ਕਮਾਉਂਦੇ ਹੋ। ਕੀ ਤੁਹਾਨੂੰ ਇਹ ਸਭ ਅੱਜ ਖਰਚ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "no",
+          "text": "ਨਹੀਂ, ਅਗਲੇ ਸਟੈਂਡ ਲਈ ਸੁਰੱਖਿਅਤ ਕਰੋ",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "ਹਾਂ, ਗੇਮਾਂ ਖਰੀਦੋ",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ਇਸ ਨੂੰ ਦੂਰ ਦਿਓ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਡੀ ਨਿੰਬੂ ਪਾਣੀ ਸਟੈਂਡ ਦੀ ਕਮਾਈ ਦੀ ਯੋਜਨਾ ਬਣਾਉਣਾ ਸਮਾਰਟ ਕਿਉਂ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਤੁਹਾਨੂੰ ਹੋਰ ਖਰਚ ਕਰਨ ਦਿੰਦਾ ਹੈ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "running",
+          "text": "ਆਪਣੇ ਸਟੈਂਡ ਨੂੰ ਚੱਲਦਾ ਰੱਖਦਾ ਹੈ",
+          "emoji": "☀️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "customers",
+          "text": "ਤੁਹਾਨੂੰ ਹੋਰ ਗਾਹਕ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

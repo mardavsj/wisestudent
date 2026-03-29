@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "કોયડો: ગ્રાહક અધિકાર",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "અર્થ સાથે મેચ અધિકારો ({{current}}/{{total}} મેળ ખાય છે)",
+  "rightsTitle": "ગ્રાહક અધિકાર",
+  "meaningsTitle": "Meanings",
+  "matchButton": "Match",
+  "selectRightLabel": "ગ્રાહક અધિકાર પસંદ કરો",
+  "selectedRightLabel": "પસંદ કરેલ: {{name}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "matchedLabel": "મેળ ખાતી: {{current}}/{{total}}",
+  "resultSuccessHeader": "ગ્રેટ જોબ!",
+  "resultSuccessSubheader": "તમે {{total}} ઉપભોક્તા અધિકારોમાંથી {{score}} ને તેમના અર્થ સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultSuccessLesson": "પાઠ: ઉપભોક્તા અધિકારોને સમજવું તમને અન્યાયી પ્રથાઓથી રક્ષણ આપે છે!",
+  "resultTryAgainHeader": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultTryAgainSubheader": "તમે {{total}} ઉપભોક્તા અધિકારોમાંથી {{score}} સાથે યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTryAgainTip": "ટીપ: દરેક ઉપભોક્તા અધિકાર શું રક્ષણ આપે છે તે વિશે વિચારો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "rights": [
+    {
+      "id": 1,
+      "name": "સલામતીનો અધિકાર",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 2,
+      "name": "માહિતીનો અધિકાર",
+      "emoji": "📋"
+    },
+    {
+      "id": 3,
+      "name": "પસંદ કરવાનો અધિકાર",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "નિવારણનો અધિકાર",
+      "emoji": "⚖️"
+    },
+    {
+      "id": 5,
+      "name": "ગ્રાહક શિક્ષણનો અધિકાર",
+      "emoji": "📚"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "સલામત ઉત્પાદનો",
+      "emoji": "🛒"
+    },
+    {
+      "id": 7,
+      "name": "સાચી માહિતી",
+      "emoji": "📝"
+    },
+    {
+      "id": 8,
+      "name": "પસંદગીની વિવિધતા",
+      "emoji": "🛒"
+    },
+    {
+      "id": 9,
+      "name": "સમસ્યાઓ માટે ઉપાય",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "જાગૃતિ ભવન",
+      "emoji": "🎓"
+    }
+  ]
+}

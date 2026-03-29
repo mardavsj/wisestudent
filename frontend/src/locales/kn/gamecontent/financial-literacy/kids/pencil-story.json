@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಪೆನ್ಸಿಲ್ ಕಥೆ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "✏️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನೀವು ಸ್ನೇಹಿತರಿಂದ ಪೆನ್ಸಿಲ್ ಅನ್ನು ಎರವಲು ಪಡೆಯುತ್ತೀರಿ. ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ಬಳಕೆಯ ನಂತರ ಅದನ್ನು ಹಿಂತಿರುಗಿಸಿ",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ಇಟ್ಟುಕೊಳ್ಳಿ",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನಿಮಗೆ ಪೆನ್ಸಿಲ್ ಅಗತ್ಯವಿದೆ ಆದರೆ ಒಂದು ಪೆನ್ಸಿಲ್ ಇಲ್ಲ. ಯಾವುದು ಸರಿ?",
+      "options": [
+        {
+          "id": "take",
+          "text": "ಕೇಳದೆ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ask",
+          "text": "ಸಾಲ ಮಾಡಿ ಹಿಂತಿರುಗಿಸಲು ಕೇಳಿ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "ಬರೆಯುವುದನ್ನು ಬಿಟ್ಟುಬಿಡಿ",
+          "emoji": "✍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ಎರವಲು ಪಡೆದ ಪೆನ್ಸಿಲ್ ಅನ್ನು ಮುರಿಯುತ್ತೀರಿ. ಪ್ರಾಮಾಣಿಕತೆ ಎಂದರೇನು?",
+      "options": [
+        {
+          "id": "replace",
+          "text": "ಅದನ್ನು ಹೊಸದರೊಂದಿಗೆ ಬದಲಾಯಿಸಿ",
+          "emoji": "🆕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ಅದನ್ನು ಮರೆಮಾಡಿ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "ಇನ್ನೊಬ್ಬರನ್ನು ದೂಷಿಸಿ",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನಿಮ್ಮ ಸ್ನೇಹಿತ ಪೆನ್ಸಿಲ್‌ಗೆ ₹5 ಸಾಲ ನೀಡುತ್ತಾನೆ. ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "ಅದನ್ನು ಕ್ಯಾಂಡಿಗೆ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ಮರುಪಾವತಿಯನ್ನು ಮರೆತುಬಿಡಿ",
+          "emoji": "😕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "ಸಮಯಕ್ಕೆ ₹5 ಮರುಪಾವತಿ ಮಾಡಿ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಎರವಲು ಪಡೆದ ವಸ್ತುಗಳನ್ನು ಹಿಂದಿರುಗಿಸುವುದು ಏಕೆ ಮುಖ್ಯ?",
+      "options": [
+        {
+          "id": "pencils",
+          "text": "ನೀವು ಹೆಚ್ಚು ಪೆನ್ಸಿಲ್ಗಳನ್ನು ಪಡೆಯುತ್ತೀರಿ",
+          "emoji": "✏️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ಇದು ನಂಬಿಕೆಯನ್ನು ನಿರ್ಮಿಸುತ್ತದೆ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "popular",
+          "text": "ಇದು ನಿಮ್ಮನ್ನು ಜನಪ್ರಿಯಗೊಳಿಸುತ್ತದೆ",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

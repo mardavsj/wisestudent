@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "દેવું ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "₹100 ઉધાર લો, ₹120 ચૂકવો. વધારાના ₹20 શું કહેવાય છે?",
+      "options": [
+        {
+          "id": "principal",
+          "text": "Principal",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "fee",
+          "text": "Fee",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "જો તમે સમયસર દેવું ચૂકવશો નહીં તો શું થશે?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "કશું થતું નથી",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "penalty",
+          "text": "પેનલ્ટી ફી અને વ્યાજમાં વધારો",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "દેવું મુક્ત બને છે",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ઉધાર લીધેલી મૂળ રકમને શું કહે છે?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "principal",
+          "text": "Principal",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "total",
+          "text": "કુલ દેવું",
+          "emoji": "📊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "પૈસા ઉધાર લેતા પહેલા તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "કેવી રીતે ચુકવણી કરવી તેની યોજના બનાવો",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "પહેલા ઉધાર લો, પછી વિચારો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ચુકવણીની અવગણના કરો",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "દેવાની સમસ્યાઓથી બચવાનો શ્રેષ્ઠ માર્ગ કયો છે?",
+      "options": [
+        {
+          "id": "borrow-more",
+          "text": "જૂનું દેવું ચૂકવવા માટે વધુ ઉધાર લો",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "બિનજરૂરી ઉધાર લેવાનું ટાળો અને સમયસર ચૂકવણી કરો",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "બધા દેવાની અવગણના કરો",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ડેટ ક્વિઝ સ્ટાર!",
+    "winMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે દેવું અને ઉધાર સમજો છો!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: વ્યાજ એ ઉધાર લેવાનો વધારાનો ખર્ચ છે. કેવી રીતે ચૂકવવું, બિનજરૂરી દેવું ટાળવું અને દંડ ટાળવા માટે સમયસર ચૂકવણી કેવી રીતે કરવી તેની હંમેશા યોજના બનાવો!",
+    "loseEmoji": "💪",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો: વ્યાજ એ પૈસા ઉધાર લેવાનો વધારાનો ખર્ચ છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટીપ: વ્યાજ એ વધારાની રકમ છે જે તમે ઉધાર લેતી વખતે ચૂકવો છો. હંમેશા ચુકવણીની યોજના બનાવો, બિનજરૂરી દેવું ટાળો અને સમયસર ચૂકવણી કરો!"
+  }
+}

@@ -1,1 +1,122 @@
-﻿{}
+{
+  "title": "डिजिटल मनी वर क्विझ",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "questionCount": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessHeader": "डिजिटल मनी क्विझ स्टार!",
+  "resultSuccessSubheader": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! तुम्ही डिजिटल पेमेंट सुरक्षिततेत प्रभुत्व मिळवत आहात!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "resultSuccessLesson": "धडा: तुमचा पिन गुप्त ठेवा, OTP वापरा, CVV लपवा, मजबूत पासवर्ड वापरा आणि सुरक्षित डिजिटल पेमेंटसाठी HTTPS तपासा!",
+  "resultTryAgainHeader": "शिकत राहा!",
+  "resultTryAgainSubheader": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. सराव डिजिटल पेमेंट सुरक्षिततेसह परिपूर्ण बनवते!",
+  "tryAgainButton": "पुन्हा प्रयत्न करा",
+  "resultTryAgainTip": "टीप: तुमचा पिन किंवा CVV कधीही शेअर करू नका, नेहमी OTP पडताळणी वापरा, मजबूत पासवर्ड तयार करा आणि वेबसाइटवर HTTPS तपासा!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कोणते सुरक्षित आहे?",
+      "options": [
+        {
+          "id": "secret",
+          "text": "पिन गुप्त ठेवा",
+          "emoji": "🔒"
+        },
+        {
+          "id": "share",
+          "text": "पिन शेअर करा",
+          "emoji": "🔓"
+        },
+        {
+          "id": "both",
+          "text": "मित्रांसोबत शेअर करा",
+          "emoji": "👥"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ऑनलाइन पेमेंटसाठी सुरक्षित काय आहे?",
+      "options": [
+        {
+          "id": "nootp",
+          "text": "OTP वगळा",
+          "emoji": "🚫"
+        },
+        {
+          "id": "otp",
+          "text": "OTP वापरा",
+          "emoji": "🔐"
+        },
+        {
+          "id": "ignore",
+          "text": "पडताळणीकडे दुर्लक्ष करा",
+          "emoji": "⚠️"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमचे कार्ड कोणते संरक्षित करते?",
+      "options": [
+        {
+          "id": "cvv",
+          "text": "CVV लपवा",
+          "emoji": "🛡️"
+        },
+        {
+          "id": "sharecvv",
+          "text": "CVV शेअर करा",
+          "emoji": "📢"
+        },
+        {
+          "id": "post",
+          "text": "CVV ऑनलाइन पोस्ट करा",
+          "emoji": "🌐"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "सुरक्षित सराव काय आहे?",
+      "options": [
+        {
+          "id": "weak",
+          "text": "'1234' वापरा",
+          "emoji": "⚠️"
+        },
+        {
+          "id": "strong",
+          "text": "मजबूत पासवर्ड",
+          "emoji": "🔑"
+        },
+        {
+          "id": "name",
+          "text": "तुमचे नाव वापरा",
+          "emoji": "👤"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "वेबसाइटची पडताळणी कशी करावी?",
+      "options": [
+        {
+          "id": "nohttps",
+          "text": "Ignore HTTPS",
+          "emoji": "🌐"
+        },
+        {
+          "id": "https",
+          "text": "HTTPS तपासा",
+          "emoji": "🔒"
+        },
+        {
+          "id": "trust",
+          "text": "सर्व साइट्सवर विश्वास ठेवा",
+          "emoji": "😊"
+        }
+      ]
+    }
+  ]
+}

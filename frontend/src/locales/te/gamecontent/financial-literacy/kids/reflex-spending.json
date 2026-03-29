@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ ఖర్చు",
+  "subtitlePlaying": "రౌండ్ {{current}}/{{total}}: మీ ఖర్చు రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "subtitleReady": "మీ ఖర్చు రిఫ్లెక్స్‌లను పరీక్షించుకోండి!",
+  "readyTitle": "మీ ఖర్చు నైపుణ్యాలను పరీక్షించడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "తెలివిగా ఖర్చు చేయడం మరియు డబ్బు నిర్వహణ గురించి ప్రశ్నలకు సమాధానం ఇవ్వండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "రౌండ్:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "పెద్ద కొనుగోలు చేయడానికి ముందు మీరు ఏమి చేయాలి?",
+      "correctAnswer": "ముందుగా ప్లాన్ చేయండి",
+      "options": [
+        {
+          "text": "వెంటనే కొనండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ముందుగా ప్లాన్ చేయండి",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "స్నేహితులను అడగండి",
+          "isCorrect": false,
+          "emoji": "👥"
+        },
+        {
+          "text": "ఖర్చును విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "మీ భత్యం ఖర్చు చేయడానికి తెలివైన మార్గం ఏమిటి?",
+      "correctAnswer": "ముందుగా కొంత సేవ్ చేయండి",
+      "options": [
+        {
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ఏమైనా కొనండి",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ముందుగా కొంత సేవ్ చేయండి",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "వేస్ట్ ఇట్",
+          "isCorrect": false,
+          "emoji": "🔥"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ప్రేరణ కొనుగోళ్లను నివారించడానికి మీకు ఏది సహాయపడుతుంది?",
+      "correctAnswer": "కొనడానికి ముందు వేచి ఉండండి",
+      "options": [
+        {
+          "text": "కొనడానికి ముందు వేచి ఉండండి",
+          "isCorrect": true,
+          "emoji": "⏳"
+        },
+        {
+          "text": "వెంటనే కొనండి",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "తరచుగా షాపింగ్ చేయండి",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "ఆలోచించకుండా ఖర్చు పెట్టండి",
+          "isCorrect": false,
+          "emoji": "🤔"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "షాపింగ్ చేసేటప్పుడు మీరు దేనితో పోల్చాలి?",
+      "correctAnswer": "ధరలు మరియు నాణ్యత",
+      "options": [
+        {
+          "text": "రంగులు మాత్రమే",
+          "isCorrect": false,
+          "emoji": "🎨"
+        },
+        {
+          "text": "బ్రాండ్‌లు మాత్రమే",
+          "isCorrect": false,
+          "emoji": "🏷️"
+        },
+        {
+          "text": "Packaging",
+          "isCorrect": false,
+          "emoji": "📦"
+        },
+        {
+          "text": "ధరలు మరియు నాణ్యత",
+          "isCorrect": true,
+          "emoji": "🔍"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "స్మార్ట్ ఖర్చులో మొదటి అడుగు ఏమిటి?",
+      "correctAnswer": "బడ్జెట్‌ను సెట్ చేయండి",
+      "options": [
+        {
+          "text": "స్వేచ్ఛగా ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "బడ్జెట్‌ను సెట్ చేయండి",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "ప్రతిదీ కొనండి",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "పరిమితులను విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    }
+  ]
+}

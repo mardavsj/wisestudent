@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "نمو پر کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "📈",
+  "questions": [
+    {
+      "id": 1,
+      "text": "پیسہ بڑھنے میں کیا مدد کرتا ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "اس کا سارا خرچ کرنا",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "اسے برباد کرنا",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "بچت + سود",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "بینک پیسہ بڑھنے میں کیسے مدد کرتا ہے؟",
+      "options": [
+        {
+          "id": "toys",
+          "text": "کھلونے دے کر",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "سود ادا کرکے",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "اپنے پیسے چھپا کر",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "پیسہ بڑھانے کا محفوظ طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "candy",
+          "text": "کینڈی خریدنا",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "home",
+          "text": "گھر میں نقد رقم رکھنا",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "بینک سیونگ اکاؤنٹ استعمال کرنا",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "سرمایہ کاری کیا کرتی ہے؟",
+      "options": [
+        {
+          "id": "grows",
+          "text": "آپ کا پیسہ بڑھتا ہے۔",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spends",
+          "text": "اپنا پیسہ خرچ کرتا ہے۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "loses",
+          "text": "ہمیشہ آپ کے پیسے کھو دیتا ہے",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "بینک میں پیسے کیوں بچائیں؟",
+      "options": [
+        {
+          "id": "toys",
+          "text": "فوری طور پر کھلونے خریدنے کے لیے",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "یہ دلچسپی کے ساتھ بڑھ سکتا ہے۔",
+          "emoji": "💹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "صرف اس لیے کہ یہ مزہ ہے۔",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

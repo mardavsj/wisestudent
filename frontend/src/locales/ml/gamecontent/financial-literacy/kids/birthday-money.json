@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "പിറന്നാൾ മണി കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "പിറന്നാൾ തുകയായി 100 രൂപ ലഭിക്കും. നീ എന്തുചെയ്യും?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "കളിപ്പാട്ടങ്ങൾക്കും മിഠായികൾക്കും എല്ലാം ചെലവഴിക്കുക",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "എല്ലാം അമ്മയ്ക്ക് സുരക്ഷിതമായി സൂക്ഷിക്കാൻ നൽകുക",
+          "emoji": "👩",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ഇത് വിഭജിക്കുക: ചിലത് വിനോദത്തിന്, ചിലത് സംരക്ഷിക്കാൻ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "'ജ്ഞാനപൂർവ്വം പിളരുക' എന്നതിൻ്റെ അർത്ഥമെന്താണ്?",
+      "options": [
+        {
+          "id": "gifts",
+          "text": "സുഹൃത്തുക്കളുടെ സമ്മാനങ്ങൾക്കായി പകുതി ചെലവഴിക്കുക",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "ചിലത് സമ്പാദ്യത്തിനും ചിലത് വിനോദത്തിനും വേണ്ടി സൂക്ഷിക്കുക",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "needs",
+          "text": "ആവശ്യങ്ങൾ മാത്രം വാങ്ങുക, ആവശ്യമില്ല",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിങ്ങളുടെ സമ്മാന പണത്തിൻ്റെ ഒരു ഭാഗം ലാഭിക്കുന്നത് നിങ്ങളെ സഹായിക്കുന്നു...",
+      "options": [
+        {
+          "id": "forget",
+          "text": "പണത്തെക്കുറിച്ച് മറക്കുക",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ഇപ്പോൾ കൂടുതൽ ചെലവഴിക്കുക",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bigger",
+          "text": "വലിയ സാധനങ്ങൾ പിന്നീട് വാങ്ങുക",
+          "emoji": "🚲",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങൾക്ക് പിന്നീട് വലിയ എന്തെങ്കിലും വാങ്ങണമെങ്കിൽ, എന്താണ് മികച്ചത്?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ചെറിയ തുകകൾ പതിവായി സൂക്ഷിക്കുക",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "സുഹൃത്തുക്കളിൽ നിന്ന് കടം വാങ്ങുക",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "അടുത്ത ജന്മദിനത്തിനായി കാത്തിരിക്കുക",
+          "emoji": "🎂",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "എന്താണ് സമതുലിതമായ തീരുമാനം?",
+      "options": [
+        {
+          "id": "all",
+          "text": "ഇന്ന് എല്ലാം ചെലവഴിക്കുക",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "enjoy",
+          "text": "ഒരു ട്രീറ്റ് ആസ്വദിച്ച് ബാക്കിയുള്ളത് സംരക്ഷിക്കുക",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "none",
+          "text": "എല്ലാം സംരക്ഷിക്കുക, രസകരമല്ല",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

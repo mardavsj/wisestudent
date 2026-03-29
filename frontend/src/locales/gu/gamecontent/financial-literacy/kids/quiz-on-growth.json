@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "વૃદ્ધિ પર ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "📈",
+  "questions": [
+    {
+      "id": 1,
+      "text": "પૈસા વધવા માટે શું મદદ કરે છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "એનો બધો જ ખર્ચ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "બગાડ",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "બચત + વ્યાજ",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "બેંક નાણાં વધારવામાં કેવી રીતે મદદ કરે છે?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "રમકડાં આપીને",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "વ્યાજ ચૂકવીને",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "તમારા પૈસા છુપાવીને",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "પૈસા વધારવાની સલામત રીત કઈ છે?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "કેન્ડી ખરીદી",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "home",
+          "text": "ઘરમાં રોકડ રાખવી",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "બેંક બચત ખાતાનો ઉપયોગ કરવો",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "રોકાણ શું કરે છે?",
+      "options": [
+        {
+          "id": "grows",
+          "text": "તમારા પૈસા વધે છે",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spends",
+          "text": "તમારા પૈસા ખર્ચે છે",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "loses",
+          "text": "હંમેશા તમારા પૈસા ગુમાવે છે",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "બેંકમાં પૈસા કેમ બચાવો?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "તરત જ રમકડાં ખરીદવા",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "તે રસ સાથે વધી શકે છે",
+          "emoji": "💹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "માત્ર કારણ કે તે મજા છે",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

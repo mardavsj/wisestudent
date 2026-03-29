@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ਗੁਆਚੇ ਸਿੱਕੇ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਨੂੰ ਖੇਡ ਦੇ ਮੈਦਾਨ ਦੇ ਨੇੜੇ ਇੱਕ ਚਮਕਦਾਰ ਸਿੱਕਾ ਮਿਲਦਾ ਹੈ. ਕੀ ਕਰਨਾ ਸਹੀ ਹੈ?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ਇਸ ਨੂੰ ਆਪਣੇ ਲਈ ਰੱਖੋ",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "ask_teacher",
+          "text": "ਅਧਿਆਪਕ ਨੂੰ ਦੇ ਦਿਓ",
+          "emoji": "🧑‍🏫",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ਇਸ ਨੂੰ ਜ਼ਮੀਨ 'ਤੇ ਛੱਡ ਦਿਓ",
+          "emoji": "🍂",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਨੂੰ ਲਾਇਬ੍ਰੇਰੀ ਵਿੱਚ ₹15 ਮਿਲਦੇ ਹਨ। ਕੋਈ ਵੀ ਆਸ ਪਾਸ ਨਹੀਂ ਹੈ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ਲਾਇਬ੍ਰੇਰੀਅਨ ਨੂੰ ਦੇ ਦਿਓ",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ਇਸਨੂੰ ਆਪਣੇ ਬੈਗ ਵਿੱਚ ਲੁਕਾਓ",
+          "emoji": "🎒",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਸਨੈਕਸ ਤੁਰੰਤ ਖਰੀਦੋ",
+          "emoji": "🍿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਇੱਕ ਦੋਸਤ ਨੂੰ ₹20 ਮਿਲੇ ਅਤੇ ਉਹ ਇਸਨੂੰ ਰੱਖਣਾ ਚਾਹੁੰਦਾ ਹੈ। ਤੁਸੀਂ ਕੀ ਸੁਝਾਅ ਦਿੰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ਇਸ ਨੂੰ ਚੁੱਪਚਾਪ ਰੱਖੋ",
+          "emoji": "😶",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਇਸ ਨੂੰ ਖੇਡਾਂ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ਮਿਲ ਕੇ ਮਾਲਕ ਨੂੰ ਲੱਭਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+          "emoji": "🕵️‍♂️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਨੂੰ ਇੱਕ ਦੁਕਾਨ 'ਤੇ ਗਲਤੀ ਨਾਲ ਵਾਧੂ ਤਬਦੀਲੀ ਪ੍ਰਾਪਤ ਹੁੰਦੀ ਹੈ. ਇਮਾਨਦਾਰ ਚੋਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ਵਾਧੂ ਪੈਸੇ ਰੱਖੋ",
+          "emoji": "🤑",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ਦੁਕਾਨਦਾਰ ਨੂੰ ਵਾਪਸ ਕਰ ਦਿਓ",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "ਕਿਸੇ ਦੋਸਤ ਨੂੰ ਦੇ ਦਿਓ",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਨੂੰ ਮਿਲੇ ਪੈਸੇ ਨਾਲ ਇਮਾਨਦਾਰੀ ਨਾਲ ਕੰਮ ਕਿਉਂ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "respect",
+          "text": "ਇਹ ਭਰੋਸਾ ਪੈਦਾ ਕਰਦਾ ਹੈ ਅਤੇ ਜ਼ਿੰਮੇਵਾਰੀ ਦਿਖਾਉਂਦਾ ਹੈ",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "buy_more",
+          "text": "ਤੁਸੀਂ ਹੋਰ ਚੀਜ਼ਾਂ ਖਰੀਦ ਸਕਦੇ ਹੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "ਇਹ ਤੁਰੰਤ ਕਿਸਮਤ ਲਿਆਉਂਦਾ ਹੈ",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

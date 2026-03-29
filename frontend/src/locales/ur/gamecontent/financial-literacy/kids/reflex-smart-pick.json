@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ریفلیکس اسمارٹ پک",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: اپنے سمارٹ پک علم کی جانچ کریں!",
+  "subtitleReady": "اپنے سمارٹ پک علم کی جانچ کریں!",
+  "readyEmoji": "🧠",
+  "readyTitle": "اپنی اسمارٹ پک سکلز کو جانچنے کے لیے تیار ہیں؟",
+  "readyDescription": "ہوشیار انتخاب اور فیصلہ سازی کے بارے میں سوالات کے جواب دیں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "صحت مند رہنے کے لیے سمارٹ پک کیا ہے؟",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍎"
+        },
+        {
+          "text": "اضافی آئس کریم",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ویڈیو گیم",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "فینسی کھلونا۔",
+          "isCorrect": false,
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ کو سیکھنے کے لیے کیا چننا چاہیے؟",
+      "correctAnswer": "اسکول کا سامان",
+      "options": [
+        {
+          "text": "نیا گیم",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "اسکول کا سامان",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ٹھنڈا گیجٹ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "روزمرہ کی زندگی کے لیے کیا ضروری ہے؟",
+      "correctAnswer": "Clothes",
+      "options": [
+        {
+          "text": "فینسی کھلونا۔",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Clothes",
+          "isCorrect": true,
+          "emoji": "👕"
+        },
+        {
+          "text": "آئس کریم",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ایکشن فگر",
+          "isCorrect": false,
+          "emoji": "🤖"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "آپ کو علم حاصل کرنے میں کیا مدد کرتا ہے؟",
+      "correctAnswer": "Books",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ویڈیو گیم",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "پہیلی کھیل",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "Books",
+          "isCorrect": true,
+          "emoji": "📖"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آپ کو اسکول جانے کے لیے کیا ضرورت ہے؟",
+      "correctAnswer": "بس ٹکٹ",
+      "options": [
+        {
+          "text": "ٹھنڈا گیجٹ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        },
+        {
+          "text": "میوزک پلیئر",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "بس ٹکٹ",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "اسمارٹ واچ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

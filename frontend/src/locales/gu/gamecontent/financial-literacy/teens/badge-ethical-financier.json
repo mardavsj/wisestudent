@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "બેજ: એથિકલ ફાઇનાન્સર",
+  "subtitleComplete": "બેજ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પડકાર",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "resultSuccessTitle": "એથિકલ ફાઇનાન્સર બેજ મેળવ્યો!",
+  "resultSuccessText": "તમને {{total}}માંથી {{score}} પડકારો સાચા મળ્યા છે! તમે સાચા એથિકલ ફાઇનાન્સર છો!",
+  "resultSuccessLesson": "પાઠ: નાણાકીય વ્યવહારોમાં પ્રમાણિકતા અને નૈતિકતા વિશ્વાસ અને મજબૂત પ્રતિષ્ઠા બનાવે છે.",
+  "resultFailTitle": "શીખતા રહો!",
+  "resultFailText": "તમને {{total}}માંથી {{score}} પડકારો સાચા મળ્યા. નૈતિક પસંદગીઓ કરવાની પ્રેક્ટિસ કરો!",
+  "resultFailTip": "ટિપ: ઝડપી લાભ કરતાં હંમેશા પ્રામાણિકતા પસંદ કરો અને તમને મળેલી કોઈપણ અનૈતિક વર્તણૂકની જાણ કરો!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "નૈતિક દુવિધા 1",
+      "question": "તમને વધારાના પૈસા મળશે. તમે શું કરશો?",
+      "options": [
+        {
+          "text": "માલિક પર પાછા ફરો",
+          "emoji": "🤗",
+          "isCorrect": true
+        },
+        {
+          "text": "રાખો",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "તે ખર્ચો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "text": "મિત્રો સાથે શેર કરો",
+          "emoji": "👥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "નૈતિક દુવિધા 2",
+      "question": "મિત્ર તમને નાણાકીય લાભ માટે જૂઠું બોલવાનું કહે છે. તમારો પ્રતિભાવ?",
+      "options": [
+        {
+          "text": "જૂઠું બોલવા માટે સંમત થાઓ",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "જૂઠું બોલવાનો ઇનકાર કરો",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "text": "કદાચ મદદ",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "શેર માટે પૂછો",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "નૈતિક દુવિધા 3",
+      "question": "તમે કોઈને નાણાકીય વ્યવહારમાં છેતરતી જોશો. તમે શું કરશો?",
+      "options": [
+        {
+          "text": "તેને અવગણો",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "તેમની સાથે જોડાઓ",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "તેની જાણ કરો",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "text": "ચૂપચાપ જુઓ",
+          "emoji": "👀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "નૈતિક દુવિધા 4",
+      "question": "તમને કંઈક અનૈતિક કરવા માટે પૈસાની ઓફર કરવામાં આવે છે. તમારી પસંદગી?",
+      "options": [
+        {
+          "text": "તેનો સ્વીકાર કરો",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "text": "વધુ વાટાઘાટો કરો",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "text": "તે વિશે વિચારો",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "ઓફરનો ઇનકાર કરો",
+          "emoji": "🛑",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "નૈતિક દુવિધા 5",
+      "question": "તમે અપ્રમાણિક બનીને પૈસા કમાઈ શકો છો. તમારો નિર્ણય શું છે?",
+      "options": [
+        {
+          "text": "પ્રામાણિકતા પસંદ કરો",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "text": "પૈસા પસંદ કરો",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "બંને કરો",
+          "emoji": "🎭",
+          "isCorrect": false
+        },
+        {
+          "text": "નિર્ણય ટાળો",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

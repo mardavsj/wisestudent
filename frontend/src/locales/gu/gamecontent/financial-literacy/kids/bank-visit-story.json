@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "બેંક મુલાકાત વાર્તા",
+  "subtitleComplete": "પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "માતાપિતા તમને બેંકમાં લઈ જાય છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "શાંતિથી જુઓ અને શીખો",
+          "emoji": "👀",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "આસપાસ દોડો અને રમો",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "touch",
+          "text": "દરેક વસ્તુને સ્પર્શ કરો",
+          "emoji": "👆",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "બેંક સ્ટાફ તમને શુભેચ્છા પાઠવે છે. કેવી રીતે પ્રતિભાવ આપવો?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "તેમને સંપૂર્ણપણે અવગણો",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "polite",
+          "text": "નમ્ર અને આદરપૂર્ણ બનો",
+          "emoji": "🙏",
+          "isCorrect": true
+        },
+        {
+          "id": "rude",
+          "text": "તેમની સાથે અસંસ્કારી બનો",
+          "emoji": "😠",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "માતા-પિતા એટીએમનો ઉપયોગ કરે છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "privacy",
+          "text": "પાછા ઊભા રહો અને ગોપનીયતા આપો",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "watch",
+          "text": "PIN ને નજીકથી જુઓ",
+          "emoji": "👁️",
+          "isCorrect": false
+        },
+        {
+          "id": "buttons",
+          "text": "રેન્ડમ બટનો દબાવો",
+          "emoji": "🔘",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "સુરક્ષા ગાર્ડ બેગ તપાસે છે. તમારી પ્રતિક્રિયા?",
+      "options": [
+        {
+          "id": "angry",
+          "text": "રક્ષક પર ગુસ્સો કરો",
+          "emoji": "😠",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "ચેકનો ઇનકાર કરો",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "understand",
+          "text": "સમજો કે તે સલામતી માટે છે",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "બેંકમાં લાંબી કતારો. શ્રેષ્ઠ શું છે?",
+      "options": [
+        {
+          "id": "push",
+          "text": "પહેલા જવા માટે દબાણ કરો",
+          "emoji": "👊",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "લાઈનમાં ધીરજપૂર્વક રાહ જુઓ",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "complain",
+          "text": "મોટેથી ફરિયાદ કરો",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

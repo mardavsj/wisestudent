@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "મની હોનેસ્ટી ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "જો તમને ₹10 મળે તો પ્રામાણિક પસંદગી કઈ છે?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "તેને શાંતિથી રાખો",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "તેને નાસ્તા પર ખર્ચો",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "તેને માલિકને પરત કરો",
+          "emoji": "🤝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમને ₹5નો વધારાનો ફેરફાર મળશે. શું કરવું યોગ્ય બાબત છે?",
+      "options": [
+        {
+          "id": "give",
+          "text": "વધારાના પાછા આપો",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "કેન્ડી ખરીદો",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "કંઈ બોલો",
+          "emoji": "😶",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમે ₹20 ઉધાર લો. પ્રામાણિક શું છે?",
+      "options": [
+        {
+          "id": "never",
+          "text": "ક્યારેય ચૂકવવું નહીં",
+          "emoji": "😞",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "તેને સમયસર ચૂકવો",
+          "emoji": "✅",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "તેના બદલે વધુ ખર્ચ કરો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે ₹15નું રમકડું તોડી નાખો. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "કહો અને ચૂકવણી કરવાની ઑફર કરો",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "તેને છુપાવો",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "બીજાને દોષ આપો",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "પૈસા સાથે પ્રમાણિકતા કેમ મહત્વપૂર્ણ છે?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "તે વિશ્વાસ કમાય છે",
+          "emoji": "😊",
+          "isCorrect": true
+        },
+        {
+          "id": "money",
+          "text": "તેનાથી તમને વધુ પૈસા મળે છે",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "તે તમને વધુ ખર્ચ કરવા દે છે",
+          "emoji": "🛒",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

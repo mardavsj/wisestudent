@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ধার নেওয়ার গল্প",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "কিশোর একটি নতুন ফোনের জন্য ধার নেয়। শোধ করতে পারবেন না? ফলাফল →",
+      "options": [
+        {
+          "id": "free",
+          "text": "বিনামূল্যে টাকা",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "Debt",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "কিছুই হয় না",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "আপনি ₹500 ধার করেন কিন্তু পরিশোধ করতে পারবেন না। এর পরিণতি কী?",
+      "options": [
+        {
+          "id": "forgiven",
+          "text": "ঋণ মাফ হয়",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "ignored",
+          "text": "উপেক্ষা করা যায়",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "সুদ ও জরিমানা বৃদ্ধি পায়",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "একটি চাওয়ার জন্য ধার করার আগে আপনার কি করা উচিত?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "আগে কীভাবে শোধ করবেন তা পরিকল্পনা করুন",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "আগে ধার, পরে ভাবুন",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ঋণ পরিশোধের পরিকল্পনা উপেক্ষা করুন",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ঋণ পরিশোধের পরিকল্পনা ছাড়াই ঋণ নেওয়া হয়?",
+      "options": [
+        {
+          "id": "success",
+          "text": "আর্থিক সাফল্য",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "text": "আর্থিক স্বাধীনতা",
+          "emoji": "🕊️",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "ঋণ সমস্যা",
+          "emoji": "⚠️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ধার নেওয়ার সর্বোত্তম পন্থা কী?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "চাহিদা জন্য প্রায়ই ধার",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "প্রয়োজন হলেই ধার নিন এবং পরিশোধের পরিকল্পনা করুন",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "ধার নিন কিন্তু শোধ করবেন না",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ধারের গল্প সম্পূর্ণ!",
+    "winMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন! দায়িত্বশীল ঋণ সম্পর্কে শেখার দুর্দান্ত কাজ!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: পরিশোধের পরিকল্পনা ছাড়াই ঋণ নেওয়া ঋণের দিকে নিয়ে যায়। সর্বদা পরিকল্পনা করুন কিভাবে ঋণ নেওয়ার আগে শোধ করবেন, বিশেষ করে চাহিদার জন্য!",
+    "loseEmoji": "💪",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন। মনে রাখবেন, একটি পরিকল্পনা ছাড়া ঋণ ঋণ সমস্যা বাড়ে!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "টিপ: ধার নেওয়ার আগে কীভাবে শোধ করবেন তা সর্বদা পরিকল্পনা করুন। ঋণ পরিশোধের পরিকল্পনা ছাড়াই ঋণ নেওয়ার ফলে ঋণ ও আর্থিক সমস্যা হয়!"
+  }
+}

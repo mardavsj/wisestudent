@@ -1,1 +1,150 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স ছোট ব্যবসা",
+    "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: ছোট ব্যবসার রিফ্লেক্স পরীক্ষা করো!",
+    "subtitleReady": "ছোট ব্যবসার রিফ্লেক্স পরীক্ষা করো!",
+    "readyEmoji": "🏪",
+    "readyTitle": "ছোট ব্যবসার দক্ষতা পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "ছোট ব্যবসা শুরু ও পরিচালনার প্রশ্নের উত্তর দাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "রাউন্ড:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "ছোট ব্যবসা শুরু করার ভালো উপায় কী?",
+            "correctAnswer": "বেক করে বিক্রি করো",
+            "options": [
+                {
+                    "text": "কিনে নষ্ট করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "সব খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "🛍️"
+                },
+                {
+                    "text": "বেক করে বিক্রি করো",
+                    "isCorrect": true,
+                    "emoji": "🍰"
+                },
+                {
+                    "text": "কিছুই করো না",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "দক্ষতা থেকে কীভাবে টাকা উপার্জন করবে?",
+            "correctAnswer": "হস্তশিল্প তৈরি করো",
+            "options": [
+                {
+                    "text": "হস্তশিল্প তৈরি করো",
+                    "isCorrect": true,
+                    "emoji": "🎨"
+                },
+                {
+                    "text": "সব খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "সময় নষ্ট করো",
+                    "isCorrect": false,
+                    "emoji": "⏰"
+                },
+                {
+                    "text": "দক্ষতা উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "অন্যদের কাছ থেকে টাকা উপার্জনে কী সাহায্য করে?",
+            "correctAnswer": "সেবা দাও",
+            "options": [
+                {
+                    "text": "কিছুই করো না",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "চিরতরে অপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "⏳"
+                },
+                {
+                    "text": "কাজ এড়িয়ে চলো",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "সেবা দাও",
+                    "isCorrect": true,
+                    "emoji": "🛠️"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "ব্যবসার মুনাফা দিয়ে কী করবে?",
+            "correctAnswer": "মুনাফা সঞ্চয় করো",
+            "options": [
+                {
+                    "text": "মুনাফা সঞ্চয় করো",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "মুনাফা খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "টাকা নষ্ট করো",
+                    "isCorrect": false,
+                    "emoji": "🔥"
+                },
+                {
+                    "text": "হারাও",
+                    "isCorrect": false,
+                    "emoji": "😞"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "তোমার ব্যবসা সফল করতে কী সাহায্য করে?",
+            "correctAnswer": "ব্যবসা বাড়াও",
+            "options": [
+                {
+                    "text": "টাকা নষ্ট করো",
+                    "isCorrect": false,
+                    "emoji": "🔥"
+                },
+                {
+                    "text": "ব্যবসা বাড়াও",
+                    "isCorrect": true,
+                    "emoji": "📈"
+                },
+                {
+                    "text": "হাল ছেড়ে দাও",
+                    "isCorrect": false,
+                    "emoji": "😞"
+                },
+                {
+                    "text": "ছোট থাকো",
+                    "isCorrect": false,
+                    "emoji": "📉"
+                }
+            ]
+        }
+    ]
+}

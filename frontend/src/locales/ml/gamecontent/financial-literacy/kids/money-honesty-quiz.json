@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "മണി സത്യസന്ധത ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionLabel": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "നിങ്ങൾ ₹10 കണ്ടെത്തിയാൽ സത്യസന്ധമായ തിരഞ്ഞെടുപ്പ് ഏതാണ്?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "നിശബ്ദമായി സൂക്ഷിക്കുക",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ലഘുഭക്ഷണത്തിനായി അത് ചെലവഴിക്കുക",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "അത് ഉടമയ്ക്ക് തിരികെ നൽകുക",
+          "emoji": "🤝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിങ്ങൾക്ക് ₹5 അധിക മാറ്റം ലഭിക്കും. എന്താണ് ചെയ്യേണ്ട ശരിയായ കാര്യം?",
+      "options": [
+        {
+          "id": "give",
+          "text": "അധിക തുക തിരികെ നൽകുക",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "മിഠായി വാങ്ങുക",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ഒന്നും പറയരുത്",
+          "emoji": "😶",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിങ്ങൾ ₹20 കടം വാങ്ങുന്നു. എന്താണ് സത്യസന്ധത?",
+      "options": [
+        {
+          "id": "never",
+          "text": "ഒരിക്കലും തിരിച്ചടക്കരുത്",
+          "emoji": "😞",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "കൃത്യസമയത്ത് അത് തിരിച്ചടയ്ക്കുക",
+          "emoji": "✅",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "പകരം കൂടുതൽ ചെലവഴിക്കുക",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങൾ ₹15 കളിപ്പാട്ടം തകർക്കുക. നീ എന്ത് ചെയ്യുന്നു?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "പറയുകയും പണം നൽകുകയും ചെയ്യുക",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "അത് മറയ്ക്കുക",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "മറ്റൊരാളെ കുറ്റപ്പെടുത്തുക",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "പണത്തോടുള്ള സത്യസന്ധത പ്രധാനമായിരിക്കുന്നത് എന്തുകൊണ്ട്?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "അത് വിശ്വാസം നേടുന്നു",
+          "emoji": "😊",
+          "isCorrect": true
+        },
+        {
+          "id": "money",
+          "text": "ഇത് നിങ്ങൾക്ക് കൂടുതൽ പണം ലഭിക്കുന്നു",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "കൂടുതൽ ചെലവഴിക്കാൻ ഇത് നിങ്ങളെ അനുവദിക്കുന്നു",
+          "emoji": "🛒",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "સ્ટાર્ટઅપ સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "perfectScoreTitle": "વાર્તા પૂર્ણ!",
+  "perfectScoreMsg": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે સ્ટાર્ટઅપ રોકાણને સમજો છો!",
+  "coinsLabel": "+{{count}} સિક્કા",
+  "lessonLabel": "પાઠ: જ્યારે સારી રીતે સંશોધન અને આયોજન કરવામાં આવે ત્યારે સ્ટાર્ટઅપ રોકાણો સ્માર્ટ હોઈ શકે છે, પરંતુ હંમેશા વિવિધતા અને જોખમોને સમજો!",
+  "keepLearningTitle": "શીખતા રહો!",
+  "lowScoreMsg": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, સ્ટાર્ટઅપ રોકાણ માટે સંશોધન, આયોજન અને વૈવિધ્યકરણની જરૂર છે!",
+  "tryAgain": "ફરી પ્રયાસ કરો",
+  "tipLabel": "ટીપ: જ્યારે તમે સંશોધન કરો, આયોજન કરો અને વૈવિધ્યીકરણ કરો ત્યારે સ્ટાર્ટઅપ રોકાણો સ્માર્ટ હોઈ શકે છે. ₹100→₹150 જેવું 50% વળતર સારું છે!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "મિત્ર લેમોનેડ સ્ટેન્ડમાં ₹100નું રોકાણ કરે છે. ₹150 કમાય છે. સ્માર્ટ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "હા, સારું વળતર",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ના, ખૂબ જોખમી",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "કદાચ, આધાર રાખે છે",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "શું સ્ટાર્ટઅપ રોકાણને સ્માર્ટ બનાવે છે?",
+      "options": [
+        {
+          "id": "research",
+          "text": "સંશોધન અને આયોજન",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "શુદ્ધ નસીબ",
+          "emoji": "🍀",
+          "isCorrect": false
+        },
+        {
+          "id": "quick",
+          "text": "ઝડપી નિર્ણય",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "શું તમારે તમારા બધા પૈસા એક સ્ટાર્ટઅપમાં રોકાણ કરવા જોઈએ?",
+      "options": [
+        {
+          "id": "all",
+          "text": "હા, બધા અંદર જાઓ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "ના, વિવિધતા",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "સ્ટાર્ટઅપ્સ ટાળો",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "સ્ટાર્ટઅપ રોકાણ પર સારું વળતર શું છે?",
+      "options": [
+        {
+          "id": "high",
+          "text": "ઉચ્ચ વળતર સંભવિત",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "guaranteed",
+          "text": "ખાતરીપૂર્વક વળતર",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "low",
+          "text": "માત્ર ઓછું વળતર",
+          "emoji": "📉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "સ્ટાર્ટઅપમાં રોકાણ ક્યારે સારો વિચાર છે?",
+      "options": [
+        {
+          "id": "never",
+          "text": "Never",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "text": "જ્યારે સુઆયોજિત",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "Always",
+          "emoji": "🙂",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

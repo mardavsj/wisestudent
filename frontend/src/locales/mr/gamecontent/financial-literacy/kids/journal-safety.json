@@ -1,1 +1,50 @@
-﻿{}
+{
+  "title": "जर्नल ऑफ सेफ्टी",
+  "subtitleComplete": "जर्नल पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न: पैशासह सुरक्षित राहण्यावर विचार करा!",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "minLengthPrompt": "किमान {{minLength}} वर्ण लिहा",
+  "textareaPlaceholder": "तुमची जर्नल एंट्री इथे लिहा...",
+  "charactersLabel": "characters",
+  "submitFinalButton": "अंतिम एंट्री सबमिट करा",
+  "submitContinueButton": "सबमिट करा आणि सुरू ठेवा",
+  "entryLabel": "तुमचे उत्तर:",
+  "minLengthLabel": "किमान {{min}} वर्ण",
+  "stages": [
+    {
+      "question": "लिहा: \"मी फसवणूक टाळण्याचा एक मार्ग म्हणजे ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"मी ___ पर्यंत पैशाने सुरक्षित राहीन.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"मी पैशाचा घोटाळा टाळला तेव्हा ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"मी पैसे सुरक्षित ठेवण्याबद्दल ___ शिकलो.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"पैशाची काळजी घेतल्याने मला ___ वाटते.\"",
+      "minLength": 10
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "सुरक्षा तज्ञ!",
+    "description": "उत्कृष्ट! तुम्ही {{score}}/{{total}} स्कोअर केले! तुमचे प्रतिबिंब आर्थिक सुरक्षिततेबद्दल खूप जागरूकता दर्शवतात!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "चांगले प्रतिबिंब!",
+    "description": "शाब्बास! तुम्ही {{score}}/{{total}} स्कोअर केले! पैशाने सुरक्षित कसे राहायचे याचा विचार करत रहा!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "चिंतन करत रहा!",
+    "description": "तुम्ही {{score}}/{{total}} स्कोअर केले. तुमची जागरूकता निर्माण करण्यासाठी आर्थिक सुरक्षिततेबद्दल जर्नलिंग सुरू ठेवा!"
+  }
+}

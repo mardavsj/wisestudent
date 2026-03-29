@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "चित्रपट वि बस भाडे कथा",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुमच्याकडे ₹100 आहेत. आपण ते कसे वापरावे?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "बस पाससाठी बचत करा",
+          "emoji": "🚌",
+          "isCorrect": true
+        },
+        {
+          "id": "movie",
+          "text": "चित्रपटावर खर्च करा",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "दोघांमध्ये फूट पडली",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमच्याकडे ₹150 आहेत. सर्वोत्तम पर्याय कोणता आहे?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "स्नॅक विकत घ्या",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "बस भाडे बचत जोडा",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "सर्व काही जतन करा",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमच्याकडे ₹200 आहेत. आपण कशाला प्राधान्य दिले पाहिजे?",
+      "options": [
+        {
+          "id": "movie",
+          "text": "चित्रपट रात्री",
+          "emoji": "🎥",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "दोघांमध्ये फूट पडली",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "साप्ताहिक बस पास",
+          "emoji": "🎫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुमच्याकडे ₹120 आहेत. स्मार्ट निर्णय काय आहे?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "बसचे तिकीट",
+          "emoji": "🎟️",
+          "isCorrect": true
+        },
+        {
+          "id": "popcorn",
+          "text": "चित्रपटांमध्ये पॉपकॉर्न",
+          "emoji": "🍿",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ते सर्व जतन करा",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुमच्याकडे ₹300 आहेत. सर्वोत्तम उपयोग काय आहे?",
+      "options": [
+        {
+          "id": "cinema",
+          "text": "सिनेमाची तिकिटे",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "मासिक बस पास",
+          "emoji": "Ⓜ️",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "दोघांमध्ये फूट पडली",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ग्रेट जॉब!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत! अत्यावश्यक खर्चांना प्राधान्य देण्याचे महत्त्व तुम्हाला समजले आहे!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: करमणुकीच्या गरजांपेक्षा वाहतुकीसारख्या अत्यावश्यक खर्चाला प्राधान्य द्या!",
+    "loseEmoji": "😔",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत. अत्यावश्यक खर्चांना प्राधान्य द्यायचे लक्षात ठेवा जसे की वाहतूक गरजेपेक्षा!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: नेहमी करमणुकीच्या गरजांपेक्षा वाहतुकीसारख्या अत्यावश्यक खर्चांना प्राधान्य द्या."
+  }
+}

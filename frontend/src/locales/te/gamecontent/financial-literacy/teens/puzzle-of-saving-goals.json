@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "పజిల్: ఆదా లక్ష్యాలు",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "లక్ష్యాలను లక్ష్యాలతో సరిపోల్చండి ({{current}}/{{total}} సరిపోలింది)",
+  "goalsTitle": "పొదుపు లక్ష్యాలు",
+  "purposesTitle": "పొదుపు ఉద్దేశాలు",
+  "matchButton": "Match",
+  "selectGoalLabel": "పొదుపు లక్ష్యాన్ని ఎంచుకోండి",
+  "selectedGoalLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}}లో {{score}}ని వారి ప్రయోజనాలతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: స్పష్టమైన పొదుపు లక్ష్యాలను నిర్దేశించడం ఆర్థిక భద్రతను సాధించడంలో సహాయపడుతుంది!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}}లో {{score}}తో సరిగ్గా సరిపోలారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి పొదుపు లక్ష్యం యొక్క ప్రాథమిక ప్రయోజనం గురించి ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "goals": [
+    {
+      "id": 1,
+      "name": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 2,
+      "name": "అత్యవసర నిధి",
+      "emoji": "🚑"
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "emoji": "🏠"
+    },
+    {
+      "id": 5,
+      "name": "Retirement",
+      "emoji": "🌅"
+    }
+  ],
+  "purposes": [
+    {
+      "id": 6,
+      "name": "భవిష్యత్ వృద్ధి",
+      "emoji": "📈"
+    },
+    {
+      "id": 7,
+      "name": "సేఫ్టీ నెట్",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 8,
+      "name": "Mobility",
+      "emoji": "🛣️"
+    },
+    {
+      "id": 9,
+      "name": "Stability",
+      "emoji": "🏛️"
+    },
+    {
+      "id": 10,
+      "name": "మనశ్శాంతి",
+      "emoji": "🧘"
+    }
+  ]
+}

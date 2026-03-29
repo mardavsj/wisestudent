@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "گفٹ منی کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کو اپنی سالگرہ پر تحفے کی رقم ملتی ہے۔ ایک ہوشیار پہلا قدم کیا ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "اسے فوری طور پر خرچ کریں۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "show",
+          "text": "دوستوں کو دکھائیں۔",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "think",
+          "text": "ضروریات اور مقاصد کے بارے میں سوچیں۔",
+          "emoji": "🤔",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ ایک بیگ چاہتے ہیں جس کی قیمت آپ کے تحفے کی رقم سے زیادہ ہو۔ دانشمندانہ انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "دوستوں سے پیسے ادھار لیں۔",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "انتظار کریں اور مزید پیسے بچائیں۔",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "change",
+          "text": "اس کے بجائے کچھ بے ترتیب خریدیں۔",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کو ایک چھوٹا کھلونا اور ایک مفید چیز نظر آتی ہے۔ آپ کو فیصلہ کرنے میں کیا مدد کرتا ہے؟",
+      "options": [
+        {
+          "id": "use",
+          "text": "وہ آئٹم منتخب کریں جس کی آپ کو زیادہ ضرورت ہے۔",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "منتخب کریں جو مزہ لگتا ہے۔",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "سب سے سستی چیز کا انتخاب کریں۔",
+          "emoji": "💲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کے والدین آپ کے تحفے کی رقم کا کچھ حصہ بچانے کا مشورہ دیتے ہیں۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "انکار کریں اور سب خرچ کریں۔",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "agree",
+          "text": "ایک حصہ محفوظ کریں اور باقی کی منصوبہ بندی کریں۔",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forget",
+          "text": "پیسے کے بارے میں بھول جاؤ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "تحفہ کی رقم آپ کو کیا سکھاتی ہے؟",
+      "options": [
+        {
+          "id": "showoff",
+          "text": "خریداریوں کو کیسے ظاہر کریں۔",
+          "emoji": "😎",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "سوچے سمجھے بغیر کیسے گزارا جائے۔",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "manage",
+          "text": "پیسے کا ذمہ داری سے انتظام کیسے کریں۔",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "ಸಿಮ್ಯುಲೇಶನ್: ಚಾರಿಟಿ ಆಯ್ಕೆ",
+  "subtitleComplete": "ಸಿಮ್ಯುಲೇಶನ್ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಸನ್ನಿವೇಶ {{current}} ರಲ್ಲಿ {{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "ಇಂಪ್ಯಾಕ್ಟ್ vs ಭಾವನೆ",
+      "description": "ನೀವು ₹1000 ದೇಣಿಗೆ ನೀಡಲು ಬಯಸುತ್ತೀರಿ. ಯಾವ ಆಯ್ಕೆಯು ಹೆಚ್ಚು ನೈಜ ಪರಿಣಾಮವನ್ನು ಉಂಟುಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "street",
+          "text": "ರಸ್ತೆಯಲ್ಲಿ ಯಾದೃಚ್ಛಿಕವಾಗಿ ನಗದು ನೀಡಿ",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "trusted",
+          "text": "ಸ್ಪಷ್ಟ ವರದಿಗಳೊಂದಿಗೆ ಪರಿಶೀಲಿಸಿದ ಚಾರಿಟಿಗೆ ದೇಣಿಗೆ ನೀಡಿ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "viral",
+          "text": "ಟ್ರೆಂಡಿಂಗ್ ಆನ್‌ಲೈನ್ ಅಭಿಯಾನಗಳಿಗೆ ದೇಣಿಗೆ ನೀಡಿ",
+          "emoji": "🔥",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "ಪರಿಪೂರ್ಣ ಕ್ಷಣಕ್ಕಾಗಿ ಶಾಶ್ವತವಾಗಿ ನಿರೀಕ್ಷಿಸಿ",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ಅಲ್ಪಾವಧಿಯ ಸಹಾಯ vs ದೀರ್ಘಾವಧಿಯ ಬದಲಾವಣೆ",
+      "description": "ಚಾರಿಟಿಯು ಇಂದು ಊಟವನ್ನು ನೀಡಬಹುದು ಅಥವಾ ತಿಂಗಳುಗಳ ಕಾಲ ಶಿಕ್ಷಣ ಬೆಂಬಲವನ್ನು ನೀಡಬಹುದು. ಯಾವುದು ಸ್ಮಾರ್ಟ್ ಆಗಿದೆ?",
+      "options": [
+        {
+          "id": "education",
+          "text": "ಶಿಕ್ಷಣ ಮತ್ತು ಕೌಶಲ್ಯ ನಿರ್ಮಾಣಕ್ಕೆ ಬೆಂಬಲ",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "meals",
+          "text": "ಒಂದು ಬಾರಿ ಆಹಾರ ವಿತರಣೆ",
+          "emoji": "🍱",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ಯಾದೃಚ್ಛಿಕವಾಗಿ ಹಣವನ್ನು ವಿಭಜಿಸಿ",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "ದಾನ ಮಾಡುವುದನ್ನು ತಪ್ಪಿಸಿ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ಪಾರದರ್ಶಕತೆ ಪರಿಶೀಲನೆ",
+      "description": "ದಾನ ಮಾಡುವ ಮೊದಲು, ನೀವು ಮೊದಲು ಏನನ್ನು ಪರಿಶೀಲಿಸಬೇಕು?",
+      "options": [
+        {
+          "id": "celebrity",
+          "text": "ಸೆಲೆಬ್ರಿಟಿಗಳ ಅನುಮೋದನೆ",
+          "emoji": "🌟",
+          "isCorrect": false
+        },
+        {
+          "id": "emotional",
+          "text": "ಭಾವನಾತ್ಮಕ ಕಥೆಗಳು ಮಾತ್ರ",
+          "emoji": "😢",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "text": "ಸಾಮಾಜಿಕ ಒತ್ತಡ",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "reports",
+          "text": "ಹಣಕಾಸಿನ ಪಾರದರ್ಶಕತೆ ಮತ್ತು ಪರಿಣಾಮದ ವರದಿಗಳು",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ಚಾರಿಟಿ vs ವೈಯಕ್ತಿಕ ಬೆಳವಣಿಗೆ",
+      "description": "ನಿಮ್ಮ ಬಳಿ ಸೀಮಿತ ಹಣವಿದೆ. ಸಹಾನುಭೂತಿ ಮತ್ತು ಆರ್ಥಿಕ ಪ್ರಜ್ಞೆ ಎರಡನ್ನೂ ಯಾವುದು ನಿರ್ಮಿಸುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "donate-blind",
+          "text": "ಅರ್ಥವಾಗದೆ ದಾನ ಮಾಡಿ",
+          "emoji": "🙃",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ಎಲ್ಲವನ್ನೂ ನಿಮ್ಮ ಮೇಲೆ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "ಕಾರಣಗಳ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ, ನಂತರ ಗಮನವಿಟ್ಟು ದಾನ ಮಾಡಿ",
+          "emoji": "🧠",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "ದಾನವನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ತಪ್ಪಿಸಿ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ಸಸ್ಟೈನಬಲ್ ಗಿವಿಂಗ್",
+      "description": "ಯಾವ ಅಭ್ಯಾಸವು ದಾನವನ್ನು ಜೀವಿತಾವಧಿಯಲ್ಲಿ ಪರಿಣಾಮಕಾರಿಯಾಗಿ ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "big-once",
+          "text": "ಒಮ್ಮೆ ಒಂದು ದೊಡ್ಡ ಕೊಡುಗೆ",
+          "emoji": "💥",
+          "isCorrect": false
+        },
+        {
+          "id": "consistent",
+          "text": "ಸಣ್ಣ, ನಿಯಮಿತ, ಯೋಜಿತ ಕೊಡುಗೆ",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "guilt",
+          "text": "ತಪ್ಪಿತಸ್ಥ ಭಾವನೆ ಇದ್ದಾಗ ಮಾತ್ರ ದಾನ ಮಾಡಿ",
+          "emoji": "😬",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "ಪ್ರಚೋದನೆಯ ದೇಣಿಗೆಗಳು",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

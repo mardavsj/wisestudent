@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "সিমুলেশন: চ্যারিটি চয়েস",
+  "subtitleComplete": "সিমুলেশন সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} দৃশ্যকল্প",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "প্রভাব বনাম আবেগ",
+      "description": "আপনি ₹1000 দান করতে চান। কোন পছন্দ সবচেয়ে বাস্তব প্রভাব সৃষ্টি করে?",
+      "options": [
+        {
+          "id": "street",
+          "text": "রাস্তায় এলোমেলোভাবে নগদ দিন",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "trusted",
+          "text": "স্পষ্ট প্রতিবেদন সহ একটি যাচাইকৃত দাতব্য সংস্থাকে দান করুন",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "viral",
+          "text": "ট্রেন্ডিং অনলাইন প্রচারাভিযানে দান করুন",
+          "emoji": "🔥",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "নিখুঁত মুহূর্তের জন্য চিরকাল অপেক্ষা করুন",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "স্বল্প-মেয়াদী সহায়তা বনাম দীর্ঘমেয়াদী পরিবর্তন",
+      "description": "একটি দাতব্য সংস্থা হয় আজ খাবার বা কয়েক মাস শিক্ষা সহায়তা প্রদান করতে পারে। বুদ্ধিমান কি?",
+      "options": [
+        {
+          "id": "education",
+          "text": "শিক্ষা ও দক্ষতা বৃদ্ধিতে সহায়তা করুন",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "meals",
+          "text": "এককালীন খাদ্য বিতরণ",
+          "emoji": "🍱",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "এলোমেলোভাবে অর্থ ভাগ করুন",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "দান করা এড়িয়ে চলুন",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "স্বচ্ছতা পরীক্ষা",
+      "description": "দান করার আগে, আপনার প্রথমে কী পরীক্ষা করা উচিত?",
+      "options": [
+        {
+          "id": "celebrity",
+          "text": "সেলিব্রিটি অনুমোদন",
+          "emoji": "🌟",
+          "isCorrect": false
+        },
+        {
+          "id": "emotional",
+          "text": "শুধুমাত্র আবেগঘন গল্প",
+          "emoji": "😢",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "text": "সামাজিক চাপ",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "reports",
+          "text": "আর্থিক স্বচ্ছতা এবং প্রভাব প্রতিবেদন",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "দাতব্য বনাম ব্যক্তিগত বৃদ্ধি",
+      "description": "আপনার কাছে সীমিত টাকা আছে। কি সহানুভূতি এবং আর্থিক অনুভূতি উভয়ই তৈরি করে?",
+      "options": [
+        {
+          "id": "donate-blind",
+          "text": "না বুঝে দান করুন",
+          "emoji": "🙃",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "সবকিছু নিজের জন্য ব্যয় করুন",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "কারণ সম্পর্কে জানুন, তারপর মন দিয়ে দান করুন",
+          "emoji": "🧠",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "দান-খয়রাত সম্পূর্ণরূপে পরিহার করুন",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "টেকসই প্রদান",
+      "description": "কোন অভ্যাস দাতব্য আজীবন কার্যকর করে?",
+      "options": [
+        {
+          "id": "big-once",
+          "text": "একবার বড় দান",
+          "emoji": "💥",
+          "isCorrect": false
+        },
+        {
+          "id": "consistent",
+          "text": "ছোট, নিয়মিত, পরিকল্পিত প্রদান",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "guilt",
+          "text": "দোষী বোধ করলেই দান করুন",
+          "emoji": "😬",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "আবেগ অনুদান",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

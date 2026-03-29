@@ -1,1 +1,34 @@
-﻿{}
+{
+  "title": "जर्नल ऑफ ग्रोथ",
+  "subtitleComplete": "जर्नल पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न: तुमचे पैसे वाढवण्यावर विचार करा!",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "📝",
+  "minLengthLabel": "किमान {{count}} वर्ण लिहा",
+  "placeholder": "तुमची जर्नल एंट्री इथे लिहा...",
+  "characterCount": "{{count}}/{{required}} वर्ण",
+  "submitContinueButton": "सबमिट करा आणि सुरू ठेवा",
+  "submitFinalButton": "अंतिम एंट्री सबमिट करा",
+  "stages": [
+    {
+      "question": "लिहा: \"मी ₹100 ची गुंतवणूक केल्यास, मला ते ___ मध्ये वाढवायचे आहे.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"पैशाची गुंतवणूक केल्याने मला ___ वाटते.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"गुंतवणुकीबद्दल मी एक गोष्ट शिकलो ती म्हणजे ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"मी ___ मदत करण्यासाठी ₹100 ची गुंतवणूक करेन.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"वाढत्या पैशाने मला ___ संयम शिकवला.\"",
+      "minLength": 10
+    }
+  ]
+}

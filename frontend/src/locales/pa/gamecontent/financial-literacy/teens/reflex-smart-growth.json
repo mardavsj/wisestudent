@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਸਮਾਰਟ ਗਰੋਥ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਸਮਾਰਟ ਵਿਕਾਸ ਪ੍ਰਤੀਬਿੰਬ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਸਮਾਰਟ ਵਿਕਾਸ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyHeader": "ਆਪਣੇ ਸਮਾਰਟ ਗਰੋਥ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਸਮਾਰਟ ਵਿੱਤੀ ਵਿਕਾਸ ਦੀਆਂ ਰਣਨੀਤੀਆਂ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyTip": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{time}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "greatJob": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "finalScore": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਸਕੋਰ ਕੀਤੇ!",
+  "growthSkills": "ਤੁਸੀਂ ਮਜ਼ਬੂਤ ​​ਵਿੱਤੀ ਫੈਸਲੇ ਲੈਣ ਦੇ ਹੁਨਰ ਨੂੰ ਵਿਕਸਿਤ ਕਰ ਰਹੇ ਹੋ!",
+  "playAgain": "ਦੁਬਾਰਾ ਖੇਡੋ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਸਭ ਤੋਂ ਚੁਸਤ ਵਿੱਤੀ ਵਿਕਾਸ ਰਣਨੀਤੀ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "long_term",
+          "text": "ਲੰਬੇ ਸਮੇਂ ਲਈ ਨਿਵੇਸ਼",
+          "emoji": "📈"
+        },
+        {
+          "id": "instant",
+          "text": "ਤੁਰੰਤ ਖਰਚ",
+          "emoji": "💸"
+        },
+        {
+          "id": "cash",
+          "text": "ਨਕਦ ਵਿੱਚ ਬਚਾਓ",
+          "emoji": "💰"
+        },
+        {
+          "id": "spend_all",
+          "text": "ਸਾਰੀ ਕਮਾਈ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਹਾਡਾ ਮੁੱਖ ਵਿੱਤੀ ਫੋਕਸ ਕੀ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "spend_everything",
+          "text": "ਸਭ ਕੁਝ ਖਰਚ ਕਰੋ",
+          "emoji": "🛒"
+        },
+        {
+          "id": "plan_future",
+          "text": "ਭਵਿੱਖ ਲਈ ਯੋਜਨਾ",
+          "emoji": "🎯"
+        },
+        {
+          "id": "ignore",
+          "text": "ਬਚਤ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "😴"
+        },
+        {
+          "id": "paycheck",
+          "text": "ਪੇਚੈਕ ਨੂੰ ਲਾਈਵ ਪੇਚੈਕ",
+          "emoji": "📅"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਕਿਹੜੀ ਪਹੁੰਚ ਘਾਤਕ ਵਿਕਾਸ ਵੱਲ ਲੈ ਜਾਂਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "quick_profit",
+          "text": "ਤੇਜ਼ ਲਾਭ",
+          "emoji": "⚡"
+        },
+        {
+          "id": "no_invest",
+          "text": "ਕੋਈ ਨਿਵੇਸ਼ ਨਹੀਂ",
+          "emoji": "🚫"
+        },
+        {
+          "id": "compound",
+          "text": "ਮਿਸ਼ਰਿਤ ਵਾਧਾ",
+          "emoji": "🌱"
+        },
+        {
+          "id": "gambling",
+          "text": "ਉੱਚ-ਜੋਖਮ ਵਾਲਾ ਜੂਆ",
+          "emoji": "🎲"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਨਿਵੇਸ਼ ਸ਼ੁਰੂ ਕਰਨ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਸਮਾਂ ਕਦੋਂ ਹੈ?",
+      "options": [
+        {
+          "id": "start_early",
+          "text": "ਜਲਦੀ ਸ਼ੁਰੂ ਕਰੋ",
+          "emoji": "⏰"
+        },
+        {
+          "id": "wait",
+          "text": "ਸਦਾ ਲਈ ਉਡੀਕ ਕਰੋ",
+          "emoji": "⏳"
+        },
+        {
+          "id": "never",
+          "text": "ਕਦੇ ਵੀ ਨਿਵੇਸ਼ ਨਾ ਕਰੋ",
+          "emoji": "❌"
+        },
+        {
+          "id": "after_retirement",
+          "text": "ਸੇਵਾਮੁਕਤੀ ਤੋਂ ਬਾਅਦ",
+          "emoji": "👵"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਅੰਤਮ ਵਿੱਤੀ ਟੀਚਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "spend_all_credit",
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "💳"
+        },
+        {
+          "id": "build_wealth",
+          "text": "ਦੌਲਤ ਬਣਾਓ",
+          "emoji": "🏆"
+        },
+        {
+          "id": "avoid",
+          "text": "ਵਾਧੇ ਤੋਂ ਬਚੋ",
+          "emoji": "📉"
+        },
+        {
+          "id": "debt",
+          "text": "ਕਰਜ਼ੇ ਵਿੱਚ ਰਹੋ",
+          "emoji": "🧾"
+        }
+      ]
+    }
+  ]
+}

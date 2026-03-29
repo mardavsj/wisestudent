@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ടോയ് vs സേവിംഗ് സ്റ്റോറി",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "നിങ്ങളുടെ പ്രിയപ്പെട്ട കളിപ്പാട്ടം ഒരാഴ്ചയ്ക്ക് ശേഷം തകരുന്നു. ഇത് നിങ്ങളെ എന്താണ് പഠിപ്പിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "buy",
+          "text": "കൂടുതൽ കളിപ്പാട്ടങ്ങൾ വേഗത്തിൽ വാങ്ങുക",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "പണം തിരഞ്ഞെടുക്കുന്നതിൽ കാര്യമില്ല",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "value",
+          "text": "പണം ചിലവാക്കുന്നതിന് മുമ്പ് ചിന്തിക്കുക",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിങ്ങൾ എല്ലാ ആഴ്ചയും നാണയങ്ങൾ സംരക്ഷിക്കുകയും തുക വർദ്ധിക്കുകയും ചെയ്യുന്നു. നിങ്ങൾ എന്താണ് പഠിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "patience",
+          "text": "സമ്പാദ്യത്തിന് ക്ഷമ ആവശ്യമാണ്",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "boring",
+          "text": "സമ്പാദ്യം വിരസമാണ്",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "നാണയങ്ങൾ ഉപയോഗശൂന്യമാണ്",
+          "emoji": "🪙",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിങ്ങൾക്ക് പിന്നീട് വിലകൂടിയ എന്തെങ്കിലും വേണം. എന്താണ് ഏറ്റവും നല്ല ശീലം?",
+      "options": [
+        {
+          "id": "rush",
+          "text": "കാണുന്നതെന്തും വാങ്ങുക",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "സാവധാനം ആസൂത്രണം ചെയ്ത് സംരക്ഷിക്കുക",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "എപ്പോഴും പണം കടം വാങ്ങുക",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "വാങ്ങുന്നതിന് മുമ്പ് നിങ്ങൾ വില താരതമ്യം ചെയ്യുക. നിങ്ങൾ എന്ത് കഴിവാണ് ഉപയോഗിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "slow",
+          "text": "വളരെ പതുക്കെയാണ്",
+          "emoji": "🐢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lazy",
+          "text": "ഷോപ്പിംഗ് ഒഴിവാക്കുന്നു",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "സ്മാർട്ട് മണി ചിന്ത",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "എല്ലാ കളിപ്പാട്ടങ്ങളും വാങ്ങുന്നതിനുപകരം നിങ്ങൾ സേവിംഗ് തിരഞ്ഞെടുക്കുന്നു. ഇത് എന്താണ് നിർമ്മിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "habit",
+          "text": "നല്ല സമ്പാദ്യശീലങ്ങൾ",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ഒട്ടും രസമില്ല",
+          "emoji": "😢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "ചിലവഴിക്കുമെന്ന ഭയം",
+          "emoji": "😨",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

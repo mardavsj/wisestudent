@@ -1,1 +1,159 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ નીડ વિ વોન્ટ",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: જરૂરિયાતો વિરુદ્ધ જરૂરિયાતો વિશે તમારા જ્ઞાનનું પરીક્ષણ કરો!",
+  "subtitleReady": "જરૂરિયાતો વિરુદ્ધ જરૂરિયાતો વિશે તમારા જ્ઞાનનું પરીક્ષણ કરો!",
+  "readyEmoji": "📋",
+  "readyTitle": "તમારી જરૂરિયાતો વિ વોન્ટ્સ નોલેજ ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "જરૂરિયાતો અને ઈચ્છાઓ વચ્ચેના તફાવત વિશેના પ્રશ્નોના જવાબ આપો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ગ્રેટ જોબ!",
+  "resultGreatDescription": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે!",
+  "resultGreatLesson": "પાઠ: જીવન ટકાવી રાખવા અને શીખવા માટે જરૂરિયાતો આવશ્યક છે, જ્યારે જરૂરિયાતો એવી વસ્તુઓ છે જે આપણે મેળવવા માંગીએ છીએ પરંતુ તેની જરૂર નથી!",
+  "resultKeepEmoji": "😔",
+  "resultKeepTitle": "શીખતા રહો!",
+  "resultKeepDescription": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, જરૂરિયાતો એ ખોરાક, કપડાં અને શાળા પુરવઠો જેવી આવશ્યક વસ્તુઓ છે!",
+  "resultKeepTip": "ટીપ: જરૂરિયાતો એવી વસ્તુઓ છે જે તમારે ટકી રહેવા અને શીખવા માટે હોવી જોઈએ, જેમ કે ખોરાક, કપડાં અને શાળાનો પુરવઠો.",
+  "tryAgainButton": "ફરી પ્રયાસ કરો",
+  "questions": [
+    {
+      "id": 1,
+      "question": "કયું જરૂર છે?",
+      "correctAnswer": "શાળા માટે શૂઝ",
+      "options": [
+        {
+          "text": "શાળા માટે શૂઝ",
+          "isCorrect": true,
+          "emoji": "👟"
+        },
+        {
+          "text": "10મી ટોય કાર",
+          "isCorrect": false,
+          "emoji": "🚗"
+        },
+        {
+          "text": "વિડિઓ ગેમ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ફેન્સી સનગ્લાસ",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "સ્વસ્થ રહેવા માટે શું જરૂરી છે?",
+      "correctAnswer": "તંદુરસ્ત ખોરાક",
+      "options": [
+        {
+          "text": "વધારાની કેન્ડી",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "તંદુરસ્ત ખોરાક",
+          "isCorrect": true,
+          "emoji": "🥗"
+        },
+        {
+          "text": "આઈસ્ક્રીમ",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "શીખવા માટે કઈ વસ્તુ જરૂરી છે?",
+      "correctAnswer": "શાળાના પુસ્તકો",
+      "options": [
+        {
+          "text": "વિડિઓ ગેમ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ક્રિયા આકૃતિ",
+          "isCorrect": false,
+          "emoji": "🤖"
+        },
+        {
+          "text": "પઝલ ગેમ",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "શાળાના પુસ્તકો",
+          "isCorrect": true,
+          "emoji": "📚"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ઠંડા હવામાનમાં તમારે શું જોઈએ છે?",
+      "correctAnswer": "વિન્ટર જેકેટ",
+      "options": [
+        {
+          "text": "ફેન્સી સનગ્લાસ",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        },
+        {
+          "text": "સ્વિમિંગ પૂલ",
+          "isCorrect": false,
+          "emoji": "🏊"
+        },
+        {
+          "text": "વિન્ટર જેકેટ",
+          "isCorrect": true,
+          "emoji": "🧥"
+        },
+        {
+          "text": "બીચ બોલ",
+          "isCorrect": false,
+          "emoji": "🏐"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "શાળામાં જવા માટે શું જરૂરી છે?",
+      "correctAnswer": "બસ ભાડું",
+      "options": [
+        {
+          "text": "બસ ભાડું",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "નવા હેડફોન",
+          "isCorrect": false,
+          "emoji": "🎧"
+        },
+        {
+          "text": "સંગીત પ્લેયર",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "સ્માર્ટ વોચ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

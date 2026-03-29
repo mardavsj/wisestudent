@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "لنچ باکس کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "🍽️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ ایک دوست کا لنچ ادھار لیتے ہیں۔ آپ کو اگلے دن کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "yes",
+          "text": "شیئر کریں یا واپس کریں۔",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "اسے اپنے پاس رکھو",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "اس کے بارے میں بھول جاؤ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کا دوست لنچ بانٹ رہا ہے۔ آپ کو کیسے جواب دینا چاہئے؟",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "کچھ نہ بولو",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "کچھ واپس شیئر کریں۔",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "more",
+          "text": "اس سے بھی زیادہ دوپہر کا کھانا لیں۔",
+          "emoji": "🍴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کے پاس دوپہر کے کھانے کے لیے 10 روپے ہیں۔ دوست کو ₹5 درکار ہیں۔ بہترین کیا ہے؟",
+      "options": [
+        {
+          "id": "share",
+          "text": "دوست کے ساتھ ₹5 شیئر کریں۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "all",
+          "text": "سب کچھ اپنے اوپر خرچ کرو",
+          "emoji": "🍔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "اپنے پیسے چھپائیں۔",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ دوپہر کے کھانے کے پیسے ادھار لیتے ہیں۔ آپ کو کب ادا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "never",
+          "text": "کبھی واپس نہ کرنا",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "اسے نمکین پر خرچ کریں۔",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "next",
+          "text": "اگلے دن وعدے کے مطابق",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "دوپہر کے کھانے کا اشتراک کیوں ضروری ہے؟",
+      "options": [
+        {
+          "id": "trust",
+          "text": "یہ اعتماد اور مہربانی پیدا کرتا ہے۔",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "food",
+          "text": "آپ کو زیادہ کھانا ملتا ہے۔",
+          "emoji": "🍽️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "popular",
+          "text": "یہ آپ کو مقبول بناتا ہے۔",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

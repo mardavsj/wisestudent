@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ಹೂಡಿಕೆ ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionLabel": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಯಾವುದು ಅಪಾಯಕಾರಿ ಆದರೆ ಹೆಚ್ಚಿನ ಆದಾಯ?",
+      "options": [
+        {
+          "id": "fd",
+          "text": "ಸ್ಥಿರ ಠೇವಣಿ",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "stocks",
+          "text": "ಷೇರು ಮಾರುಕಟ್ಟೆ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "savings",
+          "text": "ಉಳಿತಾಯ ಖಾತೆ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಯಾವ ಹೂಡಿಕೆ ಸುರಕ್ಷಿತವಾಗಿದೆ?",
+      "options": [
+        {
+          "id": "fd2",
+          "text": "ಸ್ಥಿರ ಠೇವಣಿ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "stocks2",
+          "text": "Stocks",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "text": "Cryptocurrency",
+          "emoji": "₿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ವೈವಿಧ್ಯೀಕರಣ ಎಂದರೇನು?",
+      "options": [
+        {
+          "id": "one",
+          "text": "ಎಲ್ಲವನ್ನೂ ಒಂದೇ ಹೂಡಿಕೆಯಲ್ಲಿ ಇರಿಸಿ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "ಎಲ್ಲಾ ಹೂಡಿಕೆಗಳನ್ನು ತಪ್ಪಿಸಿ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "spread",
+          "text": "ವಿವಿಧ ಹೂಡಿಕೆಗಳಲ್ಲಿ ಹರಡಿ",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಮ್ಯೂಚುವಲ್ ಫಂಡ್ ಎಂದರೇನು?",
+      "options": [
+        {
+          "id": "mix",
+          "text": "ಷೇರುಗಳು ಮತ್ತು ಬಾಂಡ್‌ಗಳ ಮಿಶ್ರಣ",
+          "emoji": "📦",
+          "isCorrect": true
+        },
+        {
+          "id": "single",
+          "text": "ಏಕ ಕಂಪನಿ ಸ್ಟಾಕ್",
+          "emoji": "📄",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ಬ್ಯಾಂಕ್ ಖಾತೆ",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಕೇವಲ ಉಳಿಸುವ ಬದಲು ಹೂಡಿಕೆ ಏಕೆ?",
+      "options": [
+        {
+          "id": "same",
+          "text": "ಉಳಿತಾಯದಂತೆಯೇ",
+          "emoji": "➡️",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ಕಳೆದುಕೊಳ್ಳುವುದು ಗ್ಯಾರಂಟಿ",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "ವೇಗವಾಗಿ ಬೆಳೆಯುವ ಸಾಮರ್ಥ್ಯ",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+    "winMessage": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ! ನೀವು ಹೂಡಿಕೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಂಡಿದ್ದೀರಿ!",
+    "coinsEarned": "+{{score}} ನಾಣ್ಯಗಳು",
+    "lesson": "ಪಾಠ: ಷೇರುಗಳು ಅಪಾಯಕಾರಿ ಆದರೆ ಹೆಚ್ಚಿನ ಆದಾಯವನ್ನು ನೀಡುತ್ತವೆ. ನಿಶ್ಚಿತ ಠೇವಣಿ ಸುರಕ್ಷಿತ ಆದರೆ ಕಡಿಮೆ ಆದಾಯ. ವೈವಿಧ್ಯೀಕರಣವು ಅಪಾಯವನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ಕಲಿಯುತ್ತಲೇ ಇರಿ!",
+    "loseMessage": "ನೀವು {{total}} ರಲ್ಲಿ {{score}} ಅನ್ನು ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ. ನೆನಪಿಡಿ, ಷೇರುಗಳು ಅಪಾಯಕಾರಿ ಆದರೆ ಹೆಚ್ಚಿನ ಆದಾಯ, ಆದರೆ FD ಗಳು ಸುರಕ್ಷಿತ ಆದರೆ ಕಡಿಮೆ ಆದಾಯ!",
+    "tryAgain": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "tip": "ಸಲಹೆ: ಸ್ಟಾಕ್ ಮಾರುಕಟ್ಟೆ ಅಪಾಯಕಾರಿ ಆದರೆ ಹೆಚ್ಚಿನ ಆದಾಯವನ್ನು ನೀಡುತ್ತದೆ. ಸ್ಥಿರ ಠೇವಣಿಗಳು ಸುರಕ್ಷಿತವಾಗಿರುತ್ತವೆ ಆದರೆ ಕಡಿಮೆ ಆದಾಯವನ್ನು ಹೊಂದಿರುತ್ತವೆ. ಅಪಾಯವನ್ನು ಕಡಿಮೆ ಮಾಡಲು ವೈವಿಧ್ಯಗೊಳಿಸಿ!"
+  }
+}

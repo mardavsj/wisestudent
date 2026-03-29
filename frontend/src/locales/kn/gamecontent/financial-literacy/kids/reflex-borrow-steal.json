@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ಪ್ರತಿಫಲಿತ ಸಾಲ/ಕದಿಯಿರಿ",
+  "subtitlePlaying": "ಸುತ್ತು {{current}}/{{total}}: ನಿಮ್ಮ ಎರವಲು ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಎರವಲು ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyEmoji": "🤝",
+  "readyTitle": "ಸಿದ್ಧರಾಗಿ!",
+  "readyDescription": "ಸಾಲ ಪಡೆಯುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳಿಗೆ ಸರಿಯಾಗಿ ಉತ್ತರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಸುತ್ತು:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಎರವಲು ಪಡೆದ ವಸ್ತುಗಳೊಂದಿಗೆ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಎರವಲು ಪಡೆದ ವಸ್ತುಗಳನ್ನು ಹಿಂತಿರುಗಿಸಿ",
+      "options": [
+        {
+          "text": "ಎರವಲು ಪಡೆದ ವಸ್ತುಗಳನ್ನು ಹಿಂತಿರುಗಿಸಿ",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "ಅವುಗಳನ್ನು ಶಾಶ್ವತವಾಗಿ ಇರಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ಅವುಗಳನ್ನು ಮರೆಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ಅವರ ಬಗ್ಗೆ ಮರೆತುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಸಾಲದೊಂದಿಗೆ ಮಾಡಲು ಸರಿಯಾದ ವಿಷಯ ಯಾವುದು?",
+      "correctAnswer": "ಸಾಲ ಮರುಪಾವತಿ ಮಾಡಿ",
+      "options": [
+        {
+          "text": "ಪಾವತಿ ತಪ್ಪಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ಸಾಲ ಮರುಪಾವತಿ ಮಾಡಿ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ಅದನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ಅದನ್ನು ಮರೆತುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ನೀವು ಏನನ್ನಾದರೂ ಎರವಲು ಪಡೆದಾಗ, ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ವಾಪಸ್ ಕೊಡು",
+      "options": [
+        {
+          "text": "ಅದನ್ನು ಮರೆಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ಇಟ್ಟುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ವಾಪಸ್ ಕೊಡು",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "❌"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಸಾಲವನ್ನು ನಿಭಾಯಿಸಲು ಪ್ರಾಮಾಣಿಕ ಮಾರ್ಗ ಯಾವುದು?",
+      "correctAnswer": "ಪ್ರಾಮಾಣಿಕವಾಗಿರಿ",
+      "options": [
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ಪ್ರಾಮಾಣಿಕವಾಗಿರಿ",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "🎭"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ನೀವು ಎರವಲು ಪಡೆದ ವಸ್ತುಗಳನ್ನು ಯಾವಾಗ ಹಿಂದಿರುಗಿಸಬೇಕು?",
+      "correctAnswer": "ಸಮಯಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+      "options": [
+        {
+          "text": "Delay",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "Never",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ಬಹುಶಃ ನಂತರ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "ಸಮಯಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+          "isCorrect": true,
+          "emoji": "⏱️"
+        }
+      ]
+    }
+  ]
+}

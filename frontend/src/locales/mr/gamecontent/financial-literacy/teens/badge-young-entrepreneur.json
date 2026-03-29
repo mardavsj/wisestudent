@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "बॅज: तरुण उद्योजक",
+  "subtitleComplete": "बॅज पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} आव्हान",
+  "challengeLabel": "आव्हान {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "व्यवसाय सुरू करत आहे",
+      "question": "व्यवसाय सुरू करण्याची पहिली पायरी कोणती?",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "एक चांगली कल्पना आणि योजना आहे",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "आपले सर्व पैसे खर्च करा",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "कायमची वाट पहा",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "इतरांची तंतोतंत कॉपी करा",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "व्यवसाय नियोजन",
+      "question": "प्रारंभ करण्यापूर्वी आपण काय करावे?",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "लगेच सुरू करा",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "संशोधन बाजार आणि खर्च",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "नियोजनाकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "विचार न करता खर्च करा",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "पैशाचे व्यवस्थापन",
+      "question": "व्यवसायातील पैसा कसा हाताळावा?",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "सर्व काही खर्च करा",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "आर्थिक बाबींकडे दुर्लक्ष करा",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "उत्पन्न आणि खर्चाचा मागोवा घ्या",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "ट्रॅकिंगची आवश्यकता नाही",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ग्राहक सेवा",
+      "question": "व्यवसायाच्या यशासाठी काय महत्त्वाचे आहे?",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "ग्राहकांकडे दुर्लक्ष करा",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "ग्राहकांची फसवणूक",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "सेवा आवश्यक नाही",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "ग्राहकांना संतुष्ट करा",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "वाढणारा व्यवसाय",
+      "question": "तुम्ही तुमचा व्यवसाय कसा वाढवावा?",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "लहान प्रारंभ करा आणि हळूहळू विस्तृत करा",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "ताबडतोब प्रचंड प्रारंभ करा",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "कधीही वाढू नका",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "नियोजन न करता वाढवा",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "तरुण उद्योजक बॅज मिळवला!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} आव्हाने योग्य मिळाली आहेत! तुम्ही खरे तरुण उद्योजक तज्ञ आहात!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: तरुण उद्योजकांकडे चांगल्या कल्पना आहेत, काळजीपूर्वक योजना करा, वित्ताचा मागोवा घ्या, ग्राहकांना संतुष्ट करा आणि हळूहळू वाढ करा!",
+    "loseEmoji": "💪",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} आव्हाने योग्य मिळाली आहेत. सराव उद्योजकतेसह परिपूर्ण बनवते!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: नेहमी चांगली कल्पना आणि योजना ठेवा, बाजार आणि खर्चावर संशोधन करा, वित्ताचा मागोवा घ्या, ग्राहकांना संतुष्ट करा आणि लहान सुरुवात करा!"
+  }
+}

@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ ખર્ચ",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારા ખર્ચની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા ખર્ચની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "readyTitle": "તમારી ખર્ચ કરવાની કુશળતા ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "સ્માર્ટ ખર્ચ અને મની મેનેજમેન્ટ વિશેના પ્રશ્નોના જવાબ આપો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "મોટી ખરીદી કરતા પહેલા તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "આગળ પ્લાન કરો",
+      "options": [
+        {
+          "text": "તરત જ ખરીદો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "આગળ પ્લાન કરો",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "મિત્રોને પૂછો",
+          "isCorrect": false,
+          "emoji": "👥"
+        },
+        {
+          "text": "ખર્ચ અવગણો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમારું ભથ્થું ખર્ચવાની સૌથી સ્માર્ટ રીત કઈ છે?",
+      "correctAnswer": "પ્રથમ કેટલાક સાચવો",
+      "options": [
+        {
+          "text": "બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ગમે તે ખરીદો",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "પ્રથમ કેટલાક સાચવો",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "તે બગાડો",
+          "isCorrect": false,
+          "emoji": "🔥"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "આવેગ ખરીદી ટાળવામાં તમને શું મદદ કરે છે?",
+      "correctAnswer": "ખરીદતા પહેલા રાહ જુઓ",
+      "options": [
+        {
+          "text": "ખરીદતા પહેલા રાહ જુઓ",
+          "isCorrect": true,
+          "emoji": "⏳"
+        },
+        {
+          "text": "તરત જ ખરીદો",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ઘણીવાર ખરીદી કરો",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "વિચાર્યા વગર ખર્ચ કરો",
+          "isCorrect": false,
+          "emoji": "🤔"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ખરીદી કરતી વખતે તમારે શું સરખામણી કરવી જોઈએ?",
+      "correctAnswer": "કિંમતો અને ગુણવત્તા",
+      "options": [
+        {
+          "text": "માત્ર રંગો",
+          "isCorrect": false,
+          "emoji": "🎨"
+        },
+        {
+          "text": "માત્ર બ્રાન્ડ્સ",
+          "isCorrect": false,
+          "emoji": "🏷️"
+        },
+        {
+          "text": "Packaging",
+          "isCorrect": false,
+          "emoji": "📦"
+        },
+        {
+          "text": "કિંમતો અને ગુણવત્તા",
+          "isCorrect": true,
+          "emoji": "🔍"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "સ્માર્ટ ખર્ચમાં પ્રથમ પગલું શું છે?",
+      "correctAnswer": "બજેટ સેટ કરો",
+      "options": [
+        {
+          "text": "મુક્તપણે ખર્ચ કરો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "બજેટ સેટ કરો",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "બધું ખરીદો",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "મર્યાદાઓને અવગણો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    }
+  ]
+}

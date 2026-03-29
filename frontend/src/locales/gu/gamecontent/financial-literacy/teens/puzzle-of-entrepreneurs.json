@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "સાહસિકોની કોયડો",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "ક્ષેત્રો સાથે સાહસિકોને મેચ કરો ({{current}}/{{total}} મેળ ખાય છે)",
+  "itemsTitle": "Entrepreneurs",
+  "fieldsTitle": "Fields",
+  "matchButton": "Match",
+  "selectItemLabel": "એક ઉદ્યોગસાહસિક પસંદ કરો",
+  "selectedItemLabel": "પસંદ કરેલ: {{name}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "matchedLabel": "મેળ ખાતી: {{current}}/{{total}}",
+  "resultSuccessHeader": "ગ્રેટ જોબ!",
+  "resultSuccessSubheader": "તમે {{total}} ઉદ્યોગસાહસિકોમાંથી {{score}} ને તેમના ક્ષેત્રો સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultSuccessLesson": "પાઠ: ઉદ્યોગસાહસિક ક્ષેત્રોને સમજવાથી નવીનતાને પ્રેરણા મળે છે!",
+  "resultTryAgainHeader": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultTryAgainSubheader": "તમે {{total}} સાહસિકોમાંથી {{score}} સાથે યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTryAgainTip": "ટીપ: દરેક ઉદ્યોગસાહસિક કયા ક્ષેત્ર માટે સૌથી વધુ જાણીતા છે તે વિશે વિચારો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "items": [
+    {
+      "id": 1,
+      "name": "રતન ટાટા",
+      "emoji": "👔"
+    },
+    {
+      "id": 2,
+      "name": "એલોન મસ્ક",
+      "emoji": "🚀"
+    },
+    {
+      "id": 3,
+      "name": "નારાયણ મૂર્તિ",
+      "emoji": "💻"
+    },
+    {
+      "id": 4,
+      "name": "કિરણ મઝુમદાર",
+      "emoji": "🔬"
+    },
+    {
+      "id": 5,
+      "name": "ફાલ્ગુની નાયર",
+      "emoji": "💄"
+    }
+  ],
+  "fields": [
+    {
+      "id": 6,
+      "name": "Industry",
+      "emoji": "🏭"
+    },
+    {
+      "id": 7,
+      "name": "Innovation",
+      "emoji": "💡"
+    },
+    {
+      "id": 8,
+      "name": "IT",
+      "emoji": "💻"
+    },
+    {
+      "id": 9,
+      "name": "Biotech",
+      "emoji": "🧬"
+    },
+    {
+      "id": 10,
+      "name": "E-commerce",
+      "emoji": "🛒"
+    }
+  ]
+}

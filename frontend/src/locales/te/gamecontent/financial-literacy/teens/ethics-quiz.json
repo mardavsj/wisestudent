@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ఎథిక్స్ క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మార్కుల కోసం లంచం ఇవ్వడం నైతికమా?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "అవును, అవసరమైతే",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "లేదు, అది తప్పు",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "బహుశా, ఆధారపడి ఉంటుంది",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "లంచం ఇస్తే తప్పేంటి?",
+      "options": [
+        {
+          "id": "unfair",
+          "text": "ఇది అన్యాయం మరియు నిజాయితీ లేనిది",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "తప్పు ఏమీ లేదు",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "expensive",
+          "text": "చాలా ఖరీదైనది",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మంచి మార్కులు ఎలా సంపాదించాలి?",
+      "options": [
+        {
+          "id": "study",
+          "text": "కష్టపడి చదువుకోవాలి",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "bribe",
+          "text": "మార్కుల కోసం చెల్లించండి",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "పరీక్షల్లో మోసం చేస్తారు",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "లంచం యొక్క పరిణామాలు ఏమిటి?",
+      "options": [
+        {
+          "id": "no-consequences",
+          "text": "ఎలాంటి పరిణామాలు లేవు",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-trust",
+          "text": "నమ్మకాన్ని కోల్పోయి శిక్షను ఎదుర్కొంటారు",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "get-reward",
+          "text": "బహుమానం పొందండి",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "విజయం సాధించడానికి నైతిక మార్గం ఏమిటి?",
+      "options": [
+        {
+          "id": "honest-effort",
+          "text": "నిజాయితీ ప్రయత్నం మరియు చిత్తశుద్ధి",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "shortcuts",
+          "text": "సత్వరమార్గాలను తీసుకోండి",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat-way",
+          "text": "మీ మార్గం మోసం",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "గ్రేట్ జాబ్!",
+    "winMessage": "మీరు {{total}}లో {{score}}ని పొందారు! మీరు నైతిక ఛాంపియన్!",
+    "coinsEarned": "+{{score}} నాణేలు",
+    "lesson": "పాఠం: చిత్తశుద్ధి మరియు నిజాయితీ ప్రయత్నమే విజయానికి నిజమైన మార్గాలు. లంచం విశ్వాసం కోల్పోవడానికి మరియు పరిణామాలకు దారితీస్తుంది.",
+    "loseEmoji": "😔",
+    "loseTitle": "నేర్చుకుంటూ ఉండండి!",
+    "loseMessage": "మీరు {{total}}లో {{score}}ని సరిగ్గా పొందారు. గుర్తుంచుకోండి, నిజాయితీ ఉత్తమ విధానం!",
+    "tryAgain": "మళ్లీ ప్రయత్నించండి",
+    "tip": "చిట్కా: కష్టపడి మరియు నిజాయితీతో సంపాదించిన విజయం అత్యంత ప్రతిఫలదాయకం. అనైతిక షార్ట్‌కట్‌లను ఎప్పుడూ తీసుకోకండి."
+  }
+}

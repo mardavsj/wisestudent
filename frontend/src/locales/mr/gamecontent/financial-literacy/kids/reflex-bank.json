@@ -1,1 +1,151 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स बँक बेसिक्स",
+  "subtitleComplete": "पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "question": "बँकेत पैसे ठेवण्यासाठी काय करावे?",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "तुमचे पैसे सुरक्षित ठेवण्याचा स्मार्ट मार्ग कोणता आहे?",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुम्ही तुमच्या बँक खात्यातून पैसे कसे काढता?",
+      "correctAnswer": "Withdraw",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "Withdraw",
+          "isCorrect": true,
+          "emoji": "🏦"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "बँकेत पैसे वाचवणे सुरू करण्यासाठी तुम्ही काय करावे?",
+      "correctAnswer": "खाते उघडा",
+      "options": [
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "खाते उघडा",
+          "isCorrect": true,
+          "emoji": "📝"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "तुमच्याकडे किती पैसे आहेत हे जाणून घेण्यासाठी तुम्ही काय करावे?",
+      "correctAnswer": "शिल्लक तपासा",
+      "options": [
+        {
+          "text": "शिल्लक तपासा",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    }
+  ],
+  "subtitlePlaying": "फेरी {{current}}/{{total}}",
+  "subtitleReady": "तयार व्हा!",
+  "readyTitle": "खेळायला तयार आहात?",
+  "readyDescription": "पटकन उत्तर द्या आणि सर्वोत्तम पर्याय निवडा.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:"
+}

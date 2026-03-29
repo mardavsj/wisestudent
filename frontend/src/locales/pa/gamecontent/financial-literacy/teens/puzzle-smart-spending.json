@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਸਮਾਰਟ ਖਰਚ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਸੰਕਲਪਾਂ ਨੂੰ ਅਰਥਾਂ ਨਾਲ ਮੇਲ ਕਰੋ ({{current}}/{{total}} ਮੇਲਿਆ)",
+  "conceptsTitle": "ਖਰਚ ਕਰਨ ਦੀਆਂ ਧਾਰਨਾਵਾਂ",
+  "meaningsTitle": "ਵਿੱਤੀ ਅਰਥ",
+  "matchButton": "Match",
+  "selectConceptLabel": "ਇੱਕ ਖਰਚ ਸੰਕਲਪ ਚੁਣੋ",
+  "selectedConceptLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultSuccessSubheader": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਉਹਨਾਂ ਦੇ ਅਰਥਾਂ ਨਾਲ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਹੋ!",
+  "resultSuccessLesson": "ਸਬਕ: ਖਰਚ ਸੰਕਲਪਾਂ ਨੂੰ ਸਮਝਣਾ ਬਿਹਤਰ ਵਿੱਤੀ ਫੈਸਲਿਆਂ ਵੱਲ ਲੈ ਜਾਂਦਾ ਹੈ!",
+  "resultTryAgainHeader": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultTryAgainSubheader": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਖਾਂਦਾ ਹੈ।",
+  "resultTryAgainTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਹਰੇਕ ਖਰਚ ਸੰਕਲਪ ਅਸਲ ਵਿੱਚ ਕੀ ਦਰਸਾਉਂਦਾ ਹੈ!",
+  "coinsEarned": "+{{coins}} ਸਿੱਕੇ",
+  "concepts": [
+    {
+      "id": 1,
+      "name": "Budget",
+      "emoji": "📋"
+    },
+    {
+      "id": 2,
+      "name": "Waste",
+      "emoji": "🗑️"
+    },
+    {
+      "id": 3,
+      "name": "Needs",
+      "emoji": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Wants",
+      "emoji": "🎁"
+    },
+    {
+      "id": 5,
+      "name": "ਐਮਰਜੈਂਸੀ ਫੰਡ",
+      "emoji": "🛡️"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "ਵਿੱਤੀ ਯੋਜਨਾਬੰਦੀ",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "ਸਰੋਤ ਦੀ ਦੁਰਵਰਤੋਂ",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "ਜ਼ਰੂਰੀ ਤਰਜੀਹਾਂ",
+      "emoji": "⭐"
+    },
+    {
+      "id": 9,
+      "name": "ਅਖਤਿਆਰੀ ਖਰਚ",
+      "emoji": "💎"
+    },
+    {
+      "id": 10,
+      "name": "ਜੋਖਮ ਸੁਰੱਖਿਆ",
+      "emoji": "🔒"
+    }
+  ]
+}

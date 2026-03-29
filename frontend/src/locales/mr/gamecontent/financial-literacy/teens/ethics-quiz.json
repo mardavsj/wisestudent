@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "नैतिक प्रश्नमंजुषा",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "मार्कांसाठी लाच देणे नैतिक आहे का?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "होय, आवश्यक असल्यास",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "नाही, ते चुकीचे आहे",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "कदाचित, अवलंबून आहे",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "लाच देण्यात गैर काय आहे?",
+      "options": [
+        {
+          "id": "unfair",
+          "text": "ते अन्यायकारक आणि अप्रामाणिक आहे",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "काहीही चूक नाही",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "expensive",
+          "text": "खूप महाग",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "चांगले गुण कसे मिळवावेत?",
+      "options": [
+        {
+          "id": "study",
+          "text": "अभ्यास करा आणि मेहनत करा",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "bribe",
+          "text": "गुणांसाठी पैसे द्या",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "परीक्षेत फसवणूक",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "लाच दिल्याचे काय परिणाम होतात?",
+      "options": [
+        {
+          "id": "no-consequences",
+          "text": "कोणतेही परिणाम नाहीत",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-trust",
+          "text": "विश्वास गमावा आणि शिक्षा भोगा",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "get-reward",
+          "text": "बक्षीस मिळवा",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "यशस्वी होण्याचा नैतिक मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "honest-effort",
+          "text": "प्रामाणिक प्रयत्न आणि सचोटी",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "shortcuts",
+          "text": "शॉर्टकट घ्या",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat-way",
+          "text": "आपला मार्ग फसवा",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ग्रेट जॉब!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! तुम्ही नैतिक चॅम्पियन आहात!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: सचोटी आणि प्रामाणिक प्रयत्न हेच ​​यशस्वी होण्याचे खरे मार्ग आहेत. लाच दिल्याने विश्वास कमी होतो आणि त्याचे परिणाम होतात.",
+    "loseEmoji": "😔",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, प्रामाणिकपणा हे सर्वोत्तम धोरण आहे!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: कठोर परिश्रम आणि प्रामाणिकपणाने मिळवलेले यश हे सर्वात फायदेशीर आहे. कधीही अनैतिक शॉर्टकट घेऊ नका."
+  }
+}

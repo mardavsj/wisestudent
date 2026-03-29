@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਨੈਤਿਕਤਾ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਕੀ ਅੰਕਾਂ ਲਈ ਰਿਸ਼ਵਤ ਦੇਣਾ ਨੈਤਿਕ ਹੈ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ਹਾਂ, ਜੇ ਲੋੜ ਹੋਵੇ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ਨਹੀਂ, ਇਹ ਗਲਤ ਹੈ",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਨਿਰਭਰ ਕਰਦਾ ਹੈ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਰਿਸ਼ਵਤ ਦੇਣ ਵਿੱਚ ਕੀ ਗਲਤ ਹੈ?",
+      "options": [
+        {
+          "id": "unfair",
+          "text": "ਇਹ ਬੇਇਨਸਾਫ਼ੀ ਅਤੇ ਬੇਈਮਾਨ ਹੈ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "ਕੁਝ ਵੀ ਗਲਤ ਨਹੀਂ ਹੈ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "expensive",
+          "text": "ਬਹੁਤ ਮਹਿੰਗਾ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਨੂੰ ਚੰਗੇ ਅੰਕ ਕਿਵੇਂ ਹਾਸਲ ਕਰਨੇ ਚਾਹੀਦੇ ਹਨ?",
+      "options": [
+        {
+          "id": "study",
+          "text": "ਪੜ੍ਹਾਈ ਕਰੋ ਅਤੇ ਮਿਹਨਤ ਕਰੋ",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "bribe",
+          "text": "ਅੰਕਾਂ ਲਈ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "ਇਮਤਿਹਾਨਾਂ ਵਿੱਚ ਧੋਖਾਧੜੀ",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਰਿਸ਼ਵਤ ਦੇਣ ਦੇ ਕੀ ਨਤੀਜੇ ਹੁੰਦੇ ਹਨ?",
+      "options": [
+        {
+          "id": "no-consequences",
+          "text": "ਕੋਈ ਨਤੀਜਾ ਨਹੀਂ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-trust",
+          "text": "ਭਰੋਸਾ ਗੁਆਓ ਅਤੇ ਸਜ਼ਾ ਦਾ ਸਾਹਮਣਾ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "get-reward",
+          "text": "ਇਨਾਮ ਪ੍ਰਾਪਤ ਕਰੋ",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਕਾਮਯਾਬ ਹੋਣ ਦਾ ਨੈਤਿਕ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "honest-effort",
+          "text": "ਇਮਾਨਦਾਰ ਕੋਸ਼ਿਸ਼ ਅਤੇ ਇਮਾਨਦਾਰੀ",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "shortcuts",
+          "text": "ਸ਼ਾਰਟਕੱਟ ਲਵੋ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat-way",
+          "text": "ਆਪਣੇ ਤਰੀਕੇ ਨਾਲ ਧੋਖਾ",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+    "winMessage": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਤੁਸੀਂ ਇੱਕ ਨੈਤਿਕ ਚੈਂਪੀਅਨ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਇਮਾਨਦਾਰੀ ਅਤੇ ਇਮਾਨਦਾਰ ਜਤਨ ਹੀ ਸਫ਼ਲ ਹੋਣ ਦੇ ਸਹੀ ਤਰੀਕੇ ਹਨ। ਰਿਸ਼ਵਤ ਦੇਣ ਨਾਲ ਭਰੋਸੇ ਦਾ ਨੁਕਸਾਨ ਹੁੰਦਾ ਹੈ ਅਤੇ ਨਤੀਜੇ ਨਿਕਲਦੇ ਹਨ।",
+    "loseEmoji": "😔",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਇਮਾਨਦਾਰੀ ਸਭ ਤੋਂ ਵਧੀਆ ਨੀਤੀ ਹੈ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੁਝਾਅ: ਸਖ਼ਤ ਮਿਹਨਤ ਅਤੇ ਇਮਾਨਦਾਰੀ ਨਾਲ ਪ੍ਰਾਪਤ ਕੀਤੀ ਸਫਲਤਾ ਸਭ ਤੋਂ ਵੱਧ ਫਲਦਾਇਕ ਹੈ। ਕਦੇ ਵੀ ਅਨੈਤਿਕ ਸ਼ਾਰਟਕੱਟ ਨਾ ਲਓ।"
+  }
+}

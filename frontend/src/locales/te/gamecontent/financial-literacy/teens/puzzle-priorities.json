@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ప్రాధాన్యతల పజిల్",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "ప్రాధాన్యతలతో ఖర్చులను సరిపోల్చండి ({{current}}/{{total}} సరిపోలింది)",
+  "itemsTitle": "Expenses",
+  "prioritiesTitle": "Priorities",
+  "matchButton": "Match",
+  "selectItemLabel": "ఒక వ్యయాన్ని ఎంచుకోండి",
+  "selectedItemLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}} ఖర్చులలో {{score}}ని వారి ప్రాధాన్యతలతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: ఖర్చు ప్రాధాన్యతలను అర్థం చేసుకోవడం స్మార్ట్ ఆర్థిక నిర్ణయాలు తీసుకోవడంలో సహాయపడుతుంది!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}} ఖర్చులలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి ఖర్చు అవసరమా లేదా విచక్షణతో కూడినదా అని ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "items": [
+    {
+      "id": 1,
+      "name": "స్కూల్ ఫీజు",
+      "emoji": "🎓"
+    },
+    {
+      "id": 2,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 3,
+      "name": "Rent",
+      "emoji": "🏠"
+    },
+    {
+      "id": 4,
+      "name": "Medicine",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "Electricity",
+      "emoji": "💡"
+    }
+  ],
+  "priorities": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲"
+    }
+  ]
+}

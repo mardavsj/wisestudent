@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "డబ్బు నిజాయితీ క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీకు ₹10 దొరికితే నిజాయితీ గల ఎంపిక ఏది?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "నిశ్శబ్దంగా ఉంచండి",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "స్నాక్స్ కోసం ఖర్చు చేయండి",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "దానిని యజమానికి తిరిగి ఇవ్వండి",
+          "emoji": "🤝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు ₹5 అదనపు మార్పును పొందుతారు. సరైన పని ఏమిటి?",
+      "options": [
+        {
+          "id": "give",
+          "text": "అదనపు మొత్తాన్ని తిరిగి ఇవ్వండి",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "మిఠాయి కొనండి",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ఏమీ అనకండి",
+          "emoji": "😶",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీరు ₹20 అప్పుగా తీసుకోండి. ఏది నిజాయితీ?",
+      "options": [
+        {
+          "id": "never",
+          "text": "ఎప్పుడూ తిరిగి చెల్లించవద్దు",
+          "emoji": "😞",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "సకాలంలో తిరిగి చెల్లించండి",
+          "emoji": "✅",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "బదులుగా ఎక్కువ ఖర్చు చేయండి",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు ₹15 బొమ్మను పగలగొట్టండి. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "చెప్పండి మరియు చెల్లించమని ఆఫర్ చేయండి",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "దాచు",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "మరొకరిని నిందించండి",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "డబ్బుతో నిజాయితీ ఎందుకు ముఖ్యం?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "ఇది నమ్మకాన్ని సంపాదిస్తుంది",
+          "emoji": "😊",
+          "isCorrect": true
+        },
+        {
+          "id": "money",
+          "text": "ఇది మీకు ఎక్కువ డబ్బు అందజేస్తుంది",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ఇది మరింత ఖర్చు చేయడానికి మిమ్మల్ని అనుమతిస్తుంది",
+          "emoji": "🛒",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

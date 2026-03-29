@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "بجٹ پر کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "iconKey": "calculator",
+      "text": "بجٹ کیا ہے؟",
+      "options": [
+        {
+          "id": "list",
+          "text": "خریداری کی فہرست",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "خرچ کرنے کا منصوبہ",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "مفت پیسے",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "iconKey": "target",
+      "text": "بجٹ کیوں بنایا؟",
+      "options": [
+        {
+          "id": "track",
+          "text": "اخراجات کو ٹریک کریں اور بچت کریں۔",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "تمام رقم تیزی سے خرچ کریں۔",
+          "emoji": "💥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fun",
+          "text": "صرف تفریح ​​کے لیے",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "iconKey": "trendingUp",
+      "text": "100 روپے کمائیں، 120 روپے خرچ کریں۔ کیا ہوتا ہے؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "آپ 20 روپے بچاتے ہیں۔",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "prize",
+          "text": "آپ انعام جیتتے ہیں۔",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "تم قرض میں ڈوب جاتے ہو۔",
+          "emoji": "⚠️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "iconKey": "checkCircle",
+      "text": "بجٹ کی اچھی عادت کون سی ہے؟",
+      "options": [
+        {
+          "id": "guess",
+          "text": "اندازہ لگائیں اور بے ترتیب خرچ کریں۔",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "اخراجات اور منصوبہ بندی کی فہرست بنائیں",
+          "emoji": "📝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "خرچ کو نظر انداز کریں۔",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "iconKey": "piggyBank",
+      "text": "اگر آپ بجٹ کی پیروی کرتے ہیں، تو آپ کر سکتے ہیں...",
+      "options": [
+        {
+          "id": "goals",
+          "text": "تناؤ سے پاک مقاصد حاصل کریں۔",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "unnecessary",
+          "text": "غیر ضروری چیزیں خریدیں۔",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "پیسے کا ٹریک کھو دیں",
+          "emoji": "🌀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

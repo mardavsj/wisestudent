@@ -1,1 +1,152 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ: ਪੈਸਾ ਸੱਚ",
+  "subtitleComplete": "ਖੇਡ ਪੂਰੀ!",
+  "roundLabel": "ਦੌਰ {{current}}/{{total}}",
+  "timeUp": "ਸਮਾਂ ਪੂਰਾ ਹੋ ਗਿਆ ਹੈ!",
+  "readyEmoji": "💰",
+  "readyTitle": "ਤਿਆਰ ਰਹੋ!",
+  "readyDescription": "ਪੈਸੇ ਦੀ ਸੱਚਾਈ ਅਤੇ ਇਮਾਨਦਾਰੀ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ!",
+  "readyTimeInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰੇਕ ਸਵਾਲ ਲਈ {{time}} ਸਕਿੰਟ ਹਨ।",
+  "readyQuestionInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{time}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "gameRoundLabel": "ਗੋਲ:",
+  "gameTimeLabel": "ਸਮਾਂ:",
+  "gameScoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਤੁਹਾਨੂੰ ਸਕੂਲ ਦੇ ਫਰਸ਼ 'ਤੇ ਇੱਕ ਸਿੱਕਾ ਮਿਲਦਾ ਹੈ। ਸਹੀ ਪਹਿਲੀ ਕਾਰਵਾਈ ਕੀ ਹੈ?",
+      "correctAnswer": "ਪੁੱਛੋ ਕਿ ਕੀ ਕੋਈ ਗੁਆਚ ਗਿਆ ਹੈ",
+      "options": [
+        {
+          "text": "ਇਸਨੂੰ ਜਲਦੀ ਰੱਖੋ",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "ਪੁੱਛੋ ਕਿ ਕੀ ਕੋਈ ਗੁਆਚ ਗਿਆ ਹੈ",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "ਸਨੈਕਸ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "🍿"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਲੁਕਾਓ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਕੋਈ ਤੁਹਾਨੂੰ ਉਸ ਕੰਮ ਲਈ ਪੈਸੇ ਦਿੰਦਾ ਹੈ ਜੋ ਤੁਸੀਂ ਪੂਰਾ ਨਹੀਂ ਕੀਤਾ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਸੱਚ ਸਮਝਾਓ",
+      "options": [
+        {
+          "text": "ਸੱਚ ਸਮਝਾਓ",
+          "isCorrect": true,
+          "emoji": "🗣️"
+        },
+        {
+          "text": "ਕੁਝ ਨਾ ਕਹੋ",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "ਦੂਜਿਆਂ ਨੂੰ ਦੋਸ਼ੀ ਠਹਿਰਾਓ",
+          "isCorrect": false,
+          "emoji": "👉"
+        },
+        {
+          "text": "ਦੂਰ ਚਲੇ ਜਾਓ",
+          "isCorrect": false,
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਤੁਸੀਂ ਅਤੇ ਤੁਹਾਡੇ ਦੋਸਤ ਨੇ ਇਕੱਠੇ ਪੈਸੇ ਕਮਾਏ ਹਨ। ਸਮੱਸਿਆਵਾਂ ਤੋਂ ਬਚਣ ਲਈ ਕਿਹੜੀ ਚੀਜ਼ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "correctAnswer": "ਜਲਦੀ ਸਾਂਝਾ ਕਰਨ ਲਈ ਸਹਿਮਤ ਹੋਵੋ",
+      "options": [
+        {
+          "text": "ਆਪਣੇ ਆਪ ਨੂੰ ਹੋਰ ਲੈ",
+          "isCorrect": false,
+          "emoji": "🤑"
+        },
+        {
+          "text": "ਉਡੀਕ ਕਰੋ ਅਤੇ ਬਾਅਦ ਵਿੱਚ ਬਹਿਸ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💢"
+        },
+        {
+          "text": "ਕਿਸਮਤ ਨੂੰ ਫੈਸਲਾ ਕਰਨ ਦਿਓ",
+          "isCorrect": false,
+          "emoji": "🎲"
+        },
+        {
+          "text": "ਜਲਦੀ ਸਾਂਝਾ ਕਰਨ ਲਈ ਸਹਿਮਤ ਹੋਵੋ",
+          "isCorrect": true,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਤੁਸੀਂ ਉਧਾਰ ਲਏ ਪੈਸੇ ਵਾਪਸ ਕਰਨ ਦਾ ਵਾਅਦਾ ਕਰਦੇ ਹੋ ਪਰ ਭੁੱਲ ਜਾਂਦੇ ਹੋ। ਇਸ ਨੂੰ ਸਭ ਤੋਂ ਵਧੀਆ ਕੀ ਠੀਕ ਕਰਦਾ ਹੈ?",
+      "correctAnswer": "ਮੁਆਫੀ ਮੰਗੋ ਅਤੇ ਇਸਨੂੰ ਵਾਪਸ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਮੁਆਫੀ ਮੰਗੋ ਅਤੇ ਇਸਨੂੰ ਵਾਪਸ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "🙏"
+        },
+        {
+          "text": "ਵਿਅਕਤੀ ਤੋਂ ਬਚੋ",
+          "isCorrect": false,
+          "emoji": "🙄"
+        },
+        {
+          "text": "ਦਿਖਾਓ ਕਿ ਤੁਸੀਂ ਭੁਗਤਾਨ ਕੀਤਾ ਹੈ",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਹੱਸੋ",
+          "isCorrect": false,
+          "emoji": "😅"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਲੋਕਾਂ ਨੂੰ ਪੈਸੇ ਨਾਲ ਤੁਹਾਡੇ 'ਤੇ ਦੁਬਾਰਾ ਭਰੋਸਾ ਕਿਸ ਚੀਜ਼ ਦਾ ਕਾਰਨ ਬਣਦਾ ਹੈ?",
+      "correctAnswer": "ਵਾਅਦੇ ਨਿਭਾਉਣਾ",
+      "options": [
+        {
+          "text": "ਉੱਚੀ-ਉੱਚੀ ਗੱਲ ਕਰ ਰਿਹਾ ਹੈ",
+          "isCorrect": false,
+          "emoji": "📢"
+        },
+        {
+          "text": "ਬਹਾਨੇ ਬਣਾ ਰਿਹਾ ਹੈ",
+          "isCorrect": false,
+          "emoji": "🌀"
+        },
+        {
+          "text": "ਵਾਅਦੇ ਨਿਭਾਉਣਾ",
+          "isCorrect": true,
+          "emoji": "📌"
+        },
+        {
+          "text": "ਹੋਰ ਮੰਗ ਰਿਹਾ ਹੈ",
+          "isCorrect": false,
+          "emoji": "💸"
+        }
+      ]
+    }
+  ]
+}

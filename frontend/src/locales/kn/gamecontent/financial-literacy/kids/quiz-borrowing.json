@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಎರವಲು ಕುರಿತು ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "🤝",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಸಾಲ ಪಡೆಯುವುದರ ಅರ್ಥವೇನು?",
+      "options": [
+        {
+          "id": "without",
+          "text": "ಕೇಳದೆ ತೆಗೆದುಕೊಳ್ಳುವುದು",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ಬಳಸುವುದು ಮತ್ತು ಹಿಂದಿರುಗಿಸುವುದು",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "steal",
+          "text": "Stealing",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಪುಸ್ತಕವನ್ನು ಎರವಲು ಪಡೆದ ನಂತರ, ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ಅದನ್ನು ಹಿಂತಿರುಗಿ",
+          "emoji": "↩️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "ಅದನ್ನು ಶಾಶ್ವತವಾಗಿ ಇರಿಸಿ",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sell",
+          "text": "ಅದನ್ನು ಮಾರಾಟ ಮಾಡಿ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಬ್ಯಾಂಕ್‌ನಿಂದ ಸಾಲ ಪಡೆಯುವುದು ಏಕೆ ಸರಿ?",
+      "options": [
+        {
+          "id": "repay",
+          "text": "ನೀವು ಬಡ್ಡಿಯೊಂದಿಗೆ ಮರುಪಾವತಿ ಮಾಡುತ್ತೀರಿ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "ಇದು ಉಚಿತ ಹಣ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ನೀವು ಎಂದಿಗೂ ಮರುಪಾವತಿ ಮಾಡಬೇಡಿ",
+          "emoji": "🙃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ಎರವಲು ಪಡೆದ ವಸ್ತುಗಳನ್ನು ಹಿಂತಿರುಗಿಸದಿದ್ದರೆ ಏನಾಗುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "more",
+          "text": "ನೀವು ಹೆಚ್ಚಿನ ವಸ್ತುಗಳನ್ನು ಪಡೆಯುತ್ತೀರಿ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rewards",
+          "text": "ನೀವು ಬಹುಮಾನಗಳನ್ನು ಪಡೆಯುತ್ತೀರಿ",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ಜನರು ನಿಮ್ಮ ಮೇಲಿನ ನಂಬಿಕೆಯನ್ನು ಕಳೆದುಕೊಳ್ಳುತ್ತಾರೆ",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಪ್ರಾಮಾಣಿಕ ಸಾಲ ಏಕೆ ಮುಖ್ಯ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ನೀವು ಹೆಚ್ಚು ಆಟಿಕೆಗಳನ್ನು ಪಡೆಯುತ್ತೀರಿ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ಇದು ಇತರರೊಂದಿಗೆ ವಿಶ್ವಾಸವನ್ನು ಬೆಳೆಸುತ್ತದೆ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ಇದು ಸಾಲವನ್ನು ಮೋಜು ಮಾಡುತ್ತದೆ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

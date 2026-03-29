@@ -1,1 +1,129 @@
-﻿{}
+﻿{
+    "title": "ব্যয়ের উপর কুইজ",
+    "subtitleComplete": "কুইজ সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "সেরা ব্যয়ের অভ্যাস কী?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "না ভেবে কিনো",
+                    "emoji": "💸",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "তুলনা করো এবং বেছে নাও",
+                    "emoji": "🤔",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "মজার জন্য ধার করো",
+                    "emoji": "💳",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "টাকা খরচের বুদ্ধিমান উপায় কী?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "আগে বাজেট করো",
+                    "emoji": "📋",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "text": "একবারে সব খরচ করো",
+                    "emoji": "🛍️",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "জনপ্রিয় জিনিস কিনো",
+                    "emoji": "🔥",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "বড় কেনাকাটার আগে কী করবে?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "ক্রেডিটে কিনো",
+                    "emoji": "💳",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "বন্ধুদের জিজ্ঞেস করো",
+                    "emoji": "👥",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "আগে সঞ্চয় করো",
+                    "emoji": "🏦",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "কোন ব্যয়ের অভ্যাস ভবিষ্যতে সাহায্য করে?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "চাওয়ায় খরচ করো",
+                    "emoji": "🎯",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "প্রয়োজনের জন্য সঞ্চয় করো",
+                    "emoji": "💰",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "দামি জিনিস কিনো",
+                    "emoji": "💎",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "কেনাকাটার সবচেয়ে বুদ্ধিমান পদ্ধতি কী?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "তালিকা তৈরি করো",
+                    "emoji": "📝",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "text": "আবেগের বশে কেনো",
+                    "emoji": "⚡",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "ট্রেন্ড অনুসরণ করো",
+                    "emoji": "📈",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,1 +1,122 @@
-﻿{}
+{
+  "title": "ડિજિટલ મની પર ક્વિઝ",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "questionCount": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "resultSuccessHeader": "ડિજિટલ મની ક્વિઝ સ્ટાર!",
+  "resultSuccessSubheader": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે ડિજિટલ પેમેન્ટ સુરક્ષામાં નિપુણતા મેળવી રહ્યાં છો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "resultSuccessLesson": "પાઠ: તમારો PIN ગુપ્ત રાખો, OTP નો ઉપયોગ કરો, CVV છુપાવો, મજબૂત પાસવર્ડ્સનો ઉપયોગ કરો અને સુરક્ષિત ડિજિટલ ચૂકવણી માટે HTTPS તપાસો!",
+  "resultTryAgainHeader": "શીખતા રહો!",
+  "resultTryAgainSubheader": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. પ્રેક્ટિસ ડિજિટલ ચુકવણી સુરક્ષા સાથે સંપૂર્ણ બનાવે છે!",
+  "tryAgainButton": "ફરી પ્રયાસ કરો",
+  "resultTryAgainTip": "ટીપ: તમારો PIN અથવા CVV ક્યારેય શેર કરશો નહીં, હંમેશા OTP વેરિફિકેશનનો ઉપયોગ કરો, મજબૂત પાસવર્ડ બનાવો અને વેબસાઇટ્સ પર HTTPS તપાસો!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "જે વધુ સુરક્ષિત છે?",
+      "options": [
+        {
+          "id": "secret",
+          "text": "PIN ગુપ્ત રાખો",
+          "emoji": "🔒"
+        },
+        {
+          "id": "share",
+          "text": "PIN શેર કરો",
+          "emoji": "🔓"
+        },
+        {
+          "id": "both",
+          "text": "મિત્રો સાથે શેર કરો",
+          "emoji": "👥"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ઓનલાઈન પેમેન્ટ માટે શું સુરક્ષિત છે?",
+      "options": [
+        {
+          "id": "nootp",
+          "text": "OTP છોડો",
+          "emoji": "🚫"
+        },
+        {
+          "id": "otp",
+          "text": "OTP નો ઉપયોગ કરો",
+          "emoji": "🔐"
+        },
+        {
+          "id": "ignore",
+          "text": "ચકાસણી અવગણો",
+          "emoji": "⚠️"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "જે તમારા કાર્ડને સુરક્ષિત કરે છે?",
+      "options": [
+        {
+          "id": "cvv",
+          "text": "CVV છુપાવો",
+          "emoji": "🛡️"
+        },
+        {
+          "id": "sharecvv",
+          "text": "CVV શેર કરો",
+          "emoji": "📢"
+        },
+        {
+          "id": "post",
+          "text": "સીવીવી ઓનલાઇન પોસ્ટ કરો",
+          "emoji": "🌐"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "સલામત પ્રથા શું છે?",
+      "options": [
+        {
+          "id": "weak",
+          "text": "'1234' નો ઉપયોગ કરો",
+          "emoji": "⚠️"
+        },
+        {
+          "id": "strong",
+          "text": "મજબૂત પાસવર્ડ",
+          "emoji": "🔑"
+        },
+        {
+          "id": "name",
+          "text": "તમારા નામનો ઉપયોગ કરો",
+          "emoji": "👤"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "વેબસાઇટની ચકાસણી કેવી રીતે કરવી?",
+      "options": [
+        {
+          "id": "nohttps",
+          "text": "HTTPS ને અવગણો",
+          "emoji": "🌐"
+        },
+        {
+          "id": "https",
+          "text": "HTTPS તપાસો",
+          "emoji": "🔒"
+        },
+        {
+          "id": "trust",
+          "text": "બધી સાઇટ્સ પર વિશ્વાસ કરો",
+          "emoji": "😊"
+        }
+      ]
+    }
+  ]
+}

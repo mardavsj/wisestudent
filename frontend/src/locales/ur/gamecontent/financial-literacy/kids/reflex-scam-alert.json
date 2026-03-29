@@ -1,1 +1,165 @@
-﻿{}
+{
+  "title": "اضطراری: اسکیم الرٹ",
+  "subtitleComplete": "کھیل مکمل!",
+  "roundLabel": "راؤنڈ {{current}}/{{total}}",
+  "timeUp": "وقت ختم ہو گیا ہے!",
+  "readyTitle": "آپ کی اسکام الرٹنس کو جانچنے کے لیے تیار ہیں؟",
+  "readyDescription": "گھوٹالوں اور دھوکہ دہی سے محفوظ رہنے کے بارے میں سوالات کے جواب دیں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{time}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "gameRoundLabel": "گول:",
+  "gameTimeLabel": "وقت:",
+  "gameScoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "جب آپ کو بل موصول ہوتا ہے تو آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "بل چیک کریں۔",
+      "options": [
+        {
+          "text": "بل چیک کریں۔",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "فوری ادائیگی کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "اسے حذف کریں۔",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ کو ایک مشکوک پیشکش کے ساتھ کیا کرنا چاہئے؟",
+      "correctAnswer": "پیشکش کی تصدیق کریں۔",
+      "options": [
+        {
+          "text": "جلدی قبول کریں۔",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "پیشکش کی تصدیق کریں۔",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "فوری طور پر اعتماد کریں۔",
+          "isCorrect": false,
+          "emoji": "🤝"
+        },
+        {
+          "text": "وارننگ کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "جب کوئی چیز بہت اچھی لگتی ہے تو آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "سوالات پوچھیں۔",
+      "options": [
+        {
+          "text": "اندھا اعتماد کریں۔",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "جلدی سے قبول کریں۔",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "شکوک و شبہات کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "سوالات پوچھیں۔",
+          "isCorrect": true,
+          "emoji": "❓"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ادائیگی کرنے سے پہلے آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "تفصیلات کی تصدیق کریں۔",
+      "options": [
+        {
+          "text": "ابھی ادائیگی کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "توثیق کو چھوڑیں۔",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "تفصیلات کی تصدیق کریں۔",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "چیک کے بغیر اعتماد کریں۔",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "اگر آپ کو اسکام کا پتہ چلتا ہے تو آپ کو کیا کرنا چاہئے؟",
+      "correctAnswer": "اسکام کی اطلاع دیں۔",
+      "options": [
+        {
+          "text": "کچھ نہ کرو",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "اسے نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "چپ رہو",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "اسکام کی اطلاع دیں۔",
+          "isCorrect": true,
+          "emoji": "🚨"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "Scam-Spotting Pro!",
+    "description": "حیرت انگیز! آپ نے {{score}}/{{total}} درست سمجھا! آپ گھوٹالوں کو تلاش کرنے میں بہترین ہیں!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "اچھی آگاہی!",
+    "description": "شاباش! آپ نے اسکور کیا {{score}}/{{total}}! گھوٹالے کا ماہر بننے کی مشق کرتے رہیں!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "مشق کرتے رہیں!",
+    "description": "آپ نے {{score}}/{{total}} اسکور کیا۔ تجاویز کا جائزہ لیں اور اپنی اسکام اسپاٹنگ کی مہارت کو بہتر بنانے کے لیے دوبارہ کوشش کریں!"
+  }
+}

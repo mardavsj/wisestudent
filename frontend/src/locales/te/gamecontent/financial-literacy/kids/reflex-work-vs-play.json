@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ వర్క్ vs ప్లే",
+  "subtitlePlaying": "రౌండ్ {{current}}/{{total}}: మీ పనిని మరియు ప్లే రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "subtitleReady": "మీ పనిని vs ప్లే రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "readyEmoji": "💼",
+  "readyTitle": "పని vs ప్లేని పరీక్షించడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "పని మరియు ఆట మధ్య సరైన చర్యను ఎంచుకోండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "రౌండ్:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "డబ్బు సంపాదించడానికి మీకు ఏది సహాయపడుతుంది?",
+      "correctAnswer": "Work",
+      "options": [
+        {
+          "text": "వృధా సమయం",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "రోజంతా ఆడండి",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Work",
+          "isCorrect": true,
+          "emoji": "💼"
+        },
+        {
+          "text": "ఏమీ చేయవద్దు",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "నేర్చుకోవడానికి మరియు ఎదగడానికి మీరు ఏమి చేయాలి?",
+      "correctAnswer": "Study",
+      "options": [
+        {
+          "text": "Study",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "రోజంతా ఆడండి",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "నేర్చుకోవడం దాటవేయండి",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "విద్యను విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "మీ సంపాదనతో మీరు ఏమి చేయాలి?",
+      "correctAnswer": "ఆదాయాలను ఆదా చేయండి",
+      "options": [
+        {
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ఆదాయాలను ఆదా చేయండి",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "వేస్ట్ మనీ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "దానిని పోగొట్టుకోండి",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ఇంట్లో సహాయం చేయడానికి మీరు ఏమి చేయాలి?",
+      "correctAnswer": "పనులు చేయండి",
+      "options": [
+        {
+          "text": "పనులు చేయండి",
+          "isCorrect": true,
+          "emoji": "🧹"
+        },
+        {
+          "text": "పనులను దాటవేయండి",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "పనిని నివారించండి",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "బద్ధకంగా ఉండండి",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ఉత్పాదకంగా ఉండటానికి మీకు ఏది సహాయపడుతుంది?",
+      "correctAnswer": "ప్రణాళిక పని",
+      "options": [
+        {
+          "text": "పనిలేకుండా ఉండండి",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "వృధా సమయం",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "ఏమీ చేయవద్దు",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "ప్రణాళిక పని",
+          "isCorrect": true,
+          "emoji": "📋"
+        }
+      ]
+    }
+  ]
+}

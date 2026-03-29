@@ -1,1 +1,34 @@
-﻿{}
+{
+  "title": "જર્નલ ઓફ બોરોઇંગ",
+  "subtitleComplete": "જર્નલ પૂર્ણ!",
+  "subtitleProgress": "{{total}} નો પ્રશ્ન {{current}}: જવાબદાર ઉધાર પર પ્રતિબિંબિત કરો!",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "📝",
+  "minLengthLabel": "ઓછામાં ઓછા {{count}} અક્ષરો લખો",
+  "placeholder": "તમારી જર્નલ એન્ટ્રી અહીં લખો...",
+  "characterCount": "{{count}}/{{required}} અક્ષરો",
+  "submitContinueButton": "સબમિટ કરો અને ચાલુ રાખો",
+  "submitFinalButton": "ફાઈનલ એન્ટ્રી સબમિટ કરો",
+  "stages": [
+    {
+      "question": "લખો: \"એક વસ્તુ જે મેં ઉછીની લીધી અને પરત કરી તે હતી ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"મેં ઉછીનું લીધેલું પાછું આપ્યું ત્યારે મને ___ લાગ્યું.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"જવાબદારીપૂર્વક ઉધાર લેવાનો અર્થ ___ છે.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"મેં ___ સુધીમાં ઉછીના લીધેલા પૈસા પરત કરવાની ખાતરી કરી.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"ઉધારે મને ___ પૈસા વિશે શીખવ્યું.\"",
+      "minLength": 10
+    }
+  ]
+}

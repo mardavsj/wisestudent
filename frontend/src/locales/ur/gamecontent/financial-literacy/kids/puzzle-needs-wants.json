@@ -1,1 +1,79 @@
-﻿{}
+{
+  "title": "ضروریات / خواہشات کی پہیلی",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "زمرہ جات کے ساتھ اشیاء کو میچ کریں ({{matched}}/{{total}} مماثل)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "منتخب کردہ: {{name}}",
+  "selectItem": "ایک آئٹم منتخب کریں۔",
+  "matchButton": "Match",
+  "scoreLabel": "سکور:",
+  "matchedLabel": "مماثل:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "بہت اچھا کام!",
+  "resultGreatDescription": "آپ نے {{total}} آئٹمز میں سے {{score}} کو ان کے زمرے کے ساتھ درست طریقے سے ملایا!",
+  "resultGreatLesson": "سبق: ضروریات بمقابلہ خواہشات کو سمجھنا پیسے کے زبردست فیصلے کرنے میں مدد کرتا ہے!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "مشق کرتے رہیں!",
+  "resultKeepDescription": "آپ نے {{total}} آئٹمز میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultKeepTip": "مشورہ: اس بارے میں سوچیں کہ آیا ہر چیز ضروری ہے یا صوابدیدی!",
+  "items": [
+    {
+      "id": 1,
+      "name": "پینے کا پانی",
+      "emoji": "💧"
+    },
+    {
+      "id": 2,
+      "name": "اسکول کے جوتے",
+      "emoji": "👟"
+    },
+    {
+      "id": 3,
+      "name": "کھلونا کار",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "پاکٹ منی",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "مالیاتی علم",
+      "emoji": "📚"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅",
+      "description": "زندگی یا سیکھنے کے لیے ضروری"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁",
+      "description": "ہونا اچھا ہے، ضروری نہیں۔"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "🏦",
+      "description": "مستقبل کے استعمال کے لیے ایک طرف رکھ دیں۔"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈",
+      "description": "قدر بڑھانے کے لیے پیسے کا استعمال کریں۔"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲",
+      "description": "دوسروں کی مدد کے لیے استعمال کریں۔"
+    }
+  ]
+}

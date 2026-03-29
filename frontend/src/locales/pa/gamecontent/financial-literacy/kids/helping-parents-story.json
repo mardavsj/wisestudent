@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ਮਾਪਿਆਂ ਦੀ ਕਹਾਣੀ ਦੀ ਮਦਦ ਕਰਨਾ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਡੇ ਮਾਤਾ-ਪਿਤਾ ਨੂੰ ਕਰਿਆਨੇ ਲਈ ₹50 ਦੀ ਲੋੜ ਹੈ। ਤੁਹਾਡੇ ਕੋਲ ₹20 ਹਨ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "give",
+          "text": "ਮਦਦ ਲਈ ਆਪਣੇ ₹20 ਦਿਓ",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ਇਸ ਨੂੰ ਕੈਂਡੀ ਲਈ ਰੱਖੋ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਉਨ੍ਹਾਂ ਦੀ ਬੇਨਤੀ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ਘਰ ਬੈਠੇ ₹10 ਦੀ ਮਦਦ ਕਰਦੇ ਹੋ। ਕੀ ਤੁਹਾਨੂੰ ਇਸਨੂੰ ਬਚਾਉਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ਇਸ ਨੂੰ ਖਿਡੌਣਿਆਂ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਹਾਂ, ਬਚਤ ਵਿੱਚ ਜੋੜੋ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "ਇਸ ਨੂੰ ਦੂਰ ਦਿਓ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਡੇ ਮਾਪੇ ਤੁਹਾਨੂੰ 15 ਰੁਪਏ ਵਿੱਚ ਦੁੱਧ ਖਰੀਦਣ ਲਈ ਕਹਿੰਦੇ ਹਨ। ਤੁਹਾਡੇ ਕੋਲ ₹20 ਹਨ। ਅੱਗੇ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "change",
+          "text": "ਦੁੱਧ ਖਰੀਦੋ ਅਤੇ ਪਰਿਵਰਤਨ ਵਾਪਸ ਕਰੋ",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ਤਬਦੀਲੀ ਨਾਲ ਕੈਂਡੀ ਖਰੀਦੋ",
+          "emoji": "🍭",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "keep",
+          "text": "ਸਾਰੇ ₹20 ਰੱਖੋ",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਨੂੰ ₹10 ਮਿਲਦੇ ਹਨ। ਮਾਪੇ ਇਮਾਨਦਾਰ ਹੋਣ ਨੂੰ ਕਹਿੰਦੇ ਹਨ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "snacks",
+          "text": "ਇਸ ਨੂੰ ਸਨੈਕਸ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ਇਸਨੂੰ ਆਪਣੀ ਜੇਬ ਵਿੱਚ ਲੁਕਾਓ",
+          "emoji": "🧥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "find",
+          "text": "ਮਾਲਕ ਨੂੰ ਲੱਭਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+          "emoji": "🕵️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਪੈਸੇ ਨਾਲ ਮਾਪਿਆਂ ਦੀ ਮਦਦ ਕਰਨਾ ਤੁਹਾਨੂੰ ਮਹਿਸੂਸ ਕਰਦਾ ਹੈ ...",
+      "options": [
+        {
+          "id": "proud",
+          "text": "ਮਾਣ ਅਤੇ ਜ਼ਿੰਮੇਵਾਰ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ਘੱਟ ਪੈਸੇ ਲਈ ਉਦਾਸ",
+          "emoji": "😔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ਕੁਝ ਖਾਸ ਨਹੀਂ",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

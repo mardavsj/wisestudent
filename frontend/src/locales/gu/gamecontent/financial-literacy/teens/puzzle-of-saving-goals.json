@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "પઝલ: સેવિંગ ગોલ્સ",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "હેતુઓ સાથે ગોલ મેળવો ({{current}}/{{total}} મેળ ખાય છે)",
+  "goalsTitle": "સેવિંગ ગોલ્સ",
+  "purposesTitle": "સેવિંગ હેતુઓ",
+  "matchButton": "Match",
+  "selectGoalLabel": "સેવિંગ ગોલ પસંદ કરો",
+  "selectedGoalLabel": "પસંદ કરેલ: {{name}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "matchedLabel": "મેળ ખાતી: {{current}}/{{total}}",
+  "resultSuccessHeader": "ગ્રેટ જોબ!",
+  "resultSuccessSubheader": "તમે {{total}} માંથી {{score}} સાચવવાના લક્ષ્યોને તેમના હેતુઓ સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultSuccessLesson": "પાઠ: સ્પષ્ટ બચત લક્ષ્યો નક્કી કરવાથી નાણાકીય સુરક્ષા પ્રાપ્ત કરવામાં મદદ મળે છે!",
+  "resultTryAgainHeader": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultTryAgainSubheader": "તમે {{total}} માંથી {{score}} ને સાચવતા લક્ષ્યોને યોગ્ય રીતે મેળવ્યા.",
+  "resultTryAgainTip": "ટીપ: દરેક બચત લક્ષ્યના પ્રાથમિક લાભ વિશે વિચારો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "goals": [
+    {
+      "id": 1,
+      "name": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 2,
+      "name": "ઈમરજન્સી ફંડ",
+      "emoji": "🚑"
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "emoji": "🏠"
+    },
+    {
+      "id": 5,
+      "name": "Retirement",
+      "emoji": "🌅"
+    }
+  ],
+  "purposes": [
+    {
+      "id": 6,
+      "name": "ભાવિ વૃદ્ધિ",
+      "emoji": "📈"
+    },
+    {
+      "id": 7,
+      "name": "સલામતી નેટ",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 8,
+      "name": "Mobility",
+      "emoji": "🛣️"
+    },
+    {
+      "id": 9,
+      "name": "Stability",
+      "emoji": "🏛️"
+    },
+    {
+      "id": 10,
+      "name": "મનની શાંતિ",
+      "emoji": "🧘"
+    }
+  ]
+}

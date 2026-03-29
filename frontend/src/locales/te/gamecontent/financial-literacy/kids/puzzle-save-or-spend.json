@@ -1,1 +1,72 @@
-﻿{}
+{
+  "title": "పజిల్: ఆదా చేయండి లేదా ఖర్చు చేయండి",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "చర్యలతో అంశాలను సరిపోల్చండి ({{matched}}/{{total}} సరిపోలింది)",
+  "itemsTitle": "Items",
+  "actionsTitle": "Actions",
+  "selectedLabel": "ఎంచుకోబడింది: {{name}}",
+  "selectItem": "ఒక అంశాన్ని ఎంచుకోండి",
+  "matchButton": "Match",
+  "scoreLabel": "స్కోర్:",
+  "matchedLabel": "సరిపోలినది:",
+  "resultGreatTitle": "గ్రేట్ జాబ్!",
+  "resultGreatDescription": "మీరు చర్యలతో {{total}} అంశాలలో {{score}}ని సరిగ్గా సరిపోల్చారు!",
+  "resultLesson": "పాఠం: ముఖ్యమైన విషయాల కోసం పొదుపు చేయడం సురక్షితమైన భవిష్యత్తును నిర్మించడంలో సహాయపడుతుంది!",
+  "resultKeepTitle": "సాధన కొనసాగించండి!",
+  "resultKeepDescription": "మీరు {{total}} అంశాలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTip": "చిట్కా: ప్రతి అంశం అవసరమా లేదా విచక్షణతో కూడినదా అని ఆలోచించండి!",
+  "items": [
+    {
+      "id": 1,
+      "name": "మనీ బ్యాంక్",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "ఐస్ క్రీమ్",
+      "emoji": "🍦"
+    },
+    {
+      "id": 3,
+      "name": "కొత్త సైకిల్",
+      "emoji": "🚲"
+    },
+    {
+      "id": 4,
+      "name": "Candy",
+      "emoji": "🍬"
+    },
+    {
+      "id": 5,
+      "name": "పాఠశాల పుస్తకాలు",
+      "emoji": "📚"
+    }
+  ],
+  "actions": [
+    {
+      "id": 6,
+      "name": "Save",
+      "emoji": "📥"
+    },
+    {
+      "id": 7,
+      "name": "Spend",
+      "emoji": "📤"
+    },
+    {
+      "id": 8,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 9,
+      "name": "Donate",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "Budget",
+      "emoji": "📋"
+    }
+  ]
+}

@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "پہیلی: بجٹ کی اشیاء",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "زمرہ جات کے ساتھ اشیاء کو میچ کریں ({{matched}}/{{total}} مماثل)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "منتخب کردہ: {{name}}",
+  "selectItem": "ایک آئٹم منتخب کریں۔",
+  "matchButton": "Match",
+  "scoreLabel": "سکور:",
+  "matchedLabel": "مماثل:",
+  "resultGreatEmoji": "🏆",
+  "resultGreatTitle": "بہت اچھا کام!",
+  "resultGreatDescription": "آپ نے زمرہ جات کے ساتھ {{total}} آئٹمز میں سے {{score}} کو صحیح طریقے سے ملایا!",
+  "coinsLabel": "Coins",
+  "resultLesson": "سبق: ضروریات بمقابلہ خواہشات کو سمجھنا بجٹ سازی میں مدد کرتا ہے!",
+  "resultKeepEmoji": "🧩",
+  "resultKeepTitle": "مشق کرتے رہیں!",
+  "resultKeepDescription": "آپ نے {{total}} آئٹمز میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultTip": "مشورہ: بقا کے لیے ضروریات ضروری ہیں، خواہشات کا ہونا اچھا ہے!",
+  "items": [
+    {
+      "id": 1,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 2,
+      "name": "سالگرہ کا تحفہ",
+      "emoji": "🎁"
+    },
+    {
+      "id": 3,
+      "name": "اسکول کا سامان",
+      "emoji": "✏️"
+    },
+    {
+      "id": 4,
+      "name": "ویڈیو گیم کنسول",
+      "emoji": "🎮"
+    },
+    {
+      "id": 5,
+      "name": "اضافی اسنیکس",
+      "emoji": "🍿"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Essential",
+      "emoji": "✅",
+      "description": "روزمرہ کی زندگی کے لیے ضروری ہے۔"
+    },
+    {
+      "id": 7,
+      "name": "Non-Essential",
+      "emoji": "➖",
+      "description": "اختیاری، ضروری نہیں۔"
+    },
+    {
+      "id": 8,
+      "name": "اسکول کے لیے ضروری",
+      "emoji": "🎒",
+      "description": "سیکھنے کی ضرورت ہے۔"
+    },
+    {
+      "id": 9,
+      "name": "Luxury",
+      "emoji": "💎",
+      "description": "عمدہ، مہنگا"
+    },
+    {
+      "id": 10,
+      "name": "اختیاری علاج",
+      "emoji": "🍭",
+      "description": "چھوٹا تفریحی خرچ"
+    }
+  ]
+}

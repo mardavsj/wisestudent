@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "પરીક્ષાની તૈયારીની વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમારી પાસે ₹200 બાકી છે. ટ્યુશન માટે ચૂકવણી કરો અથવા નાસ્તો ખરીદો?",
+      "options": [
+        {
+          "id": "tuition",
+          "text": "ટ્યુશન ચૂકવો",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "નાસ્તો ખરીદો",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "બંને વચ્ચે વિભાજન",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારી પાસે ₹300 છે. પરીક્ષા ફી કે ફિલ્મની ટિકિટ?",
+      "options": [
+        {
+          "id": "movie",
+          "text": "મૂવી ટિકિટ",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "fees",
+          "text": "પરીક્ષા ફી ચૂકવો",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "બધું સાચવો",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારી પાસે ₹400 છે. અભ્યાસ સામગ્રી કે નવા કપડાં?",
+      "options": [
+        {
+          "id": "clothes",
+          "text": "કપડાં ખરીદો",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "બંને વચ્ચે વિભાજન",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "study",
+          "text": "અભ્યાસ સામગ્રી ખરીદો",
+          "emoji": "📖",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમારી પાસે ₹250 છે. ટ્યુટરિંગ અથવા પાર્ટી નાસ્તો?",
+      "options": [
+        {
+          "id": "tutoring",
+          "text": "ટ્યુટરિંગ માટે ચૂકવણી કરો",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "પાર્ટી નાસ્તો",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "બધું સાચવો",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમારી પાસે ₹500 છે. પરીક્ષા પ્રેપ કોર્સ કે ગેમિંગ કન્સોલ?",
+      "options": [
+        {
+          "id": "console",
+          "text": "ગેમિંગ કન્સોલ",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "course",
+          "text": "પરીક્ષાની તૈયારીનો કોર્સ",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "બંને વચ્ચે વિભાજન",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ગ્રેટ જોબ!",
+    "winMessage": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે! તમે શિક્ષણ ખર્ચને પ્રાથમિકતા આપવાનું મહત્વ સમજો છો!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: નાસ્તા અને મનોરંજન જેવી જરૂરિયાતો કરતાં ટ્યુશન, પરીક્ષા ફી અને અભ્યાસ સામગ્રી જેવા શિક્ષણ ખર્ચને હંમેશા પ્રાધાન્ય આપો!",
+    "loseEmoji": "😔",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે. જરૂરિયાતો કરતાં શિક્ષણ ખર્ચને પ્રાધાન્ય આપવાનું યાદ રાખો!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટીપ: શિક્ષણ ખર્ચ (ટ્યુશન, પરીક્ષા ફી, અભ્યાસ સામગ્રી) એ તમારા ભવિષ્ય માટેનું રોકાણ છે અને તેની જરૂરિયાત પહેલા આવવું જોઈએ."
+  }
+}

@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "اسٹارٹ اپ آئیڈیا کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "perfectScoreTitle": "کہانی مکمل!",
+  "perfectScoreMsg": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ انٹرپرینیورشپ کو سمجھتے ہیں!",
+  "coinsLabel": "+{{count}} سکے",
+  "lessonLabel": "سبق: انٹرپرینیورشپ کاروبار بنانا اور چلانا ہے۔ کوئی بھی، بشمول نوعمر، اچھے خیالات اور کوشش کے ساتھ کاروباری بن سکتا ہے!",
+  "keepLearningTitle": "سیکھتے رہیں!",
+  "lowScoreMsg": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، انٹرپرینیورشپ ایک نیا کاروبار بنا رہی ہے، اور کوئی بھی اسے کر سکتا ہے!",
+  "tryAgain": "دوبارہ کوشش کریں۔",
+  "tipLabel": "مشورہ: ایک کاروباری شخص وہ ہوتا ہے جو نیا کاروبار بناتا اور چلاتا ہے۔ ہاتھ سے تیار کردہ دستکاری آن لائن فروخت کرنا کاروبار ہے!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "کشور ہاتھ سے تیار کردہ دستکاری آن لائن فروخت کرتا ہے۔ کیا یہ انٹرپرینیورشپ ہے؟",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ہاں، یہ انٹرپرینیورشپ ہے۔",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "نہیں، یہ صرف فروخت ہے",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "شاید، منحصر ہے",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "کیا چیز کسی کو کاروباری بناتی ہے؟",
+      "options": [
+        {
+          "id": "spends",
+          "text": "صرف پیسہ خرچ کرتا ہے۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "creates",
+          "text": "نیا کاروبار بناتا ہے۔",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "کچھ نہیں کرتا",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "کیا نوعمر افراد کاروباری ہو سکتے ہیں؟",
+      "options": [
+        {
+          "id": "no2",
+          "text": "نہیں، صرف بالغ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "شاید، اجازت سے",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "ہاں، عمر سے کوئی فرق نہیں پڑتا",
+          "emoji": "👍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "کاروبار شروع کرنے کے لیے کیا ضروری ہے؟",
+      "options": [
+        {
+          "id": "money",
+          "text": "صرف بہت سارے پیسے",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "idea",
+          "text": "اچھا خیال اور کوشش",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "بس قسمت",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "کیا آن لائن فروخت کاروبار کی ایک شکل ہے؟",
+      "options": [
+        {
+          "id": "no3",
+          "text": "نہیں، حقیقی کاروبار نہیں۔",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "yes3",
+          "text": "ہاں، یہ ایک کاروبار ہے۔",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe3",
+          "text": "شاید، اگر منافع بخش",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

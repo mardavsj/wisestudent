@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "షాప్ స్టోరీ 2",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు దుకాణంలో రెండు పెన్నులు చూస్తారు. ఒకటి రూ.50, మరొకటి రూ.15. రెండూ ఒకేలా పనిచేస్తాయి. మీరు ఏది కొనాలి?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ఖరీదైన పెన్",
+          "emoji": "🖊️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "text": "ముందుగా సమీక్షలను తనిఖీ చేయండి",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "సరసమైన పెన్ను",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు బట్టల కోసం ఖర్చు చేయడానికి 100 రూపాయలు ఉన్నాయి. మీకు నచ్చిన చొక్కా రూ. 80కి మరియు అదే తరహాలో మరొకటి రూ. 30కి మీరు కనుగొంటారు. ఏది తెలివైనది?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "తక్కువ ధరలో చొక్కా కొనండి",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "ఖరీదైన చొక్కా కొనండి",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "అమ్మకానికి వేచి ఉండండి",
+          "emoji": "🏷️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీరు పార్టీ కోసం స్నాక్స్ కొనుగోలు చేస్తున్నారు. బ్రాండ్ A ధర రూ. 200 మరియు బ్రాండ్ B ధర రూ. 120. రెండూ ఒకటే రుచి. ఏది?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "బ్రాండ్ A కొనండి",
+          "emoji": "📦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "బ్రాండ్ బిని కొనండి",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mix",
+          "text": "ఒక్కొక్కటి కొనుక్కోండి",
+          "emoji": "➗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "పాఠశాల కోసం మీకు బ్యాక్‌ప్యాక్ అవసరం. ఒకటి రూ.800, మరొకటి రూ.400. రెండూ నాణ్యమైనవి. ఏది తెలివైనది?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "రూ. 400 బ్యాక్‌ప్యాక్ కొనండి",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "రూ. 800 బ్యాక్‌ప్యాక్ కొనండి",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ప్రస్తుతానికి అప్పు తీసుకోండి",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీరు కిరాణా సరుకులు కొంటున్నారు. సేంద్రియ కూరగాయలు రూ.300, సాధారణ కూరగాయలు రూ.150. రెండూ పౌష్టికాహారమే. ఏది?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "సేంద్రీయ కూరగాయలు కొనండి",
+          "emoji": "🥦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "selective",
+          "text": "రెండు రకాలను కలపండి",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "సాధారణ కూరగాయలను కొనండి",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

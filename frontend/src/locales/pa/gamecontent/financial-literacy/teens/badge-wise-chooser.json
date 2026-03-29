@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "ਬੈਜ: ਬੁੱਧੀਮਾਨ ਚੋਣਕਾਰ",
+  "subtitleComplete": "ਬੈਜ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਚੁਣੌਤੀ",
+  "challengeLabel": "ਚੁਣੌਤੀ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "ਸਕੂਲ ਸਪਲਾਈ ਦੀ ਦੁਬਿਧਾ",
+      "question": "ਤੁਹਾਨੂੰ ਸਕੂਲੀ ਸਮਾਨ ਦੀ ਲੋੜ ਹੈ। ਬੁੱਧੀਮਾਨ ਵਿਕਲਪ ਕਿਹੜਾ ਹੈ?",
+      "options": [
+        {
+          "id": "designer",
+          "text": "ਡਿਜ਼ਾਈਨਰ ਬੈਕਪੈਕ ਅਤੇ ਟਰੈਡੀ ਸਹਾਇਕ ਉਪਕਰਣ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "ਦੋਵੇਂ - ਉਹ ਸਭ ਕੁਝ ਖਰੀਦੋ ਜੋ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "ਕੁਝ ਵੀ ਖਰੀਦਣਾ ਛੱਡੋ",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "basic",
+          "text": "ਮੁੱਢਲੀ ਸਕੂਲ ਸਪਲਾਈ (ਕਲਮਾਂ, ਨੋਟਬੁੱਕ)",
+          "emoji": "📝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ਫ਼ੋਨ ਅੱਪਗ੍ਰੇਡ ਦੁਬਿਧਾ",
+      "question": "ਤੁਹਾਡਾ ਫ਼ੋਨ ਪੁਰਾਣਾ ਅਤੇ ਹੌਲੀ ਹੈ। ਬੁੱਧੀਮਾਨ ਚੋਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "wants-first",
+          "text": "ਲੋੜਾਂ ਤੋਂ ਪਹਿਲਾਂ ਲੋੜਾਂ ਖਰੀਦੋ",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "basic-phone",
+          "text": "ਕਾਲਾਂ ਅਤੇ ਸੁਨੇਹਿਆਂ ਲਈ ਮੂਲ ਫ਼ੋਨ",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "latest",
+          "text": "ਸਾਰੀਆਂ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਵਾਲਾ ਨਵੀਨਤਮ ਸਮਾਰਟਫੋਨ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "no-phone",
+          "text": "ਕੋਈ ਵੀ ਫੋਨ ਨਾ ਖਰੀਦੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ਫਿਟਨੈਸ ਦੁਬਿਧਾ",
+      "question": "ਤੁਸੀਂ ਫਿੱਟ ਰਹਿਣਾ ਚਾਹੁੰਦੇ ਹੋ। ਬੁੱਧੀਮਾਨ ਵਿਕਲਪ ਕਿਹੜਾ ਹੈ?",
+      "options": [
+        {
+          "id": "gym",
+          "text": "ਨਿਯਮਤ ਕਸਰਤ ਲਈ ਜਿਮ ਮੈਂਬਰਸ਼ਿਪ",
+          "emoji": "💪",
+          "isCorrect": true
+        },
+        {
+          "id": "tracker",
+          "text": "ਮਹਿੰਗਾ ਫਿਟਨੈਸ ਟਰੈਕਰ ਅਤੇ ਸਮਾਰਟਵਾਚ",
+          "emoji": "⌚",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "ਜਿੰਮ ਅਤੇ ਟਰੈਕਰ ਦੋਵੇਂ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "skip-fitness",
+          "text": "ਫਿਟਨੈਸ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਛੱਡ ਦਿਓ",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ਅਧਿਐਨ ਸੈੱਟਅੱਪ ਦੁਬਿਧਾ",
+      "question": "ਤੁਸੀਂ ਪ੍ਰੀਖਿਆ ਦੀ ਤਿਆਰੀ ਕਰ ਰਹੇ ਹੋ। ਬੁੱਧੀਮਾਨ ਚੋਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "premium-setup",
+          "text": "ਸ਼ੋਰ-ਰੱਦ ਕਰਨ ਵਾਲੇ ਹੈੱਡਫੋਨ ਅਤੇ ਪ੍ਰੀਮੀਅਮ ਡੈਸਕ ਸੈੱਟਅੱਪ",
+          "emoji": "🎧",
+          "isCorrect": false
+        },
+        {
+          "id": "buy-premium",
+          "text": "ਹਰ ਚੀਜ਼ ਪ੍ਰੀਮੀਅਮ ਖਰੀਦੋ",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "quiet-study",
+          "text": "ਸ਼ਾਂਤ ਅਧਿਐਨ ਸਥਾਨ ਅਤੇ ਪਾਠ ਪੁਸਤਕਾਂ",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "no-materials",
+          "text": "ਬਿਨਾਂ ਕਿਸੇ ਸਮੱਗਰੀ ਦੇ ਅਧਿਐਨ ਕਰੋ",
+          "emoji": "📖",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ਕੱਪੜੇ ਦੀ ਦੁਬਿਧਾ",
+      "question": "ਤੁਹਾਨੂੰ ਸਕੂਲ ਲਈ ਕੱਪੜੇ ਚਾਹੀਦੇ ਹਨ। ਬੁੱਧੀਮਾਨ ਵਿਕਲਪ ਕਿਹੜਾ ਹੈ?",
+      "options": [
+        {
+          "id": "designer-clothes",
+          "text": "ਡਿਜ਼ਾਈਨਰ ਕੱਪੜੇ ਅਤੇ ਟਰੈਡੀ ਫੈਸ਼ਨ ਆਈਟਮਾਂ",
+          "emoji": "👔",
+          "isCorrect": false
+        },
+        {
+          "id": "only-designer",
+          "text": "ਸਿਰਫ਼ ਡਿਜ਼ਾਈਨਰ ਆਈਟਮਾਂ ਹੀ ਖਰੀਦੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "no-clothes",
+          "text": "ਕੋਈ ਵੀ ਕੱਪੜੇ ਨਾ ਖਰੀਦੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "essential",
+          "text": "ਸਕੂਲ ਅਤੇ ਮੌਸਮ ਲਈ ਜ਼ਰੂਰੀ ਕੱਪੜੇ",
+          "emoji": "👕",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "ਬੁੱਧੀਮਾਨ ਚੋਣਕਾਰ ਬੈਜ ਕਮਾਇਆ!",
+    "winMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਚੁਣੌਤੀਆਂ ਸਹੀ ਮਿਲੀਆਂ ਹਨ! ਤੁਸੀਂ ਇੱਕ ਸੱਚੇ ਬੁੱਧੀਮਾਨ ਚੋਣਕਾਰ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਬੁੱਧੀਮਾਨ ਵਿਕਲਪ ਲੋੜਾਂ ਨਾਲੋਂ ਲੋੜਾਂ ਨੂੰ ਤਰਜੀਹ ਦਿੰਦੇ ਹਨ, ਵਿੱਤੀ ਤੰਦਰੁਸਤੀ ਪ੍ਰਾਪਤ ਕਰਨ ਅਤੇ ਇੱਕ ਸੁਰੱਖਿਅਤ ਭਵਿੱਖ ਬਣਾਉਣ ਵਿੱਚ ਤੁਹਾਡੀ ਮਦਦ ਕਰਦੇ ਹਨ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਚੁਣੌਤੀਆਂ ਸਹੀ ਮਿਲੀਆਂ ਹਨ। ਅਭਿਆਸ ਬੁੱਧੀਮਾਨ ਚੋਣ ਨਾਲ ਸੰਪੂਰਨ ਬਣਾਉਂਦਾ ਹੈ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੁਝਾਅ: ਸਮਝਦਾਰੀ ਨਾਲ ਵਿੱਤੀ ਵਿਕਲਪ ਬਣਾਉਣ ਲਈ ਲੋੜਾਂ (ਲਗਜ਼ਰੀ ਵਸਤੂਆਂ) ਨਾਲੋਂ ਲੋੜਾਂ (ਜ਼ਰੂਰੀ ਵਸਤੂਆਂ) ਨੂੰ ਤਰਜੀਹ ਦੇਣਾ ਯਾਦ ਰੱਖੋ!"
+  }
+}

@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "بیج: نوجوان کاروباری",
+  "subtitleComplete": "بیج مکمل!",
+  "subtitleProgress": "چیلنج {{current}} از {{total}}",
+  "challengeLabel": "چیلنج {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "کاروبار شروع کرنا",
+      "question": "کاروبار شروع کرنے کا پہلا قدم کیا ہے؟",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "ایک اچھا خیال اور منصوبہ بنائیں",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "اپنا سارا پیسہ خرچ کریں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ہمیشہ کے لیے انتظار کریں۔",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "دوسروں کو بالکل کاپی کریں۔",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "بزنس پلاننگ",
+      "question": "شروع کرنے سے پہلے آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "فوراً شروع کریں۔",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "ریسرچ مارکیٹ اور اخراجات",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "منصوبہ بندی کو نظر انداز کریں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "بغیر سوچے سمجھے خرچ کریں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "پیسے کا انتظام",
+      "question": "آپ کو کاروباری رقم کو کیسے ہینڈل کرنا چاہئے؟",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "سب کچھ خرچ کریں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "مالیات کو نظر انداز کریں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "آمدنی اور اخراجات کو ٹریک کریں۔",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "ٹریکنگ کی ضرورت نہیں ہے۔",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "کسٹمر سروس",
+      "question": "کاروباری کامیابی کے لیے کیا ضروری ہے؟",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "گاہکوں کو نظر انداز کریں",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "گاہکوں کو دھوکہ دینا",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "کسی خدمت کی ضرورت نہیں ہے۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "صارفین کو مطمئن کریں۔",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "بڑھتا ہوا کاروبار",
+      "question": "آپ کو اپنا کاروبار کیسے بڑھانا چاہئے؟",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "چھوٹا شروع کریں اور آہستہ آہستہ پھیلائیں۔",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "فوری طور پر بڑا شروع کریں۔",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "کبھی نہ بڑھیں۔",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "بغیر منصوبہ بندی کے بڑھو",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "نوجوان کاروباری بیج حاصل کیا!",
+    "winMessage": "آپ کو {{total}} میں سے {{score}} چیلنجز درست ملے! آپ ایک حقیقی نوجوان کاروباری ماہر ہیں!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: نوجوان کاروباری افراد کے پاس اچھے خیالات ہیں، احتیاط سے منصوبہ بندی کریں، مالیات کا پتہ لگائیں، صارفین کو مطمئن کریں، اور آہستہ آہستہ بڑھیں!",
+    "loseEmoji": "💪",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ کو {{total}} میں سے {{score}} چیلنجز درست ملے۔ پریکٹس انٹرپرینیورشپ کے ساتھ کامل بناتی ہے!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "مشورہ: ہمیشہ ایک اچھا خیال اور منصوبہ رکھیں، مارکیٹ اور اخراجات کی تحقیق کریں، مالیات کا پتہ لگائیں، صارفین کو مطمئن کریں، اور چھوٹی شروعات کریں!"
+  }
+}

@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "చెట్టు కథ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "🌳",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు ఈరోజు ఒక చిన్న చెట్టు నాటండి. కాలక్రమేణా అది బలంగా పెరగడానికి ఏది సహాయపడుతుంది?",
+      "options": [
+        {
+          "id": "care",
+          "text": "క్రమం తప్పకుండా నీరు మరియు సంరక్షణ",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "వేగంగా పెరగడానికి దాన్ని లాగండి",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "దాన్ని వదిలేసి మరచిపోండి",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "డబ్బు చెట్టు లాంటిది. ఇది నెమ్మదిగా మరియు సురక్షితంగా పెరగడానికి కారణం ఏమిటి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "త్వరగా ప్రతిదీ ఖర్చు",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "దాన్ని దాచిపెట్టి ఎప్పుడూ ఉపయోగించరు",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "కాలక్రమేణా తెలివిగా ఉపయోగించడం మరియు ఆదా చేయడం",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీరు అదనపు పాకెట్ మనీ పొందుతారు. స్మార్ట్ ట్రీ-స్టైల్ ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "ఆలోచించకుండా ఖర్చు పెట్టండి",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "భాగాన్ని సేవ్ చేయండి, తద్వారా అది తరువాత పెరుగుతుంది",
+          "emoji": "🌱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "అజాగ్రత్తగా ఉంచండి",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "పండ్ల చెట్టు ప్రతి సంవత్సరం ఫలాలను ఇస్తుంది. ఇది డబ్బు గురించి ఏమి బోధిస్తుంది?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "డబ్బును ఒక్కసారి మాత్రమే ఉపయోగించాలి",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "అదృష్టం మాత్రమే ముఖ్యం",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "మంచి ఎంపికలు పదే పదే బహుమతులు ఇస్తాయి",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీరు చాలా త్వరగా చెట్టును నరికితే, ఏమి జరుగుతుంది?",
+      "options": [
+        {
+          "id": "loss",
+          "text": "మీరు భవిష్యత్తు ప్రయోజనాలను కోల్పోతారు",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "gain",
+          "text": "మీరు ఎల్లప్పుడూ ఎక్కువ పొందుతారు",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ఏమీ మారదు",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

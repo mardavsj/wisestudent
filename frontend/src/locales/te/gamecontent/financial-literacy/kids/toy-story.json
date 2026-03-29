@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "టాయ్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ఒక స్నేహితుడు మీకు బొమ్మను ఇస్తాడు. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "సురక్షితంగా ఉంచండి",
+          "emoji": "🛡️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "break",
+          "text": "దానిని విచ్ఛిన్నం చేయండి",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "పట్టించుకోవద్దు",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు ఒక బొమ్మను అరువుగా తీసుకున్నారు. ఇప్పుడు ఏమిటి?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ఉంచుకో",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "పోగొట్టుకోండి",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "బొమ్మను తిరిగి ఇవ్వండి",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీ స్నేహితుడి బొమ్మ ఉంది. ఏది ఉత్తమమైనది?",
+      "options": [
+        {
+          "id": "care",
+          "text": "దానిని జాగ్రత్తగా చూసుకోండి",
+          "emoji": "💝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "పోగొట్టుకోండి",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "break",
+          "text": "దానిని విచ్ఛిన్నం చేయండి",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "యజమాని బొమ్మను తిరిగి అడుగుతాడు. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "దాచు",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "తిరిగి ఇవ్వండి",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "delay",
+          "text": "తిరిగి రావడం ఆలస్యం",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీరు బొమ్మను అరువుగా తీసుకున్నప్పుడు, మీ విధి ఏమిటి?",
+      "options": [
+        {
+          "id": "careless",
+          "text": "అజాగ్రత్తగా ఉండండి",
+          "emoji": "😓",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "దాని గురించి మరచిపోండి",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "responsible",
+          "text": "బాధ్యతగా ఉండండి",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

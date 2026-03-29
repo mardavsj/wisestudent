@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ಉಳಿತಾಯ ಕಥೆ",
+  "subtitleComplete": "ಸಂಪೂರ್ಣ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನೀವು ₹1000 ಉಡುಗೊರೆಯಾಗಿ ಸ್ವೀಕರಿಸಿದ್ದೀರಿ. ಅದನ್ನು ಸುರಕ್ಷಿತವಾಗಿಡಲು ಉತ್ತಮ ಮಾರ್ಗ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "home",
+          "text": "ಮನೆಯಲ್ಲಿ ಇರಿಸಿ",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ಬ್ಯಾಂಕ್ ಖಾತೆ ತೆರೆಯಿರಿ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "wallet",
+          "text": "ವಾಲೆಟ್ನಲ್ಲಿ ಒಯ್ಯಿರಿ",
+          "emoji": "👛",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನಿಮ್ಮ ಹುಟ್ಟುಹಬ್ಬದ ಹಣವನ್ನು ಬಳಸಲು ಬುದ್ಧಿವಂತ ಮಾರ್ಗ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "split",
+          "text": "ವಿಭಜಿಸಿ 50/50",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ಇತ್ತೀಚಿನ ಗ್ಯಾಜೆಟ್‌ಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "spend_all",
+          "text": "ಈಗ ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ₹200 ವಾರದ ಭತ್ಯೆಯನ್ನು ಪಡೆಯುತ್ತೀರಿ. ಉತ್ತಮ ಯೋಜನೆ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "treats",
+          "text": "ತಿಂಡಿಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "save_half",
+          "text": "50% ಉಳಿಸಿ",
+          "emoji": "💲",
+          "isCorrect": true
+        },
+        {
+          "id": "save_all",
+          "text": "ಎಲ್ಲವನ್ನೂ ಉಳಿಸಿ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ಕೆಲಸದಿಂದ ಉಳಿಸಿದ ಹಣವನ್ನು ಎಲ್ಲಿ ಇಡಬೇಕು?",
+      "options": [
+        {
+          "id": "piggy",
+          "text": "ಪಿಗ್ಗಿ ಬ್ಯಾಂಕ್",
+          "emoji": "🐷",
+          "isCorrect": false
+        },
+        {
+          "id": "pocket",
+          "text": "ನಿಮ್ಮ ಪಾಕೆಟ್",
+          "emoji": "👖",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ಉಳಿತಾಯ ಖಾತೆ",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನಿಮ್ಮ ಹಣವನ್ನು ಬೆಳೆಯಲು ಉತ್ತಮ ಮಾರ್ಗ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ಹೆಚ್ಚಿನ ಬಡ್ಡಿ ಖಾತೆ",
+          "emoji": "💹",
+          "isCorrect": true
+        },
+        {
+          "id": "invest",
+          "text": "ಷೇರುಗಳಲ್ಲಿ ಹೂಡಿಕೆ ಮಾಡಿ",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ಸಂಗ್ರಹಣೆಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🏀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

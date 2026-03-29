@@ -1,1 +1,50 @@
-﻿{}
+{
+  "title": "جرنل آف سیفٹی",
+  "subtitleComplete": "جرنل مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}: پیسے کے ساتھ محفوظ رہنے پر غور کریں!",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "minLengthPrompt": "کم از کم {{minLength}} حروف لکھیں۔",
+  "textareaPlaceholder": "اپنے جریدے کا اندراج یہاں لکھیں...",
+  "charactersLabel": "characters",
+  "submitFinalButton": "حتمی اندراج جمع کروائیں۔",
+  "submitContinueButton": "جمع کروائیں اور جاری رکھیں",
+  "entryLabel": "آپ کا جواب:",
+  "minLengthLabel": "کم از کم {{min}} حروف",
+  "stages": [
+    {
+      "question": "لکھیں: \"میں دھوکہ دہی سے بچنے کا ایک طریقہ ہے ___۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"میں ___ تک پیسے کے ساتھ محفوظ رہوں گا۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"ایک وقت جب میں نے پیسوں کے اسکینڈل سے گریز کیا تھا ___۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"میں نے ___ پیسہ محفوظ رکھنے کے بارے میں سیکھا۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"پیسے کے ساتھ محتاط رہنا مجھے ___ محسوس کرتا ہے۔\"",
+      "minLength": 10
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "سیفٹی ماہر!",
+    "description": "بہترین! آپ نے اسکور کیا {{score}}/{{total}}! آپ کے مظاہر مالیاتی تحفظ کے بارے میں زبردست بیداری ظاہر کرتے ہیں!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "اچھے مظاہر!",
+    "description": "شاباش! آپ نے اسکور کیا {{score}}/{{total}}! پیسے کے ساتھ محفوظ رہنے کے بارے میں سوچتے رہیں!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "عکاسی کرتے رہیں!",
+    "description": "آپ نے {{score}}/{{total}} اسکور کیا۔ اپنی بیداری پیدا کرنے کے لیے مالی تحفظ کے بارے میں جرنلنگ جاری رکھیں!"
+  }
+}

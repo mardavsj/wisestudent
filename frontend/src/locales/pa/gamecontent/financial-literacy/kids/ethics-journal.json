@@ -1,1 +1,33 @@
-﻿{}
+{
+  "title": "ਨੈਤਿਕਤਾ ਜਰਨਲ",
+  "subtitleComplete": "ਜਰਨਲ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "minLengthPrompt": "ਘੱਟੋ-ਘੱਟ {{minLength}} ਅੱਖਰ ਲਿਖੋ",
+  "textareaPlaceholder": "ਆਪਣੀ ਜਰਨਲ ਐਂਟਰੀ ਇੱਥੇ ਲਿਖੋ...",
+  "charactersLabel": "characters",
+  "submitFinalButton": "ਫਾਈਨਲ ਐਂਟਰੀ ਜਮ੍ਹਾਂ ਕਰੋ",
+  "submitContinueButton": "ਸਪੁਰਦ ਕਰੋ ਅਤੇ ਜਾਰੀ ਰੱਖੋ",
+  "stages": [
+    {
+      "question": "ਲਿਖੋ: \"ਇੱਕ ਵਾਰ ਜਦੋਂ ਮੈਂ ਪੈਸੇ ਦੀ ਇਮਾਨਦਾਰੀ ਨਾਲ ਵਰਤੋਂ ਕੀਤੀ ਸੀ ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਮੈਂ ___ ਦੁਆਰਾ ਪੈਸੇ ਨਾਲ ਕਿਸੇ ਦੀ ਮਦਦ ਕੀਤੀ।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਇੱਕ ਸਮਾਂ ਜਦੋਂ ਮੈਂ ਪੈਸੇ ਬਚਾਉਣ ਬਾਰੇ ਚੰਗਾ ਮਹਿਸੂਸ ਕੀਤਾ ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਮੈਂ ___ ਦੁਆਰਾ ਗਲਤ ਤਰੀਕੇ ਨਾਲ ਪੈਸੇ ਖਰਚਣ ਤੋਂ ਬਚਿਆ.\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਪੈਸੇ ਨਾਲ ਇਮਾਨਦਾਰ ਹੋਣਾ ਮੈਨੂੰ ਮਹਿਸੂਸ ਕਰਦਾ ਹੈ ___।\"",
+      "minLength": 10
+    }
+  ]
+}

@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "ਸ਼ੁਰੂਆਤੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "perfectScoreTitle": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "perfectScoreMsg": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਤੁਸੀਂ ਸ਼ੁਰੂਆਤੀ ਨਿਵੇਸ਼ਾਂ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+  "coinsLabel": "+{{count}} ਸਿੱਕੇ",
+  "lessonLabel": "ਸਬਕ: ਚੰਗੀ ਤਰ੍ਹਾਂ ਖੋਜ ਅਤੇ ਯੋਜਨਾਬੱਧ ਹੋਣ 'ਤੇ ਸ਼ੁਰੂਆਤੀ ਨਿਵੇਸ਼ ਸਮਾਰਟ ਹੋ ਸਕਦੇ ਹਨ, ਪਰ ਹਮੇਸ਼ਾ ਵਿਭਿੰਨਤਾ ਅਤੇ ਜੋਖਮਾਂ ਨੂੰ ਸਮਝਦੇ ਹਨ!",
+  "keepLearningTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+  "lowScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਸ਼ੁਰੂਆਤੀ ਨਿਵੇਸ਼ਾਂ ਲਈ ਖੋਜ, ਯੋਜਨਾਬੰਦੀ ਅਤੇ ਵਿਭਿੰਨਤਾ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ!",
+  "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "tipLabel": "ਸੁਝਾਅ: ਜਦੋਂ ਤੁਸੀਂ ਖੋਜ ਕਰਦੇ ਹੋ, ਯੋਜਨਾ ਬਣਾਉਂਦੇ ਹੋ ਅਤੇ ਵਿਭਿੰਨਤਾ ਕਰਦੇ ਹੋ ਤਾਂ ਸ਼ੁਰੂਆਤੀ ਨਿਵੇਸ਼ ਸਮਾਰਟ ਹੋ ਸਕਦੇ ਹਨ। ₹100→₹150 ਵਰਗਾ 50% ਰਿਟਰਨ ਚੰਗਾ ਹੈ!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਦੋਸਤ ਇੱਕ ਨਿੰਬੂ ਪਾਣੀ ਦੇ ਸਟੈਂਡ ਵਿੱਚ ₹100 ਦਾ ਨਿਵੇਸ਼ ਕਰਦਾ ਹੈ। ₹150 ਕਮਾਉਂਦਾ ਹੈ। ਸਮਾਰਟ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ਹਾਂ, ਚੰਗੀ ਵਾਪਸੀ",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ਨਹੀਂ, ਬਹੁਤ ਜੋਖਮ ਭਰਿਆ",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਨਿਰਭਰ ਕਰਦਾ ਹੈ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਕੀ ਇੱਕ ਸ਼ੁਰੂਆਤੀ ਨਿਵੇਸ਼ ਨੂੰ ਸਮਾਰਟ ਬਣਾਉਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "research",
+          "text": "ਖੋਜ ਅਤੇ ਯੋਜਨਾਬੰਦੀ",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "ਸ਼ੁੱਧ ਕਿਸਮਤ",
+          "emoji": "🍀",
+          "isCorrect": false
+        },
+        {
+          "id": "quick",
+          "text": "ਤੁਰੰਤ ਫੈਸਲਾ",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਕੀ ਤੁਹਾਨੂੰ ਆਪਣਾ ਸਾਰਾ ਪੈਸਾ ਇੱਕ ਸ਼ੁਰੂਆਤ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "all",
+          "text": "ਹਾਂ, ਸਾਰੇ ਅੰਦਰ ਜਾਓ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "ਨਹੀਂ, ਵਿਭਿੰਨਤਾ",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "ਸਟਾਰਟਅੱਪ ਤੋਂ ਬਚੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਸ਼ੁਰੂਆਤੀ ਨਿਵੇਸ਼ 'ਤੇ ਇੱਕ ਚੰਗੀ ਵਾਪਸੀ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "high",
+          "text": "ਉੱਚ ਵਾਪਸੀ ਦੀ ਸੰਭਾਵਨਾ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "guaranteed",
+          "text": "ਗਾਰੰਟੀਸ਼ੁਦਾ ਵਾਪਸੀ",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "low",
+          "text": "ਸਿਰਫ਼ ਘੱਟ ਵਾਪਸੀ",
+          "emoji": "📉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਇੱਕ ਸਟਾਰਟਅੱਪ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰਨਾ ਇੱਕ ਚੰਗਾ ਵਿਚਾਰ ਕਦੋਂ ਹੁੰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "never",
+          "text": "Never",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "text": "ਜਦੋਂ ਚੰਗੀ ਤਰ੍ਹਾਂ ਯੋਜਨਾਬੱਧ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "Always",
+          "emoji": "🙂",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

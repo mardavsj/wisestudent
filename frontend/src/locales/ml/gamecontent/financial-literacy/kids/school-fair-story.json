@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "സ്കൂൾ മേള കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "മേള ഉടൻ ആരംഭിക്കും, നിങ്ങൾക്ക് ആവേശം തോന്നുന്നു. നിങ്ങൾ ആദ്യം എന്താണ് ചെയ്യുന്നത്?",
+      "options": [
+        {
+          "id": "run",
+          "text": "ആദ്യത്തെ സ്റ്റാളിലേക്ക് ഓടുക",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shout",
+          "text": "ആവേശത്തോടെ നിലവിളിക്കുക",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "look",
+          "text": "മേളയ്ക്ക് ചുറ്റും നോക്കുക",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ഒരു ജനപ്രിയ ഗെയിമിനായി നിങ്ങൾ ഒരു നീണ്ട നിര കാണുന്നു. എന്താണ് ശരിയായ തിരഞ്ഞെടുപ്പ്?",
+      "options": [
+        {
+          "id": "push",
+          "text": "മുന്നിലേക്ക് തള്ളുക",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "നിങ്ങളുടെ ഊഴത്തിനായി കാത്തിരിക്കുക",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "leave",
+          "text": "ദേഷ്യത്തോടെ പോകൂ",
+          "emoji": "😤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ഒരു കടയുടമ നിങ്ങൾക്ക് അബദ്ധത്തിൽ അധിക മാറ്റം നൽകുന്നു. നീ എന്ത് ചെയ്യുന്നു?",
+      "options": [
+        {
+          "id": "return",
+          "text": "അധിക പണം തിരികെ നൽകുക",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "അധിക പണം സൂക്ഷിക്കുക",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "നിശബ്ദമായി നടക്കുക",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങൾക്ക് നിരവധി റൈഡുകൾ പരീക്ഷിക്കാൻ ആഗ്രഹമുണ്ട്, പക്ഷേ ക്ഷീണം തോന്നുന്നു. എന്താണ് ഒരു സ്മാർട്ട് പ്രവർത്തനം?",
+      "options": [
+        {
+          "id": "force",
+          "text": "സവാരി ചെയ്യാൻ സ്വയം നിർബന്ധിക്കുക",
+          "emoji": "😣",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "എല്ലാം ഒഴിവാക്കുക",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rest",
+          "text": "ഒരു ചെറിയ വിശ്രമം എടുക്കുക",
+          "emoji": "🪑",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "മേള അവസാനിക്കുകയാണ്, നിങ്ങൾക്ക് ഒരു ടിക്കറ്റ് ബാക്കിയുണ്ട്. നിങ്ങൾ എന്താണ് തിരഞ്ഞെടുക്കുന്നത്?",
+      "options": [
+        {
+          "id": "favorite",
+          "text": "നിങ്ങളുടെ പ്രിയപ്പെട്ട പ്രവർത്തനം തിരഞ്ഞെടുക്കുക",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "random",
+          "text": "ഇത് ക്രമരഹിതമായി ഉപയോഗിക്കുക",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "അത് വലിച്ചെറിയുക",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

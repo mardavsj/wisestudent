@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "کاروباریوں کی پہیلی",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "صنعت کاروں کو فیلڈز کے ساتھ میچ کریں ({{current}}/{{total}} مماثل)",
+  "itemsTitle": "Entrepreneurs",
+  "fieldsTitle": "Fields",
+  "matchButton": "Match",
+  "selectItemLabel": "ایک کاروباری شخص کا انتخاب کریں۔",
+  "selectedItemLabel": "منتخب کردہ: {{name}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "matchedLabel": "مماثل: {{current}}/{{total}}",
+  "resultSuccessHeader": "بہت اچھا کام!",
+  "resultSuccessSubheader": "آپ نے {{total}} کاروباریوں میں سے {{score}} کو ان کے شعبوں سے صحیح طریقے سے ملایا!",
+  "resultSuccessLesson": "سبق: کاروباری شعبوں کو سمجھنا جدت کی ترغیب دینے میں مدد کرتا ہے!",
+  "resultTryAgainHeader": "مشق کرتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} کاروباریوں میں سے {{score}} کو درست طریقے سے ملایا۔",
+  "resultTryAgainTip": "مشورہ: اس بارے میں سوچیں کہ ہر کاروباری شخص کس شعبے کے لیے سب سے زیادہ جانا جاتا ہے!",
+  "coinsEarned": "+{{coins}} سکے",
+  "items": [
+    {
+      "id": 1,
+      "name": "رتن ٹاٹا",
+      "emoji": "👔"
+    },
+    {
+      "id": 2,
+      "name": "ایلون مسک",
+      "emoji": "🚀"
+    },
+    {
+      "id": 3,
+      "name": "نارائن مورتی",
+      "emoji": "💻"
+    },
+    {
+      "id": 4,
+      "name": "کرن مزومدار",
+      "emoji": "🔬"
+    },
+    {
+      "id": 5,
+      "name": "فالگنی نیئر",
+      "emoji": "💄"
+    }
+  ],
+  "fields": [
+    {
+      "id": 6,
+      "name": "Industry",
+      "emoji": "🏭"
+    },
+    {
+      "id": 7,
+      "name": "Innovation",
+      "emoji": "💡"
+    },
+    {
+      "id": 8,
+      "name": "IT",
+      "emoji": "💻"
+    },
+    {
+      "id": 9,
+      "name": "Biotech",
+      "emoji": "🧬"
+    },
+    {
+      "id": 10,
+      "name": "E-commerce",
+      "emoji": "🛒"
+    }
+  ]
+}

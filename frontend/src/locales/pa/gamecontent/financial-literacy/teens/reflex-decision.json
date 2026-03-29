@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਫੈਸਲਾ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਵਿੱਤੀ ਫੈਸਲੇ ਦੇ ਹੁਨਰ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਵਿੱਤੀ ਫੈਸਲੇ ਦੇ ਹੁਨਰ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyHeader": "ਆਪਣੇ ਵਿੱਤੀ ਫੈਸਲਿਆਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਸਮਾਰਟ ਵਿੱਤੀ ਵਿਕਲਪਾਂ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyTip": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{time}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "greatJob": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "finalScore": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਸਕੋਰ ਕੀਤੇ!",
+  "developingSkills": "ਤੁਸੀਂ ਮਜ਼ਬੂਤ ​​ਵਿੱਤੀ ਫੈਸਲੇ ਲੈਣ ਦੇ ਹੁਨਰ ਨੂੰ ਵਿਕਸਿਤ ਕਰ ਰਹੇ ਹੋ!",
+  "playAgain": "ਦੁਬਾਰਾ ਖੇਡੋ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਤੁਹਾਡੇ ਕੋਲ ਪੈਸਾ ਹੈ। ਕੀ ਤੁਹਾਨੂੰ ਫੀਸਾਂ ਦਾ ਭੁਗਤਾਨ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ ਜਾਂ ਗੈਜੇਟਸ ਲਈ ਛੱਡਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "text": "ਫੀਸਾਂ ਦਾ ਭੁਗਤਾਨ ਕਰੋ",
+          "id": "pay_fees",
+          "emoji": "💰"
+        },
+        {
+          "text": "ਗੈਜੇਟਸ ਲਈ ਛੱਡੋ",
+          "id": "skip_gadgets",
+          "emoji": "🎮"
+        },
+        {
+          "text": "ਸਭ ਕੁਝ ਸੰਭਾਲੋ",
+          "id": "save_everything",
+          "emoji": "🏦"
+        },
+        {
+          "text": "ਦੋਵਾਂ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "id": "spend_both",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਹਾਨੂੰ ਵਾਧੂ ਪੈਸੇ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "text": "ਗੇਮਾਂ ਖਰੀਦੋ",
+          "id": "buy_games",
+          "emoji": "🎮"
+        },
+        {
+          "text": "ਪੈਸੇ ਬਚਾਓ",
+          "id": "save_money",
+          "emoji": "💰"
+        },
+        {
+          "text": "ਤੁਰੰਤ ਖਰਚ ਕਰੋ",
+          "id": "spend_immediately",
+          "emoji": "🛒"
+        },
+        {
+          "text": "ਦੋਸਤਾਂ ਨੂੰ ਉਧਾਰ ਦਿਓ",
+          "id": "lend_friends",
+          "emoji": "👥"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਤੁਹਾਨੂੰ ਆਪਣੇ ਬਜਟ ਦਾ ਪ੍ਰਬੰਧਨ ਕਿਵੇਂ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "text": "ਟ੍ਰੈਕ ਬਜਟ",
+          "id": "track_budget",
+          "emoji": "📊"
+        },
+        {
+          "text": "ਬਜਟ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "id": "ignore_budget",
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਖਰਚਿਆਂ ਦਾ ਅੰਦਾਜ਼ਾ ਲਗਾਓ",
+          "id": "guess_expenses",
+          "emoji": "🎲"
+        },
+        {
+          "text": "ਕਈ ਵਾਰ ਟ੍ਰੈਕ ਕਰੋ",
+          "id": "track_sometimes",
+          "emoji": "📅"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਜਦੋਂ ਤੁਹਾਡੇ ਕੋਲ ਬਿੱਲ ਹਨ ਤਾਂ ਤਰਜੀਹ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "text": "ਪਾਰਟੀ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "id": "spend_party",
+          "emoji": "🎉"
+        },
+        {
+          "text": "ਕਿਰਾਇਆ ਅਦਾ ਕਰੋ",
+          "id": "pay_rent",
+          "emoji": "🏠"
+        },
+        {
+          "text": "ਕੱਪੜੇ ਖਰੀਦੋ",
+          "id": "buy_clothes",
+          "emoji": "👕"
+        },
+        {
+          "text": "ਬਾਅਦ ਲਈ ਸੁਰੱਖਿਅਤ ਕਰੋ",
+          "id": "save_later",
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਤੁਹਾਨੂੰ ਸਿੱਖਿਆ ਲਈ ਪੈਸੇ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "text": "ਸਨੈਕਸ ਖਰੀਦੋ",
+          "id": "buy_snacks",
+          "emoji": "🍕"
+        },
+        {
+          "text": "ਮਨੋਰੰਜਨ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "id": "spend_entertainment",
+          "emoji": "🎬"
+        },
+        {
+          "text": "ਕਿਤਾਬਾਂ ਲਈ ਸੁਰੱਖਿਅਤ ਕਰੋ",
+          "id": "save_books",
+          "emoji": "📚"
+        },
+        {
+          "text": "ਦੇ ਦੇਓ",
+          "id": "give_away",
+          "emoji": "🎁"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,159 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স প্রয়োজন বনাম চাওয়া",
+    "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: প্রয়োজন বনাম চাওয়া পরীক্ষা করো!",
+    "subtitleReady": "প্রয়োজন বনাম চাওয়া পরীক্ষা করো!",
+    "readyEmoji": "📋",
+    "readyTitle": "প্রয়োজন বনাম চাওয়ার জ্ঞান পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "প্রয়োজন ও চাওয়ার পার্থক্য নিয়ে প্রশ্নের উত্তর দাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "রাউন্ড:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "resultGreatEmoji": "🎉",
+    "resultGreatTitle": "দারুণ কাজ!",
+    "resultGreatDescription": "তুমি {{total}}টি প্রশ্নের মধ্যে {{score}}টি সঠিক উত্তর দিয়েছ!",
+    "resultGreatLesson": "শিক্ষা: প্রয়োজন বেঁচে থাকা ও শেখার জন্য অপরিহার্য, চাওয়া হলো যা থাকলে ভালো কিন্তু দরকার নেই!",
+    "resultKeepEmoji": "😔",
+    "resultKeepTitle": "শিখতে থাকো!",
+    "resultKeepDescription": "তুমি {{total}}টির মধ্যে {{score}}টি সঠিক উত্তর দিয়েছ। মনে রেখো, প্রয়োজন হলো খাবার, পোশাক ও স্কুলের সরঞ্জামের মতো অপরিহার্য জিনিস!",
+    "resultKeepTip": "টিপস: প্রয়োজন হলো যা বেঁচে থাকতে ও শিখতে অবশ্যই দরকার, যেমন খাবার, পোশাক ও স্কুলের সরঞ্জাম।",
+    "tryAgainButton": "আবার চেষ্টা করো",
+    "questions": [
+        {
+            "id": 1,
+            "question": "কোনটি একটি প্রয়োজন?",
+            "correctAnswer": "স্কুলের জুতা",
+            "options": [
+                {
+                    "text": "স্কুলের জুতা",
+                    "isCorrect": true,
+                    "emoji": "👟"
+                },
+                {
+                    "text": "দশম খেলনা গাড়ি",
+                    "isCorrect": false,
+                    "emoji": "🚗"
+                },
+                {
+                    "text": "ভিডিও গেম",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "ফ্যান্সি সানগ্লাস",
+                    "isCorrect": false,
+                    "emoji": "🕶️"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "সুস্থ থাকার জন্য প্রয়োজন কোনটি?",
+            "correctAnswer": "স্বাস্থ্যকর খাবার",
+            "options": [
+                {
+                    "text": "অতিরিক্ত মিষ্টি",
+                    "isCorrect": false,
+                    "emoji": "🍬"
+                },
+                {
+                    "text": "স্বাস্থ্যকর খাবার",
+                    "isCorrect": true,
+                    "emoji": "🥗"
+                },
+                {
+                    "text": "আইসক্রিম",
+                    "isCorrect": false,
+                    "emoji": "🍦"
+                },
+                {
+                    "text": "সোডা",
+                    "isCorrect": false,
+                    "emoji": "🥤"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "শেখার জন্য কোন জিনিসটি অপরিহার্য?",
+            "correctAnswer": "স্কুলের বই",
+            "options": [
+                {
+                    "text": "ভিডিও গেম",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "অ্যাকশন ফিগার",
+                    "isCorrect": false,
+                    "emoji": "🤖"
+                },
+                {
+                    "text": "ধাঁধার খেলা",
+                    "isCorrect": false,
+                    "emoji": "🧩"
+                },
+                {
+                    "text": "স্কুলের বই",
+                    "isCorrect": true,
+                    "emoji": "📚"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "ঠান্ডা আবহাওয়ায় কী দরকার?",
+            "correctAnswer": "শীতের জ্যাকেট",
+            "options": [
+                {
+                    "text": "ফ্যান্সি সানগ্লাস",
+                    "isCorrect": false,
+                    "emoji": "🕶️"
+                },
+                {
+                    "text": "সুইমিং পুল",
+                    "isCorrect": false,
+                    "emoji": "🏊"
+                },
+                {
+                    "text": "শীতের জ্যাকেট",
+                    "isCorrect": true,
+                    "emoji": "🧥"
+                },
+                {
+                    "text": "বিচ বল",
+                    "isCorrect": false,
+                    "emoji": "🏐"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "স্কুলে যেতে কী দরকার?",
+            "correctAnswer": "বাস ভাড়া",
+            "options": [
+                {
+                    "text": "বাস ভাড়া",
+                    "isCorrect": true,
+                    "emoji": "🚌"
+                },
+                {
+                    "text": "নতুন হেডফোন",
+                    "isCorrect": false,
+                    "emoji": "🎧"
+                },
+                {
+                    "text": "মিউজিক প্লেয়ার",
+                    "isCorrect": false,
+                    "emoji": "🎵"
+                },
+                {
+                    "text": "স্মার্ট ওয়াচ",
+                    "isCorrect": false,
+                    "emoji": "⌚"
+                }
+            ]
+        }
+    ]
+}

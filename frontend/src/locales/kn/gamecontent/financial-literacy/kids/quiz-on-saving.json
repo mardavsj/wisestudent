@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ಉಳಿತಾಯದ ಕುರಿತು ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಉತ್ತಮ ರಕ್ಷಕ ಯಾರು?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ತಮ್ಮ ಎಲ್ಲಾ ಹಣವನ್ನು ಖರ್ಚು ಮಾಡುವ ಯಾರಾದರೂ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ಹಣವನ್ನು ವ್ಯರ್ಥ ಮಾಡುವ ಯಾರಾದರೂ",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ತಮ್ಮ ಹಣದ ಭಾಗವನ್ನು ಉಳಿಸುವ ಯಾರಾದರೂ",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನಿಮ್ಮ ಪಾಕೆಟ್ ಹಣವನ್ನು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ತಕ್ಷಣ ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ಕೆಲವನ್ನು ಉಳಿಸಿ ಮತ್ತು ಸ್ವಲ್ಪ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ಅದನ್ನು ಮರೆಮಾಡಿ ಮತ್ತು ಅದನ್ನು ಎಂದಿಗೂ ಬಳಸಬೇಡಿ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಹಣವನ್ನು ಉಳಿಸುವುದು ಏಕೆ ಮುಖ್ಯ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ಆದ್ದರಿಂದ ನಿಮಗೆ ಬೇಕಾದ ವಸ್ತುಗಳನ್ನು ನಂತರ ಖರೀದಿಸಬಹುದು",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "ಆದ್ದರಿಂದ ನೀವು ಸ್ನೇಹಿತರಿಗೆ ತೋರಿಸಬಹುದು",
+          "emoji": "😎",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ಇದು ಮುಖ್ಯವಲ್ಲ",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಹಣದ ಬ್ಯಾಂಕ್ ಅನ್ನು ಯಾವುದಕ್ಕಾಗಿ ಬಳಸಲಾಗುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ಆಟಿಕೆಗಳನ್ನು ಇಡುವುದು",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ಹಣ ಉಳಿತಾಯ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ಆಹಾರವನ್ನು ಸಂಗ್ರಹಿಸುವುದು",
+          "emoji": "🍕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನೀವು ಪ್ರತಿ ವಾರ 10 ರೂ ಉಳಿಸಿದರೆ, 4 ವಾರಗಳಲ್ಲಿ ನಿಮ್ಮ ಬಳಿ ಎಷ್ಟು?",
+      "options": [
+        {
+          "id": "a",
+          "text": "20 ರೂ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "30 ರೂ",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "40 ರೂ",
+          "emoji": "💴",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

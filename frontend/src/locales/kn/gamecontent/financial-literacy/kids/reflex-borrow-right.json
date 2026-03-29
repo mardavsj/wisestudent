@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಎರವಲು ಬಲ",
+  "subtitlePlaying": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ: ನಿಮ್ಮ ಎರವಲು ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಎರವಲು ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyEmoji": "🤝",
+  "readyTitle": "ಎರವಲು ಪಡೆಯುವ ಬಗ್ಗೆ ಕಲಿಯಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ವಸ್ತುಗಳನ್ನು ಅಥವಾ ಹಣವನ್ನು ಎರವಲು ಮಾಡುವಾಗ ಸರಿಯಾದ ಕ್ರಮವನ್ನು ಆರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಪ್ರಶ್ನೆ:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಏನನ್ನಾದರೂ ಎರವಲು ಪಡೆಯುವ ಮೊದಲು ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಅನುಮತಿ ಕೇಳಿ",
+      "options": [
+        {
+          "text": "ಅದನ್ನು ಹಿಡಿಯಿರಿ",
+          "isCorrect": false,
+          "emoji": "🤏"
+        },
+        {
+          "text": "ಕೇಳದೆ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ಅನುಮತಿ ಕೇಳಿ",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "ಮಾಲೀಕರನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ನೀವು ಏನನ್ನಾದರೂ ಹೇಗೆ ಎರವಲು ಪಡೆಯಬೇಕು?",
+      "correctAnswer": "ನಯವಾಗಿ ಸಾಲ ಮಾಡಿ",
+      "options": [
+        {
+          "text": "ನಯವಾಗಿ ಸಾಲ ಮಾಡಿ",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "ಬಲವಂತವಾಗಿ ತೆಗೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "💪"
+        },
+        {
+          "text": "ತ್ವರಿತವಾಗಿ ಹಿಡಿಯಿರಿ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ಅದನ್ನು ಕದಿಯಿರಿ",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ಎರವಲು ಪಡೆದ ವಸ್ತುವನ್ನು ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಐಟಂ ಹಿಂತಿರುಗಿ",
+      "options": [
+        {
+          "text": "ಇಟ್ಟುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ಅದನ್ನು ಮರೆಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🫥"
+        },
+        {
+          "text": "ಅದನ್ನು ಮರೆತುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ಐಟಂ ಹಿಂತಿರುಗಿ",
+          "isCorrect": true,
+          "emoji": "↩️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಸಾಲದೊಂದಿಗೆ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಸಾಲ ಮರುಪಾವತಿ",
+      "options": [
+        {
+          "text": "ಪಾವತಿಯನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ಸಾಲ ಮರುಪಾವತಿ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ಅದನ್ನು ತಪ್ಪಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "ಅದನ್ನು ಮರೆತುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ನೀವು ಸಾಲವನ್ನು ಹೇಗೆ ನಿಭಾಯಿಸಬೇಕು?",
+      "correctAnswer": "ಪ್ರಾಮಾಣಿಕವಾಗಿರಿ",
+      "options": [
+        {
+          "text": "ಪ್ರಾಮಾಣಿಕವಾಗಿರಿ",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "ಅದರ ಬಗ್ಗೆ ಸುಳ್ಳು",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "😏"
+        }
+      ]
+    }
+  ]
+}

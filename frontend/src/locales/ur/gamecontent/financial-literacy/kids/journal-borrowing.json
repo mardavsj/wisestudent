@@ -1,1 +1,34 @@
-﻿{}
+{
+  "title": "قرض لینے کا جریدہ",
+  "subtitleComplete": "جرنل مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}: ذمہ دار قرض لینے پر غور کریں!",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "📝",
+  "minLengthLabel": "کم از کم {{count}} حروف لکھیں۔",
+  "placeholder": "اپنے جریدے کا اندراج یہاں لکھیں...",
+  "characterCount": "{{count}}/{{required}} حروف",
+  "submitContinueButton": "جمع کروائیں اور جاری رکھیں",
+  "submitFinalButton": "حتمی اندراج جمع کروائیں۔",
+  "stages": [
+    {
+      "question": "لکھیں: \"ایک چیز جو میں نے ادھار لی اور واپس کی وہ ___ تھی۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"میں نے محسوس کیا ___ جب میں نے جو قرض لیا تھا اسے واپس کر دیا۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"ذمہ داری سے قرض لینے کا مطلب ہے ___۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"میں نے ___ تک ادھار کی رقم واپس کرنے کو یقینی بنایا۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"قرض لینے نے مجھے ___ پیسے کے بارے میں سکھایا۔\"",
+      "minLength": 10
+    }
+  ]
+}

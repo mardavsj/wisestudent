@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "بیج: عقلمند انتخاب کرنے والا",
+  "subtitleComplete": "بیج مکمل!",
+  "subtitleProgress": "چیلنج {{current}} از {{total}}",
+  "challengeLabel": "چیلنج {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "اسکول کی فراہمی کا مخمصہ",
+      "question": "آپ کو اسکول کے سامان کی ضرورت ہے۔ کون سا دانشمندانہ انتخاب ہے؟",
+      "options": [
+        {
+          "id": "designer",
+          "text": "ڈیزائنر بیگ اور جدید لوازمات",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "دونوں - ہر وہ چیز خریدیں جو آپ چاہتے ہیں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "کچھ بھی خریدنا چھوڑ دیں۔",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "basic",
+          "text": "بنیادی اسکول کا سامان (قلم، نوٹ بک)",
+          "emoji": "📝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "فون اپ گریڈ کا مخمصہ",
+      "question": "آپ کا فون پرانا اور سست ہے۔ دانشمندانہ انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "wants-first",
+          "text": "ضرورت سے پہلے خواہشات خریدیں۔",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "basic-phone",
+          "text": "کالز اور پیغامات کے لیے بنیادی فون",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "latest",
+          "text": "تمام خصوصیات کے ساتھ تازہ ترین اسمارٹ فون",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "no-phone",
+          "text": "کوئی فون نہ خریدیں۔",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "فٹنس کا مخمصہ",
+      "question": "آپ فٹ رہنا چاہتے ہیں۔ کون سا دانشمندانہ انتخاب ہے؟",
+      "options": [
+        {
+          "id": "gym",
+          "text": "باقاعدہ ورزش کے لیے جم کی رکنیت",
+          "emoji": "💪",
+          "isCorrect": true
+        },
+        {
+          "id": "tracker",
+          "text": "مہنگا فٹنس ٹریکر اور سمارٹ واچ",
+          "emoji": "⌚",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "جم اور ٹریکر دونوں",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "skip-fitness",
+          "text": "فٹنس کو مکمل طور پر چھوڑ دیں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "اسٹڈی سیٹ اپ کا مخمصہ",
+      "question": "آپ امتحان کی تیاری کر رہے ہیں۔ دانشمندانہ انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "premium-setup",
+          "text": "شور منسوخ کرنے والے ہیڈ فونز اور پریمیم ڈیسک سیٹ اپ",
+          "emoji": "🎧",
+          "isCorrect": false
+        },
+        {
+          "id": "buy-premium",
+          "text": "ہر چیز پریمیم خریدیں۔",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "quiet-study",
+          "text": "خاموش مطالعہ کی جگہ اور نصابی کتب",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "no-materials",
+          "text": "بغیر کسی مواد کے مطالعہ کریں۔",
+          "emoji": "📖",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "لباس کا مخمصہ",
+      "question": "آپ کو اسکول کے لیے کپڑوں کی ضرورت ہے۔ کون سا دانشمندانہ انتخاب ہے؟",
+      "options": [
+        {
+          "id": "designer-clothes",
+          "text": "ڈیزائنر کپڑے اور جدید فیشن آئٹمز",
+          "emoji": "👔",
+          "isCorrect": false
+        },
+        {
+          "id": "only-designer",
+          "text": "صرف ڈیزائنر اشیاء خریدیں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "no-clothes",
+          "text": "کوئی کپڑے نہ خریدیں۔",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "essential",
+          "text": "اسکول اور موسم کے لیے ضروری لباس",
+          "emoji": "👕",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "دانشمند انتخاب کنندہ بیج حاصل کیا گیا!",
+    "winMessage": "آپ کو {{total}} میں سے {{score}} چیلنجز درست ملے! آپ ایک حقیقی دانشمند انتخاب کنندہ ہیں!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: دانشمندانہ انتخاب ضروریات کو ترجیح دیتے ہیں، آپ کو مالی تندرستی حاصل کرنے اور ایک محفوظ مستقبل بنانے میں مدد کرتے ہیں!",
+    "loseEmoji": "💪",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ کو {{total}} میں سے {{score}} چیلنجز درست ملے۔ پریکٹس دانشمندانہ انتخاب کے ساتھ کامل بناتی ہے!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "مشورہ: دانشمندانہ مالی انتخاب کرنے کے لیے ضروریات (ضروری اشیاء) کو خواہشات (لگژری آئٹمز) پر ترجیح دینا یاد رکھیں!"
+  }
+}

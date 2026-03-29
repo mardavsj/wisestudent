@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "జీతం కథ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ఒక యువ కార్మికుడు నెలకు ₹2000 సంపాదిస్తాడు. వారి జీతంతో వారు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "అన్నీ ఖర్చు పెట్టండి",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "₹400 (20%) ఆదా చేసుకోండి",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "డబ్బు వృధా",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "కార్మికుడు ₹500 బోనస్ పొందుతాడు. వారు దానిని ఎలా నిర్వహించాలి?",
+      "options": [
+        {
+          "id": "save",
+          "text": "చాలా వరకు సేవ్ చేయండి",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "అంతా విలాసానికి ఖర్చు చేస్తారు",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "బోనస్‌ను విస్మరించండి",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "కార్మికుని ఖర్చులు నెలకు ₹1800కి పెరుగుతాయి. స్మార్ట్ విధానం ఏమిటి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "సేవ్ చేయడం ఆపివేయండి",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ఎక్కువ ఖర్చు పెట్టండి",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "పొదుపును నిర్వహించండి",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "కార్మికుడికి 10% జీతం పెరుగుతుంది. అదనపు డబ్బుతో వారు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "జీవనశైలిని అప్‌గ్రేడ్ చేయండి",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "పొదుపు పెంచుకోండి",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "అదంతా వృధా",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "కార్మికుడు ₹10,000 గాడ్జెట్‌ని కొనుగోలు చేయాలనుకుంటున్నారు. ఉత్తమ విధానం ఏమిటి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "EMIలో కొనండి",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "డబ్బు అప్పుగా తీసుకోండి",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "కాలక్రమేణా ఆదా చేయండి",
+          "emoji": "⏳",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

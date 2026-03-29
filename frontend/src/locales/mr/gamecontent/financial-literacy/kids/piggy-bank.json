@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "पिगी बँक स्टोरी",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "🐷",
+  "questions": [
+    {
+      "id": 1,
+      "text": "पिगी बँकेला कोणतेही व्याज मिळत नाही. बँक खाते करतो. कोणते चांगले आहे?",
+      "options": [
+        {
+          "id": "bank",
+          "text": "बँक खाते",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "पिगी बँक",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "mattress",
+          "text": "गादीखाली",
+          "emoji": "🛏️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमच्याकडे ₹50 आहेत. ते वाढण्यास मदत करण्यासाठी आपण कुठे बचत करावी?",
+      "options": [
+        {
+          "id": "jar",
+          "text": "घरी जार",
+          "emoji": "🏺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "बँक बचत खाते",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "आता खर्च करा",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "बँक 5% व्याज देते. पिगी बँक 0% ऑफर करते. हुशारीने निवडा.",
+      "options": [
+        {
+          "id": "bank",
+          "text": "व्याजासाठी बँक",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "मनोरंजनासाठी पिगी बँक",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ते दूर द्या",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही बँकेत ₹100 वाचवता. ते ₹105 पर्यंत वाढते. का?",
+      "options": [
+        {
+          "id": "magic",
+          "text": "पिगी बँक जादू",
+          "emoji": "🪄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "added",
+          "text": "तुम्ही आणखी पैसे जोडले",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "बँक व्याज देते",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "पिगी बँकेपेक्षा बँक अनेकदा चांगली का असते?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "हे सुरक्षित आहे आणि पैसे वाढवू शकतात",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "cool",
+          "text": "ते फक्त थंड दिसते",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "carry",
+          "text": "वाहून नेणे सोपे आहे",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

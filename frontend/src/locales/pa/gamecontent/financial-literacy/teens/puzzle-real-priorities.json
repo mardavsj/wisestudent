@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਅਸਲ ਤਰਜੀਹਾਂ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਸ਼੍ਰੇਣੀਆਂ ਨਾਲ ਆਈਟਮਾਂ ਦਾ ਮੇਲ ਕਰੋ ({{current}}/{{total}} ਮੇਲਿਆ)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchButton": "Match",
+  "selectItemLabel": "ਇੱਕ ਆਈਟਮ ਚੁਣੋ",
+  "selectedItemLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultSuccessSubheader": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਨੂੰ ਉਹਨਾਂ ਦੀਆਂ ਸ਼੍ਰੇਣੀਆਂ ਨਾਲ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲਿਆ ਹੈ!",
+  "resultSuccessLesson": "ਸਬਕ: ਵਿੱਤੀ ਤਰਜੀਹਾਂ ਨੂੰ ਸਮਝਣਾ ਚੁਸਤ ਫੈਸਲੇ ਲੈਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "resultTryAgainHeader": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultTryAgainSubheader": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTryAgainTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਕੀ ਹਰੇਕ ਆਈਟਮ ਜ਼ਰੂਰੀ ਹੈ ਜਾਂ ਅਖਤਿਆਰੀ!",
+  "coinsEarned": "+{{coins}} ਸਿੱਕੇ",
+  "items": [
+    {
+      "id": 1,
+      "name": "ਸਿਹਤਮੰਦ ਨਾਸ਼ਤਾ",
+      "emoji": "🍳"
+    },
+    {
+      "id": 2,
+      "name": "ਸਟੇਸ਼ਨਰੀ ਕਿੱਟ",
+      "emoji": "✏️"
+    },
+    {
+      "id": 3,
+      "name": "ਸਕੂਲ ਤੋਂ ਬਾਅਦ ਦੀਆਂ ਕਲਾਸਾਂ",
+      "emoji": "📚"
+    },
+    {
+      "id": 4,
+      "name": "ਵਿਟਾਮਿਨ ਪੂਰਕ",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "ਬੱਸ ਪਾਸ",
+      "emoji": "🚌"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "ਰੋਜ਼ਾਨਾ ਲੋੜ",
+      "emoji": "😅"
+    },
+    {
+      "id": 7,
+      "name": "ਵਿਕਲਪਿਕ ਗਤੀਵਿਧੀ",
+      "emoji": "🎯"
+    },
+    {
+      "id": 8,
+      "name": "ਸਮਾਰਟ ਖਰਚ",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "ਸਿਹਤ ਤਰਜੀਹ",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "ਆਵਾਜਾਈ ਦਾ ਖਰਚਾ",
+      "emoji": "🚌"
+    }
+  ]
+}

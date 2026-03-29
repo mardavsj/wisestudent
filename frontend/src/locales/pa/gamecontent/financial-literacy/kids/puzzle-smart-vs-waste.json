@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਸਮਾਰਟ ਬਨਾਮ ਕੂੜਾ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਸ਼੍ਰੇਣੀਆਂ ਨਾਲ ਆਈਟਮਾਂ ਦਾ ਮੇਲ ਕਰੋ ({{matched}}/{{total}} ਮੇਲਿਆ)",
+  "itemsTitle": "ਖਰਚ ਕਰਨ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "selectItem": "ਇੱਕ ਆਈਟਮ ਚੁਣੋ",
+  "matchButton": "Match",
+  "scoreLabel": "ਸਕੋਰ:",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultGreatDescription": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਨੂੰ ਉਹਨਾਂ ਦੀਆਂ ਸ਼੍ਰੇਣੀਆਂ ਨਾਲ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲਿਆ ਹੈ!",
+  "coinsLabel": "Coins",
+  "resultLesson": "ਸਬਕ: ਲੋੜਾਂ ਅਤੇ ਇੱਛਾਵਾਂ ਵਿਚਕਾਰ ਅੰਤਰ ਨੂੰ ਸਮਝਣਾ ਚੁਸਤ ਵਿੱਤੀ ਫੈਸਲੇ ਲੈਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultKeepDescription": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਕੀ ਹਰੇਕ ਆਈਟਮ ਜ਼ਰੂਰੀ ਹੈ ਜਾਂ ਸਿਰਫ ਚੰਗੀ ਹੈ!",
+  "items": [
+    {
+      "id": 1,
+      "name": "ਲਾਇਬ੍ਰੇਰੀ ਦੀਆਂ ਕਿਤਾਬਾਂ",
+      "emoji": "📖"
+    },
+    {
+      "id": 2,
+      "name": "ਮੁੜ ਵਰਤੋਂ ਯੋਗ ਪਾਣੀ ਦੀ ਬੋਤਲ",
+      "emoji": "🥤"
+    },
+    {
+      "id": 3,
+      "name": "ਕੈਂਡੀ ਪੈਕ",
+      "emoji": "🍬"
+    },
+    {
+      "id": 4,
+      "name": "ਪੱਟੀਆਂ ਅਤੇ ਮੁੱਢਲੀ ਸਹਾਇਤਾ",
+      "emoji": "🩹"
+    },
+    {
+      "id": 5,
+      "name": "ਫਲਾਂ ਦੀ ਟੋਕਰੀ",
+      "emoji": "🍇"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "ਸਮਾਰਟ ਖਰੀਦੋ",
+      "emoji": "💡",
+      "description": "ਬੁੱਧੀਮਾਨ ਖਰਚ ਵਿਕਲਪ"
+    },
+    {
+      "id": 7,
+      "name": "ਫਾਲਤੂ ਖਰੀਦਦਾਰੀ",
+      "emoji": "🗑️",
+      "description": "ਲੋੜੀਂਦਾ ਜਾਂ ਫਜ਼ੂਲ ਨਹੀਂ"
+    },
+    {
+      "id": 8,
+      "name": "ਪੈਸੇ ਬਚਾਓ",
+      "emoji": "💰",
+      "description": "ਭਵਿੱਖ ਲਈ ਚੰਗਾ"
+    },
+    {
+      "id": 9,
+      "name": "ਸਿਹਤ ਤਰਜੀਹ",
+      "emoji": "❤️",
+      "description": "ਤੰਦਰੁਸਤੀ ਲਈ ਜ਼ਰੂਰੀ ਹੈ"
+    },
+    {
+      "id": 10,
+      "name": "ਪੌਸ਼ਟਿਕ ਚੋਣ",
+      "emoji": "🍏",
+      "description": "ਸਿਹਤਮੰਦ ਅਤੇ ਲਾਭਦਾਇਕ"
+    }
+  ]
+}

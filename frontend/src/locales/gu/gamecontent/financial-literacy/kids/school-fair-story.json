@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "શાળા ફેર વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "મેળો ટૂંક સમયમાં શરૂ થાય છે અને તમે ઉત્સાહિત અનુભવો છો. તમે પહેલા શું કરશો?",
+      "options": [
+        {
+          "id": "run",
+          "text": "પ્રથમ સ્ટોલ પર દોડો",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shout",
+          "text": "ઉત્તેજના સાથે પોકાર",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "look",
+          "text": "મેળાની આસપાસ જુઓ",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે લોકપ્રિય રમત માટે લાંબી લાઇન જુઓ છો. યોગ્ય પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "push",
+          "text": "આગળની તરફ દબાણ કરો",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "તમારા વારાની રાહ જુઓ",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "leave",
+          "text": "ગુસ્સાથી છોડી દો",
+          "emoji": "😤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "એક દુકાનદાર તમને ભૂલથી વધારાનો બદલાવ આપે છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "return",
+          "text": "વધારાના પૈસા પરત કરો",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "વધારાના પૈસા રાખો",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "શાંતિથી ચાલ્યા જાઓ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે ઘણી રાઇડ્સ અજમાવવા માંગો છો પરંતુ થાક અનુભવો છો. સ્માર્ટ ક્રિયા શું છે?",
+      "options": [
+        {
+          "id": "force",
+          "text": "તમારી જાતને સવારી કરવા દબાણ કરો",
+          "emoji": "😣",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "બધું છોડી દો",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rest",
+          "text": "થોડો આરામ કરો",
+          "emoji": "🪑",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "મેળો સમાપ્ત થઈ રહ્યો છે અને તમારી પાસે એક ટિકિટ બાકી છે. તમે શું પસંદ કરશો?",
+      "options": [
+        {
+          "id": "favorite",
+          "text": "તમારી મનપસંદ પ્રવૃત્તિ પસંદ કરો",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "random",
+          "text": "તેનો અવ્યવસ્થિત ઉપયોગ કરો",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "તેને ફેંકી દો",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

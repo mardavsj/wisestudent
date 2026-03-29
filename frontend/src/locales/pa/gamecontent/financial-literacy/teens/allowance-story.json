@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ਭੱਤੇ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਨੂੰ ਹਫ਼ਤਾਵਾਰੀ ਭੱਤੇ ਵਜੋਂ ₹500 ਪ੍ਰਾਪਤ ਹੁੰਦੇ ਹਨ। ਤੁਹਾਨੂੰ ਇਸਦਾ ਪ੍ਰਬੰਧਨ ਕਿਵੇਂ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਕਿਤਾਬਾਂ ਲਈ ਰੱਖੋ",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਕੱਪੜਿਆਂ 'ਤੇ ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "👕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ਇਹ ਸਭ ਬਰਬਾਦ ਕਰੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ₹300 ਦੀ ਗੇਮ ਖਰੀਦਣੀ ਚਾਹੁੰਦੇ ਹੋ ਪਰ ਸਕੂਲੀ ਸਪਲਾਈ ਲਈ ₹200 ਦੀ ਲੋੜ ਹੈ। ਸਮਾਰਟ ਵਿਕਲਪ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਖੇਡ ਨੂੰ ਖਰੀਦੋ",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਪਹਿਲਾਂ ਸਪਲਾਈ ਖਰੀਦੋ",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ਕ੍ਰੈਡਿਟ 'ਤੇ ਦੋਨੋ ਖਰੀਦੋ",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਡੇ ਦੋਸਤ ਹਰ ਰੋਜ਼ ਮਹਿੰਗੇ ਸਨੈਕਸ ਖਰੀਦ ਰਹੇ ਹਨ। ਤੁਸੀਂ ਇਸ ਨੂੰ ਬਰਦਾਸ਼ਤ ਨਹੀਂ ਕਰ ਸਕਦੇ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਮਹਿੰਗੇ ਸਨੈਕਸ ਖਰੀਦੋ",
+          "emoji": "🍕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਘਰ ਦੇ ਬਣੇ ਸਨੈਕਸ ਲਿਆਓ",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ₹400 ਦੀ ਬਚਤ ਕੀਤੀ ਪਰ ₹600 ਆਈਟਮ ਲਈ ਸੀਮਤ-ਸਮੇਂ ਦੀ ਪੇਸ਼ਕਸ਼ ਦੇਖੋ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਉਡੀਕ ਕਰੋ ਅਤੇ ਹੋਰ ਬਚਾਓ",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਅੰਸ਼ਕ ਭੁਗਤਾਨ ਨਾਲ ਖਰੀਦੋ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ਬਚਤ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਨੂੰ ਕੰਮਾਂ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ ₹100 ਦਾ ਬੋਨਸ ਮਿਲਦਾ ਹੈ। ਤੁਹਾਨੂੰ ਇਸਨੂੰ ਕਿਵੇਂ ਵਰਤਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "ਇਸ ਨੂੰ ਬਰਬਾਦ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਬੱਚਤਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਸਲੂਕ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🍭",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "अनुकरण: मासिक भत्ता",
+  "subtitleComplete": "सिम्युलेशन पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} परिस्थिती",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "amountLabel": "रक्कम:",
+  "perfectScoreTitle": "उत्कृष्ट बजेट!",
+  "perfectScoreMsg": "तुमच्याकडे {{total}} पैकी {{score}} परिस्थिती योग्य आहेत! तुम्ही संतुलित बजेटिंगच्या कलेमध्ये प्रभुत्व मिळवत आहात!",
+  "lessonLabel": "धडा: संतुलित बजेट गरजांना (अन्न, वाहतूक) प्राधान्य देते आणि भविष्यासाठी बचत करते आणि काही मजा करू देते!",
+  "keepLearningTitle": "शिकत राहा!",
+  "lowScoreMsg": "तुमच्याकडे {{total}} पैकी {{score}} परिस्थिती योग्य आहेत. संतुलित बजेट फॉर्म्युला लक्षात ठेवा: 40% अन्न, 30% वाहतूक, 20% बचत, 10% मजा!",
+  "tipLabel": "टीप: अत्यावश्यक गरजा पूर्ण करण्यासाठी प्रथम पैशाचे वाटप करा, नंतर बचत करा आणि शेवटी काही मजेदार पैसे द्या.",
+  "tryAgain": "पुन्हा प्रयत्न करा",
+  "coinsLabel": "+{{count}} नाणी",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "मासिक भत्ता निवड",
+      "description": "तुम्हाला ₹1000 भत्ता मिळतात. तुम्ही ते सुज्ञपणे कसे वापरू शकता?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "splurge",
+          "text": "फक्त ट्रेंडिंग आयटम खरेदी करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "budget-smart",
+          "text": "आवश्यक गोष्टी, मजा आणि बचतीसाठी बाजूला ठेवा",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "सर्व रोकड घरात लपवून ठेवा",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "random-spending",
+          "text": "विचार न करता खर्च करा",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "अर्धवेळ नोकरीची कमाई",
+      "description": "तुम्ही वीकेंडच्या नोकरीतून ₹1500 मिळवता. स्मार्ट दृष्टीकोन काय आहे?",
+      "amount": 1500,
+      "options": [
+        {
+          "id": "plan-smart",
+          "text": "उद्दिष्टे, गरजा आणि मजा यासाठी विभाजित करा",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury-only",
+          "text": "फक्त गॅजेट्स किंवा कपड्यांवर खर्च करा",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ते अस्तित्वात आहे हे विसरून जा",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "invest-all",
+          "text": "संशोधनाशिवाय गुंतवणूक करा",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "शिष्यवृत्ती बोनस",
+      "description": "तुम्हाला ₹2000 शिष्यवृत्ती मिळते. ते वापरण्याचा सर्वात हुशार मार्ग कोणता आहे?",
+      "amount": 2000,
+      "options": [
+        {
+          "id": "trip",
+          "text": "लक्झरी ट्रिपला जाल",
+          "emoji": "✈️",
+          "isCorrect": false
+        },
+        {
+          "id": "hide-money",
+          "text": "घरी लपवा",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "donate",
+          "text": "हे सर्व त्वरित दान करा",
+          "emoji": "💝",
+          "isCorrect": false
+        },
+        {
+          "id": "self-invest",
+          "text": "पुस्तके, अभ्यासक्रम किंवा शिकण्यासाठी साधने खरेदी करा",
+          "emoji": "🎓",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "वाढदिवसाच्या भेटीचे पैसे",
+      "description": "तुम्हाला वाढदिवसाचे पैसे म्हणून ₹800 मिळतात. विचारपूर्वक निवड काय आहे?",
+      "amount": 800,
+      "options": [
+        {
+          "id": "impulse-buy",
+          "text": "फक्त झटपट मनोरंजनावर खर्च करा",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "जे मजेदार दिसते ते खरेदी करा",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "plan-future",
+          "text": "मोठ्या ध्येयासाठी किंवा गरजेसाठी बचत करा",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "share-friends",
+          "text": "हे सर्व मित्रांना द्या",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "समर जॉब विंडफॉल",
+      "description": "तुम्ही उन्हाळी नोकरीतून ₹2500 मिळवता. जास्तीत जास्त फायदे कसे मिळवायचे?",
+      "amount": 2500,
+      "options": [
+        {
+          "id": "balanced-plan",
+          "text": "बचत, शिकणे आणि लहान उपचारांसाठी विभाजित करा",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "debt-payment",
+          "text": "तुम्हाला पूर्णपणे समजत नसलेले कर्ज फेडण्यासाठी घाई करा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse-buying",
+          "text": "आवेगाच्या खरेदीवर खर्च करा",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save-all",
+          "text": "कोणत्याही योजनेशिवाय सर्व जतन करा",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

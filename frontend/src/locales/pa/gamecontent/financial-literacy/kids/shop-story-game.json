@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ਸਟੋਰ ਸਟੋਰੀ ਗੇਮ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਦੁਕਾਨਦਾਰ ਵਾਧੂ ਬਦਲ ਦਿੰਦਾ ਹੈ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ਵਾਧੂ ਤਬਦੀਲੀ ਵਾਪਸ ਕਰੋ",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "ਇਸਨੂੰ ਚੁੱਪਚਾਪ ਰੱਖੋ",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਤੁਰੰਤ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਨੂੰ ਇੱਕ ਸਸਤੀ ਵਸਤੂ ਮਿਲਦੀ ਹੈ। ਅੱਗੇ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "ਕੀਮਤ ਬਾਰੇ ਝੂਠ",
+          "emoji": "🙊",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਇਸ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "honest",
+          "text": "ਈਮਾਨਦਾਰ ਬਣੋ",
+          "emoji": "🤗",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਵਿਕਰੇਤਾ ਇੱਕ ਕੀਮਤ ਦਾ ਹਵਾਲਾ ਦਿੰਦਾ ਹੈ. ਅੱਗੇ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "bargain",
+          "text": "ਬੇਇਨਸਾਫ਼ੀ ਨਾਲ ਸੌਦੇਬਾਜ਼ੀ ਕਰੋ",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "ਭੁਗਤਾਨ ਕਰਨ ਤੋਂ ਇਨਕਾਰ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "pay",
+          "text": "ਨਿਰਪੱਖ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਨੂੰ ਇੱਕ ਰਸੀਦ ਮਿਲਦੀ ਹੈ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "check",
+          "text": "ਰਸੀਦ ਦੀ ਜਾਂਚ ਕਰੋ",
+          "emoji": "🧾",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ਬਿੱਲ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "throw",
+          "text": "ਸੁੱਟ ਦੇਣਾ",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਸਟੋਰ ਤੁਹਾਨੂੰ ਓਵਰਚਾਰਜ ਕਰਦਾ ਹੈ। ਹੁਣ ਕੀ?",
+      "options": [
+        {
+          "id": "silent",
+          "text": "ਚੁੱਪ ਰਹੋ",
+          "emoji": "😶",
+          "isCorrect": false
+        },
+        {
+          "id": "report",
+          "text": "ਰਿਪੋਰਟ ਅਸ਼ੁੱਧੀ",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "accept",
+          "text": "ਇਸ ਨੂੰ ਸਵੀਕਾਰ ਕਰੋ",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

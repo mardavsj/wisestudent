@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ સ્મોલ બિઝનેસ",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારા નાના વ્યવસાયની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા નાના વ્યવસાયની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "readyEmoji": "🏪",
+  "readyTitle": "નાના વ્યવસાય કૌશલ્યો ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "નાનો વ્યવસાય શરૂ કરવા અને ચલાવવા વિશે પ્રશ્નોના જવાબ આપો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "નાનો વ્યવસાય શરૂ કરવાની સારી રીત કઈ છે?",
+      "correctAnswer": "ગરમીથી પકવવું અને વેચાણ",
+      "options": [
+        {
+          "text": "ખરીદો અને કચરો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ગરમીથી પકવવું અને વેચાણ",
+          "isCorrect": true,
+          "emoji": "🍰"
+        },
+        {
+          "text": "ડુ નથિંગ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમે તમારી કુશળતાથી પૈસા કેવી રીતે કમાઈ શકો?",
+      "correctAnswer": "હસ્તકલા બનાવો",
+      "options": [
+        {
+          "text": "હસ્તકલા બનાવો",
+          "isCorrect": true,
+          "emoji": "🎨"
+        },
+        {
+          "text": "બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "સમયનો બગાડ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "કુશળતાને અવગણો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "શું તમને અન્ય લોકો પાસેથી પૈસા કમાવવામાં મદદ કરે છે?",
+      "correctAnswer": "ઓફર સેવા",
+      "options": [
+        {
+          "text": "ડુ નથિંગ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "કાયમ રાહ જુઓ",
+          "isCorrect": false,
+          "emoji": "⏳"
+        },
+        {
+          "text": "કામ ટાળો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ઓફર સેવા",
+          "isCorrect": true,
+          "emoji": "🛠️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "તમારે વ્યવસાયના નફા સાથે શું કરવું જોઈએ?",
+      "correctAnswer": "નફો બચાવો",
+      "options": [
+        {
+          "text": "નફો બચાવો",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "નફો ખર્ચો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "વેસ્ટ મની",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "તે ગુમાવો",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "તમારા વ્યવસાયને સફળ કરવામાં શું મદદ કરે છે?",
+      "correctAnswer": "વ્યાપાર વધારો",
+      "options": [
+        {
+          "text": "વેસ્ટ મની",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "વ્યાપાર વધારો",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ગીવ અપ",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "નાના રહો",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    }
+  ]
+}

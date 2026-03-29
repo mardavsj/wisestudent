@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਪਿਗੀ ਬੈਂਕ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "🐷",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਪਿਗੀ ਬੈਂਕ ਕੋਈ ਵਿਆਜ ਨਹੀਂ ਕਮਾਉਂਦਾ ਹੈ। ਬੈਂਕ ਖਾਤਾ ਕਰਦਾ ਹੈ। ਕਿਹੜਾ ਬਿਹਤਰ ਹੈ?",
+      "options": [
+        {
+          "id": "bank",
+          "text": "ਬੈਂਕ ਖਾਤਾ",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "ਪਿਗੀ ਬੈਂਕ",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "mattress",
+          "text": "ਚਟਾਈ ਦੇ ਹੇਠਾਂ",
+          "emoji": "🛏️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹50 ਹਨ। ਇਸ ਨੂੰ ਵਧਣ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ ਤੁਹਾਨੂੰ ਕਿੱਥੇ ਬਚਤ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "jar",
+          "text": "ਘਰ ਵਿੱਚ ਜਾਰ",
+          "emoji": "🏺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ਬੈਂਕ ਬਚਤ ਖਾਤਾ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਇਸ ਨੂੰ ਹੁਣ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਬੈਂਕ 5% ਵਿਆਜ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਹੈ। ਪਿਗੀ ਬੈਂਕ 0% ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਹੈ। ਸਮਝਦਾਰੀ ਨਾਲ ਚੁਣੋ.",
+      "options": [
+        {
+          "id": "bank",
+          "text": "ਵਿਆਜ ਲਈ ਬੈਂਕ",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "ਮਜ਼ੇ ਲਈ ਪਿਗੀ ਬੈਂਕ",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ਇਸ ਨੂੰ ਦੂਰ ਦਿਓ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਬੈਂਕ ਵਿੱਚ ₹100 ਦੀ ਬਚਤ ਕਰਦੇ ਹੋ। ਇਹ ₹105 ਤੱਕ ਵਧਦਾ ਹੈ। ਕਿਉਂ?",
+      "options": [
+        {
+          "id": "magic",
+          "text": "ਪਿਗੀ ਬੈਂਕ ਦਾ ਜਾਦੂ",
+          "emoji": "🪄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "added",
+          "text": "ਤੁਸੀਂ ਹੋਰ ਪੈਸੇ ਜੋੜ ਦਿੱਤੇ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ਬੈਂਕ ਵਿਆਜ ਅਦਾ ਕਰਦਾ ਹੈ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਇੱਕ ਬੈਂਕ ਅਕਸਰ ਇੱਕ ਪਿਗੀ ਬੈਂਕ ਨਾਲੋਂ ਬਿਹਤਰ ਕਿਉਂ ਹੁੰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "ਇਹ ਸੁਰੱਖਿਅਤ ਹੈ ਅਤੇ ਪੈਸਾ ਵਧ ਸਕਦਾ ਹੈ",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "cool",
+          "text": "ਇਹ ਸਿਰਫ ਠੰਡਾ ਦਿਖਾਈ ਦਿੰਦਾ ਹੈ",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "carry",
+          "text": "ਇਸ ਨੂੰ ਚੁੱਕਣਾ ਆਸਾਨ ਹੈ",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

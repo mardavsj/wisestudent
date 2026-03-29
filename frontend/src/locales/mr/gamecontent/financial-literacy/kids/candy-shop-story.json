@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "कँडी शॉप स्टोरी",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "🍬",
+  "questions": [
+    {
+      "id": 1,
+      "text": "दुकानदार 10 ऐवजी 20 रुपये घेतात. तुम्ही बिल तपासता का?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "होय, मी बिल तपासतो",
+          "emoji": "📜",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "नाही, मी फक्त पैसे देतो",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "friend",
+          "text": "एखाद्या मित्राला तपासायला सांगा",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमच्याकडे ₹50 आहेत. कँडीची किंमत ₹15 आहे. तुम्हाला किती बदल करावा लागेल?",
+      "options": [
+        {
+          "id": "25",
+          "text": "₹25",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "₹40",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "35",
+          "text": "₹35",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "दुकानदार ₹35 ऐवजी ₹30 चेंज देतो. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "योग्य बदलासाठी नम्रपणे विचारा",
+          "emoji": "🗣️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "take",
+          "text": "₹30 घ्या आणि निघून जा",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "buy",
+          "text": "अधिक कँडी खरेदी करा",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्हाला प्रत्येकी ₹10 मध्ये दोन कँडी खरेदी करायच्या आहेत. तुम्हाला ते ₹15 ने परवडेल का?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "होय, माझ्याकडे पुरेसे आहे",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "नाही, मला ₹20 हवे आहेत",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "discount",
+          "text": "सवलत मागा",
+          "emoji": "🎟️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "स्मार्टपणे खरेदी करण्याचा सर्वोत्तम मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "everything",
+          "text": "आपण पहात असलेली प्रत्येक गोष्ट खरेदी करा",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "किंमती आणि बिले काळजीपूर्वक तपासा",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "फक्त मित्रांसोबत खरेदी करा",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

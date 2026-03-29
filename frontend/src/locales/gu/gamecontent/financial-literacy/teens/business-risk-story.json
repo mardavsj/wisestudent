@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "વ્યાપાર જોખમ વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે વેચાણ માટે નાસ્તામાં ₹200નું રોકાણ કરો છો. ₹300 કમાઓ. સારું?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "હા, 50% નફો",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ના, ખૂબ જોખમી",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "કદાચ, આધાર રાખે છે",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "નાના વ્યવસાય માટે સારો નફો માર્જિન શું છે?",
+      "options": [
+        {
+          "id": "low",
+          "text": "5% નફો",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "high",
+          "text": "30-50% નફો",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "loss",
+          "text": "નુકશાન ઠીક છે",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "શું તમારે વ્યવસાયમાં જોખમ લેવું જોઈએ?",
+      "options": [
+        {
+          "id": "all",
+          "text": "બધા જોખમો લો",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "બધા જોખમો ટાળો",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "calculated",
+          "text": "હા, ગણતરી કરેલ જોખમો",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "વ્યવસાય શરૂ કરતા પહેલા શું મહત્વનું છે?",
+      "options": [
+        {
+          "id": "jump",
+          "text": "તરત જ અંદર જાઓ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "યોજના અને સંશોધન",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "કાયમ રાહ જુઓ",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "શું ₹200→₹300 એ સારું બિઝનેસ પરિણામ છે?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "ના, બહુ નાની",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "કદાચ, જો સુસંગત હોય",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "હા, 50% વળતર",
+          "emoji": "🙂",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "વાર્તા પૂર્ણ!",
+    "winMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે વ્યવસાયના જોખમો અને નફાને સમજો છો!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: 50% નફો (₹200→₹300) ઉત્તમ છે! ગણતરી કરેલ જોખમો લો, પ્રારંભ કરતા પહેલા યોજના બનાવો અને તંદુરસ્ત નફાના માર્જિન માટે લક્ષ્ય રાખો!",
+    "loseEmoji": "💪",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, 50% નફો ઉત્તમ છે, અને આયોજન સાથેના જોખમોની ગણતરી ચાવીરૂપ છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટિપ: ₹200નું રોકાણ કરવું અને ₹300 (50% નફો) કમાવવું ઉત્તમ છે! વ્યવસાય શરૂ કરતા પહેલા હંમેશા યોજના બનાવો અને ગણતરીપૂર્વકનું જોખમ લો!"
+  }
+}

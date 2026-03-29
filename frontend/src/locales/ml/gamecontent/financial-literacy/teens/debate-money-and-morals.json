@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "സംവാദം: പണവും സദാചാരവും",
+  "subtitleComplete": "സംവാദം പൂർത്തിയായി!",
+  "subtitleProgress": "{{current}} / {{total}} റൗണ്ട്",
+  "roundLabel": "റൗണ്ട് {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "പണം സ്വഭാവം പരിശോധിക്കുന്നുണ്ടോ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "അതെ, ധാർമ്മികത കൂടുതൽ പ്രധാനമാണ്",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ഇല്ല, പണം പ്രശ്നമല്ല",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "ഒരുപക്ഷേ, ആശ്രയിച്ചിരിക്കുന്നു",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "പണത്തിനു വേണ്ടി നൈതികതയിൽ വിട്ടുവീഴ്ച ചെയ്യണോ?",
+      "options": [
+        {
+          "id": "sometimes",
+          "text": "ചിലപ്പോൾ ശരിയാകും",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "ഒരിക്കലും വിട്ടുവീഴ്ച ചെയ്യരുത്",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "പണത്തിനാണ് മുൻഗണന",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "എന്താണ് കൂടുതൽ പ്രധാനം: സമ്പത്ത് അല്ലെങ്കിൽ സമഗ്രത?",
+      "options": [
+        {
+          "id": "wealth",
+          "text": "Wealth",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "രണ്ടും തുല്യമായി",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "integrity",
+          "text": "Integrity",
+          "emoji": "💎",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "നിങ്ങൾക്ക് സമ്പന്നനും ധാർമ്മികനുമാകാൻ കഴിയുമോ?",
+      "options": [
+        {
+          "id": "yes2",
+          "text": "അതെ, തികച്ചും",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "id": "no2",
+          "text": "ഇല്ല, അസാധ്യമാണ്",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "rarely",
+          "text": "അപൂർവ്വമായി സാധ്യമാണ്",
+          "emoji": "😕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "എന്താണ് ശാശ്വത വിജയം കെട്ടിപ്പടുക്കുന്നത്?",
+      "options": [
+        {
+          "id": "shortcuts",
+          "text": "കുറുക്കുവഴികളും തന്ത്രങ്ങളും",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "ethics",
+          "text": "ധാർമ്മികതയും സത്യസന്ധതയും",
+          "emoji": "🏆",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "ഭാഗ്യം മാത്രം",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

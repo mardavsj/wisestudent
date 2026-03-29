@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "ಒಗಟು: ಸಾಲದ ಪಂದ್ಯ",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಕ್ರಿಯೆಗಳೊಂದಿಗೆ ಐಟಂಗಳನ್ನು ಹೊಂದಿಸಿ ({{matched}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "itemsTitle": "ಎರವಲು ಪಡೆದ ವಸ್ತುಗಳು",
+  "categoriesTitle": "Actions",
+  "selectedLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "selectItem": "ಐಟಂ ಆಯ್ಕೆಮಾಡಿ",
+  "matchButton": "Match",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultGreatDescription": "ನೀವು ಕ್ರಮಗಳೊಂದಿಗೆ {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ!",
+  "coinsLabel": "Coins",
+  "resultLesson": "ಪಾಠ: ಎರವಲು ಪಡೆದ ವಸ್ತುಗಳನ್ನು ಹಿಂತಿರುಗಿಸಬೇಕು ಅಥವಾ ಜವಾಬ್ದಾರಿಯುತವಾಗಿ ನಿರ್ವಹಿಸಬೇಕು.",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultKeepDescription": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTip": "ಸಲಹೆ: ದೈನಂದಿನ ಜೀವನದಲ್ಲಿ ಜವಾಬ್ದಾರಿಯುತ ಸಾಲವು ಹೇಗೆ ಕಾಣುತ್ತದೆ ಎಂಬುದರ ಕುರಿತು ಯೋಚಿಸಿ.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Notebook",
+      "emoji": "📓"
+    },
+    {
+      "id": 2,
+      "name": "ಬೋರ್ಡ್ ಆಟ",
+      "emoji": "🎲"
+    },
+    {
+      "id": 3,
+      "name": "Eraser",
+      "emoji": "🩹"
+    },
+    {
+      "id": 4,
+      "name": "ಪಾಕೆಟ್ ಮನಿ",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "Lunchbox",
+      "emoji": "🥪"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "ಮರಳಿ ಕೊಡು",
+      "emoji": "↩️",
+      "description": "ಎರವಲು ಪಡೆದ ವಸ್ತುಗಳನ್ನು ಹಿಂತಿರುಗಿಸಿ"
+    },
+    {
+      "id": 7,
+      "name": "ಸ್ನೇಹಿತರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ",
+      "emoji": "🤝",
+      "description": "ಬಳಸುವಾಗ ತಕ್ಕಮಟ್ಟಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ"
+    },
+    {
+      "id": 8,
+      "name": "ಹಣವನ್ನು ಮರುಪಾವತಿಸಿ",
+      "emoji": "💳",
+      "description": "ಎರವಲು ಪಡೆದ ಹಣವನ್ನು ಹಿಂತಿರುಗಿಸಿ"
+    },
+    {
+      "id": 9,
+      "name": "ಧನ್ಯವಾದಗಳು ಎಂದು ಹೇಳಿ",
+      "emoji": "🙏",
+      "description": "ಸಾಲಗಾರನಿಗೆ ಕೃತಜ್ಞತೆಯನ್ನು ತೋರಿಸಿ"
+    },
+    {
+      "id": 10,
+      "name": "ಎಚ್ಚರಿಕೆಯಿಂದ ಸಾಲ ನೀಡಿ",
+      "emoji": "🛡️",
+      "description": "ಎಚ್ಚರಿಕೆಯಿಂದ ಮತ್ತು ನಿಯಮಗಳೊಂದಿಗೆ ನಿರ್ವಹಿಸಿ"
+    }
+  ]
+}

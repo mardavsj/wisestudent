@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಮನಿ ಆಯ್ಕೆ",
+  "subtitlePlaying": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ: ನಿಮ್ಮ ಹಣದ ಆಯ್ಕೆಯ ಪ್ರತಿವರ್ತನಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಹಣದ ಆಯ್ಕೆಯ ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyTitle": "ನಿಮ್ಮ ಹಣದ ಆಯ್ಕೆಗಳನ್ನು ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಪ್ರತಿ ಪ್ರಶ್ನೆಗೆ ಸ್ಮಾರ್ಟ್ ಹಣದ ಆಯ್ಕೆಯನ್ನು ಆರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "questionLabel": "ಪ್ರಶ್ನೆ:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ನಿಮ್ಮ ಹಣವನ್ನು ಸುರಕ್ಷಿತವಾಗಿರಿಸಲು ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "ಎಸೆಯಿರಿ",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "📥"
+        },
+        {
+          "text": "ಅದರ ಬಗ್ಗೆ ಮರೆತುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ನಿಮ್ಮ ಹಣವನ್ನು ನಿಭಾಯಿಸಲು ಉತ್ತಮ ಮಾರ್ಗ ಯಾವುದು?",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಇದನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ನಿಮ್ಮ ಹಣವನ್ನು ಎಲ್ಲಿ ಸುರಕ್ಷಿತವಾಗಿ ಇಡಬೇಕು?",
+      "correctAnswer": "Bank",
+      "options": [
+        {
+          "text": "Bank",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Hide",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ನಿಮ್ಮ ಹಣವು ಕಾಲಾನಂತರದಲ್ಲಿ ಬೆಳೆಯಲು ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "Invest",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ವೇಗವಾಗಿ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "Invest",
+          "isCorrect": true,
+          "emoji": "📈"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ನಿಮ್ಮ ಹಣಕ್ಕೆ ಉತ್ತಮ ಆಯ್ಕೆ ಯಾವುದು?",
+      "correctAnswer": "ಉಳಿಸಿ ಮತ್ತು ಬೆಳೆಯಿರಿ",
+      "options": [
+        {
+          "text": "ಉಳಿಸಿ ಮತ್ತು ಬೆಳೆಯಿರಿ",
+          "isCorrect": true,
+          "emoji": "🌱"
+        },
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ವೇಸ್ಟ್ ಮನಿ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "શોપ સ્ટોરી ગેમ",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "દુકાનદાર વધારાનો ફેરફાર આપે છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "return",
+          "text": "વધારાનો ફેરફાર પરત કરો",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "તેને શાંતિથી રાખો",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "તરત જ ખર્ચ કરો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમને સસ્તી વસ્તુ મળશે. આગળ શું છે?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "કિંમત વિશે અસત્ય",
+          "emoji": "🙊",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "તેને અવગણો",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "honest",
+          "text": "પ્રમાણિક રહો",
+          "emoji": "🤗",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "વિક્રેતા કિંમત ટાંકે છે. આગળ શું છે?",
+      "options": [
+        {
+          "id": "bargain",
+          "text": "અન્યાયી રીતે સોદો કરો",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "ચૂકવણી કરવાનો ઇનકાર કરો",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "pay",
+          "text": "વાજબી રીતે ચૂકવો",
+          "emoji": "⚖️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમને રસીદ મળે છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "check",
+          "text": "રસીદ તપાસો",
+          "emoji": "🧾",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "બિલને અવગણો",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "throw",
+          "text": "ફેંકી દો",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "સ્ટોર તમને ઓવરચાર્જ કરે છે. હવે શું?",
+      "options": [
+        {
+          "id": "silent",
+          "text": "મૌન રહો",
+          "emoji": "😶",
+          "isCorrect": false
+        },
+        {
+          "id": "report",
+          "text": "ભૂલની જાણ કરો",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "accept",
+          "text": "તેને સ્વીકારો",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

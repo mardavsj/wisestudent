@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "മിഠായി കടയുടെ കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "🍬",
+  "questions": [
+    {
+      "id": 1,
+      "text": "കടയുടമ ₹10ന് പകരം ₹20 ഈടാക്കുന്നു. നിങ്ങൾ ബിൽ പരിശോധിക്കുന്നുണ്ടോ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "അതെ, ഞാൻ ബിൽ പരിശോധിക്കുന്നു",
+          "emoji": "📜",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ഇല്ല, ഞാൻ പണം നൽകിയാൽ മതി",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "friend",
+          "text": "പരിശോധിക്കാൻ ഒരു സുഹൃത്തിനോട് ആവശ്യപ്പെടുക",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിങ്ങൾക്ക് ₹50 ഉണ്ട്. മിഠായിക്ക് 15 രൂപയാണ് വില. നിങ്ങൾക്ക് എത്രത്തോളം മാറ്റം ലഭിക്കണം?",
+      "options": [
+        {
+          "id": "25",
+          "text": "₹25",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "₹40",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "35",
+          "text": "₹35",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "കടയുടമ 35 രൂപയ്ക്ക് പകരം 30 രൂപ മാറ്റുന്നു. നീ എന്ത് ചെയ്യുന്നു?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "ശരിയായ മാറ്റം വിനീതമായി ആവശ്യപ്പെടുക",
+          "emoji": "🗣️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "take",
+          "text": "30 രൂപ എടുത്ത് പോകൂ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "buy",
+          "text": "കൂടുതൽ മിഠായി വാങ്ങുക",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങൾക്ക് 10 രൂപ നിരക്കിൽ രണ്ട് മിഠായികൾ വാങ്ങണം. 15 രൂപ കൊണ്ട് താങ്ങാനാകുമോ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "അതെ, എനിക്ക് മതി",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ഇല്ല, എനിക്ക് ₹20 വേണം",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "discount",
+          "text": "ഒരു കിഴിവ് ആവശ്യപ്പെടുക",
+          "emoji": "🎟️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "സമർത്ഥമായി ഷോപ്പിംഗ് നടത്താനുള്ള ഏറ്റവും നല്ല മാർഗം ഏതാണ്?",
+      "options": [
+        {
+          "id": "everything",
+          "text": "നിങ്ങൾ കാണുന്നതെല്ലാം വാങ്ങുക",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "വിലകളും ബില്ലുകളും ശ്രദ്ധാപൂർവ്വം പരിശോധിക്കുക",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "സുഹൃത്തുക്കളുമായി മാത്രം ഷോപ്പിംഗ് നടത്തുക",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

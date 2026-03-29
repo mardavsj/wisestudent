@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स स्मार्ट पिक",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: आपल्या स्मार्ट पिक ज्ञानाची चाचणी घ्या!",
+  "subtitleReady": "तुमच्या स्मार्ट पिक ज्ञानाची चाचणी घ्या!",
+  "readyEmoji": "🧠",
+  "readyTitle": "तुमच्या स्मार्ट पिक कौशल्यांची चाचणी घेण्यासाठी तयार आहात?",
+  "readyDescription": "स्मार्ट निवडी आणि निर्णय घेण्याबाबत प्रश्नांची उत्तरे द्या.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "निरोगी राहण्यासाठी स्मार्ट निवड कोणती आहे?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍎"
+        },
+        {
+          "text": "अतिरिक्त आइस्क्रीम",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "व्हिडिओ गेम",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "फॅन्सी टॉय",
+          "isCorrect": false,
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "आपण शिकण्यासाठी काय निवडले पाहिजे?",
+      "correctAnswer": "शालेय साहित्य",
+      "options": [
+        {
+          "text": "नवीन खेळ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "शालेय साहित्य",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "छान गॅझेट",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "दैनंदिन जीवनासाठी काय आवश्यक आहे?",
+      "correctAnswer": "Clothes",
+      "options": [
+        {
+          "text": "फॅन्सी टॉय",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Clothes",
+          "isCorrect": true,
+          "emoji": "👕"
+        },
+        {
+          "text": "आईस्क्रीम",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "क्रिया आकृती",
+          "isCorrect": false,
+          "emoji": "🤖"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "तुम्हाला ज्ञान मिळविण्यात काय मदत करते?",
+      "correctAnswer": "Books",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "व्हिडिओ गेम",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "कोडे खेळ",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "Books",
+          "isCorrect": true,
+          "emoji": "📖"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "शाळेत जाण्यासाठी तुम्हाला काय हवे आहे?",
+      "correctAnswer": "बसचे तिकीट",
+      "options": [
+        {
+          "text": "छान गॅझेट",
+          "isCorrect": false,
+          "emoji": "⌚"
+        },
+        {
+          "text": "संगीत प्लेअर",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "बसचे तिकीट",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "स्मार्ट वॉच",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

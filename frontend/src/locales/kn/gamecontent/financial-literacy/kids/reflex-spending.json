@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ಪ್ರತಿಫಲಿತ ಖರ್ಚು",
+  "subtitlePlaying": "ಸುತ್ತು {{current}}/{{total}}: ನಿಮ್ಮ ಖರ್ಚು ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಖರ್ಚು ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyTitle": "ನಿಮ್ಮ ಖರ್ಚು ಕೌಶಲ್ಯಗಳನ್ನು ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಸ್ಮಾರ್ಟ್ ಖರ್ಚು ಮತ್ತು ಹಣ ನಿರ್ವಹಣೆ ಕುರಿತು ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಸುತ್ತು:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ದೊಡ್ಡ ಖರೀದಿಯನ್ನು ಮಾಡುವ ಮೊದಲು ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಮುಂದೆ ಯೋಜನೆ ಮಾಡಿ",
+      "options": [
+        {
+          "text": "ತಕ್ಷಣ ಖರೀದಿಸಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಮುಂದೆ ಯೋಜನೆ ಮಾಡಿ",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "ಸ್ನೇಹಿತರನ್ನು ಕೇಳಿ",
+          "isCorrect": false,
+          "emoji": "👥"
+        },
+        {
+          "text": "ವೆಚ್ಚವನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ನಿಮ್ಮ ಭತ್ಯೆಯನ್ನು ಕಳೆಯಲು ಬುದ್ಧಿವಂತ ಮಾರ್ಗ ಯಾವುದು?",
+      "correctAnswer": "ಮೊದಲು ಕೆಲವನ್ನು ಉಳಿಸಿ",
+      "options": [
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ಏನು ಬೇಕಾದರೂ ಖರೀದಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ಮೊದಲು ಕೆಲವನ್ನು ಉಳಿಸಿ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ವೇಸ್ಟ್ ಇಟ್",
+          "isCorrect": false,
+          "emoji": "🔥"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ಉದ್ವೇಗದ ಖರೀದಿಗಳನ್ನು ತಪ್ಪಿಸಲು ನಿಮಗೆ ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "ಖರೀದಿಸುವ ಮೊದಲು ನಿರೀಕ್ಷಿಸಿ",
+      "options": [
+        {
+          "text": "ಖರೀದಿಸುವ ಮೊದಲು ನಿರೀಕ್ಷಿಸಿ",
+          "isCorrect": true,
+          "emoji": "⏳"
+        },
+        {
+          "text": "ತಕ್ಷಣ ಖರೀದಿಸಿ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ಆಗಾಗ್ಗೆ ಶಾಪಿಂಗ್ ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "ಯೋಚಿಸದೆ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🤔"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಶಾಪಿಂಗ್ ಮಾಡುವಾಗ ನೀವು ಏನು ಹೋಲಿಸಬೇಕು?",
+      "correctAnswer": "ಬೆಲೆಗಳು ಮತ್ತು ಗುಣಮಟ್ಟ",
+      "options": [
+        {
+          "text": "ಬಣ್ಣಗಳು ಮಾತ್ರ",
+          "isCorrect": false,
+          "emoji": "🎨"
+        },
+        {
+          "text": "ಬ್ರಾಂಡ್‌ಗಳು ಮಾತ್ರ",
+          "isCorrect": false,
+          "emoji": "🏷️"
+        },
+        {
+          "text": "Packaging",
+          "isCorrect": false,
+          "emoji": "📦"
+        },
+        {
+          "text": "ಬೆಲೆಗಳು ಮತ್ತು ಗುಣಮಟ್ಟ",
+          "isCorrect": true,
+          "emoji": "🔍"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ಸ್ಮಾರ್ಟ್ ಖರ್ಚು ಮಾಡುವ ಮೊದಲ ಹಂತ ಯಾವುದು?",
+      "correctAnswer": "ಬಜೆಟ್ ಹೊಂದಿಸಿ",
+      "options": [
+        {
+          "text": "ಮುಕ್ತವಾಗಿ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಬಜೆಟ್ ಹೊಂದಿಸಿ",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರೀದಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ಮಿತಿಗಳನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    }
+  ]
+}

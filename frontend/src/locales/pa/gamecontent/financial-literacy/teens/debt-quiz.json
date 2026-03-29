@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਕਰਜ਼ਾ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "₹100 ਉਧਾਰ ਲਓ, ₹120 ਵਾਪਸ ਕਰੋ। ਵਾਧੂ ₹20 ਨੂੰ ਕੀ ਕਹਿੰਦੇ ਹਨ?",
+      "options": [
+        {
+          "id": "principal",
+          "text": "Principal",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "fee",
+          "text": "Fee",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਜੇਕਰ ਤੁਸੀਂ ਸਮੇਂ ਸਿਰ ਕਰਜ਼ੇ ਦੀ ਅਦਾਇਗੀ ਨਹੀਂ ਕਰਦੇ ਤਾਂ ਕੀ ਹੁੰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "ਕੁਝ ਨਹੀਂ ਹੁੰਦਾ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "penalty",
+          "text": "ਪੈਨਲਟੀ ਫੀਸ ਅਤੇ ਵਿਆਜ ਵਿੱਚ ਵਾਧਾ",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "ਕਰਜ਼ਾ ਮੁਕਤ ਹੋ ਜਾਂਦਾ ਹੈ",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਉਧਾਰ ਲਈ ਗਈ ਅਸਲ ਰਕਮ ਨੂੰ ਕੀ ਕਿਹਾ ਜਾਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "principal",
+          "text": "Principal",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "total",
+          "text": "ਕੁੱਲ ਕਰਜ਼ਾ",
+          "emoji": "📊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਪੈਸੇ ਉਧਾਰ ਲੈਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "ਯੋਜਨਾ ਬਣਾਓ ਕਿ ਭੁਗਤਾਨ ਕਿਵੇਂ ਕਰਨਾ ਹੈ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "ਪਹਿਲਾਂ ਉਧਾਰ ਲਓ, ਬਾਅਦ ਵਿੱਚ ਸੋਚੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਮੁੜ ਅਦਾਇਗੀ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਕਰਜ਼ੇ ਦੀਆਂ ਸਮੱਸਿਆਵਾਂ ਤੋਂ ਬਚਣ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "borrow-more",
+          "text": "ਪੁਰਾਣੇ ਕਰਜ਼ੇ ਦਾ ਭੁਗਤਾਨ ਕਰਨ ਲਈ ਹੋਰ ਉਧਾਰ ਲਓ",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "ਬੇਲੋੜੇ ਉਧਾਰ ਲੈਣ ਤੋਂ ਬਚੋ ਅਤੇ ਸਮੇਂ ਸਿਰ ਵਾਪਸ ਕਰੋ",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ਸਾਰੇ ਕਰਜ਼ਿਆਂ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਕਰਜ਼ਾ ਕੁਇਜ਼ ਸਟਾਰ!",
+    "winMessage": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਤੁਸੀਂ ਕਰਜ਼ੇ ਅਤੇ ਉਧਾਰ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਵਿਆਜ ਉਧਾਰ ਲੈਣ ਦੀ ਵਾਧੂ ਲਾਗਤ ਹੈ। ਜੁਰਮਾਨੇ ਤੋਂ ਬਚਣ ਲਈ ਹਮੇਸ਼ਾਂ ਯੋਜਨਾ ਬਣਾਓ ਕਿ ਕਿਵੇਂ ਵਾਪਸ ਕਰਨਾ ਹੈ, ਬੇਲੋੜੇ ਕਰਜ਼ੇ ਤੋਂ ਬਚਣਾ ਹੈ, ਅਤੇ ਸਮੇਂ ਸਿਰ ਵਾਪਸ ਕਰਨਾ ਹੈ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ: ਵਿਆਜ ਪੈਸੇ ਉਧਾਰ ਲੈਣ ਦੀ ਵਾਧੂ ਲਾਗਤ ਹੈ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੁਝਾਅ: ਵਿਆਜ ਉਹ ਵਾਧੂ ਰਕਮ ਹੈ ਜੋ ਤੁਸੀਂ ਉਧਾਰ ਲੈਣ ਵੇਲੇ ਅਦਾ ਕਰਦੇ ਹੋ। ਹਮੇਸ਼ਾ ਮੁੜ ਅਦਾਇਗੀ ਦੀ ਯੋਜਨਾ ਬਣਾਓ, ਬੇਲੋੜੇ ਕਰਜ਼ੇ ਤੋਂ ਬਚੋ, ਅਤੇ ਸਮੇਂ ਸਿਰ ਵਾਪਸ ਕਰੋ!"
+  }
+}

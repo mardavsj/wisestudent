@@ -1,1 +1,99 @@
-﻿{}
+{
+  "title": "پہیلی: ایماندار بمقابلہ فراڈ",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "{{total}} کا {{current}} مماثل: ایماندار/فراڈ کی دکانوں کو ان کے نتائج سے جوڑیں!",
+  "leftTitle": "دکان کی اقسام",
+  "rightTitle": "Outcomes",
+  "instruction": "ایک دکان منتخب کریں، پھر میچ کے لیے ایک نتیجہ منتخب کریں!",
+  "items": [
+    {
+      "id": 1,
+      "name": "میلے کی دکان",
+      "emoji": "🏪"
+    },
+    {
+      "id": 2,
+      "name": "دھوکہ دہی کی دکان",
+      "emoji": "🍬"
+    },
+    {
+      "id": 3,
+      "name": "ایماندار بیچنے والا",
+      "emoji": "🙋"
+    },
+    {
+      "id": 4,
+      "name": "فراڈ کی دکان",
+      "emoji": "🎭"
+    },
+    {
+      "id": 5,
+      "name": "مقامی مارکیٹ",
+      "emoji": "🛍️"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "Trust",
+      "emoji": "🤝"
+    },
+    {
+      "id": 7,
+      "name": "Loss",
+      "emoji": "😞"
+    },
+    {
+      "id": 8,
+      "name": "Gain",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Scam",
+      "emoji": "🚨"
+    },
+    {
+      "id": 10,
+      "name": "Savings",
+      "emoji": "💸"
+    }
+  ],
+  "correctMatches": [
+    {
+      "itemId": 1,
+      "outcomeId": 6
+    },
+    {
+      "itemId": 2,
+      "outcomeId": 7
+    },
+    {
+      "itemId": 3,
+      "outcomeId": 8
+    },
+    {
+      "itemId": 4,
+      "outcomeId": 9
+    },
+    {
+      "itemId": 5,
+      "outcomeId": 10
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "میچنگ ماسٹر!",
+    "description": "کامل! آپ نے تمام {{score}}/{{total}} کو صحیح طریقے سے ملایا! آپ ایمانداری اور فراڈ کو اچھی طرح سمجھتے ہیں!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "اچھا کام!",
+    "description": "شاباش! آپ نے {{score}}/{{total}} سے صحیح طریقے سے مماثل کیا! ایماندار کاروباری طریقوں کے بارے میں سیکھتے رہیں!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "مشق کرتے رہیں!",
+    "description": "آپ {{score}}/{{total}} سے مماثل ہیں۔ اعمال اور نتائج کے درمیان تعلق کا جائزہ لیں، پھر دوبارہ کوشش کریں!"
+  }
+}

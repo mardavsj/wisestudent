@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "സേവിംഗ്സ് സ്റ്റോറി",
+  "subtitleComplete": "പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "നിങ്ങൾക്ക് സമ്മാനമായി ₹1000 ലഭിച്ചു. സുരക്ഷിതമായി സൂക്ഷിക്കാനുള്ള ഏറ്റവും നല്ല മാർഗം ഏതാണ്?",
+      "options": [
+        {
+          "id": "home",
+          "text": "വീട്ടിൽ സൂക്ഷിക്കുക",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ഒരു ബാങ്ക് അക്കൗണ്ട് തുറക്കുക",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "wallet",
+          "text": "വാലറ്റിൽ കൊണ്ടുപോകുക",
+          "emoji": "👛",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിങ്ങളുടെ ജന്മദിന പണം ഉപയോഗിക്കാനുള്ള ഏറ്റവും മികച്ച മാർഗം ഏതാണ്?",
+      "options": [
+        {
+          "id": "split",
+          "text": "50/50 വിഭജിക്കുക",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ഏറ്റവും പുതിയ ഗാഡ്‌ജെറ്റുകൾ വാങ്ങുക",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "spend_all",
+          "text": "ഇപ്പോൾ എല്ലാം ചെലവഴിക്കുക",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിങ്ങൾക്ക് പ്രതിവാര അലവൻസ് ₹200 ലഭിക്കും. എന്താണ് മികച്ച പ്ലാൻ?",
+      "options": [
+        {
+          "id": "treats",
+          "text": "ലഘുഭക്ഷണം വാങ്ങുക",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "save_half",
+          "text": "50% ലാഭിക്കുക",
+          "emoji": "💲",
+          "isCorrect": true
+        },
+        {
+          "id": "save_all",
+          "text": "എല്ലാം സംരക്ഷിക്കുക",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ജോലികളിൽ നിന്ന് നിങ്ങൾ സ്വരൂപിച്ച പണം എവിടെ സൂക്ഷിക്കണം?",
+      "options": [
+        {
+          "id": "piggy",
+          "text": "പിഗ്ഗി ബാങ്ക്",
+          "emoji": "🐷",
+          "isCorrect": false
+        },
+        {
+          "id": "pocket",
+          "text": "നിങ്ങളുടെ പോക്കറ്റ്",
+          "emoji": "👖",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "സേവിംഗ്സ് അക്കൗണ്ട്",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "നിങ്ങളുടെ പണം വളർത്താനുള്ള ഏറ്റവും നല്ല മാർഗം ഏതാണ്?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ഉയർന്ന പലിശ അക്കൗണ്ട്",
+          "emoji": "💹",
+          "isCorrect": true
+        },
+        {
+          "id": "invest",
+          "text": "ഓഹരികളിൽ നിക്ഷേപിക്കുക",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ശേഖരണങ്ങൾ വാങ്ങുക",
+          "emoji": "🏀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

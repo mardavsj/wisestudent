@@ -1,1 +1,167 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ: ਪਹਿਲਾਂ ਜਾਂਚ ਕਰੋ",
+  "subtitleComplete": "ਖੇਡ ਪੂਰੀ!",
+  "roundLabel": "ਦੌਰ {{current}}/{{total}}",
+  "timeUp": "ਸਮਾਂ ਪੂਰਾ ਹੋ ਗਿਆ ਹੈ!",
+  "readyEmoji": "🔍",
+  "readyTitle": "ਤਿਆਰ ਰਹੋ!",
+  "readyDescription": "ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਜਾਂਚ ਕਰਨ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ!",
+  "readyTimeInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰੇਕ ਸਵਾਲ ਲਈ {{time}} ਸਕਿੰਟ ਹਨ।",
+  "readyQuestionInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{time}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "gameRoundLabel": "ਗੋਲ:",
+  "gameTimeLabel": "ਸਮਾਂ:",
+  "gameScoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਤੁਹਾਨੂੰ ਕੁਝ ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਕੀਮਤ ਪੁੱਛੋ",
+      "options": [
+        {
+          "text": "ਕੀਮਤ ਪੁੱਛੋ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ਅੰਨ੍ਹੇਵਾਹ ਭਰੋਸਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਤੁਰੰਤ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ਲਾਗਤ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਖਰੀਦਦਾਰੀ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਕੀ ਦੇਖਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਲਾਗਤ ਦੀ ਜਾਂਚ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਹੁਣੇ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ਜਾਂਚ ਕਰਨਾ ਛੱਡੋ",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "ਲਾਗਤ ਦੀ ਜਾਂਚ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "ਕੀਮਤ ਦਾ ਅੰਦਾਜ਼ਾ ਲਗਾਓ",
+          "isCorrect": false,
+          "emoji": "🎲"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਖਰੀਦਦਾਰੀ ਕਰਨ ਦਾ ਸਮਾਰਟ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "correctAnswer": "ਕੀਮਤਾਂ ਦੀ ਤੁਲਨਾ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਤੇਜ਼ੀ ਨਾਲ ਭੁਗਤਾਨ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਕੀਮਤਾਂ ਦੀ ਤੁਲਨਾ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "ਪਹਿਲਾ ਸਟੋਰ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "ਤੁਲਨਾ ਨਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਕੀ ਤਸਦੀਕ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਗੁਣਵੱਤਾ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਗੁਣਵੱਤਾ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਬਿਨਾਂ ਜਾਂਚ ਕੀਤੇ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ਸਿਰਫ਼ ਵਿਕਰੇਤਾ 'ਤੇ ਭਰੋਸਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਔਨਲਾਈਨ ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਸਮੀਖਿਆਵਾਂ ਪੜ੍ਹੋ",
+      "options": [
+        {
+          "text": "Rush",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ਸਮੀਖਿਆਵਾਂ ਛੱਡੋ",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "ਤੁਰੰਤ ਖਰੀਦੋ",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ਸਮੀਖਿਆਵਾਂ ਪੜ੍ਹੋ",
+          "isCorrect": true,
+          "emoji": "⭐"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "ਸਮਾਰਟ ਸ਼ਾਪਰ!",
+    "description": "ਹੈਰਾਨੀਜਨਕ! ਤੁਸੀਂ {{score}}/{{total}} ਨੂੰ ਸਹੀ ਸਮਝਿਆ! ਤੁਸੀਂ ਹਮੇਸ਼ਾ ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਜਾਂਚ ਕਰੋ!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "ਚੰਗੀਆਂ ਆਦਤਾਂ!",
+    "description": "ਬਹੁਤ ਖੂਬ! ਤੁਸੀਂ {{score}}/{{total}} ਸਕੋਰ ਕੀਤਾ! ਸਮਾਰਟ ਖਰੀਦਦਾਰੀ ਦੀਆਂ ਆਦਤਾਂ ਦਾ ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+    "description": "ਤੁਸੀਂ {{score}}/{{total}} ਸਕੋਰ ਕੀਤਾ। ਖਰੀਦਣ ਤੋਂ ਪਹਿਲਾਂ ਹਮੇਸ਼ਾਂ ਜਾਂਚ ਅਤੇ ਤੁਲਨਾ ਕਰਨਾ ਯਾਦ ਰੱਖੋ!"
+  }
+}

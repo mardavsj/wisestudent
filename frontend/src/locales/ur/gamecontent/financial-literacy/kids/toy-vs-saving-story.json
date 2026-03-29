@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "کھلونا بمقابلہ بچت کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کا پسندیدہ کھلونا ایک ہفتے کے بعد ٹوٹ جاتا ہے۔ یہ آپ کو کیا سکھاتا ہے؟",
+      "options": [
+        {
+          "id": "buy",
+          "text": "جلدی سے مزید کھلونے خریدیں۔",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "پیسے کے انتخاب سے کوئی فرق نہیں پڑتا",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "value",
+          "text": "پیسہ خرچ کرنے سے پہلے سوچ لیں۔",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ ہر ہفتے سکے بچاتے ہیں اور رقم بڑھتے ہوئے دیکھتے ہیں۔ آپ کیا سیکھتے ہیں؟",
+      "options": [
+        {
+          "id": "patience",
+          "text": "بچت کے لیے صبر کی ضرورت ہوتی ہے۔",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "boring",
+          "text": "بچت بورنگ ہے۔",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "سکے بیکار ہیں۔",
+          "emoji": "🪙",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ بعد میں کچھ مہنگی چاہتے ہیں۔ بہترین عادت کیا ہے؟",
+      "options": [
+        {
+          "id": "rush",
+          "text": "آپ جو بھی دیکھتے ہیں خریدیں۔",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "منصوبہ بندی کریں اور آہستہ آہستہ بچائیں۔",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "ہمیشہ پیسے ادھار لیں۔",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ خریدنے سے پہلے قیمتوں کا موازنہ کریں۔ آپ کونسی مہارت استعمال کر رہے ہیں؟",
+      "options": [
+        {
+          "id": "slow",
+          "text": "بہت سست ہونا",
+          "emoji": "🐢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lazy",
+          "text": "خریداری سے گریز",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "سمارٹ پیسہ سوچ",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ ہر کھلونا خریدنے کے بجائے بچت کا انتخاب کرتے ہیں۔ یہ کیا بناتا ہے؟",
+      "options": [
+        {
+          "id": "habit",
+          "text": "بچت کی اچھی عادات",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "بالکل بھی مزہ نہیں۔",
+          "emoji": "😢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "خرچ کرنے کا خوف",
+          "emoji": "😨",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

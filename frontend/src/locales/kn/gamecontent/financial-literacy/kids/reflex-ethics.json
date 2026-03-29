@@ -1,1 +1,152 @@
-﻿{}
+{
+  "title": "ಪ್ರತಿಫಲಿತ: ನೀತಿಶಾಸ್ತ್ರ",
+  "subtitleComplete": "ಗೇಮ್ ಸಂಪೂರ್ಣ!",
+  "roundLabel": "ಸುತ್ತು {{current}}/{{total}}",
+  "timeUp": "ಸಮಯ ಮುಗಿದಿದೆ!",
+  "readyEmoji": "🎯",
+  "readyTitle": "ಸಿದ್ಧರಾಗಿ!",
+  "readyDescription": "ನೈತಿಕ ಹಣದ ನಡವಳಿಕೆಯ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ!",
+  "readyTimeInfo": "ನೀವು ಪ್ರತಿ ಪ್ರಶ್ನೆಗೆ {{time}} ಸೆಕೆಂಡುಗಳನ್ನು ಹೊಂದಿರುವಿರಿ.",
+  "readyQuestionInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{time}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "gameRoundLabel": "ಸುತ್ತು:",
+  "gameTimeLabel": "ಸಮಯ:",
+  "gameScoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ನೀವು ಯಾವಾಗಲೂ ಹಣದೊಂದಿಗೆ ಏನಾಗಿರಬೇಕು?",
+      "correctAnswer": "Truth",
+      "options": [
+        {
+          "text": "Truth",
+          "isCorrect": true,
+          "emoji": "🗣️"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Deceive",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಹಣಕಾಸಿನ ವಿಷಯಗಳನ್ನು ನೀವು ಹೇಗೆ ನಿರ್ವಹಿಸಬೇಕು?",
+      "correctAnswer": "Honest",
+      "options": [
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Honest",
+          "isCorrect": true,
+          "emoji": "💯"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Trick",
+          "isCorrect": false,
+          "emoji": "🃏"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ನಿಮ್ಮ ಹಣಕಾಸಿನ ನಿರ್ಧಾರಗಳು ಹೇಗಿರಬೇಕು?",
+      "correctAnswer": "Fair",
+      "options": [
+        {
+          "text": "Unfair",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Biased",
+          "isCorrect": false,
+          "emoji": "🎯"
+        },
+        {
+          "text": "Fair",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "Partial",
+          "isCorrect": false,
+          "emoji": "📊"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಹಣಕಾಸಿನ ಸಂಬಂಧಗಳಲ್ಲಿ ನೀವು ಏನು ನಿರ್ಮಿಸಬೇಕು?",
+      "correctAnswer": "Trust",
+      "options": [
+        {
+          "text": "Trust",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "Deceive",
+          "isCorrect": false,
+          "emoji": "😈"
+        },
+        {
+          "text": "Manipulate",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Exploit",
+          "isCorrect": false,
+          "emoji": "💔"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ನೀವು ಹಣದೊಂದಿಗೆ ಹೇಗೆ ವರ್ತಿಸಬೇಕು?",
+      "correctAnswer": "Ethical",
+      "options": [
+        {
+          "text": "Dishonest",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Unfair",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Corrupt",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Ethical",
+          "isCorrect": true,
+          "emoji": "🌟"
+        }
+      ]
+    }
+  ]
+}

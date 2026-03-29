@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ধাঁধা: বাস্তব অগ্রাধিকার",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "বিভাগগুলির সাথে আইটেমগুলি মিলান ({{current}}/{{total}} মিলেছে)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchButton": "Match",
+  "selectItemLabel": "একটি আইটেম নির্বাচন করুন",
+  "selectedItemLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি সঠিকভাবে {{total}} আইটেমের মধ্যে {{score}}টি তাদের বিভাগের সাথে মিলেছেন!",
+  "resultSuccessLesson": "পাঠ: আর্থিক অগ্রাধিকার বোঝা স্মার্ট সিদ্ধান্ত নিতে সাহায্য করে!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি {{total}} আইটেমের মধ্যে {{score}}টি সঠিকভাবে মেলেছেন।",
+  "resultTryAgainTip": "টিপ: প্রতিটি আইটেম অপরিহার্য বা বিবেচনার ভিত্তিতে চিন্তা করুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "items": [
+    {
+      "id": 1,
+      "name": "স্বাস্থ্যকর ব্রেকফাস্ট",
+      "emoji": "🍳"
+    },
+    {
+      "id": 2,
+      "name": "স্টেশনারি কিট",
+      "emoji": "✏️"
+    },
+    {
+      "id": 3,
+      "name": "স্কুলের পরে ক্লাস",
+      "emoji": "📚"
+    },
+    {
+      "id": 4,
+      "name": "ভিটামিন সাপ্লিমেন্ট",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "বাস পাস",
+      "emoji": "🚌"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "প্রতিদিনের প্রয়োজন",
+      "emoji": "😅"
+    },
+    {
+      "id": 7,
+      "name": "ঐচ্ছিক কার্যকলাপ",
+      "emoji": "🎯"
+    },
+    {
+      "id": 8,
+      "name": "স্মার্ট খরচ",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "স্বাস্থ্য অগ্রাধিকার",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "পরিবহন খরচ",
+      "emoji": "🚌"
+    }
+  ]
+}

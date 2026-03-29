@@ -1,1 +1,144 @@
-﻿{}
+﻿{
+    "title": "সততার উপর কুইজ",
+    "subtitleComplete": "কুইজ সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "কে সৎ?",
+            "options": [
+                {
+                    "id": "cheat",
+                    "text": "ক্রেতাকে ঠকায়",
+                    "emoji": "😈",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "change",
+                    "text": "সঠিক ভাংতি দেয়",
+                    "emoji": "💰",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "lies",
+                    "text": "মিথ্যা বলে",
+                    "emoji": "🙊",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "একজন সৎ দোকানদার কী করেন?",
+            "options": [
+                {
+                    "id": "fair",
+                    "text": "ন্যায্য দাম নেন",
+                    "emoji": "⚖️",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "overcharge",
+                    "text": "বেশি দাম নেন",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "hide",
+                    "text": "পণ্য লুকিয়ে রাখেন",
+                    "emoji": "🫥",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "কেনাকাটায় সততা কীভাবে সাহায্য করে?",
+            "options": [
+                {
+                    "id": "free",
+                    "text": "বিনামূল্যে জিনিস পাওয়া যায়",
+                    "emoji": "🎁",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "spend",
+                    "text": "বেশি খরচ হয়",
+                    "emoji": "🛍️",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "trust",
+                    "text": "বিশ্বাস গড়ে তোলে",
+                    "emoji": "🤝",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "ধার করার সৎ উপায় কী?",
+            "options": [
+                {
+                    "id": "return",
+                    "text": "সময়মতো ফেরত দাও",
+                    "emoji": "⏰",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "keep",
+                    "text": "চিরতরে রেখে দাও",
+                    "emoji": "🙈",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "more",
+                    "text": "আরও ধার করো",
+                    "emoji": "📈",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "টাকার বিষয়ে সততা কেন গুরুত্বপূর্ণ?",
+            "options": [
+                {
+                    "id": "toys",
+                    "text": "খেলনা পাওয়া যায়",
+                    "emoji": "🧸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "famous",
+                    "text": "বিখ্যাত হওয়া যায়",
+                    "emoji": "⭐",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "trust",
+                    "text": "বিশ্বাস অর্জন হয়",
+                    "emoji": "🤝",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        }
+    ]
+}

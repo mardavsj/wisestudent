@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ગ્રાહક ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "જો દુકાનદાર છેતરપિંડી કરે છે, તો તમે ફરિયાદ ક્યાં કરશો?",
+      "options": [
+        {
+          "id": "court",
+          "text": "ગ્રાહક અદાલત",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "Playground",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "Nowhere",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ગ્રાહક અધિકારો શું છે?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "કોઈ અધિકાર નથી",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "છેતરપિંડીથી રક્ષણ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ખર્ચ કરવાનો અધિકાર",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "જો તમને ખામીયુક્ત ઉત્પાદન મળે તો તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "તેનો સ્વીકાર કરો",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "તેને અવગણો",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "વેચનારને ફરિયાદ કરો",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "માહિતી મેળવવાનો અધિકાર શું છે?",
+      "options": [
+        {
+          "id": "know",
+          "text": "ઉત્પાદન વિગતો જાણો",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "માહિતી છુપાવો",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "અસત્ય સ્વીકારો",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમે ગ્રાહક ફરિયાદ ક્યાં નોંધાવી શકો છો?",
+      "options": [
+        {
+          "id": "police",
+          "text": "પોલીસ સ્ટેશન",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "ગ્રાહક અદાલત",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "School",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ક્વિઝ પૂર્ણ!",
+    "winMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે ગ્રાહક અધિકારો સમજો છો!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: ગ્રાહકોને અધિકારો છે! છેતરપિંડી થાય તો તમે ગ્રાહક અદાલતમાં ફરિયાદ કરી શકો છો, સલામત ઉત્પાદનોની માંગ કરી શકો છો અને પ્રમાણિક માહિતી મેળવી શકો છો!",
+    "loseEmoji": "💪",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, ગ્રાહક અદાલત એ છે જ્યાં તમે ફરિયાદ કરો છો જો દુકાનદાર છેતરપિંડી કરે છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટીપ: જો કોઈ દુકાનદાર તમારી સાથે છેતરપિંડી કરે છે, તો તમે ગ્રાહક કોર્ટમાં ફરિયાદ કરી શકો છો, રમતના મેદાનમાં નહીં! ગ્રાહકોનો અધિકાર છે!"
+  }
+}

@@ -1,1 +1,159 @@
-﻿{}
+{
+  "title": "اضطراری ضرورت بمقابلہ چاہتے ہیں۔",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: ضروریات بمقابلہ خواہشات کے بارے میں اپنے علم کی جانچ کریں!",
+  "subtitleReady": "ضروریات بمقابلہ خواہشات کے بارے میں اپنے علم کی جانچ کریں!",
+  "readyEmoji": "📋",
+  "readyTitle": "اپنی ضروریات بمقابلہ علم چاہتا ہے جانچنے کے لیے تیار ہیں؟",
+  "readyDescription": "ضروریات اور خواہشات کے درمیان فرق کے بارے میں سوالات کے جوابات دیں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "بہت اچھا کام!",
+  "resultGreatDescription": "آپ نے {{total}} میں سے {{score}} سوالات درست کئے ہیں!",
+  "resultGreatLesson": "سبق: ضرورتیں زندہ رہنے اور سیکھنے کے لیے ضروری ہیں، جب کہ خواہشات ایسی چیزیں ہیں جو ہم حاصل کرنا چاہتے ہیں لیکن ضرورت نہیں ہے!",
+  "resultKeepEmoji": "😔",
+  "resultKeepTitle": "سیکھتے رہیں!",
+  "resultKeepDescription": "آپ نے {{total}} سوالات میں سے {{score}} درست کئے ہیں۔ یاد رکھیں، ضروریات ضروری اشیاء ہیں جیسے خوراک، کپڑے، اور اسکول کا سامان!",
+  "resultKeepTip": "مشورہ: ضروریات وہ چیزیں ہیں جو آپ کو زندہ رہنے اور سیکھنے کے لیے ہونی چاہئیں، جیسے کھانا، کپڑے اور اسکول کا سامان۔",
+  "tryAgainButton": "دوبارہ کوشش کریں۔",
+  "questions": [
+    {
+      "id": 1,
+      "question": "کون سی ضرورت ہے؟",
+      "correctAnswer": "سکول کے لیے جوتے",
+      "options": [
+        {
+          "text": "سکول کے لیے جوتے",
+          "isCorrect": true,
+          "emoji": "👟"
+        },
+        {
+          "text": "10ویں کھلونا کار",
+          "isCorrect": false,
+          "emoji": "🚗"
+        },
+        {
+          "text": "ویڈیو گیم",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "فینسی دھوپ کے چشمے۔",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "صحت مند رہنے کی کیا ضرورت ہے؟",
+      "correctAnswer": "صحت مند کھانا",
+      "options": [
+        {
+          "text": "اضافی کینڈی",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "صحت مند کھانا",
+          "isCorrect": true,
+          "emoji": "🥗"
+        },
+        {
+          "text": "آئس کریم",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "سیکھنے کے لیے کون سی چیز ضروری ہے؟",
+      "correctAnswer": "سکول کی کتابیں۔",
+      "options": [
+        {
+          "text": "ویڈیو گیم",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ایکشن فگر",
+          "isCorrect": false,
+          "emoji": "🤖"
+        },
+        {
+          "text": "پہیلی کھیل",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "سکول کی کتابیں۔",
+          "isCorrect": true,
+          "emoji": "📚"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "سرد موسم میں آپ کو کیا چاہیے؟",
+      "correctAnswer": "موسم سرما کی جیکٹ",
+      "options": [
+        {
+          "text": "فینسی دھوپ کے چشمے۔",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        },
+        {
+          "text": "سوئمنگ پول",
+          "isCorrect": false,
+          "emoji": "🏊"
+        },
+        {
+          "text": "موسم سرما کی جیکٹ",
+          "isCorrect": true,
+          "emoji": "🧥"
+        },
+        {
+          "text": "بیچ بال",
+          "isCorrect": false,
+          "emoji": "🏐"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "اسکول جانے کے لیے کیا ضرورت ہے؟",
+      "correctAnswer": "بس کا کرایہ",
+      "options": [
+        {
+          "text": "بس کا کرایہ",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "نئے ہیڈ فون",
+          "isCorrect": false,
+          "emoji": "🎧"
+        },
+        {
+          "text": "میوزک پلیئر",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "اسمارٹ واچ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

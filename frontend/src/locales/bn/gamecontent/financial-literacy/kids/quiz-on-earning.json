@@ -1,1 +1,144 @@
-﻿{}
+﻿{
+    "title": "উপার্জনের উপর কুইজ",
+    "subtitleComplete": "কুইজ সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "টাকা উপার্জনের সঠিক উপায় কী?",
+            "options": [
+                {
+                    "id": "working",
+                    "text": "কাজ করে",
+                    "emoji": "💼",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "wasting",
+                    "text": "অপচয় করে",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "sleeping",
+                    "text": "ঘুমিয়ে",
+                    "emoji": "😴",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "একজন কৃষক কীভাবে টাকা উপার্জন করেন?",
+            "options": [
+                {
+                    "id": "games",
+                    "text": "গেম খেলে",
+                    "emoji": "🎮",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "crops",
+                    "text": "ফসল বিক্রি করে",
+                    "emoji": "🌾",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "give",
+                    "text": "খাবার বিনামূল্যে দিয়ে",
+                    "emoji": "🎁",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "পড়ানোর মাধ্যমে কোন পেশায় টাকা উপার্জন হয়?",
+            "options": [
+                {
+                    "id": "toymaker",
+                    "text": "খেলনা তৈরিকারী",
+                    "emoji": "🧸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "candy",
+                    "text": "মিষ্টি বিক্রেতা",
+                    "emoji": "🍬",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "teacher",
+                    "text": "শিক্ষক",
+                    "emoji": "👨‍🏫",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "শিশুরা কীভাবে টাকা উপার্জন করতে পারে?",
+            "options": [
+                {
+                    "id": "chores",
+                    "text": "গৃহস্থালির কাজ করে",
+                    "emoji": "🧹",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "tv",
+                    "text": "টিভি দেখে",
+                    "emoji": "📺",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "snacks",
+                    "text": "নাস্তা খেয়ে",
+                    "emoji": "🍪",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "টাকা উপার্জন কেন গুরুত্বপূর্ণ?",
+            "options": [
+                {
+                    "id": "toys",
+                    "text": "বিনামূল্যে খেলনা পাওয়া যায়",
+                    "emoji": "🧸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "needs",
+                    "text": "প্রয়োজন পূরণ হয়",
+                    "emoji": "😊",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "sleep",
+                    "text": "ঘুম ভালো হয়",
+                    "emoji": "😴",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

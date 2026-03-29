@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ સ્માર્ટ સેવર",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારા સ્માર્ટ સેવિંગ રીફ્લેક્સનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા સ્માર્ટ સેવિંગ રીફ્લેક્સનું પરીક્ષણ કરો!",
+  "readyHeader": "તૈયાર થાઓ!",
+  "readyDescription": "સ્માર્ટ બચતની ટેવ વિશે પ્રશ્નોના જવાબ આપો!",
+  "readyTip": "તમારી પાસે દરેકમાં {{time}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "બચત બનાવવા માટે તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "યોજના બચત",
+          "emoji": "📝"
+        },
+        {
+          "id": "spend",
+          "text": "તરત જ ખર્ચ કરો",
+          "emoji": "💸"
+        },
+        {
+          "id": "ignore",
+          "text": "બજેટને અવગણો",
+          "emoji": "🙈"
+        },
+        {
+          "id": "buy",
+          "text": "બધું ખરીદો",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ખર્ચ કરતા પહેલા તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "impulse",
+          "text": "આવેગ ખરીદો",
+          "emoji": "⚡"
+        },
+        {
+          "id": "budget",
+          "text": "પ્રથમ બજેટ",
+          "emoji": "📊"
+        },
+        {
+          "id": "random",
+          "text": "રેન્ડમલી ખર્ચો",
+          "emoji": "🎲"
+        },
+        {
+          "id": "no_plan",
+          "text": "કોઈ આયોજન નથી",
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "બચત કરવાની શ્રેષ્ઠ આદત કઈ છે?",
+      "options": [
+        {
+          "id": "credit",
+          "text": "ક્રેડિટ પર ખરીદો",
+          "emoji": "💳"
+        },
+        {
+          "id": "never",
+          "text": "ક્યારેય સાચવશો નહીં",
+          "emoji": "❌"
+        },
+        {
+          "id": "regularly",
+          "text": "નિયમિત સાચવો",
+          "emoji": "💰"
+        },
+        {
+          "id": "spend_all",
+          "text": "બધા ખર્ચો",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "બચત પર ધ્યાન કેન્દ્રિત કરવામાં તમને શું મદદ કરે છે?",
+      "options": [
+        {
+          "id": "spend_all",
+          "text": "બધા ખર્ચો",
+          "emoji": "💸"
+        },
+        {
+          "id": "no_direction",
+          "text": "કોઈ દિશા નથી",
+          "emoji": "🤷"
+        },
+        {
+          "id": "ignore_planning",
+          "text": "આયોજન અવગણો",
+          "emoji": "🙈"
+        },
+        {
+          "id": "set_goals",
+          "text": "ગોલ સેટ કરો",
+          "emoji": "🎯"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "સ્માર્ટ સેવિંગ માટે તમારે શું મોનિટર કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "track",
+          "text": "ટ્રૅક ખર્ચ",
+          "emoji": "📈"
+        },
+        {
+          "id": "no_plan",
+          "text": "કોઈ પ્લાન નથી",
+          "emoji": "🚫"
+        },
+        {
+          "id": "ignore_spending",
+          "text": "ખર્ચને અવગણો",
+          "emoji": "🙈"
+        },
+        {
+          "id": "forget_budget",
+          "text": "બજેટ ભૂલી જાઓ",
+          "emoji": "💭"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "রিফ্লেক্স উদ্যোক্তার বৈশিষ্ট্য",
+  "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: আপনার উদ্যোক্তা প্রতিফলন পরীক্ষা করুন!",
+  "subtitleReady": "আপনার উদ্যোক্তা প্রতিফলন পরীক্ষা করুন!",
+  "readyHeader": "আপনার উদ্যোক্তা দক্ষতা পরীক্ষা করতে প্রস্তুত?",
+  "readyDescription": "মূল উদ্যোক্তা বৈশিষ্ট্য এবং মানসিকতা সম্পর্কে প্রশ্নের উত্তর দিন।",
+  "readyTip": "আপনার কাছে প্রতিটি {{time}} সেকেন্ডের {{total}} প্রশ্ন আছে!",
+  "startButton": "খেলা শুরু করুন",
+  "roundLabel": "বৃত্তাকার:",
+  "timeLabel": "সময়:",
+  "scoreLabel": "স্কোর:",
+  "greatJob": "দারুণ কাজ!",
+  "finalScore": "আপনি {{total}} এর মধ্যে {{score}} স্কোর করেছেন!",
+  "thinkingSkills": "আপনি শক্তিশালী উদ্যোক্তা চিন্তার দক্ষতা বিকাশ করছেন!",
+  "playAgain": "আবার খেলুন",
+  "questions": [
+    {
+      "id": 1,
+      "question": "সফল উদ্যোক্তাদের জন্য কোন বৈশিষ্ট্যটি অপরিহার্য?",
+      "options": [
+        {
+          "text": "ঝুঁকি পরিহার",
+          "id": "risk_avoidance",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "Innovation",
+          "id": "innovation",
+          "emoji": "💡"
+        },
+        {
+          "text": "প্রবণতা অনুসরণ",
+          "id": "following_trends",
+          "emoji": "📈"
+        },
+        {
+          "text": "সুযোগের অপেক্ষায়",
+          "id": "waiting_opportunities",
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "চ্যালেঞ্জ মোকাবেলা করার সময় উদ্যোক্তাদের কী করা উচিত?",
+      "options": [
+        {
+          "text": "দ্রুত ছেড়ে দিন",
+          "id": "give_up",
+          "emoji": "😔"
+        },
+        {
+          "text": "অন্যদের দোষারোপ করুন",
+          "id": "blame_others",
+          "emoji": "😠"
+        },
+        {
+          "text": "স্থির থাকুন এবং মানিয়ে নিন",
+          "id": "persist_adapt",
+          "emoji": "💪"
+        },
+        {
+          "text": "চ্যালেঞ্জ এড়িয়ে চলুন",
+          "id": "avoid_challenges",
+          "emoji": "跑"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "সফল উদ্যোক্তারা কীভাবে সমস্যা সমাধানের দিকে যান?",
+      "options": [
+        {
+          "text": "সমস্যা উপেক্ষা করুন",
+          "id": "ignore_problems",
+          "emoji": "🙈"
+        },
+        {
+          "text": "সমস্যা সম্পর্কে অভিযোগ",
+          "id": "complain_issues",
+          "emoji": "😤"
+        },
+        {
+          "text": "সৃজনশীল সমাধান",
+          "id": "creative_solutions",
+          "emoji": "🔧"
+        },
+        {
+          "text": "অন্যদের পদ্ধতি অনুলিপি",
+          "id": "copy_others",
+          "emoji": "📋"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "উদ্যোক্তারা সাধারণত কোন মানসিকতা গ্রহণ করে?",
+      "options": [
+        {
+          "text": "স্থির মানসিকতা",
+          "id": "fixed_mindset",
+          "emoji": "🔒"
+        },
+        {
+          "text": "বৃদ্ধির মানসিকতা",
+          "id": "growth_mindset",
+          "emoji": "🌱"
+        },
+        {
+          "text": "নেতিবাচক চিন্তাভাবনা",
+          "id": "negative_thinking",
+          "emoji": "😞"
+        },
+        {
+          "text": "শেখা এড়িয়ে চলা",
+          "id": "avoid_learning",
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "উদ্যোক্তাদের গণনাকৃত ঝুঁকির দিকে কোন পদ্ধতি অবলম্বন করা উচিত?",
+      "options": [
+        {
+          "text": "সকল ঝুঁকি এড়িয়ে চলুন",
+          "id": "avoid_all_risks",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "বেপরোয়া আচরণ করুন",
+          "id": "act_recklessly",
+          "emoji": "🤯"
+        },
+        {
+          "text": "ঝুঁকিপূর্ণ আচরণ অনুলিপি",
+          "id": "copy_risky",
+          "emoji": "🔁"
+        },
+        {
+          "text": "মূল্যায়ন করুন এবং স্মার্ট ঝুঁকি নিন",
+          "id": "smart_risks",
+          "emoji": "🎲"
+        }
+      ]
+    }
+  ]
+}

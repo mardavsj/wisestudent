@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "ترقی کی پہیلی",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "آئٹمز کو نتائج کے ساتھ میچ کریں ({{matched}}/{{total}} مماثل)",
+  "itemsTitle": "نمو کی اشیاء",
+  "categoriesTitle": "Outcomes",
+  "selectedLabel": "منتخب کردہ: {{name}}",
+  "selectItem": "ایک آئٹم منتخب کریں۔",
+  "matchButton": "Match",
+  "scoreLabel": "سکور:",
+  "matchedLabel": "مماثل:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "بہت اچھا کام!",
+  "resultGreatDescription": "آپ نے نتائج کے ساتھ {{total}} آئٹمز میں سے {{score}} کو صحیح طریقے سے ملایا!",
+  "coinsLabel": "Coins",
+  "resultLesson": "سبق: پودوں کی طرح، بچت اور سرمایہ کاری وقت کے ساتھ ساتھ بڑھتی ہے۔",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "مشق کرتے رہیں!",
+  "resultKeepDescription": "آپ نے {{total}} آئٹمز میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultTip": "مشورہ: اس بارے میں سوچیں کہ ہر شے قدرتی طور پر کس چیز میں بڑھتی ہے۔",
+  "items": [
+    {
+      "id": 1,
+      "name": "Seed",
+      "emoji": "🌱"
+    },
+    {
+      "id": 2,
+      "name": "Savings",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "Plant",
+      "emoji": "🌿"
+    },
+    {
+      "id": 4,
+      "name": "Sapling",
+      "emoji": "🌳"
+    },
+    {
+      "id": 5,
+      "name": "Bulb",
+      "emoji": "🌻"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Tree",
+      "emoji": "🌲",
+      "description": "بیج درخت بن سکتا ہے۔"
+    },
+    {
+      "id": 7,
+      "name": "Growth",
+      "emoji": "📈",
+      "description": "بچت قدر میں بڑھ سکتی ہے۔"
+    },
+    {
+      "id": 8,
+      "name": "Flower",
+      "emoji": "🌸",
+      "description": "پودا پھول بن سکتا ہے۔"
+    },
+    {
+      "id": 9,
+      "name": "Forest",
+      "emoji": "🌲",
+      "description": "بہت سے پودے ایک جنگل بنا سکتے ہیں۔"
+    },
+    {
+      "id": 10,
+      "name": "Wealth",
+      "emoji": "🏦",
+      "description": "پیسے کی عادت دولت بنا سکتی ہے۔"
+    }
+  ]
+}

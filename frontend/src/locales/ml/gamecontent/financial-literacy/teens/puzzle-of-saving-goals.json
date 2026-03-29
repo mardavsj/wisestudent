@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "പസിൽ: സേവിംഗ് ലക്ഷ്യങ്ങൾ",
+  "subtitleComplete": "പസിൽ പൂർത്തിയായി!",
+  "subtitleProgress": "ലക്ഷ്യങ്ങളുമായി പൊരുത്തപ്പെടുത്തുക ({{current}}/{{total}} പൊരുത്തപ്പെട്ടു)",
+  "goalsTitle": "സേവിംഗ് ലക്ഷ്യങ്ങൾ",
+  "purposesTitle": "സേവിംഗ് ഉദ്ദേശങ്ങൾ",
+  "matchButton": "Match",
+  "selectGoalLabel": "ഒരു സേവിംഗ് ലക്ഷ്യം തിരഞ്ഞെടുക്കുക",
+  "selectedGoalLabel": "തിരഞ്ഞെടുത്തത്: {{name}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "matchedLabel": "പൊരുത്തപ്പെട്ടു: {{current}}/{{total}}",
+  "resultSuccessHeader": "മികച്ച ജോലി!",
+  "resultSuccessSubheader": "നിങ്ങൾ {{score}}-ൽ {{total}} സംരക്ഷിക്കൽ ലക്ഷ്യങ്ങൾ അവയുടെ ഉദ്ദേശ്യങ്ങളുമായി ശരിയായി പൊരുത്തപ്പെടുത്തി!",
+  "resultSuccessLesson": "പാഠം: വ്യക്തമായ സമ്പാദ്യ ലക്ഷ്യങ്ങൾ നിശ്ചയിക്കുന്നത് സാമ്പത്തിക ഭദ്രത കൈവരിക്കാൻ സഹായിക്കുന്നു!",
+  "resultTryAgainHeader": "പരിശീലിക്കുന്നത് തുടരുക!",
+  "resultTryAgainSubheader": "നിങ്ങൾ {{score}}-ൽ {{total}} സംരക്ഷിക്കൽ ലക്ഷ്യങ്ങൾ ശരിയായി പൊരുത്തപ്പെടുത്തി.",
+  "resultTryAgainTip": "നുറുങ്ങ്: ഓരോ സേവിംഗ് ലക്ഷ്യത്തിൻ്റെയും പ്രാഥമിക നേട്ടത്തെക്കുറിച്ച് ചിന്തിക്കുക!",
+  "coinsEarned": "+{{coins}} നാണയങ്ങൾ",
+  "goals": [
+    {
+      "id": 1,
+      "name": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 2,
+      "name": "എമർജൻസി ഫണ്ട്",
+      "emoji": "🚑"
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "emoji": "🏠"
+    },
+    {
+      "id": 5,
+      "name": "Retirement",
+      "emoji": "🌅"
+    }
+  ],
+  "purposes": [
+    {
+      "id": 6,
+      "name": "ഭാവി വളർച്ച",
+      "emoji": "📈"
+    },
+    {
+      "id": 7,
+      "name": "സുരക്ഷാ നെറ്റ്",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 8,
+      "name": "Mobility",
+      "emoji": "🛣️"
+    },
+    {
+      "id": 9,
+      "name": "Stability",
+      "emoji": "🏛️"
+    },
+    {
+      "id": 10,
+      "name": "മനസ്സമാധാനം",
+      "emoji": "🧘"
+    }
+  ]
+}

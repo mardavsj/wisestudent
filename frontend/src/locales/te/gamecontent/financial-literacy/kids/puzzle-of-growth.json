@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "పజిల్ ఆఫ్ గ్రోత్",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "ఫలితాలతో ఐటెమ్‌లను సరిపోల్చండి ({{matched}}/{{total}} సరిపోలింది)",
+  "itemsTitle": "వృద్ధి అంశాలు",
+  "categoriesTitle": "Outcomes",
+  "selectedLabel": "ఎంచుకోబడింది: {{name}}",
+  "selectItem": "ఒక అంశాన్ని ఎంచుకోండి",
+  "matchButton": "Match",
+  "scoreLabel": "స్కోర్:",
+  "matchedLabel": "సరిపోలినది:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "గ్రేట్ జాబ్!",
+  "resultGreatDescription": "మీరు ఫలితాలతో {{total}} అంశాలలో {{score}}ని సరిగ్గా సరిపోల్చారు!",
+  "coinsLabel": "Coins",
+  "resultLesson": "పాఠం: మొక్కల మాదిరిగానే పొదుపు మరియు పెట్టుబడులు కాలక్రమేణా పెరుగుతాయి.",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "సాధన కొనసాగించండి!",
+  "resultKeepDescription": "మీరు {{total}} అంశాలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTip": "చిట్కా: ప్రతి వస్తువు సహజంగా ఎలా పెరుగుతుందో ఆలోచించండి.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Seed",
+      "emoji": "🌱"
+    },
+    {
+      "id": 2,
+      "name": "Savings",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "Plant",
+      "emoji": "🌿"
+    },
+    {
+      "id": 4,
+      "name": "Sapling",
+      "emoji": "🌳"
+    },
+    {
+      "id": 5,
+      "name": "Bulb",
+      "emoji": "🌻"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Tree",
+      "emoji": "🌲",
+      "description": "విత్తనం చెట్టుగా మారవచ్చు"
+    },
+    {
+      "id": 7,
+      "name": "Growth",
+      "emoji": "📈",
+      "description": "పొదుపు విలువ పెరగవచ్చు"
+    },
+    {
+      "id": 8,
+      "name": "Flower",
+      "emoji": "🌸",
+      "description": "మొక్క పువ్వుగా వికసించగలదు"
+    },
+    {
+      "id": 9,
+      "name": "Forest",
+      "emoji": "🌲",
+      "description": "అనేక మొక్కలు అడవిని తయారు చేయగలవు"
+    },
+    {
+      "id": 10,
+      "name": "Wealth",
+      "emoji": "🏦",
+      "description": "డబ్బు అలవాట్లు సంపదను నిర్మించగలవు"
+    }
+  ]
+}

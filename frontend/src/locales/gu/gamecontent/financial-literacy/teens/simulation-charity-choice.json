@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "સિમ્યુલેશન: ચેરિટી ચોઇસ",
+  "subtitleComplete": "સિમ્યુલેશન પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} દૃશ્ય",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "અસર વિ લાગણી",
+      "description": "તમે ₹1000 નું દાન કરવા માંગો છો. કઈ પસંદગી સૌથી વાસ્તવિક અસર બનાવે છે?",
+      "options": [
+        {
+          "id": "street",
+          "text": "શેરીમાં અવ્યવસ્થિત રીતે રોકડ આપો",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "trusted",
+          "text": "સ્પષ્ટ અહેવાલો સાથે ચકાસાયેલ ચેરિટીને દાન આપો",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "viral",
+          "text": "ટ્રેન્ડીંગ ઓનલાઈન ઝુંબેશ માટે દાન આપો",
+          "emoji": "🔥",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "સંપૂર્ણ ક્ષણ માટે કાયમ રાહ જુઓ",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ટૂંકા ગાળાની મદદ વિ લાંબા ગાળાના ફેરફાર",
+      "description": "ચેરિટી કાં તો આજે ભોજન અથવા મહિનાઓ સુધી શિક્ષણ સહાય પૂરી પાડી શકે છે. સ્માર્ટ શું છે?",
+      "options": [
+        {
+          "id": "education",
+          "text": "શિક્ષણ અને કૌશલ્ય નિર્માણને ટેકો આપો",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "meals",
+          "text": "એક સમયના ખોરાકનું વિતરણ",
+          "emoji": "🍱",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "અવ્યવસ્થિત રીતે નાણાં વિભાજિત કરો",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "દાન કરવાનું ટાળો",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "પારદર્શિતા તપાસ",
+      "description": "દાન કરતા પહેલા, તમારે પહેલા શું તપાસવું જોઈએ?",
+      "options": [
+        {
+          "id": "celebrity",
+          "text": "સેલિબ્રિટી સમર્થન",
+          "emoji": "🌟",
+          "isCorrect": false
+        },
+        {
+          "id": "emotional",
+          "text": "માત્ર ભાવનાત્મક વાર્તાઓ",
+          "emoji": "😢",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "text": "સામાજિક દબાણ",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "reports",
+          "text": "નાણાકીય પારદર્શિતા અને અસર અહેવાલો",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ચેરિટી વિ પર્સનલ ગ્રોથ",
+      "description": "તમારી પાસે મર્યાદિત પૈસા છે. સહાનુભૂતિ અને નાણાકીય સમજણ શું બનાવે છે?",
+      "options": [
+        {
+          "id": "donate-blind",
+          "text": "સમજ્યા વગર દાન કરો",
+          "emoji": "🙃",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "તમારી જાત પર બધું ખર્ચો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "કારણો વિશે જાણો, પછી મનથી દાન કરો",
+          "emoji": "🧠",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "દાનને સંપૂર્ણપણે ટાળો",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ટકાઉ આપવી",
+      "description": "કઈ આદત દાનને જીવનભર અસરકારક બનાવે છે?",
+      "options": [
+        {
+          "id": "big-once",
+          "text": "એક વાર એક મોટું દાન",
+          "emoji": "💥",
+          "isCorrect": false
+        },
+        {
+          "id": "consistent",
+          "text": "નાનું, નિયમિત, આયોજનબદ્ધ આપવું",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "guilt",
+          "text": "દોષ લાગે ત્યારે જ દાન કરો",
+          "emoji": "😬",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "આવેગ દાન",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

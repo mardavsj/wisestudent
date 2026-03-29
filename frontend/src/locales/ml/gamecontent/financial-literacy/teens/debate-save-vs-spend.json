@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "സംവാദം: സേവ് vs ചെലവ്",
+  "subtitleComplete": "സംവാദം പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionLabel": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "പണം ലാഭിക്കുന്നതാണോ അതോ എല്ലാം ചെലവഴിക്കുന്നതാണോ നല്ലത്?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "പണം ലാഭിക്കുക",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "പാഴാക്കുക",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "കൗമാരക്കാർ ഇപ്പോൾ അവരുടെ പണം ലാഭിക്കുന്നതിലോ ആസ്വദിക്കുന്നതിലോ ശ്രദ്ധ കേന്ദ്രീകരിക്കേണ്ടതുണ്ടോ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "സംരക്ഷിക്കുന്നതിൽ ശ്രദ്ധ കേന്ദ്രീകരിക്കുക",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ഇപ്പോൾ ആസ്വദിക്കൂ",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "അതിനെക്കുറിച്ച് ചിന്തിക്കരുത്",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിങ്ങൾക്ക് ഒരു ബോണസോ അധിക പണമോ ലഭിക്കുമ്പോൾ, നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "പാഴാക്കുക",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "അതിൽ ഭൂരിഭാഗവും സംരക്ഷിക്കുക",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "വിലകൂടിയ ബ്രാൻഡഡ് സാധനങ്ങൾ വാങ്ങുന്നതാണോ അതോ താങ്ങാനാവുന്ന ഗുണനിലവാരമുള്ള സാധനങ്ങൾ വാങ്ങുന്നതാണോ നല്ലത്?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ബ്രാൻഡഡ് ഇനങ്ങൾ വാങ്ങുക",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ബ്രാൻഡിനേക്കാൾ ഗുണനിലവാരം തിരഞ്ഞെടുക്കുക",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "cheap",
+          "text": "ഏറ്റവും വിലകുറഞ്ഞത് വാങ്ങുക",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "നിങ്ങൾക്ക് താങ്ങാൻ കഴിയാത്ത സാധനങ്ങൾ വാങ്ങാൻ ക്രെഡിറ്റ് കാർഡുകൾ ഉപയോഗിക്കണോ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "അതെ, ക്രെഡിറ്റ് ഉപയോഗിക്കുക",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "പണം കടം വാങ്ങുക",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ഇല്ല, കടം ഒഴിവാക്കുക",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

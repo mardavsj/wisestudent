@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਇਨਵੈਸਟਮੈਂਟ ਬੇਸਿਕਸ",
+  "subtitlePlaying": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ: ਆਪਣੇ ਨਿਵੇਸ਼ ਪ੍ਰਤੀਬਿੰਬ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਨਿਵੇਸ਼ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyEmoji": "💰",
+  "readyTitle": "ਨਿਵੇਸ਼ ਦੀਆਂ ਮੂਲ ਗੱਲਾਂ ਸਿੱਖਣ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਹਰੇਕ ਸਵਾਲ ਲਈ ਸਹੀ ਨਿਵੇਸ਼ ਕਾਰਵਾਈ ਚੁਣੋ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਸਵਾਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਇਸ ਨੂੰ ਵਧਾਉਣ ਲਈ ਤੁਹਾਨੂੰ ਪੈਸੇ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਬਚਾਓ ਅਤੇ ਵਧੋ",
+      "options": [
+        {
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਲੁਕਾਓ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਇਸ ਬਾਰੇ ਭੁੱਲ ਜਾਓ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ਬਚਾਓ ਅਤੇ ਵਧੋ",
+          "isCorrect": true,
+          "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਹਾਨੂੰ ਪੈਸੇ ਨੂੰ ਸਮਝਦਾਰੀ ਨਾਲ ਕਿਵੇਂ ਸੰਭਾਲਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਸਮਝਦਾਰੀ ਨਾਲ ਨਿਵੇਸ਼ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਸਮਝਦਾਰੀ ਨਾਲ ਨਿਵੇਸ਼ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ਤੇਜ਼ੀ ਨਾਲ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਬਰਬਾਦ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਗੁਆ",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਦੌਲਤ ਬਣਾਉਣ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "correctAnswer": "ਦੌਲਤ ਵਧਾਓ",
+      "options": [
+        {
+          "text": "ਪੈਸੇ ਦਾ ਨੁਕਸਾਨ",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "ਦੌਲਤ ਵਧਾਓ",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ਸਭ ਕੁਝ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ਬਚਤ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "😑"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਤੁਹਾਡਾ ਪੈਸਾ ਤੁਹਾਡੇ ਲਈ ਕਿਵੇਂ ਕੰਮ ਕਰ ਸਕਦਾ ਹੈ?",
+      "correctAnswer": "ਵਿਆਜ ਕਮਾਓ",
+      "options": [
+        {
+          "text": "ਨਕਦ ਬਰਬਾਦ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ਤੁਰੰਤ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ਵਿਆਜ ਕਮਾਓ",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "ਇਸ ਬਾਰੇ ਭੁੱਲ ਜਾਓ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਕਿਹੜੀ ਚੀਜ਼ ਤੁਹਾਡੇ ਭਵਿੱਖ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "correctAnswer": "ਬੱਚਤ ਬਣਾਓ",
+      "options": [
+        {
+          "text": "ਬੱਚਤ ਬਣਾਓ",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "ਹੁਣ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ਪੈਸੇ ਦੀ ਬਰਬਾਦੀ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਭਵਿੱਖ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    }
+  ]
+}

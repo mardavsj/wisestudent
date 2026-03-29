@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਦੀ ਜ਼ਰੂਰਤ ਪਹਿਲਾਂ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਲੋੜਾਂ ਬਨਾਮ ਲੋੜਾਂ ਦੀ ਪਛਾਣ ਕਰੋ!",
+  "subtitleReady": "ਲੋੜਾਂ ਬਨਾਮ ਲੋੜਾਂ ਦੀ ਪਛਾਣ ਕਰੋ!",
+  "readyEmoji": "✅",
+  "readyTitle": "ਤੁਹਾਡੀਆਂ ਲੋੜਾਂ ਬਨਾਮ ਵਾਂਟਸ ਹੁਨਰਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਲੋੜਾਂ ਬਨਾਮ ਲੋੜਾਂ ਦੀ ਪਛਾਣ ਕਰਨ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਇਹਨਾਂ ਵਿੱਚੋਂ ਕਿਹੜੀ ਬੁਨਿਆਦੀ ਲੋੜ ਹੈ?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "ਵੀਡੀਓ ਖੇਡ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍲"
+        },
+        {
+          "text": "ਡਿਜ਼ਾਈਨਰ ਕੱਪੜੇ",
+          "isCorrect": false,
+          "emoji": "👗"
+        },
+        {
+          "text": "ਲਗਜ਼ਰੀ ਕਾਰ",
+          "isCorrect": false,
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਕਿਹੜੀ ਚੀਜ਼ ਸਿੱਖਿਆ ਦੀ ਲੋੜ ਨੂੰ ਦਰਸਾਉਂਦੀ ਹੈ?",
+      "correctAnswer": "ਸਕੂਲ ਦੀਆਂ ਕਿਤਾਬਾਂ",
+      "options": [
+        {
+          "text": "ਸਕੂਲ ਦੀਆਂ ਕਿਤਾਬਾਂ",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "ਮਹਿੰਗੇ ਖਿਡੌਣੇ",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Gadgets",
+          "isCorrect": false,
+          "emoji": "📱"
+        },
+        {
+          "text": "Snacks",
+          "isCorrect": false,
+          "emoji": "🍪"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਜੋ ਸਿਹਤ ਲਈ ਜ਼ਰੂਰੀ ਹੈ?",
+      "correctAnswer": "Medicine",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        },
+        {
+          "text": "Medicine",
+          "isCorrect": true,
+          "emoji": "💊"
+        },
+        {
+          "text": "Jewelry",
+          "isCorrect": false,
+          "emoji": "💎"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਕਿਹੜੀ ਚੀਜ਼ ਬੁਨਿਆਦੀ ਲੋੜ ਹੈ?",
+      "correctAnswer": "Shelter",
+      "options": [
+        {
+          "text": "Vacation",
+          "isCorrect": false,
+          "emoji": "✈️"
+        },
+        {
+          "text": "Entertainment",
+          "isCorrect": false,
+          "emoji": "🎬"
+        },
+        {
+          "text": "ਲਗਜ਼ਰੀ ਡਾਇਨਿੰਗ",
+          "isCorrect": false,
+          "emoji": "🍽️"
+        },
+        {
+          "text": "Shelter",
+          "isCorrect": true,
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਕਿਹੜੀ ਬੁਨਿਆਦੀ ਲੋੜ ਹੈ?",
+      "correctAnswer": "ਸਾਫ਼ ਪਾਣੀ",
+      "options": [
+        {
+          "text": "ਸਾਫ਼ ਪਾਣੀ",
+          "isCorrect": true,
+          "emoji": "🚰"
+        },
+        {
+          "text": "ਆਇਸ ਕਰੀਮ",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ਡਿਜ਼ਾਈਨਰ ਬੈਗ",
+          "isCorrect": false,
+          "emoji": "👜"
+        },
+        {
+          "text": "ਸਮਾਰੋਹ ਦੀਆਂ ਟਿਕਟਾਂ",
+          "isCorrect": false,
+          "emoji": "🎟️"
+        }
+      ]
+    }
+  ]
+}

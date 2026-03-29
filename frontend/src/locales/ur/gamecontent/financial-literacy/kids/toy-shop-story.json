@@ -1,1 +1,146 @@
-﻿{}
+{
+  "title": "کھلونوں کی دکان کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "questionIndicator": "سوال {{current}}/{{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "بیچنے والے کا کہنا ہے، 'جلدی کرو یا کھلونا کھو دو!' آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "quick",
+          "text": "جلدی سے خریدیں۔",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "قیمت چیک کریں۔",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "بیچنے والے کو نظر انداز کریں۔",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ نے کھلونوں کی دو دکانیں دیکھیں۔ کیا ہوشیار ہے؟",
+      "options": [
+        {
+          "id": "compare",
+          "text": "قیمتوں کا موازنہ کریں۔",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "pay",
+          "text": "ابھی ادائیگی کریں۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "دونوں کو چھوڑ دیں۔",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "کھلونا ٹھنڈا لگتا ہے۔ آپ کیا چیک کرتے ہیں؟",
+      "options": [
+        {
+          "id": "fast",
+          "text": "تیزی سے خریدیں۔",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "quality",
+          "text": "معیار سے پوچھیں۔",
+          "emoji": "🔍",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "guess",
+          "text": "معیار کا اندازہ لگائیں۔",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آن لائن کھلونوں کی فروخت۔ سب سے پہلے کیا ہے؟",
+      "options": [
+        {
+          "id": "reviews",
+          "text": "جائزے پڑھیں",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "Rush",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "فروخت کو نظر انداز کریں۔",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ کو ایک کھلونا چاہیے؟ کیا منصوبہ ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "سب خرچ کریں۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "رقم ادھار لیں۔",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "بجٹ پہلے",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

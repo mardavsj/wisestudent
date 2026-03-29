@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "ਬੈਜ: ਨੌਜਵਾਨ ਉਦਯੋਗਪਤੀ",
+  "subtitleComplete": "ਬੈਜ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਚੁਣੌਤੀ",
+  "challengeLabel": "ਚੁਣੌਤੀ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "ਇੱਕ ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨਾ",
+      "question": "ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਪਹਿਲਾ ਕਦਮ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "ਇੱਕ ਚੰਗਾ ਵਿਚਾਰ ਅਤੇ ਯੋਜਨਾ ਹੈ",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "ਆਪਣਾ ਸਾਰਾ ਪੈਸਾ ਖਰਚ ਕਰੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ਸਦਾ ਲਈ ਉਡੀਕ ਕਰੋ",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "ਦੂਜਿਆਂ ਦੀ ਬਿਲਕੁਲ ਨਕਲ ਕਰੋ",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ਵਪਾਰ ਯੋਜਨਾ",
+      "question": "ਸ਼ੁਰੂ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "ਤੁਰੰਤ ਸ਼ੁਰੂ ਕਰੋ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "ਖੋਜ ਮਾਰਕੀਟ ਅਤੇ ਲਾਗਤ",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ਯੋਜਨਾ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਖਰਚ ਕਰੋ",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ਪੈਸੇ ਦਾ ਪ੍ਰਬੰਧਨ",
+      "question": "ਤੁਹਾਨੂੰ ਕਾਰੋਬਾਰੀ ਪੈਸੇ ਨੂੰ ਕਿਵੇਂ ਸੰਭਾਲਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "ਸਭ ਕੁਝ ਖਰਚ ਕਰੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "ਵਿੱਤ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "ਆਮਦਨੀ ਅਤੇ ਖਰਚਿਆਂ ਨੂੰ ਟਰੈਕ ਕਰੋ",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "ਕੋਈ ਟ੍ਰੈਕਿੰਗ ਦੀ ਲੋੜ ਨਹੀਂ",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ਗਾਹਕ ਦੀ ਸੇਵਾ",
+      "question": "ਕਾਰੋਬਾਰੀ ਸਫਲਤਾ ਲਈ ਕੀ ਮਹੱਤਵਪੂਰਨ ਹੈ?",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "ਗਾਹਕਾਂ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "ਗਾਹਕਾਂ ਨੂੰ ਧੋਖਾ ਦਿੰਦੇ ਹਨ",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "ਕੋਈ ਸੇਵਾ ਦੀ ਲੋੜ ਹੈ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "ਗਾਹਕਾਂ ਨੂੰ ਸੰਤੁਸ਼ਟ ਕਰੋ",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ਵਧਦਾ ਕਾਰੋਬਾਰ",
+      "question": "ਤੁਹਾਨੂੰ ਆਪਣਾ ਕਾਰੋਬਾਰ ਕਿਵੇਂ ਵਧਾਉਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "ਛੋਟੀ ਸ਼ੁਰੂਆਤ ਕਰੋ ਅਤੇ ਹੌਲੀ ਹੌਲੀ ਫੈਲਾਓ",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "ਤੁਰੰਤ ਵਿਸ਼ਾਲ ਸ਼ੁਰੂ ਕਰੋ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "ਕਦੇ ਨਾ ਵਧੋ",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "ਬਿਨਾਂ ਯੋਜਨਾ ਦੇ ਵਧੋ",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "ਨੌਜਵਾਨ ਉੱਦਮੀ ਬੈਜ ਕਮਾਏ ਗਏ!",
+    "winMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਚੁਣੌਤੀਆਂ ਸਹੀ ਮਿਲੀਆਂ ਹਨ! ਤੁਸੀਂ ਇੱਕ ਸੱਚੇ ਨੌਜਵਾਨ ਉਦਯੋਗਪਤੀ ਮਾਹਰ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਨੌਜਵਾਨ ਉੱਦਮੀਆਂ ਕੋਲ ਚੰਗੇ ਵਿਚਾਰ ਹਨ, ਧਿਆਨ ਨਾਲ ਯੋਜਨਾ ਬਣਾਓ, ਵਿੱਤ ਨੂੰ ਟਰੈਕ ਕਰੋ, ਗਾਹਕਾਂ ਨੂੰ ਸੰਤੁਸ਼ਟ ਕਰੋ, ਅਤੇ ਹੌਲੀ-ਹੌਲੀ ਵਧੋ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਚੁਣੌਤੀਆਂ ਸਹੀ ਮਿਲੀਆਂ ਹਨ। ਅਭਿਆਸ ਉੱਦਮਤਾ ਨਾਲ ਸੰਪੂਰਨ ਬਣਾਉਂਦਾ ਹੈ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੁਝਾਅ: ਹਮੇਸ਼ਾ ਇੱਕ ਚੰਗਾ ਵਿਚਾਰ ਅਤੇ ਯੋਜਨਾ ਬਣਾਓ, ਮਾਰਕੀਟ ਅਤੇ ਲਾਗਤਾਂ ਦੀ ਖੋਜ ਕਰੋ, ਵਿੱਤ ਨੂੰ ਟਰੈਕ ਕਰੋ, ਗਾਹਕਾਂ ਨੂੰ ਸੰਤੁਸ਼ਟ ਕਰੋ, ਅਤੇ ਛੋਟੀ ਸ਼ੁਰੂਆਤ ਕਰੋ!"
+  }
+}

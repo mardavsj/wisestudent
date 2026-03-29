@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಮರದ ಕಥೆ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "🌳",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನೀವು ಇಂದು ಒಂದು ಸಣ್ಣ ಮರವನ್ನು ನೆಡುತ್ತೀರಿ. ಕಾಲಾನಂತರದಲ್ಲಿ ಬಲವಾಗಿ ಬೆಳೆಯಲು ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "care",
+          "text": "ನಿಯಮಿತವಾಗಿ ನೀರು ಮತ್ತು ಆರೈಕೆ",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "ವೇಗವಾಗಿ ಬೆಳೆಯಲು ಅದನ್ನು ಎಳೆಯಿರಿ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ಅದನ್ನು ಬಿಟ್ಟು ಮರೆತುಬಿಡಿ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಹಣವು ಮರವಿದ್ದಂತೆ. ಅದು ನಿಧಾನವಾಗಿ ಮತ್ತು ಸುರಕ್ಷಿತವಾಗಿ ಬೆಳೆಯಲು ಕಾರಣವೇನು?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಎಲ್ಲವನ್ನೂ ತ್ವರಿತವಾಗಿ ಖರ್ಚು ಮಾಡುವುದು",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ಅದನ್ನು ಮರೆಮಾಡುವುದು ಮತ್ತು ಅದನ್ನು ಎಂದಿಗೂ ಬಳಸುವುದಿಲ್ಲ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ಕಾಲಾನಂತರದಲ್ಲಿ ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ಬಳಸುವುದು ಮತ್ತು ಉಳಿಸುವುದು",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ಹೆಚ್ಚುವರಿ ಪಾಕೆಟ್ ಹಣವನ್ನು ಪಡೆಯುತ್ತೀರಿ. ಸ್ಮಾರ್ಟ್ ಟ್ರೀ ಶೈಲಿಯ ಆಯ್ಕೆ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "ಯೋಚಿಸದೆ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "ಭಾಗವನ್ನು ಉಳಿಸಿ ಇದರಿಂದ ಅದು ನಂತರ ಬೆಳೆಯುತ್ತದೆ",
+          "emoji": "🌱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "ಅದನ್ನು ಅಜಾಗರೂಕತೆಯಿಂದ ಇರಿಸಿ",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಹಣ್ಣಿನ ಮರವು ಪ್ರತಿ ವರ್ಷ ಹಣ್ಣುಗಳನ್ನು ನೀಡುತ್ತದೆ. ಇದು ಹಣದ ಬಗ್ಗೆ ಏನು ಕಲಿಸುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "ಹಣವನ್ನು ಒಮ್ಮೆ ಮಾತ್ರ ಬಳಸಬೇಕು",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "ಅದೃಷ್ಟ ಮಾತ್ರ ಮುಖ್ಯ",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ಉತ್ತಮ ಆಯ್ಕೆಗಳು ಪುನರಾವರ್ತಿತ ಪ್ರತಿಫಲಗಳನ್ನು ನೀಡುತ್ತವೆ",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನೀವು ಬೇಗನೆ ಮರವನ್ನು ಕತ್ತರಿಸಿದರೆ, ಏನಾಗುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "loss",
+          "text": "ನೀವು ಭವಿಷ್ಯದ ಪ್ರಯೋಜನಗಳನ್ನು ಕಳೆದುಕೊಳ್ಳುತ್ತೀರಿ",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "gain",
+          "text": "ನೀವು ಯಾವಾಗಲೂ ಹೆಚ್ಚು ಗಳಿಸುತ್ತೀರಿ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ಏನೂ ಬದಲಾಗುವುದಿಲ್ಲ",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ریفلیکس ورک بمقابلہ پلے",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: اپنے کام بمقابلہ پلے ریفلیکس کی جانچ کریں!",
+  "subtitleReady": "اپنے کام بمقابلہ پلے ریفلیکس کی جانچ کریں!",
+  "readyEmoji": "💼",
+  "readyTitle": "کام بمقابلہ Play ٹیسٹ کرنے کے لیے تیار ہیں؟",
+  "readyDescription": "کام اور کھیل کے درمیان صحیح عمل کا انتخاب کریں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "آپ کو پیسہ کمانے میں کیا مدد کرتا ہے؟",
+      "correctAnswer": "Work",
+      "options": [
+        {
+          "text": "وقت ضائع کرنا",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "سارا دن کھیلیں",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Work",
+          "isCorrect": true,
+          "emoji": "💼"
+        },
+        {
+          "text": "کچھ نہ کرو",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "سیکھنے اور بڑھنے کے لیے آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "Study",
+      "options": [
+        {
+          "text": "Study",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "سارا دن کھیلیں",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "سیکھنا چھوڑ دیں۔",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "تعلیم کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "آپ کو اپنی کمائی کا کیا کرنا چاہیے؟",
+      "correctAnswer": "کمائی کو بچائیں۔",
+      "options": [
+        {
+          "text": "سب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "کمائی کو بچائیں۔",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "پیسہ ضائع کرنا",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "اسے کھو دو",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "گھر میں مدد کرنے کے لیے آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "کام کاج کریں۔",
+      "options": [
+        {
+          "text": "کام کاج کریں۔",
+          "isCorrect": true,
+          "emoji": "🧹"
+        },
+        {
+          "text": "کام چھوڑ دیں۔",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "کام سے گریز کریں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "کاہل بنو",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آپ کو نتیجہ خیز بننے میں کیا مدد ملتی ہے؟",
+      "correctAnswer": "کام کی منصوبہ بندی کریں۔",
+      "options": [
+        {
+          "text": "بیکار رہنا",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "وقت ضائع کرنا",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "کچھ نہ کرو",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "کام کی منصوبہ بندی کریں۔",
+          "isCorrect": true,
+          "emoji": "📋"
+        }
+      ]
+    }
+  ]
+}

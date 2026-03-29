@@ -1,1 +1,99 @@
-﻿{}
+{
+  "title": "કોયડો: પ્રમાણિક વિ છેતરપિંડી",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} મેળ: પ્રમાણિક/છેતરપીંડી દુકાનોને તેમના પરિણામો સાથે જોડો!",
+  "leftTitle": "દુકાનના પ્રકાર",
+  "rightTitle": "Outcomes",
+  "instruction": "એક દુકાન પસંદ કરો, પછી મેચ કરવા માટે પરિણામ પસંદ કરો!",
+  "items": [
+    {
+      "id": 1,
+      "name": "ફેર શોપ",
+      "emoji": "🏪"
+    },
+    {
+      "id": 2,
+      "name": "ચીટ શોપ",
+      "emoji": "🍬"
+    },
+    {
+      "id": 3,
+      "name": "પ્રમાણિક વિક્રેતા",
+      "emoji": "🙋"
+    },
+    {
+      "id": 4,
+      "name": "છેતરપિંડી દુકાન",
+      "emoji": "🎭"
+    },
+    {
+      "id": 5,
+      "name": "સ્થાનિક બજાર",
+      "emoji": "🛍️"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "Trust",
+      "emoji": "🤝"
+    },
+    {
+      "id": 7,
+      "name": "Loss",
+      "emoji": "😞"
+    },
+    {
+      "id": 8,
+      "name": "Gain",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Scam",
+      "emoji": "🚨"
+    },
+    {
+      "id": 10,
+      "name": "Savings",
+      "emoji": "💸"
+    }
+  ],
+  "correctMatches": [
+    {
+      "itemId": 1,
+      "outcomeId": 6
+    },
+    {
+      "itemId": 2,
+      "outcomeId": 7
+    },
+    {
+      "itemId": 3,
+      "outcomeId": 8
+    },
+    {
+      "itemId": 4,
+      "outcomeId": 9
+    },
+    {
+      "itemId": 5,
+      "outcomeId": 10
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "મેચિંગ માસ્ટર!",
+    "description": "પરફેક્ટ! તમે બધા {{score}}/{{total}} સાથે બરાબર મેળ ખાય છે! તમે પ્રમાણિકતા અને છેતરપિંડી સારી રીતે સમજો છો!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "ગુડ જોબ!",
+    "description": "શાબાશ! તમે {{score}}/{{total}} સાથે યોગ્ય રીતે મેળ ખાય છે! પ્રામાણિક વ્યવસાય પદ્ધતિઓ વિશે શીખતા રહો!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "પ્રેક્ટિસ ચાલુ રાખો!",
+    "description": "તમે {{score}}/{{total}} સાથે મેળ ખાય છે. ક્રિયાઓ અને પરિણામો વચ્ચેના જોડાણોની સમીક્ષા કરો, પછી ફરી પ્રયાસ કરો!"
+  }
+}

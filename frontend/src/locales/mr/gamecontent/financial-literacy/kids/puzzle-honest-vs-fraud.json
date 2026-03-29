@@ -1,1 +1,99 @@
-﻿{}
+{
+  "title": "कोडे: प्रामाणिक विरुद्ध फसवणूक",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} जुळणी: प्रामाणिक/फसवणूक करणाऱ्या दुकानांना त्यांच्या परिणामांसह कनेक्ट करा!",
+  "leftTitle": "दुकानाचे प्रकार",
+  "rightTitle": "Outcomes",
+  "instruction": "एक दुकान निवडा, नंतर जुळण्यासाठी निकाल निवडा!",
+  "items": [
+    {
+      "id": 1,
+      "name": "फेअर शॉप",
+      "emoji": "🏪"
+    },
+    {
+      "id": 2,
+      "name": "फसवणूकीचे दुकान",
+      "emoji": "🍬"
+    },
+    {
+      "id": 3,
+      "name": "प्रामाणिक विक्रेता",
+      "emoji": "🙋"
+    },
+    {
+      "id": 4,
+      "name": "फसवणुकीचे दुकान",
+      "emoji": "🎭"
+    },
+    {
+      "id": 5,
+      "name": "स्थानिक बाजार",
+      "emoji": "🛍️"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "Trust",
+      "emoji": "🤝"
+    },
+    {
+      "id": 7,
+      "name": "Loss",
+      "emoji": "😞"
+    },
+    {
+      "id": 8,
+      "name": "Gain",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Scam",
+      "emoji": "🚨"
+    },
+    {
+      "id": 10,
+      "name": "Savings",
+      "emoji": "💸"
+    }
+  ],
+  "correctMatches": [
+    {
+      "itemId": 1,
+      "outcomeId": 6
+    },
+    {
+      "itemId": 2,
+      "outcomeId": 7
+    },
+    {
+      "itemId": 3,
+      "outcomeId": 8
+    },
+    {
+      "itemId": 4,
+      "outcomeId": 9
+    },
+    {
+      "itemId": 5,
+      "outcomeId": 10
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "मॅचिंग मास्टर!",
+    "description": "परिपूर्ण! तुम्ही सर्व {{score}}/{{total}} बरोबर जुळले! तुम्हाला प्रामाणिकपणा आणि फसवणूक चांगली समजते!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "चांगली नोकरी!",
+    "description": "शाब्बास! तुम्ही {{score}}/{{total}} बरोबर जुळले! प्रामाणिक व्यवसाय पद्धतींबद्दल शिकत रहा!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "सराव करत राहा!",
+    "description": "तुम्ही {{score}}/{{total}} शी जुळले. क्रिया आणि परिणामांमधील कनेक्शनचे पुनरावलोकन करा, नंतर पुन्हा प्रयत्न करा!"
+  }
+}

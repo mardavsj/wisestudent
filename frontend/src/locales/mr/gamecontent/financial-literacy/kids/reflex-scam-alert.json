@@ -1,1 +1,165 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स: घोटाळ्याचा इशारा",
+  "subtitleComplete": "खेळ पूर्ण!",
+  "roundLabel": "फेरी {{current}}/{{total}}",
+  "timeUp": "वेळ संपली!",
+  "readyTitle": "तुमची घोटाळ्याची सतर्कता तपासण्यासाठी तयार आहात?",
+  "readyDescription": "घोटाळे आणि फसवणुकीपासून सुरक्षित राहण्याबद्दलच्या प्रश्नांची उत्तरे द्या.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{time}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "gameRoundLabel": "फेरी:",
+  "gameTimeLabel": "वेळ:",
+  "gameScoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "तुम्हाला बिल प्राप्त झाल्यावर तुम्ही काय करावे?",
+      "correctAnswer": "बिल तपासा",
+      "options": [
+        {
+          "text": "बिल तपासा",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ताबडतोब पैसे द्या",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ते हटवा",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "संशयास्पद ऑफरचे तुम्ही काय करावे?",
+      "correctAnswer": "ऑफर सत्यापित करा",
+      "options": [
+        {
+          "text": "जलद स्वीकारा",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ऑफर सत्यापित करा",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "ताबडतोब विश्वास ठेवा",
+          "isCorrect": false,
+          "emoji": "🤝"
+        },
+        {
+          "text": "चेतावणीकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "जेव्हा एखादी गोष्ट खरी असल्याचे खूप चांगले वाटते तेव्हा तुम्ही काय करावे?",
+      "correctAnswer": "प्रश्न विचारा",
+      "options": [
+        {
+          "text": "आंधळेपणाने विश्वास ठेवा",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "पटकन स्वीकारा",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "शंका दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "प्रश्न विचारा",
+          "isCorrect": true,
+          "emoji": "❓"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "पेमेंट करण्यापूर्वी तुम्ही काय करावे?",
+      "correctAnswer": "तपशीलांची पुष्टी करा",
+      "options": [
+        {
+          "text": "आता पैसे द्या",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "सत्यापन वगळा",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "तपशीलांची पुष्टी करा",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "तपासाशिवाय विश्वास ठेवा",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "तुम्हाला घोटाळा आढळल्यास तुम्ही काय करावे?",
+      "correctAnswer": "घोटाळा नोंदवा",
+      "options": [
+        {
+          "text": "काहीही करू नका",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "त्याकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "गप्प बसा",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "घोटाळा नोंदवा",
+          "isCorrect": true,
+          "emoji": "🚨"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "स्कॅम-स्पॉटिंग प्रो!",
+    "description": "आश्चर्यकारक! तुम्ही {{score}}/{{total}} बरोबर आहात! तुम्ही घोटाळे शोधण्यात उत्कृष्ट आहात!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "चांगली जाणीव!",
+    "description": "शाब्बास! तुम्ही {{score}}/{{total}} स्कोअर केले! घोटाळा तज्ञ होण्यासाठी सराव करत रहा!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "सराव करत राहा!",
+    "description": "तुम्ही {{score}}/{{total}} स्कोअर केले. टिपांचे पुनरावलोकन करा आणि तुमचे घोटाळे शोधण्याचे कौशल्य सुधारण्यासाठी पुन्हा प्रयत्न करा!"
+  }
+}

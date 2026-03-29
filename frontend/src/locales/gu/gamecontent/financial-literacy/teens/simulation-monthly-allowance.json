@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "સિમ્યુલેશન: માસિક ભથ્થું",
+  "subtitleComplete": "સિમ્યુલેશન પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} દૃશ્ય",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "amountLabel": "રકમ:",
+  "perfectScoreTitle": "ઉત્તમ બજેટિંગ!",
+  "perfectScoreMsg": "તમને {{total}} માંથી {{score}} દૃશ્યો સાચા છે! તમે સંતુલિત બજેટિંગની કળામાં નિપુણતા મેળવી રહ્યાં છો!",
+  "lessonLabel": "પાઠ: સંતુલિત બજેટ જરૂરિયાતો (ખોરાક, પરિવહન) ને પ્રાથમિકતા આપે છે જ્યારે ભવિષ્ય માટે બચત કરે છે અને થોડો આનંદ આપે છે!",
+  "keepLearningTitle": "શીખતા રહો!",
+  "lowScoreMsg": "તમને {{total}} માંથી {{score}} દૃશ્યો સાચા મળ્યા છે. સંતુલિત બજેટ સૂત્ર યાદ રાખો: 40% ખોરાક, 30% પરિવહન, 20% બચત, 10% આનંદ!",
+  "tipLabel": "ટિપ: પહેલા આવશ્યક જરૂરિયાતોને પૂરી કરવા માટે નાણાં ફાળવો, પછી બચત કરો અને અંતે કેટલાક મનોરંજક નાણાંની મંજૂરી આપો.",
+  "tryAgain": "ફરી પ્રયાસ કરો",
+  "coinsLabel": "+{{count}} સિક્કા",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "માસિક ભથ્થું પસંદગીઓ",
+      "description": "તમને ભથ્થા તરીકે ₹1000 મળે છે. તમે તેનો સમજદારીપૂર્વક ઉપયોગ કેવી રીતે કરી શકો?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "splurge",
+          "text": "ફક્ત ટ્રેન્ડિંગ વસ્તુઓ ખરીદો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "budget-smart",
+          "text": "આવશ્યક, આનંદ અને બચત માટે અલગ રાખો",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "બધી રોકડ ઘરમાં છુપાવી રાખો",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "random-spending",
+          "text": "વિચાર્યા વગર ખર્ચ કરો",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "પાર્ટ-ટાઇમ જોબ કમાણી",
+      "description": "તમે સપ્તાહાંતની નોકરીમાંથી ₹1500 કમાઓ છો. સ્માર્ટ અભિગમ શું છે?",
+      "amount": 1500,
+      "options": [
+        {
+          "id": "plan-smart",
+          "text": "ધ્યેયો, જરૂરિયાતો અને આનંદ માટે વિભાજન કરો",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury-only",
+          "text": "ગેજેટ્સ કે કપડાં પર જ ખર્ચ કરો",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "તે અસ્તિત્વમાં છે તે ભૂલી જાઓ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "invest-all",
+          "text": "સંશોધન વિના રોકાણ કરો",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "શિષ્યવૃત્તિ બોનસ",
+      "description": "તમને ₹2000ની શિષ્યવૃત્તિ મળે છે. તેનો ઉપયોગ કરવાની સૌથી સ્માર્ટ રીત કઈ છે?",
+      "amount": 2000,
+      "options": [
+        {
+          "id": "trip",
+          "text": "વૈભવી પ્રવાસ પર જાઓ",
+          "emoji": "✈️",
+          "isCorrect": false
+        },
+        {
+          "id": "hide-money",
+          "text": "તેને ઘરે છુપાવો",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "donate",
+          "text": "તે બધું તરત જ દાન કરો",
+          "emoji": "💝",
+          "isCorrect": false
+        },
+        {
+          "id": "self-invest",
+          "text": "પુસ્તકો, અભ્યાસક્રમો અથવા શીખવા માટેના સાધનો ખરીદો",
+          "emoji": "🎓",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "બર્થડે ગિફ્ટ મની",
+      "description": "તમને જન્મદિવસના પૈસા તરીકે ₹800 મળે છે. વિચારશીલ પસંદગી શું છે?",
+      "amount": 800,
+      "options": [
+        {
+          "id": "impulse-buy",
+          "text": "ત્વરિત આનંદ પર જ ખર્ચ કરો",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "જે મજા આવે તે ખરીદો",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "plan-future",
+          "text": "મોટા ધ્યેય અથવા જરૂરિયાત માટે બચત કરો",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "share-friends",
+          "text": "તે બધું મિત્રોને આપો",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "સમર જોબ વિન્ડફોલ",
+      "description": "તમે ઉનાળાની નોકરીમાંથી ₹2500 કમાઓ છો. લાભો કેવી રીતે વધારવો?",
+      "amount": 2500,
+      "options": [
+        {
+          "id": "balanced-plan",
+          "text": "બચત, શીખવા અને નાની વસ્તુઓ માટે વિભાજન",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "debt-payment",
+          "text": "દેવું ચૂકવવા માટે ઉતાવળ કરો જે તમે સંપૂર્ણપણે સમજી શકતા નથી",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse-buying",
+          "text": "આવેગ ખરીદી પર ખર્ચ કરો",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save-all",
+          "text": "કોઈપણ યોજના વિના બધા સાચવો",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

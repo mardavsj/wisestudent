@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સની પ્રથમ જરૂર છે",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: જરૂરિયાતો વિ ઇચ્છાઓને ઓળખો!",
+  "subtitleReady": "જરૂરિયાતો વિરુદ્ધ જરૂરિયાતોને ઓળખો!",
+  "readyEmoji": "✅",
+  "readyTitle": "તમારી જરૂરિયાતો વિ વોન્ટ્સ સ્કીલ્સ ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "જરૂરિયાતો વિરુદ્ધ જરૂરિયાતોને ઓળખવા વિશેના પ્રશ્નોના જવાબ આપો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "આમાંથી કઈ મૂળભૂત જરૂરિયાત છે?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "વિડિયો ગેમ્સ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍲"
+        },
+        {
+          "text": "ડિઝાઇનર કપડાં",
+          "isCorrect": false,
+          "emoji": "👗"
+        },
+        {
+          "text": "લક્ઝરી કાર",
+          "isCorrect": false,
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "કઈ વસ્તુ શિક્ષણની જરૂરિયાત દર્શાવે છે?",
+      "correctAnswer": "શાળાના પુસ્તકો",
+      "options": [
+        {
+          "text": "શાળાના પુસ્તકો",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "મોંઘા રમકડાં",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Gadgets",
+          "isCorrect": false,
+          "emoji": "📱"
+        },
+        {
+          "text": "Snacks",
+          "isCorrect": false,
+          "emoji": "🍪"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "જે સ્વાસ્થ્ય માટે જરૂરી છે?",
+      "correctAnswer": "Medicine",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        },
+        {
+          "text": "Medicine",
+          "isCorrect": true,
+          "emoji": "💊"
+        },
+        {
+          "text": "Jewelry",
+          "isCorrect": false,
+          "emoji": "💎"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "કઈ વસ્તુ મૂળભૂત જરૂરિયાત છે?",
+      "correctAnswer": "Shelter",
+      "options": [
+        {
+          "text": "Vacation",
+          "isCorrect": false,
+          "emoji": "✈️"
+        },
+        {
+          "text": "Entertainment",
+          "isCorrect": false,
+          "emoji": "🎬"
+        },
+        {
+          "text": "લક્ઝરી ડાઇનિંગ",
+          "isCorrect": false,
+          "emoji": "🍽️"
+        },
+        {
+          "text": "Shelter",
+          "isCorrect": true,
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "મૂળભૂત જરૂરિયાત કઈ છે?",
+      "correctAnswer": "સ્વચ્છ પાણી",
+      "options": [
+        {
+          "text": "સ્વચ્છ પાણી",
+          "isCorrect": true,
+          "emoji": "🚰"
+        },
+        {
+          "text": "આઈસ્ક્રીમ",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ડિઝાઇનર બેગ",
+          "isCorrect": false,
+          "emoji": "👜"
+        },
+        {
+          "text": "કોન્સર્ટ ટિકિટ",
+          "isCorrect": false,
+          "emoji": "🎟️"
+        }
+      ]
+    }
+  ]
+}

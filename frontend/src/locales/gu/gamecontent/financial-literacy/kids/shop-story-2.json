@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "શોપ સ્ટોરી 2",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે સ્ટોરમાં બે પેન જુઓ છો. એકની કિંમત 50 રૂપિયા છે અને બીજાની કિંમત 15 રૂપિયા છે. બંને એકસરખા કામ કરે છે. તમારે કયું ખરીદવું જોઈએ?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "મોંઘી પેન",
+          "emoji": "🖊️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "text": "પહેલા સમીક્ષાઓ તપાસો",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "પરવડે તેવી પેન",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારી પાસે કપડાં પર ખર્ચ કરવા માટે 100 રૂપિયા છે. તમને ગમતો શર્ટ 80 રૂપિયામાં મળે છે અને તેવો જ બીજો 30 રૂપિયામાં મળે છે. સ્માર્ટ શું છે?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "સસ્તો શર્ટ ખરીદો",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "મોંઘા શર્ટ ખરીદો",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "વેચાણ માટે રાહ જુઓ",
+          "emoji": "🏷️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમે પાર્ટી માટે નાસ્તો ખરીદી રહ્યાં છો. બ્રાન્ડ Aની કિંમત રૂ. 200 અને બ્રાન્ડ Bની કિંમત રૂ. 120 છે. બંનેનો સ્વાદ સમાન છે. જે?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "બ્રાન્ડ A ખરીદો",
+          "emoji": "📦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "બ્રાન્ડ B ખરીદો",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mix",
+          "text": "દરેકમાંથી કેટલાક ખરીદો",
+          "emoji": "➗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમારે શાળા માટે બેકપેકની જરૂર છે. એકની કિંમત 800 રૂપિયા અને બીજાની કિંમત 400 રૂપિયા છે. બંને સારી ગુણવત્તાના છે. સમજદાર શું છે?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "400 રૂપિયાનું બેકપેક ખરીદો",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "800 રૂપિયાનું બેકપેક ખરીદો",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "હમણાં માટે ઉધાર લો",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમે કરિયાણાની ખરીદી કરી રહ્યાં છો. Organic vegetables cost Rs 300 and regular ones cost Rs 150. Both are nutritious. જે?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ઓર્ગેનિક શાકભાજી ખરીદો",
+          "emoji": "🥦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "selective",
+          "text": "બંને પ્રકારને મિક્સ કરો",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "નિયમિત શાકભાજી ખરીદો",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

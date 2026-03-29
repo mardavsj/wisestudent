@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "उधारीवर क्विझ",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "🤝",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कर्ज घेणे म्हणजे काय?",
+      "options": [
+        {
+          "id": "without",
+          "text": "न मागता घेणे",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "वापरणे आणि परत करणे",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "steal",
+          "text": "Stealing",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "पुस्तक उधार घेतल्यानंतर, आपण काय करावे?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ते परत करा",
+          "emoji": "↩️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "कायम ठेवा",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sell",
+          "text": "ते विकून टाका",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "बँकेकडून कर्ज घेणे योग्य का आहे?",
+      "options": [
+        {
+          "id": "repay",
+          "text": "तुम्ही व्याजासह परतफेड करा",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "तो फुकटचा पैसा आहे",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "आपण कधीही परतफेड करत नाही",
+          "emoji": "🙃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "उधार घेतलेल्या वस्तू परत न केल्यास काय होईल?",
+      "options": [
+        {
+          "id": "more",
+          "text": "तुम्हाला आणखी वस्तू मिळतात",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rewards",
+          "text": "तुम्हाला बक्षिसे मिळतात",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "लोकांचा तुमच्यावरील विश्वास उडतो",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "प्रामाणिक कर्ज घेणे महत्त्वाचे का आहे?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "तुम्हाला आणखी खेळणी मिळतात",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "त्यामुळे इतरांसोबत विश्वास निर्माण होतो",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "हे कर्ज घेण्यास मजेदार बनवते",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ઉધાર વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "કિશોર નવા ફોન માટે ઉધાર લે છે. ચૂકવણી કરી શકતા નથી? પરિણામ →",
+      "options": [
+        {
+          "id": "free",
+          "text": "મફત પૈસા",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "Debt",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "કશું થતું નથી",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે ₹500 ઉધાર લો છો પણ ચૂકવી શકતા નથી. પરિણામ શું છે?",
+      "options": [
+        {
+          "id": "forgiven",
+          "text": "દેવું માફ થાય છે",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "ignored",
+          "text": "અવગણી શકાય છે",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "વ્યાજ અને દંડ વધે છે",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "જરૂરિયાત માટે ઉધાર લેતા પહેલા તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "પહેલા કેવી રીતે ચુકવણી કરવી તેની યોજના બનાવો",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "પહેલા ઉધાર લો, પછી વિચારો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ચુકવણીની યોજનાને અવગણો",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "પુન:ચુકવણી યોજના વિના ઉધાર લેવાથી થાય છે?",
+      "options": [
+        {
+          "id": "success",
+          "text": "નાણાકીય સફળતા",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "text": "નાણાકીય સ્વતંત્રતા",
+          "emoji": "🕊️",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "દેવાની સમસ્યાઓ",
+          "emoji": "⚠️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ઉધાર લેવાનો શ્રેષ્ઠ અભિગમ કયો છે?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "જરૂરિયાતો માટે વારંવાર ઉધાર લો",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "જ્યારે જરૂરી હોય ત્યારે જ ઉધાર લો અને ચુકવણીની યોજના બનાવો",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "ઉધાર લો પણ ક્યારેય પાછું ના આપો",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ઉધાર વાર્તા પૂર્ણ!",
+    "winMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! જવાબદાર ઉધાર વિશે શીખવા માટેનું ઉત્તમ કામ!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: ચુકવણીની યોજના વિના ઉધાર લેવાથી દેવું થાય છે. ઉધાર લેતા પહેલા હમેશા કેવી રીતે ચુકવવું તેની યોજના બનાવો, ખાસ કરીને જરૂરિયાતો માટે!",
+    "loseEmoji": "💪",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, યોજના વિના ઉધાર લેવાથી દેવાની સમસ્યાઓ થાય છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટીપ: ઉધાર લેતા પહેલા હમેશા કેવી રીતે ચુકવવું તેની યોજના બનાવો. ચુકવણીની યોજના વિના ઉધાર લેવાથી દેવું અને નાણાકીય મુશ્કેલી થાય છે!"
+  }
+}

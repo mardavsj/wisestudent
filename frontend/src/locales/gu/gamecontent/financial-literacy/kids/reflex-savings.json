@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ બચત",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારા બચત જ્ઞાનનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા બચત જ્ઞાનનું પરીક્ષણ કરો!",
+  "readyTitle": "તમારી બચત કૌશલ્ય ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "સ્માર્ટ બચત વ્યૂહરચના વિશે પ્રશ્નોના જવાબ આપો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "પૈસા બચાવવાની શ્રેષ્ઠ રીત કઈ છે?",
+      "correctAnswer": "બચત ધ્યેય સેટ કરો",
+      "options": [
+        {
+          "text": "રેન્ડમલી ખર્ચો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "બચત ધ્યેય સેટ કરો",
+          "isCorrect": true,
+          "emoji": "🎯"
+        },
+        {
+          "text": "નાણાં ઉછીના",
+          "isCorrect": false,
+          "emoji": "💳"
+        },
+        {
+          "text": "બચતને અવગણો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમારે વધારાના પૈસા સાથે શું કરવું જોઈએ?",
+      "correctAnswer": "તેને સાચવો",
+      "options": [
+        {
+          "text": "તેને સાચવો",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "તે બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "તે ગુમાવો",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "તેના વિશે ભૂલી જાઓ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "તમને સતત બચત કરવામાં શું મદદ કરે છે?",
+      "correctAnswer": "આપોઆપ ટ્રાન્સફર",
+      "options": [
+        {
+          "text": "આવેગપૂર્વક ખર્ચ કરો",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "આપોઆપ ટ્રાન્સફર",
+          "isCorrect": true,
+          "emoji": "🔄"
+        },
+        {
+          "text": "કોઈ પ્લાન નથી",
+          "isCorrect": false,
+          "emoji": "📋"
+        },
+        {
+          "text": "પ્રેરણા માટે રાહ જુઓ",
+          "isCorrect": false,
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "સારી બચતની આદત શું છે?",
+      "correctAnswer": "પહેલા બચત કરો, પછી ખર્ચ કરો",
+      "options": [
+        {
+          "text": "પહેલા ખર્ચ કરો, પછી બચત કરો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ક્યારેય સાચવશો નહીં",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "પહેલા બચત કરો, પછી ખર્ચ કરો",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "ક્યારેક સાચવો",
+          "isCorrect": false,
+          "emoji": "⏰"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "પૈસા બચાવવા શા માટે મહત્વપૂર્ણ છે?",
+      "correctAnswer": "કટોકટીની તૈયારી",
+      "options": [
+        {
+          "text": "બતાવો",
+          "isCorrect": false,
+          "emoji": "🏆"
+        },
+        {
+          "text": "ઇમ્પલ્સ ખરીદી",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "કોઈ કારણ નથી",
+          "isCorrect": false,
+          "emoji": "❓"
+        },
+        {
+          "text": "કટોકટીની તૈયારી",
+          "isCorrect": true,
+          "emoji": "🚑"
+        }
+      ]
+    }
+  ]
+}

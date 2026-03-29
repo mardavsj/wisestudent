@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "પેટ બેઠક વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "🐶",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે પાલતુને ખવડાવવા અને ચાલવા માટે દિનચર્યા બનાવો છો. તમે કઈ કુશળતાનો અભ્યાસ કરો છો?",
+      "options": [
+        {
+          "id": "playing",
+          "text": "માત્ર પ્રાણીઓ સાથે રમે છે",
+          "emoji": "🎾",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "નસીબ પર આધાર રાખે છે",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "planning",
+          "text": "આયોજન અને સંગઠન",
+          "emoji": "📋",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે સમય જતાં પાલતુ બેસીને પૈસા કમાવો છો. શાણા આગળનું પગલું શું છે?",
+      "options": [
+        {
+          "id": "track",
+          "text": "તમે કેટલી કમાણી કરો છો તે ટ્રૅક કરો",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "તરત જ ખર્ચ કરો",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "તે વિશે ભૂલી જાઓ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારી સંભાળ હેઠળ પાલતુ અસ્વસ્થ લાગે છે. તમારે પહેલા શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "wait",
+          "text": "રાહ જુઓ અને આશા રાખો કે તે સુધરે છે",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "inform",
+          "text": "માલિકને ઝડપથી જાણ કરો",
+          "emoji": "📞",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ચિહ્નોને અવગણો",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે પાળતુ પ્રાણીની બેઠક સફળતાપૂર્વક સમાપ્ત કરો છો. તમને ફરીથી વિશ્વાસ મેળવવામાં શું મદદ કરે છે?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "વધુ પૈસાની માંગણી કરી",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rush",
+          "text": "કાર્યોમાં ઉતાવળ કરવી",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "reliable",
+          "text": "વિશ્વસનીય અને સાવચેત રહેવું",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "પેટ સીટીંગ તમને શીખવે છે કે પૈસા કમાવવાનો પણ અર્થ છે?",
+      "options": [
+        {
+          "id": "care",
+          "text": "જવાબદારીપૂર્વક અન્યની સંભાળ રાખવી",
+          "emoji": "❤️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "માત્ર મજા આવી રહી છે",
+          "emoji": "😄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spending",
+          "text": "વધુ પૈસા ખર્ચવા",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

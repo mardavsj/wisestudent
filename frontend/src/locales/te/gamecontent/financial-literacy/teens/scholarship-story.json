@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "స్కాలర్‌షిప్ కథ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "perfectScoreMsg": "మీరు {{total}}లో {{score}}ని పొందారు! అప్లికేషన్లలో నిజాయితీ యొక్క ప్రాముఖ్యతను మీరు అర్థం చేసుకున్నారు!",
+  "lowScoreMsg": "మీరు {{total}}లో {{score}}ని సరిగ్గా పొందారు. గుర్తుంచుకోండి, స్కాలర్‌షిప్‌ల కోసం నిజాయితీ ఉత్తమ విధానం!",
+  "lessonLabel": "పాఠం: స్కాలర్‌షిప్‌లు మరియు ఇతర అవకాశాల కోసం దరఖాస్తు చేసేటప్పుడు నిజాయితీ మరియు చిత్తశుద్ధి చాలా ముఖ్యమైనవి.",
+  "tryAgain": "మళ్లీ ప్రయత్నించండి",
+  "tipLabel": "చిట్కా: నమ్మకాన్ని పెంపొందించడానికి మీ స్కాలర్‌షిప్ దరఖాస్తులపై ఎల్లప్పుడూ ఖచ్చితమైన మరియు సత్యమైన సమాచారాన్ని అందించండి.",
+  "coinsLabel": "+{{count}} నాణేలు",
+  "questions": [
+    {
+      "id": 1,
+      "text": "అదనపు స్కాలర్‌షిప్ పొందడానికి విద్యార్థి అబద్ధం చెప్పాడు. సరైన చర్య ఏమిటి?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "డబ్బు సంపాదించడానికి అబద్ధం ఆడండి",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "truthful",
+          "text": "నిజాయితీగా ఉండండి",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "బహుశా, అవసరమైతే",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు స్కాలర్‌షిప్ దరఖాస్తుపై అబద్ధం చెబితే ఏమి జరుగుతుంది?",
+      "options": [
+        {
+          "id": "get-money",
+          "text": "మరింత డబ్బు పొందండి",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-opportunity",
+          "text": "అవకాశం మరియు నమ్మకాన్ని కోల్పోతారు",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "ఏమీ జరగదు",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "దరఖాస్తుల్లో నిజాయితీ ఎందుకు ముఖ్యం?",
+      "options": [
+        {
+          "id": "builds-trust",
+          "text": "విశ్వాసం మరియు సమగ్రతను పెంచుతుంది",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "not-important",
+          "text": "ముఖ్యం కాదు",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "waste-time",
+          "text": "సమయం వృధా చేస్తుంది",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు దరఖాస్తులో తప్పు చేస్తే ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "hide-mistake",
+          "text": "తప్పును దాచండి",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-it",
+          "text": "నిజాయితీగా సరిదిద్దండి",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "పట్టించుకోవద్దు",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "స్కాలర్‌షిప్ కోసం ఉత్తమ విధానం ఏమిటి?",
+      "options": [
+        {
+          "id": "honest-application",
+          "text": "నిజాయితీ మరియు పూర్తి అప్లికేషన్",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "exaggerate",
+          "text": "విజయాలను అతిశయోక్తి చేయండి",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "copy-others",
+          "text": "ఇతరుల నుండి కాపీ",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

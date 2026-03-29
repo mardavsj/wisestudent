@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "कोडे: गुंतवणूकीचे प्रकार",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "वैशिष्ट्यांसह गुंतवणूक जुळवा ({{current}}/{{total}} जुळले)",
+  "investmentsTitle": "गुंतवणुकीचे प्रकार",
+  "characteristicsTitle": "Characteristics",
+  "matchButton": "Match",
+  "selectInvestmentLabel": "गुंतवणुकीचा प्रकार निवडा",
+  "selectedInvestmentLabel": "निवडले: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "जुळले: {{current}}/{{total}}",
+  "resultSuccessHeader": "ग्रेट जॉब!",
+  "resultSuccessSubheader": "तुम्ही {{total}} पैकी {{score}} गुंतवणूक प्रकार त्यांच्या वैशिष्ट्यांसह योग्यरित्या जुळले!",
+  "resultSuccessLesson": "धडा: गुंतवणुकीची वैशिष्ट्ये समजून घेतल्याने माहितीपूर्ण आर्थिक निर्णय घेण्यास मदत होते!",
+  "resultTryAgainHeader": "सराव करत राहा!",
+  "resultTryAgainSubheader": "तुम्ही {{total}} गुंतवणूक प्रकारांपैकी {{score}} बरोबर जुळले.",
+  "resultTryAgainTip": "टीप: प्रत्येक गुंतवणूक प्रकाराची जोखीम पातळी आणि स्वरूपाचा विचार करा!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "investments": [
+    {
+      "id": 1,
+      "name": "मुदत ठेव",
+      "emoji": "🏦"
+    },
+    {
+      "id": 2,
+      "name": "Stocks",
+      "emoji": "📈"
+    },
+    {
+      "id": 3,
+      "name": "म्युच्युअल फंड",
+      "emoji": "📊"
+    },
+    {
+      "id": 4,
+      "name": "Bonds",
+      "emoji": "📜"
+    },
+    {
+      "id": 5,
+      "name": "रिअल इस्टेट",
+      "emoji": "🏠"
+    }
+  ],
+  "characteristics": [
+    {
+      "id": 6,
+      "name": "Safe",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 7,
+      "name": "Risky",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "Diversified",
+      "emoji": "🔄"
+    },
+    {
+      "id": 9,
+      "name": "Stable",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "Long-term",
+      "emoji": "⏳"
+    }
+  ]
+}

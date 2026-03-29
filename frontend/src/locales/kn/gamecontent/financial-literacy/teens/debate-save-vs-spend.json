@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ಚರ್ಚೆ: ಉಳಿಸಿ ಮತ್ತು ಖರ್ಚು ಮಾಡಿ",
+  "subtitleComplete": "ಚರ್ಚೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionLabel": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಹಣವನ್ನು ಉಳಿಸುವುದು ಅಥವಾ ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡುವುದು ಉತ್ತಮವೇ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಹಣವನ್ನು ಉಳಿಸಿ",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ವೇಸ್ಟ್ ಮಾಡಿ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಹದಿಹರೆಯದವರು ಈಗ ತಮ್ಮ ಹಣವನ್ನು ಉಳಿಸಲು ಅಥವಾ ಆನಂದಿಸಲು ಗಮನಹರಿಸಬೇಕೇ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ಉಳಿತಾಯದತ್ತ ಗಮನ ಹರಿಸಿ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ಈಗ ಆನಂದಿಸಿ",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ಅದರ ಬಗ್ಗೆ ಯೋಚಿಸಬೇಡ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ಬೋನಸ್ ಅಥವಾ ಹೆಚ್ಚುವರಿ ಹಣವನ್ನು ಪಡೆದಾಗ, ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ವೇಸ್ಟ್ ಮಾಡಿ",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಅದರಲ್ಲಿ ಹೆಚ್ಚಿನದನ್ನು ಉಳಿಸಿ",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ದುಬಾರಿ ಬ್ರಾಂಡೆಡ್ ವಸ್ತುಗಳನ್ನು ಖರೀದಿಸುವುದು ಉತ್ತಮವೇ ಅಥವಾ ಕೈಗೆಟುಕುವ ಗುಣಮಟ್ಟದ ವಸ್ತುಗಳನ್ನು ಖರೀದಿಸುವುದು ಉತ್ತಮವೇ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಬ್ರಾಂಡ್ ವಸ್ತುಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಬ್ರಾಂಡ್‌ಗಿಂತ ಗುಣಮಟ್ಟವನ್ನು ಆರಿಸಿ",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "cheap",
+          "text": "ಕಡಿಮೆ ಬೆಲೆಗೆ ಖರೀದಿಸಿ",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನೀವು ಪಡೆಯಲು ಸಾಧ್ಯವಾಗದ ವಸ್ತುಗಳನ್ನು ಖರೀದಿಸಲು ನೀವು ಕ್ರೆಡಿಟ್ ಕಾರ್ಡ್‌ಗಳನ್ನು ಬಳಸಬೇಕೇ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಹೌದು, ಕ್ರೆಡಿಟ್ ಬಳಸಿ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ಹಣವನ್ನು ಎರವಲು ಪಡೆಯಿರಿ",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಇಲ್ಲ, ಸಾಲ ತಪ್ಪಿಸಿ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

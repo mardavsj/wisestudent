@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਪ੍ਰੀਖਿਆ ਦੀ ਤਿਆਰੀ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹200 ਬਚੇ ਹਨ। ਟਿਊਸ਼ਨ ਲਈ ਭੁਗਤਾਨ ਕਰੋ ਜਾਂ ਸਨੈਕਸ ਖਰੀਦੋ?",
+      "options": [
+        {
+          "id": "tuition",
+          "text": "ਟਿਊਸ਼ਨ ਦਾ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "ਸਨੈਕਸ ਖਰੀਦੋ",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ਦੋਵਾਂ ਵਿਚਕਾਰ ਵੰਡ",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹300 ਹਨ। ਪ੍ਰੀਖਿਆ ਫੀਸ ਜਾਂ ਫਿਲਮ ਟਿਕਟ?",
+      "options": [
+        {
+          "id": "movie",
+          "text": "ਮੂਵੀ ਟਿਕਟ",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "fees",
+          "text": "ਪ੍ਰੀਖਿਆ ਫੀਸਾਂ ਦਾ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "ਸਭ ਕੁਝ ਸੰਭਾਲੋ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹400 ਹਨ। ਅਧਿਐਨ ਸਮੱਗਰੀ ਜਾਂ ਨਵੇਂ ਕੱਪੜੇ?",
+      "options": [
+        {
+          "id": "clothes",
+          "text": "ਕੱਪੜੇ ਖਰੀਦੋ",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ਦੋਵਾਂ ਵਿਚਕਾਰ ਵੰਡ",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "study",
+          "text": "ਅਧਿਐਨ ਸਮੱਗਰੀ ਖਰੀਦੋ",
+          "emoji": "📖",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹250 ਹਨ। ਟਿਊਸ਼ਨ ਜਾਂ ਪਾਰਟੀ ਸਨੈਕਸ?",
+      "options": [
+        {
+          "id": "tutoring",
+          "text": "ਟਿਊਸ਼ਨ ਲਈ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "ਪਾਰਟੀ ਸਨੈਕਸ",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਸਭ ਕੁਝ ਸੰਭਾਲੋ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹500 ਹਨ। ਪ੍ਰੀਖਿਆ ਦੀ ਤਿਆਰੀ ਦਾ ਕੋਰਸ ਜਾਂ ਗੇਮਿੰਗ ਕੰਸੋਲ?",
+      "options": [
+        {
+          "id": "console",
+          "text": "ਗੇਮਿੰਗ ਕੰਸੋਲ",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "course",
+          "text": "ਪ੍ਰੀਖਿਆ ਦੀ ਤਿਆਰੀ ਦਾ ਕੋਰਸ",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "ਦੋਵਾਂ ਵਿਚਕਾਰ ਵੰਡ",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+    "winMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ! ਤੁਸੀਂ ਸਿੱਖਿਆ ਦੇ ਖਰਚਿਆਂ ਨੂੰ ਤਰਜੀਹ ਦੇਣ ਦੇ ਮਹੱਤਵ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਟਿਊਸ਼ਨ, ਇਮਤਿਹਾਨ ਫੀਸਾਂ, ਅਤੇ ਅਧਿਐਨ ਸਮੱਗਰੀ ਜਿਵੇਂ ਕਿ ਸਨੈਕਸ ਅਤੇ ਮਨੋਰੰਜਨ ਵਰਗੀਆਂ ਲੋੜਾਂ ਨਾਲੋਂ ਸਿੱਖਿਆ ਦੇ ਖਰਚਿਆਂ ਨੂੰ ਹਮੇਸ਼ਾ ਤਰਜੀਹ ਦਿਓ!",
+    "loseEmoji": "😔",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ। ਸਿੱਖਿਆ ਦੇ ਖਰਚਿਆਂ ਨੂੰ ਲੋੜਾਂ ਨਾਲੋਂ ਤਰਜੀਹ ਦੇਣਾ ਯਾਦ ਰੱਖੋ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੁਝਾਅ: ਸਿੱਖਿਆ ਦੇ ਖਰਚੇ (ਟਿਊਸ਼ਨ, ਪ੍ਰੀਖਿਆ ਫੀਸ, ਅਧਿਐਨ ਸਮੱਗਰੀ) ਤੁਹਾਡੇ ਭਵਿੱਖ ਵਿੱਚ ਨਿਵੇਸ਼ ਹਨ ਅਤੇ ਲੋੜ ਤੋਂ ਪਹਿਲਾਂ ਆਉਣੇ ਚਾਹੀਦੇ ਹਨ।"
+  }
+}

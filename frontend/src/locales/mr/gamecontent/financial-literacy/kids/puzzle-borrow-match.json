@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "कोडे: सामना उधार घ्या",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "क्रियांसह आयटम जुळवा ({{matched}}/{{total}} जुळले)",
+  "itemsTitle": "उधार घेतलेल्या वस्तू",
+  "categoriesTitle": "Actions",
+  "selectedLabel": "निवडले: {{name}}",
+  "selectItem": "एक आयटम निवडा",
+  "matchButton": "Match",
+  "scoreLabel": "स्कोअर:",
+  "matchedLabel": "जुळले:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ग्रेट जॉब!",
+  "resultGreatDescription": "तुम्ही क्रियांसह {{total}} आयटमपैकी {{score}} बरोबर जुळले!",
+  "coinsLabel": "Coins",
+  "resultLesson": "धडा: उधार घेतलेल्या गोष्टी परत केल्या पाहिजेत किंवा जबाबदारीने हाताळल्या पाहिजेत.",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "सराव करत राहा!",
+  "resultKeepDescription": "तुम्ही {{total}} पैकी {{score}} आयटम बरोबर जुळले.",
+  "resultTip": "टीप: दैनंदिन जीवनात जबाबदार कर्ज कसे दिसते याचा विचार करा.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Notebook",
+      "emoji": "📓"
+    },
+    {
+      "id": 2,
+      "name": "बोर्ड गेम",
+      "emoji": "🎲"
+    },
+    {
+      "id": 3,
+      "name": "Eraser",
+      "emoji": "🩹"
+    },
+    {
+      "id": 4,
+      "name": "पॉकेट मनी",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "Lunchbox",
+      "emoji": "🥪"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "परत द्या",
+      "emoji": "↩️",
+      "description": "उधार घेतलेल्या वस्तू परत करा"
+    },
+    {
+      "id": 7,
+      "name": "मित्रासोबत शेअर करा",
+      "emoji": "🤝",
+      "description": "वापरताना प्रामाणिकपणे शेअर करा"
+    },
+    {
+      "id": 8,
+      "name": "पैसे परत करा",
+      "emoji": "💳",
+      "description": "उधार घेतलेले पैसे परत करा"
+    },
+    {
+      "id": 9,
+      "name": "धन्यवाद म्हणा",
+      "emoji": "🙏",
+      "description": "कर्जदाराबद्दल कृतज्ञता दाखवा"
+    },
+    {
+      "id": 10,
+      "name": "सावधपणे उधार द्या",
+      "emoji": "🛡️",
+      "description": "काळजीपूर्वक आणि नियमांसह हाताळा"
+    }
+  ]
+}

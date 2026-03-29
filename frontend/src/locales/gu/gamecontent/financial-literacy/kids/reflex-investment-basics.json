@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ ઇન્વેસ્ટમેન્ટ બેઝિક્સ",
+  "subtitlePlaying": "{{total}} માંથી {{current}} પ્રશ્ન: તમારા રોકાણની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા રોકાણની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "readyEmoji": "💰",
+  "readyTitle": "ઇન્વેસ્ટમેન્ટ બેઝિક્સ શીખવા તૈયાર છો?",
+  "readyDescription": "દરેક પ્રશ્ન માટે યોગ્ય રોકાણ ક્રિયા પસંદ કરો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "પ્રશ્ન:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "તે વધવા માટે તમારે પૈસા સાથે શું કરવું જોઈએ?",
+      "correctAnswer": "સાચવો અને વધો",
+      "options": [
+        {
+          "text": "બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "તેને છુપાવો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "તે વિશે ભૂલી જાઓ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "સાચવો અને વધો",
+          "isCorrect": true,
+          "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમારે પૈસાને સમજદારીથી કેવી રીતે હેન્ડલ કરવું જોઈએ?",
+      "correctAnswer": "સમજદારીપૂર્વક રોકાણ કરો",
+      "options": [
+        {
+          "text": "સમજદારીપૂર્વક રોકાણ કરો",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ઝડપથી ખર્ચ કરો",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "કચરો",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "તે ગુમાવો",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "સંપત્તિ બનાવવાની શ્રેષ્ઠ રીત કઈ છે?",
+      "correctAnswer": "સંપત્તિમાં વધારો",
+      "options": [
+        {
+          "text": "પૈસા ગુમાવો",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "સંપત્તિમાં વધારો",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "બધું ખર્ચો",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "બચતને અવગણો",
+          "isCorrect": false,
+          "emoji": "😑"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "તમારા પૈસા તમારા માટે કેવી રીતે કામ કરી શકે છે?",
+      "correctAnswer": "વ્યાજ કમાઓ",
+      "options": [
+        {
+          "text": "કચરો રોકડ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "તરત જ ખર્ચ કરો",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "વ્યાજ કમાઓ",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "તે વિશે ભૂલી જાઓ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "તમારા ભવિષ્યને સુરક્ષિત કરવામાં શું મદદ કરે છે?",
+      "correctAnswer": "બચત બનાવો",
+      "options": [
+        {
+          "text": "બચત બનાવો",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "હવે ખર્ચો",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "પૈસાનો બગાડ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ભવિષ્યની અવગણના કરો",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    }
+  ]
+}

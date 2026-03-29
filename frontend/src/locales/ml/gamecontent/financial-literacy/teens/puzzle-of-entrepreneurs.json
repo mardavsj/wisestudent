@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "സംരംഭകരുടെ പസിൽ",
+  "subtitleComplete": "പസിൽ പൂർത്തിയായി!",
+  "subtitleProgress": "ഫീൽഡുകളുമായി സംരഭകരെ പൊരുത്തപ്പെടുത്തുക ({{current}}/{{total}} പൊരുത്തപ്പെട്ടു)",
+  "itemsTitle": "Entrepreneurs",
+  "fieldsTitle": "Fields",
+  "matchButton": "Match",
+  "selectItemLabel": "ഒരു സംരംഭകനെ തിരഞ്ഞെടുക്കുക",
+  "selectedItemLabel": "തിരഞ്ഞെടുത്തത്: {{name}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "matchedLabel": "പൊരുത്തപ്പെട്ടു: {{current}}/{{total}}",
+  "resultSuccessHeader": "മികച്ച ജോലി!",
+  "resultSuccessSubheader": "നിങ്ങൾ {{score}}-ൽ {{total}} സംരംഭകരെയും അവരുടെ ഫീൽഡുകളുമായി ശരിയായി പൊരുത്തപ്പെടുത്തി!",
+  "resultSuccessLesson": "പാഠം: സംരംഭക മേഖലകൾ മനസ്സിലാക്കുന്നത് നവീകരണത്തെ പ്രചോദിപ്പിക്കാൻ സഹായിക്കുന്നു!",
+  "resultTryAgainHeader": "പരിശീലിക്കുന്നത് തുടരുക!",
+  "resultTryAgainSubheader": "{{total}} സംരംഭകരിൽ {{score}} എന്നതുമായി നിങ്ങൾ ശരിയായി പൊരുത്തപ്പെട്ടു.",
+  "resultTryAgainTip": "നുറുങ്ങ്: ഓരോ സംരംഭകനും ഏത് മേഖലയിലാണ് കൂടുതൽ അറിയപ്പെടുന്നതെന്ന് ചിന്തിക്കുക!",
+  "coinsEarned": "+{{coins}} നാണയങ്ങൾ",
+  "items": [
+    {
+      "id": 1,
+      "name": "രത്തൻ ടാറ്റ",
+      "emoji": "👔"
+    },
+    {
+      "id": 2,
+      "name": "എലോൺ മസ്‌ക്",
+      "emoji": "🚀"
+    },
+    {
+      "id": 3,
+      "name": "നാരായണ മൂർത്തി",
+      "emoji": "💻"
+    },
+    {
+      "id": 4,
+      "name": "കിരൺ മജുംദാർ",
+      "emoji": "🔬"
+    },
+    {
+      "id": 5,
+      "name": "ഫാൽഗുനി നായർ",
+      "emoji": "💄"
+    }
+  ],
+  "fields": [
+    {
+      "id": 6,
+      "name": "Industry",
+      "emoji": "🏭"
+    },
+    {
+      "id": 7,
+      "name": "Innovation",
+      "emoji": "💡"
+    },
+    {
+      "id": 8,
+      "name": "IT",
+      "emoji": "💻"
+    },
+    {
+      "id": 9,
+      "name": "Biotech",
+      "emoji": "🧬"
+    },
+    {
+      "id": 10,
+      "name": "E-commerce",
+      "emoji": "🛒"
+    }
+  ]
+}

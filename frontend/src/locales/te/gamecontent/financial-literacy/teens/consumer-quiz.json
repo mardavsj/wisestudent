@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "వినియోగదారు క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "దుకాణదారు మోసం చేస్తే, మీరు ఎక్కడ ఫిర్యాదు చేయవచ్చు?",
+      "options": [
+        {
+          "id": "court",
+          "text": "వినియోగదారుల కోర్టు",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "Playground",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "Nowhere",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "వినియోగదారుల హక్కులు ఏమిటి?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "హక్కులు లేవు",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "మోసం నుండి రక్షణ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ఖర్చు చేసే హక్కు",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీరు లోపభూయిష్ట ఉత్పత్తిని పొందినట్లయితే మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "దానిని అంగీకరించు",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "పట్టించుకోవద్దు",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "విక్రేతకు ఫిర్యాదు చేయండి",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "సమాచార హక్కు ఏది?",
+      "options": [
+        {
+          "id": "know",
+          "text": "ఉత్పత్తి వివరాలను తెలుసుకోండి",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "సమాచారాన్ని దాచు",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "అబద్ధాలను అంగీకరించండి",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీరు వినియోగదారు ఫిర్యాదును ఎక్కడ ఫైల్ చేయవచ్చు?",
+      "options": [
+        {
+          "id": "police",
+          "text": "పోలీస్ స్టేషన్",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "వినియోగదారుల కోర్టు",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "School",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "క్విజ్ పూర్తయింది!",
+    "winMessage": "మీరు {{total}}లో {{score}}ని పొందారు! మీరు వినియోగదారుల హక్కులను అర్థం చేసుకున్నారు!",
+    "coinsEarned": "+{{score}} నాణేలు",
+    "lesson": "పాఠం: వినియోగదారులకు హక్కులున్నాయి! మీరు మోసపోయినట్లయితే వినియోగదారు కోర్టుకు ఫిర్యాదు చేయవచ్చు, సురక్షితమైన ఉత్పత్తులను డిమాండ్ చేయవచ్చు మరియు నిజాయితీ సమాచారాన్ని పొందవచ్చు!",
+    "loseEmoji": "💪",
+    "loseTitle": "నేర్చుకుంటూ ఉండండి!",
+    "loseMessage": "మీరు {{total}}లో {{score}}ని సరిగ్గా పొందారు. గుర్తుంచుకోండి, దుకాణదారుడు మోసం చేస్తే మీరు ఫిర్యాదు చేసే చోట వినియోగదారు కోర్టు!",
+    "tryAgain": "మళ్లీ ప్రయత్నించండి",
+    "tip": "చిట్కా: దుకాణదారుడు మిమ్మల్ని మోసం చేస్తే, మీరు ఆట స్థలంలో కాకుండా వినియోగదారుల కోర్టులో ఫిర్యాదు చేయవచ్చు! వినియోగదారులకు హక్కులున్నాయి!"
+  }
+}

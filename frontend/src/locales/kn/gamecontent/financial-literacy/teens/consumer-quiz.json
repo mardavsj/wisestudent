@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ಗ್ರಾಹಕ ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionLabel": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಅಂಗಡಿಯವನು ಮೋಸ ಮಾಡಿದರೆ, ನೀವು ಎಲ್ಲಿ ದೂರು ನೀಡಬಹುದು?",
+      "options": [
+        {
+          "id": "court",
+          "text": "ಗ್ರಾಹಕ ನ್ಯಾಯಾಲಯ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "Playground",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "Nowhere",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಗ್ರಾಹಕರ ಹಕ್ಕುಗಳು ಯಾವುವು?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "ಹಕ್ಕುಗಳಿಲ್ಲ",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "ವಂಚನೆಯಿಂದ ರಕ್ಷಣೆ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ಖರ್ಚು ಮಾಡುವ ಹಕ್ಕು",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ದೋಷಯುಕ್ತ ಉತ್ಪನ್ನವನ್ನು ಪಡೆದರೆ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "ಅದನ್ನು ಸ್ವೀಕರಿಸಿ",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ಅದನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "ಮಾರಾಟಗಾರನಿಗೆ ದೂರು ನೀಡಿ",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಮಾಹಿತಿ ಹಕ್ಕು ಯಾವುದು?",
+      "options": [
+        {
+          "id": "know",
+          "text": "ಉತ್ಪನ್ನದ ವಿವರಗಳನ್ನು ತಿಳಿಯಿರಿ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ಮಾಹಿತಿಯನ್ನು ಮರೆಮಾಡಿ",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "ಸುಳ್ಳನ್ನು ಒಪ್ಪಿಕೊಳ್ಳಿ",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಗ್ರಾಹಕರ ದೂರನ್ನು ನೀವು ಎಲ್ಲಿ ಸಲ್ಲಿಸಬಹುದು?",
+      "options": [
+        {
+          "id": "police",
+          "text": "ಪೊಲೀಸ್ ಠಾಣೆ",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "ಗ್ರಾಹಕ ನ್ಯಾಯಾಲಯ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "School",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+    "winMessage": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ! ನೀವು ಗ್ರಾಹಕರ ಹಕ್ಕುಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಂಡಿದ್ದೀರಿ!",
+    "coinsEarned": "+{{score}} ನಾಣ್ಯಗಳು",
+    "lesson": "ಪಾಠ: ಗ್ರಾಹಕರಿಗೆ ಹಕ್ಕುಗಳಿವೆ! ಮೋಸ ಹೋದರೆ ನೀವು ಗ್ರಾಹಕ ನ್ಯಾಯಾಲಯಕ್ಕೆ ದೂರು ನೀಡಬಹುದು, ಸುರಕ್ಷಿತ ಉತ್ಪನ್ನಗಳಿಗೆ ಬೇಡಿಕೆ ಸಲ್ಲಿಸಬಹುದು ಮತ್ತು ಪ್ರಾಮಾಣಿಕ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯಬಹುದು!",
+    "loseEmoji": "💪",
+    "loseTitle": "ಕಲಿಯುತ್ತಲೇ ಇರಿ!",
+    "loseMessage": "ನೀವು {{total}} ರಲ್ಲಿ {{score}} ಅನ್ನು ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ. ನೆನಪಿಡಿ, ಅಂಗಡಿಯವನು ಮೋಸ ಮಾಡಿದರೆ ನೀವು ದೂರು ನೀಡುವ ಗ್ರಾಹಕ ನ್ಯಾಯಾಲಯ!",
+    "tryAgain": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+    "tip": "ಸಲಹೆ: ಅಂಗಡಿಯವನು ನಿಮಗೆ ಮೋಸ ಮಾಡಿದರೆ, ನೀವು ಆಟದ ಮೈದಾನದಲ್ಲಿ ಅಲ್ಲ, ಗ್ರಾಹಕರ ನ್ಯಾಯಾಲಯದಲ್ಲಿ ದೂರು ಸಲ್ಲಿಸಬಹುದು! ಗ್ರಾಹಕರಿಗೆ ಹಕ್ಕುಗಳಿವೆ!"
+  }
+}

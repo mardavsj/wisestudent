@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "بینک کے دورے کی کہانی",
+  "subtitleComplete": "مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "والدین آپ کو بینک لے جاتے ہیں۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "watch",
+          "text": "خاموشی سے دیکھیں اور سیکھیں۔",
+          "emoji": "👀",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "ادھر ادھر بھاگو اور کھیلو",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "touch",
+          "text": "ہر چیز کو چھوئے۔",
+          "emoji": "👆",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "بینک کا عملہ آپ کو سلام کرتا ہے۔ جواب کیسے دیا جائے؟",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "انہیں مکمل طور پر نظر انداز کریں۔",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "polite",
+          "text": "شائستہ اور قابل احترام بنیں۔",
+          "emoji": "🙏",
+          "isCorrect": true
+        },
+        {
+          "id": "rude",
+          "text": "ان کے ساتھ بدتمیزی کرو",
+          "emoji": "😠",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "والدین اے ٹی ایم استعمال کرتے ہیں۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "privacy",
+          "text": "پیچھے ہٹیں اور رازداری دیں۔",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "watch",
+          "text": "PIN کو قریب سے دیکھیں",
+          "emoji": "👁️",
+          "isCorrect": false
+        },
+        {
+          "id": "buttons",
+          "text": "بے ترتیب بٹن دبائیں۔",
+          "emoji": "🔘",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "سیکیورٹی گارڈ بیگ چیک کر رہا ہے۔ آپ کا ردعمل؟",
+      "options": [
+        {
+          "id": "angry",
+          "text": "گارڈ پر غصہ آنا۔",
+          "emoji": "😠",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "چیک سے انکار",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "understand",
+          "text": "سمجھیں کہ یہ حفاظت کے لیے ہے۔",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "بینک میں لمبی قطار۔ بہترین کیا ہے؟",
+      "options": [
+        {
+          "id": "push",
+          "text": "پہلے جانے کے لیے دبائیں",
+          "emoji": "👊",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "صبر سے لائن میں انتظار کریں۔",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "complain",
+          "text": "اونچی آواز میں شکایت کریں۔",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

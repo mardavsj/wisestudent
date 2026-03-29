@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "अर्थसंकल्पावर प्रश्नमंजुषा",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "iconKey": "calculator",
+      "text": "बजेट म्हणजे काय?",
+      "options": [
+        {
+          "id": "list",
+          "text": "खरेदीची यादी",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "खर्चाची योजना",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "फुकट पैसे",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "iconKey": "target",
+      "text": "बजेट का बनवायचे?",
+      "options": [
+        {
+          "id": "track",
+          "text": "खर्चाचा मागोवा घ्या आणि बचत करा",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "सर्व पैसे जलद खर्च करा",
+          "emoji": "💥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fun",
+          "text": "फक्त मनोरंजनासाठी",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "iconKey": "trendingUp",
+      "text": "100 रुपये कमवा, 120 रुपये खर्च करा. काय होते?",
+      "options": [
+        {
+          "id": "save",
+          "text": "तुम्ही 20 रुपये वाचवाल",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "prize",
+          "text": "तुम्ही बक्षीस जिंकता",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "तुम्ही कर्जात जा",
+          "emoji": "⚠️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "iconKey": "checkCircle",
+      "text": "बजेटची चांगली सवय कोणती आहे?",
+      "options": [
+        {
+          "id": "guess",
+          "text": "अंदाज लावा आणि यादृच्छिकपणे खर्च करा",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "खर्च आणि योजनांची यादी करा",
+          "emoji": "📝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "खर्चाकडे दुर्लक्ष करा",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "iconKey": "piggyBank",
+      "text": "तुम्ही बजेट फॉलो केल्यास, तुम्ही हे करू शकता...",
+      "options": [
+        {
+          "id": "goals",
+          "text": "तणावमुक्त ध्येय साध्य करा",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "unnecessary",
+          "text": "अनावश्यक वस्तू खरेदी करा",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "पैशांचा मागोवा गमावा",
+          "emoji": "🌀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

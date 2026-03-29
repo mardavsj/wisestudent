@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "फेक कॉल स्टोरी",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कॉलर तुमच्या बँकेचे तपशील विचारतो. आपण काय करावे?",
+      "options": [
+        {
+          "id": "share",
+          "text": "तपशील शेअर करा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "कदाचित, ते अधिकृत वाटत असल्यास",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "नकार द्या, कधीही शेअर करू नका",
+          "emoji": "🚫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बनावट कॉलचे लक्षण काय आहे?",
+      "options": [
+        {
+          "id": "urgent",
+          "text": "कृती करण्यासाठी त्वरित दबाव",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "polite",
+          "text": "विनम्र आणि संयम",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "normal",
+          "text": "सामान्य संभाषण",
+          "emoji": "💬",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "कोणी OTP मागितल्यास तुम्ही काय करावे?",
+      "options": [
+        {
+          "id": "give",
+          "text": "OTP द्या",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "OTP कधीही शेअर करू नका",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe2",
+          "text": "त्यांनी छान विचारल्यास शेअर करा",
+          "emoji": "🤷",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही बँक कॉलची पडताळणी कशी करू शकता?",
+      "options": [
+        {
+          "id": "call-back",
+          "text": "थेट बँकेला कॉल करा",
+          "emoji": "📞",
+          "isCorrect": true
+        },
+        {
+          "id": "trust",
+          "text": "कॉलरवर विश्वास ठेवा",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-all",
+          "text": "सर्व कॉल्सकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "संशयास्पद कॉलला सर्वात सुरक्षित प्रतिसाद कोणता आहे?",
+      "options": [
+        {
+          "id": "engage",
+          "text": "बोलत राहा",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "share-info",
+          "text": "काही माहिती शेअर करा",
+          "emoji": "📝",
+          "isCorrect": false
+        },
+        {
+          "id": "hang-up",
+          "text": "थांबा आणि अहवाल द्या",
+          "emoji": "📞",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ग्रेट जॉब!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत! संशयास्पद कॉल्स कसे हाताळायचे हे तुम्हाला माहीत आहे!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: OTP किंवा बँक तपशील यासारखी संवेदनशील माहिती फोनवर कधीही शेअर करू नका. नेहमी हँग अप करा आणि संशयास्पद असल्यास अधिकृत बँक नंबरवर कॉल करा.",
+    "loseEmoji": "😔",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत. फोन कॉलमध्ये सावध राहण्याचे लक्षात ठेवा!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: स्कॅम कॉलर अनेकदा कृत्रिम निकड निर्माण करतात. OTP किंवा बँक तपशील कधीही शेअर करू नका. थांबा आणि थेट तुमच्या बँकेशी संपर्क साधा."
+  }
+}

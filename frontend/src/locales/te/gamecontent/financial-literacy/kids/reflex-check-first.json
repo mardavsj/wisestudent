@@ -1,1 +1,167 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్: ముందుగా తనిఖీ చేయండి",
+  "subtitleComplete": "గేమ్ పూర్తి!",
+  "roundLabel": "రౌండ్ {{current}}/{{total}}",
+  "timeUp": "సమయం ముగిసింది!",
+  "readyEmoji": "🔍",
+  "readyTitle": "సిద్ధంగా ఉండండి!",
+  "readyDescription": "కొనుగోలు చేయడానికి ముందు తనిఖీ చేయడం గురించి ప్రశ్నలకు సమాధానం ఇవ్వండి!",
+  "readyTimeInfo": "మీకు ప్రతి ప్రశ్నకు {{time}} సెకన్లు ఉన్నాయి.",
+  "readyQuestionInfo": "మీకు {{time}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "gameRoundLabel": "రౌండ్:",
+  "gameTimeLabel": "సమయం:",
+  "gameScoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ఏదైనా కొనడానికి ముందు మీరు ఏమి చేయాలి?",
+      "correctAnswer": "ధర అడగండి",
+      "options": [
+        {
+          "text": "ధర అడగండి",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "గుడ్డిగా నమ్మండి",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "వెంటనే కొనండి",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ఖర్చును విస్మరించండి",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "కొనుగోలు చేయడానికి ముందు మీరు ఏమి తనిఖీ చేయాలి?",
+      "correctAnswer": "ధరను తనిఖీ చేయండి",
+      "options": [
+        {
+          "text": "ఇప్పుడే కొనండి",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "తనిఖీని దాటవేయి",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "ధరను తనిఖీ చేయండి",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "ధరను అంచనా వేయండి",
+          "isCorrect": false,
+          "emoji": "🎲"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "షాపింగ్ చేయడానికి స్మార్ట్ మార్గం ఏమిటి?",
+      "correctAnswer": "ధరలను సరిపోల్చండి",
+      "options": [
+        {
+          "text": "వేగంగా చెల్లించండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ధరలను సరిపోల్చండి",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "మొదటి స్టోర్ కొనండి",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "పోల్చవద్దు",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "కొనుగోలు చేయడానికి ముందు మీరు ఏమి ధృవీకరించాలి?",
+      "correctAnswer": "నాణ్యతను ధృవీకరించండి",
+      "options": [
+        {
+          "text": "నాణ్యతను ధృవీకరించండి",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "తనిఖీ లేకుండా కొనండి",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "విక్రేతను మాత్రమే విశ్వసించండి",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ఆన్‌లైన్‌లో కొనుగోలు చేసే ముందు మీరు ఏమి చేయాలి?",
+      "correctAnswer": "సమీక్షలను చదవండి",
+      "options": [
+        {
+          "text": "Rush",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "సమీక్షలను దాటవేయి",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "తక్షణమే కొనండి",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "సమీక్షలను చదవండి",
+          "isCorrect": true,
+          "emoji": "⭐"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "స్మార్ట్ షాపర్!",
+    "description": "అద్భుతం! మీరు {{score}}/{{total}} సరైనది! కొనుగోలు చేయడానికి ముందు మీరు ఎల్లప్పుడూ తనిఖీ చేయండి!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "మంచి అలవాట్లు!",
+    "description": "బాగా చేసారు! మీరు {{score}}/{{total}} స్కోర్ చేసారు! స్మార్ట్ షాపింగ్ అలవాట్లను ఆచరిస్తూ ఉండండి!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "సాధన కొనసాగించండి!",
+    "description": "మీరు {{score}}/{{total}} స్కోర్ చేసారు. కొనుగోలు చేయడానికి ముందు ఎల్లప్పుడూ తనిఖీ చేయడం మరియు సరిపోల్చడం గుర్తుంచుకోండి!"
+  }
+}

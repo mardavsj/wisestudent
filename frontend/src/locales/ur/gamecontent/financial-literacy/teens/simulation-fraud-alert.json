@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "نقلی: فراڈ الرٹ",
+  "subtitleComplete": "تخروپن مکمل!",
+  "subtitleProgress": "منظر نامہ {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "مشکوک ایپ کی درخواست",
+      "description": "ایک نئی ایپ 'اکاؤنٹ کی تصدیق' کے لیے آپ کے بینک کا OTP مانگتی ہے۔ والٹ ₹500۔ ہوشیار کیا ہے؟",
+      "options": [
+        {
+          "id": "share-otp",
+          "text": "OTP فوراً شیئر کریں۔",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "check-forum",
+          "text": "فیصلہ کرنے سے پہلے ایپ کے جائزے اور فورم چیک کریں۔",
+          "emoji": "🧐",
+          "isCorrect": false
+        },
+        {
+          "id": "install-anyway",
+          "text": "انسٹال کریں اور دیکھیں کہ آیا یہ کام کرتا ہے۔",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-app",
+          "text": "ایپ کو نظر انداز کریں اور اسے ان انسٹال کریں۔",
+          "emoji": "📴",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "جعلی اسکالرشپ ای میل",
+      "description": "ای میل کا دعویٰ 'اسکالرشپ ₹50,000، رجسٹر کرنے کے لیے کلک کریں۔' کیا محفوظ ہے؟",
+      "options": [
+        {
+          "id": "click-link",
+          "text": "جلدی رجسٹر کرنے کے لیے لنک پر کلک کریں۔",
+          "emoji": "🔗",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-university",
+          "text": "سرکاری یونیورسٹی سائٹ کے ساتھ ای میل کی تصدیق کریں۔",
+          "emoji": "🏫",
+          "isCorrect": true
+        },
+        {
+          "id": "share-email",
+          "text": "دوستوں کے ساتھ ای میل کا اشتراک کریں۔",
+          "emoji": "📤",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-and-forget",
+          "text": "بغیر جانچ کے اسے مکمل طور پر نظر انداز کریں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "جعلی فرینڈ ریکوئسٹ",
+      "description": "کوئی نامعلوم شخص 'مفت گیم پوائنٹس' کی پیشکش کرتے ہوئے دوستی کی درخواست بھیجتا ہے۔ محفوظ انتخاب؟",
+      "options": [
+        {
+          "id": "accept",
+          "text": "پوائنٹس حاصل کرنے کے لیے قبول کریں۔",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "share-data",
+          "text": "پوائنٹس کے لیے اپنے گیم کی اسناد بھیجیں۔",
+          "emoji": "🔑",
+          "isCorrect": false
+        },
+        {
+          "id": "block-report",
+          "text": "اکاؤنٹ کو بلاک کریں اور رپورٹ کریں۔",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-only",
+          "text": "رپورٹ کیے بغیر نظر انداز کریں۔",
+          "emoji": "🙅",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "آن لائن اسٹور اسکینڈل",
+      "description": "ویب سائٹ 90% ڈسکاؤنٹ پر فون پیش کرتی ہے۔ صرف UPI کے ذریعے ادائیگی۔ نوعمر فیصلہ؟",
+      "options": [
+        {
+          "id": "research-store",
+          "text": "کسی بھی ادائیگی سے پہلے ویب سائٹ کی قانونی حیثیت اور جائزے چیک کریں۔",
+          "emoji": "🧐",
+          "isCorrect": true
+        },
+        {
+          "id": "pay-now",
+          "text": "فوری طور پر ادائیگی کریں، ڈیل بہت اچھی ہے جس سے محروم ہوں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-money",
+          "text": "تیزی سے خریدنے کے لیے اضافی قرض لیں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "share-link",
+          "text": "دوستوں کے ساتھ ڈیل شیئر کریں۔",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "سوشل میڈیا انویسٹمنٹ اسکینڈل",
+      "description": "Influencer ایک ہفتے میں 200% واپسی کا وعدہ کرتا ہے، Paytm کے ذریعے ₹500 مانگتا ہے۔ کیا صحیح ہے؟",
+      "options": [
+        {
+          "id": "invest-quick",
+          "text": "جلدی پیسے بھیجیں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "consult-unknown",
+          "text": "نامعلوم دوست سے تصدیق کرنے کو کہیں۔",
+          "emoji": "👤",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-source",
+          "text": "سرمایہ کاری سے پہلے جائز، تحقیق کی تصدیق کریں۔",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "share-link",
+          "text": "دوسروں کو لنک فارورڈ کریں۔",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് സ്മാർട്ട് പിക്ക്",
+  "subtitlePlaying": "റൗണ്ട് {{current}}/{{total}}: നിങ്ങളുടെ സ്‌മാർട്ട് പിക്ക് പരിജ്ഞാനം പരിശോധിക്കുക!",
+  "subtitleReady": "നിങ്ങളുടെ സ്മാർട്ട് പിക്ക് അറിവ് പരീക്ഷിക്കുക!",
+  "readyEmoji": "🧠",
+  "readyTitle": "നിങ്ങളുടെ സ്മാർട്ട് പിക്ക് കഴിവുകൾ പരീക്ഷിക്കാൻ തയ്യാറാണോ?",
+  "readyDescription": "സ്‌മാർട്ട് ചോയ്‌സുകളെയും തീരുമാനമെടുക്കുന്നതിനെയും കുറിച്ചുള്ള ചോദ്യങ്ങൾക്ക് ഉത്തരം നൽകുക.",
+  "readyInfo": "നിങ്ങൾക്ക് {{seconds}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "റൗണ്ട്:",
+  "timeLabel": "സമയം:",
+  "scoreLabel": "സ്കോർ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ആരോഗ്യം നിലനിർത്തുന്നതിനുള്ള മികച്ച തിരഞ്ഞെടുപ്പ് എന്താണ്?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍎"
+        },
+        {
+          "text": "അധിക ഐസ് ക്രീം",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "വീഡിയോ ഗെയിം",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ഫാൻസി ടോയ്",
+          "isCorrect": false,
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "എന്താണ് പഠിക്കാൻ തിരഞ്ഞെടുക്കേണ്ടത്?",
+      "correctAnswer": "സ്കൂൾ സാധനങ്ങൾ",
+      "options": [
+        {
+          "text": "പുതിയ ഗെയിം",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "സ്കൂൾ സാധനങ്ങൾ",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "അടിപൊളി ഗാഡ്ജെറ്റ്",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ദൈനംദിന ജീവിതത്തിന് ആവശ്യമായത് എന്താണ്?",
+      "correctAnswer": "Clothes",
+      "options": [
+        {
+          "text": "ഫാൻസി ടോയ്",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Clothes",
+          "isCorrect": true,
+          "emoji": "👕"
+        },
+        {
+          "text": "ഐസ്ക്രീം",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ആക്ഷൻ ചിത്രം",
+          "isCorrect": false,
+          "emoji": "🤖"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "അറിവ് നേടാൻ നിങ്ങളെ സഹായിക്കുന്നതെന്താണ്?",
+      "correctAnswer": "Books",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "വീഡിയോ ഗെയിം",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "പസിൽ ഗെയിം",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "Books",
+          "isCorrect": true,
+          "emoji": "📖"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "സ്കൂളിൽ എത്താൻ എന്താണ് വേണ്ടത്?",
+      "correctAnswer": "ബസ് ടിക്കറ്റ്",
+      "options": [
+        {
+          "text": "അടിപൊളി ഗാഡ്ജെറ്റ്",
+          "isCorrect": false,
+          "emoji": "⌚"
+        },
+        {
+          "text": "മ്യൂസിക് പ്ലെയർ",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "ബസ് ടിക്കറ്റ്",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "സ്മാർട്ട് വാച്ച്",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

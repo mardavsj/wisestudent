@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ধাঁধা: ভোক্তা অধিকার",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "অর্থের সাথে মিলের অধিকার ({{current}}/{{total}} মিলে গেছে)",
+  "rightsTitle": "ভোক্তা অধিকার",
+  "meaningsTitle": "Meanings",
+  "matchButton": "Match",
+  "selectRightLabel": "একটি ভোক্তা অধিকার নির্বাচন করুন",
+  "selectedRightLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি সঠিকভাবে {{score}} এর মধ্যে {{total}} ভোক্তা অধিকার তাদের অর্থের সাথে মিলেছেন!",
+  "resultSuccessLesson": "পাঠ: ভোক্তা অধিকার বোঝা আপনাকে অন্যায্য অভ্যাস থেকে রক্ষা করে!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি {{total}} ভোক্তা অধিকারের মধ্যে {{score}} সঠিকভাবে মেলেছেন।",
+  "resultTryAgainTip": "টিপ: প্রতিটি ভোক্তার অধিকার কি সুরক্ষা প্রদান করে তা নিয়ে ভাবুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "rights": [
+    {
+      "id": 1,
+      "name": "নিরাপত্তার অধিকার",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 2,
+      "name": "তথ্যের অধিকার",
+      "emoji": "📋"
+    },
+    {
+      "id": 3,
+      "name": "বেছে নেওয়ার অধিকার",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "প্রতিকারের অধিকার",
+      "emoji": "⚖️"
+    },
+    {
+      "id": 5,
+      "name": "ভোক্তা শিক্ষার অধিকার",
+      "emoji": "📚"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "নিরাপদ পণ্য",
+      "emoji": "🛒"
+    },
+    {
+      "id": 7,
+      "name": "সত্য তথ্য",
+      "emoji": "📝"
+    },
+    {
+      "id": 8,
+      "name": "পছন্দের বৈচিত্র্য",
+      "emoji": "🛒"
+    },
+    {
+      "id": 9,
+      "name": "সমস্যার প্রতিকার",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "সচেতনতা বিল্ডিং",
+      "emoji": "🎓"
+    }
+  ]
+}

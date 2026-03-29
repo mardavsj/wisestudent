@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "والدین کی مدد کرنے کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کے والدین کو گروسری کے لیے ₹50 درکار ہیں۔ آپ کے پاس ₹20 ہیں۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "give",
+          "text": "مدد کے لیے اپنا ₹20 دیں۔",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "اسے کینڈی کے لیے رکھیں",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ان کی درخواست کو نظر انداز کریں۔",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ گھر بیٹھے ₹10 کماتے ہیں۔ کیا آپ کو اسے بچانا چاہئے؟",
+      "options": [
+        {
+          "id": "toys",
+          "text": "اسے کھلونوں پر خرچ کریں۔",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ہاں، بچت میں اضافہ کریں۔",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "دے دو",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کے والدین آپ سے 15 روپے میں دودھ خریدنے کو کہتے ہیں۔ آپ کے پاس ₹20 ہیں۔ آگے کیا ہے؟",
+      "options": [
+        {
+          "id": "change",
+          "text": "دودھ خریدیں اور تبدیلی واپس کریں۔",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "تبدیلی کے ساتھ کینڈی خریدیں۔",
+          "emoji": "🍭",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "keep",
+          "text": "تمام ₹20 رکھیں",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کو 10 روپے ملتے ہیں۔ ماں باپ کہتے ہیں ایمانداری سے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "snacks",
+          "text": "اسے نمکین پر خرچ کریں۔",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "اسے اپنی جیب میں چھپائیں۔",
+          "emoji": "🧥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "find",
+          "text": "مالک کو تلاش کرنے کی کوشش کریں۔",
+          "emoji": "🕵️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "والدین کی پیسے سے مدد کرنا آپ کو محسوس کرتا ہے...",
+      "options": [
+        {
+          "id": "proud",
+          "text": "قابل فخر اور ذمہ دار",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "کم پیسوں کا غم",
+          "emoji": "😔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "کچھ خاص نہیں۔",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

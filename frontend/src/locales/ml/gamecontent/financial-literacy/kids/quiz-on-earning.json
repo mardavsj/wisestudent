@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "വരുമാനത്തെക്കുറിച്ചുള്ള ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "പണം സമ്പാദിക്കാനുള്ള ശരിയായ മാർഗം ഏതാണ്?",
+      "options": [
+        {
+          "id": "working",
+          "text": "ജോലി ചെയ്തുകൊണ്ട്",
+          "emoji": "💼",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wasting",
+          "text": "പാഴാക്കി",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sleeping",
+          "text": "ഉറങ്ങുന്നത് കൊണ്ട്",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ഒരു കർഷകൻ എങ്ങനെ പണം സമ്പാദിക്കുന്നു?",
+      "options": [
+        {
+          "id": "games",
+          "text": "ഗെയിമുകൾ കളിക്കുന്നു",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "crops",
+          "text": "വിളകൾ വിൽക്കുന്നു",
+          "emoji": "🌾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "ഭക്ഷണം കൊടുക്കുന്നു",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ഏത് ജോലിയാണ് പഠിപ്പിക്കുന്നതിലൂടെ പണം സമ്പാദിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "toymaker",
+          "text": "കളിപ്പാട്ട നിർമ്മാതാവ്",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "മിഠായി വിൽപ്പനക്കാരൻ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "teacher",
+          "text": "Teacher",
+          "emoji": "👨‍🏫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "കുട്ടികൾക്ക് എങ്ങനെ പണം സമ്പാദിക്കാം?",
+      "options": [
+        {
+          "id": "chores",
+          "text": "ജോലികൾ ചെയ്യുന്നു",
+          "emoji": "🧹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "tv",
+          "text": "ടിവി കാണൽ",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ലഘുഭക്ഷണം കഴിക്കുന്നു",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "പണം സമ്പാദിക്കുന്നത് പ്രധാനമായിരിക്കുന്നത് എന്തുകൊണ്ട്?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "നിങ്ങൾക്ക് സൗജന്യ കളിപ്പാട്ടങ്ങൾ ലഭിക്കും",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "needs",
+          "text": "നിങ്ങളുടെ ആവശ്യങ്ങൾ നിറവേറ്റുന്നു",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sleep",
+          "text": "നിങ്ങളെ നന്നായി ഉറങ്ങുന്നു",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

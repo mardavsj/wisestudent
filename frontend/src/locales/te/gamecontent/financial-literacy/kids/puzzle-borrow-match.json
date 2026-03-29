@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "పజిల్: బారో మ్యాచ్",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "చర్యలతో అంశాలను సరిపోల్చండి ({{matched}}/{{total}} సరిపోలింది)",
+  "itemsTitle": "అరువు తెచ్చుకున్న వస్తువులు",
+  "categoriesTitle": "Actions",
+  "selectedLabel": "ఎంచుకోబడింది: {{name}}",
+  "selectItem": "ఒక అంశాన్ని ఎంచుకోండి",
+  "matchButton": "Match",
+  "scoreLabel": "స్కోర్:",
+  "matchedLabel": "సరిపోలినది:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "గ్రేట్ జాబ్!",
+  "resultGreatDescription": "మీరు చర్యలతో {{total}} అంశాలలో {{score}}ని సరిగ్గా సరిపోల్చారు!",
+  "coinsLabel": "Coins",
+  "resultLesson": "పాఠం: అరువు తెచ్చుకున్న వస్తువులను తిరిగి ఇవ్వాలి లేదా బాధ్యతాయుతంగా నిర్వహించాలి.",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "సాధన కొనసాగించండి!",
+  "resultKeepDescription": "మీరు {{total}} అంశాలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTip": "చిట్కా: రోజువారీ జీవితంలో బాధ్యతాయుతమైన రుణం ఎలా ఉంటుందో ఆలోచించండి.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Notebook",
+      "emoji": "📓"
+    },
+    {
+      "id": 2,
+      "name": "బోర్డు గేమ్",
+      "emoji": "🎲"
+    },
+    {
+      "id": 3,
+      "name": "Eraser",
+      "emoji": "🩹"
+    },
+    {
+      "id": 4,
+      "name": "పాకెట్ మనీ",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "Lunchbox",
+      "emoji": "🥪"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "తిరిగి ఇవ్వండి",
+      "emoji": "↩️",
+      "description": "అరువు తెచ్చుకున్న వస్తువులను తిరిగి ఇవ్వండి"
+    },
+    {
+      "id": 7,
+      "name": "స్నేహితునితో పంచుకోండి",
+      "emoji": "🤝",
+      "description": "ఉపయోగిస్తున్నప్పుడు సరిగ్గా భాగస్వామ్యం చేయండి"
+    },
+    {
+      "id": 8,
+      "name": "డబ్బు తిరిగి చెల్లించండి",
+      "emoji": "💳",
+      "description": "అప్పుగా తీసుకున్న డబ్బు తిరిగి ఇవ్వండి"
+    },
+    {
+      "id": 9,
+      "name": "ధన్యవాదాలు చెప్పండి",
+      "emoji": "🙏",
+      "description": "రుణదాతకు కృతజ్ఞత చూపండి"
+    },
+    {
+      "id": 10,
+      "name": "జాగ్రత్తగా అప్పు ఇవ్వండి",
+      "emoji": "🛡️",
+      "description": "జాగ్రత్తగా మరియు నియమాలతో నిర్వహించండి"
+    }
+  ]
+}

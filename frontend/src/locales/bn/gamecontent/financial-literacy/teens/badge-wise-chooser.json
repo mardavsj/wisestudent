@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "ব্যাজ: বিজ্ঞ চয়নকারী",
+  "subtitleComplete": "ব্যাজ সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর মধ্যে {{current}} চ্যালেঞ্জ",
+  "challengeLabel": "চ্যালেঞ্জ {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "স্কুল সরবরাহ দ্বিধা",
+      "question": "আপনি স্কুল সরবরাহ প্রয়োজন. কোনটি বিজ্ঞ পছন্দ?",
+      "options": [
+        {
+          "id": "designer",
+          "text": "ডিজাইনার ব্যাকপ্যাক এবং ট্রেন্ডি আনুষাঙ্গিক",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "উভয় - আপনি চান সবকিছু কিনুন",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "কিছু কেনা এড়িয়ে যান",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "basic",
+          "text": "প্রাথমিক বিদ্যালয় সরবরাহ (কলম, নোটবুক)",
+          "emoji": "📝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ফোন আপগ্রেড দ্বিধা",
+      "question": "আপনার ফোন পুরানো এবং ধীর। বিজ্ঞ পছন্দ কি?",
+      "options": [
+        {
+          "id": "wants-first",
+          "text": "প্রয়োজনের আগে চায় কিনুন",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "basic-phone",
+          "text": "কল এবং বার্তার জন্য বেসিক ফোন",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "latest",
+          "text": "সমস্ত বৈশিষ্ট্য সহ সর্বশেষ স্মার্টফোন",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "no-phone",
+          "text": "কোন ফোন কিনবেন না",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ফিটনেস দ্বিধা",
+      "question": "আপনি ফিট থাকতে চান. কোনটি বিজ্ঞ পছন্দ?",
+      "options": [
+        {
+          "id": "gym",
+          "text": "নিয়মিত ব্যায়ামের জন্য জিমের সদস্যপদ",
+          "emoji": "💪",
+          "isCorrect": true
+        },
+        {
+          "id": "tracker",
+          "text": "দামি ফিটনেস ট্র্যাকার এবং স্মার্টওয়াচ",
+          "emoji": "⌚",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "জিম এবং ট্র্যাকার উভয়ই",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "skip-fitness",
+          "text": "ফিটনেস পুরোপুরি এড়িয়ে যান",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "স্টাডি সেটআপ দ্বিধা",
+      "question": "আপনি পরীক্ষার জন্য প্রস্তুতি নিচ্ছেন। বিজ্ঞ পছন্দ কি?",
+      "options": [
+        {
+          "id": "premium-setup",
+          "text": "নয়েজ-বাতিলকারী হেডফোন এবং প্রিমিয়াম ডেস্ক সেটআপ",
+          "emoji": "🎧",
+          "isCorrect": false
+        },
+        {
+          "id": "buy-premium",
+          "text": "সবকিছু প্রিমিয়াম কিনুন",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "quiet-study",
+          "text": "শান্ত অধ্যয়নের স্থান এবং পাঠ্যপুস্তক",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "no-materials",
+          "text": "কোনো উপকরণ ছাড়াই পড়াশোনা করুন",
+          "emoji": "📖",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "পোশাকের দ্বিধা",
+      "question": "আপনার স্কুলের জন্য পোশাক দরকার। কোনটি বিজ্ঞ পছন্দ?",
+      "options": [
+        {
+          "id": "designer-clothes",
+          "text": "ডিজাইনার জামাকাপড় এবং ট্রেন্ডি ফ্যাশন আইটেম",
+          "emoji": "👔",
+          "isCorrect": false
+        },
+        {
+          "id": "only-designer",
+          "text": "শুধুমাত্র ডিজাইনার আইটেম কিনুন",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "no-clothes",
+          "text": "কোন কাপড় কিনবেন না",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "essential",
+          "text": "স্কুল এবং আবহাওয়ার জন্য প্রয়োজনীয় পোশাক",
+          "emoji": "👕",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "বুদ্ধিমান চয়নকারী ব্যাজ অর্জিত!",
+    "winMessage": "আপনি {{total}} চ্যালেঞ্জের মধ্যে {{score}} পেয়েছেন সঠিক! আপনি একজন সত্যিকারের বিজ্ঞ চয়নকারী!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: বুদ্ধিমান পছন্দগুলি চাহিদার চেয়ে চাহিদাকে অগ্রাধিকার দেয়, আপনাকে আর্থিক সুস্থতা অর্জন করতে এবং একটি নিরাপদ ভবিষ্যত গড়ে তুলতে সহায়তা করে!",
+    "loseEmoji": "💪",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} চ্যালেঞ্জের মধ্যে {{score}}টি সঠিক পেয়েছেন। অনুশীলন বুদ্ধিমান নির্বাচন সঙ্গে নিখুঁত করে তোলে!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "টিপ: বুদ্ধিমান আর্থিক পছন্দ করার জন্য চাহিদা (প্রয়োজনীয় আইটেম) চাহিদার (বিলাসী আইটেম) অগ্রাধিকার দিতে মনে রাখবেন!"
+  }
+}

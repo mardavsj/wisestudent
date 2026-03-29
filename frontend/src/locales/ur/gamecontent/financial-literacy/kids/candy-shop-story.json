@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "کینڈی کی دکان کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "🍬",
+  "questions": [
+    {
+      "id": 1,
+      "text": "دکاندار 10 روپے کی بجائے 20 روپے وصول کرتا ہے۔ کیا آپ بل چیک کرتے ہیں؟",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ہاں، میں بل چیک کرتا ہوں۔",
+          "emoji": "📜",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "نہیں، میں صرف ادائیگی کرتا ہوں۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "friend",
+          "text": "کسی دوست سے چیک کرنے کو کہیں۔",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کے پاس ₹50 ہیں۔ کینڈی کی قیمت 15 روپے ہے۔ آپ کو کتنی تبدیلی لانی چاہیے؟",
+      "options": [
+        {
+          "id": "25",
+          "text": "25 روپے",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "₹40",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "35",
+          "text": "₹35",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "دکاندار ₹35 کی بجائے ₹30 کی تبدیلی دیتا ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "ask",
+          "text": "شائستگی سے درست تبدیلی کے لیے پوچھیں۔",
+          "emoji": "🗣️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "take",
+          "text": "₹30 لیں اور چلے جائیں۔",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "buy",
+          "text": "مزید کینڈی خریدیں۔",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ ₹10 میں دو کینڈی خریدنا چاہتے ہیں۔ کیا آپ اسے 15 روپے میں برداشت کر سکتے ہیں؟",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ہاں، میرے پاس کافی ہے۔",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "نہیں، مجھے 20 روپے درکار ہیں۔",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "discount",
+          "text": "رعایت طلب کریں۔",
+          "emoji": "🎟️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ہوشیاری سے خریداری کرنے کا بہترین طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "everything",
+          "text": "جو کچھ آپ دیکھتے ہیں اسے خریدیں۔",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "قیمتوں اور بلوں کو احتیاط سے چیک کریں۔",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "صرف دوستوں کے ساتھ خریداری کریں۔",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

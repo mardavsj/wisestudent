@@ -1,1 +1,146 @@
-﻿{}
+{
+  "title": "ਖਿਡੌਣੇ ਦੀ ਦੁਕਾਨ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "questionIndicator": "ਸਵਾਲ {{current}}/{{total}}",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਵਿਕਰੇਤਾ ਕਹਿੰਦਾ, 'ਜਲਦੀ ਕਰੋ ਜਾਂ ਖਿਡੌਣਾ ਗੁਆ ਦਿਓ!' ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "quick",
+          "text": "ਜਲਦੀ ਖਰੀਦੋ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "ਕੀਮਤ ਦੀ ਜਾਂਚ ਕਰੋ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ਵਿਕਰੇਤਾ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ਦੋ ਖਿਡੌਣਿਆਂ ਦੇ ਸਟੋਰ ਦੇਖਦੇ ਹੋ। ਚੁਸਤ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "compare",
+          "text": "ਕੀਮਤਾਂ ਦੀ ਤੁਲਨਾ ਕਰੋ",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "pay",
+          "text": "ਹੁਣੇ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "ਦੋਵਾਂ ਨੂੰ ਛੱਡੋ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਖਿਡੌਣਾ ਵਧੀਆ ਲੱਗ ਰਿਹਾ ਹੈ। ਤੁਸੀਂ ਕੀ ਜਾਂਚ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "ਤੇਜ਼ੀ ਨਾਲ ਖਰੀਦੋ",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "quality",
+          "text": "ਗੁਣਵੱਤਾ ਨੂੰ ਪੁੱਛੋ",
+          "emoji": "🔍",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "guess",
+          "text": "ਗੁਣਵੱਤਾ ਦਾ ਅੰਦਾਜ਼ਾ ਲਗਾਓ",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਆਨਲਾਈਨ ਖਿਡੌਣੇ ਦੀ ਵਿਕਰੀ. ਪਹਿਲਾਂ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "reviews",
+          "text": "ਸਮੀਖਿਆਵਾਂ ਪੜ੍ਹੋ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "Rush",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਵਿਕਰੀ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਨੂੰ ਇੱਕ ਖਿਡੌਣਾ ਚਾਹੀਦਾ ਹੈ। ਕੀ ਯੋਜਨਾ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "ਬਜਟ ਪਹਿਲਾਂ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

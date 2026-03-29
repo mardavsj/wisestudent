@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ਬੈਂਕ ਵਿਜ਼ਿਟ ਸਟੋਰੀ",
+  "subtitleComplete": "ਸੰਪੂਰਨ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਮਾਪੇ ਤੁਹਾਨੂੰ ਬੈਂਕ ਲੈ ਜਾਂਦੇ ਹਨ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "ਚੁੱਪਚਾਪ ਦੇਖੋ ਅਤੇ ਸਿੱਖੋ",
+          "emoji": "👀",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "ਆਲੇ-ਦੁਆਲੇ ਦੌੜੋ ਅਤੇ ਖੇਡੋ",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "touch",
+          "text": "ਹਰ ਚੀਜ਼ ਨੂੰ ਛੂਹੋ",
+          "emoji": "👆",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਬੈਂਕ ਸਟਾਫ਼ ਤੁਹਾਨੂੰ ਸ਼ੁਭਕਾਮਨਾਵਾਂ ਦਿੰਦਾ ਹੈ। ਜਵਾਬ ਕਿਵੇਂ ਦੇਣਾ ਹੈ?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "ਉਨ੍ਹਾਂ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "polite",
+          "text": "ਨਿਮਰ ਅਤੇ ਸਤਿਕਾਰਯੋਗ ਬਣੋ",
+          "emoji": "🙏",
+          "isCorrect": true
+        },
+        {
+          "id": "rude",
+          "text": "ਉਨ੍ਹਾਂ ਨਾਲ ਬੇਰਹਿਮ ਹੋਵੋ",
+          "emoji": "😠",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਮਾਪੇ ATM ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "privacy",
+          "text": "ਵਾਪਸ ਖੜੇ ਹੋਵੋ ਅਤੇ ਗੋਪਨੀਯਤਾ ਦਿਓ",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "watch",
+          "text": "ਪਿੰਨ ਨੂੰ ਧਿਆਨ ਨਾਲ ਦੇਖੋ",
+          "emoji": "👁️",
+          "isCorrect": false
+        },
+        {
+          "id": "buttons",
+          "text": "ਬੇਤਰਤੀਬ ਬਟਨ ਦਬਾਓ",
+          "emoji": "🔘",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਸੁਰੱਖਿਆ ਗਾਰਡ ਬੈਗਾਂ ਦੀ ਜਾਂਚ ਕਰਦਾ ਹੈ। ਤੁਹਾਡੀ ਪ੍ਰਤੀਕਿਰਿਆ?",
+      "options": [
+        {
+          "id": "angry",
+          "text": "ਗਾਰਡ 'ਤੇ ਗੁੱਸਾ ਕਰੋ",
+          "emoji": "😠",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "ਚੈੱਕ ਤੋਂ ਇਨਕਾਰ ਕਰੋ",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "understand",
+          "text": "ਸਮਝੋ ਕਿ ਇਹ ਸੁਰੱਖਿਆ ਲਈ ਹੈ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਬੈਂਕ ਵਿੱਚ ਲੱਗੀਆਂ ਲੰਬੀਆਂ ਕਤਾਰਾਂ। ਸਭ ਤੋਂ ਵਧੀਆ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "push",
+          "text": "ਪਹਿਲਾਂ ਜਾਣ ਲਈ ਦਬਾਓ",
+          "emoji": "👊",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ਲਾਈਨ ਵਿੱਚ ਧੀਰਜ ਨਾਲ ਉਡੀਕ ਕਰੋ",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "complain",
+          "text": "ਉੱਚੀ ਆਵਾਜ਼ ਵਿੱਚ ਸ਼ਿਕਾਇਤ ਕਰੋ",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

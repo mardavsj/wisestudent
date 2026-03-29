@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "پہیلی: حقیقی ترجیحات",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "زمرہ جات کے ساتھ اشیاء کو میچ کریں ({{current}}/{{total}} مماثل)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchButton": "Match",
+  "selectItemLabel": "ایک آئٹم منتخب کریں۔",
+  "selectedItemLabel": "منتخب کردہ: {{name}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "matchedLabel": "مماثل: {{current}}/{{total}}",
+  "resultSuccessHeader": "بہت اچھا کام!",
+  "resultSuccessSubheader": "آپ نے {{total}} آئٹمز میں سے {{score}} کو ان کے زمرے کے ساتھ درست طریقے سے ملایا!",
+  "resultSuccessLesson": "سبق: مالی ترجیحات کو سمجھنا ہوشیار فیصلے کرنے میں مدد کرتا ہے!",
+  "resultTryAgainHeader": "مشق کرتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} آئٹمز میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultTryAgainTip": "مشورہ: اس بارے میں سوچیں کہ آیا ہر چیز ضروری ہے یا صوابدیدی!",
+  "coinsEarned": "+{{coins}} سکے",
+  "items": [
+    {
+      "id": 1,
+      "name": "صحت مند ناشتہ",
+      "emoji": "🍳"
+    },
+    {
+      "id": 2,
+      "name": "سٹیشنری کٹ",
+      "emoji": "✏️"
+    },
+    {
+      "id": 3,
+      "name": "اسکول کے بعد کی کلاسز",
+      "emoji": "📚"
+    },
+    {
+      "id": 4,
+      "name": "وٹامن سپلیمنٹس",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "بس پاس",
+      "emoji": "🚌"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "روزانہ کی ضرورت",
+      "emoji": "😅"
+    },
+    {
+      "id": 7,
+      "name": "اختیاری سرگرمی",
+      "emoji": "🎯"
+    },
+    {
+      "id": 8,
+      "name": "سمارٹ خرچ",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "صحت کی ترجیح",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "ٹرانسپورٹ کا خرچہ",
+      "emoji": "🚌"
+    }
+  ]
+}

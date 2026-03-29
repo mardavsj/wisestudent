@@ -1,1 +1,38 @@
-﻿{}
+{
+  "title": "പസിൽ: ബാങ്ക് ഉപയോഗങ്ങൾ",
+  "subtitleComplete": "പൂർത്തിയായി!",
+  "subtitleProgress": "പൊരുത്തം ഇനങ്ങൾ ({{matched}}/{{total}} പൊരുത്തപ്പെട്ടു)",
+  "scoreLabel": "സ്കോർ:",
+  "items": [
+    {
+      "id": 1,
+      "name": "സേവിംഗ്സ് അക്കൗണ്ട്",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "Loan",
+      "emoji": "📝"
+    },
+    {
+      "id": 3,
+      "name": "ATM",
+      "emoji": "🏧"
+    },
+    {
+      "id": 4,
+      "name": "Interest",
+      "emoji": "📈"
+    },
+    {
+      "id": 5,
+      "name": "സാമ്പത്തിക വിദ്യാഭ്യാസം",
+      "emoji": "📚"
+    }
+  ],
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchedLabel": "പൊരുത്തപ്പെട്ടു:",
+  "selectItem": "ഒരു ഇനം തിരഞ്ഞെടുക്കുക",
+  "matchButton": "Match"
+}

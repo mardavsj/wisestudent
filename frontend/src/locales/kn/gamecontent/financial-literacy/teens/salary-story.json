@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ಸಂಬಳದ ಕಥೆ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಒಬ್ಬ ಯುವ ಕೆಲಸಗಾರ ತಿಂಗಳಿಗೆ ₹ 2000 ಗಳಿಸುತ್ತಾನೆ. ಅವರ ಸಂಬಳಕ್ಕೆ ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "₹400 ಉಳಿಸಿ (20%)",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ಹಣ ವ್ಯರ್ಥ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಕೆಲಸಗಾರನಿಗೆ ₹500 ಬೋನಸ್ ಸಿಗುತ್ತದೆ. ಅವರು ಅದನ್ನು ಹೇಗೆ ನಿಭಾಯಿಸಬೇಕು?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ಅದರಲ್ಲಿ ಹೆಚ್ಚಿನದನ್ನು ಉಳಿಸಿ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ಎಲ್ಲಾ ಐಷಾರಾಮಿ ಖರ್ಚು",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ಬೋನಸ್ ಅನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಕಾರ್ಮಿಕರ ಖರ್ಚು ತಿಂಗಳಿಗೆ ₹1800ಕ್ಕೆ ಏರುತ್ತದೆ. ಸ್ಮಾರ್ಟ್ ವಿಧಾನ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಉಳಿಸುವುದನ್ನು ನಿಲ್ಲಿಸಿ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ಹೆಚ್ಚು ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಉಳಿತಾಯವನ್ನು ಕಾಪಾಡಿಕೊಳ್ಳಿ",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಕೆಲಸಗಾರನಿಗೆ 10% ಸಂಬಳ ಹೆಚ್ಚಾಗುತ್ತದೆ. ಹೆಚ್ಚುವರಿ ಹಣವನ್ನು ಅವರು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಜೀವನಶೈಲಿಯನ್ನು ನವೀಕರಿಸಿ",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಉಳಿತಾಯವನ್ನು ಹೆಚ್ಚಿಸಿ",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ಅದನ್ನೆಲ್ಲ ವೇಸ್ಟ್ ಮಾಡಿ",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಕೆಲಸಗಾರ ₹10,000 ಗ್ಯಾಜೆಟ್ ಖರೀದಿಸಲು ಬಯಸುತ್ತಾನೆ. ಉತ್ತಮ ವಿಧಾನ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "EMI ನಲ್ಲಿ ಖರೀದಿಸಿ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ಹಣವನ್ನು ಎರವಲು ಪಡೆಯಿರಿ",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಕಾಲಾನಂತರದಲ್ಲಿ ಉಳಿಸಿ",
+          "emoji": "⏳",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

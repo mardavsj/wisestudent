@@ -1,1 +1,38 @@
-﻿{}
+{
+  "title": "పజిల్: బ్యాంక్ ఉపయోగాలు",
+  "subtitleComplete": "పూర్తి!",
+  "subtitleProgress": "సరిపోలిన అంశాలు ({{matched}}/{{total}} సరిపోలినవి)",
+  "scoreLabel": "స్కోర్:",
+  "items": [
+    {
+      "id": 1,
+      "name": "సేవింగ్స్ ఖాతా",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "Loan",
+      "emoji": "📝"
+    },
+    {
+      "id": 3,
+      "name": "ATM",
+      "emoji": "🏧"
+    },
+    {
+      "id": 4,
+      "name": "Interest",
+      "emoji": "📈"
+    },
+    {
+      "id": 5,
+      "name": "ఆర్థిక విద్య",
+      "emoji": "📚"
+    }
+  ],
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchedLabel": "సరిపోలినది:",
+  "selectItem": "ఒక అంశాన్ని ఎంచుకోండి",
+  "matchButton": "Match"
+}

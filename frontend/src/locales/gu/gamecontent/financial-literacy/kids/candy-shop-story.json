@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "કેન્ડી શોપ સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "🍬",
+  "questions": [
+    {
+      "id": 1,
+      "text": "દુકાનદાર ₹10ને બદલે ₹20 વસૂલે છે. શું તમે બિલ તપાસો છો?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "હા, હું બિલ તપાસું છું",
+          "emoji": "📜",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ના, હું માત્ર ચૂકવણી કરું છું",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "friend",
+          "text": "એક મિત્રને તપાસવા માટે કહો",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારી પાસે ₹50 છે. કેન્ડીની કિંમત ₹15 છે. તમારે કેટલો ફેરફાર કરવો જોઈએ?",
+      "options": [
+        {
+          "id": "25",
+          "text": "₹25",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "₹40",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "35",
+          "text": "₹35",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "દુકાનદાર ₹35ને બદલે ₹30નો બદલો આપે છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "નમ્રતાપૂર્વક યોગ્ય ફેરફાર માટે પૂછો",
+          "emoji": "🗣️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "take",
+          "text": "₹30 લો અને નીકળી જાઓ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "buy",
+          "text": "વધુ કેન્ડી ખરીદો",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે દરેક ₹10માં બે કેન્ડી ખરીદવા માંગો છો. શું તમે તેને ₹15માં પરવડી શકો છો?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "હા, મારી પાસે પૂરતું છે",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ના, મારે ₹20 જોઈએ છે",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "discount",
+          "text": "ડિસ્કાઉન્ટ માટે પૂછો",
+          "emoji": "🎟️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "સ્માર્ટ રીતે ખરીદી કરવાની શ્રેષ્ઠ રીત કઈ છે?",
+      "options": [
+        {
+          "id": "everything",
+          "text": "તમે જુઓ છો તે બધું ખરીદો",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "કિંમતો અને બિલ કાળજીપૂર્વક તપાસો",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "ફક્ત મિત્રો સાથે ખરીદી કરો",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

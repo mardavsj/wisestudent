@@ -1,1 +1,143 @@
-﻿{}
+{
+  "title": "ಅಗತ್ಯಗಳ ಮೇಲೆ ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ: ಅಗತ್ಯಗಳ ಬಗ್ಗೆ ನಿಮ್ಮ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನಿಮ್ಮ ದೇಹವು ಪ್ರತಿದಿನ ಕೆಲಸ ಮಾಡಲು ಯಾವ ವಸ್ತುವು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "Chips",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "ಶುದ್ಧ ಕುಡಿಯುವ ನೀರು",
+          "emoji": "🚰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "toy",
+          "text": "ರಿಮೋಟ್ ಕಂಟ್ರೋಲ್ ಕಾರ್",
+          "emoji": "🚗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಶಾಲೆಯಲ್ಲಿ ಸರಿಯಾಗಿ ಕಲಿಯಲು ಏನು ಬೇಕು?",
+      "options": [
+        {
+          "id": "bag",
+          "text": "ಶಾಲಾ ಚೀಲ ಮತ್ತು ಪುಸ್ತಕಗಳು",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "game",
+          "text": "ಮೊಬೈಲ್ ಆಟಗಳು",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cartoon",
+          "text": "ಕಾರ್ಟೂನ್ ವೀಡಿಯೊಗಳು",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಶಾಖ ಮತ್ತು ಶೀತದಿಂದ ಸುರಕ್ಷಿತವಾಗಿರಲು ಯಾವ ಆಯ್ಕೆಯು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "cap",
+          "text": "ಫ್ಯಾಷನ್ ಕ್ಯಾಪ್",
+          "emoji": "🧢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shoes",
+          "text": "ಪಾರ್ಟಿ ಶೂಗಳು",
+          "emoji": "👟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "ಸರಿಯಾದ ಬಟ್ಟೆ",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ವಿಶ್ರಾಂತಿ ಮತ್ತು ವಾಸಿಸಲು ಯಾವ ಸ್ಥಳವು ಮೂಲಭೂತ ಅವಶ್ಯಕತೆಯಾಗಿದೆ?",
+      "options": [
+        {
+          "id": "house",
+          "text": "ಸುರಕ್ಷಿತ ಮನೆ",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mall",
+          "text": "ಶಾಪಿಂಗ್ ಮಾಲ್",
+          "emoji": "🏬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "park",
+          "text": "Playground",
+          "emoji": "🛝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಜನರು ಬಯಸುವುದಕ್ಕಿಂತ ಮೊದಲು ಅಗತ್ಯಗಳನ್ನು ಏಕೆ ಆರಿಸುತ್ತಾರೆ?",
+      "options": [
+        {
+          "id": "fun",
+          "text": "ಬಯಸುವುದು ಹೆಚ್ಚು ಮೋಜು",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "important",
+          "text": "ದೈನಂದಿನ ಜೀವನಕ್ಕೆ ಅಗತ್ಯಗಳು ಅವಶ್ಯಕ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "ಸ್ನೇಹಿತರು ಬಯಸುತ್ತಾರೆ",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

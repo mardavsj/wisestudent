@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "کنزیومر کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "دکاندار دھوکہ دے تو شکایت کہاں کر سکتے ہیں؟",
+      "options": [
+        {
+          "id": "court",
+          "text": "کنزیومر کورٹ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "Playground",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "Nowhere",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "صارفین کے حقوق کیا ہیں؟",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "کوئی حقوق نہیں۔",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "دھوکہ دہی سے تحفظ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "خرچ کرنے کا حق",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "اگر آپ کو خراب پروڈکٹ مل جائے تو آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "accept",
+          "text": "اسے قبول کریں۔",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "اسے نظر انداز کریں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "بیچنے والے سے شکایت کریں۔",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "معلومات کا حق کیا ہے؟",
+      "options": [
+        {
+          "id": "know",
+          "text": "مصنوعات کی تفصیلات جانیں۔",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "معلومات چھپائیں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "جھوٹ کو قبول کریں۔",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ صارف کی شکایت کہاں درج کر سکتے ہیں؟",
+      "options": [
+        {
+          "id": "police",
+          "text": "تھانہ",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "کنزیومر کورٹ",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "School",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "کوئز مکمل!",
+    "winMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ صارفین کے حقوق کو سمجھتے ہیں!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: صارفین کے حقوق ہیں! دھوکہ دہی کی صورت میں آپ کنزیومر کورٹ میں شکایت کر سکتے ہیں، محفوظ مصنوعات کا مطالبہ کر سکتے ہیں اور ایماندارانہ معلومات حاصل کر سکتے ہیں!",
+    "loseEmoji": "💪",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، کنزیومر کورٹ وہ جگہ ہے جہاں دکاندار دھوکہ دیتا ہے تو آپ شکایت کرتے ہیں!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "مشورہ: اگر کوئی دکاندار آپ کو دھوکہ دیتا ہے، تو آپ کنزیومر کورٹ میں شکایت درج کر سکتے ہیں، کھیل کے میدان میں نہیں! صارفین کے حقوق ہیں!"
+  }
+}

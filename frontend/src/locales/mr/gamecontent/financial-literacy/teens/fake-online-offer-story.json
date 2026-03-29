@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "बनावट ऑनलाइन ऑफर कथा",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्ही ₹100 भरल्यास वेबसाइट मोफत फोन देते. आपण काय करावे?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "नकार द्या, तो एक घोटाळा आहे",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "pay",
+          "text": "₹100 भरा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "कदाचित, प्रथम तपासा",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बनावट ऑनलाइन ऑफरचे लक्षण काय आहे?",
+      "options": [
+        {
+          "id": "normal",
+          "text": "सामान्य किंमती",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "too-good",
+          "text": "खरे असणे खूप चांगले आहे",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "expensive",
+          "text": "खूप महाग",
+          "emoji": "💎",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आपण संशयास्पद ऑफर काय करावे?",
+      "options": [
+        {
+          "id": "try",
+          "text": "तरीही करून पहा",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "मित्रांसोबत शेअर करा",
+          "emoji": "📢",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "दुर्लक्ष करा आणि तक्रार करा",
+          "emoji": "🚫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "'फ्री' ऑफर अनेकदा घोटाळे का होतात?",
+      "options": [
+        {
+          "id": "trick",
+          "text": "ते तुम्हाला पैसे देण्याची फसवणूक करतात",
+          "emoji": "🎭",
+          "isCorrect": true
+        },
+        {
+          "id": "real",
+          "text": "ते नेहमीच वास्तविक असतात",
+          "emoji": "✅",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "कधीकधी वास्तविक",
+          "emoji": "🤷",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ऑनलाइन ऑफरसह सर्वात सुरक्षित क्रिया कोणती आहे?",
+      "options": [
+        {
+          "id": "pay-fast",
+          "text": "पटकन पैसे द्या",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "verify",
+          "text": "पैसे देण्यापूर्वी पडताळणी करा",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-all",
+          "text": "सर्व ऑफरकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "Story Complete!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! बनावट ऑफर कशी शोधायची हे तुम्हाला माहीत आहे!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: खोट्या ऑनलाइन ऑफर बऱ्याचदा खऱ्या असायला खूप चांगल्या वाटतात. पैसे देण्यापूर्वी नेहमी पडताळणी करा आणि संशयास्पद ऑफर नाकारा!",
+    "loseEmoji": "💪",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, एखादी ऑफर खरी असण्याइतकी चांगली वाटत असल्यास, तो कदाचित घोटाळा आहे!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: वेबसाइटने फक्त ₹100 मध्ये मोफत फोन ऑफर केल्यास, तो घोटाळा असू शकतो. नेहमी ऑफर सत्यापित करा आणि संशयास्पद नकार द्या!"
+  }
+}

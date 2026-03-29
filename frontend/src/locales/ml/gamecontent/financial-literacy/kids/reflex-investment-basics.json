@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് നിക്ഷേപ അടിസ്ഥാനങ്ങൾ",
+  "subtitlePlaying": "{{current}} of {{total}}: നിങ്ങളുടെ നിക്ഷേപ പ്രതിഫലനങ്ങൾ പരീക്ഷിക്കുക!",
+  "subtitleReady": "നിങ്ങളുടെ നിക്ഷേപ റിഫ്ലെക്സുകൾ പരിശോധിക്കുക!",
+  "readyEmoji": "💰",
+  "readyTitle": "നിക്ഷേപത്തിൻ്റെ അടിസ്ഥാനകാര്യങ്ങൾ പഠിക്കാൻ തയ്യാറാണോ?",
+  "readyDescription": "ഓരോ ചോദ്യത്തിനും ശരിയായ നിക്ഷേപ പ്രവർത്തനം തിരഞ്ഞെടുക്കുക.",
+  "readyInfo": "നിങ്ങൾക്ക് {{seconds}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "ചോദ്യം:",
+  "timeLabel": "സമയം:",
+  "scoreLabel": "സ്കോർ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "അത് വളരാൻ പണം എന്ത് ചെയ്യണം?",
+      "correctAnswer": "സംരക്ഷിച്ച് വളരുക",
+      "options": [
+        {
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "അത് മറയ്ക്കുക",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "അത് മറന്നേക്കൂ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "സംരക്ഷിച്ച് വളരുക",
+          "isCorrect": true,
+          "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "നിങ്ങൾ എങ്ങനെ പണം വിവേകത്തോടെ കൈകാര്യം ചെയ്യണം?",
+      "correctAnswer": "വിവേകത്തോടെ നിക്ഷേപിക്കുക",
+      "options": [
+        {
+          "text": "വിവേകത്തോടെ നിക്ഷേപിക്കുക",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "വേഗത്തിൽ ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "പാഴാക്കുക",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "അത് നഷ്ടപ്പെടുത്തുക",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "സമ്പത്ത് കെട്ടിപ്പടുക്കുന്നതിനുള്ള ഏറ്റവും നല്ല മാർഗം ഏതാണ്?",
+      "correctAnswer": "സമ്പത്ത് വളർത്തുക",
+      "options": [
+        {
+          "text": "പണം നഷ്ടപ്പെടുക",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "സമ്പത്ത് വളർത്തുക",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "സമ്പാദ്യം അവഗണിക്കുക",
+          "isCorrect": false,
+          "emoji": "😑"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "നിങ്ങളുടെ പണം നിങ്ങൾക്കായി എങ്ങനെ പ്രവർത്തിക്കും?",
+      "correctAnswer": "പലിശ നേടുക",
+      "options": [
+        {
+          "text": "പണം പാഴാക്കുക",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ഉടൻ ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "പലിശ നേടുക",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "അത് മറന്നേക്കൂ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "നിങ്ങളുടെ ഭാവി സുരക്ഷിതമാക്കാൻ സഹായിക്കുന്നതെന്താണ്?",
+      "correctAnswer": "സമ്പാദ്യം കെട്ടിപ്പടുക്കുക",
+      "options": [
+        {
+          "text": "സമ്പാദ്യം കെട്ടിപ്പടുക്കുക",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "ഇപ്പോൾ ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "പണം പാഴാക്കുക",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ഭാവിയെ അവഗണിക്കുക",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    }
+  ]
+}

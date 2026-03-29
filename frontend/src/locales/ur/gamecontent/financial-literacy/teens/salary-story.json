@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "تنخواہ کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ایک نوجوان کارکن ماہانہ 2000 روپے کماتا ہے۔ وہ اپنی تنخواہ کا کیا کریں؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "سب خرچ کرو",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "₹400 (20%) بچائیں",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "پیسہ ضائع کرنا",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "کارکن کو ₹500 کا بونس ملتا ہے۔ انہیں اسے کیسے ہینڈل کرنا چاہئے؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "اس میں سے زیادہ تر محفوظ کریں۔",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "عیش و عشرت پر خرچ کریں۔",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "بونس کو نظر انداز کریں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "کارکن کے اخراجات ماہانہ 1800 روپے تک بڑھ جاتے ہیں۔ ہوشیار نقطہ نظر کیا ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "بچت کرنا بند کریں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "زیادہ خرچ کریں۔",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "بچت کو برقرار رکھیں",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "کارکن کی تنخواہ میں 10 فیصد اضافہ ہوتا ہے۔ وہ اضافی رقم کا کیا کریں؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "طرز زندگی کو اپ گریڈ کریں۔",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "بچت میں اضافہ کریں۔",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "یہ سب ضائع کریں۔",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "کارکن ₹10,000 کا گیجٹ خریدنا چاہتا ہے۔ بہترین طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "EMI پر خریدیں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "پیسے ادھار لیں۔",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "وقت کے ساتھ بچت کریں۔",
+          "emoji": "⏳",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

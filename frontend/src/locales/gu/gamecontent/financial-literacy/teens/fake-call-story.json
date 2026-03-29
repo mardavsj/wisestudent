@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ફેક કોલ સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "કૉલર તમારી બેંક વિગતો માટે પૂછે છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "share",
+          "text": "વિગતો શેર કરો",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "કદાચ, જો તેઓ સત્તાવાર અવાજ કરે",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "ઇનકાર કરો, ક્યારેય શેર કરશો નહીં",
+          "emoji": "🚫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "નકલી કોલની નિશાની શું છે?",
+      "options": [
+        {
+          "id": "urgent",
+          "text": "કાર્ય કરવા માટે તાત્કાલિક દબાણ",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "polite",
+          "text": "નમ્ર અને દર્દી",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "normal",
+          "text": "સામાન્ય વાતચીત",
+          "emoji": "💬",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "જો કોઈ OTP માંગે તો તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "give",
+          "text": "OTP આપો",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "OTP ક્યારેય શેર કરશો નહીં",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe2",
+          "text": "જો તેઓ સરસ રીતે પૂછે તો શેર કરો",
+          "emoji": "🤷",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે બેંક કૉલ કેવી રીતે ચકાસી શકો છો?",
+      "options": [
+        {
+          "id": "call-back",
+          "text": "બેંકને સીધો ફોન કરો",
+          "emoji": "📞",
+          "isCorrect": true
+        },
+        {
+          "id": "trust",
+          "text": "કૉલર પર વિશ્વાસ કરો",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-all",
+          "text": "બધા કોલ્સ અવગણો",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "શંકાસ્પદ કૉલ્સ માટે સૌથી સુરક્ષિત પ્રતિસાદ શું છે?",
+      "options": [
+        {
+          "id": "engage",
+          "text": "બોલતા રહો",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "share-info",
+          "text": "થોડી માહિતી શેર કરો",
+          "emoji": "📝",
+          "isCorrect": false
+        },
+        {
+          "id": "hang-up",
+          "text": "અટકી જાઓ અને જાણ કરો",
+          "emoji": "📞",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ગ્રેટ જોબ!",
+    "winMessage": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે! તમે જાણો છો કે શંકાસ્પદ કોલ્સ કેવી રીતે હેન્ડલ કરવા!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: OTP અથવા બેંક વિગતો જેવી સંવેદનશીલ માહિતી ફોન પર ક્યારેય શેર કરશો નહીં. હંમેશા અટકી જાઓ અને જો શંકાસ્પદ હોય તો સત્તાવાર બેંક નંબર પર કૉલ કરો.",
+    "loseEmoji": "😔",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે. ફોન કોલ્સ સાથે સાવધ રહેવાનું યાદ રાખો!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટિપ: સ્કેમ કૉલર્સ ઘણીવાર કૃત્રિમ તાકીદ બનાવે છે. OTP અથવા બેંક વિગતો ક્યારેય શેર કરશો નહીં. બંધ કરો અને તમારી બેંકનો સીધો સંપર્ક કરો."
+  }
+}

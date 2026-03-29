@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ચર્ચા: પૈસા અને નૈતિકતા",
+  "subtitleComplete": "ચર્ચા પૂર્ણ!",
+  "subtitleProgress": "{{total}} નો રાઉન્ડ {{current}}",
+  "roundLabel": "રાઉન્ડ {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "શું પૈસા પાત્રની કસોટી કરે છે?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "હા, નૈતિકતા વધુ મહત્વ ધરાવે છે",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ના, પૈસાથી કોઈ ફરક પડતો નથી",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "કદાચ, આધાર રાખે છે",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "શું તમારે પૈસા માટે નૈતિકતા સાથે સમાધાન કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "sometimes",
+          "text": "ક્યારેક ઠીક",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "ક્યારેય સમાધાન કરશો નહીં",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "પૈસા પ્રાથમિકતા છે",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "વધુ મહત્વનું શું છે: સંપત્તિ કે અખંડિતતા?",
+      "options": [
+        {
+          "id": "wealth",
+          "text": "Wealth",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "બંને સરખા",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "integrity",
+          "text": "Integrity",
+          "emoji": "💎",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "શું તમે સમૃદ્ધ અને નૈતિક બની શકો છો?",
+      "options": [
+        {
+          "id": "yes2",
+          "text": "હા, ચોક્કસ",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "id": "no2",
+          "text": "ના, અશક્ય",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "rarely",
+          "text": "ભાગ્યે જ શક્ય છે",
+          "emoji": "😕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "કાયમી સફળતા શું બનાવે છે?",
+      "options": [
+        {
+          "id": "shortcuts",
+          "text": "શૉર્ટકટ્સ અને યુક્તિઓ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "ethics",
+          "text": "નૈતિકતા અને પ્રામાણિકતા",
+          "emoji": "🏆",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "માત્ર નસીબ",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

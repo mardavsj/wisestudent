@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಟಾಯ್ ಸ್ಟೋರಿ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಸ್ನೇಹಿತನು ನಿಮಗೆ ಆಟಿಕೆ ಕೊಡುತ್ತಾನೆ. ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "ಅದನ್ನು ಸುರಕ್ಷಿತವಾಗಿರಿಸಿಕೊಳ್ಳಿ",
+          "emoji": "🛡️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "break",
+          "text": "ಅದನ್ನು ಮುರಿಯಿರಿ",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ಅದನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನೀವು ಆಟಿಕೆ ಎರವಲು ಪಡೆದಿದ್ದೀರಿ. ಈಗ ಏನು?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ಇಟ್ಟುಕೊಳ್ಳಿ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ಆಟಿಕೆ ಹಿಂತಿರುಗಿ",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನಿಮ್ಮ ಸ್ನೇಹಿತನ ಆಟಿಕೆ ನಿಮ್ಮ ಬಳಿ ಇದೆ. ಯಾವುದು ಉತ್ತಮ?",
+      "options": [
+        {
+          "id": "care",
+          "text": "ಅದನ್ನು ನೋಡಿಕೊಳ್ಳಿ",
+          "emoji": "💝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "break",
+          "text": "ಅದನ್ನು ಮುರಿಯಿರಿ",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಮಾಲೀಕರು ಆಟಿಕೆ ಮರಳಿ ಕೇಳುತ್ತಾರೆ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "ಅದನ್ನು ಮರೆಮಾಡಿ",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ವಾಪಸ್ ಕೊಡು",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "delay",
+          "text": "ಹಿಂತಿರುಗಲು ವಿಳಂಬ",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನೀವು ಆಟಿಕೆ ಎರವಲು ಪಡೆದಾಗ, ನಿಮ್ಮ ಕರ್ತವ್ಯವೇನು?",
+      "options": [
+        {
+          "id": "careless",
+          "text": "ಅಜಾಗರೂಕರಾಗಿರಿ",
+          "emoji": "😓",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ಅದನ್ನು ಮರೆತುಬಿಡಿ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "responsible",
+          "text": "ಜವಾಬ್ದಾರಿಯುತವಾಗಿರಿ",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

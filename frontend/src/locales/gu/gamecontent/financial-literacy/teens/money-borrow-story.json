@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "પૈસા ઉધાર વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "કિશોર મિત્ર પાસેથી ₹100 ઉધાર લે છે. ચૂકવવાનું ભૂલી ગયા છો?",
+      "options": [
+        {
+          "id": "wrong",
+          "text": "ખોટું - હંમેશા ચૂકવણી કરો",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "okay",
+          "text": "ભૂલી જવાનું ઠીક છે",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "કદાચ પછીથી",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે ₹200 ઉધાર લીધા હતા. તમારે ક્યારે ચૂકવણી કરવી જોઈએ?",
+      "options": [
+        {
+          "id": "never",
+          "text": "ક્યારેય ચૂકવવું નહીં",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "on-time",
+          "text": "વચન મુજબ સમયસર",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "whenever",
+          "text": "જ્યારે પણ મન થાય",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "મિત્ર ₹50 ઉધાર લેવાનું કહે છે. તમારે શું ધ્યાનમાં લેવું જોઈએ?",
+      "options": [
+        {
+          "id": "lend",
+          "text": "જો તમને પરવડે તો ધિરાણ આપો",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "હંમેશા બધું ઉધાર આપો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "ક્યારેય કોઈને ઉધાર ન આપો",
+          "emoji": "🔒",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે સમયસર ચૂકવણી કરી શકતા નથી. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "મિત્રને છુપાવો અને ટાળો",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "communicate",
+          "text": "વાતચીત કરો અને સમજાવો",
+          "emoji": "💬",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "દેવાની અવગણના કરો",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "પૈસા ઉધાર લેવા માટે શ્રેષ્ઠ પ્રથા શું છે?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "મિત્રો પાસેથી વારંવાર ઉધાર લો",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "જ્યારે જરૂરી હોય ત્યારે જ ઉધાર લો અને તરત જ ચૂકવણી કરો",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "ઉધાર લો પણ ક્યારેય પાછું ના આપો",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ઉધાર સ્ટાર!",
+    "winMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! જવાબદાર ઉધાર વિશે શીખવા માટેનું ઉત્તમ કામ!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: ઉધાર લીધેલા પૈસા હંમેશા સમયસર ચૂકવો, જો તમે ન કરી શકો તો વાતચીત કરો અને જ્યારે જરૂરી હોય ત્યારે જ ઉધાર લો. આ વિશ્વાસ બનાવે છે અને સંબંધો જાળવી રાખે છે!",
+    "loseEmoji": "💪",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. ઉછીના લીધેલા પૈસા હંમેશા સમયસર ચૂકવવાનું યાદ રાખો!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટીપ: ઉછીના લીધેલા પૈસા હંમેશા સમયસર ચૂકવો, જો તમે ચૂકવણી ન કરી શકો તો પ્રમાણિકતાથી વાતચીત કરો અને જ્યારે જરૂરી અને પોસાય ત્યારે જ ઉધાર લો!"
+  }
+}

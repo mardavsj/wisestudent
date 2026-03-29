@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "गिफ्ट मनी स्टोरी",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्हाला तुमच्या वाढदिवशी भेटवस्तू मिळतात. स्मार्ट पहिली पायरी म्हणजे काय?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "लगेच खर्च करा",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "show",
+          "text": "मित्रांना दाखवा",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "think",
+          "text": "गरजा आणि ध्येयांचा विचार करा",
+          "emoji": "🤔",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला एक बॅकपॅक हवा आहे ज्याची किंमत तुमच्या भेटवस्तूपेक्षा जास्त आहे. सुज्ञ निवड म्हणजे काय?",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "मित्रांकडून पैसे उधार घ्या",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "प्रतीक्षा करा आणि अधिक पैसे वाचवा",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "change",
+          "text": "त्याऐवजी काहीतरी यादृच्छिक खरेदी करा",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "आपण एक लहान खेळणी आणि एक उपयुक्त वस्तू पहा. तुम्हाला काय ठरवायला मदत होते?",
+      "options": [
+        {
+          "id": "use",
+          "text": "तुम्हाला अधिक आवश्यक असलेली वस्तू निवडा",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "काय मजेदार दिसते ते निवडा",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "सर्वात स्वस्त वस्तू निवडा",
+          "emoji": "💲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुमचे पालक तुमच्या भेटवस्तूंच्या पैशातील काही भाग वाचवण्याचा सल्ला देतात. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "नकार द्या आणि सर्व खर्च करा",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "agree",
+          "text": "एक भाग जतन करा आणि उर्वरित योजना करा",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forget",
+          "text": "पैशाबद्दल विसरून जा",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "गिफ्ट मनी तुम्हाला काय शिकवते?",
+      "options": [
+        {
+          "id": "showoff",
+          "text": "खरेदी कशी दाखवायची",
+          "emoji": "😎",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "विचार न करता खर्च कसा करायचा",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "manage",
+          "text": "पैसे जबाबदारीने कसे व्यवस्थापित करावे",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "कोडे: कर्ज मूलभूत",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "संकल्पनांसह कर्ज अटी जुळवा ({{current}}/{{total}} जुळले)",
+  "termsTitle": "कर्जाच्या अटी",
+  "conceptsTitle": "कर्ज संकल्पना",
+  "matchButton": "Match",
+  "selectTermLabel": "कर्जाची मुदत निवडा",
+  "selectedTermLabel": "निवडले: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "जुळले: {{current}}/{{total}}",
+  "resultSuccessHeader": "ग्रेट जॉब!",
+  "resultSuccessSubheader": "तुम्ही {{total}} पैकी {{score}} कर्जाच्या अटी त्यांच्या संकल्पनांशी बरोबर जुळल्या!",
+  "resultSuccessLesson": "धडा: कर्जाच्या मूलभूत गोष्टी समजून घेतल्याने कर्ज घेण्याचे निर्णय घेण्यास मदत होते!",
+  "resultTryAgainHeader": "सराव करत राहा!",
+  "resultTryAgainSubheader": "तुम्ही {{total}} कर्ज अटींपैकी {{score}} बरोबर जुळले.",
+  "resultTryAgainTip": "टीप: प्रत्येक कर्जाची मुदत प्रत्यक्षात काय दर्शवते याचा विचार करा!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "terms": [
+    {
+      "id": 1,
+      "name": "Principal",
+      "emoji": "💵"
+    },
+    {
+      "id": 2,
+      "name": "Interest",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "कर्जाची मुदत",
+      "emoji": "📅"
+    },
+    {
+      "id": 4,
+      "name": "EMI",
+      "emoji": "📊"
+    },
+    {
+      "id": 5,
+      "name": "Default",
+      "emoji": "⚠️"
+    }
+  ],
+  "concepts": [
+    {
+      "id": 6,
+      "name": "मूळ रक्कम",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "अतिरिक्त खर्च",
+      "emoji": "➕"
+    },
+    {
+      "id": 8,
+      "name": "वेळ कालावधी",
+      "emoji": "⏱️"
+    },
+    {
+      "id": 9,
+      "name": "नियमित पेमेंट",
+      "emoji": "💳"
+    },
+    {
+      "id": 10,
+      "name": "चुकलेली देयके",
+      "emoji": "🚫"
+    }
+  ]
+}

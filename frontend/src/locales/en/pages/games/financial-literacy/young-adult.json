@@ -22,6 +22,14 @@
     "coinsEarned": "Coins Earned",
     "xpGained": "XP Gained"
   },
+  "difficulty": {
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard"
+  },
+  "duration": {
+    "minutes": "{{count}} minutes"
+  },
   "loading": {
     "games": "Loading games..."
   },
@@ -30,6 +38,7 @@
     "confirm": "Unlock replay for \"{{title}}\"?",
     "costLabel": "Cost:",
     "balanceLabel": "Your Balance:",
+    "healCoinsLabel": "Healcoins",
     "noteLabel": "Note:",
     "note": "You won't earn coins when replaying this game. The game will be locked again after you complete the replay.",
     "processing": "Processing...",
@@ -37,7 +46,8 @@
     "unlockWithCost": "Unlock Replay ({{cost}} HealCoins)",
     "insufficientBalance": "Insufficient balance",
     "notAvailable": "Replay not available. Upgrade to premium to access this game.",
-    "unlockedBadge": "Replay Unlocked (No coins on replay)"
+    "unlockedBadge": "Replay Unlocked (No coins on replay)",
+    "cancel": "Cancel"
   },
   "tooltips": {
     "gameCompleted": "Game completed! Unlock replay to play again.",

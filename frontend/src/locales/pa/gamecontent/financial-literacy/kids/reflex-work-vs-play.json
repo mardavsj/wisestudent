@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਵਰਕ ਬਨਾਮ ਪਲੇ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਕੰਮ ਬਨਾਮ ਪਲੇ ਰਿਫਲੈਕਸ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਕੰਮ ਬਨਾਮ ਪਲੇ ਰਿਫਲੈਕਸ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyEmoji": "💼",
+  "readyTitle": "ਕੰਮ ਬਨਾਮ ਪਲੇ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਕੰਮ ਅਤੇ ਖੇਡ ਦੇ ਵਿਚਕਾਰ ਸਹੀ ਕਿਰਿਆ ਦੀ ਚੋਣ ਕਰੋ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਕੀ ਤੁਹਾਨੂੰ ਪੈਸਾ ਕਮਾਉਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ?",
+      "correctAnswer": "Work",
+      "options": [
+        {
+          "text": "ਵੇਸਟ ਟਾਈਮ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ਸਾਰਾ ਦਿਨ ਖੇਡੋ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Work",
+          "isCorrect": true,
+          "emoji": "💼"
+        },
+        {
+          "text": "ਕੁਝ ਨਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਹਾਨੂੰ ਸਿੱਖਣ ਅਤੇ ਵਧਣ ਲਈ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "Study",
+      "options": [
+        {
+          "text": "Study",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "ਸਾਰਾ ਦਿਨ ਖੇਡੋ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ਸਿੱਖਣਾ ਛੱਡੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ਸਿੱਖਿਆ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਤੁਹਾਨੂੰ ਆਪਣੀ ਕਮਾਈ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਕਮਾਈ ਬਚਾਓ",
+      "options": [
+        {
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਕਮਾਈ ਬਚਾਓ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ਪੈਸੇ ਦੀ ਬਰਬਾਦੀ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਗੁਆ ਦਿਓ",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਤੁਹਾਨੂੰ ਘਰ ਵਿੱਚ ਮਦਦ ਕਰਨ ਲਈ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਕੰਮ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਕੰਮ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "🧹"
+        },
+        {
+          "text": "ਕੰਮ ਛੱਡੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ਕੰਮ ਤੋਂ ਬਚੋ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਆਲਸੀ ਬਣੋ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਉਤਪਾਦਕ ਬਣਨ ਵਿੱਚ ਕਿਹੜੀ ਚੀਜ਼ ਤੁਹਾਡੀ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "correctAnswer": "ਕੰਮ ਦੀ ਯੋਜਨਾ ਬਣਾਓ",
+      "options": [
+        {
+          "text": "ਵਿਹਲੇ ਰਹੋ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ਵੇਸਟ ਟਾਈਮ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "ਕੁਝ ਨਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "ਕੰਮ ਦੀ ਯੋਜਨਾ ਬਣਾਓ",
+          "isCorrect": true,
+          "emoji": "📋"
+        }
+      ]
+    }
+  ]
+}

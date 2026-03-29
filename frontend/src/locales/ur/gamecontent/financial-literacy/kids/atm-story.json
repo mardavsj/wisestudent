@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "اے ٹی ایم کی کہانی",
+  "subtitleComplete": "مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کے والدین آپ کو اپنا ATM کارڈ دکھاتے ہیں۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "اسے نظر انداز کریں۔",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "جانیں کہ یہ کیسے کام کرتا ہے۔",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "اس کے ساتھ کھیلیں",
+          "emoji": "🎮",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کے والدین اپنا PIN ATM میں درج کر رہے ہیں۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "memorize",
+          "text": "پن کو یاد رکھنے کی کوشش کریں۔",
+          "emoji": "🧠",
+          "isCorrect": false
+        },
+        {
+          "id": "tell",
+          "text": "دوستوں کو اس کے بارے میں بتائیں",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "away",
+          "text": "رازداری دینے کے لیے دور دیکھیں",
+          "emoji": "👀",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کے پاس 100 روپے ہیں۔ سب سے ہوشیار انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "split",
+          "text": "50 روپے بچائیں، 50 خرچ کریں۔",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "toys",
+          "text": "کھلونوں پر سارا خرچ کریں۔",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "friends",
+          "text": "سب دوستوں کو دیں۔",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ ایک کھلونا خریدنا چاہتے ہیں جس کی قیمت 200 روپے ہے لیکن آپ کے پاس 150 ہیں۔ آپ کیا کریں؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "پہلے زیادہ پیسے بچائیں۔",
+          "emoji": "💾",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "دوستوں سے ادھار لیں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "demand",
+          "text": "والدین سے مطالبہ کریں۔",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ کے دوست نے دوپہر کے کھانے کے پیسے کھو دیے ہیں۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "ان کو نظر انداز کریں۔",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "laugh",
+          "text": "ان پر ہنسیں۔",
+          "emoji": "😆",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "اپنا لنچ ان کے ساتھ بانٹیں۔",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

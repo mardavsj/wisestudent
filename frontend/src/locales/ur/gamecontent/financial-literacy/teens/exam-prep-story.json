@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "امتحان کی تیاری کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کے پاس ₹200 باقی ہیں۔ ٹیوشن کی ادائیگی کریں یا نمکین خریدیں؟",
+      "options": [
+        {
+          "id": "tuition",
+          "text": "ٹیوشن ادا کریں۔",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "نمکین خریدیں۔",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "دونوں کے درمیان تقسیم",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کے پاس ₹300 ہیں۔ امتحان کی فیس یا فلم کا ٹکٹ؟",
+      "options": [
+        {
+          "id": "movie",
+          "text": "فلم کا ٹکٹ",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "fees",
+          "text": "امتحان کی فیس ادا کریں۔",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "سب کچھ محفوظ کریں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کے پاس ₹400 ہیں۔ مطالعہ کا سامان یا نئے کپڑے؟",
+      "options": [
+        {
+          "id": "clothes",
+          "text": "کپڑے خریدیں۔",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "دونوں کے درمیان تقسیم",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "study",
+          "text": "مطالعہ کا سامان خریدیں۔",
+          "emoji": "📖",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کے پاس ₹250 ہیں۔ ٹیوشن یا پارٹی اسنیکس؟",
+      "options": [
+        {
+          "id": "tutoring",
+          "text": "ٹیوشن کے لیے ادائیگی کریں۔",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "پارٹی اسنیکس",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "سب کچھ محفوظ کریں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ کے پاس ₹500 ہیں۔ امتحان کی تیاری کا کورس یا گیمنگ کنسول؟",
+      "options": [
+        {
+          "id": "console",
+          "text": "گیمنگ کنسول",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "course",
+          "text": "امتحان کی تیاری کا کورس",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "دونوں کے درمیان تقسیم",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "بہت اچھا کام!",
+    "winMessage": "آپ نے {{total}} میں سے {{score}} سوالات درست کئے ہیں! آپ تعلیمی اخراجات کو ترجیح دینے کی اہمیت کو سمجھتے ہیں!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: ہمیشہ تعلیمی اخراجات جیسے ٹیوشن، امتحان کی فیس، اور مطالعاتی مواد کو نمکین اور تفریح ​​جیسی ضروریات پر ترجیح دیں!",
+    "loseEmoji": "😔",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ نے {{total}} سوالات میں سے {{score}} درست کئے ہیں۔ تعلیم کے اخراجات کو ضروریات پر ترجیح دینا یاد رکھیں!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "ٹپ: تعلیمی اخراجات (ٹیوشن، امتحان کی فیس، مطالعہ کا مواد) آپ کے مستقبل میں سرمایہ کاری ہیں اور ضرورت سے پہلے آنا چاہیے۔"
+  }
+}

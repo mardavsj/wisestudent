@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ഉപഭോക്തൃ ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionLabel": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "കടയുടമ വഞ്ചിച്ചാൽ എവിടെയാണ് പരാതിപ്പെടുക?",
+      "options": [
+        {
+          "id": "court",
+          "text": "ഉപഭോക്തൃ കോടതി",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "Playground",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "Nowhere",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "എന്താണ് ഉപഭോക്തൃ അവകാശങ്ങൾ?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "അവകാശങ്ങളില്ല",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "വഞ്ചനയിൽ നിന്നുള്ള സംരക്ഷണം",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ചെലവഴിക്കാനുള്ള അവകാശം",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിങ്ങൾക്ക് ഒരു വികലമായ ഉൽപ്പന്നം ലഭിക്കുകയാണെങ്കിൽ നിങ്ങൾ എന്തുചെയ്യണം?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "അത് സ്വീകരിക്കുക",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "അവഗണിക്കുക",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "വിൽപ്പനക്കാരനോട് പരാതിപ്പെടുക",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "എന്താണ് വിവരാവകാശം?",
+      "options": [
+        {
+          "id": "know",
+          "text": "ഉൽപ്പന്ന വിശദാംശങ്ങൾ അറിയുക",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "വിവരങ്ങൾ മറയ്ക്കുക",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "നുണകൾ സ്വീകരിക്കുക",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ഉപഭോക്തൃ പരാതി എവിടെ ഫയൽ ചെയ്യാം?",
+      "options": [
+        {
+          "id": "police",
+          "text": "പോലീസ് സ്റ്റേഷൻ",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "ഉപഭോക്തൃ കോടതി",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "School",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ക്വിസ് പൂർത്തിയായി!",
+    "winMessage": "നിങ്ങൾക്ക് {{total}}ൽ {{score}} ലഭിച്ചു! ഉപഭോക്തൃ അവകാശങ്ങൾ നിങ്ങൾ മനസ്സിലാക്കുന്നു!",
+    "coinsEarned": "+{{score}} നാണയങ്ങൾ",
+    "lesson": "പാഠം: ഉപഭോക്താക്കൾക്ക് അവകാശങ്ങളുണ്ട്! വഞ്ചിക്കപ്പെട്ടാൽ നിങ്ങൾക്ക് ഉപഭോക്തൃ കോടതിയിൽ പരാതിപ്പെടാം, സുരക്ഷിതമായ ഉൽപ്പന്നങ്ങൾ ആവശ്യപ്പെടാം, സത്യസന്ധമായ വിവരങ്ങൾ നേടുക!",
+    "loseEmoji": "💪",
+    "loseTitle": "പഠിക്കുന്നത് തുടരുക!",
+    "loseMessage": "നിങ്ങൾക്ക് {{total}}ൽ {{score}} ലഭിച്ചു. ഓർക്കുക, കടയുടമ വഞ്ചിച്ചാൽ നിങ്ങൾ പരാതിപ്പെടുന്നത് ഉപഭോക്തൃ കോടതിയാണ്!",
+    "tryAgain": "വീണ്ടും ശ്രമിക്കുക",
+    "tip": "നുറുങ്ങ്: ഒരു കടയുടമ നിങ്ങളെ വഞ്ചിച്ചാൽ, കളിസ്ഥലമല്ല, ഉപഭോക്തൃ കോടതിയിൽ നിങ്ങൾക്ക് പരാതി നൽകാം! ഉപഭോക്താക്കൾക്ക് അവകാശങ്ങളുണ്ട്!"
+  }
+}

@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "വളർച്ചയുടെ പസിൽ",
+  "subtitleComplete": "പസിൽ പൂർത്തിയായി!",
+  "subtitleProgress": "ഫലങ്ങളുമായി ഇനങ്ങൾ പൊരുത്തപ്പെടുത്തുക ({{matched}}/{{total}} പൊരുത്തപ്പെട്ടു)",
+  "itemsTitle": "വളർച്ചാ ഇനങ്ങൾ",
+  "categoriesTitle": "Outcomes",
+  "selectedLabel": "തിരഞ്ഞെടുത്തത്: {{name}}",
+  "selectItem": "ഒരു ഇനം തിരഞ്ഞെടുക്കുക",
+  "matchButton": "Match",
+  "scoreLabel": "സ്കോർ:",
+  "matchedLabel": "പൊരുത്തപ്പെട്ടു:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "മികച്ച ജോലി!",
+  "resultGreatDescription": "ഫലങ്ങളുള്ള {{total}} ഇനങ്ങളിൽ {{score}} നിങ്ങൾ ശരിയായി പൊരുത്തപ്പെട്ടു!",
+  "coinsLabel": "Coins",
+  "resultLesson": "ഗുണപാഠം: സസ്യങ്ങൾ പോലെ, സമ്പാദ്യവും നിക്ഷേപവും കാലക്രമേണ വളരുന്നു.",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "പരിശീലിക്കുന്നത് തുടരുക!",
+  "resultKeepDescription": "നിങ്ങൾ {{score}}-ൽ {{total}} ഇനങ്ങളുമായി ശരിയായി പൊരുത്തപ്പെട്ടു.",
+  "resultTip": "നുറുങ്ങ്: ഓരോ ഇനവും സ്വാഭാവികമായി വളരുന്നതിനെക്കുറിച്ച് ചിന്തിക്കുക.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Seed",
+      "emoji": "🌱"
+    },
+    {
+      "id": 2,
+      "name": "Savings",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "Plant",
+      "emoji": "🌿"
+    },
+    {
+      "id": 4,
+      "name": "Sapling",
+      "emoji": "🌳"
+    },
+    {
+      "id": 5,
+      "name": "Bulb",
+      "emoji": "🌻"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Tree",
+      "emoji": "🌲",
+      "description": "വിത്ത് മരമാകാം"
+    },
+    {
+      "id": 7,
+      "name": "Growth",
+      "emoji": "📈",
+      "description": "സമ്പാദ്യം മൂല്യത്തിൽ വളരും"
+    },
+    {
+      "id": 8,
+      "name": "Flower",
+      "emoji": "🌸",
+      "description": "ചെടിക്ക് പൂക്കളാകാം"
+    },
+    {
+      "id": 9,
+      "name": "Forest",
+      "emoji": "🌲",
+      "description": "പല തൈകൾക്കും ഒരു കാടുണ്ടാക്കാം"
+    },
+    {
+      "id": 10,
+      "name": "Wealth",
+      "emoji": "🏦",
+      "description": "പണ ശീലങ്ങൾക്ക് സമ്പത്ത് സൃഷ്ടിക്കാൻ കഴിയും"
+    }
+  ]
+}

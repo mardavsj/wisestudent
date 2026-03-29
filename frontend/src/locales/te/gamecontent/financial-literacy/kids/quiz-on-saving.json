@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "పొదుపుపై ​​క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ఉత్తమ పొదుపు ఎవరు?",
+      "options": [
+        {
+          "id": "a",
+          "text": "డబ్బు మొత్తం ఖర్చు చేసే వ్యక్తి",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "డబ్బు వృధా చేసే వ్యక్తి",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "వారి డబ్బులో కొంత భాగాన్ని ఆదా చేసే వ్యక్తి",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీ పాకెట్ మనీతో మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "a",
+          "text": "వెంటనే అన్నింటినీ ఖర్చు చేయండి",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "కొంత ఆదా చేసి కొంత ఖర్చు పెట్టండి",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "దానిని దాచిపెట్టు మరియు ఎప్పుడూ ఉపయోగించవద్దు",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "డబ్బు ఆదా చేయడం ఎందుకు ముఖ్యం?",
+      "options": [
+        {
+          "id": "a",
+          "text": "కాబట్టి మీరు మీకు అవసరమైన వస్తువులను తర్వాత కొనుగోలు చేయవచ్చు",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "కాబట్టి మీరు స్నేహితులకు చూపించవచ్చు",
+          "emoji": "😎",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ఇది అస్సలు ముఖ్యం కాదు",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మనీ బ్యాంక్ దేనికి ఉపయోగించబడుతుంది?",
+      "options": [
+        {
+          "id": "a",
+          "text": "బొమ్మలు ఉంచడం",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "డబ్బు ఆదా",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ఆహారాన్ని నిల్వ చేయడం",
+          "emoji": "🍕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీరు ప్రతి వారం రూ.10 ఆదా చేస్తే, 4 వారాల్లో మీ దగ్గర ఎంత ఉంటుంది?",
+      "options": [
+        {
+          "id": "a",
+          "text": "రూ. 20",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "రూ. 30",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "రూ. 40",
+          "emoji": "💴",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

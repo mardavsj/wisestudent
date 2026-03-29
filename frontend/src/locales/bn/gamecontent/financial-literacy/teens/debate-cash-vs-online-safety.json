@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "বিতর্ক: নগদ বনাম অনলাইন নিরাপত্তা",
+  "subtitleComplete": "বিতর্ক সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} রাউন্ড",
+  "roundLabel": "রাউন্ড {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "অনলাইন টাকা নগদ চেয়ে বেশি ঝুঁকিপূর্ণ?",
+      "options": [
+        {
+          "id": "online-riskier",
+          "text": "অনলাইন ঝুঁকিপূর্ণ",
+          "emoji": "💻",
+          "isCorrect": false
+        },
+        {
+          "id": "both-safe",
+          "text": "উভয়ের নিরাপত্তা প্রয়োজন",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "cash-riskier",
+          "text": "নগদ বেশি ঝুঁকিপূর্ণ",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "কোনটি বড় পরিমাণের জন্য নিরাপদ?",
+      "options": [
+        {
+          "id": "both-safe2",
+          "text": "উভয়ই সতর্কতা সহ",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "only-cash",
+          "text": "শুধু নগদ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "only-online",
+          "text": "শুধুমাত্র অনলাইন",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "অনলাইন অর্থের সাথে প্রধান ঝুঁকি কি?",
+      "options": [
+        {
+          "id": "no-risk",
+          "text": "কোন ঝুঁকি নেই",
+          "emoji": "😓",
+          "isCorrect": false
+        },
+        {
+          "id": "too-easy",
+          "text": "ব্যবহার করা খুব সহজ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "hacking",
+          "text": "হ্যাকিং এবং জালিয়াতি",
+          "emoji": "👾",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "আপনি কিভাবে অনলাইন অর্থ রক্ষা করতে পারেন?",
+      "options": [
+        {
+          "id": "strong-password",
+          "text": "শক্তিশালী পাসওয়ার্ড এবং ওটিপি",
+          "emoji": "🔐",
+          "isCorrect": true
+        },
+        {
+          "id": "no-protection",
+          "text": "কোন সুরক্ষা প্রয়োজন",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "share-details",
+          "text": "অবাধে বিবরণ শেয়ার করুন",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "সেরা পদ্ধতির কি?",
+      "options": [
+        {
+          "id": "only-one",
+          "text": "শুধুমাত্র একটি পদ্ধতি ব্যবহার করুন",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "নিরাপদে উভয় ভারসাম্য",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid-all",
+          "text": "সব টাকা এড়িয়ে চলুন",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

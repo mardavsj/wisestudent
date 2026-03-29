@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "پہیلی: صارفین کے حقوق",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "معانی کے ساتھ میچ حقوق ({{current}}/{{total}} مماثل)",
+  "rightsTitle": "صارفین کے حقوق",
+  "meaningsTitle": "Meanings",
+  "matchButton": "Match",
+  "selectRightLabel": "صارف کا حق منتخب کریں۔",
+  "selectedRightLabel": "منتخب کردہ: {{name}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "matchedLabel": "مماثل: {{current}}/{{total}}",
+  "resultSuccessHeader": "بہت اچھا کام!",
+  "resultSuccessSubheader": "آپ نے {{total}} صارفین کے حقوق میں سے {{score}} کو ان کے معنی کے ساتھ درست طریقے سے ملایا!",
+  "resultSuccessLesson": "سبق: صارفین کے حقوق کو سمجھنا آپ کو غیر منصفانہ طرز عمل سے بچاتا ہے!",
+  "resultTryAgainHeader": "مشق کرتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} صارفین کے حقوق میں سے {{score}} کو درست طریقے سے ملایا۔",
+  "resultTryAgainTip": "مشورہ: اس بارے میں سوچیں کہ ہر صارف کا حق کیا تحفظ فراہم کرتا ہے!",
+  "coinsEarned": "+{{coins}} سکے",
+  "rights": [
+    {
+      "id": 1,
+      "name": "سیفٹی کا حق",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 2,
+      "name": "معلومات کا حق",
+      "emoji": "📋"
+    },
+    {
+      "id": 3,
+      "name": "انتخاب کرنے کا حق",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "ازالہ کا حق",
+      "emoji": "⚖️"
+    },
+    {
+      "id": 5,
+      "name": "صارفین کی تعلیم کا حق",
+      "emoji": "📚"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "محفوظ مصنوعات",
+      "emoji": "🛒"
+    },
+    {
+      "id": 7,
+      "name": "سچی معلومات",
+      "emoji": "📝"
+    },
+    {
+      "id": 8,
+      "name": "مختلف قسم کے انتخاب",
+      "emoji": "🛒"
+    },
+    {
+      "id": 9,
+      "name": "مسائل کا علاج",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "آگاہی کی عمارت",
+      "emoji": "🎓"
+    }
+  ]
+}

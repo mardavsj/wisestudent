@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ਬਚਤ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਸੰਪੂਰਨ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਨੂੰ ਤੋਹਫ਼ੇ ਵਜੋਂ ₹1000 ਮਿਲੇ ਹਨ। ਇਸ ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੱਖਣ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "home",
+          "text": "ਘਰ ਵਿੱਚ ਰੱਖੋ",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ਇੱਕ ਬੈਂਕ ਖਾਤਾ ਖੋਲ੍ਹੋ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "wallet",
+          "text": "ਵਾਲਿਟ ਵਿੱਚ ਲੈ ਜਾਓ",
+          "emoji": "👛",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਡੇ ਜਨਮਦਿਨ ਦੇ ਪੈਸੇ ਦੀ ਵਰਤੋਂ ਕਰਨ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "split",
+          "text": "50/50 ਨੂੰ ਵੰਡੋ",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਨਵੀਨਤਮ ਗੈਜੇਟਸ ਖਰੀਦੋ",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "spend_all",
+          "text": "ਹੁਣ ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਨੂੰ ₹200 ਹਫਤਾਵਾਰੀ ਭੱਤਾ ਮਿਲਦਾ ਹੈ। ਸਭ ਤੋਂ ਵਧੀਆ ਯੋਜਨਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "treats",
+          "text": "ਸਨੈਕਸ ਖਰੀਦੋ",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "save_half",
+          "text": "50% ਬਚਾਓ",
+          "emoji": "💲",
+          "isCorrect": true
+        },
+        {
+          "id": "save_all",
+          "text": "ਸਭ ਕੁਝ ਬਚਾਓ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਨੂੰ ਉਹ ਪੈਸਾ ਕਿੱਥੇ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ ਜੋ ਤੁਸੀਂ ਕੰਮਾਂ ਤੋਂ ਬਚਾਇਆ ਹੈ?",
+      "options": [
+        {
+          "id": "piggy",
+          "text": "ਪਿਗੀ ਬੈਂਕ",
+          "emoji": "🐷",
+          "isCorrect": false
+        },
+        {
+          "id": "pocket",
+          "text": "ਤੁਹਾਡੀ ਜੇਬ",
+          "emoji": "👖",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ਬਚਤ ਖਾਤਾ",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਡੇ ਪੈਸੇ ਨੂੰ ਵਧਾਉਣ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਉੱਚ-ਵਿਆਜ ਖਾਤਾ",
+          "emoji": "💹",
+          "isCorrect": true
+        },
+        {
+          "id": "invest",
+          "text": "ਸਟਾਕ ਵਿੱਚ ਨਿਵੇਸ਼ ਕਰੋ",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਸੰਗ੍ਰਹਿ ਖਰੀਦੋ",
+          "emoji": "🏀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

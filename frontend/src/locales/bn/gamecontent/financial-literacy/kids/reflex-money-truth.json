@@ -1,1 +1,152 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স: টাকার সত্য",
+    "subtitleComplete": "গেম সম্পন্ন!",
+    "roundLabel": "রাউন্ড {{current}}/{{total}}",
+    "timeUp": "সময় শেষ!",
+    "readyEmoji": "💰",
+    "readyTitle": "প্রস্তুত হও!",
+    "readyDescription": "টাকার সত্য ও সততা নিয়ে প্রশ্নের উত্তর দাও!",
+    "readyTimeInfo": "প্রতিটি প্রশ্নে তোমার {{time}} সেকেন্ড আছে।",
+    "readyQuestionInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{time}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "gameRoundLabel": "রাউন্ড:",
+    "gameTimeLabel": "সময়:",
+    "gameScoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "স্কুলের মেঝেতে একটি কয়েন পেলে। সঠিক প্রথম পদক্ষেপ কী?",
+            "correctAnswer": "কেউ হারিয়েছে কিনা জিজ্ঞেস করো",
+            "options": [
+                {
+                    "text": "দ্রুত নিয়ে নাও",
+                    "isCorrect": false,
+                    "emoji": "🏃"
+                },
+                {
+                    "text": "কেউ হারিয়েছে কিনা জিজ্ঞেস করো",
+                    "isCorrect": true,
+                    "emoji": "🙋"
+                },
+                {
+                    "text": "নাস্তা কিনো",
+                    "isCorrect": false,
+                    "emoji": "🍿"
+                },
+                {
+                    "text": "লুকাও",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "তুমি শেষ করোনি এমন কাজের জন্য কেউ টাকা দিল। কী করবে?",
+            "correctAnswer": "সত্য ব্যাখ্যা করো",
+            "options": [
+                {
+                    "text": "সত্য ব্যাখ্যা করো",
+                    "isCorrect": true,
+                    "emoji": "🗣️"
+                },
+                {
+                    "text": "চুপ থাকো",
+                    "isCorrect": false,
+                    "emoji": "🤫"
+                },
+                {
+                    "text": "অন্যকে দোষ দাও",
+                    "isCorrect": false,
+                    "emoji": "👉"
+                },
+                {
+                    "text": "চলে যাও",
+                    "isCorrect": false,
+                    "emoji": "🚶"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "তুমি ও বন্ধু মিলে টাকা উপার্জন করেছ। সমস্যা এড়াতে কী সাহায্য করে?",
+            "correctAnswer": "আগেই ভাগাভাগিতে একমত হও",
+            "options": [
+                {
+                    "text": "নিজে বেশি নাও",
+                    "isCorrect": false,
+                    "emoji": "🤑"
+                },
+                {
+                    "text": "পরে তর্ক করো",
+                    "isCorrect": false,
+                    "emoji": "💢"
+                },
+                {
+                    "text": "ভাগ্যের উপর ছাড়ো",
+                    "isCorrect": false,
+                    "emoji": "🎲"
+                },
+                {
+                    "text": "আগেই ভাগাভাগিতে একমত হও",
+                    "isCorrect": true,
+                    "emoji": "🤝"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "ধার করা টাকা দেওয়ার প্রতিশ্রুতি করেছিলে কিন্তু ভুলে গেছ। কোনটি সবচেয়ে ভালো সমাধান?",
+            "correctAnswer": "ক্ষমা চাও এবং ফেরত দাও",
+            "options": [
+                {
+                    "text": "ক্ষমা চাও এবং ফেরত দাও",
+                    "isCorrect": true,
+                    "emoji": "🙏"
+                },
+                {
+                    "text": "ব্যক্তিটিকে এড়িয়ে চলো",
+                    "isCorrect": false,
+                    "emoji": "🙄"
+                },
+                {
+                    "text": "ভান করো যে দিয়েছ",
+                    "isCorrect": false,
+                    "emoji": "🎭"
+                },
+                {
+                    "text": "হেসে উড়িয়ে দাও",
+                    "isCorrect": false,
+                    "emoji": "😅"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "কোনটি মানুষকে আবার তোমাকে টাকার ব্যাপারে বিশ্বাস করাবে?",
+            "correctAnswer": "প্রতিশ্রুতি রাখা",
+            "options": [
+                {
+                    "text": "জোরে কথা বলা",
+                    "isCorrect": false,
+                    "emoji": "📢"
+                },
+                {
+                    "text": "অজুহাত দেখানো",
+                    "isCorrect": false,
+                    "emoji": "🌀"
+                },
+                {
+                    "text": "প্রতিশ্রুতি রাখা",
+                    "isCorrect": true,
+                    "emoji": "📌"
+                },
+                {
+                    "text": "আরও চাওয়া",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                }
+            ]
+        }
+    ]
+}

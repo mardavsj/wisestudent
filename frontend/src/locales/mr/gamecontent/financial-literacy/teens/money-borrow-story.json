@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "मनी उधार कथा",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "किशोर मित्राकडून ₹100 उधार घेतो. परतफेड करण्यास विसरलात?",
+      "options": [
+        {
+          "id": "wrong",
+          "text": "चुकीचे - नेहमी परतफेड करा",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "okay",
+          "text": "विसरायला ठीक आहे",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "कदाचित नंतर",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्ही ₹200 कर्ज घेतले. आपण परतफेड कधी करावी?",
+      "options": [
+        {
+          "id": "never",
+          "text": "कधीही परतफेड करू नका",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "on-time",
+          "text": "वचन दिल्याप्रमाणे वेळेवर",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "whenever",
+          "text": "वाटेल तेव्हा",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "मित्र ₹50 कर्ज घेण्यास सांगतो. आपण काय विचार करावा?",
+      "options": [
+        {
+          "id": "lend",
+          "text": "परवडत असेल तर कर्ज द्या",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "नेहमी सर्वकाही उधार द्या",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "कधीही कोणालाही कर्ज देऊ नका",
+          "emoji": "🔒",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही वेळेवर परतफेड करू शकत नाही. आपण काय करावे?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "मित्र लपवा आणि टाळा",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "communicate",
+          "text": "संवाद साधा आणि समजावून सांगा",
+          "emoji": "💬",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "कर्जाकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "पैसे उधार घेण्यासाठी सर्वोत्तम सराव कोणता आहे?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "मित्रांकडून अनेकदा कर्ज घ्या",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "आवश्यक असेल तेव्हाच कर्ज घ्या आणि त्वरीत परतफेड करा",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "कर्ज घ्या पण परतफेड करू नका",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "उधार तारा!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! जबाबदार कर्ज घेण्याबद्दल शिकणे उत्तम काम!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: उधार घेतलेले पैसे नेहमी वेळेवर परत करा, जमत नसेल तर संवाद साधा आणि आवश्यक असेल तेव्हाच कर्ज घ्या. यामुळे विश्वास निर्माण होतो आणि नाते टिकते!",
+    "loseEmoji": "💪",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. उधार घेतलेले पैसे नेहमी वेळेवर परत करण्याचे लक्षात ठेवा!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: उधार घेतलेल्या पैशांची नेहमी वेळेवर परतफेड करा, तुम्ही परतफेड करू शकत नसल्यास प्रामाणिकपणे संवाद साधा आणि आवश्यक आणि परवडेल तेव्हाच कर्ज घ्या!"
+  }
+}

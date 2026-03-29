@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "આઈસ્ક્રીમ સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમારી પાસે 10 રૂપિયા છે. તમે આઈસ્ક્રીમની દુકાન જુઓ છો. શું તમે હવે આઈસ્ક્રીમ પર ખર્ચ કરો છો અથવા તમને જોઈતા રમકડા માટે બચત કરો છો?",
+      "options": [
+        {
+          "id": "save",
+          "text": "રમકડા માટે સાચવો",
+          "emoji": "🧸",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "આઈસ્ક્રીમ ખરીદો",
+          "emoji": "🍦",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "અડધો બચાવો, અડધો ખર્ચ કરો",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારા મિત્રએ મોંઘો આઈસ્ક્રીમ ખરીદ્યો છે અને તેનો આનંદ માણી રહ્યો છે. તમારી પાસે માત્ર 5 રૂપિયા છે. તમે શું કરો છો?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "નાની સારવાર ખરીદો",
+          "emoji": "🍭",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "મોટા ધ્યેય માટે બચત કરો",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "મિત્રોને શેર કરવા કહો",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમે નવા પુસ્તક માટે રૂ. 50 બચાવવાનું આયોજન કર્યું છે, પરંતુ 'By 1 Get 1 Free' આઈસ્ક્રીમ ઓફર જુઓ. સ્માર્ટ શું છે?",
+      "options": [
+        {
+          "id": "save",
+          "text": "બચત યોજનાને વળગી રહો",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ઓફર લો",
+          "emoji": "🍦",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "જો વધારાના પૈસા હોય તો પછીથી ખરીદો",
+          "emoji": "⏰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે સાયકલ માટે 30 રૂપિયા બચાવ્યા છે. જો તમે થોડી ખરીદી કરો તો તમારા ભાઈ તેમની આઈસ્ક્રીમ શેર કરવાની ઑફર કરે છે. તમે શું પસંદ કરશો?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "શેર સારવાર",
+          "emoji": "🍦",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "સાયકલ પર ધ્યાન આપો",
+          "emoji": "🚲",
+          "isCorrect": true
+        },
+        {
+          "id": "negotiate",
+          "text": "પછીથી મદદ કરવાનું વચન આપો",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તે ગરમ દિવસ છે અને દરેક વ્યક્તિ આઈસ્ક્રીમ ખાય છે. તમારી પાસે 15 રૂપિયા બચ્યા છે. સૌથી સમજદાર પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "save",
+          "text": "પછી માટે સાચવો",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "હવે ઠંડુ કરો",
+          "emoji": "🍦",
+          "isCorrect": false
+        },
+        {
+          "id": "alternative",
+          "text": "ઠંડું કરવાની મફત રીત શોધો",
+          "emoji": "🌳",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

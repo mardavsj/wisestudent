@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਵਿਕਾਸ ਜਾਂਚ",
+  "subtitlePlaying": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ: ਆਪਣੇ ਵਿਕਾਸ ਪ੍ਰਤੀਬਿੰਬ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਵਿਕਾਸ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyEmoji": "📈",
+  "readyTitle": "ਆਪਣੇ ਵਿਕਾਸ ਦੇ ਗਿਆਨ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਹਰੇਕ ਸਵਾਲ ਲਈ ਸਹੀ ਵਾਧਾ ਨਤੀਜਾ ਚੁਣੋ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਸਵਾਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਕੀ ਹੁੰਦਾ ਹੈ ਜਦੋਂ ਤੁਹਾਡਾ ਪੈਸਾ ਵਿਆਜ ਕਮਾਉਂਦਾ ਹੈ?",
+      "correctAnswer": "ਵਿਆਜ ਕਮਾਇਆ",
+      "options": [
+        {
+          "text": "ਪੈਸਾ ਗਵਾ ਲਿਆ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਵਿਆਜ ਕਮਾਇਆ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ਕੋਈ ਬਦਲਾਅ ਨਹੀਂ",
+          "isCorrect": false,
+          "emoji": "😐"
+        },
+        {
+          "text": "ਪੈਸੇ ਚੋਰੀ ਹੋ ਗਏ",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਜਦੋਂ ਤੁਸੀਂ ਸਮੇਂ ਦੇ ਨਾਲ ਬਚਾਉਂਦੇ ਹੋ ਤਾਂ ਕੀ ਹੁੰਦਾ ਹੈ?",
+      "correctAnswer": "ਬੱਚਤ ਵਧ ਗਈ",
+      "options": [
+        {
+          "text": "ਬੱਚਤ ਵਧ ਗਈ",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ਪੈਸਾ ਖਰਚ ਕੀਤਾ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਪੈਸਾ ਗਾਇਬ ਹੋ ਜਾਂਦਾ ਹੈ",
+          "isCorrect": false,
+          "emoji": "👻"
+        },
+        {
+          "text": "ਕੁਝ ਨਹੀਂ ਹੁੰਦਾ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਕੀ ਹੁੰਦਾ ਹੈ ਜਦੋਂ ਤੁਹਾਡਾ ਨਿਵੇਸ਼ ਸਫਲ ਹੁੰਦਾ ਹੈ?",
+      "correctAnswer": "ਮੁਨਾਫਾ ਕਮਾਇਆ",
+      "options": [
+        {
+          "text": "ਨੁਕਸਾਨ ਹੋਇਆ",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "ਪੈਸੇ ਜਮ੍ਹਾ ਕੀਤੇ ਗਏ",
+          "isCorrect": false,
+          "emoji": "🧊"
+        },
+        {
+          "text": "ਨਿਵੇਸ਼ ਚਲਾ ਗਿਆ",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "ਮੁਨਾਫਾ ਕਮਾਇਆ",
+          "isCorrect": true,
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਜਦੋਂ ਨਿਵੇਸ਼ ਮੁੱਲ ਵਧਦਾ ਹੈ ਤਾਂ ਕੀ ਹੁੰਦਾ ਹੈ?",
+      "correctAnswer": "ਨਿਵੇਸ਼ ਵਧਦਾ ਹੈ",
+      "options": [
+        {
+          "text": "ਨਿਵੇਸ਼ ਵਧਦਾ ਹੈ",
+          "isCorrect": true,
+          "emoji": "🚀"
+        },
+        {
+          "text": "ਪੈਸੇ ਥੱਲੇ",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "ਨਿਵੇਸ਼ ਅਟਕ ਗਿਆ",
+          "isCorrect": false,
+          "emoji": "🔒"
+        },
+        {
+          "text": "ਮੁੱਲ ਜ਼ੀਰੋ",
+          "isCorrect": false,
+          "emoji": "0️⃣"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਕੀ ਹੁੰਦਾ ਹੈ ਜਦੋਂ ਤੁਸੀਂ ਲੰਬੇ ਸਮੇਂ ਲਈ ਸਮਝਦਾਰੀ ਨਾਲ ਨਿਵੇਸ਼ ਕਰਦੇ ਹੋ?",
+      "correctAnswer": "ਦੌਲਤ ਵਧਦੀ ਹੈ",
+      "options": [
+        {
+          "text": "ਫੰਡ ਸੁੰਗੜਦੇ ਹਨ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਦੌਲਤ ਇੱਕੋ ਜਿਹੀ ਰਹਿੰਦੀ ਹੈ",
+          "isCorrect": false,
+          "emoji": "➡️"
+        },
+        {
+          "text": "ਦੌਲਤ ਵਧਦੀ ਹੈ",
+          "isCorrect": true,
+          "emoji": "🌳"
+        },
+        {
+          "text": "ਦੌਲਤ ਖਤਮ ਹੋ ਜਾਂਦੀ ਹੈ",
+          "isCorrect": false,
+          "emoji": "👻"
+        }
+      ]
+    }
+  ]
+}

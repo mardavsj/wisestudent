@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "गरजा वि वांट्स क्विझ",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कोणती इच्छा आहे?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "लक्झरी घड्याळ",
+          "emoji": "⌚",
+          "isCorrect": true
+        },
+        {
+          "id": "medicine",
+          "text": "Medicine",
+          "emoji": "💊",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "शाळेचे कपडे",
+          "emoji": "👕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कोणती गरज आहे?",
+      "options": [
+        {
+          "id": "game",
+          "text": "व्हिडिओ गेम",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "food",
+          "text": "Groceries",
+          "emoji": "🍎",
+          "isCorrect": true
+        },
+        {
+          "id": "phone",
+          "text": "नवीन स्मार्टफोन",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "कोणती इच्छा आहे?",
+      "options": [
+        {
+          "id": "rent",
+          "text": "Rent",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "books",
+          "text": "Textbooks",
+          "emoji": "📚",
+          "isCorrect": false
+        },
+        {
+          "id": "concert",
+          "text": "मैफिलीचे तिकीट",
+          "emoji": "🎤",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "कोणती गरज आहे?",
+      "options": [
+        {
+          "id": "water",
+          "text": "पाणी बिल",
+          "emoji": "💧",
+          "isCorrect": true
+        },
+        {
+          "id": "shoes",
+          "text": "डिझायनर शूज",
+          "emoji": "👟",
+          "isCorrect": false
+        },
+        {
+          "id": "party",
+          "text": "पार्टी पुरवठा",
+          "emoji": "🎉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "कोणती इच्छा आहे?",
+      "options": [
+        {
+          "id": "internet",
+          "text": "इंटरनेट बिल",
+          "emoji": "🌐",
+          "isCorrect": false
+        },
+        {
+          "id": "headphones",
+          "text": "वायरलेस हेडफोन्स",
+          "emoji": "🎧",
+          "isCorrect": true
+        },
+        {
+          "id": "transport",
+          "text": "बस पास",
+          "emoji": "🚌",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ग्रेट जॉब!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत! तुम्हाला गरजा आणि इच्छा यातील फरक समजतो!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: जगण्यासाठी आणि शिकण्यासाठी गरजा अत्यावश्यक आहेत, तर गरजा अशा गोष्टी आहेत ज्या आपल्याला हव्या आहेत पण गरज नाही!",
+    "loseEmoji": "😔",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत. लक्षात ठेवा, गरजा म्हणजे अन्न, कपडे आणि उपयुक्तता यासारख्या आवश्यक वस्तू!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: गरजा या गोष्टी आहेत ज्या तुम्हाला टिकून राहण्यासाठी आणि शिकण्यासाठी आवश्यक आहेत, तर गरजा ऐच्छिक आहेत."
+  }
+}

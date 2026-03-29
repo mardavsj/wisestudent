@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "പസിൽ: യഥാർത്ഥ മുൻഗണനകൾ",
+  "subtitleComplete": "പസിൽ പൂർത്തിയായി!",
+  "subtitleProgress": "വിഭാഗങ്ങൾക്കൊപ്പം ഇനങ്ങൾ പൊരുത്തപ്പെടുത്തുക ({{current}}/{{total}} പൊരുത്തപ്പെട്ടു)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchButton": "Match",
+  "selectItemLabel": "ഒരു ഇനം തിരഞ്ഞെടുക്കുക",
+  "selectedItemLabel": "തിരഞ്ഞെടുത്തത്: {{name}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "matchedLabel": "പൊരുത്തപ്പെട്ടു: {{current}}/{{total}}",
+  "resultSuccessHeader": "മികച്ച ജോലി!",
+  "resultSuccessSubheader": "നിങ്ങൾ {{score}}-ൽ {{total}} ഇനങ്ങൾ അവയുടെ വിഭാഗങ്ങളുമായി ശരിയായി പൊരുത്തപ്പെടുത്തി!",
+  "resultSuccessLesson": "പാഠം: സാമ്പത്തിക മുൻഗണനകൾ മനസ്സിലാക്കുന്നത് മികച്ച തീരുമാനങ്ങൾ എടുക്കാൻ സഹായിക്കുന്നു!",
+  "resultTryAgainHeader": "പരിശീലിക്കുന്നത് തുടരുക!",
+  "resultTryAgainSubheader": "നിങ്ങൾ {{score}}-ൽ {{total}} ഇനങ്ങളുമായി ശരിയായി പൊരുത്തപ്പെട്ടു.",
+  "resultTryAgainTip": "നുറുങ്ങ്: ഓരോ ഇനവും അത്യാവശ്യമാണോ അതോ വിവേചനാധികാരമാണോ എന്ന് ചിന്തിക്കുക!",
+  "coinsEarned": "+{{coins}} നാണയങ്ങൾ",
+  "items": [
+    {
+      "id": 1,
+      "name": "ആരോഗ്യകരമായ പ്രഭാതഭക്ഷണം",
+      "emoji": "🍳"
+    },
+    {
+      "id": 2,
+      "name": "സ്റ്റേഷനറി കിറ്റ്",
+      "emoji": "✏️"
+    },
+    {
+      "id": 3,
+      "name": "സ്കൂളിനു ശേഷമുള്ള ക്ലാസുകൾ",
+      "emoji": "📚"
+    },
+    {
+      "id": 4,
+      "name": "വിറ്റാമിൻ സപ്ലിമെൻ്റുകൾ",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "ബസ് പാസ്",
+      "emoji": "🚌"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "ദൈനംദിന ആവശ്യം",
+      "emoji": "😅"
+    },
+    {
+      "id": 7,
+      "name": "ഓപ്ഷണൽ പ്രവർത്തനം",
+      "emoji": "🎯"
+    },
+    {
+      "id": 8,
+      "name": "സ്മാർട്ട് ചെലവ്",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "ആരോഗ്യ മുൻഗണന",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "ഗതാഗത ചെലവ്",
+      "emoji": "🚌"
+    }
+  ]
+}

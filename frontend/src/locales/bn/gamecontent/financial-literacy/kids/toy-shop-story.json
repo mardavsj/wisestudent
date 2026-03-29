@@ -1,1 +1,146 @@
-﻿{}
+﻿{
+    "title": "খেলনার দোকানের গল্প",
+    "subtitleComplete": "গল্প সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+    "questionIndicator": "প্রশ্ন {{current}}/{{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "বিক্রেতা বলছে \"তাড়াতাড়ি নইলে খেলনা চলে যাবে!\" কী করবে?",
+            "options": [
+                {
+                    "id": "quick",
+                    "text": "দ্রুত কিনবো",
+                    "emoji": "⚡",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "check",
+                    "text": "দাম চেক করবো",
+                    "emoji": "💰",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "ignore",
+                    "text": "বিক্রেতাকে উপেক্ষা করবো",
+                    "emoji": "🤷",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "দুটো খেলনার দোকান দেখলে। বুদ্ধিমানী কী?",
+            "options": [
+                {
+                    "id": "compare",
+                    "text": "দাম তুলনা করো",
+                    "emoji": "⚖️",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "pay",
+                    "text": "এখনই পেমেন্ট করো",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "skip",
+                    "text": "দুটোই বাদ দাও",
+                    "emoji": "🚶",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "খেলনা সুন্দর দেখাচ্ছে। কী চেক করবে?",
+            "options": [
+                {
+                    "id": "fast",
+                    "text": "দ্রুত কিনবো",
+                    "emoji": "🏃",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "quality",
+                    "text": "মান জিজ্ঞেস করো",
+                    "emoji": "🔍",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "guess",
+                    "text": "মান অনুমান করো",
+                    "emoji": "🎲",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "অনলাইনে খেলনার সেল। প্রথম কী করবে?",
+            "options": [
+                {
+                    "id": "reviews",
+                    "text": "রিভিউ পড়ো",
+                    "emoji": "⭐",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "rush",
+                    "text": "তাড়াহুড়ো করো",
+                    "emoji": "⚡",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "ignore",
+                    "text": "সেল উপেক্ষা করো",
+                    "emoji": "🙈",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "খেলনা কিনতে চাও। পরিকল্পনা কী?",
+            "options": [
+                {
+                    "id": "spend",
+                    "text": "সব খরচ করবো",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "borrow",
+                    "text": "টাকা ধার করবো",
+                    "emoji": "💳",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "budget",
+                    "text": "আগে বাজেট করবো",
+                    "emoji": "📊",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,1 +1,143 @@
-﻿{}
+{
+  "title": "అవసరాలపై క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న: అవసరాల గురించి మీ జ్ఞానాన్ని పరీక్షించుకోండి!",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీ శరీరం ప్రతిరోజూ పని చేయడానికి ఏ వస్తువు సహాయపడుతుంది?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "Chips",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "స్వచ్ఛమైన తాగునీరు",
+          "emoji": "🚰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "toy",
+          "text": "రిమోట్ కంట్రోల్ కారు",
+          "emoji": "🚗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు పాఠశాలలో సరిగ్గా ఏమి నేర్చుకోవాలి?",
+      "options": [
+        {
+          "id": "bag",
+          "text": "స్కూల్ బ్యాగ్ మరియు పుస్తకాలు",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "game",
+          "text": "మొబైల్ గేమ్స్",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cartoon",
+          "text": "కార్టూన్ వీడియోలు",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "వేడి మరియు చలి నుండి సురక్షితంగా ఉండటానికి మీకు ఏ ఎంపిక సహాయపడుతుంది?",
+      "options": [
+        {
+          "id": "cap",
+          "text": "ఫ్యాషన్ క్యాప్",
+          "emoji": "🧢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shoes",
+          "text": "పార్టీ బూట్లు",
+          "emoji": "👟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "సరైన బట్టలు",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "విశ్రాంతి తీసుకోవడానికి మరియు నివసించడానికి ఏ ప్రదేశం ప్రాథమిక అవసరం?",
+      "options": [
+        {
+          "id": "house",
+          "text": "సురక్షితమైన ఇల్లు",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mall",
+          "text": "షాపింగ్ మాల్",
+          "emoji": "🏬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "park",
+          "text": "Playground",
+          "emoji": "🛝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ప్రజలు కోరికలకు ముందు అవసరాలను ఎందుకు ఎంచుకుంటారు?",
+      "options": [
+        {
+          "id": "fun",
+          "text": "కోరికలు మరింత సరదాగా ఉంటాయి",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "important",
+          "text": "రోజువారీ జీవితంలో అవసరాలు అవసరం",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "స్నేహితులు కోరికలను ఇష్టపడతారు",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

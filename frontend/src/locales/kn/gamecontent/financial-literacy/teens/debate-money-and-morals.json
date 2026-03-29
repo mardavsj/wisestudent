@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ಚರ್ಚೆ: ಹಣ ಮತ್ತು ನೈತಿಕತೆ",
+  "subtitleComplete": "ಚರ್ಚೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ರೌಂಡ್",
+  "roundLabel": "ಸುತ್ತು {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "ಹಣವು ಪಾತ್ರವನ್ನು ಪರೀಕ್ಷಿಸುತ್ತದೆಯೇ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ಹೌದು, ನೈತಿಕತೆಯು ಹೆಚ್ಚು ಮುಖ್ಯವಾಗಿದೆ",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ಇಲ್ಲ, ಹಣವು ಮುಖ್ಯವಲ್ಲ",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "ಬಹುಶಃ, ಅವಲಂಬಿಸಿರುತ್ತದೆ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "ನೀವು ಹಣಕ್ಕಾಗಿ ನೈತಿಕತೆಯನ್ನು ರಾಜಿ ಮಾಡಿಕೊಳ್ಳಬೇಕೇ?",
+      "options": [
+        {
+          "id": "sometimes",
+          "text": "ಕೆಲವೊಮ್ಮೆ ಸರಿ",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "ಎಂದಿಗೂ ರಾಜಿ ಮಾಡಿಕೊಳ್ಳಬೇಡಿ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "ಹಣಕ್ಕೆ ಆದ್ಯತೆ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "ಹೆಚ್ಚು ಮುಖ್ಯವಾದುದು: ಸಂಪತ್ತು ಅಥವಾ ಸಮಗ್ರತೆ?",
+      "options": [
+        {
+          "id": "wealth",
+          "text": "Wealth",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "ಎರಡೂ ಸಮಾನವಾಗಿ",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "integrity",
+          "text": "Integrity",
+          "emoji": "💎",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "ನೀವು ಶ್ರೀಮಂತ ಮತ್ತು ನೈತಿಕವಾಗಿರಬಹುದೇ?",
+      "options": [
+        {
+          "id": "yes2",
+          "text": "ಹೌದು, ಸಂಪೂರ್ಣವಾಗಿ",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "id": "no2",
+          "text": "ಇಲ್ಲ, ಅಸಾಧ್ಯ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "rarely",
+          "text": "ಅಪರೂಪವಾಗಿ ಸಾಧ್ಯ",
+          "emoji": "😕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "ಯಾವುದು ಶಾಶ್ವತ ಯಶಸ್ಸನ್ನು ನಿರ್ಮಿಸುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "shortcuts",
+          "text": "ಶಾರ್ಟ್‌ಕಟ್‌ಗಳು ಮತ್ತು ತಂತ್ರಗಳು",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "ethics",
+          "text": "ನೈತಿಕತೆ ಮತ್ತು ಪ್ರಾಮಾಣಿಕತೆ",
+          "emoji": "🏆",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "ಅದೃಷ್ಟ ಮಾತ್ರ",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

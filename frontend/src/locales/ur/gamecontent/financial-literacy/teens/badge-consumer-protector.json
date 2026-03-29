@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "بیج: صارفین کا محافظ",
+  "subtitleComplete": "بیج مکمل!",
+  "subtitleProgress": "چیلنج {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "resultSuccessTitle": "کنزیومر پروٹیکٹر بیج حاصل کیا گیا!",
+  "resultSuccessText": "آپ کو {{total}} میں سے {{score}} چیلنجز درست ملے! آپ ایک حقیقی صارف محافظ ہیں!",
+  "resultSuccessLesson": "سبق: صارفین کے حقوق اور دھوکہ دہی کے خطرات سے آگاہ ہونا آپ کو اپنی محنت سے کمائی گئی رقم کی حفاظت میں مدد کرتا ہے۔",
+  "resultFailTitle": "سیکھتے رہیں!",
+  "resultFailText": "آپ کو {{total}} میں سے {{score}} چیلنجز درست ملے۔ صارفین کی حفاظت کے بارے میں مزید جانیں!",
+  "resultFailTip": "مشورہ: کبھی بھی حساس تفصیلات جیسے OTP یا بینک کی معلومات کا اشتراک نہ کریں، اور ہمیشہ مشکوک لنکس اور کالز کی اطلاع دیں!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "فراڈ کیس 1",
+      "question": "آپ کو ایک جعلی کال موصول ہوتی ہے جس میں بینک کی تفصیلات طلب کی جاتی ہیں۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "text": "انکار کریں اور رپورٹ کریں۔",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "text": "تفصیلات شیئر کریں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "text": "کال کو نظر انداز کریں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "مزید معلومات کے لیے پوچھیں۔",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "فراڈ کیس 2",
+      "question": "آپ کو ایک لنک کے ساتھ ایک مشکوک پیغام ملتا ہے۔ آپ کا عمل کیا ہے؟",
+      "options": [
+        {
+          "text": "لنک پر کلک کریں۔",
+          "emoji": "🔗",
+          "isCorrect": false
+        },
+        {
+          "text": "حذف کریں اور رپورٹ کریں۔",
+          "emoji": "🗑️",
+          "isCorrect": true
+        },
+        {
+          "text": "دوستوں کو فارورڈ کریں۔",
+          "emoji": "📤",
+          "isCorrect": false
+        },
+        {
+          "text": "بعد کے لیے محفوظ کریں۔",
+          "emoji": "💾",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "فراڈ کیس 3",
+      "question": "کوئی آپ سے OTP مانگتا ہے۔ آپ کیسے جواب دیتے ہیں؟",
+      "options": [
+        {
+          "text": "OTP کبھی بھی شیئر نہ کریں۔",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "text": "اگر وہ اچھی طرح سے پوچھیں تو شیئر کریں۔",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "text": "جزوی OTP دیں۔",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "text": "سب کے ساتھ شیئر کریں۔",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "فراڈ کیس 4",
+      "question": "آپ کو ایک عیب دار پروڈکٹ ملتا ہے۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "text": "اسے قبول کریں۔",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "text": "کنزیومر کورٹ میں شکایت کریں۔",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "text": "اسے نظر انداز کریں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "اسے پھینک دو",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "فراڈ کیس 5",
+      "question": "آپ کو ایک غیر حقیقی سرمایہ کاری کی پیشکش نظر آتی ہے۔ آپ کا کیا جواب ہے؟",
+      "options": [
+        {
+          "text": "فوری طور پر سرمایہ کاری کریں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "انکار کریں اور اسکینڈل کی اطلاع دیں۔",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "text": "اس کے بارے میں سوچو",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "دوسروں کے ساتھ شیئر کریں۔",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

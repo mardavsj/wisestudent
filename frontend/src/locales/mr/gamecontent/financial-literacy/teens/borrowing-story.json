@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "उधार कथा",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "किशोर नवीन फोनसाठी कर्ज घेतो. परतफेड करू शकत नाही? परिणाम →",
+      "options": [
+        {
+          "id": "free",
+          "text": "फुकट पैसे",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "Debt",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "काही होत नाही",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्ही ₹500 कर्ज घेता पण परतफेड करू शकत नाही. याचा परिणाम काय?",
+      "options": [
+        {
+          "id": "forgiven",
+          "text": "कर्ज माफ झाले आहे",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "ignored",
+          "text": "दुर्लक्ष करता येईल",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "व्याज आणि दंड वाढतो",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "हव्यासापोटी कर्ज घेण्यापूर्वी काय करावे?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "प्रथम परतफेड कशी करायची याचे नियोजन करा",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "आधी कर्ज घ्या, नंतर विचार करा",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "परतफेड योजनेकडे दुर्लक्ष करा",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "परतफेड योजनेशिवाय कर्ज घेतल्याने काय होते?",
+      "options": [
+        {
+          "id": "success",
+          "text": "आर्थिक यश मिळेल",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "freedom",
+          "text": "आर्थिक स्वातंत्र्य",
+          "emoji": "🕊️",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "कर्जाच्या समस्या",
+          "emoji": "⚠️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "कर्ज घेण्याचा सर्वोत्तम मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "गरजांसाठी अनेकदा कर्ज घ्या",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "आवश्यक असेल तेव्हाच कर्ज घ्या आणि परतफेडीची योजना करा",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "कर्ज घ्या पण परतफेड करू नका",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "कर्ज घेण्याची कथा पूर्ण!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! जबाबदार कर्ज घेण्याबद्दल शिकणे उत्तम काम!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: परतफेड योजनेशिवाय कर्ज घेतल्याने कर्ज होते. कर्ज घेण्यापूर्वी, विशेषत: गरजांसाठी, परतफेड कशी करायची याची नेहमी योजना करा!",
+    "loseEmoji": "💪",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, योजनेशिवाय कर्ज घेतल्याने कर्जाची समस्या उद्भवते!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: कर्ज घेण्यापूर्वी नेहमी कसे फेडायचे याचे नियोजन करा. परतफेड योजनेशिवाय कर्ज घेतल्याने कर्ज आणि आर्थिक अडचणी येतात!"
+  }
+}

@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "పజిల్: వినియోగదారు హక్కులు",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "అర్థాలతో సరిపోలిన హక్కుల ({{current}}/{{total}} సరిపోలింది)",
+  "rightsTitle": "వినియోగదారుల హక్కులు",
+  "meaningsTitle": "Meanings",
+  "matchButton": "Match",
+  "selectRightLabel": "వినియోగదారు హక్కును ఎంచుకోండి",
+  "selectedRightLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}} వినియోగదారు హక్కులలో {{score}}ని వాటి అర్థాలతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: వినియోగదారుల హక్కులను అర్థం చేసుకోవడం అన్యాయమైన పద్ధతుల నుండి మిమ్మల్ని రక్షిస్తుంది!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}} వినియోగదారు హక్కులలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి వినియోగదారు హక్కు అందించే రక్షణ గురించి ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "rights": [
+    {
+      "id": 1,
+      "name": "భద్రత హక్కు",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 2,
+      "name": "సమాచార హక్కు",
+      "emoji": "📋"
+    },
+    {
+      "id": 3,
+      "name": "ఎంచుకునే హక్కు",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "పరిహారం పొందే హక్కు",
+      "emoji": "⚖️"
+    },
+    {
+      "id": 5,
+      "name": "వినియోగదారుల విద్య హక్కు",
+      "emoji": "📚"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "సురక్షిత ఉత్పత్తులు",
+      "emoji": "🛒"
+    },
+    {
+      "id": 7,
+      "name": "సత్యమైన సమాచారం",
+      "emoji": "📝"
+    },
+    {
+      "id": 8,
+      "name": "ఎంపికలు వెరైటీ",
+      "emoji": "🛒"
+    },
+    {
+      "id": 9,
+      "name": "సమస్యలకు పరిష్కారం",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "అవగాహన భవనం",
+      "emoji": "🎓"
+    }
+  ]
+}

@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "बचत कथा",
+  "subtitleComplete": "पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्हाला भेट म्हणून ₹1000 मिळाले आहेत. ते सुरक्षित ठेवण्याचा सर्वोत्तम मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "home",
+          "text": "घरी ठेवा",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "बँक खाते उघडा",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "wallet",
+          "text": "वॉलेटमध्ये घेऊन जा",
+          "emoji": "👛",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमच्या वाढदिवसाचे पैसे वापरण्याचा सर्वात हुशार मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "split",
+          "text": "50/50 विभाजित करा",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "नवीनतम गॅझेट्स खरेदी करा",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "spend_all",
+          "text": "आता सर्व खर्च करा",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्हाला ₹200 साप्ताहिक भत्ता मिळतो. सर्वोत्तम योजना कोणती आहे?",
+      "options": [
+        {
+          "id": "treats",
+          "text": "स्नॅक्स खरेदी करा",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "save_half",
+          "text": "50% वाचवा",
+          "emoji": "💲",
+          "isCorrect": true
+        },
+        {
+          "id": "save_all",
+          "text": "सर्व काही जतन करा",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "कामातून वाचवलेले पैसे कुठे ठेवावेत?",
+      "options": [
+        {
+          "id": "piggy",
+          "text": "पिगी बँक",
+          "emoji": "🐷",
+          "isCorrect": false
+        },
+        {
+          "id": "pocket",
+          "text": "आपला खिसा",
+          "emoji": "👖",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "बचत खाते",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुमचे पैसे वाढवण्याचा सर्वोत्तम मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "save",
+          "text": "उच्च-व्याज खाते",
+          "emoji": "💹",
+          "isCorrect": true
+        },
+        {
+          "id": "invest",
+          "text": "स्टॉक्समध्ये गुंतवणूक करा",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "संग्रहणीय वस्तू खरेदी करा",
+          "emoji": "🏀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

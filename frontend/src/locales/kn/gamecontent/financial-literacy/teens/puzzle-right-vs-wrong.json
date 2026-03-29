@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ಒಗಟು: ಸರಿ ವಿರುದ್ಧ ತಪ್ಪು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಫಲಿತಾಂಶಗಳೊಂದಿಗೆ ಕ್ರಿಯೆಗಳನ್ನು ಹೊಂದಿಸಿ ({{current}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "actionsTitle": "ಹಣಕಾಸಿನ ಕ್ರಮಗಳು",
+  "outcomesTitle": "ಹಣಕಾಸಿನ ಫಲಿತಾಂಶಗಳು",
+  "matchButton": "Match",
+  "selectActionLabel": "ಹಣಕಾಸಿನ ಕ್ರಿಯೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "selectedActionLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultSuccessSubheader": "ನೀವು {{total}} ರಲ್ಲಿ {{score}} ಅನ್ನು ಅವುಗಳ ಫಲಿತಾಂಶಗಳೊಂದಿಗೆ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿದ್ದೀರಿ!",
+  "resultSuccessLesson": "ಪಾಠ: ನೈತಿಕ ಹಣಕಾಸಿನ ನಿರ್ಧಾರಗಳು ಪ್ರತಿಯೊಬ್ಬರಿಗೂ ಧನಾತ್ಮಕ ಫಲಿತಾಂಶಗಳಿಗೆ ಕಾರಣವಾಗುತ್ತವೆ!",
+  "resultTryAgainHeader": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultTryAgainSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಹಣಕಾಸು ಕ್ರಮಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTryAgainTip": "ಸಲಹೆ: ಪ್ರತಿ ಹಣಕಾಸಿನ ಕ್ರಿಯೆಯ ಪರಿಣಾಮಗಳ ಬಗ್ಗೆ ಯೋಚಿಸಿ!",
+  "coinsEarned": "+{{coins}} ನಾಣ್ಯಗಳು",
+  "actions": [
+    {
+      "id": 1,
+      "name": "ಚಾರಿಟಿಗೆ ದೇಣಿಗೆ ನೀಡುವುದು",
+      "emoji": "💝"
+    },
+    {
+      "id": 2,
+      "name": "ಹಣವನ್ನು ಕದಿಯುವುದು",
+      "emoji": "😈"
+    },
+    {
+      "id": 3,
+      "name": "ಪ್ರಾಮಾಣಿಕ ವರದಿಗಾರಿಕೆ",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "ಲಂಚ ಕೊಡುತ್ತಿದ್ದಾರೆ",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "ಫೇರ್ ಡೀಲ್",
+      "emoji": "🤝"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "ಧನಾತ್ಮಕ ಪರಿಣಾಮ",
+      "emoji": "🌟"
+    },
+    {
+      "id": 7,
+      "name": "ಕಾನೂನು ಪರಿಣಾಮಗಳು",
+      "emoji": "⛓️"
+    },
+    {
+      "id": 8,
+      "name": "ಟ್ರಸ್ಟ್ ಕಟ್ಟಡ",
+      "emoji": "🤝"
+    },
+    {
+      "id": 9,
+      "name": "Corruption",
+      "emoji": "🐍"
+    },
+    {
+      "id": 10,
+      "name": "ಪರಸ್ಪರ ಲಾಭ",
+      "emoji": "🤝"
+    }
+  ]
+}

@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ऑनलाइन पेमेंट स्टोरी",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्ही ऑनलाइन पुस्तक खरेदी करता. रोख किंवा UPI सह सुरक्षितपणे पेमेंट करायचे?",
+      "options": [
+        {
+          "id": "upi",
+          "text": "UPI सुरक्षितपणे निवडा",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "रोख पैसे द्या",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "दोन्ही पद्धती वापरा",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ऑनलाइन अन्न ऑर्डर करणे. डेबिट कार्ड वापरायचे की कॅश ऑन डिलिव्हरी?",
+      "options": [
+        {
+          "id": "cash",
+          "text": "कॅश ऑन डिलिव्हरी",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "debit",
+          "text": "डेबिट कार्ड वापरा",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "पेमेंट वगळा",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ऑनलाइन गॅझेट खरेदी करणे. UPI किंवा बँक ट्रान्सफरद्वारे पैसे भरायचे?",
+      "options": [
+        {
+          "id": "bank",
+          "text": "बँक हस्तांतरण",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "upi",
+          "text": "UPI द्वारे पेमेंट करा",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "मेलद्वारे रोख पाठवा",
+          "emoji": "✉️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "सदस्यत्वासाठी पैसे देत आहे. क्रेडिट कार्ड वापरायचे की रोख रक्कम?",
+      "options": [
+        {
+          "id": "credit",
+          "text": "क्रेडिट कार्ड वापरा",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "रोख पैसे द्या",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "चेक पाठवा",
+          "emoji": "📄",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ऑनलाइन खरेदी. OTP सह UPI वापरायचा की पिन शेअर करायचा?",
+      "options": [
+        {
+          "id": "pin",
+          "text": "पिन शेअर करा",
+          "emoji": "🔓",
+          "isCorrect": false
+        },
+        {
+          "id": "upi",
+          "text": "OTP सह UPI वापरा",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "सत्यापन वगळा",
+          "emoji": "⚠️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ऑनलाइन पेमेंट स्टार!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! सुरक्षित ऑनलाइन पेमेंटबद्दल शिकणे उत्तम काम!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: ऑनलाइन खरेदीसाठी नेहमी सुरक्षित डिजिटल पेमेंट पद्धती जसे की UPI, OTP सह डेबिट/क्रेडिट कार्ड वापरा!",
+    "loseEmoji": "💪",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. ऑनलाइन व्यवहारांसाठी सुरक्षित पेमेंट पद्धती वापरण्याचे लक्षात ठेवा!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: UPI, OTP सह डेबिट/क्रेडिट कार्ड ऑनलाइन पेमेंटसाठी सर्वात सुरक्षित पद्धती आहेत. तुमचा पिन कधीही शेअर करू नका!"
+  }
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "സത്യസന്ധതയെക്കുറിച്ചുള്ള ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ആരാണ് സത്യസന്ധൻ?",
+      "options": [
+        {
+          "id": "cheat",
+          "text": "ഉപഭോക്താവിനെ ചതിക്കുന്നു",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "change",
+          "text": "ശരിയായ മാറ്റം നൽകുന്നു",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lies",
+          "text": "Lies",
+          "emoji": "🙊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "സത്യസന്ധനായ ഒരു കടയുടമ എന്താണ് ചെയ്യുന്നത്?",
+      "options": [
+        {
+          "id": "fair",
+          "text": "ന്യായവില ഈടാക്കുന്നു",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "overcharge",
+          "text": "Overcharges",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ഉൽപ്പന്നങ്ങൾ മറയ്ക്കുന്നു",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ഷോപ്പിംഗിൽ സത്യസന്ധത എങ്ങനെ സഹായിക്കും?",
+      "options": [
+        {
+          "id": "free",
+          "text": "നിങ്ങൾക്ക് സൗജന്യ ഇനങ്ങൾ ലഭിക്കും",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "നിങ്ങളെ കൂടുതൽ ചെലവഴിക്കാൻ പ്രേരിപ്പിക്കുന്നു",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "വിശ്വാസം വളർത്തുന്നു",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "വായ്പയെടുക്കാനുള്ള സത്യസന്ധമായ മാർഗം എന്താണ്?",
+      "options": [
+        {
+          "id": "return",
+          "text": "കൃത്യസമയത്ത് മടങ്ങുക",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "എന്നേക്കും സൂക്ഷിക്കുക",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "more",
+          "text": "കൂടുതൽ കടം വാങ്ങുക",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "പണത്തിൻ്റെ കാര്യങ്ങളിൽ സത്യസന്ധത പ്രധാനമായിരിക്കുന്നത് എന്തുകൊണ്ട്?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ഇത് നിങ്ങൾക്ക് കളിപ്പാട്ടങ്ങൾ നൽകുന്നു",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "famous",
+          "text": "അത് നിങ്ങളെ പ്രശസ്തനാക്കുന്നു",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "അത് വിശ്വാസം നേടുന്നു",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

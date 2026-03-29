@@ -1,1 +1,79 @@
-﻿{}
+{
+  "title": "ਲੋੜਾਂ/ਚਾਹੁੰਦੀਆਂ ਦੀ ਬੁਝਾਰਤ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਸ਼੍ਰੇਣੀਆਂ ਨਾਲ ਆਈਟਮਾਂ ਦਾ ਮੇਲ ਕਰੋ ({{matched}}/{{total}} ਮੇਲਿਆ)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "selectItem": "ਇੱਕ ਆਈਟਮ ਚੁਣੋ",
+  "matchButton": "Match",
+  "scoreLabel": "ਸਕੋਰ:",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultGreatDescription": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਨੂੰ ਉਹਨਾਂ ਦੀਆਂ ਸ਼੍ਰੇਣੀਆਂ ਨਾਲ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲਿਆ ਹੈ!",
+  "resultGreatLesson": "ਸਬਕ: ਲੋੜਾਂ ਬਨਾਮ ਇੱਛਾਵਾਂ ਨੂੰ ਸਮਝਣਾ ਸਮਾਰਟ ਮਨੀ ਫੈਸਲੇ ਲੈਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultKeepDescription": "ਤੁਸੀਂ {{total}} ਆਈਟਮਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultKeepTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਕੀ ਹਰੇਕ ਆਈਟਮ ਜ਼ਰੂਰੀ ਹੈ ਜਾਂ ਅਖਤਿਆਰੀ!",
+  "items": [
+    {
+      "id": 1,
+      "name": "ਪੀਣ ਵਾਲਾ ਪਾਣੀ",
+      "emoji": "💧"
+    },
+    {
+      "id": 2,
+      "name": "ਸਕੂਲ ਦੇ ਜੁੱਤੇ",
+      "emoji": "👟"
+    },
+    {
+      "id": 3,
+      "name": "ਖਿਡੌਣਾ ਕਾਰ",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "ਪਾਕੇਟ ਮਨੀ",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "ਵਿੱਤੀ ਗਿਆਨ",
+      "emoji": "📚"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅",
+      "description": "ਜੀਵਨ ਜਾਂ ਸਿੱਖਣ ਲਈ ਜ਼ਰੂਰੀ"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁",
+      "description": "ਹੋਣਾ ਚੰਗਾ ਹੈ, ਜ਼ਰੂਰੀ ਨਹੀਂ"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "🏦",
+      "description": "ਭਵਿੱਖ ਦੀ ਵਰਤੋਂ ਲਈ ਇਕ ਪਾਸੇ ਰੱਖੋ"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈",
+      "description": "ਮੁੱਲ ਵਧਾਉਣ ਲਈ ਪੈਸੇ ਦੀ ਵਰਤੋਂ ਕਰੋ"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲",
+      "description": "ਦੂਜਿਆਂ ਦਾ ਸਮਰਥਨ ਕਰਨ ਲਈ ਵਰਤੋਂ"
+    }
+  ]
+}

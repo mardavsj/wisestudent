@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਲੋੜਾਂ ਬਨਾਮ ਵਾਂਟਸ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਇੱਕ ਇੱਛਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "ਲਗਜ਼ਰੀ ਘੜੀ",
+          "emoji": "⌚",
+          "isCorrect": true
+        },
+        {
+          "id": "medicine",
+          "text": "Medicine",
+          "emoji": "💊",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "ਸਕੂਲ ਦੇ ਕੱਪੜੇ",
+          "emoji": "👕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਕਿਹੜੀ ਲੋੜ ਹੈ?",
+      "options": [
+        {
+          "id": "game",
+          "text": "ਵੀਡੀਓ ਗੇਮ",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "food",
+          "text": "Groceries",
+          "emoji": "🍎",
+          "isCorrect": true
+        },
+        {
+          "id": "phone",
+          "text": "ਨਵਾਂ ਸਮਾਰਟਫੋਨ",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਇੱਕ ਇੱਛਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "rent",
+          "text": "Rent",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "books",
+          "text": "Textbooks",
+          "emoji": "📚",
+          "isCorrect": false
+        },
+        {
+          "id": "concert",
+          "text": "ਸਮਾਰੋਹ ਦੀ ਟਿਕਟ",
+          "emoji": "🎤",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਕਿਹੜੀ ਲੋੜ ਹੈ?",
+      "options": [
+        {
+          "id": "water",
+          "text": "ਪਾਣੀ ਦਾ ਬਿੱਲ",
+          "emoji": "💧",
+          "isCorrect": true
+        },
+        {
+          "id": "shoes",
+          "text": "ਡਿਜ਼ਾਈਨਰ ਜੁੱਤੇ",
+          "emoji": "👟",
+          "isCorrect": false
+        },
+        {
+          "id": "party",
+          "text": "ਪਾਰਟੀ ਸਪਲਾਈ",
+          "emoji": "🎉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਇੱਕ ਇੱਛਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "internet",
+          "text": "ਇੰਟਰਨੈੱਟ ਬਿੱਲ",
+          "emoji": "🌐",
+          "isCorrect": false
+        },
+        {
+          "id": "headphones",
+          "text": "ਵਾਇਰਲੈੱਸ ਹੈੱਡਫੋਨ",
+          "emoji": "🎧",
+          "isCorrect": true
+        },
+        {
+          "id": "transport",
+          "text": "ਬੱਸ ਪਾਸ",
+          "emoji": "🚌",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+    "winMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ! ਤੁਸੀਂ ਲੋੜਾਂ ਅਤੇ ਇੱਛਾਵਾਂ ਵਿੱਚ ਅੰਤਰ ਸਮਝਦੇ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਲੋੜਾਂ ਜਿਉਂਦੇ ਰਹਿਣ ਅਤੇ ਸਿੱਖਣ ਲਈ ਜ਼ਰੂਰੀ ਹਨ, ਜਦੋਂ ਕਿ ਲੋੜਾਂ ਉਹ ਚੀਜ਼ਾਂ ਹਨ ਜੋ ਅਸੀਂ ਚਾਹੁੰਦੇ ਹਾਂ ਪਰ ਲੋੜ ਨਹੀਂ ਹੈ!",
+    "loseEmoji": "😔",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਲੋੜਾਂ ਜ਼ਰੂਰੀ ਚੀਜ਼ਾਂ ਹਨ ਜਿਵੇਂ ਕਿ ਭੋਜਨ, ਕੱਪੜੇ ਅਤੇ ਉਪਯੋਗਤਾਵਾਂ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੁਝਾਅ: ਲੋੜਾਂ ਉਹ ਚੀਜ਼ਾਂ ਹਨ ਜੋ ਤੁਹਾਨੂੰ ਬਚਣ ਅਤੇ ਸਿੱਖਣ ਲਈ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ, ਜਦੋਂ ਕਿ ਇੱਛਾਵਾਂ ਵਿਕਲਪਿਕ ਵਿਲਾਸ ਹਨ।"
+  }
+}

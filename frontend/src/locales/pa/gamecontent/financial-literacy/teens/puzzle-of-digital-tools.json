@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਡਿਜੀਟਲ ਟੂਲ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਫੰਕਸ਼ਨਾਂ ਨਾਲ ਡਿਜੀਟਲ ਟੂਲਸ ਦਾ ਮੇਲ ਕਰੋ ({{current}}/{{total}} ਮੇਲਿਆ)",
+  "toolsTitle": "ਡਿਜੀਟਲ ਟੂਲਜ਼",
+  "functionsTitle": "ਡਿਜੀਟਲ ਫੰਕਸ਼ਨ",
+  "matchButton": "Match",
+  "selectToolLabel": "ਇੱਕ ਡਿਜੀਟਲ ਟੂਲ ਚੁਣੋ",
+  "selectedToolLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultSuccessSubheader": "ਤੁਸੀਂ ਉਹਨਾਂ ਦੇ ਫੰਕਸ਼ਨਾਂ ਨਾਲ {{total}} ਡਿਜੀਟਲ ਟੂਲਸ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ ਹੈ!",
+  "resultSuccessLesson": "ਸਬਕ: ਡਿਜੀਟਲ ਟੂਲਸ ਨੂੰ ਸਮਝਣਾ ਤੁਹਾਨੂੰ ਸੁਰੱਖਿਅਤ ਔਨਲਾਈਨ ਲੈਣ-ਦੇਣ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "resultTryAgainHeader": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultTryAgainSubheader": "ਤੁਸੀਂ {{total}} ਡਿਜੀਟਲ ਟੂਲਸ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTryAgainTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਹਰੇਕ ਡਿਜੀਟਲ ਟੂਲ ਅਸਲ ਵਿੱਚ ਕੀ ਕਰਦਾ ਹੈ!",
+  "coinsEarned": "+{{coins}} ਸਿੱਕੇ",
+  "tools": [
+    {
+      "id": 1,
+      "name": "UPI",
+      "emoji": "📱"
+    },
+    {
+      "id": 2,
+      "name": "ਡੈਬਿਟ ਕਾਰਡ",
+      "emoji": "💳"
+    },
+    {
+      "id": 3,
+      "name": "OTP",
+      "emoji": "🔐"
+    },
+    {
+      "id": 4,
+      "name": "QR ਕੋਡ",
+      "emoji": "📷"
+    },
+    {
+      "id": 5,
+      "name": "CVV",
+      "emoji": "🔒"
+    }
+  ],
+  "functions": [
+    {
+      "id": 6,
+      "name": "ਤੁਰੰਤ ਤਬਾਦਲਾ",
+      "emoji": "⚡"
+    },
+    {
+      "id": 7,
+      "name": "ਬੈਂਕ ਖਰਚ",
+      "emoji": "🏦"
+    },
+    {
+      "id": 8,
+      "name": "ਸੁਰੱਖਿਆ ਕੋਡ",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 9,
+      "name": "ਸਕੈਨ ਅਤੇ ਭੁਗਤਾਨ ਕਰੋ",
+      "emoji": "📲"
+    },
+    {
+      "id": 10,
+      "name": "ਕਾਰਡ ਸੁਰੱਖਿਆ",
+      "emoji": "🧾"
+    }
+  ]
+}

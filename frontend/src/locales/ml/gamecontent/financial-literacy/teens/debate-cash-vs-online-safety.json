@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "സംവാദം: പണം vs ഓൺലൈൻ സുരക്ഷ",
+  "subtitleComplete": "സംവാദം പൂർത്തിയായി!",
+  "subtitleProgress": "{{current}} / {{total}} റൗണ്ട്",
+  "roundLabel": "റൗണ്ട് {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "ഓൺലൈൻ പണം പണത്തേക്കാൾ അപകടകരമാണോ?",
+      "options": [
+        {
+          "id": "online-riskier",
+          "text": "ഓൺലൈൻ കൂടുതൽ അപകടകരമാണ്",
+          "emoji": "💻",
+          "isCorrect": false
+        },
+        {
+          "id": "both-safe",
+          "text": "രണ്ടിനും സുരക്ഷ വേണം",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "cash-riskier",
+          "text": "പണം അപകടകരമാണ്",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "വലിയ അളവിൽ ഏതാണ് സുരക്ഷിതം?",
+      "options": [
+        {
+          "id": "both-safe2",
+          "text": "രണ്ടും മുൻകരുതലുകളോടെ",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "only-cash",
+          "text": "പണം മാത്രം",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "only-online",
+          "text": "ഓൺലൈനിൽ മാത്രം",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "ഓൺലൈൻ പണത്തിൻ്റെ പ്രധാന അപകടസാധ്യത എന്താണ്?",
+      "options": [
+        {
+          "id": "no-risk",
+          "text": "അപകടങ്ങളൊന്നുമില്ല",
+          "emoji": "😓",
+          "isCorrect": false
+        },
+        {
+          "id": "too-easy",
+          "text": "ഉപയോഗിക്കാൻ വളരെ എളുപ്പമാണ്",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "hacking",
+          "text": "ഹാക്കിംഗും വഞ്ചനയും",
+          "emoji": "👾",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "ഓൺലൈൻ പണം എങ്ങനെ സംരക്ഷിക്കാം?",
+      "options": [
+        {
+          "id": "strong-password",
+          "text": "ശക്തമായ പാസ്‌വേഡുകളും ഒടിപിയും",
+          "emoji": "🔐",
+          "isCorrect": true
+        },
+        {
+          "id": "no-protection",
+          "text": "സംരക്ഷണം ആവശ്യമില്ല",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "share-details",
+          "text": "വിശദാംശങ്ങൾ സ്വതന്ത്രമായി പങ്കിടുക",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "എന്താണ് മികച്ച സമീപനം?",
+      "options": [
+        {
+          "id": "only-one",
+          "text": "ഒരു രീതി മാത്രം ഉപയോഗിക്കുക",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "രണ്ടും സുരക്ഷിതമായി ബാലൻസ് ചെയ്യുക",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid-all",
+          "text": "എല്ലാ പണവും ഒഴിവാക്കുക",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "اضطراری قرض دائیں",
+  "subtitlePlaying": "سوال {{current}} از {{total}}: اپنے قرض لینے کے اضطراب کی جانچ کریں!",
+  "subtitleReady": "اپنے قرض لینے کے اضطراب کی جانچ کریں!",
+  "readyEmoji": "🤝",
+  "readyTitle": "قرض لینے کے حق کے بارے میں جاننے کے لیے تیار ہیں؟",
+  "readyDescription": "اشیاء یا رقم ادھار لیتے وقت صحیح عمل کا انتخاب کریں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "سوال:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "کچھ ادھار لینے سے پہلے آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "اجازت طلب کریں۔",
+      "options": [
+        {
+          "text": "پکڑو",
+          "isCorrect": false,
+          "emoji": "🤏"
+        },
+        {
+          "text": "بغیر پوچھے لے لو",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "اجازت طلب کریں۔",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "مالک کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ کو کچھ قرض کیسے لینا چاہئے؟",
+      "correctAnswer": "شائستگی سے قرض لیں۔",
+      "options": [
+        {
+          "text": "شائستگی سے قرض لیں۔",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "زبردستی لینا",
+          "isCorrect": false,
+          "emoji": "💪"
+        },
+        {
+          "text": "جلدی سے پکڑو",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "اسے چوری کرو",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ادھار لی گئی چیز کا کیا کرنا چاہیے؟",
+      "correctAnswer": "آئٹم واپس کریں۔",
+      "options": [
+        {
+          "text": "رکھ لو",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "اسے چھپائیں۔",
+          "isCorrect": false,
+          "emoji": "🫥"
+        },
+        {
+          "text": "اس کے بارے میں بھول جاؤ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "آئٹم واپس کریں۔",
+          "isCorrect": true,
+          "emoji": "↩️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "آپ کو قرض کے ساتھ کیا کرنا چاہئے؟",
+      "correctAnswer": "قرض واپس کریں۔",
+      "options": [
+        {
+          "text": "ادائیگی کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "قرض واپس کریں۔",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "اس سے اجتناب کریں۔",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "اسے بھول جاؤ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آپ کو قرض لینے کو کیسے ہینڈل کرنا چاہئے؟",
+      "correctAnswer": "ایماندار ہو",
+      "options": [
+        {
+          "text": "ایماندار ہو",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "اس کے بارے میں جھوٹ",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "😏"
+        }
+      ]
+    }
+  ]
+}

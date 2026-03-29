@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "मनी ऑनेस्टी क्विझ",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्हाला ₹10 सापडल्यास प्रामाणिक निवड कोणती आहे?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "शांतपणे ठेवा",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "स्नॅक्सवर खर्च करा",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ते मालकाला परत करा",
+          "emoji": "🤝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला ₹5 चा अतिरिक्त बदल मिळेल. काय करणे योग्य आहे?",
+      "options": [
+        {
+          "id": "give",
+          "text": "अतिरिक्त परत द्या",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "कँडी खरेदी करा",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "काहीही बोलू नका",
+          "emoji": "😶",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्ही ₹20 कर्ज घेता. प्रामाणिक काय आहे?",
+      "options": [
+        {
+          "id": "never",
+          "text": "कधीही परतफेड करू नका",
+          "emoji": "😞",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "त्याची वेळेवर परतफेड करा",
+          "emoji": "✅",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "त्याऐवजी अधिक खर्च करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही ₹15 चे खेळणी तोडता. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "सांगा आणि पैसे देण्याची ऑफर द्या",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ते लपवा",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "दुसऱ्याला दोष द्या",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "पैशाशी प्रामाणिकपणा का महत्त्वाचा आहे?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "त्यातून विश्वास निर्माण होतो",
+          "emoji": "😊",
+          "isCorrect": true
+        },
+        {
+          "id": "money",
+          "text": "त्यातून तुम्हाला जास्त पैसे मिळतात",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "हे तुम्हाला अधिक खर्च करू देते",
+          "emoji": "🛒",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

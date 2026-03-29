@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "सेव्हिंगवर क्विझ",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "सर्वोत्तम बचतकर्ता कोण आहे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "कोणीतरी जो आपले सर्व पैसे खर्च करतो",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "पैसा वाया घालवणारा कोणी",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "कोणीतरी जो त्यांच्या पैशाचा काही भाग वाचवतो",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमच्या खिशातील पैशाचे तुम्ही काय करावे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "हे सर्व त्वरित खर्च करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "काही बचत करा आणि काही खर्च करा",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ते लपवा आणि कधीही वापरू नका",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "पैसे वाचवणे महत्त्वाचे का आहे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "त्यामुळे तुम्हाला आवश्यक असलेल्या वस्तू तुम्ही नंतर खरेदी करू शकता",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "त्यामुळे तुम्ही मित्रांना दाखवू शकता",
+          "emoji": "😎",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ते अजिबात महत्त्वाचे नाही",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "मनी बँक कशासाठी वापरली जाते?",
+      "options": [
+        {
+          "id": "a",
+          "text": "खेळणी ठेवणे",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "पैशांची बचत",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "अन्न साठवणे",
+          "emoji": "🍕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "जर तुम्ही दर आठवड्याला 10 रुपये वाचवले तर तुमच्याकडे 4 आठवड्यात किती पैसे असतील?",
+      "options": [
+        {
+          "id": "a",
+          "text": "20 रु",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "30 रु",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "40 रु",
+          "emoji": "💴",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

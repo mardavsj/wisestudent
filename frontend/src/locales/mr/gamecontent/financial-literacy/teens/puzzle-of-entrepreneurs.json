@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "उद्योजकांचे कोडे",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "फील्डसह उद्योजकांशी जुळवा ({{current}}/{{total}} जुळले)",
+  "itemsTitle": "Entrepreneurs",
+  "fieldsTitle": "Fields",
+  "matchButton": "Match",
+  "selectItemLabel": "उद्योजक निवडा",
+  "selectedItemLabel": "निवडले: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "जुळले: {{current}}/{{total}}",
+  "resultSuccessHeader": "ग्रेट जॉब!",
+  "resultSuccessSubheader": "तुम्ही {{total}} पैकी {{score}} उद्योजकांना त्यांच्या फील्डशी योग्यरित्या जुळवले!",
+  "resultSuccessLesson": "धडा: उद्योजकीय क्षेत्र समजून घेणे नाविन्यपूर्णतेला प्रेरणा देते!",
+  "resultTryAgainHeader": "सराव करत राहा!",
+  "resultTryAgainSubheader": "तुम्ही {{total}} उद्योजकांपैकी {{score}} बरोबर जुळले.",
+  "resultTryAgainTip": "टीप: प्रत्येक उद्योजक कोणत्या क्षेत्रासाठी सर्वाधिक ओळखला जातो याचा विचार करा!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "items": [
+    {
+      "id": 1,
+      "name": "रतन टाटा",
+      "emoji": "👔"
+    },
+    {
+      "id": 2,
+      "name": "एलोन मस्क",
+      "emoji": "🚀"
+    },
+    {
+      "id": 3,
+      "name": "नारायण मूर्ती",
+      "emoji": "💻"
+    },
+    {
+      "id": 4,
+      "name": "किरण मुझुमदार",
+      "emoji": "🔬"
+    },
+    {
+      "id": 5,
+      "name": "फाल्गुनी नायर",
+      "emoji": "💄"
+    }
+  ],
+  "fields": [
+    {
+      "id": 6,
+      "name": "Industry",
+      "emoji": "🏭"
+    },
+    {
+      "id": 7,
+      "name": "Innovation",
+      "emoji": "💡"
+    },
+    {
+      "id": 8,
+      "name": "IT",
+      "emoji": "💻"
+    },
+    {
+      "id": 9,
+      "name": "Biotech",
+      "emoji": "🧬"
+    },
+    {
+      "id": 10,
+      "name": "E-commerce",
+      "emoji": "🛒"
+    }
+  ]
+}

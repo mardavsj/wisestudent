@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "ব্যাজ: তরুণ উদ্যোক্তা",
+  "subtitleComplete": "ব্যাজ সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর মধ্যে {{current}} চ্যালেঞ্জ",
+  "challengeLabel": "চ্যালেঞ্জ {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "একটি ব্যবসা শুরু",
+      "question": "একটি ব্যবসা শুরু করার প্রথম ধাপ কি?",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "একটি ভাল ধারণা এবং পরিকল্পনা আছে",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "আপনার সমস্ত অর্থ ব্যয় করুন",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "চিরকাল অপেক্ষা করুন",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "অন্যদের হুবহু কপি করুন",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ব্যবসা পরিকল্পনা",
+      "question": "শুরু করার আগে আপনার কি করা উচিত?",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "অবিলম্বে শুরু করুন",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "গবেষণা বাজার এবং খরচ",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "পরিকল্পনা উপেক্ষা করুন",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "চিন্তা না করে ব্যয় করুন",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "অর্থ ব্যবস্থাপনা",
+      "question": "আপনি কিভাবে ব্যবসার টাকা পরিচালনা করা উচিত?",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "সব খরচ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "অর্থ উপেক্ষা করুন",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "আয় এবং খরচ ট্র্যাক",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "কোন ট্র্যাকিং প্রয়োজন",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "গ্রাহক সেবা",
+      "question": "ব্যবসায়িক সাফল্যের জন্য কী গুরুত্বপূর্ণ?",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "গ্রাহকদের উপেক্ষা করুন",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "গ্রাহকদের ঠকান",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "কোন সেবার প্রয়োজন নেই",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "গ্রাহকদের সন্তুষ্ট করুন",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ক্রমবর্ধমান ব্যবসা",
+      "question": "কিভাবে আপনার ব্যবসা বৃদ্ধি করা উচিত?",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "ছোট শুরু করুন এবং ধীরে ধীরে প্রসারিত করুন",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "অবিলম্বে বিশাল শুরু",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "কখনো বাড়বে না",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "পরিকল্পনা ছাড়াই বেড়ে উঠুন",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "তরুণ উদ্যোক্তা ব্যাজ অর্জিত!",
+    "winMessage": "আপনি {{total}} চ্যালেঞ্জের মধ্যে {{score}} পেয়েছেন সঠিক! আপনি একজন সত্যিকারের তরুণ উদ্যোক্তা বিশেষজ্ঞ!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: তরুণ উদ্যোক্তাদের ভাল ধারণা আছে, সাবধানে পরিকল্পনা করুন, আর্থিক ট্র্যাক করুন, গ্রাহকদের সন্তুষ্ট করুন এবং ধীরে ধীরে বেড়ে উঠুন!",
+    "loseEmoji": "💪",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} চ্যালেঞ্জের মধ্যে {{score}}টি সঠিক পেয়েছেন। অনুশীলন উদ্যোক্তা সঙ্গে নিখুঁত করে তোলে!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "টিপ: সর্বদা একটি ভাল ধারণা এবং পরিকল্পনা, গবেষণা বাজার এবং খরচ, আর্থিক ট্র্যাক, গ্রাহকদের সন্তুষ্ট, এবং ছোট শুরু!"
+  }
+}

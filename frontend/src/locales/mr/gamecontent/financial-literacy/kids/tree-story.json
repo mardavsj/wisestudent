@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "वृक्ष कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "🌳",
+  "questions": [
+    {
+      "id": 1,
+      "text": "आज तुम्ही एक लहान झाड लावा. कालांतराने ते मजबूत होण्यास काय मदत करते?",
+      "options": [
+        {
+          "id": "care",
+          "text": "नियमितपणे पाणी आणि काळजी घ्या",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "जलद वाढण्यासाठी ते खेचा",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ते सोडा आणि विसरा",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "पैसा हा झाडासारखा असतो. कशामुळे ते हळूहळू आणि सुरक्षितपणे वाढू शकते?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "सर्व काही पटकन खर्च करणे",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ते लपवत आणि कधीही वापरत नाही",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "वेळोवेळी हुशारीने वापरणे आणि बचत करणे",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्हाला अतिरिक्त पॉकेट मनी मिळतात. स्मार्ट वृक्ष-शैलीची निवड काय आहे?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "विचार न करता खर्च करा",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "भाग जतन करा जेणेकरून ते नंतर वाढेल",
+          "emoji": "🌱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "निष्काळजीपणे ठेवा",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "फळझाड दरवर्षी फळ देते. हे पैशाबद्दल काय शिकवते?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "पैसा एकदाच वापरावा",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "फक्त नशीब महत्वाचे आहे",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "चांगल्या निवडी वारंवार बक्षिसे देतात",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "जर तुम्ही एखादे झाड लवकर तोडले तर काय होईल?",
+      "options": [
+        {
+          "id": "loss",
+          "text": "तुम्ही भविष्यातील फायदे गमावाल",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "gain",
+          "text": "तुम्हाला नेहमी जास्त फायदा होतो",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "काहीही बदलत नाही",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

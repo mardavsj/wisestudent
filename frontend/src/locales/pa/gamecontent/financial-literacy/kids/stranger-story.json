@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਅਜਨਬੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਅਜਨਬੀ ਤੁਹਾਡੇ ਪਤੇ ਲਈ ਇੱਕ ਖਿਡੌਣਾ ਪੇਸ਼ ਕਰਦਾ ਹੈ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "Refuse",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "accept",
+          "text": "Accept",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "ਦੇਰੀ ਦਾ ਫੈਸਲਾ",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਕੋਈ ਤੁਹਾਡੇ ਬੈਂਕ ਵੇਰਵੇ ਪੁੱਛਦਾ ਹੈ। ਹੁਣ ਕੀ?",
+      "options": [
+        {
+          "id": "give",
+          "text": "ਜਾਣਕਾਰੀ ਦਿਓ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "partial",
+          "text": "ਅੰਸ਼ਕ ਜਾਣਕਾਰੀ ਦਿਓ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ਨਾਂ ਕਹੋ",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਅਜਨਬੀ ਇੱਕ ਸੌਦੇ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਹੈ. ਕੀ ਸੁਰੱਖਿਅਤ ਹੈ?",
+      "options": [
+        {
+          "id": "walk",
+          "text": "ਵਾਕ ਅਵੇ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "engage",
+          "text": "Engage",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ਉਡੀਕ ਕਰੋ ਅਤੇ ਦੇਖੋ",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਸ਼ੱਕੀ ਪੇਸ਼ਕਸ਼ ਦੇਖਦੇ ਹੋ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "ਬਾਲਗ ਨੂੰ ਦੱਸੋ",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "quiet",
+          "text": "ਸ਼ਾਂਤ ਰਹੋ",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਇਸ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਨੂੰ ਇੱਕ ਅਜੀਬ ਸੁਨੇਹਾ ਮਿਲਦਾ ਹੈ। ਸਭ ਤੋਂ ਵਧੀਆ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "reply",
+          "text": "Reply",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forward",
+          "text": "ਦੋਸਤਾਂ ਨੂੰ ਅੱਗੇ ਭੇਜੋ",
+          "emoji": "📤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ಉಡುಗೊರೆ ಹಣದ ಕಥೆ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನಿಮ್ಮ ಜನ್ಮದಿನದಂದು ನೀವು ಉಡುಗೊರೆ ಹಣವನ್ನು ಸ್ವೀಕರಿಸುತ್ತೀರಿ. ಸ್ಮಾರ್ಟ್ ಮೊದಲ ಹೆಜ್ಜೆ ಎಂದರೇನು?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ತಕ್ಷಣ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "show",
+          "text": "ಅದನ್ನು ಸ್ನೇಹಿತರಿಗೆ ತೋರಿಸಿ",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "think",
+          "text": "ಅಗತ್ಯತೆಗಳು ಮತ್ತು ಗುರಿಗಳ ಬಗ್ಗೆ ಯೋಚಿಸಿ",
+          "emoji": "🤔",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನಿಮ್ಮ ಉಡುಗೊರೆಯ ಹಣಕ್ಕಿಂತ ಹೆಚ್ಚಿನ ವೆಚ್ಚದ ಬೆನ್ನುಹೊರೆಯನ್ನು ನೀವು ಬಯಸುತ್ತೀರಿ. ಬುದ್ಧಿವಂತ ಆಯ್ಕೆ ಎಂದರೇನು?",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "ಸ್ನೇಹಿತರಿಂದ ಹಣವನ್ನು ಎರವಲು ಪಡೆಯಿರಿ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ನಿರೀಕ್ಷಿಸಿ ಮತ್ತು ಹೆಚ್ಚಿನ ಹಣವನ್ನು ಉಳಿಸಿ",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "change",
+          "text": "ಬದಲಿಗೆ ಯಾದೃಚ್ಛಿಕವಾಗಿ ಏನನ್ನಾದರೂ ಖರೀದಿಸಿ",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ಸಣ್ಣ ಆಟಿಕೆ ಮತ್ತು ಉಪಯುಕ್ತ ವಸ್ತುವನ್ನು ನೋಡುತ್ತೀರಿ. ನಿರ್ಧರಿಸಲು ನಿಮಗೆ ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "use",
+          "text": "ನಿಮಗೆ ಹೆಚ್ಚು ಅಗತ್ಯವಿರುವ ಐಟಂ ಅನ್ನು ಆರಿಸಿ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ವಿನೋದವಾಗಿ ಕಾಣುವದನ್ನು ಆರಿಸಿ",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "ಅಗ್ಗದ ವಸ್ತುವನ್ನು ಆರಿಸಿ",
+          "emoji": "💲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನಿಮ್ಮ ಉಡುಗೊರೆ ಹಣದ ಭಾಗವನ್ನು ಉಳಿಸಲು ನಿಮ್ಮ ಪೋಷಕರು ಸಲಹೆ ನೀಡುತ್ತಾರೆ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "ಎಲ್ಲವನ್ನೂ ನಿರಾಕರಿಸಿ ಮತ್ತು ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "agree",
+          "text": "ಒಂದು ಭಾಗವನ್ನು ಉಳಿಸಿ ಮತ್ತು ಉಳಿದ ಭಾಗವನ್ನು ಯೋಜಿಸಿ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forget",
+          "text": "ಹಣದ ಬಗ್ಗೆ ಮರೆತುಬಿಡಿ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಉಡುಗೊರೆ ಹಣವು ನಿಮಗೆ ಏನು ಕಲಿಸುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "showoff",
+          "text": "ಖರೀದಿಗಳನ್ನು ಹೇಗೆ ತೋರಿಸುವುದು",
+          "emoji": "😎",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ಯೋಚಿಸದೆ ಖರ್ಚು ಮಾಡುವುದು ಹೇಗೆ",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "manage",
+          "text": "ಹಣವನ್ನು ಜವಾಬ್ದಾರಿಯುತವಾಗಿ ನಿರ್ವಹಿಸುವುದು ಹೇಗೆ",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ స్మార్ట్ పిక్",
+  "subtitlePlaying": "రౌండ్ {{current}}/{{total}}: మీ స్మార్ట్ పిక్ పరిజ్ఞానాన్ని పరీక్షించుకోండి!",
+  "subtitleReady": "మీ స్మార్ట్ పిక్ పరిజ్ఞానాన్ని పరీక్షించుకోండి!",
+  "readyEmoji": "🧠",
+  "readyTitle": "మీ స్మార్ట్ పిక్ నైపుణ్యాలను పరీక్షించడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "స్మార్ట్ ఎంపికలు మరియు నిర్ణయం తీసుకోవడం గురించి ప్రశ్నలకు సమాధానం ఇవ్వండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "రౌండ్:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ఆరోగ్యంగా ఉండటానికి స్మార్ట్ పిక్ ఏమిటి?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍎"
+        },
+        {
+          "text": "అదనపు ఐస్ క్రీమ్",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "వీడియో గేమ్",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ఫ్యాన్సీ బొమ్మ",
+          "isCorrect": false,
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "నేర్చుకోవడానికి మీరు ఏమి ఎంచుకోవాలి?",
+      "correctAnswer": "పాఠశాల సామాగ్రి",
+      "options": [
+        {
+          "text": "కొత్త గేమ్",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "పాఠశాల సామాగ్రి",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "కూల్ గాడ్జెట్",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "రోజువారీ జీవితానికి ఏది అవసరం?",
+      "correctAnswer": "Clothes",
+      "options": [
+        {
+          "text": "ఫ్యాన్సీ బొమ్మ",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Clothes",
+          "isCorrect": true,
+          "emoji": "👕"
+        },
+        {
+          "text": "ఐస్ క్రీమ్",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "యాక్షన్ ఫిగర్",
+          "isCorrect": false,
+          "emoji": "🤖"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "జ్ఞానాన్ని పొందడానికి మీకు ఏది సహాయపడుతుంది?",
+      "correctAnswer": "Books",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "వీడియో గేమ్",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "పజిల్ గేమ్",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "Books",
+          "isCorrect": true,
+          "emoji": "📖"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "మీరు పాఠశాలకు వెళ్లడానికి ఏమి కావాలి?",
+      "correctAnswer": "బస్ టికెట్",
+      "options": [
+        {
+          "text": "కూల్ గాడ్జెట్",
+          "isCorrect": false,
+          "emoji": "⌚"
+        },
+        {
+          "text": "మ్యూజిక్ ప్లేయర్",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "బస్ టికెట్",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "స్మార్ట్ వాచ్",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

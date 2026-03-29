@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "पाळीव प्राणी बसण्याची कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "🐶",
+  "questions": [
+    {
+      "id": 1,
+      "text": "पाळीव प्राण्याला खायला घालणे आणि चालणे यासाठी तुम्ही रोजची दिनचर्या बनवता. तुम्ही कोणत्या कौशल्याचा सराव करत आहात?",
+      "options": [
+        {
+          "id": "playing",
+          "text": "फक्त प्राण्यांशी खेळतो",
+          "emoji": "🎾",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "नशिबावर अवलंबून",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "planning",
+          "text": "नियोजन आणि संघटना",
+          "emoji": "📋",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्ही पाळीव प्राण्यापासून वेळोवेळी पैसे कमवाल. शहाणपणाची पुढची पायरी काय आहे?",
+      "options": [
+        {
+          "id": "track",
+          "text": "आपण किती कमावतो याचा मागोवा घ्या",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "लगेच खर्च करा",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "त्याबद्दल विसरून जा",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमच्या काळजीत असताना पाळीव प्राणी अस्वस्थ दिसत आहे. आपण प्रथम काय करावे?",
+      "options": [
+        {
+          "id": "wait",
+          "text": "प्रतीक्षा करा आणि आशा करा की ते सुधारेल",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "inform",
+          "text": "मालकाला लवकर कळवा",
+          "emoji": "📞",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "लक्षणांकडे दुर्लक्ष करा",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही पाळीव प्राण्याचे बसणे यशस्वीरित्या पूर्ण केले. तुम्हाला पुन्हा विश्वास ठेवण्यास काय मदत करते?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "जास्त पैसे मागत आहेत",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rush",
+          "text": "कामांमध्ये घाई",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "reliable",
+          "text": "विश्वासार्ह आणि सावध असणे",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "पेट सिटिंग तुम्हाला शिकवते की पैसे कमवायचे म्हणजे?",
+      "options": [
+        {
+          "id": "care",
+          "text": "इतरांची जबाबदारीने काळजी घेणे",
+          "emoji": "❤️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "फक्त मजा करत आहे",
+          "emoji": "😄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spending",
+          "text": "जास्त पैसा खर्च होतो",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

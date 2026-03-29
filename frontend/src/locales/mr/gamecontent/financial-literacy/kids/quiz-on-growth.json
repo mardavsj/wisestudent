@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "वाढीवर क्विझ",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "📈",
+  "questions": [
+    {
+      "id": 1,
+      "text": "पैसा वाढण्यास काय मदत करते?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "त्याचा सगळा खर्च",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "वाया घालवणे",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "बचत + व्याज",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बँक पैसे वाढण्यास कशी मदत करते?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "खेळणी देऊन",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "व्याज देऊन",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "आपले पैसे लपवून",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "पैसा वाढवण्याचा सुरक्षित मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "मिठाई खरेदी",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "home",
+          "text": "घरी रोख रक्कम ठेवणे",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "बँक बचत खाते वापरणे",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "गुंतवणूक काय करते?",
+      "options": [
+        {
+          "id": "grows",
+          "text": "तुमचा पैसा वाढतो",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spends",
+          "text": "आपले पैसे खर्च करतो",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "loses",
+          "text": "आपले पैसे नेहमी गमावतात",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "बँकेत पैसे का साठवायचे?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ताबडतोब खेळणी खरेदी करण्यासाठी",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ते व्याजाने वाढू शकते",
+          "emoji": "💹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "फक्त मजा आहे म्हणून",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

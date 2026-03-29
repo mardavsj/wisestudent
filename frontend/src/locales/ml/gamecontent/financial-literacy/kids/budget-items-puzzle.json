@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "പസിൽ: ബജറ്റ് ഇനങ്ങൾ",
+  "subtitleComplete": "പസിൽ പൂർത്തിയായി!",
+  "subtitleProgress": "വിഭാഗങ്ങൾക്കൊപ്പം ഇനങ്ങൾ പൊരുത്തപ്പെടുത്തുക ({{matched}}/{{total}} പൊരുത്തപ്പെട്ടു)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "തിരഞ്ഞെടുത്തത്: {{name}}",
+  "selectItem": "ഒരു ഇനം തിരഞ്ഞെടുക്കുക",
+  "matchButton": "Match",
+  "scoreLabel": "സ്കോർ:",
+  "matchedLabel": "പൊരുത്തപ്പെട്ടു:",
+  "resultGreatEmoji": "🏆",
+  "resultGreatTitle": "മികച്ച ജോലി!",
+  "resultGreatDescription": "വിഭാഗങ്ങളുള്ള {{total}} ഇനങ്ങളിൽ {{score}} നിങ്ങൾ ശരിയായി പൊരുത്തപ്പെടുത്തി!",
+  "coinsLabel": "Coins",
+  "resultLesson": "പാഠം: ആവശ്യങ്ങളും ആവശ്യങ്ങളും മനസ്സിലാക്കുന്നത് ബഡ്ജറ്റിംഗിനെ സഹായിക്കുന്നു!",
+  "resultKeepEmoji": "🧩",
+  "resultKeepTitle": "പരിശീലിക്കുന്നത് തുടരുക!",
+  "resultKeepDescription": "നിങ്ങൾ {{score}}-ൽ {{total}} ഇനങ്ങളുമായി ശരിയായി പൊരുത്തപ്പെട്ടു.",
+  "resultTip": "നുറുങ്ങ്: അതിജീവനത്തിന് ആവശ്യങ്ങൾ അത്യന്താപേക്ഷിതമാണ്, ആഗ്രഹങ്ങൾ ഉണ്ടായിരിക്കുന്നത് നല്ലതാണ്!",
+  "items": [
+    {
+      "id": 1,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 2,
+      "name": "ജന്മദിന സമ്മാനം",
+      "emoji": "🎁"
+    },
+    {
+      "id": 3,
+      "name": "സ്കൂൾ സാധനങ്ങൾ",
+      "emoji": "✏️"
+    },
+    {
+      "id": 4,
+      "name": "വീഡിയോ ഗെയിം കൺസോൾ",
+      "emoji": "🎮"
+    },
+    {
+      "id": 5,
+      "name": "അധിക ലഘുഭക്ഷണങ്ങൾ",
+      "emoji": "🍿"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Essential",
+      "emoji": "✅",
+      "description": "ദൈനംദിന ജീവിതത്തിൽ നിർബന്ധമായും ഉണ്ടായിരിക്കേണ്ടത്"
+    },
+    {
+      "id": 7,
+      "name": "Non-Essential",
+      "emoji": "➖",
+      "description": "ഓപ്ഷണൽ, ആവശ്യമില്ല"
+    },
+    {
+      "id": 8,
+      "name": "സ്കൂളിന് അത്യാവശ്യമാണ്",
+      "emoji": "🎒",
+      "description": "പഠനത്തിന് ആവശ്യമാണ്"
+    },
+    {
+      "id": 9,
+      "name": "Luxury",
+      "emoji": "💎",
+      "description": "കൊള്ളാം, ചെലവേറിയത്"
+    },
+    {
+      "id": 10,
+      "name": "ഓപ്ഷണൽ ട്രീറ്റ്",
+      "emoji": "🍭",
+      "description": "ചെറിയ രസകരമായ ചിലവ്"
+    }
+  ]
+}

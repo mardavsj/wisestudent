@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਖਪਤਕਾਰ ਅਧਿਕਾਰ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਅਰਥਾਂ ਦੇ ਨਾਲ ਮੈਚ ਅਧਿਕਾਰ ({{current}}/{{total}} ਮੇਲਿਆ)",
+  "rightsTitle": "ਖਪਤਕਾਰ ਅਧਿਕਾਰ",
+  "meaningsTitle": "Meanings",
+  "matchButton": "Match",
+  "selectRightLabel": "ਇੱਕ ਖਪਤਕਾਰ ਅਧਿਕਾਰ ਚੁਣੋ",
+  "selectedRightLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultSuccessSubheader": "ਤੁਸੀਂ {{total}} ਉਪਭੋਗਤਾ ਅਧਿਕਾਰਾਂ ਵਿੱਚੋਂ {{score}} ਨੂੰ ਉਹਨਾਂ ਦੇ ਅਰਥਾਂ ਨਾਲ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਖਾਂਦੇ ਹੋ!",
+  "resultSuccessLesson": "ਸਬਕ: ਖਪਤਕਾਰਾਂ ਦੇ ਅਧਿਕਾਰਾਂ ਨੂੰ ਸਮਝਣਾ ਤੁਹਾਨੂੰ ਗਲਤ ਅਭਿਆਸਾਂ ਤੋਂ ਬਚਾਉਂਦਾ ਹੈ!",
+  "resultTryAgainHeader": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultTryAgainSubheader": "ਤੁਸੀਂ {{total}} ਉਪਭੋਗਤਾ ਅਧਿਕਾਰਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ ਹੈ।",
+  "resultTryAgainTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਹਰੇਕ ਖਪਤਕਾਰ ਦਾ ਅਧਿਕਾਰ ਕੀ ਸੁਰੱਖਿਆ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ!",
+  "coinsEarned": "+{{coins}} ਸਿੱਕੇ",
+  "rights": [
+    {
+      "id": 1,
+      "name": "ਸੁਰੱਖਿਆ ਦਾ ਅਧਿਕਾਰ",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 2,
+      "name": "ਸੂਚਨਾ ਦਾ ਅਧਿਕਾਰ",
+      "emoji": "📋"
+    },
+    {
+      "id": 3,
+      "name": "ਚੁਣਨ ਦਾ ਅਧਿਕਾਰ",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "ਨਿਵਾਰਣ ਦਾ ਅਧਿਕਾਰ",
+      "emoji": "⚖️"
+    },
+    {
+      "id": 5,
+      "name": "ਖਪਤਕਾਰ ਸਿੱਖਿਆ ਦਾ ਅਧਿਕਾਰ",
+      "emoji": "📚"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "ਸੁਰੱਖਿਅਤ ਉਤਪਾਦ",
+      "emoji": "🛒"
+    },
+    {
+      "id": 7,
+      "name": "ਸੱਚੀ ਜਾਣਕਾਰੀ",
+      "emoji": "📝"
+    },
+    {
+      "id": 8,
+      "name": "ਵਿਕਲਪਾਂ ਦੀ ਵਿਭਿੰਨਤਾ",
+      "emoji": "🛒"
+    },
+    {
+      "id": 9,
+      "name": "ਸਮੱਸਿਆਵਾਂ ਲਈ ਉਪਾਅ",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "ਜਾਗਰੂਕਤਾ ਬਿਲਡਿੰਗ",
+      "emoji": "🎓"
+    }
+  ]
+}

@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "એથિક્સ ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "શું માર્કસ માટે લાંચ આપવી એ નૈતિક છે?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "હા, જો જરૂરી હોય તો",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ના, તે ખોટું છે",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "કદાચ, આધાર રાખે છે",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "લાંચ આપવામાં ખોટું શું છે?",
+      "options": [
+        {
+          "id": "unfair",
+          "text": "તે અન્યાયી અને અપ્રમાણિક છે",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "કંઈ ખોટું નથી",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "expensive",
+          "text": "ખૂબ ખર્ચાળ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારે સારા માર્ક્સ કેવી રીતે કમાવવા જોઈએ?",
+      "options": [
+        {
+          "id": "study",
+          "text": "અભ્યાસ કરો અને મહેનત કરો",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "bribe",
+          "text": "ગુણ માટે ચૂકવણી કરો",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "પરીક્ષામાં છેતરપિંડી",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "લાંચ આપવાના પરિણામો શું છે?",
+      "options": [
+        {
+          "id": "no-consequences",
+          "text": "કોઈ પરિણામ નથી",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-trust",
+          "text": "વિશ્વાસ ગુમાવો અને સજાનો સામનો કરો",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "get-reward",
+          "text": "પુરસ્કાર મેળવો",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "સફળ થવાની નૈતિક રીત કઈ છે?",
+      "options": [
+        {
+          "id": "honest-effort",
+          "text": "પ્રામાણિક પ્રયાસ અને પ્રામાણિકતા",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "shortcuts",
+          "text": "શોર્ટકટ લો",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat-way",
+          "text": "તમારી રીતે છેતરવું",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ગ્રેટ જોબ!",
+    "winMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે નૈતિક ચેમ્પિયન છો!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: પ્રામાણિકતા અને પ્રામાણિક પ્રયાસ એ જ સફળ થવાનો સાચો માર્ગ છે. લાંચ આપવાથી વિશ્વાસ અને પરિણામોની ખોટ થાય છે.",
+    "loseEmoji": "😔",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, પ્રમાણિકતા એ શ્રેષ્ઠ નીતિ છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટીપ: સખત મહેનત અને પ્રમાણિકતા દ્વારા મેળવેલી સફળતા સૌથી વધુ લાભદાયી છે. ક્યારેય અનૈતિક શોર્ટકટ ન લો."
+  }
+}

@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ನಿಂಬೆ ಪಾನಕದ ಕಥೆ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "🍋",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನೀವು ನಿಂಬೆ ಪಾನಕದಿಂದ ₹50 ಗಳಿಸುತ್ತೀರಿ. ಸ್ಮಾರ್ಟ್ ಆಯ್ಕೆ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ಆಟಿಕೆಗಳಿಗೆ ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ತಿಂಡಿಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ಪೂರೈಕೆಗಾಗಿ ಅರ್ಧವನ್ನು ಉಳಿಸಿ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನಿಂಬೆ ಹಣ್ಣಿಗೆ ₹20 ಬೇಕು. ನಿಮ್ಮ ಬಳಿ ₹15 ಇದೆ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "₹5 ಹೆಚ್ಚು ಉಳಿಸಿ",
+          "emoji": "🙂",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "₹5 ಸಾಲ ಮಾಡಿ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "ನಿಂಬೆಹಣ್ಣುಗಳನ್ನು ಖರೀದಿಸುವುದನ್ನು ಬಿಟ್ಟುಬಿಡಿ",
+          "emoji": "🍋",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಗ್ರಾಹಕರು ₹5 ರ ಬದಲು ₹10 ಪಾವತಿಸುತ್ತಾರೆ. ಯಾವುದು ಪ್ರಾಮಾಣಿಕ?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "₹10 ಇಟ್ಟುಕೊಳ್ಳಿ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ಹೆಚ್ಚುವರಿ ₹5 ಹಿಂತಿರುಗಿ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ಅದನ್ನು ಕ್ಯಾಂಡಿಗೆ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ₹30 ಗಳಿಸುತ್ತೀರಿ. ಇವತ್ತು ಅದನ್ನೆಲ್ಲ ಕಳೆಯಬೇಕೆ?",
+      "options": [
+        {
+          "id": "no",
+          "text": "ಇಲ್ಲ, ಮುಂದಿನ ಸ್ಟ್ಯಾಂಡ್‌ಗಾಗಿ ಉಳಿಸಿ",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "ಹೌದು, ಆಟಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ಅದನ್ನು ಕೊಡು",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನಿಮ್ಮ ನಿಂಬೆ ಪಾನಕ ಸ್ಟ್ಯಾಂಡ್ ಗಳಿಕೆಯನ್ನು ಏಕೆ ಯೋಜಿಸುತ್ತಿದೆ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಹೆಚ್ಚು ಖರ್ಚು ಮಾಡಲು ನಿಮಗೆ ಅವಕಾಶ ನೀಡುತ್ತದೆ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "running",
+          "text": "ನಿಮ್ಮ ನಿಲುವನ್ನು ಚಾಲನೆಯಲ್ಲಿಡುತ್ತದೆ",
+          "emoji": "☀️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "customers",
+          "text": "ನಿಮಗೆ ಹೆಚ್ಚಿನ ಗ್ರಾಹಕರನ್ನು ನೀಡುತ್ತದೆ",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

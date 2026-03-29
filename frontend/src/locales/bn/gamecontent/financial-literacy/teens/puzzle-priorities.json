@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "অগ্রাধিকারের ধাঁধা",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "অগ্রাধিকারের সাথে ব্যয় মেলে ({{current}}/{{total}} মিলেছে)",
+  "itemsTitle": "Expenses",
+  "prioritiesTitle": "Priorities",
+  "matchButton": "Match",
+  "selectItemLabel": "একটি ব্যয় নির্বাচন করুন",
+  "selectedItemLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি তাদের অগ্রাধিকারের সাথে {{total}} ব্যয়ের মধ্যে {{score}} সঠিকভাবে মেলেছেন!",
+  "resultSuccessLesson": "পাঠ: ব্যয়ের অগ্রাধিকার বোঝা স্মার্ট আর্থিক সিদ্ধান্ত নিতে সাহায্য করে!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি {{total}} খরচের মধ্যে {{score}} সঠিকভাবে মেলেছেন।",
+  "resultTryAgainTip": "টিপ: প্রতিটি খরচ অপরিহার্য বা বিবেচনার ভিত্তিতে চিন্তা করুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "items": [
+    {
+      "id": 1,
+      "name": "স্কুল ফি",
+      "emoji": "🎓"
+    },
+    {
+      "id": 2,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 3,
+      "name": "Rent",
+      "emoji": "🏠"
+    },
+    {
+      "id": 4,
+      "name": "Medicine",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "Electricity",
+      "emoji": "💡"
+    }
+  ],
+  "priorities": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲"
+    }
+  ]
+}

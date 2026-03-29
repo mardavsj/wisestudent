@@ -1,1 +1,152 @@
-﻿{}
+{
+  "title": "प्रतिक्षेप: नैतिकता",
+  "subtitleComplete": "खेळ पूर्ण!",
+  "roundLabel": "फेरी {{current}}/{{total}}",
+  "timeUp": "वेळ संपली!",
+  "readyEmoji": "🎯",
+  "readyTitle": "तयार व्हा!",
+  "readyDescription": "नैतिक पैशाच्या वर्तनाबद्दल प्रश्नांची उत्तरे द्या!",
+  "readyTimeInfo": "प्रत्येक प्रश्नासाठी आपल्याकडे {{time}} सेकंद आहेत.",
+  "readyQuestionInfo": "आपल्याकडे प्रत्येकी {{time}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "gameRoundLabel": "फेरी:",
+  "gameTimeLabel": "वेळ:",
+  "gameScoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "तुमच्याकडे नेहमी पैशाचे काय असावे?",
+      "correctAnswer": "Truth",
+      "options": [
+        {
+          "text": "Truth",
+          "isCorrect": true,
+          "emoji": "🗣️"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Deceive",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "आर्थिक बाबी कशा हाताळायच्या?",
+      "correctAnswer": "Honest",
+      "options": [
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Honest",
+          "isCorrect": true,
+          "emoji": "💯"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Trick",
+          "isCorrect": false,
+          "emoji": "🃏"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुमचे आर्थिक निर्णय काय असावेत?",
+      "correctAnswer": "Fair",
+      "options": [
+        {
+          "text": "Unfair",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Biased",
+          "isCorrect": false,
+          "emoji": "🎯"
+        },
+        {
+          "text": "Fair",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "Partial",
+          "isCorrect": false,
+          "emoji": "📊"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "आपण आर्थिक संबंधांमध्ये काय तयार केले पाहिजे?",
+      "correctAnswer": "Trust",
+      "options": [
+        {
+          "text": "Trust",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "Deceive",
+          "isCorrect": false,
+          "emoji": "😈"
+        },
+        {
+          "text": "Manipulate",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Exploit",
+          "isCorrect": false,
+          "emoji": "💔"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "पैशाशी कसे वागले पाहिजे?",
+      "correctAnswer": "Ethical",
+      "options": [
+        {
+          "text": "Dishonest",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Unfair",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Corrupt",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Ethical",
+          "isCorrect": true,
+          "emoji": "🌟"
+        }
+      ]
+    }
+  ]
+}

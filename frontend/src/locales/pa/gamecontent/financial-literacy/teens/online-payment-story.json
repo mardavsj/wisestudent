@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਔਨਲਾਈਨ ਭੁਗਤਾਨ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਕਿਤਾਬ ਆਨਲਾਈਨ ਖਰੀਦਦੇ ਹੋ। ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਨਕਦ ਜਾਂ UPI ਨਾਲ ਭੁਗਤਾਨ ਕਰੋ?",
+      "options": [
+        {
+          "id": "upi",
+          "text": "UPI ਨੂੰ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਚੁਣੋ",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "ਨਕਦ ਦੇ ਨਾਲ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "ਦੋਨੋ ਢੰਗ ਵਰਤੋ",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਭੋਜਨ ਔਨਲਾਈਨ ਆਰਡਰ ਕਰਨਾ। ਡੈਬਿਟ ਕਾਰਡ ਦੀ ਵਰਤੋਂ ਕਰੋ ਜਾਂ ਡਿਲੀਵਰੀ 'ਤੇ ਨਕਦ?",
+      "options": [
+        {
+          "id": "cash",
+          "text": "ਡਿਲੀਵਰੀ 'ਤੇ ਨਕਦ",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "debit",
+          "text": "ਡੈਬਿਟ ਕਾਰਡ ਦੀ ਵਰਤੋਂ ਕਰੋ",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "ਭੁਗਤਾਨ ਛੱਡੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਔਨਲਾਈਨ ਇੱਕ ਗੈਜੇਟ ਖਰੀਦਣਾ। UPI ਜਾਂ ਬੈਂਕ ਟ੍ਰਾਂਸਫਰ ਰਾਹੀਂ ਭੁਗਤਾਨ ਕਰਨਾ ਹੈ?",
+      "options": [
+        {
+          "id": "bank",
+          "text": "ਬੈਂਕ ਟ੍ਰਾਂਸਫਰ",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "upi",
+          "text": "UPI ਰਾਹੀਂ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "ਡਾਕ ਰਾਹੀਂ ਨਕਦ ਭੇਜੋ",
+          "emoji": "✉️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਗਾਹਕੀ ਲਈ ਭੁਗਤਾਨ ਕਰਨਾ। ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਜਾਂ ਨਕਦ ਵਰਤੋ?",
+      "options": [
+        {
+          "id": "credit",
+          "text": "ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਦੀ ਵਰਤੋਂ ਕਰੋ",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "ਨਕਦ ਦੇ ਨਾਲ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "ਇੱਕ ਚੈੱਕ ਭੇਜੋ",
+          "emoji": "📄",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਆਨਲਾਈਨ ਖਰੀਦਦਾਰੀ. ਕੀ OTP ਨਾਲ UPI ਦੀ ਵਰਤੋਂ ਕਰਨੀ ਹੈ ਜਾਂ ਪਿੰਨ ਸਾਂਝਾ ਕਰਨਾ ਹੈ?",
+      "options": [
+        {
+          "id": "pin",
+          "text": "PIN ਸਾਂਝਾ ਕਰੋ",
+          "emoji": "🔓",
+          "isCorrect": false
+        },
+        {
+          "id": "upi",
+          "text": "OTP ਨਾਲ UPI ਦੀ ਵਰਤੋਂ ਕਰੋ",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "ਪੁਸ਼ਟੀਕਰਨ ਛੱਡੋ",
+          "emoji": "⚠️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਔਨਲਾਈਨ ਭੁਗਤਾਨ ਸਟਾਰ!",
+    "winMessage": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਸੁਰੱਖਿਅਤ ਔਨਲਾਈਨ ਭੁਗਤਾਨਾਂ ਬਾਰੇ ਸਿੱਖਣ ਲਈ ਵਧੀਆ ਨੌਕਰੀ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਔਨਲਾਈਨ ਖਰੀਦਦਾਰੀ ਲਈ ਹਮੇਸ਼ਾ ਸੁਰੱਖਿਅਤ ਡਿਜੀਟਲ ਭੁਗਤਾਨ ਵਿਧੀਆਂ ਜਿਵੇਂ UPI, OTP ਦੇ ਨਾਲ ਡੈਬਿਟ/ਕ੍ਰੈਡਿਟ ਕਾਰਡਾਂ ਦੀ ਵਰਤੋਂ ਕਰੋ!",
+    "loseEmoji": "💪",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਔਨਲਾਈਨ ਲੈਣ-ਦੇਣ ਲਈ ਸੁਰੱਖਿਅਤ ਭੁਗਤਾਨ ਵਿਧੀਆਂ ਦੀ ਵਰਤੋਂ ਕਰਨਾ ਯਾਦ ਰੱਖੋ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੁਝਾਅ: UPI, OTP ਵਾਲੇ ਡੈਬਿਟ/ਕ੍ਰੈਡਿਟ ਕਾਰਡ ਔਨਲਾਈਨ ਭੁਗਤਾਨਾਂ ਲਈ ਸਭ ਤੋਂ ਸੁਰੱਖਿਅਤ ਢੰਗ ਹਨ। ਕਦੇ ਵੀ ਆਪਣਾ ਪਿੰਨ ਸਾਂਝਾ ਨਾ ਕਰੋ!"
+  }
+}

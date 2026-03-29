@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "کاروباری خطرے کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ ناشتے میں فروخت کرنے کے لیے ₹200 کی سرمایہ کاری کرتے ہیں۔ ₹300 کمائیں۔ اچھا؟",
+      "options": [
+        {
+          "id": "yes",
+          "text": "جی ہاں، 50% منافع",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "نہیں، بہت خطرناک",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "شاید، منحصر ہے",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "چھوٹے کاروبار کے لیے منافع کا اچھا مارجن کیا ہے؟",
+      "options": [
+        {
+          "id": "low",
+          "text": "5% منافع",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "high",
+          "text": "30-50% منافع",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "loss",
+          "text": "نقصان ٹھیک ہے۔",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "کیا آپ کو کاروبار میں خطرہ مول لینا چاہئے؟",
+      "options": [
+        {
+          "id": "all",
+          "text": "تمام خطرات مول لیں۔",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "تمام خطرات سے بچیں۔",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "calculated",
+          "text": "ہاں، حسابی خطرات",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "کاروبار شروع کرنے سے پہلے کیا ضروری ہے؟",
+      "options": [
+        {
+          "id": "jump",
+          "text": "فوراً اندر کودیں۔",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "منصوبہ بندی اور تحقیق",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "ہمیشہ کے لیے انتظار کریں۔",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "کیا ₹200→₹300 ایک اچھا کاروباری نتیجہ ہے؟",
+      "options": [
+        {
+          "id": "no2",
+          "text": "نہیں، بہت چھوٹا",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "ہوسکتا ہے، اگر ہم آہنگ ہو۔",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "جی ہاں، 50% واپسی",
+          "emoji": "🙂",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "کہانی مکمل!",
+    "winMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ کاروباری خطرات اور منافع کو سمجھتے ہیں!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: 50% منافع (₹200→₹300) بہترین ہے! حسابی خطرات لیں، شروع کرنے سے پہلے منصوبہ بنائیں، اور صحت مند منافع کے مارجن کا مقصد بنائیں!",
+    "loseEmoji": "💪",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، 50% منافع بہترین ہے، اور منصوبہ بندی کے ساتھ حسابی خطرات کلیدی ہیں!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "ٹپ: ₹200 کی سرمایہ کاری اور ₹300 (50% منافع) کمانا بہترین ہے! کاروبار شروع کرنے سے پہلے ہمیشہ منصوبہ بندی کریں اور حساب سے خطرات مول لیں!"
+  }
+}

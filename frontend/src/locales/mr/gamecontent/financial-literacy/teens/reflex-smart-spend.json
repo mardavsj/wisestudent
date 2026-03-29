@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स स्मार्ट खर्च",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: आपल्या खर्चाच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "subtitleReady": "आपल्या खर्चाच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "readyHeader": "आपल्या खर्चाच्या प्रतिक्षेपांची चाचणी घेण्यासाठी तयार आहात?",
+  "readyDescription": "स्मार्ट खर्चाच्या निवडींबद्दल प्रश्नांची उत्तरे द्या.",
+  "readyTip": "आपल्याकडे प्रत्येकी {{time}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "greatJob": "ग्रेट जॉब!",
+  "finalScore": "You scored {{score}} out of {{total}}!",
+  "growthSkills": "तुम्ही मजबूत आर्थिक निर्णय घेण्याची कौशल्ये विकसित करत आहात!",
+  "playAgain": "पुन्हा खेळा",
+  "questions": [
+    {
+      "id": 1,
+      "question": "सर्वात हुशार खर्च पर्याय कोणता आहे?",
+      "options": [
+        {
+          "id": "pay_rent",
+          "text": "भाडे द्या",
+          "emoji": "🏠"
+        },
+        {
+          "id": "luxury_party",
+          "text": "लक्झरी पार्टी",
+          "emoji": "🎉"
+        },
+        {
+          "id": "designer_shoes",
+          "text": "डिझायनर शूज खरेदी करा",
+          "emoji": "👟"
+        },
+        {
+          "id": "impulse_purchase",
+          "text": "आवेग खरेदी",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "कोणता खर्च प्रथम आला पाहिजे?",
+      "options": [
+        {
+          "id": "new_gadgets",
+          "text": "नवीन गॅझेट्स",
+          "emoji": "📱"
+        },
+        {
+          "id": "buy_groceries",
+          "text": "किराणा सामान खरेदी करा",
+          "emoji": "🛒"
+        },
+        {
+          "id": "expensive_restaurant",
+          "text": "महागडे रेस्टॉरंट",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "entertainment",
+          "text": "Entertainment",
+          "emoji": "🎬"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "अतिरिक्त पैशाचे काय करावे?",
+      "options": [
+        {
+          "id": "movie_night",
+          "text": "चित्रपट रात्री",
+          "emoji": "🎬"
+        },
+        {
+          "id": "buy_video_games",
+          "text": "व्हिडिओ गेम्स खरेदी करा",
+          "emoji": "🎮"
+        },
+        {
+          "id": "save_money",
+          "text": "पैसे वाचवा",
+          "emoji": "💰"
+        },
+        {
+          "id": "shopping_spree",
+          "text": "खरेदीचा खेळ",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "प्राधान्य खर्च कोणता आहे?",
+      "options": [
+        {
+          "id": "pay_bills",
+          "text": "बिले भरा",
+          "emoji": "📄"
+        },
+        {
+          "id": "designer_clothes",
+          "text": "डिझायनर कपडे",
+          "emoji": "👔"
+        },
+        {
+          "id": "weekend_trip",
+          "text": "वीकेंड ट्रिप",
+          "emoji": "✈️"
+        },
+        {
+          "id": "gourmet_dinner",
+          "text": "गोरमेट डिनर",
+          "emoji": "🍷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "दीर्घकालीन आर्थिक सुरक्षा कशामुळे निर्माण होते?",
+      "options": [
+        {
+          "id": "concert_ticket",
+          "text": "कॉन्सर्ट तिकीट",
+          "emoji": "🎫"
+        },
+        {
+          "id": "fund_education",
+          "text": "निधी शिक्षण",
+          "emoji": "📚"
+        },
+        {
+          "id": "buy_jewelry",
+          "text": "दागिने खरेदी करा",
+          "emoji": "💍"
+        },
+        {
+          "id": "luxury_vacation",
+          "text": "लक्झरी सुट्टी",
+          "emoji": "🏖️"
+        }
+      ]
+    }
+  ]
+}

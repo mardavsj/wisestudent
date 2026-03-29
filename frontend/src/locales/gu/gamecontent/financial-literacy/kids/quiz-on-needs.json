@@ -1,1 +1,143 @@
-﻿{}
+{
+  "title": "જરૂરિયાતો પર ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} નો પ્રશ્ન {{current}}: જરૂરિયાતો વિશે તમારા જ્ઞાનનું પરીક્ષણ કરો!",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "કઈ વસ્તુ તમારા શરીરને દરરોજ કામ કરવામાં મદદ કરે છે?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "Chips",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "સ્વચ્છ પીવાનું પાણી",
+          "emoji": "🚰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "toy",
+          "text": "રિમોટ કંટ્રોલ કાર",
+          "emoji": "🚗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારે શાળામાં યોગ્ય રીતે શીખવાની શું જરૂર છે?",
+      "options": [
+        {
+          "id": "bag",
+          "text": "સ્કૂલ બેગ અને પુસ્તકો",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "game",
+          "text": "મોબાઇલ ગેમ્સ",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cartoon",
+          "text": "કાર્ટૂન વિડિઓઝ",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "કઈ પસંદગી તમને ગરમી અને ઠંડીથી સુરક્ષિત રહેવામાં મદદ કરે છે?",
+      "options": [
+        {
+          "id": "cap",
+          "text": "ફેશન કેપ",
+          "emoji": "🧢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shoes",
+          "text": "પાર્ટી શૂઝ",
+          "emoji": "👟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "યોગ્ય કપડાં",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "આરામ અને રહેવા માટે કયું સ્થાન મૂળભૂત જરૂરિયાત છે?",
+      "options": [
+        {
+          "id": "house",
+          "text": "સલામત ઘર",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mall",
+          "text": "શોપિંગ મોલ",
+          "emoji": "🏬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "park",
+          "text": "Playground",
+          "emoji": "🛝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "શા માટે લોકો ઈચ્છાઓ પહેલા જરૂરિયાતો પસંદ કરે છે?",
+      "options": [
+        {
+          "id": "fun",
+          "text": "માંગે છે વધુ મજા",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "important",
+          "text": "રોજિંદા જીવન માટે જરૂરિયાતો જરૂરી છે",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "મિત્રો ઈચ્છે છે",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

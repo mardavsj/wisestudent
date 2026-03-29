@@ -1,1 +1,150 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স কাজ বনাম খেলা",
+    "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: কাজ বনাম খেলার রিফ্লেক্স পরীক্ষা করো!",
+    "subtitleReady": "কাজ বনাম খেলার রিফ্লেক্স পরীক্ষা করো!",
+    "readyEmoji": "💼",
+    "readyTitle": "কাজ বনাম খেলা পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "কাজ ও খেলার মধ্যে সঠিক পদক্ষেপ বেছে নাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "রাউন্ড:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "টাকা উপার্জনে কী সাহায্য করে?",
+            "correctAnswer": "কাজ",
+            "options": [
+                {
+                    "text": "সময় নষ্ট করো",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "সারাদিন খেলো",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "কাজ",
+                    "isCorrect": true,
+                    "emoji": "💼"
+                },
+                {
+                    "text": "কিছুই করো না",
+                    "isCorrect": false,
+                    "emoji": "🤷"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "শিখতে ও বাড়তে কী করবে?",
+            "correctAnswer": "পড়াশোনা করো",
+            "options": [
+                {
+                    "text": "পড়াশোনা করো",
+                    "isCorrect": true,
+                    "emoji": "📚"
+                },
+                {
+                    "text": "সারাদিন খেলো",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "শেখা বাদ দাও",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "শিক্ষা উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "উপার্জনের সাথে কী করবে?",
+            "correctAnswer": "উপার্জন সঞ্চয় করো",
+            "options": [
+                {
+                    "text": "সব খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "উপার্জন সঞ্চয় করো",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "টাকা নষ্ট করো",
+                    "isCorrect": false,
+                    "emoji": "🔥"
+                },
+                {
+                    "text": "হারাও",
+                    "isCorrect": false,
+                    "emoji": "😞"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "বাড়িতে সাহায্য করতে কী করবে?",
+            "correctAnswer": "গৃহস্থালির কাজ করো",
+            "options": [
+                {
+                    "text": "গৃহস্থালির কাজ করো",
+                    "isCorrect": true,
+                    "emoji": "🧹"
+                },
+                {
+                    "text": "কাজ বাদ দাও",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "কাজ এড়িয়ে চলো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "অলস থাকো",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "উৎপাদনশীল হতে কী সাহায্য করে?",
+            "correctAnswer": "কাজ পরিকল্পনা করো",
+            "options": [
+                {
+                    "text": "নিষ্ক্রিয় থাকো",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "সময় নষ্ট করো",
+                    "isCorrect": false,
+                    "emoji": "⏰"
+                },
+                {
+                    "text": "কিছুই করো না",
+                    "isCorrect": false,
+                    "emoji": "🤷"
+                },
+                {
+                    "text": "কাজ পরিকল্পনা করো",
+                    "isCorrect": true,
+                    "emoji": "📋"
+                }
+            ]
+        }
+    ]
+}

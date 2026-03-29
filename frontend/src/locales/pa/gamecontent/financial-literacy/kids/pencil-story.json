@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਪੈਨਸਿਲ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "✏️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ਕਿਸੇ ਦੋਸਤ ਤੋਂ ਪੈਨਸਿਲ ਉਧਾਰ ਲੈਂਦੇ ਹੋ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ਵਰਤੋਂ ਤੋਂ ਬਾਅਦ ਇਸਨੂੰ ਵਾਪਸ ਕਰੋ",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ਇਸ ਨੂੰ ਰੱਖੋ",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ਇਸ ਨੂੰ ਗੁਆ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਨੂੰ ਇੱਕ ਪੈਨਸਿਲ ਦੀ ਲੋੜ ਹੈ ਪਰ ਇੱਕ ਨਹੀਂ ਹੈ। ਕੀ ਸਹੀ ਹੈ?",
+      "options": [
+        {
+          "id": "take",
+          "text": "ਬਿਨਾਂ ਮੰਗੇ ਲੈ ਲਓ",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ask",
+          "text": "ਉਧਾਰ ਲੈਣ ਅਤੇ ਵਾਪਸ ਕਰਨ ਲਈ ਕਹੋ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "ਲਿਖਣਾ ਛੱਡ ਦਿਓ",
+          "emoji": "✍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਉਧਾਰ ਪੈਨਸਿਲ ਤੋੜਦੇ ਹੋ. ਇਮਾਨਦਾਰ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "replace",
+          "text": "ਇਸਨੂੰ ਇੱਕ ਨਵੇਂ ਨਾਲ ਬਦਲੋ",
+          "emoji": "🆕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ਇਸ ਨੂੰ ਲੁਕਾਓ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "ਕਿਸੇ ਹੋਰ ਨੂੰ ਦੋਸ਼ੀ ਠਹਿਰਾਓ",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਡਾ ਦੋਸਤ ਤੁਹਾਨੂੰ ਪੈਨਸਿਲ ਲਈ ₹5 ਉਧਾਰ ਦਿੰਦਾ ਹੈ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "ਇਸ ਨੂੰ ਕੈਂਡੀ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ਮੋੜਨਾ ਭੁੱਲ ਜਾਓ",
+          "emoji": "😕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "ਸਮੇਂ ਸਿਰ ₹5 ਦਾ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਉਧਾਰ ਲਈਆਂ ਚੀਜ਼ਾਂ ਨੂੰ ਵਾਪਸ ਕਰਨਾ ਮਹੱਤਵਪੂਰਨ ਕਿਉਂ ਹੈ?",
+      "options": [
+        {
+          "id": "pencils",
+          "text": "ਤੁਹਾਨੂੰ ਹੋਰ ਪੈਨਸਿਲ ਮਿਲਦੀਆਂ ਹਨ",
+          "emoji": "✏️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ਇਹ ਵਿਸ਼ਵਾਸ ਪੈਦਾ ਕਰਦਾ ਹੈ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "popular",
+          "text": "ਇਹ ਤੁਹਾਨੂੰ ਪ੍ਰਸਿੱਧ ਬਣਾਉਂਦਾ ਹੈ",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

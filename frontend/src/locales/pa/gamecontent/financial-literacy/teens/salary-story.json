@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ਤਨਖਾਹ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਇੱਕ ਨੌਜਵਾਨ ਵਰਕਰ ਪ੍ਰਤੀ ਮਹੀਨਾ 2000 ਰੁਪਏ ਕਮਾਉਂਦਾ ਹੈ। ਉਨ੍ਹਾਂ ਨੂੰ ਆਪਣੀ ਤਨਖਾਹ ਦਾ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "₹400 (20%) ਬਚਾਓ",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ਪੈਸੇ ਦੀ ਬਰਬਾਦੀ",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਵਰਕਰ ਨੂੰ ₹500 ਦਾ ਬੋਨਸ ਮਿਲਦਾ ਹੈ। ਉਨ੍ਹਾਂ ਨੂੰ ਇਸ ਨੂੰ ਕਿਵੇਂ ਸੰਭਾਲਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਇਸਦਾ ਬਹੁਤਾ ਹਿੱਸਾ ਬਚਾਓ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਸਾਰਾ ਕੁਝ ਐਸ਼ੋ-ਆਰਾਮ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਬੋਨਸ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਕਰਮਚਾਰੀ ਦੇ ਖਰਚੇ ਪ੍ਰਤੀ ਮਹੀਨਾ 1800 ਰੁਪਏ ਤੱਕ ਵਧਦੇ ਹਨ। ਸਮਾਰਟ ਪਹੁੰਚ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਬੱਚਤ ਕਰਨਾ ਬੰਦ ਕਰੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ਹੋਰ ਖਰਚ ਕਰੋ",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਬੱਚਤ ਬਣਾਈ ਰੱਖੋ",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਕਰਮਚਾਰੀ ਨੂੰ ਤਨਖਾਹ ਵਿੱਚ 10% ਵਾਧਾ ਮਿਲਦਾ ਹੈ। ਉਨ੍ਹਾਂ ਨੂੰ ਵਾਧੂ ਪੈਸੇ ਦਾ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਜੀਵਨ ਸ਼ੈਲੀ ਨੂੰ ਅਪਗ੍ਰੇਡ ਕਰੋ",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਬੱਚਤ ਵਧਾਓ",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ਇਹ ਸਭ ਬਰਬਾਦ ਕਰੋ",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਵਰਕਰ ₹10,000 ਦਾ ਗੈਜੇਟ ਖਰੀਦਣਾ ਚਾਹੁੰਦਾ ਹੈ। ਸਭ ਤੋਂ ਵਧੀਆ ਪਹੁੰਚ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "EMI 'ਤੇ ਖਰੀਦੋ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਸਮੇਂ ਦੇ ਨਾਲ ਬਚਾਓ",
+          "emoji": "⏳",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

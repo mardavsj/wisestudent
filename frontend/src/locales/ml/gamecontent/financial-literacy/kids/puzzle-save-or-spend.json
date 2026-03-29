@@ -1,1 +1,72 @@
-﻿{}
+{
+  "title": "പസിൽ: സംരക്ഷിക്കുക അല്ലെങ്കിൽ ചെലവഴിക്കുക",
+  "subtitleComplete": "പസിൽ പൂർത്തിയായി!",
+  "subtitleProgress": "പ്രവർത്തനങ്ങളുമായി ഇനങ്ങൾ പൊരുത്തപ്പെടുത്തുക ({{matched}}/{{total}} പൊരുത്തപ്പെട്ടു)",
+  "itemsTitle": "Items",
+  "actionsTitle": "Actions",
+  "selectedLabel": "തിരഞ്ഞെടുത്തത്: {{name}}",
+  "selectItem": "ഒരു ഇനം തിരഞ്ഞെടുക്കുക",
+  "matchButton": "Match",
+  "scoreLabel": "സ്കോർ:",
+  "matchedLabel": "പൊരുത്തപ്പെട്ടു:",
+  "resultGreatTitle": "മികച്ച ജോലി!",
+  "resultGreatDescription": "പ്രവർത്തനങ്ങളുള്ള {{total}} ഇനങ്ങളിൽ {{score}} നിങ്ങൾ ശരിയായി പൊരുത്തപ്പെട്ടു!",
+  "resultLesson": "പാഠം: പ്രധാനപ്പെട്ട കാര്യങ്ങൾക്കായി സംരക്ഷിക്കുന്നത് സുരക്ഷിതമായ ഭാവി കെട്ടിപ്പടുക്കാൻ സഹായിക്കുന്നു!",
+  "resultKeepTitle": "പരിശീലിക്കുന്നത് തുടരുക!",
+  "resultKeepDescription": "നിങ്ങൾ {{score}}-ൽ {{total}} ഇനങ്ങളുമായി ശരിയായി പൊരുത്തപ്പെട്ടു.",
+  "resultTip": "നുറുങ്ങ്: ഓരോ ഇനവും അത്യാവശ്യമാണോ അതോ വിവേചനാധികാരമാണോ എന്ന് ചിന്തിക്കുക!",
+  "items": [
+    {
+      "id": 1,
+      "name": "മണി ബാങ്ക്",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "ഐസ്ക്രീം",
+      "emoji": "🍦"
+    },
+    {
+      "id": 3,
+      "name": "പുതിയ സൈക്കിൾ",
+      "emoji": "🚲"
+    },
+    {
+      "id": 4,
+      "name": "Candy",
+      "emoji": "🍬"
+    },
+    {
+      "id": 5,
+      "name": "സ്കൂൾ പുസ്തകങ്ങൾ",
+      "emoji": "📚"
+    }
+  ],
+  "actions": [
+    {
+      "id": 6,
+      "name": "Save",
+      "emoji": "📥"
+    },
+    {
+      "id": 7,
+      "name": "Spend",
+      "emoji": "📤"
+    },
+    {
+      "id": 8,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 9,
+      "name": "Donate",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "Budget",
+      "emoji": "📋"
+    }
+  ]
+}

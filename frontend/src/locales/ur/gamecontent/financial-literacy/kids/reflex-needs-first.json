@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "Reflex سب سے پہلے کی ضرورت ہے",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: ضروریات بمقابلہ خواہشات کی شناخت کریں!",
+  "subtitleReady": "ضروریات بمقابلہ خواہشات کی شناخت کریں!",
+  "readyEmoji": "✅",
+  "readyTitle": "اپنی ضروریات بمقابلہ واٹس سکلز کو جانچنے کے لیے تیار ہیں؟",
+  "readyDescription": "ضروریات بمقابلہ خواہشات کی شناخت کے بارے میں سوالات کے جوابات دیں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ان میں سے کون سی بنیادی ضرورت ہے؟",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "ویڈیو گیمز",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍲"
+        },
+        {
+          "text": "ڈیزائنر کپڑے",
+          "isCorrect": false,
+          "emoji": "👗"
+        },
+        {
+          "text": "لگژری کار",
+          "isCorrect": false,
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "کون سی چیز تعلیم کی ضرورت کی نمائندگی کرتی ہے؟",
+      "correctAnswer": "سکول کی کتابیں۔",
+      "options": [
+        {
+          "text": "سکول کی کتابیں۔",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "مہنگے کھلونے",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Gadgets",
+          "isCorrect": false,
+          "emoji": "📱"
+        },
+        {
+          "text": "Snacks",
+          "isCorrect": false,
+          "emoji": "🍪"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "جو صحت کے لیے ضروری ہے؟",
+      "correctAnswer": "Medicine",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        },
+        {
+          "text": "Medicine",
+          "isCorrect": true,
+          "emoji": "💊"
+        },
+        {
+          "text": "Jewelry",
+          "isCorrect": false,
+          "emoji": "💎"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "کون سی چیز بنیادی ضرورت ہے؟",
+      "correctAnswer": "Shelter",
+      "options": [
+        {
+          "text": "Vacation",
+          "isCorrect": false,
+          "emoji": "✈️"
+        },
+        {
+          "text": "Entertainment",
+          "isCorrect": false,
+          "emoji": "🎬"
+        },
+        {
+          "text": "لگژری ڈائننگ",
+          "isCorrect": false,
+          "emoji": "🍽️"
+        },
+        {
+          "text": "Shelter",
+          "isCorrect": true,
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "کون سی بنیادی ضرورت ہے؟",
+      "correctAnswer": "صاف پانی",
+      "options": [
+        {
+          "text": "صاف پانی",
+          "isCorrect": true,
+          "emoji": "🚰"
+        },
+        {
+          "text": "آئس کریم",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ڈیزائنر بیگ",
+          "isCorrect": false,
+          "emoji": "👜"
+        },
+        {
+          "text": "کنسرٹ ٹکٹس",
+          "isCorrect": false,
+          "emoji": "🎟️"
+        }
+      ]
+    }
+  ]
+}

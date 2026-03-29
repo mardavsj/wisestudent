@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "બજેટિંગ પર ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "iconKey": "calculator",
+      "text": "બજેટ શું છે?",
+      "options": [
+        {
+          "id": "list",
+          "text": "ખરીદીની સૂચિ",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ખર્ચની યોજના",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "મફત પૈસા",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "iconKey": "target",
+      "text": "બજેટ શા માટે બનાવવું?",
+      "options": [
+        {
+          "id": "track",
+          "text": "ખર્ચને ટ્રેક કરો અને બચત કરો",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "બધા પૈસા ઝડપથી ખર્ચો",
+          "emoji": "💥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fun",
+          "text": "માત્ર મનોરંજન માટે",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "iconKey": "trendingUp",
+      "text": "100 રૂપિયા કમાઓ, 120 રૂપિયા ખર્ચો. શું થાય છે?",
+      "options": [
+        {
+          "id": "save",
+          "text": "તમે 20 રૂપિયા બચાવો છો",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "prize",
+          "text": "તમે ઇનામ જીતો છો",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "તમે દેવા માં જાઓ",
+          "emoji": "⚠️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "iconKey": "checkCircle",
+      "text": "સારી બજેટિંગ આદત કઈ છે?",
+      "options": [
+        {
+          "id": "guess",
+          "text": "અનુમાન કરો અને અવ્યવસ્થિત રીતે ખર્ચ કરો",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ખર્ચ અને યોજનાની સૂચિ બનાવો",
+          "emoji": "📝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ખર્ચની અવગણના કરો",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "iconKey": "piggyBank",
+      "text": "જો તમે બજેટને અનુસરો છો, તો તમે...",
+      "options": [
+        {
+          "id": "goals",
+          "text": "તણાવમુક્ત લક્ષ્યો હાંસલ કરો",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "unnecessary",
+          "text": "બિનજરૂરી વસ્તુઓ ખરીદો",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "પૈસાનો ટ્રેક ગુમાવવો",
+          "emoji": "🌀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

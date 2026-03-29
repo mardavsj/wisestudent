@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "બેજ: ગ્રાહક રક્ષક",
+  "subtitleComplete": "બેજ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પડકાર",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "resultSuccessTitle": "ઉપભોક્તા રક્ષક બેજ મેળવ્યો!",
+  "resultSuccessText": "તમને {{total}}માંથી {{score}} પડકારો સાચા મળ્યા છે! તમે સાચા ગ્રાહક રક્ષક છો!",
+  "resultSuccessLesson": "પાઠ: ઉપભોક્તા અધિકારો અને છેતરપિંડીના જોખમોથી વાકેફ રહેવાથી તમને તમારી મહેનતથી કમાયેલા નાણાંનું રક્ષણ કરવામાં મદદ મળે છે.",
+  "resultFailTitle": "શીખતા રહો!",
+  "resultFailText": "તમને {{total}}માંથી {{score}} પડકારો સાચા મળ્યા. ગ્રાહક સુરક્ષા વિશે વધુ જાણો!",
+  "resultFailTip": "ટીપ: OTP અથવા બેંક માહિતી જેવી સંવેદનશીલ વિગતો ક્યારેય શેર કરશો નહીં અને હંમેશા શંકાસ્પદ લિંક્સ અને કૉલ્સની જાણ કરો!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "છેતરપિંડીનો કેસ 1",
+      "question": "તમને એક નકલી કોલ આવે છે જેમાં બેંકની વિગતો માંગવામાં આવે છે. તમે શું કરશો?",
+      "options": [
+        {
+          "text": "ઇનકાર કરો અને જાણ કરો",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "text": "વિગતો શેર કરો",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "text": "કૉલ અવગણો",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "વધુ માહિતી માટે પૂછો",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "છેતરપિંડીનો કેસ 2",
+      "question": "તમને એક લિંક સાથે શંકાસ્પદ સંદેશ મળે છે. તમારી ક્રિયા શું છે?",
+      "options": [
+        {
+          "text": "લિંક પર ક્લિક કરો",
+          "emoji": "🔗",
+          "isCorrect": false
+        },
+        {
+          "text": "કાઢી નાખો અને જાણ કરો",
+          "emoji": "🗑️",
+          "isCorrect": true
+        },
+        {
+          "text": "મિત્રોને ફોરવર્ડ કરો",
+          "emoji": "📤",
+          "isCorrect": false
+        },
+        {
+          "text": "પછી માટે સાચવો",
+          "emoji": "💾",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "છેતરપિંડીનો કેસ 3",
+      "question": "કોઈ તમારો OTP માંગે છે. તમે કેવી રીતે પ્રતિભાવ આપો છો?",
+      "options": [
+        {
+          "text": "OTP ક્યારેય શેર કરશો નહીં",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "text": "જો તેઓ સરસ રીતે પૂછે તો શેર કરો",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "text": "આંશિક OTP આપો",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "text": "દરેક સાથે શેર કરો",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "છેતરપિંડીનો કેસ 4",
+      "question": "તમને ખામીયુક્ત ઉત્પાદન મળે છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "text": "તેનો સ્વીકાર કરો",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "text": "ગ્રાહક કોર્ટમાં ફરિયાદ કરો",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "text": "તેને અવગણો",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "તેને ફેંકી દો",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "છેતરપિંડીનો કેસ 5",
+      "question": "તમે અવાસ્તવિક રોકાણ ઓફર જોશો. તમારો પ્રતિભાવ શું છે?",
+      "options": [
+        {
+          "text": "તરત જ રોકાણ કરો",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "ઇનકાર કરો અને કૌભાંડની જાણ કરો",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "text": "તે વિશે વિચારો",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "અન્ય લોકો સાથે શેર કરો",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

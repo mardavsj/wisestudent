@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "బ్యాడ్జ్: యువ పారిశ్రామికవేత్త",
+  "subtitleComplete": "బ్యాడ్జ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} సవాలు",
+  "challengeLabel": "సవాలు {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "వ్యాపారాన్ని ప్రారంభించడం",
+      "question": "వ్యాపారాన్ని ప్రారంభించడానికి మొదటి అడుగు ఏమిటి?",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "మంచి ఆలోచన మరియు ప్రణాళికను కలిగి ఉండండి",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "మీ డబ్బు మొత్తం ఖర్చు చేయండి",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ఎప్పటికీ వేచి ఉండండి",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "ఇతరులను సరిగ్గా కాపీ చేయండి",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "వ్యాపార ప్రణాళిక",
+      "question": "ప్రారంభించడానికి ముందు మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "వెంటనే ప్రారంభించండి",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "పరిశోధన మార్కెట్ మరియు ఖర్చులు",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ప్రణాళికను విస్మరించండి",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ఆలోచించకుండా ఖర్చు పెట్టండి",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "మనీ మేనేజింగ్",
+      "question": "మీరు వ్యాపార డబ్బును ఎలా నిర్వహించాలి?",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "ప్రతిదీ ఖర్చు",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "ఆర్థిక విషయాలను పట్టించుకోకండి",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "ఆదాయం మరియు ఖర్చులను ట్రాక్ చేయండి",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "ట్రాకింగ్ అవసరం లేదు",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "కస్టమర్ సేవ",
+      "question": "వ్యాపార విజయానికి ముఖ్యమైనది ఏమిటి?",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "కస్టమర్‌లను విస్మరించండి",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "కస్టమర్లను మోసం చేయండి",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "సేవ అవసరం లేదు",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "కస్టమర్లను సంతృప్తి పరచండి",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "వృద్ధి చెందుతున్న వ్యాపారం",
+      "question": "మీరు మీ వ్యాపారాన్ని ఎలా పెంచుకోవాలి?",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "చిన్నగా ప్రారంభించండి మరియు క్రమంగా విస్తరించండి",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "వెంటనే భారీగా ప్రారంభించండి",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "ఎప్పటికీ పెరగవు",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "ప్రణాళిక లేకుండా ఎదగండి",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "యువ పారిశ్రామికవేత్త బ్యాడ్జ్ సంపాదించారు!",
+    "winMessage": "మీరు {{total}} సవాళ్లలో {{score}}ని సరిగ్గా పొందారు! మీరు నిజమైన యువ పారిశ్రామికవేత్త నిపుణుడు!",
+    "coinsEarned": "+{{score}} నాణేలు",
+    "lesson": "పాఠం: యువ వ్యాపారవేత్తలు మంచి ఆలోచనలను కలిగి ఉంటారు, జాగ్రత్తగా ప్లాన్ చేసుకోండి, ఫైనాన్స్‌లను ట్రాక్ చేయండి, కస్టమర్‌లను సంతృప్తిపరచండి మరియు క్రమంగా అభివృద్ధి చెందండి!",
+    "loseEmoji": "💪",
+    "loseTitle": "నేర్చుకుంటూ ఉండండి!",
+    "loseMessage": "మీరు {{total}} సవాళ్లలో {{score}}ని సరిగ్గా పొందారు. ఆంట్రప్రెన్యూర్‌షిప్‌తో ప్రాక్టీస్ పరిపూర్ణంగా ఉంటుంది!",
+    "tryAgain": "మళ్లీ ప్రయత్నించండి",
+    "tip": "చిట్కా: ఎల్లప్పుడూ మంచి ఆలోచన మరియు ప్రణాళిక, పరిశోధన మార్కెట్ మరియు ఖర్చులు, ఆర్థిక విషయాలను ట్రాక్ చేయండి, కస్టమర్‌లను సంతృప్తిపరచండి మరియు చిన్నగా ప్రారంభించండి!"
+  }
+}

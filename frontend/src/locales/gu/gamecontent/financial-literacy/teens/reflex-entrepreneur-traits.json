@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ ઉદ્યોગસાહસિક લક્ષણો",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારા ઉદ્યોગસાહસિક પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા ઉદ્યોગસાહસિક પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "readyHeader": "તમારા ઉદ્યોગસાહસિક કૌશલ્યો ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "મુખ્ય ઉદ્યોગસાહસિક લક્ષણો અને માનસિકતા વિશેના પ્રશ્નોના જવાબ આપો.",
+  "readyTip": "તમારી પાસે દરેકમાં {{time}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "greatJob": "ગ્રેટ જોબ!",
+  "finalScore": "તમે {{total}} માંથી {{score}} સ્કોર કર્યો!",
+  "thinkingSkills": "તમે મજબૂત ઉદ્યોગસાહસિક વિચારસરણી કુશળતા વિકસાવી રહ્યાં છો!",
+  "playAgain": "ફરી રમો",
+  "questions": [
+    {
+      "id": 1,
+      "question": "સફળ ઉદ્યોગસાહસિકો માટે કયું લક્ષણ આવશ્યક છે?",
+      "options": [
+        {
+          "text": "જોખમ ટાળવું",
+          "id": "risk_avoidance",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "Innovation",
+          "id": "innovation",
+          "emoji": "💡"
+        },
+        {
+          "text": "વલણોને અનુસરે છે",
+          "id": "following_trends",
+          "emoji": "📈"
+        },
+        {
+          "text": "તકોની રાહ જોઈ રહ્યા છીએ",
+          "id": "waiting_opportunities",
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "પડકારોનો સામનો કરતી વખતે સાહસિકોએ શું કરવું જોઈએ?",
+      "options": [
+        {
+          "text": "ઝડપથી છોડી દો",
+          "id": "give_up",
+          "emoji": "😔"
+        },
+        {
+          "text": "અન્યને દોષ આપો",
+          "id": "blame_others",
+          "emoji": "😠"
+        },
+        {
+          "text": "ચાલુ રાખો અને અનુકૂલન કરો",
+          "id": "persist_adapt",
+          "emoji": "💪"
+        },
+        {
+          "text": "પડકારો ટાળો",
+          "id": "avoid_challenges",
+          "emoji": "跑"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "સફળ ઉદ્યોગસાહસિકો સમસ્યાનું નિરાકરણ કેવી રીતે કરે છે?",
+      "options": [
+        {
+          "text": "સમસ્યાઓ અવગણો",
+          "id": "ignore_problems",
+          "emoji": "🙈"
+        },
+        {
+          "text": "મુદ્દાઓ વિશે ફરિયાદ કરો",
+          "id": "complain_issues",
+          "emoji": "😤"
+        },
+        {
+          "text": "સર્જનાત્મક ઉકેલો",
+          "id": "creative_solutions",
+          "emoji": "🔧"
+        },
+        {
+          "text": "અન્યની પદ્ધતિઓની નકલ કરો",
+          "id": "copy_others",
+          "emoji": "📋"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ઉદ્યોગસાહસિકો સામાન્ય રીતે કઈ માનસિકતા અપનાવે છે?",
+      "options": [
+        {
+          "text": "સ્થિર માનસિકતા",
+          "id": "fixed_mindset",
+          "emoji": "🔒"
+        },
+        {
+          "text": "વૃદ્ધિ માનસિકતા",
+          "id": "growth_mindset",
+          "emoji": "🌱"
+        },
+        {
+          "text": "નેગેટિવ થિંકિંગ",
+          "id": "negative_thinking",
+          "emoji": "😞"
+        },
+        {
+          "text": "શીખવાનું ટાળવું",
+          "id": "avoid_learning",
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ગણતરી કરેલ જોખમો તરફ ઉદ્યોગસાહસિકોએ કયો અભિગમ અપનાવવો જોઈએ?",
+      "options": [
+        {
+          "text": "બધા જોખમો ટાળો",
+          "id": "avoid_all_risks",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "અવિચારી રીતે કાર્ય કરો",
+          "id": "act_recklessly",
+          "emoji": "🤯"
+        },
+        {
+          "text": "જોખમી વર્તનની નકલ કરો",
+          "id": "copy_risky",
+          "emoji": "🔁"
+        },
+        {
+          "text": "મૂલ્યાંકન કરો અને સ્માર્ટ જોખમો લો",
+          "id": "smart_risks",
+          "emoji": "🎲"
+        }
+      ]
+    }
+  ]
+}

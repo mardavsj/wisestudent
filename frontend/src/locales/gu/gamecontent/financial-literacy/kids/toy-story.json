@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ટોય સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "એક મિત્ર તમને એક રમકડું ઉધાર આપે છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "તેને સુરક્ષિત રાખો",
+          "emoji": "🛡️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "break",
+          "text": "તેને તોડી નાખો",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "તેને અવગણો",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે એક રમકડું ઉધાર લીધું છે. હવે શું?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "રાખો",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "તે ગુમાવો",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "રમકડું પરત કરો",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારી પાસે તમારા મિત્રનું રમકડું છે. શ્રેષ્ઠ શું છે?",
+      "options": [
+        {
+          "id": "care",
+          "text": "તેની કાળજી લો",
+          "emoji": "💝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "તે ગુમાવો",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "break",
+          "text": "તેને તોડી નાખો",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "માલિક રમકડું પાછું માંગે છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "તેને છુપાવો",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "તે પાછું આપો",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "delay",
+          "text": "પરત ફરવામાં વિલંબ",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "જ્યારે તમે રમકડું ઉધાર લો છો, ત્યારે તમારી ફરજ શું છે?",
+      "options": [
+        {
+          "id": "careless",
+          "text": "બેદરકાર રહો",
+          "emoji": "😓",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "તે વિશે ભૂલી જાઓ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "responsible",
+          "text": "જવાબદાર બનો",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

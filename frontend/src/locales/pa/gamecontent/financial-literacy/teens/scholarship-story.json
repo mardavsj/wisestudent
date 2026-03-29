@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "ਸਕਾਲਰਸ਼ਿਪ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "perfectScoreMsg": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਤੁਸੀਂ ਐਪਲੀਕੇਸ਼ਨਾਂ ਵਿੱਚ ਇਮਾਨਦਾਰੀ ਦੀ ਮਹੱਤਤਾ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+  "lowScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਵਜ਼ੀਫੇ ਲਈ ਇਮਾਨਦਾਰੀ ਸਭ ਤੋਂ ਵਧੀਆ ਨੀਤੀ ਹੈ!",
+  "lessonLabel": "ਸਬਕ: ਸਕਾਲਰਸ਼ਿਪ ਅਤੇ ਹੋਰ ਮੌਕਿਆਂ ਲਈ ਅਰਜ਼ੀ ਦੇਣ ਵੇਲੇ ਈਮਾਨਦਾਰੀ ਅਤੇ ਇਮਾਨਦਾਰੀ ਮਹੱਤਵਪੂਰਨ ਹੁੰਦੀ ਹੈ।",
+  "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "tipLabel": "ਸੁਝਾਅ: ਭਰੋਸਾ ਬਣਾਉਣ ਲਈ ਹਮੇਸ਼ਾ ਆਪਣੀਆਂ ਸਕਾਲਰਸ਼ਿਪ ਅਰਜ਼ੀਆਂ 'ਤੇ ਸਹੀ ਅਤੇ ਸੱਚੀ ਜਾਣਕਾਰੀ ਪ੍ਰਦਾਨ ਕਰੋ।",
+  "coinsLabel": "+{{count}} ਸਿੱਕੇ",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਇੱਕ ਵਿਦਿਆਰਥੀ ਵਾਧੂ ਸਕਾਲਰਸ਼ਿਪ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਝੂਠ ਬੋਲਦਾ ਹੈ। ਸਹੀ ਕਾਰਵਾਈ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "ਪੈਸੇ ਲੈਣ ਲਈ ਝੂਠ ਬੋਲੋ",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "truthful",
+          "text": "ਸੱਚੇ ਬਣੋ",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਜੇ ਲੋੜ ਹੋਵੇ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਜੇਕਰ ਤੁਸੀਂ ਸਕਾਲਰਸ਼ਿਪ ਦੀ ਅਰਜ਼ੀ 'ਤੇ ਝੂਠ ਬੋਲਦੇ ਹੋ ਤਾਂ ਕੀ ਹੁੰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "get-money",
+          "text": "ਹੋਰ ਪੈਸੇ ਪ੍ਰਾਪਤ ਕਰੋ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-opportunity",
+          "text": "ਮੌਕਾ ਅਤੇ ਭਰੋਸਾ ਗੁਆ ਦਿਓ",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "ਕੁਝ ਨਹੀਂ ਹੁੰਦਾ",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਅਰਜ਼ੀਆਂ ਵਿੱਚ ਈਮਾਨਦਾਰੀ ਮਹੱਤਵਪੂਰਨ ਕਿਉਂ ਹੈ?",
+      "options": [
+        {
+          "id": "builds-trust",
+          "text": "ਵਿਸ਼ਵਾਸ ਅਤੇ ਅਖੰਡਤਾ ਪੈਦਾ ਕਰਦਾ ਹੈ",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "not-important",
+          "text": "ਮਹੱਤਵਪੂਰਨ ਨਹੀਂ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "waste-time",
+          "text": "ਸਮਾਂ ਬਰਬਾਦ ਕਰਦਾ ਹੈ",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਜੇਕਰ ਤੁਸੀਂ ਕਿਸੇ ਅਰਜ਼ੀ ਵਿੱਚ ਗਲਤੀ ਕਰਦੇ ਹੋ ਤਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "hide-mistake",
+          "text": "ਗਲਤੀ ਨੂੰ ਛੁਪਾਓ",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-it",
+          "text": "ਇਸ ਨੂੰ ਇਮਾਨਦਾਰੀ ਨਾਲ ਠੀਕ ਕਰੋ",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ਇਸ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਸਕਾਲਰਸ਼ਿਪ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਪਹੁੰਚ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "honest-application",
+          "text": "ਇਮਾਨਦਾਰ ਅਤੇ ਸੰਪੂਰਨ ਐਪਲੀਕੇਸ਼ਨ",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "exaggerate",
+          "text": "ਅਤਿਕਥਨੀ ਪ੍ਰਾਪਤੀਆਂ",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "copy-others",
+          "text": "ਦੂਜਿਆਂ ਤੋਂ ਕਾਪੀ ਕਰੋ",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "మనీ బ్యాంక్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు మీ అమ్మమ్మ నుండి రూ.10 బహుమతిగా అందుకున్నారు. మీరు ఏమి చేయాలనుకుంటున్నారు?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "రూ. 5 ఆదా చేసుకోండి",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "save-all",
+          "text": "మొత్తం 10 రూపాయలు ఆదా చేసుకోండి",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు రూ. 20 ఆదా చేశారు. రూ. 15 ఖరీదు చేసే సినిమాలకు మీ స్నేహితుడు మిమ్మల్ని ఆహ్వానిస్తాడు. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "save",
+          "text": "తర్వాత కోసం సేవ్ చేయండి",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "సినిమాలకు వెళ్లండి",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ఖర్చును విభజించండి",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీరు వీధిలో 5 రూపాయలు కనుగొన్నారు. దానితో చేయవలసిన ఉత్తమమైన పని ఏమిటి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "మిఠాయి కొనండి",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "తల్లిదండ్రులకు ఇవ్వండి",
+          "emoji": "👨‍👩‍👧",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "దీన్ని సేవ్ చేయండి",
+          "emoji": "🫙",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీ పుట్టినరోజు వస్తోంది మరియు మీకు రూ. 500 ఖరీదు చేసే కొత్త సైకిల్ కావాలి. ప్రస్తుతం మీ వద్ద రూ. 200 ఉంది. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "save",
+          "text": "మరిన్ని సేవ్ చేయండి",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ఇప్పుడే కొనండి",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "రుణం డబ్బు",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీరు రూ. 30 ఆదా చేసారు మరియు రూ. 25కి మీకు నిజంగా కావలసిన బొమ్మను చూడండి. స్మార్ట్ ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "బొమ్మ కొనండి",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "పెద్దది కోసం ఆదా చేయండి",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "అమ్మకానికి వేచి ఉండండి",
+          "emoji": "⏰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

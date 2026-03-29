@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "సంపాదనపై క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "డబ్బు సంపాదించడానికి సరైన మార్గం ఏమిటి?",
+      "options": [
+        {
+          "id": "working",
+          "text": "పని చేయడం ద్వారా",
+          "emoji": "💼",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wasting",
+          "text": "వృధా చేయడం ద్వారా",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sleeping",
+          "text": "నిద్రపోవడం ద్వారా",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "రైతు డబ్బు ఎలా సంపాదిస్తాడు?",
+      "options": [
+        {
+          "id": "games",
+          "text": "ఆటలు ఆడుతున్నారు",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "crops",
+          "text": "పంటలు అమ్ముతున్నారు",
+          "emoji": "🌾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "ఆహారం ఇవ్వడం",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "బోధించడం ద్వారా ఏ ఉద్యోగం సంపాదిస్తుంది?",
+      "options": [
+        {
+          "id": "toymaker",
+          "text": "బొమ్మల తయారీదారు",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "మిఠాయిలు అమ్మేవాడు",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "teacher",
+          "text": "Teacher",
+          "emoji": "👨‍🏫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "పిల్లలు డబ్బు ఎలా సంపాదించగలరు?",
+      "options": [
+        {
+          "id": "chores",
+          "text": "పనులు చేస్తున్నారు",
+          "emoji": "🧹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "tv",
+          "text": "టీవీ చూస్తున్నారు",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "స్నాక్స్ తినడం",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "డబ్బు సంపాదించడం ఎందుకు ముఖ్యం?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "మీకు ఉచిత బొమ్మలు అందజేస్తుంది",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "needs",
+          "text": "మీ అవసరాలను తీరుస్తుంది",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sleep",
+          "text": "బాగా నిద్రపోయేలా చేస్తుంది",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് കടം/മോഷ്ടിക്കുക",
+  "subtitlePlaying": "റൗണ്ട് {{current}}/{{total}}: നിങ്ങളുടെ കടമെടുക്കൽ റിഫ്ലെക്സുകൾ പരിശോധിക്കുക!",
+  "subtitleReady": "നിങ്ങളുടെ കടമെടുക്കൽ റിഫ്ലെക്സുകൾ പരിശോധിക്കുക!",
+  "readyEmoji": "🤝",
+  "readyTitle": "തയ്യാറാകൂ!",
+  "readyDescription": "കടം വാങ്ങുന്നതിനെക്കുറിച്ചുള്ള ചോദ്യങ്ങൾക്ക് ശരിയായി ഉത്തരം നൽകുക.",
+  "readyInfo": "നിങ്ങൾക്ക് {{seconds}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "റൗണ്ട്:",
+  "timeLabel": "സമയം:",
+  "scoreLabel": "സ്കോർ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "കടം വാങ്ങിയ സാധനങ്ങൾ എന്തുചെയ്യണം?",
+      "correctAnswer": "കടം വാങ്ങിയ സാധനങ്ങൾ തിരികെ നൽകുക",
+      "options": [
+        {
+          "text": "കടം വാങ്ങിയ സാധനങ്ങൾ തിരികെ നൽകുക",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "അവരെ എന്നേക്കും സൂക്ഷിക്കുക",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "അവരെ മറയ്ക്കുക",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "അവരെ മറക്കുക",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ഒരു ലോണുമായി ചെയ്യേണ്ട ശരിയായ കാര്യം എന്താണ്?",
+      "correctAnswer": "വായ്പ തിരിച്ചടയ്ക്കുക",
+      "options": [
+        {
+          "text": "പേയ്മെൻ്റ് ഒഴിവാക്കുക",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "വായ്പ തിരിച്ചടയ്ക്കുക",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "അവഗണിക്കുക",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "അത് മറക്കുക",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "നിങ്ങൾ എന്തെങ്കിലും കടം വാങ്ങുമ്പോൾ, നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "correctAnswer": "തിരിച്ചു തരൂ",
+      "options": [
+        {
+          "text": "അത് മറയ്ക്കുക",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "സൂക്ഷിക്കുക",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "തിരിച്ചു തരൂ",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "അത് നഷ്ടപ്പെടുത്തുക",
+          "isCorrect": false,
+          "emoji": "❌"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "കടം വാങ്ങുന്നത് കൈകാര്യം ചെയ്യുന്നതിനുള്ള സത്യസന്ധമായ മാർഗം എന്താണ്?",
+      "correctAnswer": "സത്യസന്ധത പുലർത്തുക",
+      "options": [
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "സത്യസന്ധത പുലർത്തുക",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "🎭"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "കടം വാങ്ങിയ സാധനങ്ങൾ എപ്പോഴാണ് തിരികെ നൽകേണ്ടത്?",
+      "correctAnswer": "കൃത്യസമയത്ത് മടങ്ങുക",
+      "options": [
+        {
+          "text": "Delay",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "Never",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ഒരുപക്ഷേ പിന്നീട്",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "കൃത്യസമയത്ത് മടങ്ങുക",
+          "isCorrect": true,
+          "emoji": "⏱️"
+        }
+      ]
+    }
+  ]
+}

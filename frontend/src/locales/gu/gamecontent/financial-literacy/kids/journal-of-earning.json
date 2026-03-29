@@ -1,1 +1,33 @@
-﻿{}
+{
+  "title": "જર્નલ ઓફ અર્નિંગ",
+  "subtitleComplete": "જર્નલ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન: પૈસા કમાવવાની રીતો પર વિચાર કરો!",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "minLengthLabel": "ઓછામાં ઓછા {{min}} અક્ષરો લખો",
+  "placeholder": "તમારી જર્નલ એન્ટ્રી અહીં લખો...",
+  "charCountLabel": "{{current}}/{{min}} અક્ષરો",
+  "submitFinalButton": "ફાઈનલ એન્ટ્રી સબમિટ કરો",
+  "submitContinueButton": "સબમિટ કરો અને ચાલુ રાખો",
+  "stages": [
+    {
+      "question": "લખો: \"હું પૈસા કમાવવાની એક રીત છે ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"પૈસા કમાવાથી મને ___ લાગે છે.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"મેં ___ દ્વારા પૈસા કમાયા અને ___ શીખ્યા.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"પૈસા કમાવવા વિશે સારી બાબત એ છે ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "લખો: \"પૈસા કમાવાએ મને ___ જવાબદારી વિશે શીખવ્યું.\"",
+      "minLength": 10
+    }
+  ]
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "کمائی پر کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "پیسہ کمانے کا صحیح طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "working",
+          "text": "کام کرکے",
+          "emoji": "💼",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wasting",
+          "text": "ضائع کر کے",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sleeping",
+          "text": "سونے سے",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "کسان پیسے کیسے کماتا ہے؟",
+      "options": [
+        {
+          "id": "games",
+          "text": "کھیل کھیلنا",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "crops",
+          "text": "فصلیں بیچنا",
+          "emoji": "🌾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "کھانا دینا",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "کون سی نوکری پڑھا کر پیسے کمائے؟",
+      "options": [
+        {
+          "id": "toymaker",
+          "text": "کھلونا بنانے والا",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "کینڈی بیچنے والا",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "teacher",
+          "text": "Teacher",
+          "emoji": "👨‍🏫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "بچے پیسے کیسے کما سکتے ہیں؟",
+      "options": [
+        {
+          "id": "chores",
+          "text": "کام کاج کرنا",
+          "emoji": "🧹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "tv",
+          "text": "ٹی وی دیکھ رہے ہیں۔",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "نمکین کھانا",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "پیسہ کمانا کیوں ضروری ہے؟",
+      "options": [
+        {
+          "id": "toys",
+          "text": "آپ کو مفت کھلونے ملتے ہیں۔",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "needs",
+          "text": "آپ کی ضروریات کو پورا کرتا ہے۔",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sleep",
+          "text": "آپ کو بہتر نیند لاتا ہے۔",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

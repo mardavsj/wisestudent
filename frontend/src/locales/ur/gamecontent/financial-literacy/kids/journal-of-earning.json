@@ -1,1 +1,33 @@
-﻿{}
+{
+  "title": "جرنل آف ارننگ",
+  "subtitleComplete": "جرنل مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}: پیسہ کمانے کے طریقوں پر غور کریں!",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "minLengthLabel": "کم از کم {{min}} حروف لکھیں۔",
+  "placeholder": "اپنے جریدے کا اندراج یہاں لکھیں...",
+  "charCountLabel": "{{current}}/{{min}} حروف",
+  "submitFinalButton": "حتمی اندراج جمع کروائیں۔",
+  "submitContinueButton": "جمع کروائیں اور جاری رکھیں",
+  "stages": [
+    {
+      "question": "لکھیں: \"میں پیسہ کمانے کا ایک طریقہ ___ ہے۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"پیسہ کمانا مجھے ___ محسوس کرتا ہے۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"میں نے ___ سے پیسہ کمایا اور ___ سیکھا۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"پیسہ کمانے کے بارے میں ایک اچھی چیز ___ ہے۔\"",
+      "minLength": 10
+    },
+    {
+      "question": "لکھیں: \"پیسہ کمانے نے مجھے ___ ذمہ داری کے بارے میں سکھایا۔\"",
+      "minLength": 10
+    }
+  ]
+}

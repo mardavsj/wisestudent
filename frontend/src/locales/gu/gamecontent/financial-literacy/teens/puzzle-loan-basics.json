@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "પઝલ: લોન બેઝિક્સ",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "લોનની શરતોને ખ્યાલો સાથે મેચ કરો ({{current}}/{{total}} મેળ ખાતી)",
+  "termsTitle": "લોનની શરતો",
+  "conceptsTitle": "લોન ખ્યાલો",
+  "matchButton": "Match",
+  "selectTermLabel": "લોનની મુદત પસંદ કરો",
+  "selectedTermLabel": "પસંદ કરેલ: {{name}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "matchedLabel": "મેળ ખાતી: {{current}}/{{total}}",
+  "resultSuccessHeader": "ગ્રેટ જોબ!",
+  "resultSuccessSubheader": "તમે {{total}} લોન શરતોમાંથી {{score}} ને તેમની વિભાવનાઓ સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultSuccessLesson": "પાઠ: લોનની મૂળભૂત બાબતોને સમજવાથી ઉધાર નિર્ણયો લેવામાં મદદ મળે છે!",
+  "resultTryAgainHeader": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultTryAgainSubheader": "તમે {{total}} લોન શરતોમાંથી {{score}} સાથે યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTryAgainTip": "ટીપ: દરેક લોનની મુદત ખરેખર શું રજૂ કરે છે તે વિશે વિચારો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "terms": [
+    {
+      "id": 1,
+      "name": "Principal",
+      "emoji": "💵"
+    },
+    {
+      "id": 2,
+      "name": "Interest",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "લોનની મુદત",
+      "emoji": "📅"
+    },
+    {
+      "id": 4,
+      "name": "EMI",
+      "emoji": "📊"
+    },
+    {
+      "id": 5,
+      "name": "Default",
+      "emoji": "⚠️"
+    }
+  ],
+  "concepts": [
+    {
+      "id": 6,
+      "name": "મૂળ રકમ",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "વધારાની કિંમત",
+      "emoji": "➕"
+    },
+    {
+      "id": 8,
+      "name": "સમયગાળો",
+      "emoji": "⏱️"
+    },
+    {
+      "id": 9,
+      "name": "નિયમિત ચુકવણી",
+      "emoji": "💳"
+    },
+    {
+      "id": 10,
+      "name": "ચૂકી ગયેલ ચુકવણીઓ",
+      "emoji": "🚫"
+    }
+  ]
+}

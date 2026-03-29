@@ -1,1 +1,151 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ બેંક બેઝિક્સ",
+  "subtitleComplete": "પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "question": "બેંકમાં પૈસા મૂકવા માટે તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમારા પૈસાને સુરક્ષિત રાખવાની સ્માર્ટ રીત કઈ છે?",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "તમે તમારા બેંક ખાતામાંથી પૈસા કેવી રીતે કાઢશો?",
+      "correctAnswer": "Withdraw",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "Withdraw",
+          "isCorrect": true,
+          "emoji": "🏦"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "બેંકમાં પૈસા બચાવવા માટે તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "ખાતું ખોલો",
+      "options": [
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ખાતું ખોલો",
+          "isCorrect": true,
+          "emoji": "📝"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "તમારી પાસે કેટલા પૈસા છે તે જાણવા તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "બેલેન્સ તપાસો",
+      "options": [
+        {
+          "text": "બેલેન્સ તપાસો",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    }
+  ],
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}",
+  "subtitleReady": "તૈયાર થાઓ!",
+  "readyTitle": "રમવા માટે તૈયાર છો?",
+  "readyDescription": "ઝડપથી જવાબ આપો અને શ્રેષ્ઠ વિકલ્પ પસંદ કરો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:"
+}

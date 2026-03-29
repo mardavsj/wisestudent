@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "ખર્ચ ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "perfectScoreTitle": "ઉત્તમ!",
+  "perfectScoreMsg": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે! તમે જાણો છો કે સ્માર્ટ ખર્ચની પસંદગી કેવી રીતે કરવી!",
+  "coinsLabel": "+{{count}} સિક્કા",
+  "lessonLabel": "તમે વિકલ્પોની સરખામણી, બજેટિંગ અને વિચારશીલ ખરીદી કરવાનું મહત્વ સમજો છો!",
+  "keepLearningTitle": "શીખતા રહો!",
+  "lowScoreMsg": "તમને {{total}} પ્રશ્નોમાંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, સ્માર્ટ ખર્ચનો અર્થ છે તમે ખરીદતા પહેલા વિચારવું!",
+  "tryAgain": "ફરી પ્રયાસ કરો",
+  "tipLabel": "એવો વિકલ્પ પસંદ કરવાનો પ્રયાસ કરો કે જેમાં ખર્ચ કરતા પહેલા આયોજન અને સરખામણી સામેલ હોય.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ખર્ચ કરવાનો સૌથી સ્માર્ટ અભિગમ કયો છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "કિંમત + ગુણવત્તાની તુલના",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "હંમેશા બ્રાન્ડેડ શૂઝ ખરીદો",
+          "emoji": "👟",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "જે સસ્તું હોય તે ખરીદવું",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "મોટી ખરીદી કરતા પહેલા તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "તરત જ ખરીદો",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "સંશોધન અને સરખામણી કરો",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "મિત્રોને જ પૂછો",
+          "emoji": "👥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "કઈ ખર્ચ કરવાની ટેવ સંપત્તિ બનાવવામાં મદદ કરે છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "આવેગ ખરીદી",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "વલણો સાથે ચાલુ રાખવું",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "પ્રથમ બજેટ",
+          "emoji": "📋",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "શોપિંગ સૂચિઓ માટે શ્રેષ્ઠ અભિગમ શું છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "યાદીને વળગી રહો",
+          "emoji": "🛒",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "જે સારું લાગે તે ખરીદો",
+          "emoji": "👀",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "યાદી ભૂલી જાઓ",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમારે વેચાણ અને ડિસ્કાઉન્ટને કેવી રીતે હેન્ડલ કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "વેચાણ પર બધું ખરીદો",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "બધા વેચાણને અવગણો",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ફક્ત જરૂરી વસ્તુઓ ખરીદો",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

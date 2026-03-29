@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "વૃદ્ધિની કોયડો",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "પરિણામો સાથે આઇટમ્સ મેળવો ({{matched}}/{{total}} મેળ ખાતી)",
+  "itemsTitle": "વૃદ્ધિ વસ્તુઓ",
+  "categoriesTitle": "Outcomes",
+  "selectedLabel": "પસંદ કરેલ: {{name}}",
+  "selectItem": "એક આઇટમ પસંદ કરો",
+  "matchButton": "Match",
+  "scoreLabel": "સ્કોર:",
+  "matchedLabel": "મેળ ખાતી:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ગ્રેટ જોબ!",
+  "resultGreatDescription": "તમે પરિણામો સાથે {{total}} આઇટમ્સમાંથી {{score}} યોગ્ય રીતે મેળ ખાય છે!",
+  "coinsLabel": "Coins",
+  "resultLesson": "પાઠ: છોડની જેમ, બચત અને રોકાણો સમય સાથે વધે છે.",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultKeepDescription": "તમે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTip": "ટીપ: દરેક વસ્તુ કુદરતી રીતે શું વધે છે તે વિશે વિચારો.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Seed",
+      "emoji": "🌱"
+    },
+    {
+      "id": 2,
+      "name": "Savings",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "Plant",
+      "emoji": "🌿"
+    },
+    {
+      "id": 4,
+      "name": "Sapling",
+      "emoji": "🌳"
+    },
+    {
+      "id": 5,
+      "name": "Bulb",
+      "emoji": "🌻"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Tree",
+      "emoji": "🌲",
+      "description": "બીજ એક વૃક્ષ બની શકે છે"
+    },
+    {
+      "id": 7,
+      "name": "Growth",
+      "emoji": "📈",
+      "description": "બચતનું મૂલ્ય વધી શકે છે"
+    },
+    {
+      "id": 8,
+      "name": "Flower",
+      "emoji": "🌸",
+      "description": "છોડ ફૂલ બની શકે છે"
+    },
+    {
+      "id": 9,
+      "name": "Forest",
+      "emoji": "🌲",
+      "description": "ઘણા રોપાઓ જંગલ બનાવી શકે છે"
+    },
+    {
+      "id": 10,
+      "name": "Wealth",
+      "emoji": "🏦",
+      "description": "પૈસાની ટેવ સંપત્તિ બનાવી શકે છે"
+    }
+  ]
+}

@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "मनी बँक स्टोरी",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुला तुझ्या आजीकडून 10 रुपये भेट म्हणून मिळाले आहेत. तुम्हाला काय करायला आवडेल?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "सर्व खर्च करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "5 रुपये वाचवा",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "save-all",
+          "text": "सर्व 10 रुपये वाचवा",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुमचे 20 रुपये वाचले आहेत. तुमचा मित्र तुम्हाला 15 रुपये खर्चाच्या चित्रपटांसाठी आमंत्रित करतो. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "save",
+          "text": "नंतरसाठी जतन करा",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "चित्रपट वर जा",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "खर्च विभाजित करा",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्हाला रस्त्यावर 5 रुपये सापडले. त्यामध्ये सर्वात चांगली गोष्ट काय आहे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "कँडी खरेदी करा",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "पालकांना द्या",
+          "emoji": "👨‍👩‍👧",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ते जतन करा",
+          "emoji": "🫙",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुमचा वाढदिवस जवळ येत आहे आणि तुम्हाला 500 रुपयांची नवीन सायकल हवी आहे. तुमच्याकडे सध्या 200 रुपये आहेत. तुम्ही काय करावे?",
+      "options": [
+        {
+          "id": "save",
+          "text": "अधिक जतन करा",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "आता खरेदी करा",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "पैसे उधार घ्या",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुमच्याकडे 30 रुपये वाचले आहेत आणि तुम्हाला खरोखर 25 रुपयांमध्ये हवे असलेले एक खेळणी पहा. स्मार्ट पर्याय काय आहे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "खेळणी विकत घ्या",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "मोठ्यासाठी बचत करा",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "विक्रीची प्रतीक्षा करा",
+          "emoji": "⏰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

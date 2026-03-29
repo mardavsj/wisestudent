@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "આઈસ્ક્રીમ વિ સ્કૂલ બુક સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "📘",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે શાળા સમાપ્ત કરો છો અને ભૂખ લાગે છે, પરંતુ તમારે વર્કબુકની પણ જરૂર છે. શ્રેષ્ઠ પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "અત્યારે આઈસ્ક્રીમ ખરીદો",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "વર્કબુક ખરીદો",
+          "emoji": "📘",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "કંઈપણ ખરીદો નહીં અને છોડી દો",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે આજે આઈસ્ક્રીમ ખાઓ અને કાલે પુસ્તક માટે પૈસા બાકી નથી. તમે શું શીખો છો?",
+      "options": [
+        {
+          "id": "lesson",
+          "text": "નાણાંનું આયોજન મહત્વનું છે",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "આઈસ્ક્રીમ હંમેશા શ્રેષ્ઠ છે",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "આગલી વખતે પૈસા ઉછીના લો",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "એક પુસ્તક પરીક્ષામાં મદદ કરે છે, અને આઈસ્ક્રીમ ઝડપથી ઓગળી જાય છે. શું લાંબા સમય સુધી ચાલે છે?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "આઈસ્ક્રીમ સુખ",
+          "emoji": "🍨",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "પુસ્તકમાંથી જ્ઞાન",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "both",
+          "text": "બંને એકસરખા જ ચાલે છે",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે આજે એક પુસ્તક ખરીદવાનું નક્કી કરો અને બીજા દિવસે આઈસ્ક્રીમનો આનંદ માણો. તમે કઈ કુશળતા બતાવો છો?",
+      "options": [
+        {
+          "id": "luck",
+          "text": "શુભ",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "speed",
+          "text": "ઝડપી નિર્ણય લેવો",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "patience",
+          "text": "Self-control",
+          "emoji": "🧘",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "જ્યારે તમે કોઈ પુસ્તક પસંદ કરો છો ત્યારે તમારા માતાપિતા સ્મિત કરે છે. શા માટે તેઓ આનંદ અનુભવે છે?",
+      "options": [
+        {
+          "id": "cheap",
+          "text": "પુસ્તકો સસ્તા છે",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "તમે જવાબદાર પસંદગી કરો",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "પુસ્તકો જેવા મિત્રો",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "بحث: پیسہ اور اخلاق",
+  "subtitleComplete": "بحث مکمل!",
+  "subtitleProgress": "راؤنڈ {{current}} از {{total}}",
+  "roundLabel": "راؤنڈ {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "کیا پیسہ کردار کی جانچ کرتا ہے؟",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ہاں، اخلاقیات زیادہ اہمیت رکھتی ہیں۔",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "نہیں، پیسے سے کوئی فرق نہیں پڑتا",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "شاید، منحصر ہے",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "کیا آپ کو پیسے کے لیے اخلاقیات سے سمجھوتہ کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "sometimes",
+          "text": "کبھی کبھی ٹھیک",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "کبھی سمجھوتہ نہ کریں۔",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "پیسہ ترجیح ہے۔",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "زیادہ اہم کیا ہے: دولت یا سالمیت؟",
+      "options": [
+        {
+          "id": "wealth",
+          "text": "Wealth",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "دونوں برابر",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "integrity",
+          "text": "Integrity",
+          "emoji": "💎",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "کیا آپ امیر اور اخلاقی ہو سکتے ہیں؟",
+      "options": [
+        {
+          "id": "yes2",
+          "text": "ہاں، بالکل",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "id": "no2",
+          "text": "نہیں، ناممکن",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "rarely",
+          "text": "شاذ و نادر ہی ممکن ہے۔",
+          "emoji": "😕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "پائیدار کامیابی کیا بناتی ہے؟",
+      "options": [
+        {
+          "id": "shortcuts",
+          "text": "شارٹ کٹس اور ٹرکس",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "ethics",
+          "text": "اخلاقیات اور ایمانداری",
+          "emoji": "🏆",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "صرف قسمت",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് ചെറുകിട ബിസിനസ്സ്",
+  "subtitlePlaying": "റൗണ്ട് {{current}}/{{total}}: നിങ്ങളുടെ ചെറുകിട ബിസിനസ് റിഫ്ലെക്സുകൾ പരീക്ഷിക്കുക!",
+  "subtitleReady": "നിങ്ങളുടെ ചെറുകിട ബിസിനസ്സ് റിഫ്ലെക്സുകൾ പരീക്ഷിക്കുക!",
+  "readyEmoji": "🏪",
+  "readyTitle": "ചെറുകിട ബിസിനസ്സ് കഴിവുകൾ പരീക്ഷിക്കാൻ തയ്യാറാണോ?",
+  "readyDescription": "ഒരു ചെറിയ ബിസിനസ്സ് ആരംഭിക്കുന്നതും പ്രവർത്തിപ്പിക്കുന്നതും സംബന്ധിച്ച ചോദ്യങ്ങൾക്ക് ഉത്തരം നൽകുക.",
+  "readyInfo": "നിങ്ങൾക്ക് {{seconds}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "റൗണ്ട്:",
+  "timeLabel": "സമയം:",
+  "scoreLabel": "സ്കോർ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ഒരു ചെറിയ ബിസിനസ്സ് ആരംഭിക്കുന്നതിനുള്ള ഒരു നല്ല മാർഗം ഏതാണ്?",
+      "correctAnswer": "ബേക്ക് & വിൽക്കുക",
+      "options": [
+        {
+          "text": "വാങ്ങി പാഴാക്കുക",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ബേക്ക് & വിൽക്കുക",
+          "isCorrect": true,
+          "emoji": "🍰"
+        },
+        {
+          "text": "ഒന്നും ചെയ്യരുത്",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "നിങ്ങളുടെ കഴിവുകളിൽ നിന്ന് നിങ്ങൾക്ക് എങ്ങനെ പണം സമ്പാദിക്കാം?",
+      "correctAnswer": "കരകൗശല വസ്തുക്കൾ ഉണ്ടാക്കുക",
+      "options": [
+        {
+          "text": "കരകൗശല വസ്തുക്കൾ ഉണ്ടാക്കുക",
+          "isCorrect": true,
+          "emoji": "🎨"
+        },
+        {
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "സമയം പാഴാക്കുക",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "കഴിവുകൾ അവഗണിക്കുക",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "മറ്റുള്ളവരിൽ നിന്ന് പണം സമ്പാദിക്കാൻ നിങ്ങളെ സഹായിക്കുന്നതെന്താണ്?",
+      "correctAnswer": "ഓഫർ സേവനം",
+      "options": [
+        {
+          "text": "ഒന്നും ചെയ്യരുത്",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "എന്നേക്കും കാത്തിരിക്കുക",
+          "isCorrect": false,
+          "emoji": "⏳"
+        },
+        {
+          "text": "ജോലി ഒഴിവാക്കുക",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ഓഫർ സേവനം",
+          "isCorrect": true,
+          "emoji": "🛠️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ബിസിനസ്സ് ലാഭത്തിൽ നിങ്ങൾ എന്തുചെയ്യണം?",
+      "correctAnswer": "ലാഭം സംരക്ഷിക്കുക",
+      "options": [
+        {
+          "text": "ലാഭം സംരക്ഷിക്കുക",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ലാഭം ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "പണം പാഴാക്കുക",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "അത് നഷ്ടപ്പെടുത്തുക",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "നിങ്ങളുടെ ബിസിനസ്സ് വിജയിക്കാൻ സഹായിക്കുന്നതെന്താണ്?",
+      "correctAnswer": "ബിസിനസ് വളർത്തുക",
+      "options": [
+        {
+          "text": "പണം പാഴാക്കുക",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ബിസിനസ് വളർത്തുക",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ഉപേക്ഷിക്കുക",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "ചെറുതായിരിക്കുക",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    }
+  ]
+}

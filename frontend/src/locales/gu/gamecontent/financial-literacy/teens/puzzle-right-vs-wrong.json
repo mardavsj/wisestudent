@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "કોયડો: સાચુ વિ રોંગ",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "પરિણામો સાથે ક્રિયાઓ મેળવો ({{current}}/{{total}} મેળ ખાતી)",
+  "actionsTitle": "નાણાકીય ક્રિયાઓ",
+  "outcomesTitle": "નાણાકીય પરિણામો",
+  "matchButton": "Match",
+  "selectActionLabel": "નાણાકીય ક્રિયા પસંદ કરો",
+  "selectedActionLabel": "પસંદ કરેલ: {{name}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "matchedLabel": "મેળ ખાતી: {{current}}/{{total}}",
+  "resultSuccessHeader": "ગ્રેટ જોબ!",
+  "resultSuccessSubheader": "તમે {{total}} નાણાકીય ક્રિયાઓમાંથી {{score}} ને તેમના પરિણામો સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultSuccessLesson": "પાઠ: નૈતિક નાણાકીય નિર્ણયો દરેક માટે હકારાત્મક પરિણામો તરફ દોરી જાય છે!",
+  "resultTryAgainHeader": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultTryAgainSubheader": "તમે {{total}} નાણાકીય ક્રિયાઓમાંથી {{score}} સાથે યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTryAgainTip": "ટીપ: દરેક નાણાકીય ક્રિયાના પરિણામો વિશે વિચારો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "actions": [
+    {
+      "id": 1,
+      "name": "ચેરિટી માટે દાન કરવું",
+      "emoji": "💝"
+    },
+    {
+      "id": 2,
+      "name": "પૈસાની ચોરી",
+      "emoji": "😈"
+    },
+    {
+      "id": 3,
+      "name": "પ્રમાણિક અહેવાલ",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "લાંચ ચૂકવવી",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "વાજબી ડીલ",
+      "emoji": "🤝"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "હકારાત્મક અસર",
+      "emoji": "🌟"
+    },
+    {
+      "id": 7,
+      "name": "કાનૂની પરિણામો",
+      "emoji": "⛓️"
+    },
+    {
+      "id": 8,
+      "name": "ટ્રસ્ટ બિલ્ડીંગ",
+      "emoji": "🤝"
+    },
+    {
+      "id": 9,
+      "name": "Corruption",
+      "emoji": "🐍"
+    },
+    {
+      "id": 10,
+      "name": "પરસ્પર લાભ",
+      "emoji": "🤝"
+    }
+  ]
+}

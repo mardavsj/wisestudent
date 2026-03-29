@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ વર્ક વિ પ્લે",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારા કાર્ય વિ પ્લે રીફ્લેક્સનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા કાર્ય વિ પ્લે રીફ્લેક્સનું પરીક્ષણ કરો!",
+  "readyEmoji": "💼",
+  "readyTitle": "વર્ક વિ પ્લે ટેસ્ટ કરવા માટે તૈયાર છો?",
+  "readyDescription": "કામ અને રમત વચ્ચે યોગ્ય ક્રિયા પસંદ કરો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "તમને પૈસા કમાવવામાં શું મદદ કરે છે?",
+      "correctAnswer": "Work",
+      "options": [
+        {
+          "text": "સમયનો બગાડ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "આખો દિવસ રમો",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Work",
+          "isCorrect": true,
+          "emoji": "💼"
+        },
+        {
+          "text": "ડુ નથિંગ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "શીખવા અને વધવા માટે તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "Study",
+      "options": [
+        {
+          "text": "Study",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "આખો દિવસ રમો",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "શીખવાનું છોડો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "શિક્ષણને અવગણો",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "તમારે તમારી કમાણીનું શું કરવું જોઈએ?",
+      "correctAnswer": "કમાણી બચાવો",
+      "options": [
+        {
+          "text": "બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "કમાણી બચાવો",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "વેસ્ટ મની",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "તે ગુમાવો",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "તમારે ઘરે મદદ કરવા શું કરવું જોઈએ?",
+      "correctAnswer": "કામકાજ કરો",
+      "options": [
+        {
+          "text": "કામકાજ કરો",
+          "isCorrect": true,
+          "emoji": "🧹"
+        },
+        {
+          "text": "કામકાજ છોડો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "કામ ટાળો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "આળસુ બનો",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "તમને ઉત્પાદક બનવામાં શું મદદ કરે છે?",
+      "correctAnswer": "યોજના કાર્ય",
+      "options": [
+        {
+          "text": "નિષ્ક્રિય રહો",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "સમયનો બગાડ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "ડુ નથિંગ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "યોજના કાર્ય",
+          "isCorrect": true,
+          "emoji": "📋"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ખર્ચ પર ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "શ્રેષ્ઠ ખર્ચ આદત શું છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "વિચાર્યા વગર ખરીદો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "સરખામણી કરો અને પસંદ કરો",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "આનંદ માટે ઉધાર લો",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "પૈસા ખર્ચવાની સ્માર્ટ રીત કઈ છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "પહેલા બજેટ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "એક જ સમયે બધા ખર્ચ કરો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "જે લોકપ્રિય છે તે ખરીદો",
+          "emoji": "🔥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "મોટી ખરીદી પહેલાં તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ક્રેડિટ પર ખરીદો",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "મિત્રોને પૂછો",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "પહેલા સાચવો",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ખર્ચ કરવાની કઈ આદત તમને ભવિષ્યમાં મદદ કરે છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ઈચ્છાઓ પર ખર્ચ કરો",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "જરૂરિયાતો માટે સાચવો",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "મોંઘી વસ્તુઓ ખરીદો",
+          "emoji": "💎",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "શોપિંગ માટે સૌથી સ્માર્ટ અભિગમ શું છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "યાદી બનાવો",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "આવેગ ખરીદી",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "વલણોને અનુસરો",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

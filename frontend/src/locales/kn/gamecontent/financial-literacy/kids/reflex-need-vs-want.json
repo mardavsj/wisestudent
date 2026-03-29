@@ -1,1 +1,159 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಅಗತ್ಯ ವಿರುದ್ಧ ವಾಂಟ್",
+  "subtitlePlaying": "ಸುತ್ತು {{current}}/{{total}}: ಅಗತ್ಯತೆಗಳ ವಿರುದ್ಧ ನಿಮ್ಮ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ಅಗತ್ಯತೆಗಳ ವಿರುದ್ಧ ನಿಮ್ಮ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyEmoji": "📋",
+  "readyTitle": "ನಿಮ್ಮ ಅಗತ್ಯಗಳನ್ನು ಮತ್ತು ಜ್ಞಾನವನ್ನು ಬಯಸುವುದನ್ನು ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಅಗತ್ಯಗಳು ಮತ್ತು ಬಯಕೆಗಳ ನಡುವಿನ ವ್ಯತ್ಯಾಸದ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಸುತ್ತು:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultGreatDescription": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ!",
+  "resultGreatLesson": "ಪಾಠ: ಬದುಕುಳಿಯಲು ಮತ್ತು ಕಲಿಕೆಗೆ ಅಗತ್ಯಗಳು ಅತ್ಯಗತ್ಯ, ಆದರೆ ಬಯಸುವುದು ನಾವು ಹೊಂದಲು ಬಯಸುವ ಆದರೆ ಅಗತ್ಯವಿಲ್ಲದ ವಸ್ತುಗಳು!",
+  "resultKeepEmoji": "😔",
+  "resultKeepTitle": "ಕಲಿಯುತ್ತಲೇ ಇರಿ!",
+  "resultKeepDescription": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಸರಿಯಾಗಿ ಪಡೆದುಕೊಂಡಿದ್ದೀರಿ. ನೆನಪಿಡಿ, ಅಗತ್ಯಗಳು ಆಹಾರ, ಬಟ್ಟೆ ಮತ್ತು ಶಾಲಾ ಸಾಮಗ್ರಿಗಳಂತಹ ಅಗತ್ಯ ವಸ್ತುಗಳು!",
+  "resultKeepTip": "ಸಲಹೆ: ಆಹಾರ, ಬಟ್ಟೆ ಮತ್ತು ಶಾಲಾ ಸಾಮಗ್ರಿಗಳಂತಹ ನೀವು ಬದುಕಲು ಮತ್ತು ಕಲಿಯಬೇಕಾದ ವಿಷಯಗಳು ಅಗತ್ಯಗಳಾಗಿವೆ.",
+  "tryAgainButton": "ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಯಾವುದು ಅಗತ್ಯ?",
+      "correctAnswer": "ಶಾಲೆಗೆ ಶೂಗಳು",
+      "options": [
+        {
+          "text": "ಶಾಲೆಗೆ ಶೂಗಳು",
+          "isCorrect": true,
+          "emoji": "👟"
+        },
+        {
+          "text": "10ನೇ ಆಟಿಕೆ ಕಾರು",
+          "isCorrect": false,
+          "emoji": "🚗"
+        },
+        {
+          "text": "ವಿಡಿಯೋ ಗೇಮ್",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ಅಲಂಕಾರಿಕ ಸನ್ಗ್ಲಾಸ್",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಆರೋಗ್ಯವಾಗಿರಲು ಏನು ಅಗತ್ಯ?",
+      "correctAnswer": "ಆರೋಗ್ಯಕರ ಆಹಾರ",
+      "options": [
+        {
+          "text": "ಹೆಚ್ಚುವರಿ ಕ್ಯಾಂಡಿ",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ಆರೋಗ್ಯಕರ ಆಹಾರ",
+          "isCorrect": true,
+          "emoji": "🥗"
+        },
+        {
+          "text": "ಐಸ್ ಕ್ರೀಮ್",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ಕಲಿಕೆಗೆ ಯಾವ ವಸ್ತು ಅತ್ಯಗತ್ಯ?",
+      "correctAnswer": "ಶಾಲಾ ಪುಸ್ತಕಗಳು",
+      "options": [
+        {
+          "text": "ವಿಡಿಯೋ ಗೇಮ್",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ಕ್ರಿಯೆಯ ಚಿತ್ರ",
+          "isCorrect": false,
+          "emoji": "🤖"
+        },
+        {
+          "text": "ಪಜಲ್ ಗೇಮ್",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "ಶಾಲಾ ಪುಸ್ತಕಗಳು",
+          "isCorrect": true,
+          "emoji": "📚"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಶೀತ ವಾತಾವರಣದಲ್ಲಿ ನಿಮಗೆ ಏನು ಬೇಕು?",
+      "correctAnswer": "ಚಳಿಗಾಲದ ಜಾಕೆಟ್",
+      "options": [
+        {
+          "text": "ಅಲಂಕಾರಿಕ ಸನ್ಗ್ಲಾಸ್",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        },
+        {
+          "text": "ಈಜುಕೊಳ",
+          "isCorrect": false,
+          "emoji": "🏊"
+        },
+        {
+          "text": "ಚಳಿಗಾಲದ ಜಾಕೆಟ್",
+          "isCorrect": true,
+          "emoji": "🧥"
+        },
+        {
+          "text": "ಬೀಚ್ ಬಾಲ್",
+          "isCorrect": false,
+          "emoji": "🏐"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ಶಾಲೆಗೆ ಹೋಗಲು ಏನು ಬೇಕು?",
+      "correctAnswer": "ಬಸ್ ದರ",
+      "options": [
+        {
+          "text": "ಬಸ್ ದರ",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "ಹೊಸ ಹೆಡ್‌ಫೋನ್‌ಗಳು",
+          "isCorrect": false,
+          "emoji": "🎧"
+        },
+        {
+          "text": "ಮ್ಯೂಸಿಕ್ ಪ್ಲೇಯರ್",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "ಸ್ಮಾರ್ಟ್ ವಾಚ್",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

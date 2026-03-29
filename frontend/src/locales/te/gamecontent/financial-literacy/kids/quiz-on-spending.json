@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ఖర్చుపై క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ఉత్తమంగా ఖర్చు చేసే అలవాటు ఏమిటి?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ఆలోచించకుండా కొనండి",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "సరిపోల్చండి మరియు ఎంచుకోండి",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "వినోదం కోసం అప్పు",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "డబ్బు ఖర్చు చేయడానికి తెలివైన మార్గం ఏది?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ముందుగా బడ్జెట్",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "అన్నింటినీ ఒకేసారి ఖర్చు చేయండి",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "జనాదరణ పొందిన వాటిని కొనండి",
+          "emoji": "🔥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "పెద్ద కొనుగోలుకు ముందు మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "a",
+          "text": "క్రెడిట్‌పై కొనుగోలు చేయండి",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "స్నేహితులను అడగండి",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ముందుగా ఆదా చేసుకోండి",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ఏ ఖర్చు అలవాటు భవిష్యత్తులో మీకు సహాయపడుతుంది?",
+      "options": [
+        {
+          "id": "a",
+          "text": "కోరికలకు ఖర్చు చేయండి",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "అవసరాల కోసం పొదుపు చేయండి",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ఖరీదైన వస్తువులను కొనుగోలు చేస్తారు",
+          "emoji": "💎",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "షాపింగ్ చేయడానికి తెలివైన విధానం ఏమిటి?",
+      "options": [
+        {
+          "id": "a",
+          "text": "జాబితా తయారు చేయండి",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "ప్రేరణ కొనుగోలు",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ట్రెండ్‌లను అనుసరించండి",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

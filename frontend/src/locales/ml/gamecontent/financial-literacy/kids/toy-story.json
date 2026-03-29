@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ടോയ് സ്റ്റോറി",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ഒരു സുഹൃത്ത് നിങ്ങൾക്ക് ഒരു കളിപ്പാട്ടം കടം തരുന്നു. നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "സുരക്ഷിതമായി സൂക്ഷിക്കുക",
+          "emoji": "🛡️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "break",
+          "text": "തകർക്കുക",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "അവഗണിക്കുക",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിങ്ങൾ ഒരു കളിപ്പാട്ടം കടം വാങ്ങി. ഇപ്പോൾ എന്ത്?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "സൂക്ഷിക്കുക",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "അത് നഷ്ടപ്പെടുത്തുക",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "കളിപ്പാട്ടം തിരികെ നൽകുക",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിങ്ങളുടെ സുഹൃത്തിൻ്റെ കളിപ്പാട്ടമുണ്ട്. എന്താണ് നല്ലത്?",
+      "options": [
+        {
+          "id": "care",
+          "text": "അത് പരിപാലിക്കുക",
+          "emoji": "💝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "അത് നഷ്ടപ്പെടുത്തുക",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "break",
+          "text": "തകർക്കുക",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ഉടമ കളിപ്പാട്ടം തിരികെ ചോദിക്കുന്നു. നീ എന്ത് ചെയ്യുന്നു?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "അത് മറയ്ക്കുക",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "തിരിച്ചു തരൂ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "delay",
+          "text": "തിരിച്ചുവരാൻ താമസം",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "നിങ്ങൾ ഒരു കളിപ്പാട്ടം കടം വാങ്ങുമ്പോൾ, നിങ്ങളുടെ കടമ എന്താണ്?",
+      "options": [
+        {
+          "id": "careless",
+          "text": "അശ്രദ്ധരായിരിക്കുക",
+          "emoji": "😓",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "അത് മറന്നേക്കൂ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "responsible",
+          "text": "ഉത്തരവാദിത്തമുള്ളവരായിരിക്കുക",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

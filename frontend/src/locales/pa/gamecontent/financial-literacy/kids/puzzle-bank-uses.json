@@ -1,1 +1,38 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਬੈਂਕ ਵਰਤੋਂ",
+  "subtitleComplete": "ਸੰਪੂਰਨ!",
+  "subtitleProgress": "ਮੇਲ ਆਈਟਮਾਂ ({{matched}}/{{total}} ਮੇਲ ਖਾਂਦੀਆਂ)",
+  "scoreLabel": "ਸਕੋਰ:",
+  "items": [
+    {
+      "id": 1,
+      "name": "ਬਚਤ ਖਾਤਾ",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "Loan",
+      "emoji": "📝"
+    },
+    {
+      "id": 3,
+      "name": "ATM",
+      "emoji": "🏧"
+    },
+    {
+      "id": 4,
+      "name": "Interest",
+      "emoji": "📈"
+    },
+    {
+      "id": 5,
+      "name": "ਵਿੱਤੀ ਸਿੱਖਿਆ",
+      "emoji": "📚"
+    }
+  ],
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ:",
+  "selectItem": "ਇੱਕ ਆਈਟਮ ਚੁਣੋ",
+  "matchButton": "Match"
+}

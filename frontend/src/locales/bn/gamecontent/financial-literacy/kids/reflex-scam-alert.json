@@ -1,1 +1,165 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স: স্ক্যাম সতর্কতা",
+    "subtitleComplete": "গেম সম্পন্ন!",
+    "roundLabel": "রাউন্ড {{current}}/{{total}}",
+    "timeUp": "সময় শেষ!",
+    "readyTitle": "স্ক্যাম সতর্কতা পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "স্ক্যাম ও প্রতারণা থেকে নিরাপদ থাকার প্রশ্নের উত্তর দাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{time}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "gameRoundLabel": "রাউন্ড:",
+    "gameTimeLabel": "সময়:",
+    "gameScoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "বিল পেলে কী করবে?",
+            "correctAnswer": "বিল চেক করো",
+            "options": [
+                {
+                    "text": "বিল চেক করো",
+                    "isCorrect": true,
+                    "emoji": "🔍"
+                },
+                {
+                    "text": "উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "সাথে সাথে পেমেন্ট করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "মুছে দাও",
+                    "isCorrect": false,
+                    "emoji": "🗑️"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "সন্দেহজনক অফার পেলে কী করবে?",
+            "correctAnswer": "অফার যাচাই করো",
+            "options": [
+                {
+                    "text": "দ্রুত গ্রহণ করো",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                },
+                {
+                    "text": "অফার যাচাই করো",
+                    "isCorrect": true,
+                    "emoji": "✅"
+                },
+                {
+                    "text": "সাথে সাথে বিশ্বাস করো",
+                    "isCorrect": false,
+                    "emoji": "🤝"
+                },
+                {
+                    "text": "সতর্কতা উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "কিছু সত্যি মনে না হলে কী করবে?",
+            "correctAnswer": "প্রশ্ন জিজ্ঞেস করো",
+            "options": [
+                {
+                    "text": "অন্ধভাবে বিশ্বাস করো",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "দ্রুত গ্রহণ করো",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                },
+                {
+                    "text": "সন্দেহ উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "প্রশ্ন জিজ্ঞেস করো",
+                    "isCorrect": true,
+                    "emoji": "❓"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "পেমেন্ট করার আগে কী করবে?",
+            "correctAnswer": "বিবরণ নিশ্চিত করো",
+            "options": [
+                {
+                    "text": "এখনই পেমেন্ট করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "যাচাই বাদ দাও",
+                    "isCorrect": false,
+                    "emoji": "⏭️"
+                },
+                {
+                    "text": "বিবরণ নিশ্চিত করো",
+                    "isCorrect": true,
+                    "emoji": "📋"
+                },
+                {
+                    "text": "না দেখে বিশ্বাস করো",
+                    "isCorrect": false,
+                    "emoji": "🤝"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "স্ক্যাম আবিষ্কার করলে কী করবে?",
+            "correctAnswer": "স্ক্যাম রিপোর্ট করো",
+            "options": [
+                {
+                    "text": "কিছুই করো না",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "চুপ থাকো",
+                    "isCorrect": false,
+                    "emoji": "🤫"
+                },
+                {
+                    "text": "স্ক্যাম রিপোর্ট করো",
+                    "isCorrect": true,
+                    "emoji": "🚨"
+                }
+            ]
+        }
+    ],
+    "resultGreat": {
+        "emoji": "🎉",
+        "title": "স্ক্যাম ধরার বিশেষজ্ঞ!",
+        "description": "অসাধারণ! তুমি {{score}}/{{total}} সঠিক পেয়েছ! তুমি স্ক্যাম ধরতে দুর্দান্ত!"
+    },
+    "resultGood": {
+        "emoji": "👍",
+        "title": "ভালো সচেতনতা!",
+        "description": "শাবাশ! তুমি {{score}}/{{total}} পেয়েছ! স্ক্যাম বিশেষজ্ঞ হতে অনুশীলন চালিয়ে যাও!"
+    },
+    "resultKeepPracticing": {
+        "emoji": "💪",
+        "title": "অনুশীলন চালিয়ে যাও!",
+        "description": "তুমি {{score}}/{{total}} পেয়েছ। টিপস পর্যালোচনা করো এবং স্ক্যাম ধরার দক্ষতা উন্নত করতে আবার চেষ্টা করো!"
+    }
+}

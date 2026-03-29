@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ચર્ચા: રોકડ વિ ઓનલાઈન સલામતી",
+  "subtitleComplete": "ચર્ચા પૂર્ણ!",
+  "subtitleProgress": "{{total}} નો રાઉન્ડ {{current}}",
+  "roundLabel": "રાઉન્ડ {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "શું ઓનલાઈન પૈસા રોકડ કરતાં વધુ જોખમી છે?",
+      "options": [
+        {
+          "id": "online-riskier",
+          "text": "ઓનલાઈન જોખમી છે",
+          "emoji": "💻",
+          "isCorrect": false
+        },
+        {
+          "id": "both-safe",
+          "text": "બંનેને સલામતીની જરૂર છે",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "cash-riskier",
+          "text": "રોકડ વધુ જોખમી છે",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "મોટી રકમ માટે કયું સલામત છે?",
+      "options": [
+        {
+          "id": "both-safe2",
+          "text": "બંને સાવચેતી સાથે",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "only-cash",
+          "text": "માત્ર રોકડ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "only-online",
+          "text": "માત્ર ઓનલાઈન",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "ઓનલાઈન મની સાથે મુખ્ય જોખમ શું છે?",
+      "options": [
+        {
+          "id": "no-risk",
+          "text": "કોઈ જોખમ નથી",
+          "emoji": "😓",
+          "isCorrect": false
+        },
+        {
+          "id": "too-easy",
+          "text": "વાપરવા માટે ખૂબ જ સરળ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "hacking",
+          "text": "હેકિંગ અને છેતરપિંડી",
+          "emoji": "👾",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "તમે ઓનલાઈન પૈસાને કેવી રીતે સુરક્ષિત કરી શકો?",
+      "options": [
+        {
+          "id": "strong-password",
+          "text": "મજબૂત પાસવર્ડ અને OTP",
+          "emoji": "🔐",
+          "isCorrect": true
+        },
+        {
+          "id": "no-protection",
+          "text": "કોઈ રક્ષણની જરૂર નથી",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "share-details",
+          "text": "વિગતો મુક્તપણે શેર કરો",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "શ્રેષ્ઠ અભિગમ શું છે?",
+      "options": [
+        {
+          "id": "only-one",
+          "text": "માત્ર એક પદ્ધતિનો ઉપયોગ કરો",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "બંનેને સુરક્ષિત રીતે સંતુલિત કરો",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid-all",
+          "text": "બધા પૈસા ટાળો",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

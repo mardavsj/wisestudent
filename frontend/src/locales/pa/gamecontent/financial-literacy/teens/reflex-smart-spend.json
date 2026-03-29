@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਸਮਾਰਟ ਖਰਚ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਖਰਚ ਪ੍ਰਤੀਬਿੰਬ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਖਰਚ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyHeader": "ਆਪਣੇ ਖਰਚ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਸਮਾਰਟ ਖਰਚ ਵਿਕਲਪਾਂ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyTip": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{time}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "greatJob": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "finalScore": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਸਕੋਰ ਕੀਤੇ!",
+  "growthSkills": "ਤੁਸੀਂ ਮਜ਼ਬੂਤ ​​ਵਿੱਤੀ ਫੈਸਲੇ ਲੈਣ ਦੇ ਹੁਨਰ ਨੂੰ ਵਿਕਸਿਤ ਕਰ ਰਹੇ ਹੋ!",
+  "playAgain": "ਦੁਬਾਰਾ ਖੇਡੋ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਸਭ ਤੋਂ ਚੁਸਤ ਖਰਚ ਚੋਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "pay_rent",
+          "text": "ਕਿਰਾਇਆ ਅਦਾ ਕਰੋ",
+          "emoji": "🏠"
+        },
+        {
+          "id": "luxury_party",
+          "text": "ਲਗਜ਼ਰੀ ਪਾਰਟੀ",
+          "emoji": "🎉"
+        },
+        {
+          "id": "designer_shoes",
+          "text": "ਡਿਜ਼ਾਈਨਰ ਜੁੱਤੇ ਖਰੀਦੋ",
+          "emoji": "👟"
+        },
+        {
+          "id": "impulse_purchase",
+          "text": "ਇੰਪਲਸ ਖਰੀਦਦਾਰੀ",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਕਿਹੜਾ ਖਰਚਾ ਪਹਿਲਾਂ ਆਉਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "new_gadgets",
+          "text": "ਨਵੇਂ ਗੈਜੇਟਸ",
+          "emoji": "📱"
+        },
+        {
+          "id": "buy_groceries",
+          "text": "ਕਰਿਆਨੇ ਖਰੀਦੋ",
+          "emoji": "🛒"
+        },
+        {
+          "id": "expensive_restaurant",
+          "text": "ਮਹਿੰਗਾ ਰੈਸਟੋਰੈਂਟ",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "entertainment",
+          "text": "Entertainment",
+          "emoji": "🎬"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਤੁਹਾਨੂੰ ਵਾਧੂ ਪੈਸੇ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "movie_night",
+          "text": "ਮੂਵੀ ਨਾਈਟ",
+          "emoji": "🎬"
+        },
+        {
+          "id": "buy_video_games",
+          "text": "ਵੀਡੀਓ ਗੇਮਾਂ ਖਰੀਦੋ",
+          "emoji": "🎮"
+        },
+        {
+          "id": "save_money",
+          "text": "ਪੈਸੇ ਬਚਾਓ",
+          "emoji": "💰"
+        },
+        {
+          "id": "shopping_spree",
+          "text": "ਸ਼ਾਪਿੰਗ ਸਪਰੀ",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਤਰਜੀਹੀ ਖਰਚਾ ਕਿਹੜਾ ਹੈ?",
+      "options": [
+        {
+          "id": "pay_bills",
+          "text": "ਬਿੱਲਾਂ ਦਾ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "📄"
+        },
+        {
+          "id": "designer_clothes",
+          "text": "ਡਿਜ਼ਾਈਨਰ ਕੱਪੜੇ",
+          "emoji": "👔"
+        },
+        {
+          "id": "weekend_trip",
+          "text": "ਵੀਕੈਂਡ ਦੀ ਯਾਤਰਾ",
+          "emoji": "✈️"
+        },
+        {
+          "id": "gourmet_dinner",
+          "text": "ਗੋਰਮੇਟ ਡਿਨਰ",
+          "emoji": "🍷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਲੰਬੇ ਸਮੇਂ ਦੀ ਵਿੱਤੀ ਸੁਰੱਖਿਆ ਕੀ ਬਣਾਉਂਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "concert_ticket",
+          "text": "ਸਮਾਰੋਹ ਦੀ ਟਿਕਟ",
+          "emoji": "🎫"
+        },
+        {
+          "id": "fund_education",
+          "text": "ਫੰਡ ਸਿੱਖਿਆ",
+          "emoji": "📚"
+        },
+        {
+          "id": "buy_jewelry",
+          "text": "ਗਹਿਣੇ ਖਰੀਦੋ",
+          "emoji": "💍"
+        },
+        {
+          "id": "luxury_vacation",
+          "text": "ਲਗਜ਼ਰੀ ਛੁੱਟੀਆਂ",
+          "emoji": "🏖️"
+        }
+      ]
+    }
+  ]
+}

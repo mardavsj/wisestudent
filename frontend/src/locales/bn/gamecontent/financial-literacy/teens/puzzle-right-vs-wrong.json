@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ধাঁধা: ডান বনাম ভুল",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "ফলাফলের সাথে অ্যাকশনের মিল ({{current}}/{{total}} মিলেছে)",
+  "actionsTitle": "আর্থিক ক্রিয়াকলাপ",
+  "outcomesTitle": "আর্থিক ফলাফল",
+  "matchButton": "Match",
+  "selectActionLabel": "একটি আর্থিক কর্ম নির্বাচন করুন",
+  "selectedActionLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি সঠিকভাবে {{total}} আর্থিক কর্মের মধ্যে {{score}} তাদের ফলাফলের সাথে মিলেছেন!",
+  "resultSuccessLesson": "পাঠ: নৈতিক আর্থিক সিদ্ধান্ত প্রত্যেকের জন্য ইতিবাচক ফলাফলের দিকে নিয়ে যায়!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি {{total}} আর্থিক কর্মের মধ্যে {{score}} সঠিকভাবে মেলেছেন।",
+  "resultTryAgainTip": "পরামর্শ: প্রতিটি আর্থিক কর্মের পরিণতি সম্পর্কে চিন্তা করুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "actions": [
+    {
+      "id": 1,
+      "name": "চ্যারিটিতে দান করা",
+      "emoji": "💝"
+    },
+    {
+      "id": 2,
+      "name": "টাকা চুরি",
+      "emoji": "😈"
+    },
+    {
+      "id": 3,
+      "name": "সৎ রিপোর্টিং",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "ঘুষ প্রদান",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "ন্যায্য চুক্তি",
+      "emoji": "🤝"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "ইতিবাচক প্রভাব",
+      "emoji": "🌟"
+    },
+    {
+      "id": 7,
+      "name": "আইনি পরিণতি",
+      "emoji": "⛓️"
+    },
+    {
+      "id": 8,
+      "name": "ট্রাস্ট বিল্ডিং",
+      "emoji": "🤝"
+    },
+    {
+      "id": 9,
+      "name": "Corruption",
+      "emoji": "🐍"
+    },
+    {
+      "id": 10,
+      "name": "পারস্পরিক সুবিধা",
+      "emoji": "🤝"
+    }
+  ]
+}

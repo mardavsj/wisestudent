@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "મની બેંક સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમને તમારી દાદી તરફથી ભેટ તરીકે 10 રૂપિયા મળ્યા છે. તમે શું કરવા માંગો છો?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "બધા ખર્ચો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "5 રૂપિયા બચાવો",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "save-all",
+          "text": "બધા 10 રૂપિયા બચાવો",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારી પાસે 20 રૂપિયા બચ્યા છે. તમારો મિત્ર તમને 15 રૂપિયાની ફિલ્મો માટે આમંત્રણ આપે છે. તમે શું કરો છો?",
+      "options": [
+        {
+          "id": "save",
+          "text": "પછી માટે સાચવો",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "મૂવીઝ પર જાઓ",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ખર્ચ વિભાજિત કરો",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમને શેરીમાં 5 રૂપિયા મળ્યા. તેની સાથે શ્રેષ્ઠ વસ્તુ શું છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "કેન્ડી ખરીદો",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "માતાપિતાને આપો",
+          "emoji": "👨‍👩‍👧",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "તેને સાચવો",
+          "emoji": "🫙",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમારો જન્મદિવસ આવી રહ્યો છે અને તમને 500 રૂપિયાની નવી સાયકલ જોઈએ છે. તમારી પાસે હાલમાં 200 રૂપિયા છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "વધુ સાચવો",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "હવે ખરીદો",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "નાણાં ઉછીના",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમારી પાસે 30 રૂપિયા બચેલા છે અને તમને ખરેખર 25 રૂપિયામાં જોઈતું રમકડું જુઓ. સ્માર્ટ પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "રમકડું ખરીદો",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "મોટા માટે સાચવો",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "વેચાણ માટે રાહ જુઓ",
+          "emoji": "⏰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

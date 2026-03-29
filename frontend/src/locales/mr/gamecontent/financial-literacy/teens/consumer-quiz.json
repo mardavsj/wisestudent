@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ग्राहक प्रश्नमंजुषा",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "दुकानदाराने फसवणूक केली तर तक्रार कुठे करणार?",
+      "options": [
+        {
+          "id": "court",
+          "text": "ग्राहक न्यायालय",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "playground",
+          "text": "Playground",
+          "emoji": "🏃",
+          "isCorrect": false
+        },
+        {
+          "id": "nowhere",
+          "text": "Nowhere",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ग्राहक हक्क काय आहेत?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "अधिकार नाहीत",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "protection",
+          "text": "फसवणुकीपासून संरक्षण",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "खर्च करण्याचा अधिकार",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "जर तुम्हाला सदोष उत्पादन मिळाले तर तुम्ही काय करावे?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "ते मान्य करा",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "त्याकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "विक्रेत्याकडे तक्रार करा",
+          "emoji": "📢",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "माहितीचा अधिकार काय आहे?",
+      "options": [
+        {
+          "id": "know",
+          "text": "उत्पादन तपशील जाणून घ्या",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "माहिती लपवा",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "lie",
+          "text": "खोटे स्वीकारा",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुम्ही ग्राहक तक्रार कुठे नोंदवू शकता?",
+      "options": [
+        {
+          "id": "police",
+          "text": "पोलीस स्टेशन",
+          "emoji": "🚔",
+          "isCorrect": false
+        },
+        {
+          "id": "court2",
+          "text": "ग्राहक न्यायालय",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "school",
+          "text": "School",
+          "emoji": "🏫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "क्विझ पूर्ण!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! तुम्हाला ग्राहकांचे हक्क समजतात!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: ग्राहकांना हक्क आहेत! फसवणूक झाल्यास तुम्ही ग्राहक न्यायालयात तक्रार करू शकता, सुरक्षित उत्पादनांची मागणी करू शकता आणि प्रामाणिक माहिती मिळवू शकता!",
+    "loseEmoji": "💪",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, दुकानदाराने फसवणूक केल्यास तुम्ही तक्रार करता ते ग्राहक न्यायालय!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: दुकानदाराने तुमची फसवणूक केली तर तुम्ही ग्राहक न्यायालयात तक्रार करू शकता, खेळाच्या मैदानावर नाही! ग्राहकांना हक्क आहे!"
+  }
+}

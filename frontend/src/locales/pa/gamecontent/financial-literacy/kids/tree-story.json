@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਰੁੱਖ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "🌳",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਸੀਂ ਅੱਜ ਇੱਕ ਛੋਟਾ ਜਿਹਾ ਰੁੱਖ ਲਗਾਓ। ਕਿਹੜੀ ਚੀਜ਼ ਸਮੇਂ ਦੇ ਨਾਲ ਮਜ਼ਬੂਤ ​​​​ਹੋਣ ਵਿੱਚ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "care",
+          "text": "ਨਿਯਮਤ ਤੌਰ 'ਤੇ ਪਾਣੀ ਅਤੇ ਦੇਖਭਾਲ ਕਰੋ",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "ਇਸ ਨੂੰ ਤੇਜ਼ੀ ਨਾਲ ਵਧਣ ਲਈ ਖਿੱਚੋ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ਇਸ ਨੂੰ ਛੱਡੋ ਅਤੇ ਭੁੱਲ ਜਾਓ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਪੈਸਾ ਇੱਕ ਰੁੱਖ ਵਾਂਗ ਹੈ। ਕਿਹੜੀ ਚੀਜ਼ ਇਸਨੂੰ ਹੌਲੀ-ਹੌਲੀ ਅਤੇ ਸੁਰੱਖਿਅਤ ਢੰਗ ਨਾਲ ਵਧਾਉਂਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਸਭ ਕੁਝ ਤੇਜ਼ੀ ਨਾਲ ਖਰਚ ਕਰਨਾ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ਇਸਨੂੰ ਛੁਪਾਓ ਅਤੇ ਕਦੇ ਵੀ ਇਸਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰੋ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ਸਮੇਂ ਦੇ ਨਾਲ ਸਮਝਦਾਰੀ ਨਾਲ ਵਰਤੋਂ ਅਤੇ ਬਚਤ ਕਰੋ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਨੂੰ ਵਾਧੂ ਜੇਬ ਪੈਸਾ ਮਿਲਦਾ ਹੈ। ਸਮਾਰਟ ਟ੍ਰੀ-ਸਟਾਈਲ ਦੀ ਚੋਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "ਬਿਨਾਂ ਸੋਚੇ ਸਮਝੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "ਹਿੱਸਾ ਬਚਾਓ ਤਾਂ ਜੋ ਇਹ ਬਾਅਦ ਵਿੱਚ ਵਧੇ",
+          "emoji": "🌱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "ਲਾਪਰਵਾਹੀ ਨਾਲ ਰੱਖੋ",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਫਲਦਾਰ ਰੁੱਖ ਹਰ ਸਾਲ ਫਲ ਦਿੰਦਾ ਹੈ। ਇਹ ਪੈਸੇ ਬਾਰੇ ਕੀ ਸਿਖਾਉਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "ਪੈਸਾ ਸਿਰਫ ਇੱਕ ਵਾਰ ਵਰਤਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "ਸਿਰਫ ਕਿਸਮਤ ਮਾਇਨੇ ਰੱਖਦੀ ਹੈ",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ਚੰਗੀਆਂ ਚੋਣਾਂ ਵਾਰ-ਵਾਰ ਇਨਾਮ ਦਿੰਦੀਆਂ ਹਨ",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਜੇ ਤੁਸੀਂ ਇੱਕ ਰੁੱਖ ਬਹੁਤ ਜਲਦੀ ਕੱਟਦੇ ਹੋ, ਤਾਂ ਕੀ ਹੁੰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "loss",
+          "text": "ਤੁਸੀਂ ਭਵਿੱਖ ਦੇ ਲਾਭ ਗੁਆ ਦਿੰਦੇ ਹੋ",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "gain",
+          "text": "ਤੁਸੀਂ ਹਮੇਸ਼ਾਂ ਵਧੇਰੇ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹੋ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ਕੁਝ ਨਹੀਂ ਬਦਲਦਾ",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

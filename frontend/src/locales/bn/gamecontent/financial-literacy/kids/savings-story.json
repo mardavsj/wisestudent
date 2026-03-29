@@ -1,1 +1,128 @@
-﻿{}
+﻿{
+    "title": "সঞ্চয়ের গল্প",
+    "subtitleComplete": "সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "উপহার হিসেবে ১০০০ টাকা পেয়েছ। নিরাপদ রাখার সেরা উপায় কী?",
+            "options": [
+                {
+                    "id": "home",
+                    "text": "বাড়িতে রাখো",
+                    "emoji": "🏠",
+                    "isCorrect": false
+                },
+                {
+                    "id": "bank",
+                    "text": "ব্যাংক অ্যাকাউন্ট খোলো",
+                    "emoji": "🏦",
+                    "isCorrect": true
+                },
+                {
+                    "id": "wallet",
+                    "text": "মানিব্যাগে বহন করো",
+                    "emoji": "👛",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "জন্মদিনের টাকা সবচেয়ে বুদ্ধিমানের সাথে ব্যবহারের উপায় কী?",
+            "options": [
+                {
+                    "id": "split",
+                    "text": "৫০/৫০ ভাগ করো",
+                    "emoji": "💵",
+                    "isCorrect": true
+                },
+                {
+                    "id": "spend",
+                    "text": "নতুন গ্যাজেট কিনো",
+                    "emoji": "📱",
+                    "isCorrect": false
+                },
+                {
+                    "id": "spend_all",
+                    "text": "এখনই সব খরচ করো",
+                    "emoji": "💸",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "সপ্তাহে ২০০ টাকা ভাতা পাও। সেরা পরিকল্পনা কী?",
+            "options": [
+                {
+                    "id": "treats",
+                    "text": "নাস্তা কিনো",
+                    "emoji": "🍫",
+                    "isCorrect": false
+                },
+                {
+                    "id": "save_half",
+                    "text": "৫০% সঞ্চয় করো",
+                    "emoji": "💲",
+                    "isCorrect": true
+                },
+                {
+                    "id": "save_all",
+                    "text": "সব সঞ্চয় করো",
+                    "emoji": "💰",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "গৃহস্থালির কাজ থেকে সঞ্চয় করা টাকা কোথায় রাখবে?",
+            "options": [
+                {
+                    "id": "piggy",
+                    "text": "পিগি ব্যাংক",
+                    "emoji": "🐷",
+                    "isCorrect": false
+                },
+                {
+                    "id": "pocket",
+                    "text": "পকেটে",
+                    "emoji": "👖",
+                    "isCorrect": false
+                },
+                {
+                    "id": "bank",
+                    "text": "সঞ্চয় অ্যাকাউন্টে",
+                    "emoji": "🏦",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "তোমার টাকা বাড়ানোর সেরা উপায় কী?",
+            "options": [
+                {
+                    "id": "save",
+                    "text": "উচ্চ সুদের অ্যাকাউন্ট",
+                    "emoji": "💹",
+                    "isCorrect": true
+                },
+                {
+                    "id": "invest",
+                    "text": "শেয়ারে বিনিয়োগ",
+                    "emoji": "📊",
+                    "isCorrect": false
+                },
+                {
+                    "id": "spend",
+                    "text": "সংগ্রহযোগ্য জিনিস কিনো",
+                    "emoji": "🏀",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

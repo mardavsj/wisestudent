@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "پنسل کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "✏️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ ایک دوست سے پنسل ادھار لیتے ہیں۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "yes",
+          "text": "استعمال کے بعد واپس کر دیں۔",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "رکھ لو",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "اسے کھو دیں۔",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کو پنسل کی ضرورت ہے لیکن آپ کے پاس نہیں ہے۔ حق کیا ہے؟",
+      "options": [
+        {
+          "id": "take",
+          "text": "بغیر پوچھے لے لو",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ask",
+          "text": "ادھار لینے اور واپس کرنے کو کہیں۔",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "لکھنا چھوڑ دیں۔",
+          "emoji": "✍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ ادھار کی پنسل توڑ دیتے ہیں۔ ایماندار کیا ہے؟",
+      "options": [
+        {
+          "id": "replace",
+          "text": "اسے ایک نئے کے ساتھ بدل دیں۔",
+          "emoji": "🆕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "اسے چھپائیں۔",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "کسی اور پر الزام لگانا",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کا دوست آپ کو پنسل کے لیے ₹5 کا قرض دیتا ہے۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "candy",
+          "text": "اسے کینڈی پر خرچ کریں۔",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ادا کرنا بھول جاؤ",
+          "emoji": "😕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "وقت پر ₹5 واپس کریں۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ادھار لی گئی اشیاء کو واپس کرنا کیوں ضروری ہے؟",
+      "options": [
+        {
+          "id": "pencils",
+          "text": "آپ کو مزید پنسلیں ملتی ہیں۔",
+          "emoji": "✏️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "یہ اعتماد پیدا کرتا ہے۔",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "popular",
+          "text": "یہ آپ کو مقبول بناتا ہے۔",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

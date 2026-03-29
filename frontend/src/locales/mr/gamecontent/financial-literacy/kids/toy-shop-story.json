@@ -1,1 +1,146 @@
-﻿{}
+{
+  "title": "खेळण्यांच्या दुकानाची गोष्ट",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "questionIndicator": "प्रश्न {{current}}/{{total}}",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "विक्रेता म्हणतो, 'घाई करा किंवा खेळणी गमावा!' तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "quick",
+          "text": "पटकन खरेदी करा",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "किंमत तपासा",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "विक्रेत्याकडे दुर्लक्ष करा",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला दोन खेळण्यांची दुकाने दिसतात. हुशार काय आहे?",
+      "options": [
+        {
+          "id": "compare",
+          "text": "किंमतींची तुलना करा",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "pay",
+          "text": "आता पैसे द्या",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "दोन्ही वगळा",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "खेळणी मस्त दिसते. तुम्ही काय तपासता?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "जलद खरेदी करा",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "quality",
+          "text": "गुणवत्ता विचारा",
+          "emoji": "🔍",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "guess",
+          "text": "गुणवत्तेचा अंदाज घ्या",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ऑनलाइन खेळण्यांची विक्री. पहिले काय?",
+      "options": [
+        {
+          "id": "reviews",
+          "text": "पुनरावलोकने वाचा",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "Rush",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "विक्रीकडे दुर्लक्ष करा",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुला एक खेळणी हवी आहे. काय योजना आहे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "सर्व खर्च करा",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "पैसे उधार घ्या",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "प्रथम बजेट",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

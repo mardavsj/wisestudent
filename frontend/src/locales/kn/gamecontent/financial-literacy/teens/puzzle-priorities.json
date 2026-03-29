@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ಆದ್ಯತೆಗಳ ಒಗಟು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಆದ್ಯತೆಗಳೊಂದಿಗೆ ವೆಚ್ಚಗಳನ್ನು ಹೊಂದಿಸಿ ({{current}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "itemsTitle": "Expenses",
+  "prioritiesTitle": "Priorities",
+  "matchButton": "Match",
+  "selectItemLabel": "ವೆಚ್ಚವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "selectedItemLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultSuccessSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ವೆಚ್ಚಗಳನ್ನು ಅವರ ಆದ್ಯತೆಗಳೊಂದಿಗೆ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿದ್ದೀರಿ!",
+  "resultSuccessLesson": "ಪಾಠ: ವೆಚ್ಚದ ಆದ್ಯತೆಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ಸ್ಮಾರ್ಟ್ ಹಣಕಾಸಿನ ನಿರ್ಧಾರಗಳನ್ನು ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ!",
+  "resultTryAgainHeader": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultTryAgainSubheader": "ನೀವು {{total}} ವೆಚ್ಚಗಳಲ್ಲಿ {{score}} ಅನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTryAgainTip": "ಸಲಹೆ: ಪ್ರತಿಯೊಂದು ವೆಚ್ಚವು ಅತ್ಯಗತ್ಯವೇ ಅಥವಾ ವಿವೇಚನೆಯೇ ಎಂದು ಯೋಚಿಸಿ!",
+  "coinsEarned": "+{{coins}} ನಾಣ್ಯಗಳು",
+  "items": [
+    {
+      "id": 1,
+      "name": "ಶಾಲಾ ಶುಲ್ಕ",
+      "emoji": "🎓"
+    },
+    {
+      "id": 2,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 3,
+      "name": "Rent",
+      "emoji": "🏠"
+    },
+    {
+      "id": 4,
+      "name": "Medicine",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "Electricity",
+      "emoji": "💡"
+    }
+  ],
+  "priorities": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲"
+    }
+  ]
+}

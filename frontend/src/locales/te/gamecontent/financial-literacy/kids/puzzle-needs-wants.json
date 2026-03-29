@@ -1,1 +1,79 @@
-﻿{}
+{
+  "title": "అవసరాలు/కోరికల పజిల్",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "వర్గాలతో ఐటెమ్‌లను సరిపోల్చండి ({{matched}}/{{total}} సరిపోలింది)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "ఎంచుకోబడింది: {{name}}",
+  "selectItem": "ఒక అంశాన్ని ఎంచుకోండి",
+  "matchButton": "Match",
+  "scoreLabel": "స్కోర్:",
+  "matchedLabel": "సరిపోలినది:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "గ్రేట్ జాబ్!",
+  "resultGreatDescription": "మీరు {{total}} అంశాలలో {{score}}ని వాటి వర్గాలతో సరిగ్గా సరిపోల్చారు!",
+  "resultGreatLesson": "పాఠం: అవసరాలు మరియు కోరికలను అర్థం చేసుకోవడం స్మార్ట్ డబ్బు నిర్ణయాలు తీసుకోవడంలో సహాయపడుతుంది!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "సాధన కొనసాగించండి!",
+  "resultKeepDescription": "మీరు {{total}} అంశాలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultKeepTip": "చిట్కా: ప్రతి అంశం అవసరమా లేదా విచక్షణతో కూడినదా అని ఆలోచించండి!",
+  "items": [
+    {
+      "id": 1,
+      "name": "తాగునీరు",
+      "emoji": "💧"
+    },
+    {
+      "id": 2,
+      "name": "స్కూల్ షూస్",
+      "emoji": "👟"
+    },
+    {
+      "id": 3,
+      "name": "బొమ్మ కారు",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "పాకెట్ మనీ",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "ఆర్థిక జ్ఞానం",
+      "emoji": "📚"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅",
+      "description": "జీవితానికి లేదా అభ్యాసానికి అవసరమైనది"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁",
+      "description": "కలిగి ఉండటం మంచిది, అవసరం లేదు"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "🏦",
+      "description": "భవిష్యత్ ఉపయోగం కోసం పక్కన పెట్టండి"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈",
+      "description": "విలువ పెరగడానికి డబ్బును ఉపయోగించండి"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲",
+      "description": "ఇతరులకు మద్దతు ఇవ్వడానికి ఉపయోగించండి"
+    }
+  ]
+}

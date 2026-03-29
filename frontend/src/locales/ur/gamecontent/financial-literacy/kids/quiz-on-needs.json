@@ -1,1 +1,143 @@
-﻿{}
+{
+  "title": "ضروریات پر کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}: ضروریات کے بارے میں اپنے علم کی جانچ کریں!",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "کون سی چیز آپ کے جسم کو روزانہ کام کرنے میں مدد دیتی ہے؟",
+      "options": [
+        {
+          "id": "snack",
+          "text": "Chips",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "پینے کا صاف پانی",
+          "emoji": "🚰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "toy",
+          "text": "ریموٹ کنٹرول کار",
+          "emoji": "🚗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کو اسکول میں صحیح طریقے سے سیکھنے کی کیا ضرورت ہے؟",
+      "options": [
+        {
+          "id": "bag",
+          "text": "سکول بیگ اور کتابیں۔",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "game",
+          "text": "موبائل گیمز",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cartoon",
+          "text": "کارٹون ویڈیوز",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "کون سا انتخاب آپ کو گرمی اور سردی سے محفوظ رہنے میں مدد کرتا ہے؟",
+      "options": [
+        {
+          "id": "cap",
+          "text": "فیشن ٹوپی",
+          "emoji": "🧢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shoes",
+          "text": "پارٹی کے جوتے",
+          "emoji": "👟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "مناسب لباس",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آرام کرنے اور رہنے کے لیے کون سی جگہ بنیادی ضرورت ہے؟",
+      "options": [
+        {
+          "id": "house",
+          "text": "ایک محفوظ گھر",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mall",
+          "text": "شاپنگ مال",
+          "emoji": "🏬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "park",
+          "text": "Playground",
+          "emoji": "🛝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "لوگ خواہشات سے پہلے ضروریات کا انتخاب کیوں کرتے ہیں؟",
+      "options": [
+        {
+          "id": "fun",
+          "text": "خواہشات زیادہ مزے کی ہیں۔",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "important",
+          "text": "ضروریات روزمرہ کی زندگی کے لیے ضروری ہیں۔",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "چاہنے والے دوست",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

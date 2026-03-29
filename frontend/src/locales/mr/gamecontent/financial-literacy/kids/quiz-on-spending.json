@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "खर्चावर प्रश्नमंजुषा",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "खर्च करण्याची सर्वोत्तम सवय कोणती आहे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "विचार न करता खरेदी करा",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "तुलना करा आणि निवडा",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "मनोरंजनासाठी कर्ज घ्या",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "पैसे खर्च करण्याचा स्मार्ट मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "आधी बजेट",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "एकाच वेळी सर्व खर्च करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "जे लोकप्रिय आहे ते विकत घ्या",
+          "emoji": "🔥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "मोठी खरेदी करण्यापूर्वी आपण काय करावे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "क्रेडिटवर खरेदी करा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "मित्रांना विचारा",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "आधी जतन करा",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "खर्च करण्याची कोणती सवय तुम्हाला भविष्यात मदत करते?",
+      "options": [
+        {
+          "id": "a",
+          "text": "इच्छांवर खर्च करा",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "गरजांसाठी बचत करा",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "महागड्या वस्तू खरेदी कराल",
+          "emoji": "💎",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "खरेदीसाठी सर्वात हुशार दृष्टीकोन कोणता आहे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "यादी बनवा",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "आवेग खरेदी",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ट्रेंड फॉलो करा",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

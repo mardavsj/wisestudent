@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "పొదుపు కథ",
+  "subtitleComplete": "పూర్తి!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు బహుమతిగా ₹1000 అందుకున్నారు. దీన్ని సురక్షితంగా ఉంచడానికి ఉత్తమ మార్గం ఏమిటి?",
+      "options": [
+        {
+          "id": "home",
+          "text": "ఇంట్లో ఉంచండి",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "బ్యాంక్ ఖాతాను తెరవండి",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "wallet",
+          "text": "వాలెట్‌లో తీసుకెళ్లండి",
+          "emoji": "👛",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీ పుట్టినరోజు డబ్బును ఉపయోగించడానికి తెలివైన మార్గం ఏమిటి?",
+      "options": [
+        {
+          "id": "split",
+          "text": "50/50 విభజించండి",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "తాజా గాడ్జెట్‌లను కొనుగోలు చేయండి",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "spend_all",
+          "text": "ఇప్పుడు అంతా ఖర్చు చేయండి",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీరు వారానికి ₹200 భత్యం పొందుతారు. ఉత్తమ ప్రణాళిక ఏమిటి?",
+      "options": [
+        {
+          "id": "treats",
+          "text": "స్నాక్స్ కొనండి",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "save_half",
+          "text": "50% ఆదా చేయండి",
+          "emoji": "💲",
+          "isCorrect": true
+        },
+        {
+          "id": "save_all",
+          "text": "ప్రతిదీ సేవ్ చేయండి",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు పనుల నుండి ఆదా చేసిన డబ్బును ఎక్కడ ఉంచాలి?",
+      "options": [
+        {
+          "id": "piggy",
+          "text": "పిగ్గీ బ్యాంక్",
+          "emoji": "🐷",
+          "isCorrect": false
+        },
+        {
+          "id": "pocket",
+          "text": "మీ జేబు",
+          "emoji": "👖",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "సేవింగ్స్ ఖాతా",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీ డబ్బు పెరగడానికి ఉత్తమ మార్గం ఏమిటి?",
+      "options": [
+        {
+          "id": "save",
+          "text": "అధిక వడ్డీ ఖాతా",
+          "emoji": "💹",
+          "isCorrect": true
+        },
+        {
+          "id": "invest",
+          "text": "స్టాక్స్‌లో పెట్టుబడి పెట్టండి",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "సేకరణలను కొనుగోలు చేయండి",
+          "emoji": "🏀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

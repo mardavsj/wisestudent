@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "پہیلی: ادھار میچ",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "آئٹمز کو اعمال کے ساتھ میچ کریں ({{matched}}/{{total}} مماثل)",
+  "itemsTitle": "ادھار اشیاء",
+  "categoriesTitle": "Actions",
+  "selectedLabel": "منتخب کردہ: {{name}}",
+  "selectItem": "ایک آئٹم منتخب کریں۔",
+  "matchButton": "Match",
+  "scoreLabel": "سکور:",
+  "matchedLabel": "مماثل:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "بہت اچھا کام!",
+  "resultGreatDescription": "آپ نے درست طریقے سے {{score}} میں سے {{total}} آئٹمز کو اعمال کے ساتھ ملایا!",
+  "coinsLabel": "Coins",
+  "resultLesson": "سبق: ادھار لی گئی چیزیں واپس کی جانی چاہئیں یا ذمہ داری سے سنبھالنی چاہئیں۔",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "مشق کرتے رہیں!",
+  "resultKeepDescription": "آپ نے {{total}} آئٹمز میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultTip": "مشورہ: اس بارے میں سوچیں کہ روزمرہ کی زندگی میں ذمہ دارانہ قرض لینے کیسا لگتا ہے۔",
+  "items": [
+    {
+      "id": 1,
+      "name": "Notebook",
+      "emoji": "📓"
+    },
+    {
+      "id": 2,
+      "name": "بورڈ گیم",
+      "emoji": "🎲"
+    },
+    {
+      "id": 3,
+      "name": "Eraser",
+      "emoji": "🩹"
+    },
+    {
+      "id": 4,
+      "name": "پاکٹ منی",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "Lunchbox",
+      "emoji": "🥪"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "واپس دو",
+      "emoji": "↩️",
+      "description": "ادھار کی چیزیں واپس کریں۔"
+    },
+    {
+      "id": 7,
+      "name": "دوست کے ساتھ شئیر کریں۔",
+      "emoji": "🤝",
+      "description": "استعمال کرتے وقت منصفانہ شیئر کریں۔"
+    },
+    {
+      "id": 8,
+      "name": "رقم واپس کریں۔",
+      "emoji": "💳",
+      "description": "ادھار کی رقم واپس کریں۔"
+    },
+    {
+      "id": 9,
+      "name": "شکریہ کہیں۔",
+      "emoji": "🙏",
+      "description": "قرض دینے والے کا شکریہ ادا کریں۔"
+    },
+    {
+      "id": 10,
+      "name": "احتیاط سے قرض دیں۔",
+      "emoji": "🛡️",
+      "description": "احتیاط اور قواعد کے ساتھ ہینڈل کریں۔"
+    }
+  ]
+}

@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "పజిల్: స్మార్ట్ ఖర్చు",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "భావాలను అర్థాలతో సరిపోల్చండి ({{current}}/{{total}} సరిపోలింది)",
+  "conceptsTitle": "ఖర్చు భావనలు",
+  "meaningsTitle": "ఆర్థిక అర్థాలు",
+  "matchButton": "Match",
+  "selectConceptLabel": "ఖర్చు భావనను ఎంచుకోండి",
+  "selectedConceptLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}}లో {{score}}ని వాటి అర్థాలతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: ఖర్చు భావనలను అర్థం చేసుకోవడం మెరుగైన ఆర్థిక నిర్ణయాలకు దారి తీస్తుంది!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}} ఖర్చు భావనలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి ఖర్చు భావన వాస్తవానికి దేనిని సూచిస్తుందో ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "concepts": [
+    {
+      "id": 1,
+      "name": "Budget",
+      "emoji": "📋"
+    },
+    {
+      "id": 2,
+      "name": "Waste",
+      "emoji": "🗑️"
+    },
+    {
+      "id": 3,
+      "name": "Needs",
+      "emoji": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Wants",
+      "emoji": "🎁"
+    },
+    {
+      "id": 5,
+      "name": "అత్యవసర నిధి",
+      "emoji": "🛡️"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "ఆర్థిక ప్రణాళిక",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "వనరుల దుర్వినియోగం",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "ముఖ్యమైన ప్రాధాన్యతలు",
+      "emoji": "⭐"
+    },
+    {
+      "id": 9,
+      "name": "విచక్షణతో కూడిన ఖర్చు",
+      "emoji": "💎"
+    },
+    {
+      "id": 10,
+      "name": "రిస్క్ ప్రొటెక్షన్",
+      "emoji": "🔒"
+    }
+  ]
+}

@@ -1,1 +1,165 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ: ਘੁਟਾਲੇ ਦੀ ਚੇਤਾਵਨੀ",
+  "subtitleComplete": "ਖੇਡ ਪੂਰੀ!",
+  "roundLabel": "ਦੌਰ {{current}}/{{total}}",
+  "timeUp": "ਸਮਾਂ ਪੂਰਾ ਹੋ ਗਿਆ ਹੈ!",
+  "readyTitle": "ਤੁਹਾਡੀ ਘੁਟਾਲੇ ਦੀ ਸੁਚੇਤਤਾ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਘੁਟਾਲਿਆਂ ਅਤੇ ਧੋਖਾਧੜੀ ਤੋਂ ਸੁਰੱਖਿਅਤ ਰਹਿਣ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{time}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "gameRoundLabel": "ਗੋਲ:",
+  "gameTimeLabel": "ਸਮਾਂ:",
+  "gameScoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਜਦੋਂ ਤੁਸੀਂ ਇੱਕ ਬਿੱਲ ਪ੍ਰਾਪਤ ਕਰਦੇ ਹੋ ਤਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਬਿੱਲ ਦੀ ਜਾਂਚ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਬਿੱਲ ਦੀ ਜਾਂਚ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਤੁਰੰਤ ਭੁਗਤਾਨ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਇਸਨੂੰ ਮਿਟਾਓ",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਹਾਨੂੰ ਇੱਕ ਸ਼ੱਕੀ ਪੇਸ਼ਕਸ਼ ਨਾਲ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਪੇਸ਼ਕਸ਼ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਤੇਜ਼ੀ ਨਾਲ ਸਵੀਕਾਰ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ਪੇਸ਼ਕਸ਼ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "ਤੁਰੰਤ ਭਰੋਸਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🤝"
+        },
+        {
+          "text": "ਚੇਤਾਵਨੀ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ ਜਦੋਂ ਕੋਈ ਚੀਜ਼ ਸੱਚੀ ਹੋਣ ਲਈ ਬਹੁਤ ਵਧੀਆ ਜਾਪਦੀ ਹੈ?",
+      "correctAnswer": "ਸਵਾਲ ਪੁੱਛੋ",
+      "options": [
+        {
+          "text": "ਅੰਨ੍ਹੇਵਾਹ ਭਰੋਸਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ਜਲਦੀ ਸਵੀਕਾਰ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ਸ਼ੱਕ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਸਵਾਲ ਪੁੱਛੋ",
+          "isCorrect": true,
+          "emoji": "❓"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਭੁਗਤਾਨ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਵੇਰਵਿਆਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਹੁਣੇ ਭੁਗਤਾਨ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ਪੁਸ਼ਟੀਕਰਨ ਛੱਡੋ",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "ਵੇਰਵਿਆਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "ਬਿਨਾਂ ਜਾਂਚ ਦੇ ਭਰੋਸਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਜੇਕਰ ਤੁਹਾਨੂੰ ਕੋਈ ਘੁਟਾਲਾ ਪਤਾ ਲੱਗਦਾ ਹੈ ਤਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਘੁਟਾਲੇ ਦੀ ਰਿਪੋਰਟ ਕਰੋ",
+      "options": [
+        {
+          "text": "ਕੁਝ ਨਾ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ਇਸ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ਚੁੱਪ ਰਹੋ",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "ਘੁਟਾਲੇ ਦੀ ਰਿਪੋਰਟ ਕਰੋ",
+          "isCorrect": true,
+          "emoji": "🚨"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "ਘੁਟਾਲਾ-ਸਪਾਟਿੰਗ ਪ੍ਰੋ!",
+    "description": "ਹੈਰਾਨੀਜਨਕ! ਤੁਸੀਂ {{score}}/{{total}} ਨੂੰ ਸਹੀ ਸਮਝਿਆ! ਤੁਸੀਂ ਘੁਟਾਲਿਆਂ ਨੂੰ ਲੱਭਣ ਵਿੱਚ ਸ਼ਾਨਦਾਰ ਹੋ!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "ਚੰਗੀ ਜਾਗਰੂਕਤਾ!",
+    "description": "ਬਹੁਤ ਖੂਬ! ਤੁਸੀਂ {{score}}/{{total}} ਸਕੋਰ ਕੀਤਾ! ਘੁਟਾਲੇ ਦੇ ਮਾਹਰ ਬਣਨ ਲਈ ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+    "description": "ਤੁਸੀਂ {{score}}/{{total}} ਸਕੋਰ ਕੀਤਾ। ਸੁਝਾਵਾਂ ਦੀ ਸਮੀਖਿਆ ਕਰੋ ਅਤੇ ਆਪਣੇ ਘੁਟਾਲੇ-ਸਪੋਟਿੰਗ ਹੁਨਰਾਂ ਨੂੰ ਬਿਹਤਰ ਬਣਾਉਣ ਲਈ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ!"
+  }
+}

@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "অনলাইন পেমেন্টের গল্প",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "আপনি অনলাইনে একটি বই কিনুন। নগদ বা UPI দিয়ে নিরাপদে পেমেন্ট করবেন?",
+      "options": [
+        {
+          "id": "upi",
+          "text": "নিরাপদে UPI বেছে নিন",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "নগদ অর্থ প্রদান করুন",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "উভয় পদ্ধতি ব্যবহার করুন",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "অনলাইনে খাবার অর্ডার করা। ডেবিট কার্ড ব্যবহার করবেন নাকি ক্যাশ অন ডেলিভারি?",
+      "options": [
+        {
+          "id": "cash",
+          "text": "ক্যাশ অন ডেলিভারি",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "debit",
+          "text": "ডেবিট কার্ড ব্যবহার করুন",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "পেমেন্ট এড়িয়ে যান",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "অনলাইনে একটি গ্যাজেট কেনা। UPI বা ব্যাঙ্ক ট্রান্সফারের মাধ্যমে পেমেন্ট করবেন?",
+      "options": [
+        {
+          "id": "bank",
+          "text": "ব্যাংক স্থানান্তর",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "upi",
+          "text": "UPI এর মাধ্যমে পে করুন",
+          "emoji": "📱",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "মেইল দ্বারা নগদ পাঠান",
+          "emoji": "✉️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "একটি সাবস্ক্রিপশন জন্য অর্থ প্রদান. ক্রেডিট কার্ড বা নগদ ব্যবহার করুন?",
+      "options": [
+        {
+          "id": "credit",
+          "text": "ক্রেডিট কার্ড ব্যবহার করুন",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "cash",
+          "text": "নগদ অর্থ প্রদান করুন",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "একটি চেক পাঠান",
+          "emoji": "📄",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "অনলাইনে কেনাকাটা। OTP সহ UPI ব্যবহার করবেন নাকি PIN শেয়ার করবেন?",
+      "options": [
+        {
+          "id": "pin",
+          "text": "পিন শেয়ার করুন",
+          "emoji": "🔓",
+          "isCorrect": false
+        },
+        {
+          "id": "upi",
+          "text": "OTP সহ UPI ব্যবহার করুন",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "যাচাইকরণ এড়িয়ে যান",
+          "emoji": "⚠️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "অনলাইন পেমেন্ট তারকা!",
+    "winMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন! নিরাপদ অনলাইন পেমেন্ট সম্পর্কে শেখার দুর্দান্ত কাজ!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: অনলাইন কেনাকাটার জন্য সর্বদা নিরাপদ ডিজিটাল পেমেন্ট পদ্ধতি যেমন UPI, OTP সহ ডেবিট/ক্রেডিট কার্ড ব্যবহার করুন!",
+    "loseEmoji": "💪",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন। অনলাইন লেনদেনের জন্য নিরাপদ অর্থপ্রদানের পদ্ধতি ব্যবহার করতে ভুলবেন না!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "টিপ: UPI, OTP সহ ডেবিট/ক্রেডিট কার্ড হল অনলাইন পেমেন্টের জন্য সবচেয়ে নিরাপদ পদ্ধতি। আপনার পিন শেয়ার করবেন না!"
+  }
+}

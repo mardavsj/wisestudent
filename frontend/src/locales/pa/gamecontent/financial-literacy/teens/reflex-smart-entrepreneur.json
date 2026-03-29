@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਸਮਾਰਟ ਉਦਯੋਗਪਤੀ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਸਮਾਰਟ ਉਦਯੋਗਪਤੀ ਪ੍ਰਤੀਬਿੰਬ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਸਮਾਰਟ ਉਦਯੋਗਪਤੀ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyHeader": "ਆਪਣੇ ਸਮਾਰਟ ਉਦਯੋਗਪਤੀ ਪ੍ਰਤੀਬਿੰਬਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਸਮਾਰਟ ਉਦਯੋਗਿਕ ਫੈਸਲਿਆਂ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyTip": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{time}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "greatJob": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "finalScore": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਸਕੋਰ ਕੀਤੇ!",
+  "securitySkills": "ਤੁਸੀਂ ਮਜ਼ਬੂਤ ​​ਉੱਦਮੀ ਫੈਸਲੇ ਲੈਣ ਦੇ ਹੁਨਰ ਨੂੰ ਵਿਕਸਿਤ ਕਰ ਰਹੇ ਹੋ!",
+  "playAgain": "ਦੁਬਾਰਾ ਖੇਡੋ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਸਫਲ ਉੱਦਮੀਆਂ ਦਾ ਸਭ ਤੋਂ ਮਹੱਤਵਪੂਰਨ ਗੁਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "plan_risk",
+          "text": "ਯੋਜਨਾ + ਜੋਖਮ",
+          "emoji": "📋"
+        },
+        {
+          "id": "spend_all",
+          "text": "ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "💸"
+        },
+        {
+          "id": "do_nothing",
+          "text": "ਕੁਝ ਨਾ ਕਰੋ",
+          "emoji": "😴"
+        },
+        {
+          "id": "copy_others",
+          "text": "ਦੂਜਿਆਂ ਦੀ ਨਕਲ ਕਰੋ",
+          "emoji": "📋"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਕੋਈ ਉਤਪਾਦ ਲਾਂਚ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਉੱਦਮੀਆਂ ਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "jump_blindly",
+          "text": "ਅੰਨ੍ਹੇਵਾਹ ਵਿੱਚ ਛਾਲ ਮਾਰੋ",
+          "emoji": "🙈"
+        },
+        {
+          "id": "research_market",
+          "text": "ਖੋਜ ਮਾਰਕੀਟ",
+          "emoji": "🔍"
+        },
+        {
+          "id": "ignore_customers",
+          "text": "ਗਾਹਕਾਂ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "🚫"
+        },
+        {
+          "id": "guess_demand",
+          "text": "ਮੰਗ ਦਾ ਅੰਦਾਜ਼ਾ ਲਗਾਓ",
+          "emoji": "❓"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਉੱਦਮੀਆਂ ਨੂੰ ਆਪਣੇ ਨਿੱਜੀ ਵਿੱਤ ਦਾ ਪ੍ਰਬੰਧਨ ਕਿਵੇਂ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "spend_on_wants",
+          "text": "ਇੱਛਾਵਾਂ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️"
+        },
+        {
+          "id": "waste_money",
+          "text": "ਪੈਸੇ ਦੀ ਬਰਬਾਦੀ",
+          "emoji": "💸"
+        },
+        {
+          "id": "save_for_business",
+          "text": "ਕਾਰੋਬਾਰ ਲਈ ਸੁਰੱਖਿਅਤ ਕਰੋ",
+          "emoji": "💰"
+        },
+        {
+          "id": "borrow_heavily",
+          "text": "ਭਾਰੀ ਉਧਾਰ",
+          "emoji": "💳"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਕਿਹੜੀ ਨਿਰੰਤਰ ਗਤੀਵਿਧੀ ਉੱਦਮੀਆਂ ਨੂੰ ਵਧਣ ਵਿੱਚ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "learn_skills",
+          "text": "ਹੁਨਰ ਸਿੱਖੋ",
+          "emoji": "📚"
+        },
+        {
+          "id": "avoid_learning",
+          "text": "ਸਿੱਖਣ ਤੋਂ ਬਚੋ",
+          "emoji": "😴"
+        },
+        {
+          "id": "copy_only",
+          "text": "ਸਿਰਫ਼ ਕਾਪੀ ਕਰੋ",
+          "emoji": "📋"
+        },
+        {
+          "id": "stop_improving",
+          "text": "ਸੁਧਾਰ ਕਰਨਾ ਬੰਦ ਕਰੋ",
+          "emoji": "🛑"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਪਹੁੰਚ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "start_huge",
+          "text": "ਵੱਡੀ ਸ਼ੁਰੂਆਤ ਕਰੋ",
+          "emoji": "🎯"
+        },
+        {
+          "id": "start_small",
+          "text": "ਛੋਟਾ ਸ਼ੁਰੂ ਕਰੋ",
+          "emoji": "🌱"
+        },
+        {
+          "id": "never_start",
+          "text": "ਕਦੇ ਸ਼ੁਰੂ ਨਾ ਕਰੋ",
+          "emoji": "❌"
+        },
+        {
+          "id": "wait_perfectly",
+          "text": "ਪੂਰੀ ਤਰ੍ਹਾਂ ਇੰਤਜ਼ਾਰ ਕਰੋ",
+          "emoji": "⏰"
+        }
+      ]
+    }
+  ]
+}

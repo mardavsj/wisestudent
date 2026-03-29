@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "اجنبی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "اجنبی آپ کے پتے کے لیے ایک کھلونا پیش کرتا ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "Refuse",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "accept",
+          "text": "Accept",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "فیصلہ میں تاخیر",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "کوئی آپ سے بینک کی تفصیلات مانگتا ہے۔ اب کیا؟",
+      "options": [
+        {
+          "id": "give",
+          "text": "معلومات دیں۔",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "partial",
+          "text": "جزوی معلومات دیں۔",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "کہو نہیں",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "اجنبی ایک معاہدے کی پیشکش کرتا ہے. کیا محفوظ ہے؟",
+      "options": [
+        {
+          "id": "walk",
+          "text": "چلو",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "engage",
+          "text": "Engage",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "انتظار کریں اور دیکھیں",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کو ایک مشکوک پیشکش نظر آتی ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "tell",
+          "text": "بالغ کو بتائیں",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "quiet",
+          "text": "چپ رہو",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "اسے نظر انداز کریں۔",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ کو ایک عجیب پیغام ملتا ہے۔ بہترین کیا ہے؟",
+      "options": [
+        {
+          "id": "reply",
+          "text": "Reply",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forward",
+          "text": "دوستوں کو فارورڈ کریں۔",
+          "emoji": "📤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

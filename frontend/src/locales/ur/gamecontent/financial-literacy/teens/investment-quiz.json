@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "سرمایہ کاری کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "کون سا خطرناک لیکن زیادہ واپسی ہے؟",
+      "options": [
+        {
+          "id": "fd",
+          "text": "فکسڈ ڈپازٹ",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "stocks",
+          "text": "اسٹاک مارکیٹ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "savings",
+          "text": "بچت اکاؤنٹ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "کون سی سرمایہ کاری سب سے محفوظ ہے؟",
+      "options": [
+        {
+          "id": "fd2",
+          "text": "فکسڈ ڈپازٹ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "stocks2",
+          "text": "Stocks",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "text": "Cryptocurrency",
+          "emoji": "₿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "تنوع کیا ہے؟",
+      "options": [
+        {
+          "id": "one",
+          "text": "سب کو ایک سرمایہ کاری میں ڈالیں۔",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "تمام سرمایہ کاری سے گریز کریں۔",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "spread",
+          "text": "مختلف سرمایہ کاری میں پھیلاؤ",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "میوچل فنڈ کیا ہے؟",
+      "options": [
+        {
+          "id": "mix",
+          "text": "اسٹاک اور بانڈز کا مرکب",
+          "emoji": "📦",
+          "isCorrect": true
+        },
+        {
+          "id": "single",
+          "text": "سنگل کمپنی اسٹاک",
+          "emoji": "📄",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "بینک اکاؤنٹ",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "صرف بچت کے بجائے سرمایہ کاری کیوں کریں؟",
+      "options": [
+        {
+          "id": "same",
+          "text": "بچت کی طرح",
+          "emoji": "➡️",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ہارنے کی ضمانت ہے۔",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "تیزی سے بڑھنے کا امکان",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "کوئز مکمل!",
+    "winMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ سرمایہ کاری کو سمجھتے ہیں!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: اسٹاک زیادہ خطرناک ہیں لیکن زیادہ منافع پیش کرتے ہیں۔ فکسڈ ڈپازٹ زیادہ محفوظ ہیں لیکن کم منافع۔ تنوع خطرے کو کم کرتا ہے!",
+    "loseEmoji": "💪",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، اسٹاک خطرناک ہوتے ہیں لیکن زیادہ ریٹرن ہوتے ہیں، جبکہ ایف ڈی زیادہ محفوظ لیکن کم منافع ہوتے ہیں!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "اشارہ: اسٹاک مارکیٹ زیادہ خطرناک ہے لیکن زیادہ منافع پیش کرتی ہے۔ فکسڈ ڈپازٹ زیادہ محفوظ ہوتے ہیں لیکن کم منافع ہوتے ہیں۔ خطرے کو کم کرنے کے لیے متنوع بنائیں!"
+  }
+}

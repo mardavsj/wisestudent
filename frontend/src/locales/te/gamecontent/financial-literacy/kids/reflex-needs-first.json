@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ మొదట అవసరం",
+  "subtitlePlaying": "రౌండ్ {{current}}/{{total}}: అవసరాలకు వ్యతిరేకంగా అవసరాలను గుర్తించండి!",
+  "subtitleReady": "అవసరాలకు వ్యతిరేకంగా అవసరాలను గుర్తించండి!",
+  "readyEmoji": "✅",
+  "readyTitle": "మీ అవసరాలు vs వాంట్ స్కిల్స్ పరీక్షించడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "అవసరాలకు వ్యతిరేకంగా అవసరాలను గుర్తించడం గురించి ప్రశ్నలకు సమాధానం ఇవ్వండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "రౌండ్:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "వీటిలో ప్రాథమిక అవసరం ఏది?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "వీడియో గేమ్‌లు",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍲"
+        },
+        {
+          "text": "డిజైనర్ బట్టలు",
+          "isCorrect": false,
+          "emoji": "👗"
+        },
+        {
+          "text": "లగ్జరీ కారు",
+          "isCorrect": false,
+          "emoji": "🚗"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ఏ అంశం విద్య అవసరాన్ని సూచిస్తుంది?",
+      "correctAnswer": "పాఠశాల పుస్తకాలు",
+      "options": [
+        {
+          "text": "పాఠశాల పుస్తకాలు",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "ఖరీదైన బొమ్మలు",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Gadgets",
+          "isCorrect": false,
+          "emoji": "📱"
+        },
+        {
+          "text": "Snacks",
+          "isCorrect": false,
+          "emoji": "🍪"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ఆరోగ్యానికి ఏది అవసరం?",
+      "correctAnswer": "Medicine",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        },
+        {
+          "text": "Medicine",
+          "isCorrect": true,
+          "emoji": "💊"
+        },
+        {
+          "text": "Jewelry",
+          "isCorrect": false,
+          "emoji": "💎"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ఏ వస్తువు ప్రాథమిక అవసరం?",
+      "correctAnswer": "Shelter",
+      "options": [
+        {
+          "text": "Vacation",
+          "isCorrect": false,
+          "emoji": "✈️"
+        },
+        {
+          "text": "Entertainment",
+          "isCorrect": false,
+          "emoji": "🎬"
+        },
+        {
+          "text": "లగ్జరీ డైనింగ్",
+          "isCorrect": false,
+          "emoji": "🍽️"
+        },
+        {
+          "text": "Shelter",
+          "isCorrect": true,
+          "emoji": "🏠"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ప్రాథమిక అవసరం ఏది?",
+      "correctAnswer": "స్వచ్ఛమైన నీరు",
+      "options": [
+        {
+          "text": "స్వచ్ఛమైన నీరు",
+          "isCorrect": true,
+          "emoji": "🚰"
+        },
+        {
+          "text": "ఐస్ క్రీమ్",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "డిజైనర్ బ్యాగ్",
+          "isCorrect": false,
+          "emoji": "👜"
+        },
+        {
+          "text": "కచేరీ టిక్కెట్లు",
+          "isCorrect": false,
+          "emoji": "🎟️"
+        }
+      ]
+    }
+  ]
+}

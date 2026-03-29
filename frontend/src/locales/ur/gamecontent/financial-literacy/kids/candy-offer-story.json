@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "کینڈی کی پیشکش کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کو ایک دکان پر کینڈی کی بڑی رعایت نظر آتی ہے، لیکن آپ پہلے سے ہی بھرا ہوا محسوس کرتے ہیں۔ بہترین انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "b",
+          "text": "کینڈی خریدیں کیونکہ یہ سستی ہے۔",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "اپنی صحت کے بارے میں سوچیں اور کینڈی خریدنا چھوڑ دیں۔",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "کینڈی صرف اس لیے خریدیں کہ دوسرے اسے خرید رہے ہیں۔",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "اگر آپ زیادہ خریدتے ہیں تو ایک اسٹور اضافی کینڈی پیش کرتا ہے۔ فیصلہ کرنے سے پہلے آپ کو کیا چیک کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "چاہے آپ کو واقعی اس کی ضرورت ہے یا نہیں۔",
+          "emoji": "🤔",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "پیکٹ کتنا رنگین لگتا ہے۔",
+          "emoji": "🌈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "کتنے اشتہارات اس کی تشہیر کرتے ہیں۔",
+          "emoji": "📢",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کینڈی چاہتے ہیں، لیکن آپ اسکول کے سفر کے لیے پیسے بھی بچانا چاہتے ہیں۔ ہوشیار فیصلہ کیا ہے؟",
+      "options": [
+        {
+          "id": "b",
+          "text": "ابھی پیسہ خرچ کرو اور بعد میں فکر کرو",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "کسی اور سے کینڈی کی ادائیگی کے لیے کہیں۔",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "کسی اہم چیز کے لیے پیسے بچائیں۔",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کو چیک آؤٹ کاؤنٹر کے قریب کینڈی کی پیشکش نظر آتی ہے۔ دکانیں اسے وہاں کیوں رکھتی ہیں؟",
+      "options": [
+        {
+          "id": "b",
+          "text": "گاہکوں کو پیسے بچانے میں مدد کرنے کے لئے",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "a",
+          "text": "فوری اور غیر منصوبہ بند خریداری کی حوصلہ افزائی کے لیے",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "صحت مند کھانے کے اختیارات کو تبدیل کرنے کے لئے",
+          "emoji": "🥗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ پیشکش کے دوران کینڈی نہ خریدنے کا فیصلہ کرتے ہیں۔ آپ کس مہارت کی مشق کر رہے ہیں؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "خود پر قابو اور ہوشیار فیصلہ سازی۔",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "تفریح ​​سے محروم",
+          "emoji": "🎈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ہمیشہ کے لئے تمام سلوک کو نظر انداز کرنا",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

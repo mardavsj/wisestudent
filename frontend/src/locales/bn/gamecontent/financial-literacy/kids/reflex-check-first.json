@@ -1,1 +1,167 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স: আগে চেক করো",
+    "subtitleComplete": "গেম সম্পন্ন!",
+    "roundLabel": "রাউন্ড {{current}}/{{total}}",
+    "timeUp": "সময় শেষ!",
+    "readyEmoji": "🔍",
+    "readyTitle": "প্রস্তুত হও!",
+    "readyDescription": "কেনার আগে চেক করা নিয়ে প্রশ্নের উত্তর দাও!",
+    "readyTimeInfo": "প্রতিটি প্রশ্নে তোমার {{time}} সেকেন্ড আছে।",
+    "readyQuestionInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{time}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "gameRoundLabel": "রাউন্ড:",
+    "gameTimeLabel": "সময়:",
+    "gameScoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "কিছু কেনার আগে কী করবে?",
+            "correctAnswer": "দাম জিজ্ঞেস করো",
+            "options": [
+                {
+                    "text": "দাম জিজ্ঞেস করো",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "অন্ধভাবে বিশ্বাস করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "সাথে সাথে কিনো",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                },
+                {
+                    "text": "দাম উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "কেনাকাটার আগে কী চেক করবে?",
+            "correctAnswer": "খরচ চেক করো",
+            "options": [
+                {
+                    "text": "এখনই কিনো",
+                    "isCorrect": false,
+                    "emoji": "🛒"
+                },
+                {
+                    "text": "চেক বাদ দাও",
+                    "isCorrect": false,
+                    "emoji": "⏭️"
+                },
+                {
+                    "text": "খরচ চেক করো",
+                    "isCorrect": true,
+                    "emoji": "💵"
+                },
+                {
+                    "text": "দাম অনুমান করো",
+                    "isCorrect": false,
+                    "emoji": "🎲"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "কেনাকাটার বুদ্ধিমান উপায় কী?",
+            "correctAnswer": "দাম তুলনা করো",
+            "options": [
+                {
+                    "text": "দ্রুত পেমেন্ট করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "দাম তুলনা করো",
+                    "isCorrect": true,
+                    "emoji": "⚖️"
+                },
+                {
+                    "text": "প্রথম দোকানে কিনো",
+                    "isCorrect": false,
+                    "emoji": "🏪"
+                },
+                {
+                    "text": "তুলনা করো না",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "কেনার আগে কী যাচাই করবে?",
+            "correctAnswer": "মান যাচাই করো",
+            "options": [
+                {
+                    "text": "মান যাচাই করো",
+                    "isCorrect": true,
+                    "emoji": "🔍"
+                },
+                {
+                    "text": "উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "না দেখে কিনো",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                },
+                {
+                    "text": "শুধু বিক্রেতাকে বিশ্বাস করো",
+                    "isCorrect": false,
+                    "emoji": "🤝"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "অনলাইনে কেনার আগে কী করবে?",
+            "correctAnswer": "রিভিউ পড়ো",
+            "options": [
+                {
+                    "text": "তাড়াহুড়ো করো",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                },
+                {
+                    "text": "রিভিউ বাদ দাও",
+                    "isCorrect": false,
+                    "emoji": "⏭️"
+                },
+                {
+                    "text": "সাথে সাথে কিনো",
+                    "isCorrect": false,
+                    "emoji": "🛒"
+                },
+                {
+                    "text": "রিভিউ পড়ো",
+                    "isCorrect": true,
+                    "emoji": "⭐"
+                }
+            ]
+        }
+    ],
+    "resultGreat": {
+        "emoji": "🎉",
+        "title": "স্মার্ট কেনাকারী!",
+        "description": "অসাধারণ! তুমি {{score}}/{{total}} সঠিক পেয়েছ! তুমি সবসময় কেনার আগে চেক করো!"
+    },
+    "resultGood": {
+        "emoji": "👍",
+        "title": "ভালো অভ্যাস!",
+        "description": "শাবাশ! তুমি {{score}}/{{total}} পেয়েছ! স্মার্ট কেনাকাটার অভ্যাস অনুশীলন চালিয়ে যাও!"
+    },
+    "resultKeepPracticing": {
+        "emoji": "💪",
+        "title": "অনুশীলন চালিয়ে যাও!",
+        "description": "তুমি {{score}}/{{total}} পেয়েছ। কেনার আগে সবসময় চেক ও তুলনা করার কথা মনে রেখো!"
+    }
+}

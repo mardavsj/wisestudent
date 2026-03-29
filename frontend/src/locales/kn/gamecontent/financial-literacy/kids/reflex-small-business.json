@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಸಣ್ಣ ವ್ಯಾಪಾರ",
+  "subtitlePlaying": "ಸುತ್ತು {{current}}/{{total}}: ನಿಮ್ಮ ಸಣ್ಣ ವ್ಯಾಪಾರ ಪ್ರತಿವರ್ತನಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಸಣ್ಣ ವ್ಯಾಪಾರ ಪ್ರತಿವರ್ತನಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyEmoji": "🏪",
+  "readyTitle": "ಸಣ್ಣ ವ್ಯಾಪಾರ ಕೌಶಲ್ಯಗಳನ್ನು ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಸಣ್ಣ ವ್ಯಾಪಾರವನ್ನು ಪ್ರಾರಂಭಿಸುವ ಮತ್ತು ನಡೆಸುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಸುತ್ತು:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಸಣ್ಣ ವ್ಯಾಪಾರವನ್ನು ಪ್ರಾರಂಭಿಸಲು ಉತ್ತಮ ಮಾರ್ಗ ಯಾವುದು?",
+      "correctAnswer": "ತಯಾರಿಸಲು ಮತ್ತು ಮಾರಾಟ ಮಾಡಿ",
+      "options": [
+        {
+          "text": "ಖರೀದಿಸಿ ಮತ್ತು ವ್ಯರ್ಥ ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ತಯಾರಿಸಲು ಮತ್ತು ಮಾರಾಟ ಮಾಡಿ",
+          "isCorrect": true,
+          "emoji": "🍰"
+        },
+        {
+          "text": "ಏನೂ ಮಾಡಬೇಡಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ನಿಮ್ಮ ಕೌಶಲ್ಯದಿಂದ ನೀವು ಹೇಗೆ ಹಣವನ್ನು ಗಳಿಸಬಹುದು?",
+      "correctAnswer": "ಕರಕುಶಲಗಳನ್ನು ಮಾಡಿ",
+      "options": [
+        {
+          "text": "ಕರಕುಶಲಗಳನ್ನು ಮಾಡಿ",
+          "isCorrect": true,
+          "emoji": "🎨"
+        },
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಸಮಯ ವ್ಯರ್ಥ",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "ಕೌಶಲ್ಯಗಳನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ಇತರರಿಂದ ಹಣವನ್ನು ಗಳಿಸಲು ನಿಮಗೆ ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "ಆಫರ್ ಸೇವೆ",
+      "options": [
+        {
+          "text": "ಏನೂ ಮಾಡಬೇಡಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ಶಾಶ್ವತವಾಗಿ ನಿರೀಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "⏳"
+        },
+        {
+          "text": "ಕೆಲಸವನ್ನು ತಪ್ಪಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ಆಫರ್ ಸೇವೆ",
+          "isCorrect": true,
+          "emoji": "🛠️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ವ್ಯಾಪಾರ ಲಾಭದೊಂದಿಗೆ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಲಾಭ ಉಳಿಸಿ",
+      "options": [
+        {
+          "text": "ಲಾಭ ಉಳಿಸಿ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ಲಾಭವನ್ನು ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ವೇಸ್ಟ್ ಮನಿ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ನಿಮ್ಮ ವ್ಯಾಪಾರ ಯಶಸ್ವಿಯಾಗಲು ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "ವ್ಯಾಪಾರ ಬೆಳೆಸಿಕೊಳ್ಳಿ",
+      "options": [
+        {
+          "text": "ವೇಸ್ಟ್ ಮನಿ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ವ್ಯಾಪಾರ ಬೆಳೆಸಿಕೊಳ್ಳಿ",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ಬಿಟ್ಟುಕೊಡಿ",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "ಚಿಕ್ಕವರಾಗಿರಿ",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    }
+  ]
+}

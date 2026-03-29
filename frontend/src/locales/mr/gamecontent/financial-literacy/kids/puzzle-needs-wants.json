@@ -1,1 +1,79 @@
-﻿{}
+{
+  "title": "गरजा/इच्छा यांचे कोडे",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "श्रेण्यांसह आयटम जुळवा ({{matched}}/{{total}} जुळले)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "निवडले: {{name}}",
+  "selectItem": "एक आयटम निवडा",
+  "matchButton": "Match",
+  "scoreLabel": "स्कोअर:",
+  "matchedLabel": "जुळले:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ग्रेट जॉब!",
+  "resultGreatDescription": "तुम्ही {{total}} पैकी {{score}} आयटम त्यांच्या श्रेण्यांसह योग्यरित्या जुळले!",
+  "resultGreatLesson": "धडा: गरजा विरुद्ध इच्छा समजून घेणे स्मार्ट मनी निर्णय घेण्यास मदत करते!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "सराव करत राहा!",
+  "resultKeepDescription": "तुम्ही {{total}} पैकी {{score}} आयटम बरोबर जुळले.",
+  "resultKeepTip": "टीप: प्रत्येक आयटम आवश्यक आहे की विवेकाधीन आहे याचा विचार करा!",
+  "items": [
+    {
+      "id": 1,
+      "name": "पिण्याचे पाणी",
+      "emoji": "💧"
+    },
+    {
+      "id": 2,
+      "name": "शाळेचे शूज",
+      "emoji": "👟"
+    },
+    {
+      "id": 3,
+      "name": "खेळणी कार",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "पॉकेट मनी",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "आर्थिक ज्ञान",
+      "emoji": "📚"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅",
+      "description": "जीवनासाठी किंवा शिकण्यासाठी आवश्यक"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁",
+      "description": "असणे छान आहे, आवश्यक नाही"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "🏦",
+      "description": "भविष्यातील वापरासाठी बाजूला ठेवा"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈",
+      "description": "मूल्य वाढविण्यासाठी पैशाचा वापर करा"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲",
+      "description": "इतरांना आधार देण्यासाठी वापरा"
+    }
+  ]
+}

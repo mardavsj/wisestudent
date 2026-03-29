@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "درخت کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "🌳",
+  "questions": [
+    {
+      "id": 1,
+      "text": "تم آج ایک چھوٹا سا درخت لگاؤ۔ وقت کے ساتھ ساتھ مضبوط ہونے میں کیا مدد کرتا ہے؟",
+      "options": [
+        {
+          "id": "care",
+          "text": "پانی اور باقاعدگی سے دیکھ بھال",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "تیزی سے بڑھنے کے لیے اسے کھینچیں۔",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "چھوڑو اور بھول جاؤ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "پیسہ ایک درخت کی طرح ہے۔ کیا چیز اسے آہستہ آہستہ اور محفوظ طریقے سے بڑھتی ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ہر چیز کو جلدی خرچ کرنا",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "اسے چھپانا اور اسے کبھی استعمال نہیں کرنا",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "وقت کے ساتھ سمجھداری سے استعمال اور بچت",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کو اضافی جیب خرچ ملتا ہے۔ ہوشیار درخت طرز انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "waste",
+          "text": "بغیر سوچے سمجھے خرچ کریں۔",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "حصہ محفوظ کریں تاکہ یہ بعد میں بڑھے۔",
+          "emoji": "🌱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "اسے لاپرواہی سے رکھیں",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ایک پھل دار درخت ہر سال پھل دیتا ہے۔ یہ پیسے کے بارے میں کیا سکھاتا ہے؟",
+      "options": [
+        {
+          "id": "fast",
+          "text": "پیسہ صرف ایک بار استعمال کرنا چاہئے۔",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "صرف قسمت کی اہمیت ہے۔",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "اچھے انتخاب بار بار انعامات دیتے ہیں۔",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "اگر آپ ایک درخت بہت جلدی کاٹتے ہیں تو کیا ہوتا ہے؟",
+      "options": [
+        {
+          "id": "loss",
+          "text": "آپ مستقبل کے فوائد سے محروم ہوجاتے ہیں۔",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "gain",
+          "text": "آپ ہمیشہ زیادہ حاصل کرتے ہیں۔",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "کچھ نہیں بدلتا",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

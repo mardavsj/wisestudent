@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਫਿਲਮ ਬਨਾਮ ਬੱਸ ਕਿਰਾਏ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹100 ਹਨ। ਤੁਹਾਨੂੰ ਇਸਨੂੰ ਕਿਵੇਂ ਵਰਤਣਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "ਬੱਸ ਪਾਸ ਲਈ ਬਚਾਓ",
+          "emoji": "🚌",
+          "isCorrect": true
+        },
+        {
+          "id": "movie",
+          "text": "ਫਿਲਮ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ਦੋਵਾਂ ਵਿਚਕਾਰ ਵੰਡ",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹150 ਹਨ। ਸਭ ਤੋਂ ਵਧੀਆ ਚੋਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "ਇੱਕ ਸਨੈਕ ਖਰੀਦੋ",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "ਬੱਸ ਕਿਰਾਏ ਦੀ ਬੱਚਤ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "ਸਭ ਕੁਝ ਸੰਭਾਲੋ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹200 ਹਨ। ਤੁਹਾਨੂੰ ਕੀ ਤਰਜੀਹ ਦੇਣੀ ਚਾਹੀਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "movie",
+          "text": "ਫਿਲਮ ਰਾਤ",
+          "emoji": "🎥",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ਦੋਵਾਂ ਵਿਚਕਾਰ ਵੰਡ",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "ਹਫਤਾਵਾਰੀ ਬੱਸ ਪਾਸ",
+          "emoji": "🎫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹120 ਹਨ। ਸਮਾਰਟ ਫੈਸਲਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "bus",
+          "text": "ਬੱਸ ਟਿਕਟ",
+          "emoji": "🎟️",
+          "isCorrect": true
+        },
+        {
+          "id": "popcorn",
+          "text": "ਫਿਲਮਾਂ 'ਤੇ ਪੌਪਕਾਰਨ",
+          "emoji": "🍿",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "ਇਹ ਸਭ ਨੂੰ ਸੰਭਾਲੋ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ₹300 ਹਨ। ਸਭ ਤੋਂ ਵਧੀਆ ਵਰਤੋਂ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "cinema",
+          "text": "ਸਿਨੇਮਾ ਟਿਕਟਾਂ",
+          "emoji": "🎬",
+          "isCorrect": false
+        },
+        {
+          "id": "bus",
+          "text": "ਮਹੀਨਾਵਾਰ ਬੱਸ ਪਾਸ",
+          "emoji": "Ⓜ️",
+          "isCorrect": true
+        },
+        {
+          "id": "split",
+          "text": "ਦੋਵਾਂ ਵਿਚਕਾਰ ਵੰਡ",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+    "winMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ! ਤੁਸੀਂ ਜ਼ਰੂਰੀ ਖਰਚਿਆਂ ਨੂੰ ਤਰਜੀਹ ਦੇਣ ਦੇ ਮਹੱਤਵ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਜ਼ਰੂਰੀ ਖਰਚਿਆਂ ਨੂੰ ਤਰਜੀਹ ਦਿਓ ਜਿਵੇਂ ਕਿ ਮਨੋਰੰਜਨ ਦੀਆਂ ਲੋੜਾਂ ਨਾਲੋਂ ਆਵਾਜਾਈ!",
+    "loseEmoji": "😔",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ। ਲੋੜਾਂ ਨਾਲੋਂ ਟਰਾਂਸਪੋਰਟ ਵਰਗੇ ਜ਼ਰੂਰੀ ਖਰਚਿਆਂ ਨੂੰ ਤਰਜੀਹ ਦੇਣਾ ਯਾਦ ਰੱਖੋ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਨੁਕਤਾ: ਮਨੋਰੰਜਨ ਦੀਆਂ ਲੋੜਾਂ ਨਾਲੋਂ ਆਵਾਜਾਈ ਵਰਗੇ ਜ਼ਰੂਰੀ ਖਰਚਿਆਂ ਨੂੰ ਹਮੇਸ਼ਾ ਤਰਜੀਹ ਦਿਓ।"
+  }
+}

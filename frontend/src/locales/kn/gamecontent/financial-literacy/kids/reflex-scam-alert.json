@@ -1,1 +1,165 @@
-﻿{}
+{
+  "title": "ಪ್ರತಿಫಲಿತ: ಹಗರಣ ಎಚ್ಚರಿಕೆ",
+  "subtitleComplete": "ಗೇಮ್ ಸಂಪೂರ್ಣ!",
+  "roundLabel": "ಸುತ್ತು {{current}}/{{total}}",
+  "timeUp": "ಸಮಯ ಮುಗಿದಿದೆ!",
+  "readyTitle": "ನಿಮ್ಮ ಸ್ಕ್ಯಾಮ್ ಎಚ್ಚರಿಕೆಯನ್ನು ಪರೀಕ್ಷಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ವಂಚನೆಗಳು ಮತ್ತು ವಂಚನೆಯಿಂದ ಸುರಕ್ಷಿತವಾಗಿರುವುದರ ಕುರಿತು ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{time}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "gameRoundLabel": "ಸುತ್ತು:",
+  "gameTimeLabel": "ಸಮಯ:",
+  "gameScoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ನೀವು ಬಿಲ್ ಸ್ವೀಕರಿಸಿದಾಗ ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಬಿಲ್ ಪರಿಶೀಲಿಸಿ",
+      "options": [
+        {
+          "text": "ಬಿಲ್ ಪರಿಶೀಲಿಸಿ",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ತಕ್ಷಣ ಪಾವತಿಸಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಅದನ್ನು ಅಳಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಅನುಮಾನಾಸ್ಪದ ಕೊಡುಗೆಯೊಂದಿಗೆ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಆಫರ್ ಪರಿಶೀಲಿಸಿ",
+      "options": [
+        {
+          "text": "ವೇಗವಾಗಿ ಸ್ವೀಕರಿಸಿ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ಆಫರ್ ಪರಿಶೀಲಿಸಿ",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "ತಕ್ಷಣ ನಂಬಿ",
+          "isCorrect": false,
+          "emoji": "🤝"
+        },
+        {
+          "text": "ಎಚ್ಚರಿಕೆಯನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ಏನಾದರೂ ನಿಜವಾಗಲು ತುಂಬಾ ಒಳ್ಳೆಯದು ಎಂದು ತೋರಿದಾಗ ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳಿ",
+      "options": [
+        {
+          "text": "ಕುರುಡಾಗಿ ನಂಬಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ತ್ವರಿತವಾಗಿ ಸ್ವೀಕರಿಸಿ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ಅನುಮಾನಗಳನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳಿ",
+          "isCorrect": true,
+          "emoji": "❓"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಪಾವತಿ ಮಾಡುವ ಮೊದಲು ನೀವು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ವಿವರಗಳನ್ನು ದೃಢೀಕರಿಸಿ",
+      "options": [
+        {
+          "text": "ಈಗ ಪಾವತಿಸಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಪರಿಶೀಲನೆಯನ್ನು ಬಿಟ್ಟುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "ವಿವರಗಳನ್ನು ದೃಢೀಕರಿಸಿ",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "ಚೆಕ್ ಇಲ್ಲದೆ ನಂಬಿ",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ನೀವು ಹಗರಣವನ್ನು ಕಂಡುಕೊಂಡರೆ ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಹಗರಣವನ್ನು ವರದಿ ಮಾಡಿ",
+      "options": [
+        {
+          "text": "ಏನೂ ಮಾಡಬೇಡಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ಇದನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ಸುಮ್ಮನಿರಿ",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "ಹಗರಣವನ್ನು ವರದಿ ಮಾಡಿ",
+          "isCorrect": true,
+          "emoji": "🚨"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "ಹಗರಣ-ಸ್ಪಾಟಿಂಗ್ ಪ್ರೊ!",
+    "description": "ಅದ್ಭುತ! ನೀವು {{score}}/{{total}} ಸರಿಯಾಗಿದೆ! ಹಗರಣಗಳನ್ನು ಗುರುತಿಸುವಲ್ಲಿ ನೀವು ಉತ್ತಮರು!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "ಉತ್ತಮ ಅರಿವು!",
+    "description": "ಚೆನ್ನಾಗಿದೆ! ನೀವು {{score}}/{{total}} ಗಳಿಸಿದ್ದೀರಿ! ಹಗರಣ ತಜ್ಞರಾಗಲು ಅಭ್ಯಾಸ ಮಾಡುತ್ತಿರಿ!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+    "description": "ನೀವು {{score}}/{{total}} ಗಳಿಸಿದ್ದೀರಿ. ಸಲಹೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಸ್ಕ್ಯಾಮ್-ಸ್ಪಾಟಿಂಗ್ ಕೌಶಲ್ಯಗಳನ್ನು ಸುಧಾರಿಸಲು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ!"
+  }
+}

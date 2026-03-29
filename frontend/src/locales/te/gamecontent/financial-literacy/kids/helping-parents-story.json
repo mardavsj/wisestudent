@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "హెల్పింగ్ పేరెంట్స్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీ తల్లిదండ్రులకు కిరాణా కోసం ₹50 అవసరం. మీ దగ్గర ₹20 ఉంది. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "give",
+          "text": "సహాయం చేయడానికి మీ ₹20 ఇవ్వండి",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "మిఠాయి కోసం ఉంచండి",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "వారి అభ్యర్థనను పట్టించుకోకండి",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు ఇంట్లో సహాయం చేయడం ద్వారా ₹10 పొందుతారు. మీరు దానిని సేవ్ చేయాలా?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "బొమ్మలకు ఖర్చు చేయండి",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "అవును, పొదుపులకు జోడించండి",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "ఇవ్వండి",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "రూ.15కి పాలు కొనమని మీ తల్లిదండ్రులు మిమ్మల్ని అడుగుతారు. మీ దగ్గర ₹20 ఉంది. తదుపరి ఏమిటి?",
+      "options": [
+        {
+          "id": "change",
+          "text": "పాలు కొనండి మరియు మార్చండి",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "మార్పుతో మిఠాయిని కొనండి",
+          "emoji": "🍭",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "keep",
+          "text": "మొత్తం ₹20 ఉంచండి",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు ₹10ని కనుగొంటారు. తల్లిదండ్రులు నిజాయితీగా ఉండాలన్నారు. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "snacks",
+          "text": "స్నాక్స్ కోసం ఖర్చు చేయండి",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "మీ జేబులో దాచుకోండి",
+          "emoji": "🧥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "find",
+          "text": "యజమానిని కనుగొనడానికి ప్రయత్నించండి",
+          "emoji": "🕵️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "తల్లిదండ్రులకు డబ్బు సహాయం చేయడం వల్ల మీరు అనుభూతి చెందుతారు...",
+      "options": [
+        {
+          "id": "proud",
+          "text": "గర్వం మరియు బాధ్యత",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "తక్కువ డబ్బు కోసం విచారం",
+          "emoji": "😔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ప్రత్యేకంగా ఏమీ లేదు",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

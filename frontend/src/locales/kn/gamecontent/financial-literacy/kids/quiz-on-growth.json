@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಬೆಳವಣಿಗೆಯ ಮೇಲೆ ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "📈",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಹಣ ಬೆಳೆಯಲು ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಅದೆಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡುವುದು",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ವ್ಯರ್ಥವಾಗುತ್ತಿದೆ",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "ಉಳಿತಾಯ + ಬಡ್ಡಿ",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಹಣ ಬೆಳೆಯಲು ಬ್ಯಾಂಕ್ ಹೇಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ಆಟಿಕೆಗಳನ್ನು ನೀಡುವ ಮೂಲಕ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ಬಡ್ಡಿಯನ್ನು ಪಾವತಿಸುವ ಮೂಲಕ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ನಿಮ್ಮ ಹಣವನ್ನು ಮರೆಮಾಡುವ ಮೂಲಕ",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಹಣವನ್ನು ಬೆಳೆಯಲು ಸುರಕ್ಷಿತ ಮಾರ್ಗ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "ಕ್ಯಾಂಡಿ ಖರೀದಿಸುವುದು",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "home",
+          "text": "ಮನೆಯಲ್ಲಿ ಹಣವನ್ನು ಇಡುವುದು",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ಬ್ಯಾಂಕ್ ಉಳಿತಾಯ ಖಾತೆಯನ್ನು ಬಳಸುವುದು",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಹೂಡಿಕೆ ಏನು ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "grows",
+          "text": "ನಿಮ್ಮ ಹಣವನ್ನು ಬೆಳೆಯುತ್ತದೆ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spends",
+          "text": "ನಿಮ್ಮ ಹಣವನ್ನು ಖರ್ಚು ಮಾಡುತ್ತದೆ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "loses",
+          "text": "ಯಾವಾಗಲೂ ನಿಮ್ಮ ಹಣವನ್ನು ಕಳೆದುಕೊಳ್ಳುತ್ತದೆ",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಬ್ಯಾಂಕಿನಲ್ಲಿ ಹಣವನ್ನು ಏಕೆ ಉಳಿಸಬೇಕು?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ಆಟಿಕೆಗಳನ್ನು ತಕ್ಷಣ ಖರೀದಿಸಲು",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ಆಸಕ್ತಿಯಿಂದ ಬೆಳೆಯಬಹುದು",
+          "emoji": "💹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ಏಕೆಂದರೆ ಅದು ಮೋಜು ಮಾತ್ರ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

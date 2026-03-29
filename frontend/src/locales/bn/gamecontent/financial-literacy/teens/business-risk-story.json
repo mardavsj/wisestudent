@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ব্যবসায়িক ঝুঁকির গল্প",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "আপনি স্ন্যাকস বিক্রি করতে ₹200 বিনিয়োগ করেন। ₹300 উপার্জন করুন। ভালো?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "হ্যাঁ, 50% লাভ",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "না, খুব ঝুঁকিপূর্ণ",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "হয়তো, নির্ভর করে",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "একটি ছোট ব্যবসার জন্য একটি ভাল লাভ মার্জিন কি?",
+      "options": [
+        {
+          "id": "low",
+          "text": "5% লাভ",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "high",
+          "text": "30-50% লাভ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "loss",
+          "text": "ক্ষতি ঠিক আছে",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "আপনি ব্যবসায় ঝুঁকি নিতে হবে?",
+      "options": [
+        {
+          "id": "all",
+          "text": "সব ঝুঁকি নিন",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "সকল ঝুঁকি এড়িয়ে চলুন",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "calculated",
+          "text": "হ্যাঁ, গণনা করা ঝুঁকি",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "একটি ব্যবসা শুরু করার আগে কি গুরুত্বপূর্ণ?",
+      "options": [
+        {
+          "id": "jump",
+          "text": "সঙ্গে সঙ্গে ঝাঁপ দাও",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "পরিকল্পনা এবং গবেষণা",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "চিরকাল অপেক্ষা করুন",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "₹200→₹300 কি একটি ভালো ব্যবসায়িক ফলাফল?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "না, খুব ছোট",
+          "emoji": "❌",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "হতে পারে, যদি সামঞ্জস্যপূর্ণ",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "হ্যাঁ, 50% রিটার্ন",
+          "emoji": "🙂",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "গল্প সম্পূর্ণ!",
+    "winMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন! আপনি ব্যবসার ঝুঁকি এবং লাভ বোঝেন!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: একটি 50% লাভ (₹200→₹300) চমৎকার! গণনা করা ঝুঁকি নিন, শুরু করার আগে পরিকল্পনা করুন এবং স্বাস্থ্যকর লাভের মার্জিন লক্ষ্য করুন!",
+    "loseEmoji": "💪",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন। মনে রাখবেন, একটি 50% মুনাফা চমৎকার, এবং পরিকল্পনার সাথে গণনা করা ঝুঁকি গুরুত্বপূর্ণ!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "পরামর্শ: ₹200 বিনিয়োগ করে ₹300 (50% লাভ) উপার্জন করা চমৎকার! একটি ব্যবসা শুরু করার আগে সর্বদা পরিকল্পনা করুন এবং গণনা করা ঝুঁকি নিন!"
+  }
+}

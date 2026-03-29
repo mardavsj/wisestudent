@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "बॅज: ग्राहक रक्षक",
+  "subtitleComplete": "बॅज पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} आव्हान",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "resultSuccessTitle": "ग्राहक रक्षक बॅज मिळवला!",
+  "resultSuccessText": "तुम्हाला {{total}} पैकी {{score}} आव्हाने योग्य मिळाली आहेत! तुम्ही खरे ग्राहक रक्षक आहात!",
+  "resultSuccessLesson": "Lesson: Being aware of consumer rights and fraud risks helps you protect your hard-earned money.",
+  "resultFailTitle": "शिकत राहा!",
+  "resultFailText": "तुम्हाला {{total}} पैकी {{score}} आव्हाने योग्य मिळाली आहेत. ग्राहक सुरक्षिततेबद्दल अधिक जाणून घ्या!",
+  "resultFailTip": "टीप: OTP किंवा बँक माहिती सारखे संवेदनशील तपशील कधीही शेअर करू नका आणि नेहमी संशयास्पद लिंक्स आणि कॉल्सची तक्रार करू नका!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "फसवणूक प्रकरण 1",
+      "question": "तुम्हाला बँक तपशील विचारणारा एक बनावट कॉल येतो. तुम्ही काय करता?",
+      "options": [
+        {
+          "text": "नकार द्या आणि अहवाल द्या",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "text": "तपशील शेअर करा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "text": "कॉलकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "अधिक माहितीसाठी विचारा",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "फसवणूक प्रकरण 2",
+      "question": "तुम्हाला दुव्यासह एक संशयास्पद संदेश मिळेल. तुमची कृती काय आहे?",
+      "options": [
+        {
+          "text": "लिंक वर क्लिक करा",
+          "emoji": "🔗",
+          "isCorrect": false
+        },
+        {
+          "text": "हटवा आणि अहवाल द्या",
+          "emoji": "🗑️",
+          "isCorrect": true
+        },
+        {
+          "text": "मित्रांना फॉरवर्ड करा",
+          "emoji": "📤",
+          "isCorrect": false
+        },
+        {
+          "text": "नंतरसाठी जतन करा",
+          "emoji": "💾",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "फसवणूक प्रकरण 3",
+      "question": "कोणीतरी तुमचा OTP विचारतो. तुम्ही कसा प्रतिसाद द्याल?",
+      "options": [
+        {
+          "text": "OTP कधीही शेअर करू नका",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "text": "त्यांनी छान विचारल्यास शेअर करा",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "text": "आंशिक OTP द्या",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "text": "सर्वांशी शेअर करा",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "फसवणूक प्रकरण 4",
+      "question": "तुम्हाला सदोष उत्पादन मिळेल. आपण काय करावे?",
+      "options": [
+        {
+          "text": "ते मान्य करा",
+          "emoji": "😔",
+          "isCorrect": false
+        },
+        {
+          "text": "ग्राहक न्यायालयात तक्रार करा",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "text": "त्याकडे दुर्लक्ष करा",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "फेकून द्या",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "फसवणूक प्रकरण 5",
+      "question": "आपण एक अवास्तव गुंतवणूक ऑफर पहा. तुमचा प्रतिसाद काय आहे?",
+      "options": [
+        {
+          "text": "त्वरित गुंतवणूक करा",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "नकार द्या आणि घोटाळ्याचा अहवाल द्या",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "text": "याचा विचार करा",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "इतरांसोबत शेअर करा",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ലഘുഭക്ഷണ കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "നിങ്ങൾക്ക് ഉച്ചഭക്ഷണം വേണം, പക്ഷേ ചിപ്‌സ് വേണം. നിങ്ങൾ എന്താണ് തിരഞ്ഞെടുക്കുന്നത്?",
+      "options": [
+        {
+          "id": "chips",
+          "text": "വെറും ചിപ്സ്",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lunch",
+          "text": "സമതുലിതമായ ഉച്ചഭക്ഷണം",
+          "emoji": "🍱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sweets",
+          "text": "ഡെസേർട്ട് മാത്രം",
+          "emoji": "🍰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിനക്ക് വിശക്കുന്നു. എന്താണ് മികച്ച തിരഞ്ഞെടുപ്പ്?",
+      "options": [
+        {
+          "id": "healthy",
+          "text": "പോഷകസമൃദ്ധമായ ലഘുഭക്ഷണം",
+          "emoji": "🥗",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "കാൻഡി ബാർ",
+          "emoji": "🍫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "chips",
+          "text": "ഉരുളക്കിഴങ്ങ് ചിപ്സ്",
+          "emoji": "🥔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിനക്ക് ദാഹിക്കുന്നു. നിങ്ങൾ എന്താണ് തിരഞ്ഞെടുക്കുന്നത്?",
+      "options": [
+        {
+          "id": "soda",
+          "text": "Soda",
+          "emoji": "🥤",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "Water",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "juice",
+          "text": "രുചിയുള്ള ജ്യൂസ്",
+          "emoji": "🧃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങൾക്ക് ഒരു ലഘുഭക്ഷണം വേണം. ഏറ്റവും ആരോഗ്യകരമായ തിരഞ്ഞെടുപ്പ് ഏതാണ്?",
+      "options": [
+        {
+          "id": "cookies",
+          "text": "പാക്കേജുചെയ്ത കുക്കികൾ",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "ഗമ്മി കരടികൾ",
+          "emoji": "🐻",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fruit",
+          "text": "ഫ്രഷ് ഫ്രൂട്ട്",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "നിങ്ങൾക്ക് ഭക്ഷണത്തിന് പണമുണ്ട്. ഏതാണ് മികച്ച തീരുമാനം?",
+      "options": [
+        {
+          "id": "balanced",
+          "text": "സമ്പൂർണ്ണ ഭക്ഷണം",
+          "emoji": "🍽️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "icecream",
+          "text": "ഐസ് ക്രീം മാത്രം",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sweets",
+          "text": "മിഠായിയും സോഡയും",
+          "emoji": "🍭",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

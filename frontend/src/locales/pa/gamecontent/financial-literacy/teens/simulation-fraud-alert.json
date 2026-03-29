@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "ਸਿਮੂਲੇਸ਼ਨ: ਧੋਖਾਧੜੀ ਚੇਤਾਵਨੀ",
+  "subtitleComplete": "ਸਿਮੂਲੇਸ਼ਨ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਦ੍ਰਿਸ਼",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "ਸ਼ੱਕੀ ਐਪ ਦੀ ਬੇਨਤੀ",
+      "description": "ਇੱਕ ਨਵੀਂ ਐਪ 'ਖਾਤਾ ਤਸਦੀਕ' ਕਰਨ ਲਈ ਤੁਹਾਡੇ ਬੈਂਕ OTP ਦੀ ਮੰਗ ਕਰਦੀ ਹੈ। Wallet ₹500. ਸਮਾਰਟ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "share-otp",
+          "text": "OTP ਤੁਰੰਤ ਸਾਂਝਾ ਕਰੋ",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "check-forum",
+          "text": "ਫੈਸਲਾ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਐਪ ਦੀਆਂ ਸਮੀਖਿਆਵਾਂ ਅਤੇ ਫੋਰਮਾਂ ਦੀ ਜਾਂਚ ਕਰੋ",
+          "emoji": "🧐",
+          "isCorrect": false
+        },
+        {
+          "id": "install-anyway",
+          "text": "ਇੰਸਟਾਲ ਕਰੋ ਅਤੇ ਦੇਖੋ ਕਿ ਕੀ ਇਹ ਕੰਮ ਕਰਦਾ ਹੈ",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-app",
+          "text": "ਐਪ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ ਅਤੇ ਇਸਨੂੰ ਅਣਇੰਸਟੌਲ ਕਰੋ",
+          "emoji": "📴",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ਜਾਅਲੀ ਸਕਾਲਰਸ਼ਿਪ ਈਮੇਲ",
+      "description": "ਈਮੇਲ ਦਾ ਦਾਅਵਾ 'ਸਕਾਲਰਸ਼ਿਪ ₹50,000, ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਕਲਿੱਕ ਕਰੋ।' ਕੀ ਸੁਰੱਖਿਅਤ ਹੈ?",
+      "options": [
+        {
+          "id": "click-link",
+          "text": "ਜਲਦੀ ਰਜਿਸਟਰ ਕਰਨ ਲਈ ਲਿੰਕ 'ਤੇ ਕਲਿੱਕ ਕਰੋ",
+          "emoji": "🔗",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-university",
+          "text": "ਅਧਿਕਾਰਤ ਯੂਨੀਵਰਸਿਟੀ ਸਾਈਟ ਨਾਲ ਈਮੇਲ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ",
+          "emoji": "🏫",
+          "isCorrect": true
+        },
+        {
+          "id": "share-email",
+          "text": "ਦੋਸਤਾਂ ਨਾਲ ਈਮੇਲ ਸਾਂਝਾ ਕਰੋ",
+          "emoji": "📤",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-and-forget",
+          "text": "ਬਿਨਾਂ ਜਾਂਚ ਕੀਤੇ ਇਸ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ਜਾਅਲੀ ਦੋਸਤ ਦੀ ਬੇਨਤੀ",
+      "description": "ਕੋਈ ਅਣਜਾਣ ਵਿਅਕਤੀ 'ਮੁਫ਼ਤ ਗੇਮ ਪੁਆਇੰਟ' ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਦੋਸਤੀ ਬੇਨਤੀ ਭੇਜਦਾ ਹੈ। ਸੁਰੱਖਿਅਤ ਚੋਣ?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "ਅੰਕ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਸਵੀਕਾਰ ਕਰੋ",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "share-data",
+          "text": "ਪੁਆਇੰਟਾਂ ਲਈ ਆਪਣੇ ਗੇਮ ਪ੍ਰਮਾਣ ਪੱਤਰ ਭੇਜੋ",
+          "emoji": "🔑",
+          "isCorrect": false
+        },
+        {
+          "id": "block-report",
+          "text": "ਖਾਤੇ ਨੂੰ ਬਲੌਕ ਕਰੋ ਅਤੇ ਰਿਪੋਰਟ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-only",
+          "text": "ਰਿਪੋਰਟ ਕੀਤੇ ਬਿਨਾਂ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "🙅",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ਔਨਲਾਈਨ ਸਟੋਰ ਘੁਟਾਲਾ",
+      "description": "ਵੈੱਬਸਾਈਟ 90% ਡਿਸਕਾਊਂਟ 'ਤੇ ਫ਼ੋਨ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦੀ ਹੈ। ਸਿਰਫ਼ UPI ਰਾਹੀਂ ਭੁਗਤਾਨ। ਕਿਸ਼ੋਰ ਦਾ ਫੈਸਲਾ?",
+      "options": [
+        {
+          "id": "research-store",
+          "text": "ਕਿਸੇ ਵੀ ਭੁਗਤਾਨ ਤੋਂ ਪਹਿਲਾਂ ਵੈੱਬਸਾਈਟ ਦੀ ਵੈਧਤਾ ਅਤੇ ਸਮੀਖਿਆਵਾਂ ਦੀ ਜਾਂਚ ਕਰੋ",
+          "emoji": "🧐",
+          "isCorrect": true
+        },
+        {
+          "id": "pay-now",
+          "text": "ਤੁਰੰਤ ਭੁਗਤਾਨ ਕਰੋ, ਸੌਦਾ ਖੁੰਝਣ ਲਈ ਬਹੁਤ ਵਧੀਆ ਹੈ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-money",
+          "text": "ਤੇਜ਼ੀ ਨਾਲ ਖਰੀਦਣ ਲਈ ਵਾਧੂ ਉਧਾਰ ਲਓ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "share-link",
+          "text": "ਦੋਸਤਾਂ ਨਾਲ ਸੌਦਾ ਸਾਂਝਾ ਕਰੋ",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ਸੋਸ਼ਲ ਮੀਡੀਆ ਨਿਵੇਸ਼ ਘੁਟਾਲਾ",
+      "description": "ਪ੍ਰਭਾਵਕ ਇੱਕ ਹਫ਼ਤੇ ਵਿੱਚ 200% ਵਾਪਸੀ ਦਾ ਵਾਅਦਾ ਕਰਦਾ ਹੈ, Paytm ਰਾਹੀਂ ₹500 ਮੰਗਦਾ ਹੈ। ਕੀ ਸਹੀ ਹੈ?",
+      "options": [
+        {
+          "id": "invest-quick",
+          "text": "ਜਲਦੀ ਪੈਸੇ ਭੇਜੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "consult-unknown",
+          "text": "ਅਣਜਾਣ ਦੋਸਤ ਨੂੰ ਪੁਸ਼ਟੀ ਕਰਨ ਲਈ ਕਹੋ",
+          "emoji": "👤",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-source",
+          "text": "ਜਾਇਜ਼ਤਾ ਦੀ ਪੁਸ਼ਟੀ ਕਰੋ, ਨਿਵੇਸ਼ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਖੋਜ ਕਰੋ",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "share-link",
+          "text": "ਹੋਰਾਂ ਨੂੰ ਲਿੰਕ ਅੱਗੇ ਭੇਜੋ",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

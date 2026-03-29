@@ -1,1 +1,151 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ బ్యాంక్ బేసిక్స్",
+  "subtitleComplete": "పూర్తి!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "question": "బ్యాంకులో డబ్బులు వేయాలంటే ఏం చేయాలి?",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "మీ డబ్బును సురక్షితంగా ఉంచడానికి తెలివైన మార్గం ఏమిటి?",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "మీరు మీ బ్యాంక్ ఖాతా నుండి డబ్బును ఎలా తీసుకుంటారు?",
+      "correctAnswer": "Withdraw",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "Withdraw",
+          "isCorrect": true,
+          "emoji": "🏦"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "బ్యాంకులో డబ్బు ఆదా చేయడం ప్రారంభించడానికి మీరు ఏమి చేయాలి?",
+      "correctAnswer": "ఖాతా తెరవండి",
+      "options": [
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ఖాతా తెరవండి",
+          "isCorrect": true,
+          "emoji": "📝"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "మీ దగ్గర ఎంత డబ్బు ఉందో తెలియాలంటే ఏం చేయాలి?",
+      "correctAnswer": "బ్యాలెన్స్ తనిఖీ చేయండి",
+      "options": [
+        {
+          "text": "బ్యాలెన్స్ తనిఖీ చేయండి",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "అన్నీ ఖర్చు చేయండి",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    }
+  ],
+  "subtitlePlaying": "రౌండ్ {{current}}/{{total}}",
+  "subtitleReady": "సిద్ధంగా ఉండు!",
+  "readyTitle": "ఆడటానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "త్వరగా సమాధానం ఇవ్వండి మరియు ఉత్తమ ఎంపికను ఎంచుకోండి.",
+  "readyInfo": "మీకు {{seconds}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "రౌండ్:",
+  "timeLabel": "సమయం:"
+}

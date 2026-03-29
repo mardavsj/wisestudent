@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "లంచం కథ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "దరఖాస్తును ప్రాసెస్ చేయడానికి అధికారి లంచం అడిగారు. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "pay",
+          "text": "లంచం ఇవ్వండి",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "Refuse",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "Maybe",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "వేగవంతమైన సేవ కోసం క్లర్క్ ₹500 డిమాండ్ చేస్తాడు. మీ చర్య?",
+      "options": [
+        {
+          "id": "refuse2",
+          "text": "Refuse",
+          "emoji": "🛑",
+          "isCorrect": true
+        },
+        {
+          "id": "pay2",
+          "text": "₹500 చెల్లించండి",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "negotiate",
+          "text": "Negotiate",
+          "emoji": "💬",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "అధికారి ఆమోదం కోసం లంచం గురించి సూచనలు. మీ ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "pay3",
+          "text": "లంచం ఇవ్వండి",
+          "emoji": "📜",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "Wait",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse3",
+          "text": "Refuse",
+          "emoji": "🙅",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "పత్రాలను క్లియర్ చేయడానికి ఏజెంట్ అదనపు రుసుము అడుగుతాడు. మీరు చెల్లిస్తారా?",
+      "options": [
+        {
+          "id": "refuse4",
+          "text": "Refuse",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "pay4",
+          "text": "రుసుము చెల్లించండి",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "తర్వాత ఫిర్యాదు చేయండి",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "లైసెన్స్ కోసం అధికారి ₹1000 డిమాండ్ చేశారు. మీ ఎత్తుగడ ఏమిటి?",
+      "options": [
+        {
+          "id": "pay5",
+          "text": "₹1000 చెల్లించండి",
+          "emoji": "📝",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse5",
+          "text": "Refuse",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "id": "partial",
+          "text": "పాక్షికంగా చెల్లించండి",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

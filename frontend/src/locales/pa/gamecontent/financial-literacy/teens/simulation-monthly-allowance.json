@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "ਸਿਮੂਲੇਸ਼ਨ: ਮਹੀਨਾਵਾਰ ਭੱਤਾ",
+  "subtitleComplete": "ਸਿਮੂਲੇਸ਼ਨ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਦ੍ਰਿਸ਼",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "amountLabel": "ਰਕਮ:",
+  "perfectScoreTitle": "ਸ਼ਾਨਦਾਰ ਬਜਟ!",
+  "perfectScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਦ੍ਰਿਸ਼ ਸਹੀ ਮਿਲੇ ਹਨ! ਤੁਸੀਂ ਸੰਤੁਲਿਤ ਬਜਟ ਬਣਾਉਣ ਦੀ ਕਲਾ ਵਿੱਚ ਮੁਹਾਰਤ ਹਾਸਲ ਕਰ ਰਹੇ ਹੋ!",
+  "lessonLabel": "ਸਬਕ: ਇੱਕ ਸੰਤੁਲਿਤ ਬਜਟ ਲੋੜਾਂ (ਭੋਜਨ, ਆਵਾਜਾਈ) ਨੂੰ ਤਰਜੀਹ ਦਿੰਦਾ ਹੈ ਜਦੋਂ ਕਿ ਭਵਿੱਖ ਲਈ ਬੱਚਤ ਕਰਦਾ ਹੈ ਅਤੇ ਕੁਝ ਮਜ਼ੇਦਾਰ ਹੁੰਦਾ ਹੈ!",
+  "keepLearningTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+  "lowScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਦ੍ਰਿਸ਼ ਸਹੀ ਮਿਲੇ ਹਨ। ਸੰਤੁਲਿਤ ਬਜਟ ਫਾਰਮੂਲਾ ਯਾਦ ਰੱਖੋ: 40% ਭੋਜਨ, 30% ਆਵਾਜਾਈ, 20% ਬੱਚਤ, 10% ਮਜ਼ੇਦਾਰ!",
+  "tipLabel": "ਸੁਝਾਅ: ਪਹਿਲਾਂ ਜ਼ਰੂਰੀ ਲੋੜਾਂ ਨੂੰ ਪੂਰਾ ਕਰਨ ਲਈ ਪੈਸਾ ਅਲਾਟ ਕਰੋ, ਫਿਰ ਬਚਤ ਕਰੋ, ਅਤੇ ਅੰਤ ਵਿੱਚ ਕੁਝ ਮਜ਼ੇਦਾਰ ਪੈਸੇ ਦਿਓ।",
+  "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "coinsLabel": "+{{count}} ਸਿੱਕੇ",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "ਮਾਸਿਕ ਭੱਤੇ ਦੀਆਂ ਚੋਣਾਂ",
+      "description": "ਤੁਹਾਨੂੰ ਭੱਤੇ ਵਜੋਂ 1000 ਰੁਪਏ ਮਿਲਦੇ ਹਨ। ਤੁਸੀਂ ਇਸ ਨੂੰ ਸਮਝਦਾਰੀ ਨਾਲ ਕਿਵੇਂ ਵਰਤ ਸਕਦੇ ਹੋ?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "splurge",
+          "text": "ਸਿਰਫ ਰੁਝਾਨ ਵਾਲੀਆਂ ਚੀਜ਼ਾਂ ਖਰੀਦੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "budget-smart",
+          "text": "ਜ਼ਰੂਰੀ, ਮਜ਼ੇਦਾਰ ਅਤੇ ਬੱਚਤ ਲਈ ਇਕ ਪਾਸੇ ਰੱਖੋ",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ਸਾਰੀ ਨਕਦੀ ਘਰ ਵਿੱਚ ਲੁਕੋ ਕੇ ਰੱਖੋ",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "random-spending",
+          "text": "ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ਪਾਰਟ-ਟਾਈਮ ਨੌਕਰੀ ਦੀ ਕਮਾਈ",
+      "description": "ਤੁਸੀਂ ਇੱਕ ਵੀਕੈਂਡ ਦੀ ਨੌਕਰੀ ਤੋਂ ₹1500 ਕਮਾਉਂਦੇ ਹੋ। ਇੱਕ ਸਮਾਰਟ ਪਹੁੰਚ ਕੀ ਹੈ?",
+      "amount": 1500,
+      "options": [
+        {
+          "id": "plan-smart",
+          "text": "ਟੀਚਿਆਂ, ਲੋੜਾਂ ਅਤੇ ਮਨੋਰੰਜਨ ਲਈ ਵੰਡੋ",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury-only",
+          "text": "ਗੈਜੇਟਸ ਜਾਂ ਕੱਪੜਿਆਂ 'ਤੇ ਹੀ ਖਰਚ ਕਰੋ",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ਇਹ ਮੌਜੂਦ ਹੈ ਭੁੱਲ ਜਾਓ",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "invest-all",
+          "text": "ਬਿਨਾਂ ਖੋਜ ਦੇ ਨਿਵੇਸ਼ ਕਰੋ",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ਸਕਾਲਰਸ਼ਿਪ ਬੋਨਸ",
+      "description": "ਤੁਹਾਨੂੰ ₹2000 ਦੀ ਸਕਾਲਰਸ਼ਿਪ ਮਿਲਦੀ ਹੈ। ਇਸਦੀ ਵਰਤੋਂ ਕਰਨ ਦਾ ਸਭ ਤੋਂ ਵਧੀਆ ਤਰੀਕਾ ਕੀ ਹੈ?",
+      "amount": 2000,
+      "options": [
+        {
+          "id": "trip",
+          "text": "ਇੱਕ ਲਗਜ਼ਰੀ ਯਾਤਰਾ 'ਤੇ ਜਾਓ",
+          "emoji": "✈️",
+          "isCorrect": false
+        },
+        {
+          "id": "hide-money",
+          "text": "ਇਸ ਨੂੰ ਘਰ ਵਿਚ ਛੁਪਾਓ",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "donate",
+          "text": "ਇਹ ਸਭ ਤੁਰੰਤ ਦਾਨ ਕਰੋ",
+          "emoji": "💝",
+          "isCorrect": false
+        },
+        {
+          "id": "self-invest",
+          "text": "ਸਿੱਖਣ ਲਈ ਕਿਤਾਬਾਂ, ਕੋਰਸ ਜਾਂ ਟੂਲ ਖਰੀਦੋ",
+          "emoji": "🎓",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ਜਨਮਦਿਨ ਤੋਹਫ਼ੇ ਦੇ ਪੈਸੇ",
+      "description": "ਤੁਹਾਨੂੰ ਜਨਮਦਿਨ ਦੇ ਪੈਸੇ ਵਜੋਂ ₹800 ਮਿਲਦੇ ਹਨ। ਸੋਚ-ਸਮਝ ਕੇ ਚੋਣ ਕੀ ਹੈ?",
+      "amount": 800,
+      "options": [
+        {
+          "id": "impulse-buy",
+          "text": "ਕੇਵਲ ਤਤਕਾਲ ਮਨੋਰੰਜਨ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "ਜੋ ਵੀ ਮਜ਼ੇਦਾਰ ਲੱਗਦਾ ਹੈ ਖਰੀਦੋ",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "plan-future",
+          "text": "ਕਿਸੇ ਵੱਡੇ ਟੀਚੇ ਜਾਂ ਲੋੜ ਲਈ ਬੱਚਤ ਕਰੋ",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "share-friends",
+          "text": "ਇਹ ਸਭ ਦੋਸਤਾਂ ਨੂੰ ਦਿਓ",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ਗਰਮੀਆਂ ਦੀ ਨੌਕਰੀ ਦੀ ਹਵਾ",
+      "description": "ਤੁਸੀਂ ਗਰਮੀਆਂ ਦੀ ਨੌਕਰੀ ਤੋਂ ₹2500 ਕਮਾਉਂਦੇ ਹੋ। ਲਾਭਾਂ ਨੂੰ ਵੱਧ ਤੋਂ ਵੱਧ ਕਿਵੇਂ ਕਰਨਾ ਹੈ?",
+      "amount": 2500,
+      "options": [
+        {
+          "id": "balanced-plan",
+          "text": "ਬਚਤ ਕਰਨ, ਸਿੱਖਣ ਅਤੇ ਛੋਟੇ ਸਲੂਕ ਲਈ ਵੰਡੋ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "debt-payment",
+          "text": "ਕਰਜ਼ੇ ਦਾ ਭੁਗਤਾਨ ਕਰਨ ਲਈ ਕਾਹਲੀ ਜੋ ਤੁਸੀਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਨਹੀਂ ਸਮਝਦੇ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse-buying",
+          "text": "ਆਵੇਗ ਖਰੀਦਦਾਰੀ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save-all",
+          "text": "ਬਿਨਾਂ ਕਿਸੇ ਯੋਜਨਾ ਦੇ ਸਭ ਨੂੰ ਬਚਾਓ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

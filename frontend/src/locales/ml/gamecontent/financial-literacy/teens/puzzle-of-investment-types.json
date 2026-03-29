@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "പസിൽ: നിക്ഷേപ തരങ്ങൾ",
+  "subtitleComplete": "പസിൽ പൂർത്തിയായി!",
+  "subtitleProgress": "സ്വഭാവസവിശേഷതകളുള്ള നിക്ഷേപങ്ങൾ പൊരുത്തപ്പെടുത്തുക ({{current}}/{{total}} പൊരുത്തപ്പെട്ടു)",
+  "investmentsTitle": "നിക്ഷേപ തരങ്ങൾ",
+  "characteristicsTitle": "Characteristics",
+  "matchButton": "Match",
+  "selectInvestmentLabel": "ഒരു നിക്ഷേപ തരം തിരഞ്ഞെടുക്കുക",
+  "selectedInvestmentLabel": "തിരഞ്ഞെടുത്തത്: {{name}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "matchedLabel": "പൊരുത്തപ്പെട്ടു: {{current}}/{{total}}",
+  "resultSuccessHeader": "മികച്ച ജോലി!",
+  "resultSuccessSubheader": "നിങ്ങൾ {{score}}-ൽ {{total}} നിക്ഷേപ തരങ്ങളുമായി അവയുടെ സ്വഭാവസവിശേഷതകളുമായി ശരിയായി പൊരുത്തപ്പെട്ടു!",
+  "resultSuccessLesson": "പാഠം: നിക്ഷേപ സവിശേഷതകൾ മനസ്സിലാക്കുന്നത് വിവരമുള്ള സാമ്പത്തിക തീരുമാനങ്ങൾ എടുക്കാൻ സഹായിക്കുന്നു!",
+  "resultTryAgainHeader": "പരിശീലിക്കുന്നത് തുടരുക!",
+  "resultTryAgainSubheader": "നിങ്ങൾ {{score}}-ൽ {{total}} നിക്ഷേപ തരങ്ങളുമായി ശരിയായി പൊരുത്തപ്പെട്ടു.",
+  "resultTryAgainTip": "നുറുങ്ങ്: ഓരോ നിക്ഷേപ തരത്തിൻ്റെയും റിസ്ക് ലെവലിനെയും സ്വഭാവത്തെയും കുറിച്ച് ചിന്തിക്കുക!",
+  "coinsEarned": "+{{coins}} നാണയങ്ങൾ",
+  "investments": [
+    {
+      "id": 1,
+      "name": "സ്ഥിര നിക്ഷേപം",
+      "emoji": "🏦"
+    },
+    {
+      "id": 2,
+      "name": "Stocks",
+      "emoji": "📈"
+    },
+    {
+      "id": 3,
+      "name": "മ്യൂച്വൽ ഫണ്ട്",
+      "emoji": "📊"
+    },
+    {
+      "id": 4,
+      "name": "Bonds",
+      "emoji": "📜"
+    },
+    {
+      "id": 5,
+      "name": "റിയൽ എസ്റ്റേറ്റ്",
+      "emoji": "🏠"
+    }
+  ],
+  "characteristics": [
+    {
+      "id": 6,
+      "name": "Safe",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 7,
+      "name": "Risky",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "Diversified",
+      "emoji": "🔄"
+    },
+    {
+      "id": 9,
+      "name": "Stable",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "Long-term",
+      "emoji": "⏳"
+    }
+  ]
+}

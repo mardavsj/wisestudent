@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ধাঁধা: ঋণের মৌলিক বিষয়",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "ধারণার সাথে ঋণের শর্তাদি মেলে ({{current}}/{{total}} মিলে গেছে)",
+  "termsTitle": "ঋণ শর্তাবলী",
+  "conceptsTitle": "ঋণ ধারণা",
+  "matchButton": "Match",
+  "selectTermLabel": "একটি ঋণ মেয়াদ নির্বাচন করুন",
+  "selectedTermLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি তাদের ধারণার সাথে {{total}} ঋণের শর্তাবলীর মধ্যে {{score}} সঠিকভাবে মিলেছেন!",
+  "resultSuccessLesson": "পাঠ: ঋণের মূল বিষয়গুলি বোঝা অবগত ঋণ গ্রহণের সিদ্ধান্ত নিতে সাহায্য করে!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি {{total}} ঋণের শর্তাবলীর মধ্যে {{score}} সঠিকভাবে মেলেছেন।",
+  "resultTryAgainTip": "টিপ: প্রতিটি ঋণের মেয়াদ আসলে কি প্রতিনিধিত্ব করে তা নিয়ে চিন্তা করুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "terms": [
+    {
+      "id": 1,
+      "name": "Principal",
+      "emoji": "💵"
+    },
+    {
+      "id": 2,
+      "name": "Interest",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "ঋণের মেয়াদ",
+      "emoji": "📅"
+    },
+    {
+      "id": 4,
+      "name": "EMI",
+      "emoji": "📊"
+    },
+    {
+      "id": 5,
+      "name": "Default",
+      "emoji": "⚠️"
+    }
+  ],
+  "concepts": [
+    {
+      "id": 6,
+      "name": "মূল পরিমাণ",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "অতিরিক্ত খরচ",
+      "emoji": "➕"
+    },
+    {
+      "id": 8,
+      "name": "সময়কাল",
+      "emoji": "⏱️"
+    },
+    {
+      "id": 9,
+      "name": "নিয়মিত পেমেন্ট",
+      "emoji": "💳"
+    },
+    {
+      "id": 10,
+      "name": "মিস পেমেন্ট",
+      "emoji": "🚫"
+    }
+  ]
+}

@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ఐస్ క్రీమ్ vs స్కూల్ బుక్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "📘",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు పాఠశాల పూర్తి చేసి ఆకలితో ఉన్నారు, కానీ మీకు వర్క్‌బుక్ కూడా అవసరం. ఉత్తమ ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "ప్రస్తుతానికి ఐస్ క్రీం కొనండి",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "వర్క్‌బుక్ కొనండి",
+          "emoji": "📘",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "ఏమీ కొనకుండా వెళ్లిపోండి",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు ఈ రోజు ఐస్ క్రీం తింటారు మరియు రేపు పుస్తకానికి డబ్బు మిగిలి ఉండదు. మీరు ఏమి నేర్చుకుంటారు?",
+      "options": [
+        {
+          "id": "lesson",
+          "text": "డబ్బు ప్రణాళిక ముఖ్యం",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ఐస్ క్రీం ఎల్లప్పుడూ ఉత్తమమైనది",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "తదుపరిసారి డబ్బు అప్పు తీసుకోండి",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ఒక పుస్తకం పరీక్షలలో సహాయపడుతుంది మరియు ఐస్ క్రీం త్వరగా కరుగుతుంది. ఏది ఎక్కువసేపు ఉంటుంది?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "ఐస్ క్రీం ఆనందం",
+          "emoji": "🍨",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "ఒక పుస్తకం నుండి జ్ఞానం",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "both",
+          "text": "రెండూ ఒకేలా ఉంటాయి",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు ఈ రోజు ఒక పుస్తకాన్ని కొనుగోలు చేయాలని నిర్ణయించుకున్నారు మరియు మరొక రోజు ఐస్ క్రీం ఆనందించండి. మీరు ఏ నైపుణ్యాన్ని ప్రదర్శిస్తారు?",
+      "options": [
+        {
+          "id": "luck",
+          "text": "అదృష్టవంతులు",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "speed",
+          "text": "వేగంగా నిర్ణయం తీసుకోవడం",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "patience",
+          "text": "Self-control",
+          "emoji": "🧘",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీరు పుస్తకాన్ని ఎంచుకున్నప్పుడు మీ తల్లిదండ్రులు నవ్వుతారు. వారు ఎందుకు సంతోషంగా ఉన్నారు?",
+      "options": [
+        {
+          "id": "cheap",
+          "text": "పుస్తకాలు తక్కువ ధరకే లభిస్తాయి",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "మీరు బాధ్యతాయుతమైన ఎంపిక చేసుకోండి",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "స్నేహితులకు పుస్తకాలంటే ఇష్టం",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

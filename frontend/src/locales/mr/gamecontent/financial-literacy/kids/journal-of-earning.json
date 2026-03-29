@@ -1,1 +1,33 @@
-﻿{}
+{
+  "title": "जर्नल ऑफ अर्निंग",
+  "subtitleComplete": "जर्नल पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न: पैसे कमवण्याच्या मार्गांवर विचार करा!",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "minLengthLabel": "किमान {{min}} वर्ण लिहा",
+  "placeholder": "तुमची जर्नल एंट्री इथे लिहा...",
+  "charCountLabel": "{{current}}/{{min}} वर्ण",
+  "submitFinalButton": "अंतिम एंट्री सबमिट करा",
+  "submitContinueButton": "सबमिट करा आणि सुरू ठेवा",
+  "stages": [
+    {
+      "question": "लिहा: \"मी पैसे कमवण्याचा एक मार्ग म्हणजे ___.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"पैसे कमावल्याने मला ___ वाटते.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"मी ___ द्वारे पैसे कमावले आणि ___ शिकलो.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"पैसे मिळवण्याबद्दल चांगली गोष्ट ___ आहे.\"",
+      "minLength": 10
+    },
+    {
+      "question": "लिहा: \"पैसे मिळवण्याने मला ___ जबाबदारी शिकवली.\"",
+      "minLength": 10
+    }
+  ]
+}

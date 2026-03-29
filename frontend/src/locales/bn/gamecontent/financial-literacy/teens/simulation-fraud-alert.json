@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "সিমুলেশন: জালিয়াতির সতর্কতা",
+  "subtitleComplete": "সিমুলেশন সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} দৃশ্যকল্প",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "সন্দেহজনক অ্যাপ অনুরোধ",
+      "description": "একটি নতুন অ্যাপ 'অ্যাকাউন্ট যাচাই' করার জন্য আপনার ব্যাঙ্কের ওটিপি চেয়েছে। ওয়ালেট ₹500। স্মার্ট কি?",
+      "options": [
+        {
+          "id": "share-otp",
+          "text": "অবিলম্বে OTP শেয়ার করুন",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "check-forum",
+          "text": "সিদ্ধান্ত নেওয়ার আগে অ্যাপ পর্যালোচনা এবং ফোরাম পরীক্ষা করুন",
+          "emoji": "🧐",
+          "isCorrect": false
+        },
+        {
+          "id": "install-anyway",
+          "text": "ইনস্টল করুন এবং দেখুন এটি কাজ করে কিনা",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-app",
+          "text": "অ্যাপ উপেক্ষা করুন এবং এটি আনইনস্টল করুন",
+          "emoji": "📴",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "জাল বৃত্তি ইমেল",
+      "description": "ইমেল দাবি করে 'স্কলারশিপ ₹50,000, নিবন্ধন করতে ক্লিক করুন।' কি নিরাপদ?",
+      "options": [
+        {
+          "id": "click-link",
+          "text": "দ্রুত নিবন্ধন করতে লিঙ্কে ক্লিক করুন",
+          "emoji": "🔗",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-university",
+          "text": "অফিসিয়াল বিশ্ববিদ্যালয় সাইটের সাথে ইমেল যাচাই করুন",
+          "emoji": "🏫",
+          "isCorrect": true
+        },
+        {
+          "id": "share-email",
+          "text": "বন্ধুদের সাথে ইমেল শেয়ার করুন",
+          "emoji": "📤",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-and-forget",
+          "text": "চেক না করে এটি সম্পূর্ণরূপে উপেক্ষা করুন",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ফেক ফ্রেন্ড রিকোয়েস্ট",
+      "description": "অজানা কেউ 'ফ্রি গেম পয়েন্ট' অফার করে বন্ধুত্বের অনুরোধ পাঠায়। নিরাপদ পছন্দ?",
+      "options": [
+        {
+          "id": "accept",
+          "text": "পয়েন্ট পেতে গ্রহণ করুন",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "share-data",
+          "text": "পয়েন্টের জন্য আপনার গেমের শংসাপত্র পাঠান",
+          "emoji": "🔑",
+          "isCorrect": false
+        },
+        {
+          "id": "block-report",
+          "text": "অ্যাকাউন্ট ব্লক করুন এবং রিপোর্ট করুন",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore-only",
+          "text": "রিপোর্ট না করে উপেক্ষা করুন",
+          "emoji": "🙅",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "অনলাইন স্টোর স্ক্যাম",
+      "description": "ওয়েবসাইট 90% ডিসকাউন্টে ফোন অফার করে। শুধুমাত্র UPI এর মাধ্যমে পেমেন্ট। কিশোর সিদ্ধান্ত?",
+      "options": [
+        {
+          "id": "research-store",
+          "text": "পেমেন্ট করার আগে ওয়েবসাইটের বৈধতা এবং পর্যালোচনা পরীক্ষা করুন",
+          "emoji": "🧐",
+          "isCorrect": true
+        },
+        {
+          "id": "pay-now",
+          "text": "অবিলম্বে অর্থ প্রদান, চুক্তি মিস করা খুব ভাল",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-money",
+          "text": "দ্রুত কিনতে অতিরিক্ত ধার",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "share-link",
+          "text": "বন্ধুদের সাথে চুক্তি শেয়ার করুন",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "সোশ্যাল মিডিয়া ইনভেস্টমেন্ট কেলেঙ্কারি",
+      "description": "প্রভাবশালী এক সপ্তাহে 200% রিটার্নের প্রতিশ্রুতি দেয়, Paytm-এর মাধ্যমে ₹500 চায়। কি সঠিক?",
+      "options": [
+        {
+          "id": "invest-quick",
+          "text": "দ্রুত টাকা পাঠান",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "consult-unknown",
+          "text": "অজানা বন্ধুকে যাচাই করতে বলুন",
+          "emoji": "👤",
+          "isCorrect": false
+        },
+        {
+          "id": "verify-source",
+          "text": "বৈধতা যাচাই করুন, বিনিয়োগ করার আগে গবেষণা করুন",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "share-link",
+          "text": "অন্যদের লিঙ্ক ফরোয়ার্ড করুন",
+          "emoji": "📤",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

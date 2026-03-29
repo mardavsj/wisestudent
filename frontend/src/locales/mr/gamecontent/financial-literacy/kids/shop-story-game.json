@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "शॉप स्टोरी गेम",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "दुकानदार अतिरिक्त बदल देतो. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "return",
+          "text": "अतिरिक्त बदल परत करा",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "शांतपणे ठेवा",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "तत्काळ खर्च करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला स्वस्त वस्तू मिळेल. पुढे काय?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "किंमत बद्दल खोटे बोलणे",
+          "emoji": "🙊",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "त्याकडे दुर्लक्ष करा",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "honest",
+          "text": "प्रामाणिक व्हा",
+          "emoji": "🤗",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "विक्रेता किंमत उद्धृत करतो. पुढे काय?",
+      "options": [
+        {
+          "id": "bargain",
+          "text": "अन्यायकारकपणे सौदा",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "पैसे देण्यास नकार द्या",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "pay",
+          "text": "योग्य पगार द्या",
+          "emoji": "⚖️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्हाला पावती मिळते. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "check",
+          "text": "पावती तपासा",
+          "emoji": "🧾",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "विधेयकाकडे दुर्लक्ष करा",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "throw",
+          "text": "फेकून द्या",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "स्टोअर तुमच्याकडून जास्त शुल्क घेते. आता काय?",
+      "options": [
+        {
+          "id": "silent",
+          "text": "गप्प राहा",
+          "emoji": "😶",
+          "isCorrect": false
+        },
+        {
+          "id": "report",
+          "text": "त्रुटी नोंदवा",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "accept",
+          "text": "ते स्वीकारा",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

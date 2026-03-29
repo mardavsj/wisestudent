@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "کھلونا کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ایک دوست آپ کو ایک کھلونا ادھار دیتا ہے۔ آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "safe",
+          "text": "اسے محفوظ رکھیں",
+          "emoji": "🛡️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "break",
+          "text": "اسے توڑ دو",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "اسے نظر انداز کریں۔",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "تم نے ایک کھلونا ادھار لیا۔ اب کیا؟",
+      "options": [
+        {
+          "id": "keep",
+          "text": "رکھ لو",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "اسے کھو دیں۔",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "کھلونا واپس کرو",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کے پاس اپنے دوست کا کھلونا ہے۔ بہترین کیا ہے؟",
+      "options": [
+        {
+          "id": "care",
+          "text": "اس کا خیال رکھنا",
+          "emoji": "💝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "اسے کھو دیں۔",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "break",
+          "text": "اسے توڑ دو",
+          "emoji": "💔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "مالک کھلونا واپس مانگتا ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "hide",
+          "text": "اسے چھپائیں۔",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "اسے واپس دو",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "delay",
+          "text": "واپسی میں تاخیر",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "جب آپ کھلونا ادھار لیتے ہیں تو آپ کا کیا فرض ہے؟",
+      "options": [
+        {
+          "id": "careless",
+          "text": "بے پروا رہنا",
+          "emoji": "😓",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "اس کے بارے میں بھول جاؤ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "responsible",
+          "text": "ذمہ دار بنیں۔",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

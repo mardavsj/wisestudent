@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "लिंबूपाणी कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "🍋",
+  "questions": [
+    {
+      "id": 1,
+      "text": "लिंबूपाणी स्टँडमधून तुम्ही ₹50 मिळवता. स्मार्ट निवड काय आहे?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "सर्व खेळण्यांवर खर्च करा",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "स्नॅक्स खरेदी करा",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "पुरवठ्यासाठी अर्धा जतन करा",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला लिंबासाठी 20 रुपये लागतील. तुमच्याकडे ₹15 आहेत. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "save",
+          "text": "आणखी ₹5 वाचवा",
+          "emoji": "🙂",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "₹5 उधार घ्या",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "लिंबू खरेदी करणे वगळा",
+          "emoji": "🍋",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ग्राहक ₹5 ऐवजी ₹10 देतो. प्रामाणिक काय आहे?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "₹10 ठेवा",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "अतिरिक्त ₹5 परत करा",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "मिठाईवर खर्च करा",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही ₹30 मिळवा. आज हे सर्व खर्च करावे का?",
+      "options": [
+        {
+          "id": "no",
+          "text": "नाही, पुढील स्टँडसाठी जतन करा",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "होय, गेम खरेदी करा",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ते दूर द्या",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुमच्या लिंबूपाणी स्टँडच्या कमाईचे नियोजन स्मार्ट का आहे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "तुम्हाला अधिक खर्च करू देते",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "running",
+          "text": "तुमचा स्टँड चालू ठेवतो",
+          "emoji": "☀️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "customers",
+          "text": "तुम्हाला अधिक ग्राहक मिळवून देतो",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಗ್ರೋತ್ ಚೆಕ್",
+  "subtitlePlaying": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ: ನಿಮ್ಮ ಬೆಳವಣಿಗೆಯ ಪ್ರತಿವರ್ತನಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಬೆಳವಣಿಗೆಯ ಪ್ರತಿವರ್ತನವನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyEmoji": "📈",
+  "readyTitle": "ನಿಮ್ಮ ಬೆಳವಣಿಗೆಯ ಜ್ಞಾನವನ್ನು ಪರಿಶೀಲಿಸಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಪ್ರತಿ ಪ್ರಶ್ನೆಗೆ ಸರಿಯಾದ ಬೆಳವಣಿಗೆಯ ಫಲಿತಾಂಶವನ್ನು ಆರಿಸಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಪ್ರಶ್ನೆ:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ನಿಮ್ಮ ಹಣವು ಬಡ್ಡಿಯನ್ನು ಗಳಿಸಿದಾಗ ಏನಾಗುತ್ತದೆ?",
+      "correctAnswer": "ಬಡ್ಡಿ ಗಳಿಸಿದೆ",
+      "options": [
+        {
+          "text": "ಹಣ ಕಳೆದುಕೊಂಡಿದ್ದಾರೆ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಬಡ್ಡಿ ಗಳಿಸಿದೆ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ಬದಲಾವಣೆ ಇಲ್ಲ",
+          "isCorrect": false,
+          "emoji": "😐"
+        },
+        {
+          "text": "ಹಣ ಕಳ್ಳತನವಾಗಿದೆ",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ನೀವು ಸಮಯವನ್ನು ಉಳಿಸಿದಾಗ ಏನಾಗುತ್ತದೆ?",
+      "correctAnswer": "ಉಳಿತಾಯ ಬೆಳೆಯಿತು",
+      "options": [
+        {
+          "text": "ಉಳಿತಾಯ ಬೆಳೆಯಿತು",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ಹಣ ಖರ್ಚು ಮಾಡಿದೆ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಹಣ ಕಣ್ಮರೆಯಾಗುತ್ತದೆ",
+          "isCorrect": false,
+          "emoji": "👻"
+        },
+        {
+          "text": "ಏನೂ ಆಗುವುದಿಲ್ಲ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ನಿಮ್ಮ ಹೂಡಿಕೆ ಯಶಸ್ವಿಯಾದಾಗ ಏನಾಗುತ್ತದೆ?",
+      "correctAnswer": "ಲಾಭ ಗಳಿಸಿದೆ",
+      "options": [
+        {
+          "text": "ನಷ್ಟ ಉಂಟಾಗಿದೆ",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "ಹಣ ಸ್ಥಗಿತಗೊಂಡಿದೆ",
+          "isCorrect": false,
+          "emoji": "🧊"
+        },
+        {
+          "text": "ಹೂಡಿಕೆ ಹೋಗಿದೆ",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "ಲಾಭ ಗಳಿಸಿದೆ",
+          "isCorrect": true,
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ಹೂಡಿಕೆಯ ಮೌಲ್ಯ ಹೆಚ್ಚಾದಾಗ ಏನಾಗುತ್ತದೆ?",
+      "correctAnswer": "ಹೂಡಿಕೆ ಹೆಚ್ಚಿದೆ",
+      "options": [
+        {
+          "text": "ಹೂಡಿಕೆ ಹೆಚ್ಚಿದೆ",
+          "isCorrect": true,
+          "emoji": "🚀"
+        },
+        {
+          "text": "ಹಣ ಕಡಿಮೆಯಾಗಿದೆ",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "ಹೂಡಿಕೆ ಅಂಟಿಕೊಂಡಿತು",
+          "isCorrect": false,
+          "emoji": "🔒"
+        },
+        {
+          "text": "ಮೌಲ್ಯ ಶೂನ್ಯ",
+          "isCorrect": false,
+          "emoji": "0️⃣"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ನೀವು ದೀರ್ಘಾವಧಿಗೆ ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ಹೂಡಿಕೆ ಮಾಡಿದಾಗ ಏನಾಗುತ್ತದೆ?",
+      "correctAnswer": "ಸಂಪತ್ತು ವೃದ್ಧಿಯಾಗುತ್ತದೆ",
+      "options": [
+        {
+          "text": "ನಿಧಿಗಳು ಕುಗ್ಗುತ್ತವೆ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಸಂಪತ್ತು ಹಾಗೆಯೇ ಇರುತ್ತದೆ",
+          "isCorrect": false,
+          "emoji": "➡️"
+        },
+        {
+          "text": "ಸಂಪತ್ತು ವೃದ್ಧಿಯಾಗುತ್ತದೆ",
+          "isCorrect": true,
+          "emoji": "🌳"
+        },
+        {
+          "text": "ಸಂಪತ್ತು ಕಣ್ಮರೆಯಾಗುತ್ತದೆ",
+          "isCorrect": false,
+          "emoji": "👻"
+        }
+      ]
+    }
+  ]
+}

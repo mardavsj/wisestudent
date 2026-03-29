@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ಬಜೆಟ್ ಕುರಿತು ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "iconKey": "calculator",
+      "text": "ಬಜೆಟ್ ಎಂದರೇನು?",
+      "options": [
+        {
+          "id": "list",
+          "text": "ಶಾಪಿಂಗ್ ಪಟ್ಟಿ",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ಖರ್ಚು ಮಾಡುವ ಯೋಜನೆ",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "ಉಚಿತ ಹಣ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "iconKey": "target",
+      "text": "ಬಜೆಟ್ ಏಕೆ?",
+      "options": [
+        {
+          "id": "track",
+          "text": "ವೆಚ್ಚಗಳನ್ನು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ ಮತ್ತು ಉಳಿಸಿ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ಎಲ್ಲಾ ಹಣವನ್ನು ತ್ವರಿತವಾಗಿ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "💥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fun",
+          "text": "ಕೇವಲ ವಿನೋದಕ್ಕಾಗಿ",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "iconKey": "trendingUp",
+      "text": "ರೂ 100 ಗಳಿಸಿ, ರೂ 120 ಖರ್ಚು ಮಾಡಿ. ಏನಾಗುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ನೀವು 20 ರೂ ಉಳಿಸುತ್ತೀರಿ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "prize",
+          "text": "ನೀವು ಬಹುಮಾನವನ್ನು ಗೆಲ್ಲುತ್ತೀರಿ",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "ನೀವು ಸಾಲಕ್ಕೆ ಹೋಗುತ್ತೀರಿ",
+          "emoji": "⚠️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "iconKey": "checkCircle",
+      "text": "ಉತ್ತಮ ಬಜೆಟ್ ಅಭ್ಯಾಸ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "guess",
+          "text": "ಯಾದೃಚ್ಛಿಕವಾಗಿ ಊಹಿಸಿ ಮತ್ತು ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ವೆಚ್ಚಗಳು ಮತ್ತು ಯೋಜನೆಯನ್ನು ಪಟ್ಟಿ ಮಾಡಿ",
+          "emoji": "📝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ಖರ್ಚು ಮಾಡುವುದನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "iconKey": "piggyBank",
+      "text": "ನೀವು ಬಜೆಟ್ ಅನ್ನು ಅನುಸರಿಸಿದರೆ, ನೀವು...",
+      "options": [
+        {
+          "id": "goals",
+          "text": "ಒತ್ತಡವಿಲ್ಲದೆ ಗುರಿಗಳನ್ನು ಸಾಧಿಸಿ",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "unnecessary",
+          "text": "ಅನಗತ್ಯ ವಸ್ತುಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ಹಣದ ಟ್ರ್ಯಾಕ್ ಕಳೆದುಕೊಳ್ಳಿ",
+          "emoji": "🌀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

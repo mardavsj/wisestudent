@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ਖਰਚ 'ਤੇ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਸਭ ਤੋਂ ਵਧੀਆ ਖਰਚ ਕਰਨ ਦੀ ਆਦਤ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ਬਿਨਾਂ ਸੋਚੇ-ਸਮਝੇ ਖਰੀਦੋ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ਤੁਲਨਾ ਕਰੋ ਅਤੇ ਚੁਣੋ",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ਮਨੋਰੰਜਨ ਲਈ ਉਧਾਰ ਲਓ",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਪੈਸਾ ਖਰਚ ਕਰਨ ਦਾ ਕਿਹੜਾ ਵਧੀਆ ਤਰੀਕਾ ਹੈ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ਪਹਿਲਾਂ ਬਜਟ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "ਸਭ ਨੂੰ ਇੱਕ ਵਾਰ 'ਤੇ ਖਰਚ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ਉਹ ਖਰੀਦੋ ਜੋ ਪ੍ਰਸਿੱਧ ਹੈ",
+          "emoji": "🔥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਇੱਕ ਵੱਡੀ ਖਰੀਦ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ਕ੍ਰੈਡਿਟ 'ਤੇ ਖਰੀਦੋ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ਦੋਸਤਾਂ ਨੂੰ ਪੁੱਛੋ",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ਪਹਿਲਾਂ ਬਚਾਓ",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਭਵਿੱਖ ਵਿੱਚ ਖਰਚ ਕਰਨ ਦੀ ਕਿਹੜੀ ਆਦਤ ਤੁਹਾਡੀ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ਇੱਛਾਵਾਂ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ਲੋੜਾਂ ਲਈ ਬਚਾਓ",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ਮਹਿੰਗੀਆਂ ਚੀਜ਼ਾਂ ਖਰੀਦੋ",
+          "emoji": "💎",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਖਰੀਦਦਾਰੀ ਕਰਨ ਲਈ ਸਭ ਤੋਂ ਚੁਸਤ ਪਹੁੰਚ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ਇੱਕ ਸੂਚੀ ਬਣਾਓ",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "ਇੰਪਲਸ ਖਰੀਦਦਾਰੀ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "ਰੁਝਾਨਾਂ ਦਾ ਪਾਲਣ ਕਰੋ",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

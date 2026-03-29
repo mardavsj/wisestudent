@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "پہیلی: سمارٹ بمقابلہ فضلہ",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "زمرہ جات کے ساتھ اشیاء کو میچ کریں ({{matched}}/{{total}} مماثل)",
+  "itemsTitle": "اخراجات کی اشیاء",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "منتخب کردہ: {{name}}",
+  "selectItem": "ایک آئٹم منتخب کریں۔",
+  "matchButton": "Match",
+  "scoreLabel": "سکور:",
+  "matchedLabel": "مماثل:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "بہت اچھا کام!",
+  "resultGreatDescription": "آپ نے {{total}} آئٹمز میں سے {{score}} کو ان کے زمرے کے ساتھ درست طریقے سے ملایا!",
+  "coinsLabel": "Coins",
+  "resultLesson": "سبق: ضروریات اور خواہشات کے درمیان فرق کو سمجھنا ہوشیار مالی فیصلے کرنے میں مدد کرتا ہے!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "مشق کرتے رہیں!",
+  "resultKeepDescription": "آپ نے {{total}} آئٹمز میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultTip": "مشورہ: اس بارے میں سوچیں کہ آیا ہر شے ضروری ہے یا صرف اچھی ہے!",
+  "items": [
+    {
+      "id": 1,
+      "name": "لائبریری کی کتابیں۔",
+      "emoji": "📖"
+    },
+    {
+      "id": 2,
+      "name": "دوبارہ قابل استعمال پانی کی بوتل",
+      "emoji": "🥤"
+    },
+    {
+      "id": 3,
+      "name": "کینڈی پیک",
+      "emoji": "🍬"
+    },
+    {
+      "id": 4,
+      "name": "پٹیاں اور ابتدائی طبی امداد",
+      "emoji": "🩹"
+    },
+    {
+      "id": 5,
+      "name": "پھلوں کی ٹوکری۔",
+      "emoji": "🍇"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "اسمارٹ خریدیں۔",
+      "emoji": "💡",
+      "description": "دانشمندانہ اخراجات کا انتخاب"
+    },
+    {
+      "id": 7,
+      "name": "فضول خریداری",
+      "emoji": "🗑️",
+      "description": "ضرورت نہیں یا فضول"
+    },
+    {
+      "id": 8,
+      "name": "پیسے بچائیں۔",
+      "emoji": "💰",
+      "description": "مستقبل کے لیے اچھا"
+    },
+    {
+      "id": 9,
+      "name": "صحت کی ترجیح",
+      "emoji": "❤️",
+      "description": "بہبود کے لیے ضروری ہے۔"
+    },
+    {
+      "id": 10,
+      "name": "غذائیت سے بھرپور انتخاب",
+      "emoji": "🍏",
+      "description": "صحت مند اور فائدہ مند"
+    }
+  ]
+}

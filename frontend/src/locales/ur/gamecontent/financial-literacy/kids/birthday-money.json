@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "سالگرہ کی رقم کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ کو سالگرہ کی رقم کے طور پر 100 روپے ملتے ہیں۔ آپ کیا کریں گے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "کھلونوں اور کینڈیوں پر خرچ کریں۔",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "یہ سب کچھ ماں کو محفوظ رکھنے کے لیے دیں۔",
+          "emoji": "👩",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "اسے تقسیم کریں: کچھ تفریح ​​کے لیے، کچھ بچانے کے لیے",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "'دانشمندانہ طور پر تقسیم' کا کیا مطلب ہے؟",
+      "options": [
+        {
+          "id": "gifts",
+          "text": "آدھا دوستوں کے تحائف پر خرچ کریں۔",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "کچھ بچت کے لیے رکھیں اور کچھ تفریح ​​کے لیے",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "needs",
+          "text": "صرف ضروریات خریدیں، کوئی خواہش نہیں۔",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "اپنے تحفے کی رقم کا ایک حصہ بچانا آپ کی مدد کرتا ہے...",
+      "options": [
+        {
+          "id": "forget",
+          "text": "پیسے کے بارے میں بھول جاؤ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ابھی زیادہ خرچ کریں۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bigger",
+          "text": "بعد میں بڑی چیزیں خریدیں۔",
+          "emoji": "🚲",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "اگر آپ بعد میں کوئی بڑی چیز خریدنا چاہتے ہیں تو کیا ہوشیار ہے؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "تھوڑی مقدار میں باقاعدگی سے بچت کریں۔",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "دوستوں سے ادھار لیں۔",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "اگلی سالگرہ کا انتظار کریں۔",
+          "emoji": "🎂",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "متوازن فیصلہ کیا ہے؟",
+      "options": [
+        {
+          "id": "all",
+          "text": "آج کا سارا خرچ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "enjoy",
+          "text": "ایک دعوت کا لطف اٹھائیں اور باقی بچائیں۔",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "none",
+          "text": "سب کچھ بچائیں، کوئی مزہ نہیں۔",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

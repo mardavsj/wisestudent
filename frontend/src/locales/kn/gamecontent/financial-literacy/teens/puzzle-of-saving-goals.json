@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ಒಗಟು: ಉಳಿಸುವ ಗುರಿಗಳು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಉದ್ದೇಶಗಳೊಂದಿಗೆ ಗುರಿಗಳನ್ನು ಹೊಂದಿಸಿ ({{current}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "goalsTitle": "ಉಳಿತಾಯ ಗುರಿಗಳು",
+  "purposesTitle": "ಉಳಿತಾಯ ಉದ್ದೇಶಗಳು",
+  "matchButton": "Match",
+  "selectGoalLabel": "ಉಳಿಸುವ ಗುರಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "selectedGoalLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultSuccessSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಉಳಿಸುವ ಗುರಿಗಳನ್ನು ಅವರ ಉದ್ದೇಶಗಳೊಂದಿಗೆ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿದ್ದೀರಿ!",
+  "resultSuccessLesson": "ಪಾಠ: ಸ್ಪಷ್ಟ ಉಳಿತಾಯ ಗುರಿಗಳನ್ನು ಹೊಂದಿಸುವುದು ಆರ್ಥಿಕ ಭದ್ರತೆಯನ್ನು ಸಾಧಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ!",
+  "resultTryAgainHeader": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultTryAgainSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಉಳಿಸುವ ಗುರಿಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTryAgainTip": "ಸಲಹೆ: ಪ್ರತಿ ಉಳಿತಾಯ ಗುರಿಯ ಪ್ರಾಥಮಿಕ ಪ್ರಯೋಜನದ ಬಗ್ಗೆ ಯೋಚಿಸಿ!",
+  "coinsEarned": "+{{coins}} ನಾಣ್ಯಗಳು",
+  "goals": [
+    {
+      "id": 1,
+      "name": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 2,
+      "name": "ತುರ್ತು ನಿಧಿ",
+      "emoji": "🚑"
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "emoji": "🏠"
+    },
+    {
+      "id": 5,
+      "name": "Retirement",
+      "emoji": "🌅"
+    }
+  ],
+  "purposes": [
+    {
+      "id": 6,
+      "name": "ಭವಿಷ್ಯದ ಬೆಳವಣಿಗೆ",
+      "emoji": "📈"
+    },
+    {
+      "id": 7,
+      "name": "ಸುರಕ್ಷತಾ ನೆಟ್",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 8,
+      "name": "Mobility",
+      "emoji": "🛣️"
+    },
+    {
+      "id": 9,
+      "name": "Stability",
+      "emoji": "🏛️"
+    },
+    {
+      "id": 10,
+      "name": "ಮನಃಶಾಂತಿ",
+      "emoji": "🧘"
+    }
+  ]
+}

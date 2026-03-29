@@ -1,1 +1,165 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ: કૌભાંડ ચેતવણી",
+  "subtitleComplete": "રમત પૂર્ણ!",
+  "roundLabel": "રાઉન્ડ {{current}}/{{total}}",
+  "timeUp": "સમય પૂરો થયો!",
+  "readyTitle": "તમારી સ્કેમ સતર્કતા ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "કૌભાંડો અને છેતરપિંડીથી સુરક્ષિત રહેવા વિશે પ્રશ્નોના જવાબ આપો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{time}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "gameRoundLabel": "રાઉન્ડ:",
+  "gameTimeLabel": "સમય:",
+  "gameScoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "જ્યારે તમને બિલ મળે ત્યારે તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "બિલ તપાસો",
+      "options": [
+        {
+          "text": "બિલ તપાસો",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "તાત્કાલિક ચૂકવણી કરો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "તેને કાઢી નાખો",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમારે શંકાસ્પદ ઓફર સાથે શું કરવું જોઈએ?",
+      "correctAnswer": "ઓફર ચકાસો",
+      "options": [
+        {
+          "text": "ઝડપી સ્વીકારો",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ઓફર ચકાસો",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "તરત જ વિશ્વાસ કરો",
+          "isCorrect": false,
+          "emoji": "🤝"
+        },
+        {
+          "text": "ચેતવણી અવગણો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "જ્યારે કોઈ વસ્તુ સાચી ન લાગે ત્યારે તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "પ્રશ્નો પૂછો",
+      "options": [
+        {
+          "text": "આંધળો વિશ્વાસ કરો",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ઝડપથી સ્વીકારો",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "શંકાઓને અવગણો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "પ્રશ્નો પૂછો",
+          "isCorrect": true,
+          "emoji": "❓"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ચુકવણી કરતા પહેલા તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "વિગતોની પુષ્ટિ કરો",
+      "options": [
+        {
+          "text": "હવે ચૂકવો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ચકાસણી છોડો",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "વિગતોની પુષ્ટિ કરો",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "ચેક વિના વિશ્વાસ કરો",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "જો તમને કોઈ કૌભાંડ મળે તો તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "કૌભાંડની જાણ કરો",
+      "options": [
+        {
+          "text": "ડુ નથિંગ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "તેને અવગણો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "શાંત રહો",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "કૌભાંડની જાણ કરો",
+          "isCorrect": true,
+          "emoji": "🚨"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "સ્કેમ-સ્પોટિંગ પ્રો!",
+    "description": "અમેઝિંગ! તમે {{score}}/{{total}} સાચા છો! તમે કૌભાંડો શોધવામાં ઉત્તમ છો!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "સારી જાગૃતિ!",
+    "description": "શાબાશ! તમે {{score}}/{{total}} સ્કોર કર્યો! સ્કેમ એક્સપર્ટ બનવા માટે પ્રેક્ટિસ કરતા રહો!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "પ્રેક્ટિસ ચાલુ રાખો!",
+    "description": "તમે {{score}}/{{total}} સ્કોર કર્યો. ટિપ્સની સમીક્ષા કરો અને તમારી સ્કેમ-સ્પોટિંગ કુશળતાને સુધારવા માટે ફરી પ્રયાસ કરો!"
+  }
+}

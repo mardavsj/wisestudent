@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "ਸਿਮੂਲੇਸ਼ਨ: ਚੈਰਿਟੀ ਚੁਆਇਸ",
+  "subtitleComplete": "ਸਿਮੂਲੇਸ਼ਨ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਦ੍ਰਿਸ਼",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "ਪ੍ਰਭਾਵ ਬਨਾਮ ਭਾਵਨਾ",
+      "description": "ਤੁਸੀਂ ₹1000 ਦਾਨ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ। ਕਿਹੜੀ ਚੋਣ ਸਭ ਤੋਂ ਅਸਲ ਪ੍ਰਭਾਵ ਪੈਦਾ ਕਰਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "street",
+          "text": "ਸੜਕ 'ਤੇ ਬੇਤਰਤੀਬੇ ਨਕਦ ਦਿਓ",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "trusted",
+          "text": "ਸਪਸ਼ਟ ਰਿਪੋਰਟਾਂ ਦੇ ਨਾਲ ਇੱਕ ਪ੍ਰਮਾਣਿਤ ਚੈਰਿਟੀ ਨੂੰ ਦਾਨ ਕਰੋ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "viral",
+          "text": "ਪ੍ਰਚਲਿਤ ਔਨਲਾਈਨ ਮੁਹਿੰਮਾਂ ਲਈ ਦਾਨ ਕਰੋ",
+          "emoji": "🔥",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "ਸੰਪੂਰਣ ਪਲ ਲਈ ਸਦਾ ਲਈ ਉਡੀਕ ਕਰੋ",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ਥੋੜ੍ਹੇ ਸਮੇਂ ਦੀ ਮਦਦ ਬਨਾਮ ਲੰਬੀ-ਅਵਧੀ ਤਬਦੀਲੀ",
+      "description": "ਇੱਕ ਚੈਰਿਟੀ ਜਾਂ ਤਾਂ ਅੱਜ ਭੋਜਨ ਪ੍ਰਦਾਨ ਕਰ ਸਕਦੀ ਹੈ ਜਾਂ ਮਹੀਨਿਆਂ ਲਈ ਸਿੱਖਿਆ ਸਹਾਇਤਾ ਪ੍ਰਦਾਨ ਕਰ ਸਕਦੀ ਹੈ। ਚੁਸਤ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "education",
+          "text": "ਸਿੱਖਿਆ ਅਤੇ ਹੁਨਰ-ਨਿਰਮਾਣ ਦਾ ਸਮਰਥਨ ਕਰੋ",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "meals",
+          "text": "ਇੱਕ ਸਮੇਂ ਦੇ ਭੋਜਨ ਦੀ ਵੰਡ",
+          "emoji": "🍱",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ਬੇਤਰਤੀਬੇ ਪੈਸੇ ਵੰਡੋ",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "ਦਾਨ ਦੇਣ ਤੋਂ ਬਚੋ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "ਪਾਰਦਰਸ਼ਤਾ ਜਾਂਚ",
+      "description": "ਦਾਨ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, ਤੁਹਾਨੂੰ ਪਹਿਲਾਂ ਕੀ ਚੈੱਕ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "celebrity",
+          "text": "ਸੇਲਿਬ੍ਰਿਟੀ ਸਮਰਥਨ",
+          "emoji": "🌟",
+          "isCorrect": false
+        },
+        {
+          "id": "emotional",
+          "text": "ਸਿਰਫ ਭਾਵਨਾਤਮਕ ਕਹਾਣੀਆਂ",
+          "emoji": "😢",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "text": "ਸਮਾਜਿਕ ਦਬਾਅ",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "reports",
+          "text": "ਵਿੱਤੀ ਪਾਰਦਰਸ਼ਤਾ ਅਤੇ ਪ੍ਰਭਾਵ ਰਿਪੋਰਟਾਂ",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ਚੈਰਿਟੀ ਬਨਾਮ ਨਿੱਜੀ ਵਿਕਾਸ",
+      "description": "ਤੁਹਾਡੇ ਕੋਲ ਸੀਮਤ ਪੈਸਾ ਹੈ। ਹਮਦਰਦੀ ਅਤੇ ਵਿੱਤੀ ਭਾਵਨਾ ਦੋਵਾਂ ਨੂੰ ਕੀ ਬਣਾਉਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "donate-blind",
+          "text": "ਬਿਨਾਂ ਸਮਝੇ ਦਾਨ ਕਰੋ",
+          "emoji": "🙃",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਸਭ ਕੁਝ ਆਪਣੇ ਆਪ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "ਕਾਰਨਾਂ ਬਾਰੇ ਜਾਣੋ, ਫਿਰ ਸੋਚ ਸਮਝ ਕੇ ਦਾਨ ਕਰੋ",
+          "emoji": "🧠",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "ਦਾਨ ਦੇਣ ਤੋਂ ਪੂਰੀ ਤਰ੍ਹਾਂ ਬਚੋ",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ਸਸਟੇਨੇਬਲ ਦੇਣਾ",
+      "description": "ਕਿਹੜੀ ਆਦਤ ਦਾਨ ਨੂੰ ਜੀਵਨ ਭਰ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਬਣਾਉਂਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "big-once",
+          "text": "ਇੱਕ ਵਾਰ ਇੱਕ ਵੱਡਾ ਦਾਨ",
+          "emoji": "💥",
+          "isCorrect": false
+        },
+        {
+          "id": "consistent",
+          "text": "ਛੋਟਾ, ਨਿਯਮਤ, ਯੋਜਨਾਬੱਧ ਦੇਣਾ",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "guilt",
+          "text": "ਦੋਸ਼ੀ ਮਹਿਸੂਸ ਹੋਣ 'ਤੇ ਹੀ ਦਾਨ ਕਰੋ",
+          "emoji": "😬",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "ਆਵੇਗ ਦਾਨ",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

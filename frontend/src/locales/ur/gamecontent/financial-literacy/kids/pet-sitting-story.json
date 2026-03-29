@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "پالتو جانوروں کے بیٹھنے کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "🐶",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ پالتو جانوروں کو کھانا کھلانے اور چلنے کے لیے روزانہ کا معمول بناتے ہیں۔ آپ کس مہارت کی مشق کر رہے ہیں؟",
+      "options": [
+        {
+          "id": "playing",
+          "text": "صرف جانوروں کے ساتھ کھیلنا",
+          "emoji": "🎾",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "قسمت پر منحصر ہے۔",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "planning",
+          "text": "منصوبہ بندی اور تنظیم",
+          "emoji": "📋",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ وقت کے ساتھ پالتو جانوروں کے بیٹھنے سے پیسہ کماتے ہیں۔ ایک دانشمندانہ اگلا قدم کیا ہے؟",
+      "options": [
+        {
+          "id": "track",
+          "text": "ٹریک کریں کہ آپ کتنا کماتے ہیں۔",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "اسے فوری طور پر خرچ کریں۔",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "اس کے بارے میں بھول جاؤ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کی دیکھ بھال کے دوران پالتو جانور بیمار لگتا ہے۔ آپ کو پہلے کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "wait",
+          "text": "انتظار کریں اور امید ہے کہ اس میں بہتری آئے گی۔",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "inform",
+          "text": "مالک کو جلدی مطلع کریں۔",
+          "emoji": "📞",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "علامات کو نظر انداز کریں۔",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ نے پالتو جانوروں کے بیٹھنے کو کامیابی سے ختم کیا۔ آپ کو دوبارہ بھروسہ حاصل کرنے میں کیا مدد کرتا ہے؟",
+      "options": [
+        {
+          "id": "ask",
+          "text": "مزید پیسے مانگ رہے ہیں۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rush",
+          "text": "کاموں میں جلدی کرنا",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "reliable",
+          "text": "قابل اعتماد اور محتاط ہونا",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "پالتو بیٹھ کر آپ کو سکھاتا ہے کہ پیسے کمانے کا بھی مطلب ہے؟",
+      "options": [
+        {
+          "id": "care",
+          "text": "دوسروں کی ذمہ داری سے دیکھ بھال کرنا",
+          "emoji": "❤️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "صرف مزہ آ رہا ہے۔",
+          "emoji": "😄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spending",
+          "text": "زیادہ پیسہ خرچ کرنا",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

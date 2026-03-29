@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "પઝલ: બજેટ વસ્તુઓ",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "શ્રેણીઓ સાથે આઇટમ્સ મેળવો ({{matched}}/{{total}} મેળ ખાતી)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "પસંદ કરેલ: {{name}}",
+  "selectItem": "એક આઇટમ પસંદ કરો",
+  "matchButton": "Match",
+  "scoreLabel": "સ્કોર:",
+  "matchedLabel": "મેળ ખાતી:",
+  "resultGreatEmoji": "🏆",
+  "resultGreatTitle": "ગ્રેટ જોબ!",
+  "resultGreatDescription": "તમે કેટેગરીઝ સાથે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે!",
+  "coinsLabel": "Coins",
+  "resultLesson": "પાઠ: જરૂરિયાતો વિ માંગને સમજવું બજેટિંગમાં મદદ કરે છે!",
+  "resultKeepEmoji": "🧩",
+  "resultKeepTitle": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultKeepDescription": "તમે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTip": "ટિપ: જીવન ટકાવી રાખવા માટે જરૂરિયાતો જરૂરી છે, ઈચ્છાઓ હોવી સરસ છે!",
+  "items": [
+    {
+      "id": 1,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 2,
+      "name": "જન્મદિવસની ભેટ",
+      "emoji": "🎁"
+    },
+    {
+      "id": 3,
+      "name": "શાળા પુરવઠો",
+      "emoji": "✏️"
+    },
+    {
+      "id": 4,
+      "name": "વિડિઓ ગેમ કન્સોલ",
+      "emoji": "🎮"
+    },
+    {
+      "id": 5,
+      "name": "વધારાના નાસ્તા",
+      "emoji": "🍿"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Essential",
+      "emoji": "✅",
+      "description": "દૈનિક જીવન માટે હોવું જ જોઈએ"
+    },
+    {
+      "id": 7,
+      "name": "Non-Essential",
+      "emoji": "➖",
+      "description": "વૈકલ્પિક, જરૂરી નથી"
+    },
+    {
+      "id": 8,
+      "name": "શાળા માટે જરૂરી",
+      "emoji": "🎒",
+      "description": "શીખવા માટે જરૂરી છે"
+    },
+    {
+      "id": 9,
+      "name": "Luxury",
+      "emoji": "💎",
+      "description": "સરસ, મોંઘું"
+    },
+    {
+      "id": 10,
+      "name": "વૈકલ્પિક સારવાર",
+      "emoji": "🍭",
+      "description": "નાનો આનંદ ખર્ચ"
+    }
+  ]
+}

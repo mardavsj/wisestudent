@@ -1,1 +1,167 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स: प्रथम तपासा",
+  "subtitleComplete": "खेळ पूर्ण!",
+  "roundLabel": "फेरी {{current}}/{{total}}",
+  "timeUp": "वेळ संपली!",
+  "readyEmoji": "🔍",
+  "readyTitle": "तयार व्हा!",
+  "readyDescription": "खरेदी करण्यापूर्वी तपासण्याबद्दल प्रश्नांची उत्तरे द्या!",
+  "readyTimeInfo": "प्रत्येक प्रश्नासाठी आपल्याकडे {{time}} सेकंद आहेत.",
+  "readyQuestionInfo": "आपल्याकडे प्रत्येकी {{time}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "gameRoundLabel": "फेरी:",
+  "gameTimeLabel": "वेळ:",
+  "gameScoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "एखादी वस्तू खरेदी करण्यापूर्वी तुम्ही काय करावे?",
+      "correctAnswer": "किंमत विचारा",
+      "options": [
+        {
+          "text": "किंमत विचारा",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "आंधळेपणाने विश्वास ठेवा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ताबडतोब खरेदी करा",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "खर्चाकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "खरेदी करण्यापूर्वी आपण काय तपासले पाहिजे?",
+      "correctAnswer": "खर्च तपासा",
+      "options": [
+        {
+          "text": "आता खरेदी करा",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "तपासणे वगळा",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "खर्च तपासा",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "किंमत अंदाज करा",
+          "isCorrect": false,
+          "emoji": "🎲"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "खरेदी करण्याचा स्मार्ट मार्ग कोणता आहे?",
+      "correctAnswer": "किंमतींची तुलना करा",
+      "options": [
+        {
+          "text": "जलद पैसे द्या",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "किंमतींची तुलना करा",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "प्रथम स्टोअर खरेदी करा",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "तुलना करू नका",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "खरेदी करण्यापूर्वी आपण काय सत्यापित केले पाहिजे?",
+      "correctAnswer": "गुणवत्ता सत्यापित करा",
+      "options": [
+        {
+          "text": "गुणवत्ता सत्यापित करा",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "न तपासता खरेदी करा",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "फक्त विक्रेत्यावर विश्वास ठेवा",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ऑनलाइन खरेदी करण्यापूर्वी काय करावे?",
+      "correctAnswer": "पुनरावलोकने वाचा",
+      "options": [
+        {
+          "text": "Rush",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "पुनरावलोकने वगळा",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "झटपट खरेदी करा",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "पुनरावलोकने वाचा",
+          "isCorrect": true,
+          "emoji": "⭐"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "स्मार्ट खरेदीदार!",
+    "description": "आश्चर्यकारक! तुम्ही {{score}}/{{total}} बरोबर आहात! खरेदी करण्यापूर्वी आपण नेहमी तपासा!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "चांगल्या सवयी!",
+    "description": "शाब्बास! तुम्ही {{score}}/{{total}} स्कोअर केले! स्मार्ट शॉपिंग सवयींचा सराव करत रहा!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "सराव करत राहा!",
+    "description": "तुम्ही {{score}}/{{total}} स्कोअर केले. खरेदी करण्यापूर्वी नेहमी तपासणे आणि तुलना करणे लक्षात ठेवा!"
+  }
+}

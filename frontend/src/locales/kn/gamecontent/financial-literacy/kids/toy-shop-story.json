@@ -1,1 +1,146 @@
-﻿{}
+{
+  "title": "ಟಾಯ್ ಶಾಪ್ ಸ್ಟೋರಿ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionLabel": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "questionIndicator": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಮಾರಾಟಗಾರನು ಹೇಳುತ್ತಾನೆ, 'ಅತ್ಯಾತುರ ಅಥವಾ ಆಟಿಕೆ ಕಳೆದುಕೊಳ್ಳಿ!' ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "quick",
+          "text": "ತ್ವರಿತವಾಗಿ ಖರೀದಿಸಿ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "ಬೆಲೆ ಪರಿಶೀಲಿಸಿ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ಮಾರಾಟಗಾರರನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನೀವು ಎರಡು ಆಟಿಕೆ ಅಂಗಡಿಗಳನ್ನು ನೋಡುತ್ತೀರಿ. ಯಾವುದು ಸ್ಮಾರ್ಟ್ ಆಗಿದೆ?",
+      "options": [
+        {
+          "id": "compare",
+          "text": "ಬೆಲೆಗಳನ್ನು ಹೋಲಿಕೆ ಮಾಡಿ",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "pay",
+          "text": "ಈಗ ಪಾವತಿಸಿ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "ಎರಡನ್ನೂ ಬಿಟ್ಟುಬಿಡಿ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಆಟಿಕೆ ತಂಪಾಗಿ ಕಾಣುತ್ತದೆ. ನೀವು ಏನು ಪರಿಶೀಲಿಸುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "ವೇಗವಾಗಿ ಖರೀದಿಸಿ",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "quality",
+          "text": "ಗುಣಮಟ್ಟವನ್ನು ಕೇಳಿ",
+          "emoji": "🔍",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "guess",
+          "text": "ಗುಣಮಟ್ಟವನ್ನು ಊಹಿಸಿ",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಆನ್ಲೈನ್ ​​ಆಟಿಕೆ ಮಾರಾಟ. ಮೊದಲನೆಯದು ಯಾವುದು?",
+      "options": [
+        {
+          "id": "reviews",
+          "text": "ವಿಮರ್ಶೆಗಳನ್ನು ಓದಿ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "Rush",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ಮಾರಾಟವನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನಿಮಗೆ ಆಟಿಕೆ ಬೇಕು. ಏನಿದು ಯೋಜನೆ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ಹಣವನ್ನು ಎರವಲು ಪಡೆಯಿರಿ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "ಮೊದಲು ಬಜೆಟ್",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

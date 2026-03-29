@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "స్నాక్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీకు లంచ్ కావాలి కానీ చిప్స్ కావాలి. మీరు దేన్ని ఎంచుకుంటారు?",
+      "options": [
+        {
+          "id": "chips",
+          "text": "కేవలం చిప్స్",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lunch",
+          "text": "సమతుల్య లంచ్",
+          "emoji": "🍱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sweets",
+          "text": "డెజర్ట్ మాత్రమే",
+          "emoji": "🍰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "నీకు ఆకలిగా ఉంది. స్మార్ట్ ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "healthy",
+          "text": "పోషకమైన చిరుతిండి",
+          "emoji": "🥗",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "మిఠాయి బార్",
+          "emoji": "🍫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "chips",
+          "text": "బంగాళదుంప చిప్స్",
+          "emoji": "🥔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "నీకు దాహం వేస్తోంది. మీరు దేనిని ఎంచుకుంటారు?",
+      "options": [
+        {
+          "id": "soda",
+          "text": "Soda",
+          "emoji": "🥤",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "Water",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "juice",
+          "text": "ఫ్లేవర్డ్ జ్యూస్",
+          "emoji": "🧃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీకు చిరుతిండి కావాలి. ఆరోగ్యకరమైన ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "cookies",
+          "text": "ప్యాక్ చేయబడిన కుక్కీలు",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "గమ్మీ బేర్స్",
+          "emoji": "🐻",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fruit",
+          "text": "తాజా పండు",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీకు ఆహారం కోసం డబ్బు ఉంది. ఉత్తమ నిర్ణయం ఏమిటి?",
+      "options": [
+        {
+          "id": "balanced",
+          "text": "పూర్తి భోజనం",
+          "emoji": "🍽️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "icecream",
+          "text": "ఐస్ క్రీమ్ మాత్రమే",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sweets",
+          "text": "మిఠాయి మరియు సోడా",
+          "emoji": "🍭",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

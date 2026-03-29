@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "সেভিংস অ্যাকাউন্টের গল্প",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "perfectScoreMsg": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন! বুঝতেই পারছেন সেভিংস অ্যাকাউন্ট কিভাবে কাজ করে!",
+  "lowScoreMsg": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন। মনে রাখবেন, সেভিংস অ্যাকাউন্টগুলি সুদ দেয়, যা আপনার অর্থ বৃদ্ধিতে সহায়তা করে!",
+  "lessonLabel": "পাঠ: সঞ্চয় অ্যাকাউন্টগুলি আপনার অর্থ নিরাপদ রাখে এবং সুদ প্রদান করে, সময়ের সাথে সাথে আপনার অর্থ বৃদ্ধিতে সহায়তা করে!",
+  "tryAgain": "আবার চেষ্টা করুন",
+  "tipLabel": "টিপ: আপনি যখন একটি সেভিংস অ্যাকাউন্টে টাকা জমা করেন, তখন ব্যাঙ্ক আপনাকে সুদ প্রদান করে, যার ফলে আপনার টাকা সময়ের সাথে বৃদ্ধি পায়!",
+  "coinsLabel": "+{{count}} কয়েন",
+  "questions": [
+    {
+      "id": 1,
+      "text": "আপনি ₹1000 জমা করুন। এক বছর পরে, এটি ₹1050 হয়ে যায়। কেন?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "magic",
+          "text": "Magic",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "error",
+          "text": "ব্যাংক ত্রুটি",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "আপনি একটি সেভিংস অ্যাকাউন্টে টাকা রাখলে কি হয়?",
+      "options": [
+        {
+          "id": "loses",
+          "text": "এটি মান হারায়",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "এটি আগ্রহের সাথে বৃদ্ধি পায়",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "stays",
+          "text": "এটি একই থাকে",
+          "emoji": "➡️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ব্যাংক কেন সঞ্চয়ের সুদ দেয়?",
+      "options": [
+        {
+          "id": "use",
+          "text": "তারা ধার দিতে আপনার টাকা ব্যবহার",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "এটা একটা উপহার",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "rule",
+          "text": "সরকারী শাসন",
+          "emoji": "📜",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "একটি সেভিংস অ্যাকাউন্টের সুবিধা কী?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "নিরাপদ এবং সুদ উপার্জন",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "quick",
+          "text": "শুধুমাত্র দ্রুত অ্যাক্সেস",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "text": "বিনামূল্যে টাকা",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "আপনি যদি ₹500 জমা করেন এবং এক বছর পর ₹525 পান, তাহলে অতিরিক্ত ₹25 কত?",
+      "options": [
+        {
+          "id": "bonus",
+          "text": "বোনাস পেমেন্ট",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "interest2",
+          "text": "সুদ অর্জিত হয়েছে",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "fee",
+          "text": "ব্যাংক ফি",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

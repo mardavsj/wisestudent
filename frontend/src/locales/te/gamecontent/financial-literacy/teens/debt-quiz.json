@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "రుణ క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "₹100 అప్పు తీసుకోండి, ₹120 తిరిగి చెల్లించండి. అదనపు ₹20ని ఏమంటారు?",
+      "options": [
+        {
+          "id": "principal",
+          "text": "Principal",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "fee",
+          "text": "Fee",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "సకాలంలో అప్పు చెల్లించకపోతే ఏమవుతుంది?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "ఏమీ జరగదు",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "penalty",
+          "text": "పెనాల్టీ ఫీజు మరియు వడ్డీ పెరుగుతుంది",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "రుణ విముక్తి అవుతుంది",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "అసలు అప్పుగా తీసుకున్న మొత్తాన్ని ఏమంటారు?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "principal",
+          "text": "Principal",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "total",
+          "text": "మొత్తం అప్పు",
+          "emoji": "📊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "డబ్బు తీసుకునే ముందు మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "ఎలా తిరిగి చెల్లించాలో ప్లాన్ చేయండి",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "ముందు అప్పు తీసుకోండి, తర్వాత ఆలోచించండి",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "తిరిగి చెల్లించడాన్ని విస్మరించండి",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "రుణ సమస్యలను నివారించడానికి ఉత్తమ మార్గం ఏమిటి?",
+      "options": [
+        {
+          "id": "borrow-more",
+          "text": "పాత అప్పు చెల్లించడానికి మరింత అప్పు",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "అనవసరమైన రుణాలు తీసుకోవడం మానుకోండి మరియు సకాలంలో తిరిగి చెల్లించండి",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "అన్ని అప్పులను విస్మరించండి",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "రుణ క్విజ్ స్టార్!",
+    "winMessage": "మీరు {{total}}లో {{score}}ని పొందారు! మీరు అప్పు మరియు రుణాలను అర్థం చేసుకున్నారు!",
+    "coinsEarned": "+{{score}} నాణేలు",
+    "lesson": "పాఠం: వడ్డీ అనేది రుణం తీసుకునే అదనపు ఖర్చు. ఎలా తిరిగి చెల్లించాలి, అనవసరమైన అప్పులను నివారించాలి మరియు జరిమానాలను నివారించడానికి సకాలంలో తిరిగి చెల్లించడం ఎలాగో ఎల్లప్పుడూ ప్లాన్ చేసుకోండి!",
+    "loseEmoji": "💪",
+    "loseTitle": "నేర్చుకుంటూ ఉండండి!",
+    "loseMessage": "మీరు {{total}}లో {{score}}ని సరిగ్గా పొందారు. గుర్తుంచుకోండి: వడ్డీ అనేది డబ్బు తీసుకునే అదనపు ఖర్చు!",
+    "tryAgain": "మళ్లీ ప్రయత్నించండి",
+    "tip": "చిట్కా: రుణం తీసుకున్నప్పుడు మీరు చెల్లించే అదనపు మొత్తం వడ్డీ. ఎల్లప్పుడూ తిరిగి చెల్లింపును ప్లాన్ చేయండి, అనవసరమైన రుణాన్ని నివారించండి మరియు సమయానికి తిరిగి చెల్లించండి!"
+  }
+}

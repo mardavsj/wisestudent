@@ -1,1 +1,150 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স প্রয়োজন আগে",
+    "subtitlePlaying": "রাউন্ড {{current}}/{{total}}: প্রয়োজন বনাম চাওয়া চিহ্নিত করো!",
+    "subtitleReady": "প্রয়োজন বনাম চাওয়া চিহ্নিত করো!",
+    "readyEmoji": "✅",
+    "readyTitle": "প্রয়োজন বনাম চাওয়ার দক্ষতা পরীক্ষা করতে প্রস্তুত?",
+    "readyDescription": "প্রয়োজন ও চাওয়া চিহ্নিত করার প্রশ্নের উত্তর দাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "রাউন্ড:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "কোনটি মৌলিক প্রয়োজন?",
+            "correctAnswer": "খাবার",
+            "options": [
+                {
+                    "text": "ভিডিও গেম",
+                    "isCorrect": false,
+                    "emoji": "🎮"
+                },
+                {
+                    "text": "খাবার",
+                    "isCorrect": true,
+                    "emoji": "🍲"
+                },
+                {
+                    "text": "ডিজাইনার পোশাক",
+                    "isCorrect": false,
+                    "emoji": "👗"
+                },
+                {
+                    "text": "বিলাসবহুল গাড়ি",
+                    "isCorrect": false,
+                    "emoji": "🚗"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "কোন জিনিসটি শিক্ষার প্রয়োজন উপস্থাপন করে?",
+            "correctAnswer": "স্কুলের বই",
+            "options": [
+                {
+                    "text": "স্কুলের বই",
+                    "isCorrect": true,
+                    "emoji": "📚"
+                },
+                {
+                    "text": "দামি খেলনা",
+                    "isCorrect": false,
+                    "emoji": "🧸"
+                },
+                {
+                    "text": "গ্যাজেট",
+                    "isCorrect": false,
+                    "emoji": "📱"
+                },
+                {
+                    "text": "নাস্তা",
+                    "isCorrect": false,
+                    "emoji": "🍪"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "স্বাস্থ্যের জন্য কোনটি অপরিহার্য?",
+            "correctAnswer": "ওষুধ",
+            "options": [
+                {
+                    "text": "মিষ্টি",
+                    "isCorrect": false,
+                    "emoji": "🍬"
+                },
+                {
+                    "text": "সোডা",
+                    "isCorrect": false,
+                    "emoji": "🥤"
+                },
+                {
+                    "text": "ওষুধ",
+                    "isCorrect": true,
+                    "emoji": "💊"
+                },
+                {
+                    "text": "গহনা",
+                    "isCorrect": false,
+                    "emoji": "💎"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "কোন জিনিসটি মৌলিক প্রয়োজনীয়তা?",
+            "correctAnswer": "আশ্রয়",
+            "options": [
+                {
+                    "text": "ছুটি",
+                    "isCorrect": false,
+                    "emoji": "✈️"
+                },
+                {
+                    "text": "বিনোদন",
+                    "isCorrect": false,
+                    "emoji": "🎬"
+                },
+                {
+                    "text": "বিলাসবহুল রেস্তোরাঁ",
+                    "isCorrect": false,
+                    "emoji": "🍽️"
+                },
+                {
+                    "text": "আশ্রয়",
+                    "isCorrect": true,
+                    "emoji": "🏠"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "কোনটি মৌলিক প্রয়োজন?",
+            "correctAnswer": "পরিষ্কার জল",
+            "options": [
+                {
+                    "text": "পরিষ্কার জল",
+                    "isCorrect": true,
+                    "emoji": "🚰"
+                },
+                {
+                    "text": "আইসক্রিম",
+                    "isCorrect": false,
+                    "emoji": "🍦"
+                },
+                {
+                    "text": "ডিজাইনার ব্যাগ",
+                    "isCorrect": false,
+                    "emoji": "👜"
+                },
+                {
+                    "text": "কনসার্ট টিকেট",
+                    "isCorrect": false,
+                    "emoji": "🎟️"
+                }
+            ]
+        }
+    ]
+}

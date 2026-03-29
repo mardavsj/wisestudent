@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಪಿಗ್ಗಿ ಬ್ಯಾಂಕ್ ಕಥೆ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "🐷",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಪಿಗ್ಗಿ ಬ್ಯಾಂಕ್ ಯಾವುದೇ ಬಡ್ಡಿಯನ್ನು ಗಳಿಸುವುದಿಲ್ಲ. ಬ್ಯಾಂಕ್ ಖಾತೆ ಮಾಡುತ್ತದೆ. ಯಾವುದು ಉತ್ತಮ?",
+      "options": [
+        {
+          "id": "bank",
+          "text": "ಬ್ಯಾಂಕ್ ಖಾತೆ",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "ಪಿಗ್ಗಿ ಬ್ಯಾಂಕ್",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "mattress",
+          "text": "ಹಾಸಿಗೆ ಅಡಿಯಲ್ಲಿ",
+          "emoji": "🛏️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನಿಮ್ಮ ಬಳಿ ₹50 ಇದೆ. ಅದನ್ನು ಬೆಳೆಯಲು ಸಹಾಯ ಮಾಡಲು ನೀವು ಎಲ್ಲಿ ಉಳಿಸಬೇಕು?",
+      "options": [
+        {
+          "id": "jar",
+          "text": "ಮನೆಯಲ್ಲಿ ಜಾರ್",
+          "emoji": "🏺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ಬ್ಯಾಂಕ್ ಉಳಿತಾಯ ಖಾತೆ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ಈಗಲೇ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಬ್ಯಾಂಕ್ 5% ಬಡ್ಡಿ ನೀಡುತ್ತದೆ. ಪಿಗ್ಗಿ ಬ್ಯಾಂಕ್ 0% ನೀಡುತ್ತದೆ. ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ಆರಿಸಿ.",
+      "options": [
+        {
+          "id": "bank",
+          "text": "ಬಡ್ಡಿಗೆ ಬ್ಯಾಂಕ್",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "ವಿನೋದಕ್ಕಾಗಿ ಪಿಗ್ಗಿ ಬ್ಯಾಂಕ್",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ಅದನ್ನು ಕೊಡು",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ಬ್ಯಾಂಕ್‌ನಲ್ಲಿ ₹100 ಉಳಿಸುತ್ತೀರಿ. ₹105ಕ್ಕೆ ಬೆಳೆಯುತ್ತದೆ. ಏಕೆ?",
+      "options": [
+        {
+          "id": "magic",
+          "text": "ಪಿಗ್ಗಿ ಬ್ಯಾಂಕ್ ಮ್ಯಾಜಿಕ್",
+          "emoji": "🪄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "added",
+          "text": "ನೀವು ಹೆಚ್ಚು ಹಣವನ್ನು ಸೇರಿಸಿದ್ದೀರಿ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ಬ್ಯಾಂಕ್ ಬಡ್ಡಿ ಪಾವತಿಸುತ್ತದೆ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಪಿಗ್ಗಿ ಬ್ಯಾಂಕ್‌ಗಿಂತ ಬ್ಯಾಂಕ್ ಏಕೆ ಉತ್ತಮವಾಗಿದೆ?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "ಇದು ಸುರಕ್ಷಿತವಾಗಿದೆ ಮತ್ತು ಹಣವನ್ನು ಬೆಳೆಯಬಹುದು",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "cool",
+          "text": "ಇದು ತಂಪಾಗಿ ಮಾತ್ರ ಕಾಣುತ್ತದೆ",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "carry",
+          "text": "ಸಾಗಿಸಲು ಸುಲಭವಾಗಿದೆ",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

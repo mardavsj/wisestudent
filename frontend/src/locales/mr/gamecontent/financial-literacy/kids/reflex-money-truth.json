@@ -1,1 +1,152 @@
-﻿{}
+{
+  "title": "प्रतिक्षेप: मनी सत्य",
+  "subtitleComplete": "खेळ पूर्ण!",
+  "roundLabel": "फेरी {{current}}/{{total}}",
+  "timeUp": "वेळ संपली!",
+  "readyEmoji": "💰",
+  "readyTitle": "तयार व्हा!",
+  "readyDescription": "पैशाच्या सत्य आणि प्रामाणिकपणाबद्दलच्या प्रश्नांची उत्तरे द्या!",
+  "readyTimeInfo": "प्रत्येक प्रश्नासाठी आपल्याकडे {{time}} सेकंद आहेत.",
+  "readyQuestionInfo": "आपल्याकडे प्रत्येकी {{time}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "gameRoundLabel": "फेरी:",
+  "gameTimeLabel": "वेळ:",
+  "gameScoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "तुम्हाला शाळेच्या मजल्यावर एक नाणे सापडते. योग्य पहिली कृती कोणती?",
+      "correctAnswer": "कोणी हरवले तर विचारा",
+      "options": [
+        {
+          "text": "पटकन ठेवा",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "कोणी हरवले तर विचारा",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "स्नॅक्स खरेदी करा",
+          "isCorrect": false,
+          "emoji": "🍿"
+        },
+        {
+          "text": "ते लपवा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "तुम्ही पूर्ण न केलेल्या कामासाठी कोणीतरी तुम्हाला पैसे देते. आपण काय करावे?",
+      "correctAnswer": "सत्य समजावून सांगा",
+      "options": [
+        {
+          "text": "सत्य समजावून सांगा",
+          "isCorrect": true,
+          "emoji": "🗣️"
+        },
+        {
+          "text": "काहीही बोलू नका",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "इतरांना दोष द्या",
+          "isCorrect": false,
+          "emoji": "👉"
+        },
+        {
+          "text": "निघून जा",
+          "isCorrect": false,
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुम्ही आणि तुमच्या मित्राने मिळून पैसे कमवले. समस्या टाळण्यास काय मदत करते?",
+      "correctAnswer": "लवकर शेअर करण्यावर सहमत",
+      "options": [
+        {
+          "text": "स्वतः अधिक घ्या",
+          "isCorrect": false,
+          "emoji": "🤑"
+        },
+        {
+          "text": "थांबा आणि नंतर वाद घाला",
+          "isCorrect": false,
+          "emoji": "💢"
+        },
+        {
+          "text": "नशिबाला ठरवू द्या",
+          "isCorrect": false,
+          "emoji": "🎲"
+        },
+        {
+          "text": "लवकर शेअर करण्यावर सहमत",
+          "isCorrect": true,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "तुम्ही उधार घेतलेले पैसे परत करण्याचे वचन देता पण विसरलात. काय ते सर्वोत्तम निराकरण करते?",
+      "correctAnswer": "माफी मागा आणि परत करा",
+      "options": [
+        {
+          "text": "माफी मागा आणि परत करा",
+          "isCorrect": true,
+          "emoji": "🙏"
+        },
+        {
+          "text": "व्यक्ती टाळा",
+          "isCorrect": false,
+          "emoji": "🙄"
+        },
+        {
+          "text": "आपण पैसे दिले ढोंग",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "तो हसवा",
+          "isCorrect": false,
+          "emoji": "😅"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "कशामुळे लोकांचा तुमच्यावर पुन्हा पैशावर विश्वास निर्माण होतो?",
+      "correctAnswer": "वचने पाळणे",
+      "options": [
+        {
+          "text": "जोरात बोलत",
+          "isCorrect": false,
+          "emoji": "📢"
+        },
+        {
+          "text": "बहाणा करत",
+          "isCorrect": false,
+          "emoji": "🌀"
+        },
+        {
+          "text": "वचने पाळणे",
+          "isCorrect": true,
+          "emoji": "📌"
+        },
+        {
+          "text": "अधिक विचारत आहे",
+          "isCorrect": false,
+          "emoji": "💸"
+        }
+      ]
+    }
+  ]
+}

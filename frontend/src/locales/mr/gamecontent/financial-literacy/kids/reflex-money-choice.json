@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स मनी चॉइस",
+  "subtitlePlaying": "{{total}} पैकी {{current}} प्रश्न: तुमच्या पैशाच्या निवडीच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "subtitleReady": "आपल्या पैशाच्या निवडीच्या प्रतिक्षेपांची चाचणी घ्या!",
+  "readyTitle": "तुमच्या पैशाच्या निवडींची चाचणी घेण्यासाठी तयार आहात?",
+  "readyDescription": "प्रत्येक प्रश्नासाठी स्मार्ट मनी पर्याय निवडा.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "questionLabel": "प्रश्न:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ते सुरक्षित ठेवण्यासाठी तुम्ही तुमच्या पैशाचे काय करावे?",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "फेकून द्या",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "तो गमावा",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "📥"
+        },
+        {
+          "text": "विसरून जा",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "तुमचे पैसे हाताळण्याचा स्मार्ट मार्ग कोणता आहे?",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "त्याकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुम्ही तुमचे पैसे सुरक्षितपणे कुठे ठेवावे?",
+      "correctAnswer": "Bank",
+      "options": [
+        {
+          "text": "Bank",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Hide",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "तुमचा पैसा कालांतराने वाढण्यास काय मदत करते?",
+      "correctAnswer": "Invest",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "जलद खर्च करा",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "Invest",
+          "isCorrect": true,
+          "emoji": "📈"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "तुमच्या पैशासाठी सर्वोत्तम पर्याय कोणता आहे?",
+      "correctAnswer": "जतन करा आणि वाढवा",
+      "options": [
+        {
+          "text": "जतन करा आणि वाढवा",
+          "isCorrect": true,
+          "emoji": "🌱"
+        },
+        {
+          "text": "सर्व खर्च करा",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "पैशाचा अपव्यय",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "तो गमावा",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    }
+  ]
+}

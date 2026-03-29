@@ -1,1 +1,151 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স ব্যাংক বেসিক",
+    "subtitleComplete": "সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "question": "ব্যাংকে টাকা রাখতে কী করবে?",
+            "correctAnswer": "জমা দাও",
+            "options": [
+                {
+                    "text": "জমা দাও",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "চুরি করো",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "হারাও",
+                    "isCorrect": false,
+                    "emoji": "❌"
+                },
+                {
+                    "text": "উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "তোমার টাকা নিরাপদ রাখার বুদ্ধিমান উপায় কী?",
+            "correctAnswer": "সঞ্চয় করো",
+            "options": [
+                {
+                    "text": "খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "সঞ্চয় করো",
+                    "isCorrect": true,
+                    "emoji": "💵"
+                },
+                {
+                    "text": "অপচয় করো",
+                    "isCorrect": false,
+                    "emoji": "🗑️"
+                },
+                {
+                    "text": "ভুলে যাও",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "ব্যাংক অ্যাকাউন্ট থেকে কীভাবে টাকা তুলবে?",
+            "correctAnswer": "উত্তোলন করো",
+            "options": [
+                {
+                    "text": "হারাও",
+                    "isCorrect": false,
+                    "emoji": "❌"
+                },
+                {
+                    "text": "চুরি করো",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "উত্তোলন করো",
+                    "isCorrect": true,
+                    "emoji": "🏦"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "ব্যাংকে সঞ্চয় শুরু করতে কী করবে?",
+            "correctAnswer": "অ্যাকাউন্ট খোলো",
+            "options": [
+                {
+                    "text": "উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "সব খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "অ্যাকাউন্ট খোলো",
+                    "isCorrect": true,
+                    "emoji": "📝"
+                },
+                {
+                    "text": "ভুলে যাও",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "তোমার কত টাকা আছে জানতে কী করবে?",
+            "correctAnswer": "ব্যালেন্স চেক করো",
+            "options": [
+                {
+                    "text": "ব্যালেন্স চেক করো",
+                    "isCorrect": true,
+                    "emoji": "📊"
+                },
+                {
+                    "text": "ভুলে যাও",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "সব খরচ করো",
+                    "isCorrect": false,
+                    "emoji": "💸"
+                },
+                {
+                    "text": "উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                }
+            ]
+        }
+    ],
+    "subtitlePlaying": "রাউন্ড {{current}}/{{total}}",
+    "subtitleReady": "প্রস্তুত হও!",
+    "readyTitle": "খেলতে প্রস্তুত?",
+    "readyDescription": "দ্রুত উত্তর দাও এবং সেরা বিকল্পটি বেছে নাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "রাউন্ড:",
+    "timeLabel": "সময়:"
+}

@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "Allowance Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "You receive ₹500 as weekly allowance. How should you manage it?",
+      "options": [
+        {
+          "id": "save",
+          "text": "पुस्तकांसाठी ठेवा",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "कपड्यांवर सर्व खर्च करा",
+          "emoji": "👕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ते सर्व वाया घालवा",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला ₹300 चा गेम विकत घ्यायचा आहे पण शालेय पुरवठ्यासाठी ₹200 आवश्यक आहेत. स्मार्ट निवड काय आहे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "खेळ विकत घ्या",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "प्रथम पुरवठा खरेदी करा",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "क्रेडिटवर दोन्ही खरेदी करा",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुमचे मित्र रोज महागडे स्नॅक्स विकत घेत आहेत. तुम्हाला ते परवडणार नाही. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "महागडे स्नॅक्स खरेदी करा",
+          "emoji": "🍕",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "पैसे उधार घ्या",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "घरी फराळ आणा",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही ₹400 वाचवले पण ₹600 आयटमसाठी मर्यादित-वेळची ऑफर पहा. आपण काय करावे?",
+      "options": [
+        {
+          "id": "save",
+          "text": "प्रतीक्षा करा आणि अधिक जतन करा",
+          "emoji": "⏳",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "आंशिक पेमेंटसह खरेदी करा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "बचतीकडे दुर्लक्ष करा",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "कामात मदत केल्याबद्दल तुम्हाला ₹100 बोनस मिळतात. आपण ते कसे वापरावे?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "वाया घालवा",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "बचत मध्ये जोडा",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "उपचारांवर खर्च करा",
+          "emoji": "🍭",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

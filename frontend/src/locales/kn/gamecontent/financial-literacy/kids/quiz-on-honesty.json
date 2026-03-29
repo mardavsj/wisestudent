@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ಪ್ರಾಮಾಣಿಕತೆಯ ಮೇಲೆ ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಯಾರು ಪ್ರಾಮಾಣಿಕರು?",
+      "options": [
+        {
+          "id": "cheat",
+          "text": "ಗ್ರಾಹಕರನ್ನು ವಂಚಿಸುತ್ತದೆ",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "change",
+          "text": "ಸರಿಯಾದ ಬದಲಾವಣೆಯನ್ನು ನೀಡುತ್ತದೆ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lies",
+          "text": "Lies",
+          "emoji": "🙊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಪ್ರಾಮಾಣಿಕ ಅಂಗಡಿಯವನು ಏನು ಮಾಡುತ್ತಾನೆ?",
+      "options": [
+        {
+          "id": "fair",
+          "text": "ನ್ಯಾಯಯುತ ಬೆಲೆಗಳನ್ನು ವಿಧಿಸುತ್ತದೆ",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "overcharge",
+          "text": "Overcharges",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ಉತ್ಪನ್ನಗಳನ್ನು ಮರೆಮಾಡುತ್ತದೆ",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಶಾಪಿಂಗ್‌ನಲ್ಲಿ ಪ್ರಾಮಾಣಿಕತೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "free",
+          "text": "ನಿಮಗೆ ಉಚಿತ ವಸ್ತುಗಳನ್ನು ಪಡೆಯುತ್ತದೆ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ಹೆಚ್ಚು ಖರ್ಚು ಮಾಡುವಂತೆ ಮಾಡುತ್ತದೆ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ನಂಬಿಕೆಯನ್ನು ನಿರ್ಮಿಸುತ್ತದೆ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಸಾಲ ಪಡೆಯಲು ಪ್ರಾಮಾಣಿಕ ಮಾರ್ಗ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ಸಮಯಕ್ಕೆ ಹಿಂತಿರುಗಿ",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "ಅದನ್ನು ಶಾಶ್ವತವಾಗಿ ಇರಿಸಿ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "more",
+          "text": "ಹೆಚ್ಚು ಸಾಲ ಮಾಡಿ",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಹಣದ ವಿಷಯಗಳಲ್ಲಿ ಪ್ರಾಮಾಣಿಕತೆ ಏಕೆ ಮುಖ್ಯ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ಇದು ನಿಮಗೆ ಆಟಿಕೆಗಳನ್ನು ನೀಡುತ್ತದೆ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "famous",
+          "text": "ಇದು ನಿಮ್ಮನ್ನು ಪ್ರಸಿದ್ಧಗೊಳಿಸುತ್ತದೆ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ಇದು ನಂಬಿಕೆಯನ್ನು ಗಳಿಸುತ್ತದೆ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "कोडे: स्मार्ट वि कचरा",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "श्रेण्यांसह आयटम जुळवा ({{matched}}/{{total}} जुळले)",
+  "itemsTitle": "खर्च आयटम",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "निवडले: {{name}}",
+  "selectItem": "एक आयटम निवडा",
+  "matchButton": "Match",
+  "scoreLabel": "स्कोअर:",
+  "matchedLabel": "जुळले:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ग्रेट जॉब!",
+  "resultGreatDescription": "तुम्ही {{total}} पैकी {{score}} आयटम त्यांच्या श्रेण्यांसह योग्यरित्या जुळले!",
+  "coinsLabel": "Coins",
+  "resultLesson": "धडा: गरजा आणि इच्छा यांच्यातील फरक समजून घेणे स्मार्ट आर्थिक निर्णय घेण्यास मदत करते!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "सराव करत राहा!",
+  "resultKeepDescription": "तुम्ही {{total}} पैकी {{score}} आयटम बरोबर जुळले.",
+  "resultTip": "टीप: प्रत्येक आयटम आवश्यक आहे की फक्त छान आहे याचा विचार करा!",
+  "items": [
+    {
+      "id": 1,
+      "name": "लायब्ररी पुस्तके",
+      "emoji": "📖"
+    },
+    {
+      "id": 2,
+      "name": "पुन्हा वापरण्यायोग्य पाण्याची बाटली",
+      "emoji": "🥤"
+    },
+    {
+      "id": 3,
+      "name": "कँडी पॅक",
+      "emoji": "🍬"
+    },
+    {
+      "id": 4,
+      "name": "बँडेज आणि प्रथमोपचार",
+      "emoji": "🩹"
+    },
+    {
+      "id": 5,
+      "name": "फळांची टोपली",
+      "emoji": "🍇"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "स्मार्ट खरेदी",
+      "emoji": "💡",
+      "description": "योग्य खर्चाची निवड"
+    },
+    {
+      "id": 7,
+      "name": "फालतू खरेदी",
+      "emoji": "🗑️",
+      "description": "गरज नाही किंवा फालतू"
+    },
+    {
+      "id": 8,
+      "name": "पैसे वाचवा",
+      "emoji": "💰",
+      "description": "भविष्यासाठी चांगले"
+    },
+    {
+      "id": 9,
+      "name": "आरोग्य प्राधान्य",
+      "emoji": "❤️",
+      "description": "आरोग्यासाठी असणे आवश्यक आहे"
+    },
+    {
+      "id": 10,
+      "name": "पौष्टिक निवड",
+      "emoji": "🍏",
+      "description": "आरोग्यदायी आणि फायदेशीर"
+    }
+  ]
+}

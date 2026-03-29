@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "कोडे: ग्राहक हक्क",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "अर्थांसह अधिकार जुळवा ({{current}}/{{total}} जुळले)",
+  "rightsTitle": "ग्राहक हक्क",
+  "meaningsTitle": "Meanings",
+  "matchButton": "Match",
+  "selectRightLabel": "एक ग्राहक हक्क निवडा",
+  "selectedRightLabel": "निवडले: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "जुळले: {{current}}/{{total}}",
+  "resultSuccessHeader": "ग्रेट जॉब!",
+  "resultSuccessSubheader": "तुम्ही {{total}} पैकी {{score}} ग्राहक अधिकार त्यांच्या अर्थांशी अचूक जुळले आहेत!",
+  "resultSuccessLesson": "धडा: ग्राहक हक्क समजून घेणे अयोग्य पद्धतींपासून तुमचे रक्षण करते!",
+  "resultTryAgainHeader": "सराव करत राहा!",
+  "resultTryAgainSubheader": "तुम्ही {{total}} पैकी {{score}} बरोबर जुळले आहे.",
+  "resultTryAgainTip": "टीप: प्रत्येक ग्राहक हक्क काय संरक्षण देतो याचा विचार करा!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "rights": [
+    {
+      "id": 1,
+      "name": "Right to Safety",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 2,
+      "name": "Right to Information",
+      "emoji": "📋"
+    },
+    {
+      "id": 3,
+      "name": "Right to Choose",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "Right to Redress",
+      "emoji": "⚖️"
+    },
+    {
+      "id": 5,
+      "name": "Right to Consumer Education",
+      "emoji": "📚"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "Safe Products",
+      "emoji": "🛒"
+    },
+    {
+      "id": 7,
+      "name": "Truthful Info",
+      "emoji": "📝"
+    },
+    {
+      "id": 8,
+      "name": "Variety of Choices",
+      "emoji": "🛒"
+    },
+    {
+      "id": 9,
+      "name": "Remedy for Issues",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "Awareness Building",
+      "emoji": "🎓"
+    }
+  ]
+}

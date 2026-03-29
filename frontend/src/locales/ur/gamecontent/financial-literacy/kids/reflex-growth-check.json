@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ریفلیکس گروتھ چیک",
+  "subtitlePlaying": "سوال {{current}} از {{total}}: اپنے نمو کے اضطراب کی جانچ کریں!",
+  "subtitleReady": "اپنے نمو کے اضطراب کی جانچ کریں!",
+  "readyEmoji": "📈",
+  "readyTitle": "اپنے گروتھ نالج کو چیک کرنے کے لیے تیار ہیں؟",
+  "readyDescription": "ہر سوال کے لیے درست نمو کا انتخاب کریں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "سوال:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "جب آپ کا پیسہ سود حاصل کرتا ہے تو کیا ہوتا ہے؟",
+      "correctAnswer": "سود کمایا",
+      "options": [
+        {
+          "text": "پیسے ضائع ہو گئے۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "سود کمایا",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "کوئی تبدیلی نہیں۔",
+          "isCorrect": false,
+          "emoji": "😐"
+        },
+        {
+          "text": "پیسے چوری ہو گئے۔",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "جب آپ وقت کے ساتھ بچت کرتے ہیں تو کیا ہوتا ہے؟",
+      "correctAnswer": "بچت بڑھی۔",
+      "options": [
+        {
+          "text": "بچت بڑھی۔",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "پیسہ خرچ ہوا۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "پیسہ غائب ہو جاتا ہے۔",
+          "isCorrect": false,
+          "emoji": "👻"
+        },
+        {
+          "text": "کچھ نہیں ہوتا",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "جب آپ کی سرمایہ کاری کامیاب ہوتی ہے تو کیا ہوتا ہے؟",
+      "correctAnswer": "منافع کمایا",
+      "options": [
+        {
+          "text": "نقصان ہوا۔",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "رقم منجمد",
+          "isCorrect": false,
+          "emoji": "🧊"
+        },
+        {
+          "text": "سرمایہ کاری ختم ہوگئی",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "منافع کمایا",
+          "isCorrect": true,
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "جب سرمایہ کاری کی قدر بڑھ جاتی ہے تو کیا ہوتا ہے؟",
+      "correctAnswer": "سرمایہ کاری بڑھ رہی ہے۔",
+      "options": [
+        {
+          "text": "سرمایہ کاری بڑھ رہی ہے۔",
+          "isCorrect": true,
+          "emoji": "🚀"
+        },
+        {
+          "text": "پیسے نیچے",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "سرمایہ کاری پھنس گئی۔",
+          "isCorrect": false,
+          "emoji": "🔒"
+        },
+        {
+          "text": "قدر صفر",
+          "isCorrect": false,
+          "emoji": "0️⃣"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "جب آپ طویل مدتی کے لیے دانشمندی سے سرمایہ کاری کرتے ہیں تو کیا ہوتا ہے؟",
+      "correctAnswer": "دولت بڑھتی ہے۔",
+      "options": [
+        {
+          "text": "فنڈز سکڑ جاتے ہیں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "دولت وہی رہتی ہے۔",
+          "isCorrect": false,
+          "emoji": "➡️"
+        },
+        {
+          "text": "دولت بڑھتی ہے۔",
+          "isCorrect": true,
+          "emoji": "🌳"
+        },
+        {
+          "text": "دولت ختم ہو جاتی ہے۔",
+          "isCorrect": false,
+          "emoji": "👻"
+        }
+      ]
+    }
+  ]
+}

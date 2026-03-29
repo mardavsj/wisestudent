@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "પ્રાથમિકતાઓની કોયડો",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "પ્રાધાન્યતા સાથે ખર્ચ મેળવો ({{current}}/{{total}} મેળ ખાય છે)",
+  "itemsTitle": "Expenses",
+  "prioritiesTitle": "Priorities",
+  "matchButton": "Match",
+  "selectItemLabel": "એક ખર્ચ પસંદ કરો",
+  "selectedItemLabel": "પસંદ કરેલ: {{name}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "matchedLabel": "મેળ ખાતી: {{current}}/{{total}}",
+  "resultSuccessHeader": "ગ્રેટ જોબ!",
+  "resultSuccessSubheader": "તમે {{total}} ખર્ચમાંથી {{score}} ને તેમની પ્રાથમિકતાઓ સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultSuccessLesson": "પાઠ: ખર્ચની પ્રાથમિકતાઓને સમજવાથી સ્માર્ટ નાણાકીય નિર્ણયો લેવામાં મદદ મળે છે!",
+  "resultTryAgainHeader": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultTryAgainSubheader": "તમે {{total}} ખર્ચમાંથી {{score}} ને યોગ્ય રીતે મેળવ્યા.",
+  "resultTryAgainTip": "ટીપ: દરેક ખર્ચ આવશ્યક છે કે વિવેકાધીન છે તે વિશે વિચારો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "items": [
+    {
+      "id": 1,
+      "name": "શાળા ફી",
+      "emoji": "🎓"
+    },
+    {
+      "id": 2,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 3,
+      "name": "Rent",
+      "emoji": "🏠"
+    },
+    {
+      "id": 4,
+      "name": "Medicine",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "Electricity",
+      "emoji": "💡"
+    }
+  ],
+  "priorities": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲"
+    }
+  ]
+}

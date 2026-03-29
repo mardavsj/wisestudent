@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "खर्च क्विझ",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "perfectScoreTitle": "उत्कृष्ट!",
+  "perfectScoreMsg": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत! स्मार्ट खर्चाची निवड कशी करायची हे तुम्हाला माहीत आहे!",
+  "coinsLabel": "+{{count}} नाणी",
+  "lessonLabel": "पर्यायांची तुलना, बजेट आणि विचारपूर्वक खरेदी करण्याचे महत्त्व तुम्हाला समजते!",
+  "keepLearningTitle": "शिकत राहा!",
+  "lowScoreMsg": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत. लक्षात ठेवा, स्मार्ट खर्च म्हणजे खरेदी करण्यापूर्वी विचार करणे!",
+  "tryAgain": "पुन्हा प्रयत्न करा",
+  "tipLabel": "खर्च करण्यापूर्वी नियोजन आणि तुलना यांचा समावेश असलेला पर्याय निवडण्याचा प्रयत्न करा.",
+  "questions": [
+    {
+      "id": 1,
+      "text": "सर्वात हुशार खर्च करण्याचा दृष्टीकोन कोणता आहे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "किंमत + गुणवत्तेची तुलना",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "नेहमी ब्रँडेड शूज खरेदी करा",
+          "emoji": "👟",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "जे स्वस्त आहे ते खरेदी",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "मोठी खरेदी करण्यापूर्वी तुम्ही काय करावे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "लगेच खरेदी करा",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "संशोधन आणि तुलना करा",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "मित्रांनाच विचारा",
+          "emoji": "👥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "कोणत्या खर्चाची सवय संपत्ती निर्माण करण्यास मदत करते?",
+      "options": [
+        {
+          "id": "a",
+          "text": "आवेग खरेदी",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ट्रेंडसह राहणे",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "आधी बजेटिंग",
+          "emoji": "📋",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "खरेदी सूचीसाठी सर्वोत्तम दृष्टीकोन कोणता आहे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "यादीला चिकटून रहा",
+          "emoji": "🛒",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "जे चांगले दिसते ते विकत घ्या",
+          "emoji": "👀",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "यादी विसरा",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "आपण विक्री आणि सूट कशी हाताळली पाहिजे?",
+      "options": [
+        {
+          "id": "a",
+          "text": "विक्रीवर सर्वकाही खरेदी करा",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "सर्व विक्रीकडे दुर्लक्ष करा",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "फक्त आवश्यक वस्तू खरेदी करा",
+          "emoji": "🎯",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,79 @@
-﻿{}
+{
+  "title": "ಅಗತ್ಯಗಳು/ಬಯಕೆಗಳ ಒಗಟು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ವರ್ಗಗಳೊಂದಿಗೆ ಐಟಂಗಳನ್ನು ಹೊಂದಿಸಿ ({{matched}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "selectItem": "ಐಟಂ ಆಯ್ಕೆಮಾಡಿ",
+  "matchButton": "Match",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultGreatDescription": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಅವುಗಳ ವರ್ಗಗಳೊಂದಿಗೆ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿದ್ದೀರಿ!",
+  "resultGreatLesson": "ಪಾಠ: ಅಗತ್ಯತೆಗಳ ವಿರುದ್ಧ ತಿಳುವಳಿಕೆಯು ಸ್ಮಾರ್ಟ್ ಹಣದ ನಿರ್ಧಾರಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultKeepDescription": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಐಟಂಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultKeepTip": "ಸಲಹೆ: ಪ್ರತಿಯೊಂದು ಐಟಂ ಅತ್ಯಗತ್ಯವೇ ಅಥವಾ ವಿವೇಚನೆಯೇ ಎಂಬುದನ್ನು ಯೋಚಿಸಿ!",
+  "items": [
+    {
+      "id": 1,
+      "name": "ಕುಡಿಯುವ ನೀರು",
+      "emoji": "💧"
+    },
+    {
+      "id": 2,
+      "name": "ಶಾಲಾ ಶೂಗಳು",
+      "emoji": "👟"
+    },
+    {
+      "id": 3,
+      "name": "ಆಟಿಕೆ ಕಾರು",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "ಪಾಕೆಟ್ ಮನಿ",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "ಆರ್ಥಿಕ ಜ್ಞಾನ",
+      "emoji": "📚"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅",
+      "description": "ಜೀವನ ಅಥವಾ ಕಲಿಕೆಗೆ ಅತ್ಯಗತ್ಯ"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁",
+      "description": "ಹೊಂದಲು ಸಂತೋಷವಾಗಿದೆ, ಅನಿವಾರ್ಯವಲ್ಲ"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "🏦",
+      "description": "ಭವಿಷ್ಯದ ಬಳಕೆಗಾಗಿ ಮೀಸಲಿಡಿ"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈",
+      "description": "ಮೌಲ್ಯವನ್ನು ಹೆಚ್ಚಿಸಲು ಹಣವನ್ನು ಬಳಸಿ"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲",
+      "description": "ಇತರರನ್ನು ಬೆಂಬಲಿಸಲು ಬಳಸಿ"
+    }
+  ]
+}

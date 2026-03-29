@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ਸਨੈਕ ਸਟੋਰੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਨੂੰ ਦੁਪਹਿਰ ਦੇ ਖਾਣੇ ਦੀ ਜ਼ਰੂਰਤ ਹੈ ਪਰ ਚਿਪਸ ਚਾਹੀਦੀਆਂ ਹਨ। ਤੁਸੀਂ ਕੀ ਚੁਣਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "chips",
+          "text": "ਬਸ ਚਿਪਸ",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lunch",
+          "text": "ਸੰਤੁਲਿਤ ਦੁਪਹਿਰ ਦਾ ਖਾਣਾ",
+          "emoji": "🍱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sweets",
+          "text": "ਕੇਵਲ ਮਿਠਆਈ",
+          "emoji": "🍰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ਭੁੱਖੇ ਹੋ। ਸਮਾਰਟ ਵਿਕਲਪ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "healthy",
+          "text": "ਪੌਸ਼ਟਿਕ ਸਨੈਕ",
+          "emoji": "🥗",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ਕੈਂਡੀ ਬਾਰ",
+          "emoji": "🍫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "chips",
+          "text": "ਆਲੂ ਚਿਪਸ",
+          "emoji": "🥔",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਸੀਂ ਪਿਆਸੇ ਹੋ। ਤੁਸੀਂ ਕੀ ਚੁਣਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "soda",
+          "text": "Soda",
+          "emoji": "🥤",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "Water",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "juice",
+          "text": "ਸੁਆਦਲਾ ਜੂਸ",
+          "emoji": "🧃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਸਨੈਕ ਚਾਹੁੰਦੇ ਹੋ। ਸਭ ਤੋਂ ਸਿਹਤਮੰਦ ਵਿਕਲਪ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "cookies",
+          "text": "ਪੈਕ ਕੀਤੀਆਂ ਕੂਕੀਜ਼",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "Gummy Bears",
+          "emoji": "🐻",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fruit",
+          "text": "ਤਾਜ਼ੇ ਫਲ",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ ਭੋਜਨ ਲਈ ਪੈਸੇ ਹਨ। ਸਭ ਤੋਂ ਵਧੀਆ ਫੈਸਲਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "balanced",
+          "text": "ਪੂਰਾ ਭੋਜਨ",
+          "emoji": "🍽️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "icecream",
+          "text": "ਸਿਰਫ ਆਈਸ ਕਰੀਮ",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sweets",
+          "text": "ਕੈਂਡੀ ਅਤੇ ਸੋਡਾ",
+          "emoji": "🍭",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

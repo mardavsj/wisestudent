@@ -1,1 +1,163 @@
-﻿{}
+{
+  "title": "अनुकरण: धर्मादाय निवड",
+  "subtitleComplete": "सिम्युलेशन पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} परिस्थिती",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "प्रभाव वि भावना",
+      "description": "तुम्हाला ₹1000 दान करायचे आहेत. कोणती निवड सर्वात वास्तविक प्रभाव निर्माण करते?",
+      "options": [
+        {
+          "id": "street",
+          "text": "रस्त्यावर यादृच्छिकपणे रोख द्या",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "trusted",
+          "text": "स्पष्ट अहवालांसह सत्यापित धर्मादाय संस्थेला देणगी द्या",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "viral",
+          "text": "ट्रेंडिंग ऑनलाइन मोहिमांना देणगी द्या",
+          "emoji": "🔥",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "परिपूर्ण क्षणासाठी कायमची प्रतीक्षा करा",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "अल्पकालीन मदत वि दीर्घकालीन बदल",
+      "description": "धर्मादाय संस्था एकतर आज जेवण देऊ शकते किंवा काही महिने शिक्षणासाठी मदत करू शकते. हुशार काय आहे?",
+      "options": [
+        {
+          "id": "education",
+          "text": "शिक्षण आणि कौशल्य-निर्मितीला समर्थन द्या",
+          "emoji": "🎓",
+          "isCorrect": true
+        },
+        {
+          "id": "meals",
+          "text": "एक वेळचे अन्न वाटप",
+          "emoji": "🍱",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "यादृच्छिकपणे पैसे विभाजित करा",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "none",
+          "text": "देणगी देणे टाळा",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "पारदर्शकता तपासणी",
+      "description": "देणगी देण्यापूर्वी, आपण प्रथम काय तपासले पाहिजे?",
+      "options": [
+        {
+          "id": "celebrity",
+          "text": "सेलिब्रिटी समर्थन",
+          "emoji": "🌟",
+          "isCorrect": false
+        },
+        {
+          "id": "emotional",
+          "text": "फक्त भावनिक कथा",
+          "emoji": "😢",
+          "isCorrect": false
+        },
+        {
+          "id": "pressure",
+          "text": "सामाजिक दबाव",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "reports",
+          "text": "आर्थिक पारदर्शकता आणि प्रभाव अहवाल",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "धर्मादाय वि वैयक्तिक वाढ",
+      "description": "तुमच्याकडे मर्यादित पैसे आहेत. सहानुभूती आणि आर्थिक भावना दोन्ही कशामुळे निर्माण होतात?",
+      "options": [
+        {
+          "id": "donate-blind",
+          "text": "न समजता दान करा",
+          "emoji": "🙃",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "स्वतःवर सर्व काही खर्च करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "कारणे जाणून घ्या, नंतर मनापासून दान करा",
+          "emoji": "🧠",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "दानधर्म पूर्णपणे टाळा",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "शाश्वत देणे",
+      "description": "कोणती सवय दानधर्म आयुष्यभर प्रभावी बनवते?",
+      "options": [
+        {
+          "id": "big-once",
+          "text": "एकदा मोठी देणगी",
+          "emoji": "💥",
+          "isCorrect": false
+        },
+        {
+          "id": "consistent",
+          "text": "लहान, नियमित, नियोजित देणे",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "guilt",
+          "text": "जेव्हा अपराधी वाटत असेल तेव्हाच दान करा",
+          "emoji": "😬",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse",
+          "text": "आवेग दान",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "શિષ્યવૃત્તિ વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "perfectScoreMsg": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે એપ્લિકેશન્સમાં પ્રામાણિકતાનું મહત્વ સમજો છો!",
+  "lowScoreMsg": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, પ્રમાણિકતા એ શિષ્યવૃત્તિ માટેની શ્રેષ્ઠ નીતિ છે!",
+  "lessonLabel": "પાઠ: શિષ્યવૃત્તિ અને અન્ય તકો માટે અરજી કરતી વખતે પ્રમાણિકતા અને પ્રામાણિકતા નિર્ણાયક છે.",
+  "tryAgain": "ફરી પ્રયાસ કરો",
+  "tipLabel": "ટીપ: ટ્રસ્ટ બનાવવા માટે તમારી શિષ્યવૃત્તિ અરજીઓ પર હંમેશા સચોટ અને સત્યપૂર્ણ માહિતી પ્રદાન કરો.",
+  "coinsLabel": "+{{count}} સિક્કા",
+  "questions": [
+    {
+      "id": 1,
+      "text": "એક વિદ્યાર્થી વધારાની શિષ્યવૃત્તિ મેળવવા માટે જૂઠું બોલે છે. સાચી ક્રિયા શું છે?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "પૈસા મેળવવા માટે જૂઠું બોલો",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "truthful",
+          "text": "સત્યવાદી બનો",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "કદાચ, જો જરૂરી હોય તો",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "જો તમે શિષ્યવૃત્તિ અરજી પર જૂઠું બોલો તો શું થશે?",
+      "options": [
+        {
+          "id": "get-money",
+          "text": "વધુ પૈસા મેળવો",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-opportunity",
+          "text": "તક અને વિશ્વાસ ગુમાવો",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "કશું થતું નથી",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "એપ્લિકેશનમાં પ્રામાણિકતા શા માટે મહત્વપૂર્ણ છે?",
+      "options": [
+        {
+          "id": "builds-trust",
+          "text": "વિશ્વાસ અને અખંડિતતા બનાવે છે",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "not-important",
+          "text": "મહત્વનું નથી",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "waste-time",
+          "text": "સમય બગાડે છે",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "જો તમે એપ્લિકેશનમાં ભૂલ કરો તો તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "hide-mistake",
+          "text": "ભૂલ છુપાવો",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-it",
+          "text": "પ્રામાણિકપણે તેને સુધારો",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "તેને અવગણો",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "શિષ્યવૃત્તિ માટે શ્રેષ્ઠ અભિગમ શું છે?",
+      "options": [
+        {
+          "id": "honest-application",
+          "text": "પ્રમાણિક અને સંપૂર્ણ એપ્લિકેશન",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "exaggerate",
+          "text": "અતિશયોક્તિપૂર્ણ સિદ્ધિઓ",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "copy-others",
+          "text": "અન્ય લોકો પાસેથી નકલ",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,152 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ: પૈસા સત્ય",
+  "subtitleComplete": "રમત પૂર્ણ!",
+  "roundLabel": "રાઉન્ડ {{current}}/{{total}}",
+  "timeUp": "સમય પૂરો થયો!",
+  "readyEmoji": "💰",
+  "readyTitle": "તૈયાર થાઓ!",
+  "readyDescription": "પૈસાની સત્યતા અને પ્રમાણિકતા વિશેના પ્રશ્નોના જવાબ આપો!",
+  "readyTimeInfo": "દરેક પ્રશ્ન માટે તમારી પાસે {{time}} સેકન્ડ છે.",
+  "readyQuestionInfo": "તમારી પાસે દરેકમાં {{time}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "gameRoundLabel": "રાઉન્ડ:",
+  "gameTimeLabel": "સમય:",
+  "gameScoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "તમને શાળાના ફ્લોર પર એક સિક્કો મળે છે. યોગ્ય પ્રથમ ક્રિયા શું છે?",
+      "correctAnswer": "પૂછો કે કોઈએ તે ગુમાવ્યું છે",
+      "options": [
+        {
+          "text": "ઝડપથી રાખો",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "પૂછો કે કોઈએ તે ગુમાવ્યું છે",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "નાસ્તો ખરીદો",
+          "isCorrect": false,
+          "emoji": "🍿"
+        },
+        {
+          "text": "તેને છુપાવો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમે જે કાર્ય પૂર્ણ કર્યું નથી તેના માટે કોઈ તમને પૈસા આપે છે. તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "સત્ય સમજાવો",
+      "options": [
+        {
+          "text": "સત્ય સમજાવો",
+          "isCorrect": true,
+          "emoji": "🗣️"
+        },
+        {
+          "text": "કંઈ બોલો",
+          "isCorrect": false,
+          "emoji": "🤫"
+        },
+        {
+          "text": "બીજાને દોષ આપો",
+          "isCorrect": false,
+          "emoji": "👉"
+        },
+        {
+          "text": "દૂર ચાલી જાઓ",
+          "isCorrect": false,
+          "emoji": "🚶"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "તમે અને તમારા મિત્રએ સાથે મળીને પૈસા કમાયા. શું સમસ્યાઓ ટાળવામાં મદદ કરે છે?",
+      "correctAnswer": "વહેલા શેર કરવા પર સંમત",
+      "options": [
+        {
+          "text": "તમારી જાતને વધુ લો",
+          "isCorrect": false,
+          "emoji": "🤑"
+        },
+        {
+          "text": "રાહ જુઓ અને પછીથી દલીલ કરો",
+          "isCorrect": false,
+          "emoji": "💢"
+        },
+        {
+          "text": "નસીબ નક્કી કરવા દો",
+          "isCorrect": false,
+          "emoji": "🎲"
+        },
+        {
+          "text": "વહેલા શેર કરવા પર સંમત",
+          "isCorrect": true,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "તમે ઉછીના લીધેલા પૈસા પાછા આપવાનું વચન આપો છો પણ ભૂલી જાઓ છો. શું તેને શ્રેષ્ઠ રીતે સુધારે છે?",
+      "correctAnswer": "માફી માગો અને તેને પરત કરો",
+      "options": [
+        {
+          "text": "માફી માગો અને તેને પરત કરો",
+          "isCorrect": true,
+          "emoji": "🙏"
+        },
+        {
+          "text": "વ્યક્તિને ટાળો",
+          "isCorrect": false,
+          "emoji": "🙄"
+        },
+        {
+          "text": "ડોળ કરો કે તમે ચૂકવણી કરી છે",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "તેને હસાવો",
+          "isCorrect": false,
+          "emoji": "😅"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "લોકો તમારા પર ફરીથી પૈસા માટે શું વિશ્વાસ કરે છે?",
+      "correctAnswer": "વચનો પાળવા",
+      "options": [
+        {
+          "text": "મોટેથી વાત કરવી",
+          "isCorrect": false,
+          "emoji": "📢"
+        },
+        {
+          "text": "બહાના બનાવે છે",
+          "isCorrect": false,
+          "emoji": "🌀"
+        },
+        {
+          "text": "વચનો પાળવા",
+          "isCorrect": true,
+          "emoji": "📌"
+        },
+        {
+          "text": "વધુ માટે પૂછે છે",
+          "isCorrect": false,
+          "emoji": "💸"
+        }
+      ]
+    }
+  ]
+}

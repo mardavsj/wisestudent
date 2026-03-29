@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "બચત ખાતાની વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "perfectScoreMsg": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે સમજો છો કે બચત ખાતા કેવી રીતે કામ કરે છે!",
+  "lowScoreMsg": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, બચત ખાતા વ્યાજ ચૂકવે છે, જે તમારા નાણાંને વધવામાં મદદ કરે છે!",
+  "lessonLabel": "પાઠ: બચત ખાતાઓ તમારા નાણાંને સુરક્ષિત રાખે છે અને વ્યાજ ચૂકવે છે, તમારા નાણાં સમયાંતરે વધવા માટે મદદ કરે છે!",
+  "tryAgain": "ફરી પ્રયાસ કરો",
+  "tipLabel": "ટિપ: જ્યારે તમે બચત ખાતામાં પૈસા જમા કરો છો, ત્યારે બેંક તમને વ્યાજ ચૂકવે છે, જેનાથી સમય જતાં તમારા પૈસા વધે છે!",
+  "coinsLabel": "+{{count}} સિક્કા",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે ₹1000 જમા કરો. એક વર્ષ પછી, તે ₹1050 થઈ જાય છે. શા માટે?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "magic",
+          "text": "Magic",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "error",
+          "text": "બેંક ભૂલ",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "જ્યારે તમે બચત ખાતામાં પૈસા રાખો છો ત્યારે શું થાય છે?",
+      "options": [
+        {
+          "id": "loses",
+          "text": "તે મૂલ્ય ગુમાવે છે",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "તે રસ સાથે વધે છે",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "stays",
+          "text": "તે જ રહે છે",
+          "emoji": "➡️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "બેંકો બચત પર વ્યાજ કેમ ચૂકવે છે?",
+      "options": [
+        {
+          "id": "use",
+          "text": "તેઓ તમારા પૈસા ઉધાર આપવા માટે વાપરે છે",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "તે ભેટ છે",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "rule",
+          "text": "સરકારી નિયમ",
+          "emoji": "📜",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "બચત ખાતાનો શું ફાયદો છે?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "સુરક્ષિત અને વ્યાજ કમાય છે",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "quick",
+          "text": "માત્ર ઝડપી ઍક્સેસ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "text": "મફત પૈસા",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "જો તમે ₹500 જમા કરો અને એક વર્ષ પછી ₹525 મેળવો, તો વધારાના ₹25 શું છે?",
+      "options": [
+        {
+          "id": "bonus",
+          "text": "બોનસ ચુકવણી",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "interest2",
+          "text": "વ્યાજ મળ્યું",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "fee",
+          "text": "બેંક ફી",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

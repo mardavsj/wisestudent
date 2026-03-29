@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "పజిల్: పెట్టుబడి రకాలు",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "లక్షణాలతో పెట్టుబడులను సరిపోల్చండి ({{current}}/{{total}} సరిపోలింది)",
+  "investmentsTitle": "పెట్టుబడి రకాలు",
+  "characteristicsTitle": "Characteristics",
+  "matchButton": "Match",
+  "selectInvestmentLabel": "పెట్టుబడి రకాన్ని ఎంచుకోండి",
+  "selectedInvestmentLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}} పెట్టుబడి రకాల్లో {{score}}ని వాటి లక్షణాలతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: పెట్టుబడి లక్షణాలను అర్థం చేసుకోవడం ఆర్థిక నిర్ణయాలు తీసుకోవడంలో సహాయపడుతుంది!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}} పెట్టుబడి రకాల్లో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి పెట్టుబడి రకం రిస్క్ స్థాయి మరియు స్వభావం గురించి ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "investments": [
+    {
+      "id": 1,
+      "name": "ఫిక్స్‌డ్ డిపాజిట్",
+      "emoji": "🏦"
+    },
+    {
+      "id": 2,
+      "name": "Stocks",
+      "emoji": "📈"
+    },
+    {
+      "id": 3,
+      "name": "మ్యూచువల్ ఫండ్",
+      "emoji": "📊"
+    },
+    {
+      "id": 4,
+      "name": "Bonds",
+      "emoji": "📜"
+    },
+    {
+      "id": 5,
+      "name": "రియల్ ఎస్టేట్",
+      "emoji": "🏠"
+    }
+  ],
+  "characteristics": [
+    {
+      "id": 6,
+      "name": "Safe",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 7,
+      "name": "Risky",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "Diversified",
+      "emoji": "🔄"
+    },
+    {
+      "id": 9,
+      "name": "Stable",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "Long-term",
+      "emoji": "⏳"
+    }
+  ]
+}

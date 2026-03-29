@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ਜਨਮਦਿਨ ਪੈਸੇ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਨੂੰ ਜਨਮਦਿਨ ਦੀ ਰਕਮ ਵਜੋਂ 100 ਰੁਪਏ ਮਿਲਦੇ ਹਨ। ਤੁਸੀਂ ਕੀ ਕਰੋਗੇ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਖਿਡੌਣਿਆਂ ਅਤੇ ਕੈਂਡੀਜ਼ 'ਤੇ ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ਇਹ ਸਭ ਕੁਝ ਸੁਰੱਖਿਅਤ ਰੱਖਣ ਲਈ ਮਾਂ ਨੂੰ ਦਿਓ",
+          "emoji": "👩",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ਇਸ ਨੂੰ ਵੰਡੋ: ਕੁਝ ਮਨੋਰੰਜਨ ਲਈ, ਕੁਝ ਬਚਾਉਣ ਲਈ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਸਮਝਦਾਰੀ ਨਾਲ ਵੰਡਣ ਦਾ ਕੀ ਮਤਲਬ ਹੈ?",
+      "options": [
+        {
+          "id": "gifts",
+          "text": "ਦੋਸਤਾਂ ਦੇ ਤੋਹਫ਼ਿਆਂ 'ਤੇ ਅੱਧਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "ਕੁਝ ਬਚਤ ਲਈ ਰੱਖੋ ਅਤੇ ਕੁਝ ਮਨੋਰੰਜਨ ਲਈ",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "needs",
+          "text": "ਸਿਰਫ਼ ਲੋੜਾਂ ਹੀ ਖਰੀਦੋ, ਕੋਈ ਇੱਛਾ ਨਹੀਂ",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਡੇ ਤੋਹਫ਼ੇ ਦੇ ਪੈਸੇ ਦਾ ਇੱਕ ਹਿੱਸਾ ਬਚਾਉਣਾ ਤੁਹਾਡੀ ਮਦਦ ਕਰਦਾ ਹੈ...",
+      "options": [
+        {
+          "id": "forget",
+          "text": "ਪੈਸੇ ਬਾਰੇ ਭੁੱਲ ਜਾਓ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਹੁਣ ਹੋਰ ਖਰਚ ਕਰੋ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bigger",
+          "text": "ਬਾਅਦ ਵਿੱਚ ਵੱਡੀਆਂ ਚੀਜ਼ਾਂ ਖਰੀਦੋ",
+          "emoji": "🚲",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਜੇਕਰ ਤੁਸੀਂ ਬਾਅਦ ਵਿੱਚ ਕੋਈ ਵੱਡੀ ਚੀਜ਼ ਖਰੀਦਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਸਮਾਰਟ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਨਿਯਮਿਤ ਤੌਰ 'ਤੇ ਛੋਟੀਆਂ ਰਕਮਾਂ ਦੀ ਬੱਚਤ ਕਰੋ",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "ਦੋਸਤਾਂ ਤੋਂ ਉਧਾਰ ਲਓ",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ਅਗਲੇ ਜਨਮਦਿਨ ਦੀ ਉਡੀਕ ਕਰੋ",
+          "emoji": "🎂",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਇੱਕ ਸੰਤੁਲਿਤ ਫੈਸਲਾ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "all",
+          "text": "ਅੱਜ ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "enjoy",
+          "text": "ਇੱਕ ਇਲਾਜ ਦਾ ਆਨੰਦ ਮਾਣੋ ਅਤੇ ਬਾਕੀ ਬਚੋ",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "none",
+          "text": "ਸਭ ਕੁਝ ਬਚਾਓ, ਕੋਈ ਮਜ਼ਾ ਨਹੀਂ",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

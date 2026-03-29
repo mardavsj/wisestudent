@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ರಿಫ್ಲೆಕ್ಸ್ ಇನ್ವೆಸ್ಟ್ಮೆಂಟ್ ಬೇಸಿಕ್ಸ್",
+  "subtitlePlaying": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ: ನಿಮ್ಮ ಹೂಡಿಕೆ ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "subtitleReady": "ನಿಮ್ಮ ಹೂಡಿಕೆ ಪ್ರತಿಫಲಿತಗಳನ್ನು ಪರೀಕ್ಷಿಸಿ!",
+  "readyEmoji": "💰",
+  "readyTitle": "ಹೂಡಿಕೆಯ ಮೂಲಭೂತ ಅಂಶಗಳನ್ನು ಕಲಿಯಲು ಸಿದ್ಧರಿದ್ದೀರಾ?",
+  "readyDescription": "ಪ್ರತಿ ಪ್ರಶ್ನೆಗೆ ಸರಿಯಾದ ಹೂಡಿಕೆ ಕ್ರಮವನ್ನು ಆಯ್ಕೆಮಾಡಿ.",
+  "readyInfo": "ನೀವು {{total}} ಪ್ರಶ್ನೆಗಳನ್ನು ಪ್ರತಿ {{seconds}} ಸೆಕೆಂಡ್‌ಗಳೊಂದಿಗೆ ಹೊಂದಿರುವಿರಿ!",
+  "startButton": "ಆಟವನ್ನು ಪ್ರಾರಂಭಿಸಿ",
+  "roundLabel": "ಪ್ರಶ್ನೆ:",
+  "timeLabel": "ಸಮಯ:",
+  "scoreLabel": "ಸ್ಕೋರ್:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ಅದನ್ನು ಬೆಳೆಯಲು ನೀವು ಹಣವನ್ನು ಏನು ಮಾಡಬೇಕು?",
+      "correctAnswer": "ಉಳಿಸಿ ಮತ್ತು ಬೆಳೆಯಿರಿ",
+      "options": [
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಅದನ್ನು ಮರೆಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ಅದನ್ನು ಮರೆತುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ಉಳಿಸಿ ಮತ್ತು ಬೆಳೆಯಿರಿ",
+          "isCorrect": true,
+          "emoji": "🌱"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ಹಣವನ್ನು ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ಹೇಗೆ ನಿರ್ವಹಿಸಬೇಕು?",
+      "correctAnswer": "ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ಹೂಡಿಕೆ ಮಾಡಿ",
+      "options": [
+        {
+          "text": "ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ಹೂಡಿಕೆ ಮಾಡಿ",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "ವೇಗವಾಗಿ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ವೇಸ್ಟ್ ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ಅದನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "📉"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ಸಂಪತ್ತನ್ನು ನಿರ್ಮಿಸಲು ಉತ್ತಮ ಮಾರ್ಗ ಯಾವುದು?",
+      "correctAnswer": "ಸಂಪತ್ತನ್ನು ಬೆಳೆಸಿಕೊಳ್ಳಿ",
+      "options": [
+        {
+          "text": "ಹಣವನ್ನು ಕಳೆದುಕೊಳ್ಳಿ",
+          "isCorrect": false,
+          "emoji": "💔"
+        },
+        {
+          "text": "ಸಂಪತ್ತನ್ನು ಬೆಳೆಸಿಕೊಳ್ಳಿ",
+          "isCorrect": true,
+          "emoji": "📈"
+        },
+        {
+          "text": "ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "ಉಳಿತಾಯವನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "😑"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ನಿಮ್ಮ ಹಣವು ನಿಮಗಾಗಿ ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "ಬಡ್ಡಿ ಗಳಿಸಿ",
+      "options": [
+        {
+          "text": "ನಗದು ವ್ಯರ್ಥ",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ತಕ್ಷಣ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "ಬಡ್ಡಿ ಗಳಿಸಿ",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "ಅದನ್ನು ಮರೆತುಬಿಡಿ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ನಿಮ್ಮ ಭವಿಷ್ಯವನ್ನು ಸುರಕ್ಷಿತವಾಗಿರಿಸಲು ಯಾವುದು ಸಹಾಯ ಮಾಡುತ್ತದೆ?",
+      "correctAnswer": "ಉಳಿತಾಯವನ್ನು ನಿರ್ಮಿಸಿ",
+      "options": [
+        {
+          "text": "ಉಳಿತಾಯವನ್ನು ನಿರ್ಮಿಸಿ",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "ಈಗ ಖರ್ಚು ಮಾಡಿ",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "ಹಣ ವ್ಯರ್ಥ",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ಭವಿಷ್ಯವನ್ನು ನಿರ್ಲಕ್ಷಿಸಿ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    }
+  ]
+}

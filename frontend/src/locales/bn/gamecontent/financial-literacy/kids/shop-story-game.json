@@ -1,1 +1,129 @@
-﻿{}
+﻿{
+    "title": "দোকানের গল্পের গেম",
+    "subtitleComplete": "গল্প সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "দোকানদার অতিরিক্ত ভাংতি দিলেন। কী করবে?",
+            "options": [
+                {
+                    "id": "return",
+                    "text": "অতিরিক্ত ভাংতি ফেরত দাও",
+                    "emoji": "💸",
+                    "isCorrect": true
+                },
+                {
+                    "id": "keep",
+                    "text": "চুপ করে রেখে দাও",
+                    "emoji": "🤫",
+                    "isCorrect": false
+                },
+                {
+                    "id": "spend",
+                    "text": "সাথে সাথে খরচ করো",
+                    "emoji": "🛍️",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "সস্তায় একটি জিনিস পেলে। পরের পদক্ষেপ কী?",
+            "options": [
+                {
+                    "id": "lie",
+                    "text": "দাম নিয়ে মিথ্যা বলো",
+                    "emoji": "🙊",
+                    "isCorrect": false
+                },
+                {
+                    "id": "ignore",
+                    "text": "উপেক্ষা করো",
+                    "emoji": "🙈",
+                    "isCorrect": false
+                },
+                {
+                    "id": "honest",
+                    "text": "সৎ থাকো",
+                    "emoji": "🤗",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "বিক্রেতা দাম বললেন। পরের পদক্ষেপ কী?",
+            "options": [
+                {
+                    "id": "bargain",
+                    "text": "অন্যায্যভাবে দরদাম করো",
+                    "emoji": "😈",
+                    "isCorrect": false
+                },
+                {
+                    "id": "refuse",
+                    "text": "পেমেন্ট অস্বীকার করো",
+                    "emoji": "🚫",
+                    "isCorrect": false
+                },
+                {
+                    "id": "pay",
+                    "text": "ন্যায্যভাবে পেমেন্ট করো",
+                    "emoji": "⚖️",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "রসিদ পেলে। কী করবে?",
+            "options": [
+                {
+                    "id": "check",
+                    "text": "রসিদ চেক করো",
+                    "emoji": "🧾",
+                    "isCorrect": true
+                },
+                {
+                    "id": "ignore",
+                    "text": "বিল উপেক্ষা করো",
+                    "emoji": "🙈",
+                    "isCorrect": false
+                },
+                {
+                    "id": "throw",
+                    "text": "ফেলে দাও",
+                    "emoji": "🗑️",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "দোকান বেশি দাম নিয়েছে। এখন কী?",
+            "options": [
+                {
+                    "id": "silent",
+                    "text": "চুপ থাকো",
+                    "emoji": "😶",
+                    "isCorrect": false
+                },
+                {
+                    "id": "report",
+                    "text": "ভুল জানাও",
+                    "emoji": "🗣️",
+                    "isCorrect": true
+                },
+                {
+                    "id": "accept",
+                    "text": "মেনে নাও",
+                    "emoji": "😔",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

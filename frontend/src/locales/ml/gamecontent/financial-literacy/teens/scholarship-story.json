@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "സ്കോളർഷിപ്പ് കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "perfectScoreMsg": "നിങ്ങൾക്ക് {{total}}ൽ {{score}} ലഭിച്ചു! പ്രയോഗങ്ങളിൽ സത്യസന്ധതയുടെ പ്രാധാന്യം നിങ്ങൾ മനസ്സിലാക്കുന്നു!",
+  "lowScoreMsg": "നിങ്ങൾക്ക് {{total}}ൽ {{score}} ലഭിച്ചു. ഓർക്കുക, സത്യസന്ധതയാണ് സ്കോളർഷിപ്പിനുള്ള ഏറ്റവും നല്ല നയം!",
+  "lessonLabel": "പാഠം: സ്കോളർഷിപ്പുകൾക്കും മറ്റ് അവസരങ്ങൾക്കും അപേക്ഷിക്കുമ്പോൾ സത്യസന്ധതയും സമഗ്രതയും നിർണായകമാണ്.",
+  "tryAgain": "വീണ്ടും ശ്രമിക്കുക",
+  "tipLabel": "നുറുങ്ങ്: വിശ്വാസം വളർത്തുന്നതിന് നിങ്ങളുടെ സ്കോളർഷിപ്പ് അപേക്ഷകളിൽ എല്ലായ്പ്പോഴും കൃത്യവും സത്യസന്ധവുമായ വിവരങ്ങൾ നൽകുക.",
+  "coinsLabel": "+{{count}} നാണയങ്ങൾ",
+  "questions": [
+    {
+      "id": 1,
+      "text": "അധിക സ്കോളർഷിപ്പ് ലഭിക്കാൻ ഒരു വിദ്യാർത്ഥി കള്ളം പറയുന്നു. എന്താണ് ശരിയായ നടപടി?",
+      "options": [
+        {
+          "id": "lie",
+          "text": "പണം കിട്ടാൻ കള്ളം പറയുക",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "truthful",
+          "text": "സത്യസന്ധരായിരിക്കുക",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "ഒരുപക്ഷേ, ആവശ്യമെങ്കിൽ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിങ്ങൾ സ്കോളർഷിപ്പ് അപേക്ഷയിൽ കള്ളം പറഞ്ഞാൽ എന്ത് സംഭവിക്കും?",
+      "options": [
+        {
+          "id": "get-money",
+          "text": "കൂടുതൽ പണം നേടുക",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-opportunity",
+          "text": "അവസരവും വിശ്വാസവും നഷ്ടപ്പെടുത്തുക",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "ഒന്നും സംഭവിക്കുന്നില്ല",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "പ്രയോഗങ്ങളിൽ സത്യസന്ധത പ്രധാനമായിരിക്കുന്നത് എന്തുകൊണ്ട്?",
+      "options": [
+        {
+          "id": "builds-trust",
+          "text": "വിശ്വാസവും സമഗ്രതയും വളർത്തുന്നു",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "not-important",
+          "text": "പ്രധാനമല്ല",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "waste-time",
+          "text": "സമയം പാഴാക്കുന്നു",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ഒരു അപേക്ഷയിൽ തെറ്റ് പറ്റിയാൽ എന്ത് ചെയ്യണം?",
+      "options": [
+        {
+          "id": "hide-mistake",
+          "text": "തെറ്റ് മറയ്ക്കുക",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-it",
+          "text": "സത്യസന്ധമായി തിരുത്തുക",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "അവഗണിക്കുക",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "സ്കോളർഷിപ്പിനുള്ള ഏറ്റവും നല്ല സമീപനം ഏതാണ്?",
+      "options": [
+        {
+          "id": "honest-application",
+          "text": "സത്യസന്ധവും പൂർണ്ണവുമായ അപേക്ഷ",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "exaggerate",
+          "text": "നേട്ടങ്ങൾ പെരുപ്പിച്ചു കാണിക്കുക",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "copy-others",
+          "text": "മറ്റുള്ളവരിൽ നിന്ന് പകർത്തുക",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

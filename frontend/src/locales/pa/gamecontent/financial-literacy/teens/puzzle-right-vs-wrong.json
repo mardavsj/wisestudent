@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਸਹੀ ਬਨਾਮ ਗਲਤ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਨਤੀਜਿਆਂ ਨਾਲ ਮੇਲ ਖਾਂਦੀਆਂ ਕਾਰਵਾਈਆਂ ({{current}}/{{total}} ਮੇਲ ਖਾਂਦੀਆਂ)",
+  "actionsTitle": "ਵਿੱਤੀ ਕਾਰਵਾਈਆਂ",
+  "outcomesTitle": "ਵਿੱਤੀ ਨਤੀਜੇ",
+  "matchButton": "Match",
+  "selectActionLabel": "ਇੱਕ ਵਿੱਤੀ ਕਾਰਵਾਈ ਚੁਣੋ",
+  "selectedActionLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultSuccessSubheader": "ਤੁਸੀਂ {{total}} ਵਿੱਤੀ ਕਾਰਵਾਈਆਂ ਵਿੱਚੋਂ {{score}} ਨੂੰ ਉਹਨਾਂ ਦੇ ਨਤੀਜਿਆਂ ਨਾਲ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲਿਆ ਹੈ!",
+  "resultSuccessLesson": "ਸਬਕ: ਨੈਤਿਕ ਵਿੱਤੀ ਫੈਸਲੇ ਹਰ ਕਿਸੇ ਲਈ ਸਕਾਰਾਤਮਕ ਨਤੀਜੇ ਲੈ ਕੇ ਜਾਂਦੇ ਹਨ!",
+  "resultTryAgainHeader": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultTryAgainSubheader": "ਤੁਸੀਂ {{total}} ਵਿੱਤੀ ਕਾਰਵਾਈਆਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTryAgainTip": "ਸੁਝਾਅ: ਹਰੇਕ ਵਿੱਤੀ ਕਾਰਵਾਈ ਦੇ ਨਤੀਜਿਆਂ ਬਾਰੇ ਸੋਚੋ!",
+  "coinsEarned": "+{{coins}} ਸਿੱਕੇ",
+  "actions": [
+    {
+      "id": 1,
+      "name": "ਚੈਰਿਟੀ ਲਈ ਦਾਨ ਕਰਨਾ",
+      "emoji": "💝"
+    },
+    {
+      "id": 2,
+      "name": "ਪੈਸੇ ਦੀ ਚੋਰੀ",
+      "emoji": "😈"
+    },
+    {
+      "id": 3,
+      "name": "ਇਮਾਨਦਾਰ ਰਿਪੋਰਟਿੰਗ",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "ਰਿਸ਼ਵਤ ਦਾ ਭੁਗਤਾਨ",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "ਨਿਰਪੱਖ ਡੀਲ",
+      "emoji": "🤝"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "ਸਕਾਰਾਤਮਕ ਪ੍ਰਭਾਵ",
+      "emoji": "🌟"
+    },
+    {
+      "id": 7,
+      "name": "ਕਾਨੂੰਨੀ ਨਤੀਜੇ",
+      "emoji": "⛓️"
+    },
+    {
+      "id": 8,
+      "name": "ਟਰੱਸਟ ਬਿਲਡਿੰਗ",
+      "emoji": "🤝"
+    },
+    {
+      "id": 9,
+      "name": "Corruption",
+      "emoji": "🐍"
+    },
+    {
+      "id": 10,
+      "name": "ਆਪਸੀ ਲਾਭ",
+      "emoji": "🤝"
+    }
+  ]
+}

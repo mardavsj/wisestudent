@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಟಾಯ್ ವರ್ಸಸ್ ಸೇವಿಂಗ್ ಸ್ಟೋರಿ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಒಂದು ವಾರದ ನಂತರ ನಿಮ್ಮ ನೆಚ್ಚಿನ ಆಟಿಕೆ ಒಡೆಯುತ್ತದೆ. ಇದು ನಿಮಗೆ ಏನು ಕಲಿಸುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "buy",
+          "text": "ಹೆಚ್ಚಿನ ಆಟಿಕೆಗಳನ್ನು ತ್ವರಿತವಾಗಿ ಖರೀದಿಸಿ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "ಹಣದ ಆಯ್ಕೆಗಳು ಮುಖ್ಯವಲ್ಲ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "value",
+          "text": "ಹಣ ಖರ್ಚು ಮಾಡುವ ಮುನ್ನ ಯೋಚಿಸಿ",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನೀವು ಪ್ರತಿ ವಾರ ನಾಣ್ಯಗಳನ್ನು ಉಳಿಸುತ್ತೀರಿ ಮತ್ತು ಮೊತ್ತವು ಬೆಳೆಯುವುದನ್ನು ನೋಡಿ. ನೀವು ಏನು ಕಲಿಯುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "patience",
+          "text": "ಉಳಿತಾಯಕ್ಕೆ ತಾಳ್ಮೆ ಬೇಕು",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "boring",
+          "text": "ಉಳಿತಾಯ ಬೇಸರ ತಂದಿದೆ",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "ನಾಣ್ಯಗಳು ನಿಷ್ಪ್ರಯೋಜಕವಾಗಿವೆ",
+          "emoji": "🪙",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ನಂತರ ದುಬಾರಿ ಏನನ್ನಾದರೂ ಬಯಸುತ್ತೀರಿ. ಉತ್ತಮ ಅಭ್ಯಾಸ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "rush",
+          "text": "ನೀವು ನೋಡುವದನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ಯೋಜನೆ ಮತ್ತು ನಿಧಾನವಾಗಿ ಉಳಿಸಿ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "ಯಾವಾಗಲೂ ಹಣವನ್ನು ಎರವಲು ಪಡೆಯಿರಿ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಖರೀದಿಸುವ ಮೊದಲು ನೀವು ಬೆಲೆಗಳನ್ನು ಹೋಲಿಕೆ ಮಾಡಿ. ನೀವು ಯಾವ ಕೌಶಲ್ಯವನ್ನು ಬಳಸುತ್ತಿದ್ದೀರಿ?",
+      "options": [
+        {
+          "id": "slow",
+          "text": "ತುಂಬಾ ನಿಧಾನವಾಗಿದೆ",
+          "emoji": "🐢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lazy",
+          "text": "ಶಾಪಿಂಗ್ ತಪ್ಪಿಸುವುದು",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "ಸ್ಮಾರ್ಟ್ ಹಣ ಚಿಂತನೆ",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಪ್ರತಿ ಆಟಿಕೆ ಖರೀದಿಸುವ ಬದಲು ನೀವು ಉಳಿತಾಯವನ್ನು ಆರಿಸಿಕೊಳ್ಳಿ. ಇದು ಏನು ನಿರ್ಮಿಸುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "habit",
+          "text": "ಉತ್ತಮ ಉಳಿತಾಯ ಅಭ್ಯಾಸಗಳು",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ಯಾವುದೇ ವಿನೋದವಿಲ್ಲ",
+          "emoji": "😢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "ಖರ್ಚು ಮಾಡುವ ಭಯ",
+          "emoji": "😨",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ಹುಟ್ಟುಹಬ್ಬದ ಹಣದ ಕಥೆ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಹುಟ್ಟುಹಬ್ಬದ ಹಣವಾಗಿ ನೀವು 100 ರೂ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ಆಟಿಕೆಗಳು ಮತ್ತು ಮಿಠಾಯಿಗಳ ಮೇಲೆ ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "ಅದನ್ನೆಲ್ಲ ಅಮ್ಮನಿಗೆ ಕೊಡಿ",
+          "emoji": "👩",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "ಅದನ್ನು ವಿಭಜಿಸಿ: ಕೆಲವು ವಿನೋದಕ್ಕಾಗಿ, ಕೆಲವು ಉಳಿತಾಯಕ್ಕಾಗಿ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "'ಬುದ್ಧಿವಂತಿಕೆಯಿಂದ ವಿಭಜನೆ' ಎಂದರೆ ಏನು?",
+      "options": [
+        {
+          "id": "gifts",
+          "text": "ಸ್ನೇಹಿತರ ಉಡುಗೊರೆಗಳಿಗಾಗಿ ಅರ್ಧದಷ್ಟು ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "ಕೆಲವನ್ನು ಉಳಿತಾಯಕ್ಕಾಗಿ ಮತ್ತು ಕೆಲವನ್ನು ವಿನೋದಕ್ಕಾಗಿ ಇರಿಸಿ",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "needs",
+          "text": "ಅಗತ್ಯಗಳನ್ನು ಮಾತ್ರ ಖರೀದಿಸಿ, ಯಾವುದೇ ಆಸೆಗಳಿಲ್ಲ",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನಿಮ್ಮ ಉಡುಗೊರೆ ಹಣದ ಒಂದು ಭಾಗವನ್ನು ಉಳಿಸುವುದು ನಿಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ...",
+      "options": [
+        {
+          "id": "forget",
+          "text": "ಹಣದ ಬಗ್ಗೆ ಮರೆತುಬಿಡಿ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ಈಗ ಹೆಚ್ಚು ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bigger",
+          "text": "ನಂತರ ದೊಡ್ಡ ವಸ್ತುಗಳನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "🚲",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ನಂತರ ದೊಡ್ಡದನ್ನು ಖರೀದಿಸಲು ಬಯಸಿದರೆ, ಯಾವುದು ಸ್ಮಾರ್ಟ್?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ನಿಯಮಿತವಾಗಿ ಸಣ್ಣ ಪ್ರಮಾಣದಲ್ಲಿ ಉಳಿಸಿ",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "ಸ್ನೇಹಿತರಿಂದ ಎರವಲು",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ಮುಂದಿನ ಜನ್ಮದಿನಕ್ಕಾಗಿ ನಿರೀಕ್ಷಿಸಿ",
+          "emoji": "🎂",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಸಮತೋಲಿತ ನಿರ್ಧಾರ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "all",
+          "text": "ಇಂದು ಎಲ್ಲವನ್ನೂ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "enjoy",
+          "text": "ಸತ್ಕಾರವನ್ನು ಆನಂದಿಸಿ ಮತ್ತು ಉಳಿದವನ್ನು ಉಳಿಸಿ",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "none",
+          "text": "ಎಲ್ಲವನ್ನೂ ಉಳಿಸಿ, ಮೋಜು ಇಲ್ಲ",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

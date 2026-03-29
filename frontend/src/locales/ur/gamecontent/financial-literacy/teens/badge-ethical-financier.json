@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "بیج: اخلاقی فنانسر",
+  "subtitleComplete": "بیج مکمل!",
+  "subtitleProgress": "چیلنج {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "resultSuccessTitle": "اخلاقی فنانسر بیج حاصل کیا گیا!",
+  "resultSuccessText": "آپ کو {{total}} میں سے {{score}} چیلنجز درست ملے! آپ ایک حقیقی اخلاقی فنانسر ہیں!",
+  "resultSuccessLesson": "سبق: مالیاتی لین دین میں ایمانداری اور اخلاقیات اعتماد اور مضبوط شہرت پیدا کرتے ہیں۔",
+  "resultFailTitle": "سیکھتے رہیں!",
+  "resultFailText": "آپ کو {{total}} میں سے {{score}} چیلنجز درست ملے۔ اخلاقی انتخاب کرنے کی مشق کریں!",
+  "resultFailTip": "ٹپ: فوری فوائد پر ہمیشہ ایمانداری کا انتخاب کریں، اور آپ کے سامنے آنے والے کسی بھی غیر اخلاقی رویے کی اطلاع دیں!",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "اخلاقی مخمصہ 1",
+      "question": "آپ کو اضافی رقم مل جاتی ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "text": "مالک کے پاس واپس جائیں۔",
+          "emoji": "🤗",
+          "isCorrect": true
+        },
+        {
+          "text": "رکھ لو",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "خرچ کرو",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "text": "دوستوں کے ساتھ شئیر کریں۔",
+          "emoji": "👥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "اخلاقی مخمصہ 2",
+      "question": "دوست آپ سے مالی فائدے کے لیے جھوٹ بولنے کو کہتا ہے۔ آپ کا جواب؟",
+      "options": [
+        {
+          "text": "جھوٹ بولنے پر راضی ہو۔",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "جھوٹ بولنے سے انکار",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "text": "شاید مدد کریں۔",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "حصہ مانگیں۔",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "اخلاقی مخمصہ 3",
+      "question": "آپ کسی کو مالی لین دین میں دھوکہ دیتے ہوئے دیکھتے ہیں۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "text": "اسے نظر انداز کریں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "text": "ان میں شامل ہوں۔",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "text": "اس کی اطلاع دیں۔",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "text": "خاموشی سے دیکھو",
+          "emoji": "👀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "اخلاقی مخمصہ 4",
+      "question": "آپ کو کچھ غیر اخلاقی کام کرنے کے لیے رقم کی پیشکش کی جاتی ہے۔ آپ کی پسند؟",
+      "options": [
+        {
+          "text": "اسے قبول کریں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "text": "مزید گفت و شنید کریں۔",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "text": "اس کے بارے میں سوچو",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "text": "پیشکش سے انکار",
+          "emoji": "🛑",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "اخلاقی مخمصہ 5",
+      "question": "آپ بے ایمان ہو کر پیسہ کما سکتے ہیں۔ آپ کا فیصلہ کیا ہے؟",
+      "options": [
+        {
+          "text": "ایمانداری کا انتخاب کریں۔",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "text": "رقم کا انتخاب کریں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "text": "دونوں کرو",
+          "emoji": "🎭",
+          "isCorrect": false
+        },
+        {
+          "text": "فیصلے سے گریز کریں۔",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

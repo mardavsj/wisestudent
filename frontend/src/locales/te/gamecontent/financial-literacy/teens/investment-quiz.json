@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "పెట్టుబడి క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionLabel": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ఏది ప్రమాదకరం కాని అధిక రాబడి?",
+      "options": [
+        {
+          "id": "fd",
+          "text": "ఫిక్స్‌డ్ డిపాజిట్",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "stocks",
+          "text": "స్టాక్ మార్కెట్",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "savings",
+          "text": "సేవింగ్స్ ఖాతా",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ఏ పెట్టుబడి సురక్షితమైనది?",
+      "options": [
+        {
+          "id": "fd2",
+          "text": "ఫిక్స్‌డ్ డిపాజిట్",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "stocks2",
+          "text": "Stocks",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "text": "Cryptocurrency",
+          "emoji": "₿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "డైవర్సిఫికేషన్ అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "one",
+          "text": "అన్నింటినీ ఒకే పెట్టుబడిలో పెట్టండి",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "అన్ని పెట్టుబడులను నివారించండి",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "spread",
+          "text": "వివిధ పెట్టుబడులలో విస్తరించండి",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మ్యూచువల్ ఫండ్ అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "mix",
+          "text": "స్టాక్‌లు మరియు బాండ్ల మిశ్రమం",
+          "emoji": "📦",
+          "isCorrect": true
+        },
+        {
+          "id": "single",
+          "text": "ఒకే కంపెనీ స్టాక్",
+          "emoji": "📄",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "బ్యాంకు ఖాతా",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "పొదుపు కాకుండా ఎందుకు పెట్టుబడి పెట్టాలి?",
+      "options": [
+        {
+          "id": "same",
+          "text": "ఆదా చేసినట్లే",
+          "emoji": "➡️",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "నష్టపోతామని హామీ ఇచ్చారు",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "వేగంగా పెరిగే అవకాశం",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "క్విజ్ పూర్తయింది!",
+    "winMessage": "మీరు {{total}}లో {{score}}ని పొందారు! మీరు పెట్టుబడులను అర్థం చేసుకుంటారు!",
+    "coinsEarned": "+{{score}} నాణేలు",
+    "lesson": "పాఠం: స్టాక్స్ రిస్క్ ఎక్కువ కానీ అధిక రాబడిని అందిస్తాయి. ఫిక్స్‌డ్ డిపాజిట్లు సురక్షితమైనవి కానీ తక్కువ రాబడి. వైవిధ్యం ప్రమాదాన్ని తగ్గిస్తుంది!",
+    "loseEmoji": "💪",
+    "loseTitle": "నేర్చుకుంటూ ఉండండి!",
+    "loseMessage": "మీరు {{total}}లో {{score}}ని సరిగ్గా పొందారు. గుర్తుంచుకోండి, స్టాక్‌లు ప్రమాదకరం కానీ అధిక రాబడి, FDలు సురక్షితమైనవి కానీ తక్కువ రాబడి!",
+    "tryAgain": "మళ్లీ ప్రయత్నించండి",
+    "tip": "చిట్కా: స్టాక్ మార్కెట్ ప్రమాదకరం కానీ అధిక రాబడిని అందిస్తుంది. ఫిక్స్‌డ్ డిపాజిట్లు సురక్షితమైనవి కానీ తక్కువ రాబడిని కలిగి ఉంటాయి. ప్రమాదాన్ని తగ్గించడానికి వైవిధ్యం!"
+  }
+}

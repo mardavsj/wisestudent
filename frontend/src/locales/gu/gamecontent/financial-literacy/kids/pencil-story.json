@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "પેન્સિલ વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stageEmoji": "✏️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમે મિત્ર પાસેથી પેન્સિલ ઉધાર લો. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ઉપયોગ કર્યા પછી તેને પરત કરો",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "રાખો",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "તે ગુમાવો",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારે પેન્સિલની જરૂર છે પરંતુ તમારી પાસે નથી. શું સાચું છે?",
+      "options": [
+        {
+          "id": "take",
+          "text": "પૂછ્યા વગર લઈ લો",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ask",
+          "text": "ઉધાર લેવા અને પરત કરવા કહો",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "લખવાનું છોડી દો",
+          "emoji": "✍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમે ઉધાર લીધેલી પેન્સિલ તોડી નાખો. પ્રામાણિક શું છે?",
+      "options": [
+        {
+          "id": "replace",
+          "text": "તેને એક નવા સાથે બદલો",
+          "emoji": "🆕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "તેને છુપાવો",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "બીજાને દોષ આપો",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમારા મિત્ર તમને પેન્સિલ માટે ₹5 ઉધાર આપે છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "તે કેન્ડી પર ખર્ચો",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "ચૂકવવાનું ભૂલી જાવ",
+          "emoji": "😕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "સમયસર ₹5 ચૂકવો",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "શા માટે ઉછીની વસ્તુઓ પરત કરવી મહત્વપૂર્ણ છે?",
+      "options": [
+        {
+          "id": "pencils",
+          "text": "તમને વધુ પેન્સિલો મળે છે",
+          "emoji": "✏️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "તે વિશ્વાસનું નિર્માણ કરે છે",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "popular",
+          "text": "તે તમને લોકપ્રિય બનાવે છે",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

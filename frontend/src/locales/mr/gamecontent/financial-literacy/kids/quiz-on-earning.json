@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "कमाई वर क्विझ",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "पैसे कमवण्याचा योग्य मार्ग कोणता आहे?",
+      "options": [
+        {
+          "id": "working",
+          "text": "काम करून",
+          "emoji": "💼",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wasting",
+          "text": "वाया घालवून",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sleeping",
+          "text": "झोपून",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "शेतकरी पैसे कसे कमवतो?",
+      "options": [
+        {
+          "id": "games",
+          "text": "खेळ खेळत",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "crops",
+          "text": "पिके विकणे",
+          "emoji": "🌾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "अन्न देणे",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "कुठली नोकरी शिकवून पैसे कमवतात?",
+      "options": [
+        {
+          "id": "toymaker",
+          "text": "खेळणी बनवणारा",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "मिठाई विक्रेता",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "teacher",
+          "text": "Teacher",
+          "emoji": "👨‍🏫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "मुले पैसे कसे कमवू शकतात?",
+      "options": [
+        {
+          "id": "chores",
+          "text": "कामे करणे",
+          "emoji": "🧹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "tv",
+          "text": "टीव्ही पाहत आहे",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "स्नॅक्स खाणे",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "पैसे मिळवणे महत्त्वाचे का आहे?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "तुम्हाला मोफत खेळणी मिळतात",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "needs",
+          "text": "तुमच्या गरजा पूर्ण करतात",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sleep",
+          "text": "तुम्हाला चांगली झोप येते",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

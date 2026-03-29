@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "اسکول میلے کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "میلہ جلد شروع ہوتا ہے اور آپ پرجوش محسوس کرتے ہیں۔ آپ سب سے پہلے کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "run",
+          "text": "پہلے اسٹال پر دوڑیں۔",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shout",
+          "text": "جوش سے چیخیں۔",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "look",
+          "text": "میلے کے ارد گرد دیکھو",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کو ایک مشہور گیم کے لیے ایک لمبی لائن نظر آتی ہے۔ صحیح انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "push",
+          "text": "سامنے کی طرف دھکیلیں۔",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "اپنی باری کا انتظار کریں۔",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "leave",
+          "text": "غصے سے چھوڑ دو",
+          "emoji": "😤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ایک دکاندار آپ کو غلطی سے اضافی تبدیلی دے دیتا ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "return",
+          "text": "اضافی رقم واپس کریں۔",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "اضافی رقم رکھو",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "خاموشی سے چلے جاؤ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ بہت سی سواریوں کو آزمانا چاہتے ہیں لیکن تھکاوٹ محسوس کرتے ہیں۔ سمارٹ ایکشن کیا ہے؟",
+      "options": [
+        {
+          "id": "force",
+          "text": "اپنے آپ کو سواری پر مجبور کریں۔",
+          "emoji": "😣",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "سب کچھ چھوڑ دیں۔",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rest",
+          "text": "تھوڑا آرام کریں۔",
+          "emoji": "🪑",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "میلہ ختم ہو رہا ہے اور آپ کے پاس ایک ٹکٹ باقی ہے۔ آپ کیا منتخب کرتے ہیں؟",
+      "options": [
+        {
+          "id": "favorite",
+          "text": "اپنی پسندیدہ سرگرمی کا انتخاب کریں۔",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "random",
+          "text": "اسے بے ترتیب طور پر استعمال کریں۔",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "اسے پھینک دو",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

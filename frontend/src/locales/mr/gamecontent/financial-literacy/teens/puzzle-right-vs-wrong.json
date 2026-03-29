@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "कोडे: बरोबर विरुद्ध चुकीचे",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "परिणामांसह क्रिया जुळवा ({{current}}/{{total}} जुळले)",
+  "actionsTitle": "आर्थिक क्रिया",
+  "outcomesTitle": "आर्थिक परिणाम",
+  "matchButton": "Match",
+  "selectActionLabel": "आर्थिक कृती निवडा",
+  "selectedActionLabel": "निवडले: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "जुळले: {{current}}/{{total}}",
+  "resultSuccessHeader": "ग्रेट जॉब!",
+  "resultSuccessSubheader": "तुम्ही {{total}} पैकी {{score}} आर्थिक क्रिया त्यांच्या परिणामांशी अचूक जुळल्या!",
+  "resultSuccessLesson": "धडा: नैतिक आर्थिक निर्णय प्रत्येकासाठी सकारात्मक परिणाम देतात!",
+  "resultTryAgainHeader": "सराव करत राहा!",
+  "resultTryAgainSubheader": "तुम्ही {{total}} आर्थिक क्रियांपैकी {{score}} बरोबर जुळले.",
+  "resultTryAgainTip": "टीप: प्रत्येक आर्थिक कृतीच्या परिणामांचा विचार करा!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "actions": [
+    {
+      "id": 1,
+      "name": "धर्मादाय दान करणे",
+      "emoji": "💝"
+    },
+    {
+      "id": 2,
+      "name": "पैसे चोरणे",
+      "emoji": "😈"
+    },
+    {
+      "id": 3,
+      "name": "प्रामाणिक अहवाल",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "लाच देणे",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "फेअर डील",
+      "emoji": "🤝"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "सकारात्मक प्रभाव",
+      "emoji": "🌟"
+    },
+    {
+      "id": 7,
+      "name": "कायदेशीर परिणाम",
+      "emoji": "⛓️"
+    },
+    {
+      "id": 8,
+      "name": "ट्रस्ट बिल्डिंग",
+      "emoji": "🤝"
+    },
+    {
+      "id": 9,
+      "name": "Corruption",
+      "emoji": "🐍"
+    },
+    {
+      "id": 10,
+      "name": "परस्पर लाभ",
+      "emoji": "🤝"
+    }
+  ]
+}

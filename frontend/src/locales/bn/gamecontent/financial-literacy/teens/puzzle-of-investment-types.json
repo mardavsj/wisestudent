@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ধাঁধা: বিনিয়োগের ধরন",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "বৈশিষ্ট্যের সাথে বিনিয়োগের সাথে মিল করুন ({{current}}/{{total}} মিলেছে)",
+  "investmentsTitle": "বিনিয়োগের ধরন",
+  "characteristicsTitle": "Characteristics",
+  "matchButton": "Match",
+  "selectInvestmentLabel": "একটি বিনিয়োগের ধরন নির্বাচন করুন",
+  "selectedInvestmentLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি সঠিকভাবে {{total}} বিনিয়োগের ধরনগুলির মধ্যে {{score}} তাদের বৈশিষ্ট্যের সাথে মিলেছেন!",
+  "resultSuccessLesson": "পাঠ: বিনিয়োগের বৈশিষ্ট্য বোঝা অবগত আর্থিক সিদ্ধান্ত নিতে সাহায্য করে!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি {{total}} বিনিয়োগের প্রকারের মধ্যে {{score}} সঠিকভাবে মেলেছেন।",
+  "resultTryAgainTip": "টিপ: প্রতিটি বিনিয়োগের প্রকারের ঝুঁকির স্তর এবং প্রকৃতি সম্পর্কে চিন্তা করুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "investments": [
+    {
+      "id": 1,
+      "name": "ফিক্সড ডিপোজিট",
+      "emoji": "🏦"
+    },
+    {
+      "id": 2,
+      "name": "Stocks",
+      "emoji": "📈"
+    },
+    {
+      "id": 3,
+      "name": "মিউচুয়াল ফান্ড",
+      "emoji": "📊"
+    },
+    {
+      "id": 4,
+      "name": "Bonds",
+      "emoji": "📜"
+    },
+    {
+      "id": 5,
+      "name": "রিয়েল এস্টেট",
+      "emoji": "🏠"
+    }
+  ],
+  "characteristics": [
+    {
+      "id": 6,
+      "name": "Safe",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 7,
+      "name": "Risky",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "Diversified",
+      "emoji": "🔄"
+    },
+    {
+      "id": 9,
+      "name": "Stable",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "Long-term",
+      "emoji": "⏳"
+    }
+  ]
+}

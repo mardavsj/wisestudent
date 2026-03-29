@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ਪੈਸੇ ਦੀ ਇਮਾਨਦਾਰੀ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਜੇਕਰ ਤੁਹਾਨੂੰ ₹10 ਮਿਲਦੇ ਹਨ ਤਾਂ ਕਿਹੜਾ ਇਮਾਨਦਾਰ ਵਿਕਲਪ ਹੈ?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ਇਸ ਨੂੰ ਚੁੱਪਚਾਪ ਰੱਖੋ",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ਇਸ ਨੂੰ ਸਨੈਕਸ 'ਤੇ ਖਰਚ ਕਰੋ",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ਇਸ ਨੂੰ ਮਾਲਕ ਨੂੰ ਵਾਪਸ ਕਰੋ",
+          "emoji": "🤝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਨੂੰ ₹5 ਦਾ ਵਾਧੂ ਬਦਲਾਅ ਮਿਲਦਾ ਹੈ। ਕੀ ਕਰਨਾ ਸਹੀ ਗੱਲ ਹੈ?",
+      "options": [
+        {
+          "id": "give",
+          "text": "ਵਾਧੂ ਵਾਪਸ ਦਿਓ",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ਕੈਂਡੀ ਖਰੀਦੋ",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ਕੁਝ ਨਾ ਕਹੋ",
+          "emoji": "😶",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਸੀਂ ₹20 ਉਧਾਰ ਲੈਂਦੇ ਹੋ। ਇਮਾਨਦਾਰ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "never",
+          "text": "ਕਦੇ ਵਾਪਸ ਨਾ ਕਰੋ",
+          "emoji": "😞",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "ਸਮੇਂ ਸਿਰ ਇਸ ਦਾ ਭੁਗਤਾਨ ਕਰੋ",
+          "emoji": "✅",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਇਸ ਦੀ ਬਜਾਏ ਹੋਰ ਖਰਚ ਕਰੋ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ₹15 ਦਾ ਖਿਡੌਣਾ ਤੋੜਦੇ ਹੋ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "ਦੱਸੋ ਅਤੇ ਭੁਗਤਾਨ ਕਰਨ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰੋ",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ਇਸ ਨੂੰ ਲੁਕਾਓ",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "ਕਿਸੇ ਹੋਰ ਨੂੰ ਦੋਸ਼ੀ ਠਹਿਰਾਓ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਪੈਸੇ ਨਾਲ ਈਮਾਨਦਾਰੀ ਕਿਉਂ ਜ਼ਰੂਰੀ ਹੈ?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "ਇਹ ਭਰੋਸਾ ਕਮਾਉਂਦਾ ਹੈ",
+          "emoji": "😊",
+          "isCorrect": true
+        },
+        {
+          "id": "money",
+          "text": "ਇਹ ਤੁਹਾਨੂੰ ਹੋਰ ਪੈਸੇ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਇਹ ਤੁਹਾਨੂੰ ਹੋਰ ਖਰਚ ਕਰਨ ਦਿੰਦਾ ਹੈ",
+          "emoji": "🛒",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

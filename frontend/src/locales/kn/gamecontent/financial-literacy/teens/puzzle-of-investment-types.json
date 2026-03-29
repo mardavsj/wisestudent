@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ಒಗಟು: ಹೂಡಿಕೆಯ ವಿಧಗಳು",
+  "subtitleComplete": "ಒಗಟು ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "ಗುಣಲಕ್ಷಣಗಳೊಂದಿಗೆ ಹೂಡಿಕೆಗಳನ್ನು ಹೊಂದಿಸಿ ({{current}}/{{total}} ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ)",
+  "investmentsTitle": "ಹೂಡಿಕೆಯ ವಿಧಗಳು",
+  "characteristicsTitle": "Characteristics",
+  "matchButton": "Match",
+  "selectInvestmentLabel": "ಹೂಡಿಕೆಯ ಪ್ರಕಾರವನ್ನು ಆಯ್ಕೆಮಾಡಿ",
+  "selectedInvestmentLabel": "ಆಯ್ಕೆಮಾಡಲಾಗಿದೆ: {{name}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "matchedLabel": "ಹೊಂದಾಣಿಕೆಯಾಗಿದೆ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ಗ್ರೇಟ್ ಜಾಬ್!",
+  "resultSuccessSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಹೂಡಿಕೆ ಪ್ರಕಾರಗಳನ್ನು ಅವುಗಳ ಗುಣಲಕ್ಷಣಗಳೊಂದಿಗೆ ಸರಿಯಾಗಿ ಹೊಂದಾಣಿಕೆ ಮಾಡಿದ್ದೀರಿ!",
+  "resultSuccessLesson": "ಪಾಠ: ಹೂಡಿಕೆಯ ಗುಣಲಕ್ಷಣಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವುದು ತಿಳುವಳಿಕೆಯುಳ್ಳ ಹಣಕಾಸಿನ ನಿರ್ಧಾರಗಳನ್ನು ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ!",
+  "resultTryAgainHeader": "ಅಭ್ಯಾಸವನ್ನು ಮುಂದುವರಿಸಿ!",
+  "resultTryAgainSubheader": "ನೀವು {{score}} ರಲ್ಲಿ {{total}} ಹೂಡಿಕೆ ಪ್ರಕಾರಗಳನ್ನು ಸರಿಯಾಗಿ ಹೊಂದಿದ್ದೀರಿ.",
+  "resultTryAgainTip": "ಸಲಹೆ: ಪ್ರತಿ ಹೂಡಿಕೆ ಪ್ರಕಾರದ ಅಪಾಯದ ಮಟ್ಟ ಮತ್ತು ಸ್ವಭಾವದ ಬಗ್ಗೆ ಯೋಚಿಸಿ!",
+  "coinsEarned": "+{{coins}} ನಾಣ್ಯಗಳು",
+  "investments": [
+    {
+      "id": 1,
+      "name": "ಸ್ಥಿರ ಠೇವಣಿ",
+      "emoji": "🏦"
+    },
+    {
+      "id": 2,
+      "name": "Stocks",
+      "emoji": "📈"
+    },
+    {
+      "id": 3,
+      "name": "ಮ್ಯೂಚುಯಲ್ ಫಂಡ್",
+      "emoji": "📊"
+    },
+    {
+      "id": 4,
+      "name": "Bonds",
+      "emoji": "📜"
+    },
+    {
+      "id": 5,
+      "name": "ರಿಯಲ್ ಎಸ್ಟೇಟ್",
+      "emoji": "🏠"
+    }
+  ],
+  "characteristics": [
+    {
+      "id": 6,
+      "name": "Safe",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 7,
+      "name": "Risky",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "Diversified",
+      "emoji": "🔄"
+    },
+    {
+      "id": 9,
+      "name": "Stable",
+      "emoji": "💰"
+    },
+    {
+      "id": 10,
+      "name": "Long-term",
+      "emoji": "⏳"
+    }
+  ]
+}

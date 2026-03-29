@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "پگی بینک کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "🐷",
+  "questions": [
+    {
+      "id": 1,
+      "text": "پگی بینک کوئی سود نہیں کماتا ہے۔ بینک اکاؤنٹ کرتا ہے۔ کون سا بہتر ہے؟",
+      "options": [
+        {
+          "id": "bank",
+          "text": "بینک اکاؤنٹ",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "پگی بینک",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "mattress",
+          "text": "گدے کے نیچے",
+          "emoji": "🛏️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کے پاس ₹50 ہیں۔ اس کے بڑھنے میں مدد کے لیے آپ کو کہاں بچانا چاہیے؟",
+      "options": [
+        {
+          "id": "jar",
+          "text": "گھر میں جار",
+          "emoji": "🏺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "بینک سیونگ اکاؤنٹ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ابھی خرچ کرو",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "بینک 5% سود پیش کرتا ہے۔ پگی بینک 0% پیش کرتا ہے۔ سمجھداری سے انتخاب کریں۔",
+      "options": [
+        {
+          "id": "bank",
+          "text": "سود کے لیے بینک",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "تفریح ​​کے لیے پگی بینک",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "دے دو",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ بینک میں 100 روپے بچاتے ہیں۔ یہ ₹105 تک بڑھتا ہے۔ کیوں؟",
+      "options": [
+        {
+          "id": "magic",
+          "text": "پگی بینک کا جادو",
+          "emoji": "🪄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "added",
+          "text": "آپ نے مزید رقم شامل کی۔",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "بینک سود ادا کرتا ہے۔",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ایک بینک اکثر پگی بینک سے بہتر کیوں ہوتا ہے؟",
+      "options": [
+        {
+          "id": "safe",
+          "text": "یہ محفوظ ہے اور پیسہ بڑھا سکتا ہے۔",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "cool",
+          "text": "یہ صرف ٹھنڈا لگتا ہے۔",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "carry",
+          "text": "یہ لے جانے کے لئے آسان ہے",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "రుణం తీసుకోవడంపై క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "🤝",
+  "questions": [
+    {
+      "id": 1,
+      "text": "రుణం తీసుకోవడం అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "without",
+          "text": "అడగకుండానే తీసుకుంటున్నారు",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ఉపయోగించడం మరియు తిరిగి రావడం",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "steal",
+          "text": "Stealing",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "పుస్తకాన్ని తీసుకున్న తర్వాత, మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "return",
+          "text": "దాన్ని తిరిగి ఇవ్వండి",
+          "emoji": "↩️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "ఎప్పటికీ ఉంచండి",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sell",
+          "text": "దానిని అమ్మండి",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "బ్యాంకు నుండి డబ్బు తీసుకోవడం ఎందుకు మంచిది?",
+      "options": [
+        {
+          "id": "repay",
+          "text": "మీరు వడ్డీతో తిరిగి చెల్లించండి",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "ఇది ఉచిత డబ్బు",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "మీరు ఎప్పటికీ తిరిగి చెల్లించరు",
+          "emoji": "🙃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు తీసుకున్న వస్తువులను తిరిగి ఇవ్వకపోతే ఏమి జరుగుతుంది?",
+      "options": [
+        {
+          "id": "more",
+          "text": "మీరు మరిన్ని వస్తువులను పొందుతారు",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rewards",
+          "text": "మీరు బహుమతులు పొందుతారు",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ప్రజలు మీపై నమ్మకం కోల్పోతారు",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "నిజాయితీగా రుణాలు తీసుకోవడం ఎందుకు ముఖ్యం?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "మీరు మరిన్ని బొమ్మలను పొందుతారు",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ఇది ఇతరులతో నమ్మకాన్ని పెంచుతుంది",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ఇది రుణాలను సరదాగా చేస్తుంది",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

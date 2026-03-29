@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "बजेट क्विझ",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्ही ₹1000 मिळवता, ₹400 खाण्यावर खर्च करा. अन्नावर किती टक्के खर्च होतो?",
+      "options": [
+        {
+          "id": "60",
+          "text": "60%",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "40%",
+          "emoji": "🍽️",
+          "isCorrect": true
+        },
+        {
+          "id": "35",
+          "text": "35%",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्ही ₹600 वरून ₹300 वाचवता. किती% जतन केले आहे?",
+      "options": [
+        {
+          "id": "50",
+          "text": "50%",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "25",
+          "text": "25%",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "40%",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्ही वाहतुकीवर ₹500 पैकी ₹150 खर्च करता. किती% खर्च केला जातो?",
+      "options": [
+        {
+          "id": "20",
+          "text": "20%",
+          "emoji": "🚗",
+          "isCorrect": false
+        },
+        {
+          "id": "35",
+          "text": "35%",
+          "emoji": "🚲",
+          "isCorrect": false
+        },
+        {
+          "id": "30",
+          "text": "30%",
+          "emoji": "🚍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्ही ₹800 पैकी ₹200 वाचवता. किती% जतन केले आहे?",
+      "options": [
+        {
+          "id": "30",
+          "text": "30%",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "25",
+          "text": "25%",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "50",
+          "text": "50%",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुम्ही कपड्यांवर ₹600 पैकी ₹240 खर्च करता. किती% खर्च केला जातो?",
+      "options": [
+        {
+          "id": "35",
+          "text": "35%",
+          "emoji": "👔",
+          "isCorrect": false
+        },
+        {
+          "id": "45",
+          "text": "45%",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "40%",
+          "emoji": "👗",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ग्रेट जॉब!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत! तुम्हाला बजेटची टक्केवारी चांगली समजते!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: टक्केवारी समजून घेणे तुम्हाला चांगले बजेट आणि तुमच्या खर्चाचा मागोवा घेण्यास मदत करते!",
+    "loseEmoji": "😔",
+    "loseTitle": "सराव करत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत. लक्षात ठेवा, तुम्ही किती खर्च करत आहात किंवा बचत करत आहात हे समजून घेण्यासाठी टक्केवारी तुम्हाला मदत करते!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: टक्केवारी काढण्यासाठी, भाग पूर्ण भागा आणि 100 ने गुणा."
+  }
+}

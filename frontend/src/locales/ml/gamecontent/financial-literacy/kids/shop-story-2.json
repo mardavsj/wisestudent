@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ഷോപ്പ് സ്റ്റോറി 2",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "കടയിൽ രണ്ട് പേനകൾ കാണാം. ഒന്നിന് 50 രൂപയും മറ്റൊന്നിന് 15 രൂപയുമാണ്. രണ്ടും ഒരേപോലെ പ്രവർത്തിക്കുന്നു. ഏത് വാങ്ങണം?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "വിലകൂടിയ പേന",
+          "emoji": "🖊️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "compare",
+          "text": "ആദ്യം അവലോകനങ്ങൾ പരിശോധിക്കുക",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "താങ്ങാനാവുന്ന പേന",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "വസ്ത്രങ്ങൾ വാങ്ങാൻ 100 രൂപയുണ്ട്. നിങ്ങൾ ഇഷ്ടപ്പെടുന്ന ഒരു ഷർട്ട് 80 രൂപയ്ക്കും സമാനമായ മറ്റൊന്ന് 30 രൂപയ്ക്കും നിങ്ങൾ കണ്ടെത്തുന്നു. എന്താണ് സ്മാർട്ട്?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "വിലകുറഞ്ഞ ഷർട്ട് വാങ്ങുക",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "വിലകൂടിയ ഷർട്ട് വാങ്ങുക",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "വിൽപ്പനയ്ക്കായി കാത്തിരിക്കുക",
+          "emoji": "🏷️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിങ്ങൾ ഒരു പാർട്ടിക്ക് ലഘുഭക്ഷണം വാങ്ങുകയാണ്. എ ബ്രാൻഡിന് 200 രൂപയും ബി ബ്രാൻഡിന് 120 രൂപയും. രണ്ടിനും ഒരേ രുചിയാണ്. ഏതാണ്?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ബ്രാൻഡ് എ വാങ്ങുക",
+          "emoji": "📦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "ബ്രാൻഡ് ബി വാങ്ങുക",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mix",
+          "text": "ഓരോന്നിലും കുറച്ച് വാങ്ങുക",
+          "emoji": "➗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങൾക്ക് സ്കൂളിലേക്ക് ഒരു ബാക്ക്പാക്ക് ആവശ്യമാണ്. ഒന്നിന് 800 രൂപയും മറ്റൊന്നിന് 400 രൂപയുമാണ്.രണ്ടും ഗുണനിലവാരമുള്ളതാണ്. എന്താണ് ബുദ്ധി?",
+      "options": [
+        {
+          "id": "affordable",
+          "text": "400 രൂപയുടെ ബാക്ക്പാക്ക് വാങ്ങുക",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "costly",
+          "text": "800 രൂപയുടെ ബാക്ക്പാക്ക് വാങ്ങുക",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "തൽക്കാലം കടം വാങ്ങൂ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "നിങ്ങൾ പലചരക്ക് സാധനങ്ങൾ വാങ്ങുകയാണ്. ജൈവപച്ചക്കറിക്ക് 300 രൂപയും സാധാരണ പച്ചക്കറിക്ക് 150 രൂപയുമാണ്. രണ്ടും പോഷകസമൃദ്ധമാണ്. ഏതാണ്?",
+      "options": [
+        {
+          "id": "costly",
+          "text": "ജൈവ പച്ചക്കറികൾ വാങ്ങുക",
+          "emoji": "🥦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "selective",
+          "text": "രണ്ട് തരങ്ങളും മിക്സ് ചെയ്യുക",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "affordable",
+          "text": "സാധാരണ പച്ചക്കറികൾ വാങ്ങുക",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "ریفلیکس اسمارٹ اسپنڈ",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: اپنے اخراجات کے اضطراب کی جانچ کریں!",
+  "subtitleReady": "اپنے اخراجات کے اضطراب کی جانچ کریں!",
+  "readyHeader": "اپنے اخراجات کے اضطراب کو جانچنے کے لئے تیار ہیں؟",
+  "readyDescription": "ہوشیار اخراجات کے انتخاب کے بارے میں سوالات کے جوابات دیں۔",
+  "readyTip": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{time}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "greatJob": "بہت اچھا کام!",
+  "finalScore": "آپ نے {{total}} میں سے {{score}} اسکور کیا!",
+  "growthSkills": "آپ مضبوط مالی فیصلہ سازی کی مہارتیں تیار کر رہے ہیں!",
+  "playAgain": "دوبارہ کھیلیں",
+  "questions": [
+    {
+      "id": 1,
+      "question": "خرچ کرنے کا بہترین انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "pay_rent",
+          "text": "کرایہ ادا کریں۔",
+          "emoji": "🏠"
+        },
+        {
+          "id": "luxury_party",
+          "text": "لگژری پارٹی",
+          "emoji": "🎉"
+        },
+        {
+          "id": "designer_shoes",
+          "text": "ڈیزائنر جوتے خریدیں۔",
+          "emoji": "👟"
+        },
+        {
+          "id": "impulse_purchase",
+          "text": "تسلسل کی خریداری",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "کون سا خرچ پہلے آنا چاہئے؟",
+      "options": [
+        {
+          "id": "new_gadgets",
+          "text": "نئے گیجٹس",
+          "emoji": "📱"
+        },
+        {
+          "id": "buy_groceries",
+          "text": "گروسری خریدیں۔",
+          "emoji": "🛒"
+        },
+        {
+          "id": "expensive_restaurant",
+          "text": "مہنگا ریستوراں",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "entertainment",
+          "text": "Entertainment",
+          "emoji": "🎬"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "آپ کو اضافی رقم کے ساتھ کیا کرنا چاہئے؟",
+      "options": [
+        {
+          "id": "movie_night",
+          "text": "مووی نائٹ",
+          "emoji": "🎬"
+        },
+        {
+          "id": "buy_video_games",
+          "text": "ویڈیو گیمز خریدیں۔",
+          "emoji": "🎮"
+        },
+        {
+          "id": "save_money",
+          "text": "پیسے بچائیں۔",
+          "emoji": "💰"
+        },
+        {
+          "id": "shopping_spree",
+          "text": "خریداری اتسو مناینگی",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ترجیحی خرچ کون سا ہے؟",
+      "options": [
+        {
+          "id": "pay_bills",
+          "text": "بل ادا کریں۔",
+          "emoji": "📄"
+        },
+        {
+          "id": "designer_clothes",
+          "text": "ڈیزائنر کپڑے",
+          "emoji": "👔"
+        },
+        {
+          "id": "weekend_trip",
+          "text": "ویک اینڈ ٹرپ",
+          "emoji": "✈️"
+        },
+        {
+          "id": "gourmet_dinner",
+          "text": "گورمیٹ ڈنر",
+          "emoji": "🍷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "طویل مدتی مالیاتی تحفظ کیا بناتا ہے؟",
+      "options": [
+        {
+          "id": "concert_ticket",
+          "text": "کنسرٹ ٹکٹ",
+          "emoji": "🎫"
+        },
+        {
+          "id": "fund_education",
+          "text": "فنڈ ایجوکیشن",
+          "emoji": "📚"
+        },
+        {
+          "id": "buy_jewelry",
+          "text": "زیورات خریدیں۔",
+          "emoji": "💍"
+        },
+        {
+          "id": "luxury_vacation",
+          "text": "لگژری تعطیلات",
+          "emoji": "🏖️"
+        }
+      ]
+    }
+  ]
+}

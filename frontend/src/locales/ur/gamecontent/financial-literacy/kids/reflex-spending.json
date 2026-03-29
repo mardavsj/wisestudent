@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "اضطراری اخراجات",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: اپنے اخراجات کے اضطراب کی جانچ کریں!",
+  "subtitleReady": "اپنے اخراجات کے اضطراب کی جانچ کریں!",
+  "readyTitle": "اپنی خرچ کرنے کی مہارت کو جانچنے کے لیے تیار ہیں؟",
+  "readyDescription": "ہوشیار اخراجات اور رقم کے انتظام کے بارے میں سوالات کے جوابات دیں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "بڑی خریداری کرنے سے پہلے آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "آگے کی منصوبہ بندی کریں۔",
+      "options": [
+        {
+          "text": "فوری طور پر خریدیں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "آگے کی منصوبہ بندی کریں۔",
+          "isCorrect": true,
+          "emoji": "📋"
+        },
+        {
+          "text": "دوستوں سے پوچھیں۔",
+          "isCorrect": false,
+          "emoji": "👥"
+        },
+        {
+          "text": "لاگت کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "اپنے الاؤنس کو خرچ کرنے کا بہترین طریقہ کیا ہے؟",
+      "correctAnswer": "پہلے کچھ محفوظ کریں۔",
+      "options": [
+        {
+          "text": "سب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "جو بھی خریدو",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "پہلے کچھ محفوظ کریں۔",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "اسے ضائع کریں۔",
+          "isCorrect": false,
+          "emoji": "🔥"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "تسلسل کی خریداریوں سے بچنے میں آپ کو کیا مدد ملتی ہے؟",
+      "correctAnswer": "خریدنے سے پہلے انتظار کریں۔",
+      "options": [
+        {
+          "text": "خریدنے سے پہلے انتظار کریں۔",
+          "isCorrect": true,
+          "emoji": "⏳"
+        },
+        {
+          "text": "فوری طور پر خریدیں۔",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "اکثر خریداری کریں۔",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "سوچے سمجھے بغیر خرچ کرنا",
+          "isCorrect": false,
+          "emoji": "🤔"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "خریداری کرتے وقت آپ کو کس چیز کا موازنہ کرنا چاہئے؟",
+      "correctAnswer": "قیمتیں اور معیار",
+      "options": [
+        {
+          "text": "صرف رنگ",
+          "isCorrect": false,
+          "emoji": "🎨"
+        },
+        {
+          "text": "صرف برانڈز",
+          "isCorrect": false,
+          "emoji": "🏷️"
+        },
+        {
+          "text": "Packaging",
+          "isCorrect": false,
+          "emoji": "📦"
+        },
+        {
+          "text": "قیمتیں اور معیار",
+          "isCorrect": true,
+          "emoji": "🔍"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ہوشیار اخراجات میں پہلا قدم کیا ہے؟",
+      "correctAnswer": "بجٹ مرتب کریں۔",
+      "options": [
+        {
+          "text": "آزادانہ طور پر خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "بجٹ مرتب کریں۔",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "سب کچھ خریدیں۔",
+          "isCorrect": false,
+          "emoji": "🛍️"
+        },
+        {
+          "text": "حدود کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    }
+  ]
+}

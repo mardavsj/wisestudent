@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "स्टार्टअप स्टोरी",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "perfectScoreTitle": "कथा पूर्ण!",
+  "perfectScoreMsg": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले! तुम्हाला स्टार्टअप गुंतवणूक समजते!",
+  "coinsLabel": "+{{count}} नाणी",
+  "lessonLabel": "धडा: स्टार्टअप गुंतवणूक चांगलं संशोधन आणि नियोजित असताना स्मार्ट असू शकते, परंतु नेहमी विविधता आणा आणि जोखीम समजून घ्या!",
+  "keepLearningTitle": "शिकत राहा!",
+  "lowScoreMsg": "तुम्हाला {{total}} पैकी {{score}} बरोबर मिळाले. लक्षात ठेवा, स्टार्टअप गुंतवणूकीसाठी संशोधन, नियोजन आणि वैविध्य आवश्यक आहे!",
+  "tryAgain": "पुन्हा प्रयत्न करा",
+  "tipLabel": "टीप: जेव्हा तुम्ही संशोधन करता, योजना करता आणि विविधता आणता तेव्हा स्टार्टअप गुंतवणूक स्मार्ट असू शकते. ₹100→₹150 सारखा 50% परतावा चांगला आहे!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "मित्र लिंबूपाणी स्टँडमध्ये ₹100 ची गुंतवणूक करतो. ₹150 मिळवतो. स्मार्ट?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "होय, चांगला परतावा",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "नाही, खूप धोकादायक",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "कदाचित, अवलंबून आहे",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "स्टार्टअप गुंतवणूक कशामुळे स्मार्ट बनते?",
+      "options": [
+        {
+          "id": "research",
+          "text": "संशोधन आणि नियोजन",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "शुद्ध भाग्य",
+          "emoji": "🍀",
+          "isCorrect": false
+        },
+        {
+          "id": "quick",
+          "text": "झटपट निर्णय",
+          "emoji": "⚡",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्ही तुमचे सर्व पैसे एका स्टार्टअपमध्ये गुंतवावे का?",
+      "options": [
+        {
+          "id": "all",
+          "text": "होय, सर्व आत जा",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "diversify",
+          "text": "नाही, विविधता आणा",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid",
+          "text": "स्टार्टअप टाळा",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "स्टार्टअप गुंतवणुकीवर चांगला परतावा काय आहे?",
+      "options": [
+        {
+          "id": "high",
+          "text": "उच्च परतावा क्षमता",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "guaranteed",
+          "text": "हमी परतावा",
+          "emoji": "🛡️",
+          "isCorrect": false
+        },
+        {
+          "id": "low",
+          "text": "फक्त कमी परतावा",
+          "emoji": "📉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "स्टार्टअपमध्ये गुंतवणूक केव्हा चांगली कल्पना आहे?",
+      "options": [
+        {
+          "id": "never",
+          "text": "Never",
+          "emoji": "🤦",
+          "isCorrect": false
+        },
+        {
+          "id": "planned",
+          "text": "जेव्हा सुनियोजित",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "Always",
+          "emoji": "🙂",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "પઝલ: સ્માર્ટ ખર્ચ",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "વિભાવનાઓને અર્થ સાથે મેચ કરો ({{current}}/{{total}} મેળ ખાય છે)",
+  "conceptsTitle": "ખર્ચની વિભાવનાઓ",
+  "meaningsTitle": "નાણાકીય અર્થ",
+  "matchButton": "Match",
+  "selectConceptLabel": "ખર્ચનો ખ્યાલ પસંદ કરો",
+  "selectedConceptLabel": "પસંદ કરેલ: {{name}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "matchedLabel": "મેળ ખાતી: {{current}}/{{total}}",
+  "resultSuccessHeader": "ગ્રેટ જોબ!",
+  "resultSuccessSubheader": "તમે {{total}} માંથી {{score}} ને તેમના અર્થો સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "resultSuccessLesson": "પાઠ: ખર્ચના ખ્યાલોને સમજવાથી વધુ સારા નાણાકીય નિર્ણયો લેવામાં આવે છે!",
+  "resultTryAgainHeader": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultTryAgainSubheader": "તમે {{total}} માંથી {{score}} ને ખર્ચના ખ્યાલો યોગ્ય રીતે મેળવ્યા છે.",
+  "resultTryAgainTip": "ટીપ: દરેક ખર્ચનો ખ્યાલ ખરેખર શું રજૂ કરે છે તે વિશે વિચારો!",
+  "coinsEarned": "+{{coins}} સિક્કા",
+  "concepts": [
+    {
+      "id": 1,
+      "name": "Budget",
+      "emoji": "📋"
+    },
+    {
+      "id": 2,
+      "name": "Waste",
+      "emoji": "🗑️"
+    },
+    {
+      "id": 3,
+      "name": "Needs",
+      "emoji": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Wants",
+      "emoji": "🎁"
+    },
+    {
+      "id": 5,
+      "name": "ઈમરજન્સી ફંડ",
+      "emoji": "🛡️"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "નાણાકીય આયોજન",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "સંસાધનનો દુરુપયોગ",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "આવશ્યક પ્રાથમિકતાઓ",
+      "emoji": "⭐"
+    },
+    {
+      "id": 9,
+      "name": "વિવેકાધીન ખર્ચ",
+      "emoji": "💎"
+    },
+    {
+      "id": 10,
+      "name": "જોખમ રક્ષણ",
+      "emoji": "🔒"
+    }
+  ]
+}

@@ -1,1 +1,143 @@
-﻿{}
+{
+  "title": "गरजांवर क्विझ",
+  "subtitleComplete": "क्विझ पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न: गरजांबद्दल आपल्या ज्ञानाची चाचणी घ्या!",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "कोणती वस्तू तुमच्या शरीराला दररोज काम करण्यास मदत करते?",
+      "options": [
+        {
+          "id": "snack",
+          "text": "Chips",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "water",
+          "text": "पिण्याचे स्वच्छ पाणी",
+          "emoji": "🚰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "toy",
+          "text": "रिमोट कंट्रोल कार",
+          "emoji": "🚗",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "शाळेत योग्यरित्या शिकण्यासाठी तुम्हाला काय आवश्यक आहे?",
+      "options": [
+        {
+          "id": "bag",
+          "text": "शाळेची दप्तर आणि पुस्तके",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "game",
+          "text": "मोबाइल गेम्स",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cartoon",
+          "text": "कार्टून व्हिडिओ",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "कोणती निवड तुम्हाला उष्णता आणि थंडीपासून सुरक्षित राहण्यास मदत करते?",
+      "options": [
+        {
+          "id": "cap",
+          "text": "फॅशन कॅप",
+          "emoji": "🧢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shoes",
+          "text": "पार्टी शूज",
+          "emoji": "👟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "योग्य कपडे",
+          "emoji": "👕",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "विश्रांती आणि राहण्याची मूलभूत गरज कोणती आहे?",
+      "options": [
+        {
+          "id": "house",
+          "text": "सुरक्षित घर",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "mall",
+          "text": "शॉपिंग मॉल",
+          "emoji": "🏬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "park",
+          "text": "Playground",
+          "emoji": "🛝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "लोक इच्छांपूर्वी गरजा का निवडतात?",
+      "options": [
+        {
+          "id": "fun",
+          "text": "इच्छा अधिक मजेदार आहेत",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "important",
+          "text": "दैनंदिन जीवनासाठी गरजा आवश्यक आहेत",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "मित्र हवे असतात",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

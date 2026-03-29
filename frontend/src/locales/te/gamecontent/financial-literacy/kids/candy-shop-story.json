@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "మిఠాయి దుకాణం కథ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "🍬",
+  "questions": [
+    {
+      "id": 1,
+      "text": "దుకాణదారుడు ₹10కి బదులుగా ₹20 వసూలు చేస్తాడు. మీరు బిల్లును తనిఖీ చేస్తారా?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "అవును, నేను బిల్లును తనిఖీ చేస్తున్నాను",
+          "emoji": "📜",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "లేదు, నేను చెల్లిస్తాను",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "friend",
+          "text": "తనిఖీ చేయమని స్నేహితుడిని అడగండి",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీ వద్ద ₹50 ఉంది. మిఠాయి ధర ₹15. మీరు ఎంత మార్పు పొందాలి?",
+      "options": [
+        {
+          "id": "25",
+          "text": "₹25",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "40",
+          "text": "₹40",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "35",
+          "text": "₹35",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "దుకాణదారుడు ₹35కి బదులుగా ₹30 చేంజ్ ఇస్తాడు. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "ask",
+          "text": "సరైన మార్పు కోసం మర్యాదపూర్వకంగా అడగండి",
+          "emoji": "🗣️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "take",
+          "text": "₹30 తీసుకుని వెళ్లిపోండి",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "buy",
+          "text": "మరింత మిఠాయి కొనండి",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు రెండు క్యాండీలను ఒక్కొక్కటి ₹10 చొప్పున కొనుగోలు చేయాలనుకుంటున్నారు. మీరు ₹15తో కొనుగోలు చేయగలరా?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "అవును, నాకు తగినంత ఉంది",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "లేదు, నాకు ₹20 కావాలి",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "discount",
+          "text": "తగ్గింపు కోసం అడగండి",
+          "emoji": "🎟️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "తెలివిగా షాపింగ్ చేయడానికి ఉత్తమ మార్గం ఏమిటి?",
+      "options": [
+        {
+          "id": "everything",
+          "text": "మీరు చూసే ప్రతిదాన్ని కొనండి",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "ధరలు మరియు బిల్లులను జాగ్రత్తగా తనిఖీ చేయండి",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "స్నేహితులతో మాత్రమే షాపింగ్ చేయండి",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

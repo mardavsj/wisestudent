@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "প্রয়োজন বনাম কুইজ চায়",
+  "subtitleComplete": "কুইজ সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "কোনটা চাই?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "বিলাসবহুল ঘড়ি",
+          "emoji": "⌚",
+          "isCorrect": true
+        },
+        {
+          "id": "medicine",
+          "text": "Medicine",
+          "emoji": "💊",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "স্কুলের পোশাক",
+          "emoji": "👕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "কোনটি একটি প্রয়োজন?",
+      "options": [
+        {
+          "id": "game",
+          "text": "ভিডিও গেম",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "food",
+          "text": "Groceries",
+          "emoji": "🍎",
+          "isCorrect": true
+        },
+        {
+          "id": "phone",
+          "text": "নতুন স্মার্টফোন",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "কোনটা চাই?",
+      "options": [
+        {
+          "id": "rent",
+          "text": "Rent",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "books",
+          "text": "Textbooks",
+          "emoji": "📚",
+          "isCorrect": false
+        },
+        {
+          "id": "concert",
+          "text": "কনসার্টের টিকিট",
+          "emoji": "🎤",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "কোনটি একটি প্রয়োজন?",
+      "options": [
+        {
+          "id": "water",
+          "text": "পানির বিল",
+          "emoji": "💧",
+          "isCorrect": true
+        },
+        {
+          "id": "shoes",
+          "text": "ডিজাইনার জুতা",
+          "emoji": "👟",
+          "isCorrect": false
+        },
+        {
+          "id": "party",
+          "text": "পার্টি সরবরাহ",
+          "emoji": "🎉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "কোনটা চাই?",
+      "options": [
+        {
+          "id": "internet",
+          "text": "ইন্টারনেট বিল",
+          "emoji": "🌐",
+          "isCorrect": false
+        },
+        {
+          "id": "headphones",
+          "text": "ওয়্যারলেস হেডফোন",
+          "emoji": "🎧",
+          "isCorrect": true
+        },
+        {
+          "id": "transport",
+          "text": "বাস পাস",
+          "emoji": "🚌",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "দারুণ কাজ!",
+    "winMessage": "আপনি {{total}} প্রশ্নের মধ্যে {{score}}টি সঠিক পেয়েছেন! আপনি চাহিদা এবং চাওয়া মধ্যে পার্থক্য বুঝতে!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: বেঁচে থাকার এবং শেখার জন্য প্রয়োজনীয়তা অপরিহার্য, যখন চাহিদা এমন জিনিস যা আমরা পেতে চাই কিন্তু প্রয়োজন নেই!",
+    "loseEmoji": "😔",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} প্রশ্নের মধ্যে {{score}}টি সঠিক পেয়েছেন। মনে রাখবেন, চাহিদা হল খাদ্য, কাপড় এবং উপযোগী জিনিসের মত প্রয়োজনীয় জিনিস!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "টিপ: চাহিদাগুলি এমন জিনিস যা আপনাকে বেঁচে থাকতে এবং শিখতে হবে, যখন চাওয়াগুলি ঐচ্ছিক বিলাসিতা।"
+  }
+}

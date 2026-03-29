@@ -1,1 +1,50 @@
-﻿{}
+{
+  "title": "ਸੁਰੱਖਿਆ ਦੇ ਜਰਨਲ",
+  "subtitleComplete": "ਜਰਨਲ ਪੂਰਾ!",
+  "subtitleProgress": "ਸਵਾਲ {{total}} ਵਿੱਚੋਂ {{current}}: ਪੈਸੇ ਨਾਲ ਸੁਰੱਖਿਅਤ ਰਹਿਣ ਬਾਰੇ ਸੋਚੋ!",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "minLengthPrompt": "ਘੱਟੋ-ਘੱਟ {{minLength}} ਅੱਖਰ ਲਿਖੋ",
+  "textareaPlaceholder": "ਆਪਣੀ ਜਰਨਲ ਐਂਟਰੀ ਇੱਥੇ ਲਿਖੋ...",
+  "charactersLabel": "characters",
+  "submitFinalButton": "ਫਾਈਨਲ ਐਂਟਰੀ ਜਮ੍ਹਾਂ ਕਰੋ",
+  "submitContinueButton": "ਸਪੁਰਦ ਕਰੋ ਅਤੇ ਜਾਰੀ ਰੱਖੋ",
+  "entryLabel": "ਤੁਹਾਡਾ ਜਵਾਬ:",
+  "minLengthLabel": "ਘੱਟੋ-ਘੱਟ {{min}} ਅੱਖਰ",
+  "stages": [
+    {
+      "question": "ਲਿਖੋ: \"ਇੱਕ ਤਰੀਕਾ ਹੈ ਕਿ ਮੈਂ ਧੋਖਾਧੜੀ ਤੋਂ ਬਚ ਸਕਦਾ ਹਾਂ ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਮੈਂ ___ ਦੁਆਰਾ ਪੈਸੇ ਨਾਲ ਸੁਰੱਖਿਅਤ ਰਹਿੰਦਾ ਹਾਂ।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਇੱਕ ਸਮਾਂ ਜਦੋਂ ਮੈਂ ਪੈਸੇ ਦੇ ਘੁਟਾਲੇ ਤੋਂ ਬਚਿਆ ਸੀ ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਮੈਂ ਪੈਸੇ ਨੂੰ ਸੁਰੱਖਿਅਤ ਰੱਖਣ ਬਾਰੇ ___ ਸਿੱਖਿਆ ਹੈ।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਪੈਸੇ ਨਾਲ ਸਾਵਧਾਨ ਰਹਿਣਾ ਮੈਨੂੰ ਮਹਿਸੂਸ ਕਰਦਾ ਹੈ ___.\"",
+      "minLength": 10
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "ਸੁਰੱਖਿਆ ਮਾਹਰ!",
+    "description": "ਸ਼ਾਨਦਾਰ! ਤੁਸੀਂ {{score}}/{{total}} ਸਕੋਰ ਕੀਤਾ! ਤੁਹਾਡੇ ਪ੍ਰਤੀਬਿੰਬ ਵਿੱਤੀ ਸੁਰੱਖਿਆ ਬਾਰੇ ਬਹੁਤ ਜਾਗਰੂਕਤਾ ਦਿਖਾਉਂਦੇ ਹਨ!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "ਚੰਗੇ ਪ੍ਰਤੀਬਿੰਬ!",
+    "description": "ਬਹੁਤ ਖੂਬ! ਤੁਸੀਂ {{score}}/{{total}} ਸਕੋਰ ਕੀਤਾ! ਪੈਸੇ ਨਾਲ ਸੁਰੱਖਿਅਤ ਕਿਵੇਂ ਰਹਿਣਾ ਹੈ ਇਸ ਬਾਰੇ ਸੋਚਦੇ ਰਹੋ!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "ਪ੍ਰਤੀਬਿੰਬਤ ਕਰਦੇ ਰਹੋ!",
+    "description": "ਤੁਸੀਂ {{score}}/{{total}} ਸਕੋਰ ਕੀਤਾ। ਆਪਣੀ ਜਾਗਰੂਕਤਾ ਪੈਦਾ ਕਰਨ ਲਈ ਵਿੱਤੀ ਸੁਰੱਖਿਆ ਬਾਰੇ ਜਰਨਲਿੰਗ ਜਾਰੀ ਰੱਖੋ!"
+  }
+}

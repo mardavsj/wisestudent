@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "పజిల్: లోన్ బేసిక్స్",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "కాన్సెప్ట్‌లతో రుణ నిబంధనలను సరిపోల్చండి ({{current}}/{{total}} సరిపోలింది)",
+  "termsTitle": "రుణ నిబంధనలు",
+  "conceptsTitle": "రుణ భావనలు",
+  "matchButton": "Match",
+  "selectTermLabel": "లోన్ టర్మ్‌ని ఎంచుకోండి",
+  "selectedTermLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}} రుణ నిబంధనలలో {{score}}ని వారి భావనలతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: లోన్ బేసిక్‌లను అర్థం చేసుకోవడం, సమాచారం తీసుకునే రుణ నిర్ణయాలు తీసుకోవడంలో సహాయపడుతుంది!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}} రుణ నిబంధనలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి లోన్ టర్మ్ వాస్తవానికి దేనిని సూచిస్తుందో ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "terms": [
+    {
+      "id": 1,
+      "name": "Principal",
+      "emoji": "💵"
+    },
+    {
+      "id": 2,
+      "name": "Interest",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "రుణ టర్మ్",
+      "emoji": "📅"
+    },
+    {
+      "id": 4,
+      "name": "EMI",
+      "emoji": "📊"
+    },
+    {
+      "id": 5,
+      "name": "Default",
+      "emoji": "⚠️"
+    }
+  ],
+  "concepts": [
+    {
+      "id": 6,
+      "name": "అసలు మొత్తం",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "అదనపు ఖర్చు",
+      "emoji": "➕"
+    },
+    {
+      "id": 8,
+      "name": "సమయ వ్యవధి",
+      "emoji": "⏱️"
+    },
+    {
+      "id": 9,
+      "name": "రెగ్యులర్ చెల్లింపు",
+      "emoji": "💳"
+    },
+    {
+      "id": 10,
+      "name": "తప్పిపోయిన చెల్లింపులు",
+      "emoji": "🚫"
+    }
+  ]
+}

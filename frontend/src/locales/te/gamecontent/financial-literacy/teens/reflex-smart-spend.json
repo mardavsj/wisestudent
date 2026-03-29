@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "రిఫ్లెక్స్ స్మార్ట్ స్పెండ్",
+  "subtitlePlaying": "రౌండ్ {{current}}/{{total}}: మీ ఖర్చు రిఫ్లెక్స్‌లను పరీక్షించండి!",
+  "subtitleReady": "మీ ఖర్చు రిఫ్లెక్స్‌లను పరీక్షించుకోండి!",
+  "readyHeader": "మీ ఖర్చు రిఫ్లెక్స్‌లను పరీక్షించడానికి సిద్ధంగా ఉన్నారా?",
+  "readyDescription": "స్మార్ట్ ఖర్చు ఎంపికల గురించి ప్రశ్నలకు సమాధానం ఇవ్వండి.",
+  "readyTip": "మీకు {{time}} సెకన్లతో {{total}} ప్రశ్నలు ఉన్నాయి!",
+  "startButton": "గేమ్ ప్రారంభించండి",
+  "roundLabel": "రౌండ్:",
+  "timeLabel": "సమయం:",
+  "scoreLabel": "స్కోర్:",
+  "greatJob": "గ్రేట్ జాబ్!",
+  "finalScore": "మీరు {{total}}లో {{score}} స్కోర్ చేసారు!",
+  "growthSkills": "మీరు బలమైన ఆర్థిక నిర్ణయాలు తీసుకునే నైపుణ్యాలను అభివృద్ధి చేస్తున్నారు!",
+  "playAgain": "మళ్లీ ఆడండి",
+  "questions": [
+    {
+      "id": 1,
+      "question": "తెలివైన ఖర్చు ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "pay_rent",
+          "text": "అద్దె చెల్లించండి",
+          "emoji": "🏠"
+        },
+        {
+          "id": "luxury_party",
+          "text": "లగ్జరీ పార్టీ",
+          "emoji": "🎉"
+        },
+        {
+          "id": "designer_shoes",
+          "text": "డిజైనర్ షూస్ కొనండి",
+          "emoji": "👟"
+        },
+        {
+          "id": "impulse_purchase",
+          "text": "ఇంపల్స్ కొనుగోలు",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ముందుగా ఏ ఖర్చు పెట్టాలి?",
+      "options": [
+        {
+          "id": "new_gadgets",
+          "text": "కొత్త గాడ్జెట్లు",
+          "emoji": "📱"
+        },
+        {
+          "id": "buy_groceries",
+          "text": "కిరాణా సరుకులు కొనండి",
+          "emoji": "🛒"
+        },
+        {
+          "id": "expensive_restaurant",
+          "text": "ఖరీదైన రెస్టారెంట్",
+          "emoji": "🍽️"
+        },
+        {
+          "id": "entertainment",
+          "text": "Entertainment",
+          "emoji": "🎬"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "అదనపు డబ్బుతో మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "movie_night",
+          "text": "సినిమా రాత్రి",
+          "emoji": "🎬"
+        },
+        {
+          "id": "buy_video_games",
+          "text": "వీడియో గేమ్‌లను కొనండి",
+          "emoji": "🎮"
+        },
+        {
+          "id": "save_money",
+          "text": "డబ్బు ఆదా చేయండి",
+          "emoji": "💰"
+        },
+        {
+          "id": "shopping_spree",
+          "text": "షాపింగ్ స్ప్రీ",
+          "emoji": "🛍️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ఏది ప్రాధాన్యతా వ్యయం?",
+      "options": [
+        {
+          "id": "pay_bills",
+          "text": "బిల్లులు చెల్లించండి",
+          "emoji": "📄"
+        },
+        {
+          "id": "designer_clothes",
+          "text": "డిజైనర్ బట్టలు",
+          "emoji": "👔"
+        },
+        {
+          "id": "weekend_trip",
+          "text": "వారాంతపు యాత్ర",
+          "emoji": "✈️"
+        },
+        {
+          "id": "gourmet_dinner",
+          "text": "గౌర్మెట్ డిన్నర్",
+          "emoji": "🍷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "దీర్ఘకాలిక ఆర్థిక భద్రతను ఏది నిర్మిస్తుంది?",
+      "options": [
+        {
+          "id": "concert_ticket",
+          "text": "కచేరీ టిక్కెట్",
+          "emoji": "🎫"
+        },
+        {
+          "id": "fund_education",
+          "text": "ఫండ్ విద్య",
+          "emoji": "📚"
+        },
+        {
+          "id": "buy_jewelry",
+          "text": "ఆభరణాలు కొనండి",
+          "emoji": "💍"
+        },
+        {
+          "id": "luxury_vacation",
+          "text": "లగ్జరీ వెకేషన్",
+          "emoji": "🏖️"
+        }
+      ]
+    }
+  ]
+}

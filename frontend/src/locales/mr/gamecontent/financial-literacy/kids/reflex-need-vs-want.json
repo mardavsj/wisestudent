@@ -1,1 +1,159 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स नीड विरुद्ध पाहिजे",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: गरजा विरुद्ध इच्छांबद्दल तुमच्या ज्ञानाची चाचणी घ्या!",
+  "subtitleReady": "गरजा विरुद्ध इच्छांबद्दल तुमच्या ज्ञानाची चाचणी घ्या!",
+  "readyEmoji": "📋",
+  "readyTitle": "तुमच्या गरजा वि वांट्स नॉलेज तपासण्यासाठी तयार आहात?",
+  "readyDescription": "गरजा आणि इच्छा यांच्यातील फरकाबद्दल प्रश्नांची उत्तरे द्या.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ग्रेट जॉब!",
+  "resultGreatDescription": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत!",
+  "resultGreatLesson": "धडा: जगण्यासाठी आणि शिकण्यासाठी गरजा अत्यावश्यक आहेत, तर गरजा अशा गोष्टी आहेत ज्या आपल्याला हव्या आहेत पण गरज नाही!",
+  "resultKeepEmoji": "😔",
+  "resultKeepTitle": "शिकत राहा!",
+  "resultKeepDescription": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत. लक्षात ठेवा, गरजा म्हणजे अन्न, कपडे आणि शालेय साहित्य यासारख्या आवश्यक वस्तू!",
+  "resultKeepTip": "टीप: अन्न, कपडे आणि शालेय साहित्य यासारख्या गरजा या गोष्टी आहेत ज्या तुम्हाला जगण्यासाठी आणि शिकण्यासाठी असणे आवश्यक आहे.",
+  "tryAgainButton": "पुन्हा प्रयत्न करा",
+  "questions": [
+    {
+      "id": 1,
+      "question": "कोणती गरज आहे?",
+      "correctAnswer": "शाळेसाठी शूज",
+      "options": [
+        {
+          "text": "शाळेसाठी शूज",
+          "isCorrect": true,
+          "emoji": "👟"
+        },
+        {
+          "text": "10वी टॉय कार",
+          "isCorrect": false,
+          "emoji": "🚗"
+        },
+        {
+          "text": "व्हिडिओ गेम",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "फॅन्सी सनग्लासेस",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "निरोगी राहण्यासाठी काय आवश्यक आहे?",
+      "correctAnswer": "निरोगी अन्न",
+      "options": [
+        {
+          "text": "अतिरिक्त कँडी",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "निरोगी अन्न",
+          "isCorrect": true,
+          "emoji": "🥗"
+        },
+        {
+          "text": "आईस्क्रीम",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "शिकण्यासाठी कोणती वस्तू आवश्यक आहे?",
+      "correctAnswer": "शाळेची पुस्तके",
+      "options": [
+        {
+          "text": "व्हिडिओ गेम",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "क्रिया आकृती",
+          "isCorrect": false,
+          "emoji": "🤖"
+        },
+        {
+          "text": "कोडे खेळ",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "शाळेची पुस्तके",
+          "isCorrect": true,
+          "emoji": "📚"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "थंड हवामानात तुम्हाला काय हवे आहे?",
+      "correctAnswer": "हिवाळी जाकीट",
+      "options": [
+        {
+          "text": "फॅन्सी सनग्लासेस",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        },
+        {
+          "text": "जलतरण तलाव",
+          "isCorrect": false,
+          "emoji": "🏊"
+        },
+        {
+          "text": "हिवाळी जाकीट",
+          "isCorrect": true,
+          "emoji": "🧥"
+        },
+        {
+          "text": "बीच बॉल",
+          "isCorrect": false,
+          "emoji": "🏐"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "शाळेत जाण्यासाठी काय आवश्यक आहे?",
+      "correctAnswer": "बसचे भाडे",
+      "options": [
+        {
+          "text": "बसचे भाडे",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "नवीन हेडफोन",
+          "isCorrect": false,
+          "emoji": "🎧"
+        },
+        {
+          "text": "संगीत प्लेअर",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "स्मार्ट वॉच",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

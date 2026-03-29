@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ATM స్టోరీ",
+  "subtitleComplete": "పూర్తి!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీ తల్లిదండ్రులు వారి ATM కార్డ్‌ని మీకు చూపుతారు. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "పట్టించుకోవద్దు",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "ఇది ఎలా పని చేస్తుందో తెలుసుకోండి",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "దానితో ఆడుకోండి",
+          "emoji": "🎮",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీ తల్లిదండ్రులు ATMలో వారి PINని నమోదు చేస్తున్నారు. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "memorize",
+          "text": "PINని గుర్తుంచుకోవడానికి ప్రయత్నించండి",
+          "emoji": "🧠",
+          "isCorrect": false
+        },
+        {
+          "id": "tell",
+          "text": "దాని గురించి స్నేహితులకు చెప్పండి",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "away",
+          "text": "గోప్యత ఇవ్వడానికి దూరంగా చూడండి",
+          "emoji": "👀",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "నీ దగ్గర 100 రూపాయలు ఉన్నాయి. తెలివైన ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "split",
+          "text": "50 రూపాయలు ఆదా చేయండి, 50 ఖర్చు చేయండి",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "toys",
+          "text": "అంతా బొమ్మలకే ఖర్చు పెట్టండి",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "friends",
+          "text": "అన్నీ స్నేహితులకు ఇవ్వండి",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు 200 రూపాయలు ఖరీదు చేసే బొమ్మను కొనాలనుకుంటున్నారు కానీ మీ వద్ద 150 ఉన్నాయి. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ముందుగా ఎక్కువ డబ్బు ఆదా చేసుకోండి",
+          "emoji": "💾",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "స్నేహితుల నుండి అప్పు తీసుకుంటారు",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "demand",
+          "text": "తల్లిదండ్రుల నుండి డిమాండ్ చేయండి",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "మీ స్నేహితుడు భోజనం చేసే డబ్బును పోగొట్టుకున్నారు. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "వాటిని పట్టించుకోకండి",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "laugh",
+          "text": "వాటిని చూసి నవ్వండి",
+          "emoji": "😆",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "మీ మధ్యాహ్న భోజనాన్ని వారితో పంచుకోండి",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

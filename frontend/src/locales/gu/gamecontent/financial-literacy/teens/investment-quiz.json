@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "રોકાણ ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "જે જોખમી છે પરંતુ વધુ વળતર છે?",
+      "options": [
+        {
+          "id": "fd",
+          "text": "ફિક્સ્ડ ડિપોઝિટ",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "stocks",
+          "text": "શેરબજાર",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "savings",
+          "text": "બચત ખાતું",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "કયું રોકાણ સૌથી સલામત છે?",
+      "options": [
+        {
+          "id": "fd2",
+          "text": "ફિક્સ્ડ ડિપોઝિટ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "stocks2",
+          "text": "Stocks",
+          "emoji": "📊",
+          "isCorrect": false
+        },
+        {
+          "id": "crypto",
+          "text": "Cryptocurrency",
+          "emoji": "₿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "વૈવિધ્યકરણ શું છે?",
+      "options": [
+        {
+          "id": "one",
+          "text": "બધા એક રોકાણમાં મૂકો",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "તમામ રોકાણ ટાળો",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "spread",
+          "text": "વિવિધ રોકાણોમાં ફેલાય છે",
+          "emoji": "📊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "મ્યુચ્યુઅલ ફંડ શું છે?",
+      "options": [
+        {
+          "id": "mix",
+          "text": "સ્ટોક અને બોન્ડનું મિશ્રણ",
+          "emoji": "📦",
+          "isCorrect": true
+        },
+        {
+          "id": "single",
+          "text": "સિંગલ કંપની સ્ટોક",
+          "emoji": "📄",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "બેંક ખાતું",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "બચત કરવાને બદલે રોકાણ શા માટે?",
+      "options": [
+        {
+          "id": "same",
+          "text": "બચત સમાન",
+          "emoji": "➡️",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ગુમાવવાની ખાતરી આપી",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "ઝડપથી વૃદ્ધિ થવાની સંભાવના",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ક્વિઝ પૂર્ણ!",
+    "winMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે! તમે રોકાણ સમજો છો!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: સ્ટોક્સ જોખમી છે પરંતુ વધુ વળતર આપે છે. ફિક્સ્ડ ડિપોઝિટ વધુ સુરક્ષિત છે પરંતુ વળતર ઓછું છે. વૈવિધ્યકરણ જોખમ ઘટાડે છે!",
+    "loseEmoji": "💪",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}} માંથી {{score}} સાચા મળ્યા છે. યાદ રાખો, સ્ટોક જોખમી હોય છે પરંતુ વધુ વળતર આપે છે, જ્યારે FD સુરક્ષિત હોય છે પરંતુ વળતર ઓછું હોય છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટીપ: સ્ટોક માર્કેટ જોખમી છે પરંતુ વધુ વળતર આપે છે. ફિક્સ્ડ ડિપોઝિટ વધુ સુરક્ષિત છે પરંતુ વળતર ઓછું છે. જોખમ ઘટાડવા માટે વૈવિધ્યીકરણ કરો!"
+  }
+}

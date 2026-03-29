@@ -1,1 +1,129 @@
-﻿{}
+﻿{
+    "title": "দোকানের গল্প",
+    "subtitleComplete": "গল্প সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "পছন্দের মিষ্টি দেখলে। তোমার কাছে ১০ টাকা আছে, কিন্তু ৫০ টাকার খেলনার জন্য সাপ্তাহিক ৫ টাকা সঞ্চয় করছ, এখন ২০ টাকা জমেছে। কী করবে?",
+            "options": [
+                {
+                    "id": "save",
+                    "text": "খেলনার জন্য সঞ্চয় করবো",
+                    "emoji": "🏦",
+                    "isCorrect": true
+                },
+                {
+                    "id": "spend",
+                    "text": "মিষ্টি কিনবো",
+                    "emoji": "🍬",
+                    "isCorrect": false
+                },
+                {
+                    "id": "ignore",
+                    "text": "সিদ্ধান্ত উপেক্ষা করো",
+                    "emoji": "😴",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "২৫ টাকার একটি স্টিকার বই দেখলে। বড় খেলনার জন্য ৩০ টাকা সঞ্চয় করেছ। বুদ্ধিমান পছন্দ কী?",
+            "options": [
+                {
+                    "id": "spend",
+                    "text": "স্টিকার বই কিনবো",
+                    "emoji": "📚",
+                    "isCorrect": false
+                },
+                {
+                    "id": "save",
+                    "text": "সঞ্চয় চালিয়ে যাবো",
+                    "emoji": "🎯",
+                    "isCorrect": true
+                },
+                {
+                    "id": "borrow",
+                    "text": "টাকা ধার করবো",
+                    "emoji": "🤲",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "বন্ধুরা দোকানে নাস্তা কিনছে। সায়েন্স কিটের জন্য ১৫ টাকা সঞ্চয় করেছ। কী করবে?",
+            "options": [
+                {
+                    "id": "spend",
+                    "text": "বন্ধুদের সাথে যোগ দেবো",
+                    "emoji": "🍟",
+                    "isCorrect": false
+                },
+                {
+                    "id": "give",
+                    "text": "সঞ্চয় ছেড়ে দেবো",
+                    "emoji": "😞",
+                    "isCorrect": false
+                },
+                {
+                    "id": "save",
+                    "text": "লক্ষ্যে স্থির থাকবো",
+                    "emoji": "🔬",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "সাইকেলের জন্য ১০০ টাকা সঞ্চয় করছ। \"সেল: ৫০% ছাড়\" খেলনায়, দাম ৪০ টাকা। বুদ্ধিমানী কী?",
+            "options": [
+                {
+                    "id": "save",
+                    "text": "সাইকেলে মনোযোগ দেবো",
+                    "emoji": "🚲",
+                    "isCorrect": true
+                },
+                {
+                    "id": "spend",
+                    "text": "সেলের খেলনা কিনবো",
+                    "emoji": "🧸",
+                    "isCorrect": false
+                },
+                {
+                    "id": "delay",
+                    "text": "সিদ্ধান্ত পিছিয়ে দেবো",
+                    "emoji": "⏰",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "৫০ টাকার খেলনার জন্য ৪৫ টাকা সঞ্চয় করেছ। ৫ টাকার মিষ্টি দেখলে। লক্ষ্যের কাছাকাছি! কী বেছে নেবে?",
+            "options": [
+                {
+                    "id": "spend",
+                    "text": "মিষ্টি কিনবো",
+                    "emoji": "🍬",
+                    "isCorrect": false
+                },
+                {
+                    "id": "save",
+                    "text": "লক্ষ্য পূরণ করবো",
+                    "emoji": "🎉",
+                    "isCorrect": true
+                },
+                {
+                    "id": "waste",
+                    "text": "টাকা নষ্ট করবো",
+                    "emoji": "💸",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

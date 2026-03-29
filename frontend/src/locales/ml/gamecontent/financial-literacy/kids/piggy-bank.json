@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "പിഗ്ഗി ബാങ്ക് കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "🐷",
+  "questions": [
+    {
+      "id": 1,
+      "text": "പിഗ്ഗി ബാങ്കിന് പലിശയില്ല. ബാങ്ക് അക്കൗണ്ട് ചെയ്യുന്നു. ഏതാണ് നല്ലത്?",
+      "options": [
+        {
+          "id": "bank",
+          "text": "ബാങ്ക് അക്കൗണ്ട്",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "പിഗ്ഗി ബാങ്ക്",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "mattress",
+          "text": "മെത്തയുടെ കീഴിൽ",
+          "emoji": "🛏️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിങ്ങൾക്ക് ₹50 ഉണ്ട്. അത് വളരാൻ സഹായിക്കുന്നതിന് നിങ്ങൾ എവിടെ സംരക്ഷിക്കണം?",
+      "options": [
+        {
+          "id": "jar",
+          "text": "വീട്ടിൽ ഭരണി",
+          "emoji": "🏺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ബാങ്ക് സേവിംഗ്സ് അക്കൗണ്ട്",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ഇപ്പോൾ ചെലവഴിക്കൂ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ബാങ്ക് 5% പലിശ വാഗ്ദാനം ചെയ്യുന്നു. പിഗ്ഗി ബാങ്ക് 0% വാഗ്ദാനം ചെയ്യുന്നു. വിവേകത്തോടെ തിരഞ്ഞെടുക്കുക.",
+      "options": [
+        {
+          "id": "bank",
+          "text": "പലിശയ്ക്ക് ബാങ്ക്",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "piggy",
+          "text": "വിനോദത്തിനായി പിഗ്ഗി ബാങ്ക്",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "വിട്ടുകൊടുക്കൂ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങൾ ഒരു ബാങ്കിൽ ₹100 ലാഭിക്കുന്നു. ഇത് 105 രൂപയായി വളരുന്നു. എന്തുകൊണ്ട്?",
+      "options": [
+        {
+          "id": "magic",
+          "text": "പിഗ്ഗി ബാങ്ക് മാജിക്",
+          "emoji": "🪄",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "added",
+          "text": "നിങ്ങൾ കൂടുതൽ പണം ചേർത്തു",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ബാങ്ക് പലിശ നൽകുന്നു",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "എന്തുകൊണ്ടാണ് ഒരു ബാങ്ക് പലപ്പോഴും ഒരു പിഗ്ഗി ബാങ്കിനേക്കാൾ മികച്ചത്?",
+      "options": [
+        {
+          "id": "safe",
+          "text": "ഇത് സുരക്ഷിതമാണ്, പണം വളർത്താൻ കഴിയും",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "cool",
+          "text": "ഇത് തണുത്തതായി മാത്രമേ കാണപ്പെടുന്നുള്ളൂ",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "carry",
+          "text": "കൊണ്ടുപോകാൻ എളുപ്പമാണ്",
+          "emoji": "🎒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

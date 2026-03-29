@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स कर्ज/चोरी",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: आपल्या उधार प्रतिक्षेपांची चाचणी घ्या!",
+  "subtitleReady": "आपल्या उधार प्रतिक्षेपांची चाचणी घ्या!",
+  "readyEmoji": "🤝",
+  "readyTitle": "तयार व्हा!",
+  "readyDescription": "कर्ज घेण्याबद्दल प्रश्नांची योग्य उत्तरे द्या.",
+  "readyInfo": "आपल्याकडे प्रत्येकी {{seconds}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "उधार घेतलेल्या वस्तूंचे काय करावे?",
+      "correctAnswer": "उधार घेतलेल्या वस्तू परत करा",
+      "options": [
+        {
+          "text": "उधार घेतलेल्या वस्तू परत करा",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "त्यांना कायमचे ठेवा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "त्यांना लपवा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "त्यांच्याबद्दल विसरून जा",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "कर्जासाठी योग्य गोष्ट काय आहे?",
+      "correctAnswer": "कर्जाची परतफेड करा",
+      "options": [
+        {
+          "text": "पैसे देणे टाळा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "कर्जाची परतफेड करा",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "त्याकडे दुर्लक्ष करा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "विसरून जा",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "जेव्हा तुम्ही काही कर्ज घेता तेव्हा तुम्ही काय करावे?",
+      "correctAnswer": "परत द्या",
+      "options": [
+        {
+          "text": "ते लपवा",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ठेवा",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "परत द्या",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "तो हरवतो",
+          "isCorrect": false,
+          "emoji": "❌"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "कर्ज हाताळण्याचा प्रामाणिक मार्ग कोणता आहे?",
+      "correctAnswer": "प्रामाणिक रहा",
+      "options": [
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "प्रामाणिक रहा",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "🎭"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "उधार घेतलेल्या वस्तू कधी परत कराव्यात?",
+      "correctAnswer": "वेळेवर परत या",
+      "options": [
+        {
+          "text": "Delay",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "Never",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "कदाचित नंतर",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "वेळेवर परत या",
+          "isCorrect": true,
+          "emoji": "⏱️"
+        }
+      ]
+    }
+  ]
+}

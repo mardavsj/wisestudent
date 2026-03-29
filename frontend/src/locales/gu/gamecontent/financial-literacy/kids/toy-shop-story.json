@@ -1,1 +1,146 @@
-﻿{}
+{
+  "title": "ટોય શોપ સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "questionIndicator": "પ્રશ્ન {{current}}/{{total}}",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "વિક્રેતા કહે, 'ઉતાવળ કરો કે રમકડું ગુમાવો!' તમે શું કરશો?",
+      "options": [
+        {
+          "id": "quick",
+          "text": "ઝડપથી ખરીદો",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "check",
+          "text": "કિંમત તપાસો",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "વિક્રેતાને અવગણો",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે રમકડાની બે દુકાનો જુઓ છો. સ્માર્ટ શું છે?",
+      "options": [
+        {
+          "id": "compare",
+          "text": "કિંમતોની સરખામણી કરો",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "pay",
+          "text": "હવે ચૂકવો",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "બંને છોડો",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "રમકડું સરસ લાગે છે. તમે શું તપાસો છો?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "ઝડપી ખરીદો",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "quality",
+          "text": "ગુણવત્તા પૂછો",
+          "emoji": "🔍",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "guess",
+          "text": "ગુણવત્તા ધારી",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ઑનલાઇન રમકડાનું વેચાણ. પ્રથમ શું છે?",
+      "options": [
+        {
+          "id": "reviews",
+          "text": "સમીક્ષાઓ વાંચો",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "Rush",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "વેચાણ અવગણો",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમારે રમકડું જોઈએ છે. શું પ્લાન છે?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "બધા ખર્ચો",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "નાણાં ઉછીના",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "પ્રથમ બજેટ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

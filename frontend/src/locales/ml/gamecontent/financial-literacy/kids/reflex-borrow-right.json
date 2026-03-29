@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് ബോറോ റൈറ്റ്",
+  "subtitlePlaying": "{{current}} of {{total}}: നിങ്ങളുടെ കടമെടുക്കൽ റിഫ്ലെക്സുകൾ പരിശോധിക്കുക!",
+  "subtitleReady": "നിങ്ങളുടെ കടമെടുക്കൽ റിഫ്ലെക്സുകൾ പരിശോധിക്കുക!",
+  "readyEmoji": "🤝",
+  "readyTitle": "കടം വാങ്ങുന്നതിനെക്കുറിച്ച് പഠിക്കാൻ തയ്യാറാണോ?",
+  "readyDescription": "ഇനങ്ങളോ പണമോ കടം വാങ്ങുമ്പോൾ ശരിയായ പ്രവർത്തനം തിരഞ്ഞെടുക്കുക.",
+  "readyInfo": "നിങ്ങൾക്ക് {{seconds}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "ചോദ്യം:",
+  "timeLabel": "സമയം:",
+  "scoreLabel": "സ്കോർ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "എന്തെങ്കിലും കടം വാങ്ങുന്നതിന് മുമ്പ് നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "correctAnswer": "അനുവാദം ചോദിക്കുക",
+      "options": [
+        {
+          "text": "പിടിക്കൂ",
+          "isCorrect": false,
+          "emoji": "🤏"
+        },
+        {
+          "text": "ചോദിക്കാതെ എടുക്കുക",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "അനുവാദം ചോദിക്കുക",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "ഉടമയെ അവഗണിക്കുക",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "നിങ്ങൾ എങ്ങനെ എന്തെങ്കിലും കടം വാങ്ങണം?",
+      "correctAnswer": "മാന്യമായി കടം വാങ്ങുക",
+      "options": [
+        {
+          "text": "മാന്യമായി കടം വാങ്ങുക",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "ബലമായി എടുക്കുക",
+          "isCorrect": false,
+          "emoji": "💪"
+        },
+        {
+          "text": "വേഗം പിടിക്കൂ",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "മോഷ്ടിക്കുക",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "കടം വാങ്ങിയ സാധനം എന്തുചെയ്യണം?",
+      "correctAnswer": "ഇനം തിരികെ നൽകുക",
+      "options": [
+        {
+          "text": "സൂക്ഷിക്കുക",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "അത് മറയ്ക്കുക",
+          "isCorrect": false,
+          "emoji": "🫥"
+        },
+        {
+          "text": "അത് മറന്നേക്കൂ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "ഇനം തിരികെ നൽകുക",
+          "isCorrect": true,
+          "emoji": "↩️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ഒരു ലോൺ ഉപയോഗിച്ച് നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "correctAnswer": "വായ്പ തിരിച്ചടയ്ക്കുക",
+      "options": [
+        {
+          "text": "പേയ്മെൻ്റ് അവഗണിക്കുക",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "വായ്പ തിരിച്ചടയ്ക്കുക",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "അത് ഒഴിവാക്കുക",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "അത് മറക്കുക",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "കടം വാങ്ങുന്നത് എങ്ങനെ കൈകാര്യം ചെയ്യണം?",
+      "correctAnswer": "സത്യസന്ധത പുലർത്തുക",
+      "options": [
+        {
+          "text": "സത്യസന്ധത പുലർത്തുക",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "അതിൽ കള്ളം പറയുക",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "😏"
+        }
+      ]
+    }
+  ]
+}

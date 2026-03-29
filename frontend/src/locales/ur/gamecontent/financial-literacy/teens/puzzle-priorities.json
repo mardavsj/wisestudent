@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ترجیحات کی پہیلی",
+  "subtitleComplete": "پہیلی مکمل!",
+  "subtitleProgress": "ترجیحات کے ساتھ اخراجات کا مقابلہ کریں ({{current}}/{{total}} مماثل)",
+  "itemsTitle": "Expenses",
+  "prioritiesTitle": "Priorities",
+  "matchButton": "Match",
+  "selectItemLabel": "ایک خرچ منتخب کریں۔",
+  "selectedItemLabel": "منتخب کردہ: {{name}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "matchedLabel": "مماثل: {{current}}/{{total}}",
+  "resultSuccessHeader": "بہت اچھا کام!",
+  "resultSuccessSubheader": "آپ نے {{total}} اخراجات میں سے {{score}} کو ان کی ترجیحات کے ساتھ درست طریقے سے ملایا!",
+  "resultSuccessLesson": "سبق: اخراجات کی ترجیحات کو سمجھنا ہوشیار مالی فیصلے کرنے میں مدد کرتا ہے!",
+  "resultTryAgainHeader": "مشق کرتے رہیں!",
+  "resultTryAgainSubheader": "آپ نے {{total}} اخراجات میں سے {{score}} کو صحیح طریقے سے ملایا۔",
+  "resultTryAgainTip": "مشورہ: اس بارے میں سوچیں کہ آیا ہر خرچ ضروری ہے یا صوابدیدی!",
+  "coinsEarned": "+{{coins}} سکے",
+  "items": [
+    {
+      "id": 1,
+      "name": "سکول کی فیس",
+      "emoji": "🎓"
+    },
+    {
+      "id": 2,
+      "name": "Groceries",
+      "emoji": "🛒"
+    },
+    {
+      "id": 3,
+      "name": "Rent",
+      "emoji": "🏠"
+    },
+    {
+      "id": 4,
+      "name": "Medicine",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "Electricity",
+      "emoji": "💡"
+    }
+  ],
+  "priorities": [
+    {
+      "id": 6,
+      "name": "Need",
+      "emoji": "✅"
+    },
+    {
+      "id": 7,
+      "name": "Want",
+      "emoji": "🎁"
+    },
+    {
+      "id": 8,
+      "name": "Save",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "Invest",
+      "emoji": "📈"
+    },
+    {
+      "id": 10,
+      "name": "Share",
+      "emoji": "🤲"
+    }
+  ]
+}

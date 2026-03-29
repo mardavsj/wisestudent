@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "शाळा जत्रेची कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "जत्रा लवकरच सुरू होईल आणि तुम्हाला उत्साह वाटतो. आपण प्रथम काय करता?",
+      "options": [
+        {
+          "id": "run",
+          "text": "पहिल्या स्टॉलकडे धाव",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shout",
+          "text": "उत्साहाने ओरडणे",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "look",
+          "text": "जत्रेभोवती पहा",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला लोकप्रिय खेळासाठी एक लांबलचक ओळ दिसते. योग्य निवड काय आहे?",
+      "options": [
+        {
+          "id": "push",
+          "text": "समोर ढकलणे",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "आपल्या वळणाची वाट पहा",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "leave",
+          "text": "रागाने निघून जा",
+          "emoji": "😤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "एखादा दुकानदार तुम्हाला चुकून अतिरिक्त बदल देतो. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "return",
+          "text": "अतिरिक्त पैसे परत करा",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "अतिरिक्त पैसे ठेवा",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "शांतपणे निघून जा",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्हाला बऱ्याच राइड्सचा प्रयत्न करायचा आहे पण थकवा जाणवतो. स्मार्ट कृती म्हणजे काय?",
+      "options": [
+        {
+          "id": "force",
+          "text": "स्वत: ला सायकल चालवण्यास भाग पाडा",
+          "emoji": "😣",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "सर्वकाही वगळा",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rest",
+          "text": "थोडी विश्रांती घ्या",
+          "emoji": "🪑",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "जत्रा संपत आहे आणि तुमचे एक तिकीट शिल्लक आहे. तुम्ही काय निवडता?",
+      "options": [
+        {
+          "id": "favorite",
+          "text": "तुमचा आवडता क्रियाकलाप निवडा",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "random",
+          "text": "यादृच्छिकपणे वापरा",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "फेकून द्या",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

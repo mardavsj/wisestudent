@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "টাকা ধারের গল্প",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "কিশোর একজন বন্ধুর কাছ থেকে ₹100 ধার নেয়। শোধ করতে ভুলে গেছেন?",
+      "options": [
+        {
+          "id": "wrong",
+          "text": "ভুল - সর্বদা শোধ করুন",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "okay",
+          "text": "ঠিক আছে ভুলে যাওয়া",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "হয়তো পরে",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "আপনি ₹200 ধার নিয়েছেন। আপনি কখন শোধ করতে হবে?",
+      "options": [
+        {
+          "id": "never",
+          "text": "কখনো শোধ করবেন না",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "on-time",
+          "text": "প্রতিশ্রুতি অনুযায়ী সময়মতো",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "whenever",
+          "text": "যখনই মনে হয়",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "বন্ধু ₹50 ধার করতে বলে। আপনি কি বিবেচনা করা উচিত?",
+      "options": [
+        {
+          "id": "lend",
+          "text": "সামর্থ্য থাকলে ধার দেন",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "সর্বদা সবকিছু ধার",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "কখনো কাউকে ধার দেবেন না",
+          "emoji": "🔒",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "সময়মতো শোধ করতে পারবেন না। আপনার কি করা উচিত?",
+      "options": [
+        {
+          "id": "hide",
+          "text": "বন্ধুকে লুকিয়ে এড়িয়ে চলুন",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "communicate",
+          "text": "যোগাযোগ করুন এবং ব্যাখ্যা করুন",
+          "emoji": "💬",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ঋণ উপেক্ষা করুন",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "টাকা ধার করার জন্য সর্বোত্তম অনুশীলন কি?",
+      "options": [
+        {
+          "id": "borrow-often",
+          "text": "বন্ধুদের কাছ থেকে প্রায়ই ধার",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow-wisely",
+          "text": "প্রয়োজন হলেই ধার নিন এবং দ্রুত পরিশোধ করুন",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "never-repay",
+          "text": "ধার নিন কিন্তু শোধ করবেন না",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ধার স্টার!",
+    "winMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন! দায়িত্বশীল ঋণ সম্পর্কে শেখার দুর্দান্ত কাজ!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: সর্বদা ধার করা টাকা যথাসময়ে পরিশোধ করুন, যদি না পারেন যোগাযোগ করুন এবং প্রয়োজনে শুধুমাত্র ধার নিন। এটি বিশ্বাস তৈরি করে এবং সম্পর্ক বজায় রাখে!",
+    "loseEmoji": "💪",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} এর মধ্যে {{score}} সঠিক পেয়েছেন। মনে রাখবেন সবসময় সময়মতো ধার করা টাকা পরিশোধ করতে হবে!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "টিপ: সর্বদা ধার করা টাকা সময়মতো শোধ করুন, আপনি যদি শোধ করতে না পারেন তাহলে সৎভাবে যোগাযোগ করুন এবং প্রয়োজন এবং সাশ্রয়ী হলেই ধার নিন!"
+  }
+}

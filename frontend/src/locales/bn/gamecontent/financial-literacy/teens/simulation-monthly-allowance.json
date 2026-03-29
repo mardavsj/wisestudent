@@ -1,1 +1,177 @@
-﻿{}
+{
+  "title": "সিমুলেশন: মাসিক ভাতা",
+  "subtitleComplete": "সিমুলেশন সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} দৃশ্যকল্প",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "amountLabel": "পরিমাণ:",
+  "perfectScoreTitle": "চমৎকার বাজেট!",
+  "perfectScoreMsg": "আপনি {{total}} পরিস্থিতির মধ্যে {{score}} সঠিক পেয়েছেন! আপনি সুষম বাজেটের শিল্প আয়ত্ত করছেন!",
+  "lessonLabel": "পাঠ: একটি ভারসাম্যপূর্ণ বাজেট ভবিষ্যতের জন্য সঞ্চয় এবং কিছু মজা করার সময় চাহিদাকে (খাদ্য, পরিবহন) অগ্রাধিকার দেয়!",
+  "keepLearningTitle": "শিখতে থাকুন!",
+  "lowScoreMsg": "আপনি {{total}} পরিস্থিতির মধ্যে {{score}} সঠিক পেয়েছেন। সুষম বাজেটের সূত্রটি মনে রাখবেন: 40% খাদ্য, 30% পরিবহন, 20% সঞ্চয়, 10% মজা!",
+  "tipLabel": "পরামর্শ: প্রথমে প্রয়োজনীয় চাহিদা পূরণের জন্য অর্থ বরাদ্দ করুন, তারপর সঞ্চয় করুন এবং অবশেষে কিছু মজার অর্থের অনুমতি দিন।",
+  "tryAgain": "আবার চেষ্টা করুন",
+  "coinsLabel": "+{{count}} কয়েন",
+  "scenarios": [
+    {
+      "id": 1,
+      "title": "মাসিক ভাতা পছন্দ",
+      "description": "আপনি ভাতা হিসাবে ₹1000 পাবেন। কিভাবে আপনি বুদ্ধিমানের সাথে এটি ব্যবহার করতে পারেন?",
+      "amount": 1000,
+      "options": [
+        {
+          "id": "splurge",
+          "text": "শুধুমাত্র ট্রেন্ডিং আইটেম কিনুন",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "budget-smart",
+          "text": "প্রয়োজনীয়, মজা এবং সঞ্চয়ের জন্য আলাদা করে রাখুন",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "সমস্ত নগদ বাড়িতে লুকিয়ে রাখুন",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "random-spending",
+          "text": "চিন্তা না করে ব্যয় করুন",
+          "emoji": "🎲",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "খণ্ডকালীন চাকরির উপার্জন",
+      "description": "আপনি সপ্তাহান্তে চাকরি থেকে ₹1500 উপার্জন করেন। একটি স্মার্ট পদ্ধতির কি?",
+      "amount": 1500,
+      "options": [
+        {
+          "id": "plan-smart",
+          "text": "লক্ষ্য, প্রয়োজন এবং মজার জন্য ভাগ করুন",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "luxury-only",
+          "text": "শুধুমাত্র গ্যাজেট বা জামাকাপড় খরচ",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "এটা বিদ্যমান ভুলে যান",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "invest-all",
+          "text": "গবেষণা ছাড়াই বিনিয়োগ করুন",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "বৃত্তি বোনাস",
+      "description": "আপনি ₹2000 স্কলারশিপ পাবেন। এটি ব্যবহার করার সবচেয়ে স্মার্ট উপায় কি?",
+      "amount": 2000,
+      "options": [
+        {
+          "id": "trip",
+          "text": "বিলাসবহুল ভ্রমণে যান",
+          "emoji": "✈️",
+          "isCorrect": false
+        },
+        {
+          "id": "hide-money",
+          "text": "বাড়িতে লুকিয়ে রাখুন",
+          "emoji": "🛏️",
+          "isCorrect": false
+        },
+        {
+          "id": "donate",
+          "text": "অবিলম্বে এটি সব দান করুন",
+          "emoji": "💝",
+          "isCorrect": false
+        },
+        {
+          "id": "self-invest",
+          "text": "শেখার জন্য বই, কোর্স বা টুল কিনুন",
+          "emoji": "🎓",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "জন্মদিনের উপহারের টাকা",
+      "description": "জন্মদিনের টাকা হিসেবে আপনি ₹800 পাবেন। একটি চিন্তাশীল পছন্দ কি?",
+      "amount": 800,
+      "options": [
+        {
+          "id": "impulse-buy",
+          "text": "শুধুমাত্র তাত্ক্ষণিক মজা খরচ",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "random",
+          "text": "যা মজা দেখায় কিনুন",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "plan-future",
+          "text": "একটি বড় লক্ষ্য বা প্রয়োজনের জন্য সংরক্ষণ করুন",
+          "emoji": "📅",
+          "isCorrect": true
+        },
+        {
+          "id": "share-friends",
+          "text": "বন্ধুদের সব দিন",
+          "emoji": "🤝",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "সামার জব উইন্ডফল",
+      "description": "আপনি গ্রীষ্মকালীন চাকরি থেকে ₹2500 উপার্জন করেন। কিভাবে সুবিধা সর্বোচ্চ?",
+      "amount": 2500,
+      "options": [
+        {
+          "id": "balanced-plan",
+          "text": "সঞ্চয়, শেখার জন্য বিভক্ত, এবং ছোট আচরণ",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "debt-payment",
+          "text": "ঋণ পরিশোধের জন্য তাড়াহুড়ো করুন যা আপনি পুরোপুরি বুঝতে পারছেন না",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "impulse-buying",
+          "text": "আবেগ ক্রয় ব্যয়",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save-all",
+          "text": "কোনো পরিকল্পনা ছাড়াই সব সংরক্ষণ করুন",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "గిఫ్ట్ మనీ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు మీ పుట్టినరోజున బహుమతి డబ్బు అందుకుంటారు. స్మార్ట్ మొదటి అడుగు అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "వెంటనే ఖర్చు పెట్టండి",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "show",
+          "text": "స్నేహితులకు చూపించండి",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "think",
+          "text": "అవసరాలు మరియు లక్ష్యాల గురించి ఆలోచించండి",
+          "emoji": "🤔",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీ బహుమతి డబ్బు కంటే ఎక్కువ ఖర్చయ్యే బ్యాక్‌ప్యాక్ మీకు కావాలి. తెలివైన ఎంపిక అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "స్నేహితుల నుండి డబ్బు అప్పుగా తీసుకోండి",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "వేచి ఉండండి మరియు మరింత డబ్బు ఆదా చేయండి",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "change",
+          "text": "బదులుగా యాదృచ్ఛికంగా ఏదైనా కొనండి",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీరు ఒక చిన్న బొమ్మ మరియు ఉపయోగకరమైన వస్తువును చూస్తారు. నిర్ణయించుకోవడానికి మీకు ఏది సహాయపడుతుంది?",
+      "options": [
+        {
+          "id": "use",
+          "text": "మీకు మరింత అవసరమైన వస్తువును ఎంచుకోండి",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "సరదాగా కనిపించే వాటిని ఎంచుకోండి",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "చౌకైన వస్తువును ఎంచుకోండి",
+          "emoji": "💲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీ బహుమతి డబ్బులో కొంత భాగాన్ని ఆదా చేసుకోవాలని మీ తల్లిదండ్రులు సూచిస్తున్నారు. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "అన్నింటినీ తిరస్కరించండి మరియు ఖర్చు చేయండి",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "agree",
+          "text": "కొంత భాగాన్ని ఆదా చేసి మిగిలిన భాగాన్ని ప్లాన్ చేయండి",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forget",
+          "text": "డబ్బు గురించి మర్చిపో",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "బహుమతి డబ్బు మీకు ఏమి నేర్పుతుంది?",
+      "options": [
+        {
+          "id": "showoff",
+          "text": "కొనుగోళ్లను ఎలా చూపించాలి",
+          "emoji": "😎",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ఆలోచించకుండా ఎలా ఖర్చు చేయాలి",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "manage",
+          "text": "డబ్బును బాధ్యతాయుతంగా ఎలా నిర్వహించాలి",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

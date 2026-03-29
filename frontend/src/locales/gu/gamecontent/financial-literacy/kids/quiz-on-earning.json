@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "કમાણી પર ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "પૈસા કમાવવાની સાચી રીત કઈ છે?",
+      "options": [
+        {
+          "id": "working",
+          "text": "કામ કરીને",
+          "emoji": "💼",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wasting",
+          "text": "બગાડ કરીને",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sleeping",
+          "text": "ઊંઘવાથી",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ખેડૂત પૈસા કેવી રીતે કમાય છે?",
+      "options": [
+        {
+          "id": "games",
+          "text": "રમતો રમે છે",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "crops",
+          "text": "પાકનું વેચાણ",
+          "emoji": "🌾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "ખોરાક આપવો",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "કઈ નોકરી ભણાવીને પૈસા કમાય છે?",
+      "options": [
+        {
+          "id": "toymaker",
+          "text": "રમકડા બનાવનાર",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "કેન્ડી વેચનાર",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "teacher",
+          "text": "Teacher",
+          "emoji": "👨‍🏫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "બાળકો પૈસા કેવી રીતે કમાઈ શકે?",
+      "options": [
+        {
+          "id": "chores",
+          "text": "કામકાજ કરવાનું",
+          "emoji": "🧹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "tv",
+          "text": "ટીવી જોવાનું",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "નાસ્તો ખાય છે",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "પૈસા કમાવવા કેમ મહત્વપૂર્ણ છે?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "તમને મફતમાં રમકડાં મળે છે",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "needs",
+          "text": "તમારી જરૂરિયાતો પૂરી કરે છે",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sleep",
+          "text": "તમને સારી ઊંઘ કરાવે છે",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

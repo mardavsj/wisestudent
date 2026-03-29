@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "బడ్జెట్‌పై క్విజ్",
+  "subtitleComplete": "క్విజ్ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "iconKey": "calculator",
+      "text": "బడ్జెట్ అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "list",
+          "text": "ఒక షాపింగ్ జాబితా",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ఖర్చు ప్రణాళిక",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "ఉచిత డబ్బు",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "iconKey": "target",
+      "text": "బడ్జెట్ ఎందుకు?",
+      "options": [
+        {
+          "id": "track",
+          "text": "ఖర్చులను ట్రాక్ చేయండి మరియు ఆదా చేయండి",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "అన్ని డబ్బును వేగంగా ఖర్చు చేయండి",
+          "emoji": "💥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fun",
+          "text": "వినోదం కోసమే",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "iconKey": "trendingUp",
+      "text": "రూ. 100 సంపాదించండి, రూ. 120 ఖర్చు చేయండి. ఏం జరుగుతుంది?",
+      "options": [
+        {
+          "id": "save",
+          "text": "మీరు రూ. 20 ఆదా చేస్తారు",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "prize",
+          "text": "మీరు బహుమతిని గెలుస్తారు",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "నువ్వు అప్పుల పాలవుతావు",
+          "emoji": "⚠️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "iconKey": "checkCircle",
+      "text": "మంచి బడ్జెట్ అలవాటు ఏది?",
+      "options": [
+        {
+          "id": "guess",
+          "text": "ఊహించండి మరియు యాదృచ్ఛికంగా ఖర్చు చేయండి",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ఖర్చులు మరియు ప్రణాళికను జాబితా చేయండి",
+          "emoji": "📝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ఖర్చును విస్మరించండి",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "iconKey": "piggyBank",
+      "text": "మీరు బడ్జెట్‌ను అనుసరిస్తే, మీరు...",
+      "options": [
+        {
+          "id": "goals",
+          "text": "ఒత్తిడి లేకుండా లక్ష్యాలను సాధించండి",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "unnecessary",
+          "text": "అనవసరమైన వస్తువులు కొనండి",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "డబ్బు ట్రాక్ కోల్పోతారు",
+          "emoji": "🌀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

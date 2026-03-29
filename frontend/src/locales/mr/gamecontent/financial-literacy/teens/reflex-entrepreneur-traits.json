@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स उद्योजक वैशिष्ट्ये",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: आपल्या उद्योजकीय प्रतिक्षेपांची चाचणी घ्या!",
+  "subtitleReady": "तुमच्या उद्योजकीय प्रतिक्षेपांची चाचणी घ्या!",
+  "readyHeader": "तुमच्या उद्योजकीय कौशल्यांची चाचणी घेण्यासाठी तयार आहात?",
+  "readyDescription": "मुख्य उद्योजकीय वैशिष्ट्ये आणि मानसिकतेबद्दल प्रश्नांची उत्तरे द्या.",
+  "readyTip": "आपल्याकडे प्रत्येकी {{time}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "greatJob": "ग्रेट जॉब!",
+  "finalScore": "तुम्ही {{total}} पैकी {{score}} गुण मिळवले!",
+  "thinkingSkills": "तुम्ही मजबूत उद्योजकीय विचार कौशल्ये विकसित करत आहात!",
+  "playAgain": "पुन्हा खेळा",
+  "questions": [
+    {
+      "id": 1,
+      "question": "यशस्वी उद्योजकांसाठी कोणते गुण आवश्यक आहेत?",
+      "options": [
+        {
+          "text": "जोखीम टाळणे",
+          "id": "risk_avoidance",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "Innovation",
+          "id": "innovation",
+          "emoji": "💡"
+        },
+        {
+          "text": "ट्रेंडचे अनुसरण करा",
+          "id": "following_trends",
+          "emoji": "📈"
+        },
+        {
+          "text": "संधींची वाट पाहत आहे",
+          "id": "waiting_opportunities",
+          "emoji": "⏳"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "आव्हानांचा सामना करताना उद्योजकांनी काय करावे?",
+      "options": [
+        {
+          "text": "पटकन सोडून द्या",
+          "id": "give_up",
+          "emoji": "😔"
+        },
+        {
+          "text": "इतरांना दोष द्या",
+          "id": "blame_others",
+          "emoji": "😠"
+        },
+        {
+          "text": "टिकून राहा आणि जुळवून घ्या",
+          "id": "persist_adapt",
+          "emoji": "💪"
+        },
+        {
+          "text": "आव्हाने टाळा",
+          "id": "avoid_challenges",
+          "emoji": "跑"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "यशस्वी उद्योजक समस्या सोडवण्याकडे कसे जातात?",
+      "options": [
+        {
+          "text": "समस्यांकडे दुर्लक्ष करा",
+          "id": "ignore_problems",
+          "emoji": "🙈"
+        },
+        {
+          "text": "समस्यांबद्दल तक्रार करा",
+          "id": "complain_issues",
+          "emoji": "😤"
+        },
+        {
+          "text": "सर्जनशील उपाय",
+          "id": "creative_solutions",
+          "emoji": "🔧"
+        },
+        {
+          "text": "इतरांच्या पद्धती कॉपी करा",
+          "id": "copy_others",
+          "emoji": "📋"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "उद्योजक सामान्यत: कोणती मानसिकता स्वीकारतात?",
+      "options": [
+        {
+          "text": "स्थिर मानसिकता",
+          "id": "fixed_mindset",
+          "emoji": "🔒"
+        },
+        {
+          "text": "वाढीची मानसिकता",
+          "id": "growth_mindset",
+          "emoji": "🌱"
+        },
+        {
+          "text": "नकारात्मक विचार",
+          "id": "negative_thinking",
+          "emoji": "😞"
+        },
+        {
+          "text": "शिकणे टाळणे",
+          "id": "avoid_learning",
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "गणना केलेल्या जोखमींकडे उद्योजकांनी कोणता दृष्टीकोन घ्यावा?",
+      "options": [
+        {
+          "text": "सर्व धोके टाळा",
+          "id": "avoid_all_risks",
+          "emoji": "🛡️"
+        },
+        {
+          "text": "बेपर्वाईने वागा",
+          "id": "act_recklessly",
+          "emoji": "🤯"
+        },
+        {
+          "text": "धोकादायक वर्तन कॉपी करा",
+          "id": "copy_risky",
+          "emoji": "🔁"
+        },
+        {
+          "text": "मूल्यांकन करा आणि स्मार्ट जोखीम घ्या",
+          "id": "smart_risks",
+          "emoji": "🎲"
+        }
+      ]
+    }
+  ]
+}

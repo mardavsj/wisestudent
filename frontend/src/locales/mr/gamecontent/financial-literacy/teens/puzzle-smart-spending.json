@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "कोडे: स्मार्ट खर्च",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "अर्थांसह संकल्पना जुळवा ({{current}}/{{total}} जुळले)",
+  "conceptsTitle": "खर्च संकल्पना",
+  "meaningsTitle": "आर्थिक अर्थ",
+  "matchButton": "Match",
+  "selectConceptLabel": "खर्चाची संकल्पना निवडा",
+  "selectedConceptLabel": "निवडले: {{name}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "matchedLabel": "जुळले: {{current}}/{{total}}",
+  "resultSuccessHeader": "ग्रेट जॉब!",
+  "resultSuccessSubheader": "तुम्ही {{total}} पैकी {{score}} खर्च करण्याच्या संकल्पना त्यांच्या अर्थांशी अचूक जुळल्या!",
+  "resultSuccessLesson": "धडा: खर्चाच्या संकल्पना समजून घेतल्याने चांगले आर्थिक निर्णय होतात!",
+  "resultTryAgainHeader": "सराव करत राहा!",
+  "resultTryAgainSubheader": "तुम्ही {{total}} पैकी {{score}} बरोबर जुळले खर्च संकल्पना.",
+  "resultTryAgainTip": "टीप: प्रत्येक खर्चाची संकल्पना प्रत्यक्षात काय दर्शवते याचा विचार करा!",
+  "coinsEarned": "+{{coins}} नाणी",
+  "concepts": [
+    {
+      "id": 1,
+      "name": "Budget",
+      "emoji": "📋"
+    },
+    {
+      "id": 2,
+      "name": "Waste",
+      "emoji": "🗑️"
+    },
+    {
+      "id": 3,
+      "name": "Needs",
+      "emoji": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Wants",
+      "emoji": "🎁"
+    },
+    {
+      "id": 5,
+      "name": "Emergency Fund",
+      "emoji": "🛡️"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "आर्थिक नियोजन",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "संसाधनांचा गैरवापर",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "आवश्यक प्राधान्यक्रम",
+      "emoji": "⭐"
+    },
+    {
+      "id": 9,
+      "name": "विवेकाधीन खर्च",
+      "emoji": "💎"
+    },
+    {
+      "id": 10,
+      "name": "जोखीम संरक्षण",
+      "emoji": "🔒"
+    }
+  ]
+}

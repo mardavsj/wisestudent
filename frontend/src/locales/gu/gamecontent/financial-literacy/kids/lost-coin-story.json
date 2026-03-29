@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "લોસ્ટ સિક્કાની વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમને રમતના મેદાનની નજીક એક ચમકતો સિક્કો મળે છે. શું કરવું યોગ્ય વસ્તુ છે?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "તમારા માટે રાખો",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "ask_teacher",
+          "text": "શિક્ષકને આપો",
+          "emoji": "🧑‍🏫",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "તેને જમીન પર છોડી દો",
+          "emoji": "🍂",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમને લાઇબ્રેરીમાં ₹15 મળે છે. આસપાસ કોઈ નથી. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ગ્રંથપાલને આપો",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "તેને તમારી બેગમાં છુપાવો",
+          "emoji": "🎒",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "તરત જ નાસ્તો ખરીદો",
+          "emoji": "🍿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "મિત્રને ₹20 મળે છે અને તે રાખવા માંગે છે. તમે શું સૂચવો છો?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "તેને શાંતિથી રાખો",
+          "emoji": "😶",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "તે રમતો પર ખર્ચો",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "સાથે મળીને માલિકને શોધવાનો પ્રયાસ કરો",
+          "emoji": "🕵️‍♂️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમને દુકાનમાં ભૂલથી વધારાનો ફેરફાર મળે છે. પ્રામાણિક પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "વધારાના પૈસા રાખો",
+          "emoji": "🤑",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "તે દુકાનદારને પરત કરો",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "મિત્રને આપો",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમારે મળેલા પૈસા સાથે પ્રામાણિકતાથી કેમ કામ કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "respect",
+          "text": "તે વિશ્વાસ બનાવે છે અને જવાબદારી દર્શાવે છે",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "buy_more",
+          "text": "તમે વધુ વસ્તુઓ ખરીદી શકો છો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "તે ત્વરિત નસીબ લાવે છે",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

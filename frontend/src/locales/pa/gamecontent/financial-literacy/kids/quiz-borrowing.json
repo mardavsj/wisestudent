@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ਉਧਾਰ ਲੈਣ 'ਤੇ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "🤝",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਉਧਾਰ ਲੈਣ ਦਾ ਕੀ ਮਤਲਬ ਹੈ?",
+      "options": [
+        {
+          "id": "without",
+          "text": "ਬਿਨਾਂ ਮੰਗੇ ਲੈ ਰਿਹਾ ਹੈ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ਦੀ ਵਰਤੋਂ ਅਤੇ ਵਾਪਸੀ",
+          "emoji": "🔁",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "steal",
+          "text": "Stealing",
+          "emoji": "😈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਕਿਤਾਬ ਉਧਾਰ ਲੈਣ ਤੋਂ ਬਾਅਦ, ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ਇਸ ਨੂੰ ਵਾਪਸ ਕਰੋ",
+          "emoji": "↩️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "ਇਸ ਨੂੰ ਸਦਾ ਲਈ ਰੱਖੋ",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sell",
+          "text": "ਇਸਨੂੰ ਵੇਚੋ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਬੈਂਕ ਤੋਂ ਪੈਸਾ ਉਧਾਰ ਲੈਣਾ ਠੀਕ ਕਿਉਂ ਹੈ?",
+      "options": [
+        {
+          "id": "repay",
+          "text": "ਤੁਸੀਂ ਵਿਆਜ ਸਮੇਤ ਵਾਪਸ ਕਰੋ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "ਇਹ ਮੁਫਤ ਪੈਸਾ ਹੈ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "ਤੁਸੀਂ ਕਦੇ ਵੀ ਵਾਪਸੀ ਨਹੀਂ ਕਰਦੇ",
+          "emoji": "🙃",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਜੇਕਰ ਤੁਸੀਂ ਉਧਾਰ ਲਈਆਂ ਚੀਜ਼ਾਂ ਵਾਪਸ ਨਹੀਂ ਕਰਦੇ ਤਾਂ ਕੀ ਹੁੰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "more",
+          "text": "ਤੁਹਾਨੂੰ ਹੋਰ ਚੀਜ਼ਾਂ ਮਿਲਦੀਆਂ ਹਨ",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rewards",
+          "text": "ਤੁਹਾਨੂੰ ਇਨਾਮ ਮਿਲਦੇ ਹਨ",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ਲੋਕ ਤੁਹਾਡੇ ਤੋਂ ਭਰੋਸਾ ਗੁਆ ਦਿੰਦੇ ਹਨ",
+          "emoji": "😞",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਇਮਾਨਦਾਰ ਉਧਾਰ ਲੈਣਾ ਮਹੱਤਵਪੂਰਨ ਕਿਉਂ ਹੈ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ਤੁਹਾਨੂੰ ਹੋਰ ਖਿਡੌਣੇ ਮਿਲਦੇ ਹਨ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ਇਹ ਦੂਜਿਆਂ ਨਾਲ ਵਿਸ਼ਵਾਸ ਪੈਦਾ ਕਰਦਾ ਹੈ",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ਇਹ ਉਧਾਰ ਲੈਣ ਨੂੰ ਮਜ਼ੇਦਾਰ ਬਣਾਉਂਦਾ ਹੈ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "പെൻസിൽ കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "✏️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "നിങ്ങൾ ഒരു സുഹൃത്തിൽ നിന്ന് ഒരു പെൻസിൽ കടം വാങ്ങുന്നു. നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ഉപയോഗത്തിന് ശേഷം തിരികെ നൽകുക",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "സൂക്ഷിക്കുക",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "അത് നഷ്ടപ്പെടുത്തുക",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "നിങ്ങൾക്ക് ഒരു പെൻസിൽ ആവശ്യമാണ്, പക്ഷേ ഒന്നുമില്ല. എന്താണ് ശരി?",
+      "options": [
+        {
+          "id": "take",
+          "text": "ചോദിക്കാതെ എടുക്കുക",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ask",
+          "text": "കടം വാങ്ങാനും തിരികെ നൽകാനും ആവശ്യപ്പെടുക",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "എഴുത്ത് ഒഴിവാക്കുക",
+          "emoji": "✍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "കടം വാങ്ങിയ ഒരു പെൻസിൽ നിങ്ങൾ തകർക്കുന്നു. എന്താണ് സത്യസന്ധത?",
+      "options": [
+        {
+          "id": "replace",
+          "text": "അത് പുതിയൊരെണ്ണം ഉപയോഗിച്ച് മാറ്റിസ്ഥാപിക്കുക",
+          "emoji": "🆕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "അത് മറയ്ക്കുക",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "മറ്റൊരാളെ കുറ്റപ്പെടുത്തുക",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിങ്ങളുടെ സുഹൃത്ത് ഒരു പെൻസിലിന് ₹5 കടം തരുന്നു. നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "അത് മിഠായിയിൽ ചെലവഴിക്കുക",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "തിരിച്ചടയ്ക്കാൻ മറക്കുക",
+          "emoji": "😕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "5 രൂപ കൃത്യസമയത്ത് തിരിച്ചടയ്ക്കുക",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "കടമെടുത്ത വസ്തുക്കൾ തിരികെ നൽകുന്നത് പ്രധാനമായിരിക്കുന്നത് എന്തുകൊണ്ട്?",
+      "options": [
+        {
+          "id": "pencils",
+          "text": "നിങ്ങൾക്ക് കൂടുതൽ പെൻസിലുകൾ ലഭിക്കും",
+          "emoji": "✏️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "അത് വിശ്വാസം വളർത്തുന്നു",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "popular",
+          "text": "അത് നിങ്ങളെ ജനപ്രിയനാക്കുന്നു",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

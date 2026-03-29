@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਸਮਾਰਟ ਪਿਕ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਆਪਣੇ ਸਮਾਰਟ ਪਿਕ ਗਿਆਨ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਆਪਣੇ ਸਮਾਰਟ ਪਿਕ ਗਿਆਨ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyEmoji": "🧠",
+  "readyTitle": "ਆਪਣੇ ਸਮਾਰਟ ਪਿਕ ਹੁਨਰਾਂ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਸਮਾਰਟ ਚੋਣਾਂ ਅਤੇ ਫੈਸਲੇ ਲੈਣ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਸਿਹਤਮੰਦ ਰਹਿਣ ਲਈ ਸਮਾਰਟ ਪਿਕ ਕੀ ਹੈ?",
+      "correctAnswer": "Food",
+      "options": [
+        {
+          "text": "Food",
+          "isCorrect": true,
+          "emoji": "🍎"
+        },
+        {
+          "text": "ਵਾਧੂ ਆਈਸ ਕਰੀਮ",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ਵੀਡੀਓ ਗੇਮ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ਫੈਨਸੀ ਖਿਡੌਣਾ",
+          "isCorrect": false,
+          "emoji": "🧸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਤੁਹਾਨੂੰ ਸਿੱਖਣ ਲਈ ਕੀ ਚੁਣਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਸਕੂਲ ਸਪਲਾਈ",
+      "options": [
+        {
+          "text": "ਨਵੀਂ ਗੇਮ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ਸਕੂਲ ਸਪਲਾਈ",
+          "isCorrect": true,
+          "emoji": "📚"
+        },
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ਕੂਲ ਗੈਜੇਟ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਰੋਜ਼ਾਨਾ ਜੀਵਨ ਲਈ ਕੀ ਜ਼ਰੂਰੀ ਹੈ?",
+      "correctAnswer": "Clothes",
+      "options": [
+        {
+          "text": "ਫੈਨਸੀ ਖਿਡੌਣਾ",
+          "isCorrect": false,
+          "emoji": "🧸"
+        },
+        {
+          "text": "Clothes",
+          "isCorrect": true,
+          "emoji": "👕"
+        },
+        {
+          "text": "ਆਇਸ ਕਰੀਮ",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "ਐਕਸ਼ਨ ਚਿੱਤਰ",
+          "isCorrect": false,
+          "emoji": "🤖"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਕਿਹੜੀ ਚੀਜ਼ ਤੁਹਾਨੂੰ ਗਿਆਨ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦੀ ਹੈ?",
+      "correctAnswer": "Books",
+      "options": [
+        {
+          "text": "Candy",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ਵੀਡੀਓ ਗੇਮ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ਬੁਝਾਰਤ ਖੇਡ",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "Books",
+          "isCorrect": true,
+          "emoji": "📖"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਤੁਹਾਨੂੰ ਸਕੂਲ ਜਾਣ ਲਈ ਕੀ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਬੱਸ ਟਿਕਟ",
+      "options": [
+        {
+          "text": "ਕੂਲ ਗੈਜੇਟ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        },
+        {
+          "text": "ਸੰਗੀਤ ਪਲੇਅਰ",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "ਬੱਸ ਟਿਕਟ",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "ਸਮਾਰਟ ਵਾਚ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ ઉધાર/ચોરી",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારા ઉધાર પ્રતિબિંબનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા ઉધાર પ્રતિબિંબનું પરીક્ષણ કરો!",
+  "readyEmoji": "🤝",
+  "readyTitle": "તૈયાર થાઓ!",
+  "readyDescription": "ઉધાર લેવા અંગેના પ્રશ્નોના સાચા જવાબ આપો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "તમારે ઉધાર લીધેલી વસ્તુઓનું શું કરવું જોઈએ?",
+      "correctAnswer": "ઉધાર લીધેલી વસ્તુઓ પરત કરો",
+      "options": [
+        {
+          "text": "ઉધાર લીધેલી વસ્તુઓ પરત કરો",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "તેમને કાયમ રાખો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "તેમને છુપાવો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "તેમના વિશે ભૂલી જાઓ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "લોન માટે યોગ્ય વસ્તુ શું છે?",
+      "correctAnswer": "લોન ચૂકવો",
+      "options": [
+        {
+          "text": "ચુકવણી ટાળો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "લોન ચૂકવો",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "તેને અવગણો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ભૂલી જાવ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "જ્યારે તમે કંઈક ઉધાર લો છો, ત્યારે તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "તે પાછું આપો",
+      "options": [
+        {
+          "text": "તેને છુપાવો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "રાખો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "તે પાછું આપો",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "તે ગુમાવો",
+          "isCorrect": false,
+          "emoji": "❌"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ઉધાર સંભાળવાની પ્રામાણિક રીત કઈ છે?",
+      "correctAnswer": "પ્રમાણિક બનો",
+      "options": [
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "પ્રમાણિક બનો",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "🎭"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "તમારે ઉછીની વસ્તુઓ ક્યારે પરત કરવી જોઈએ?",
+      "correctAnswer": "સમયસર પાછા ફરો",
+      "options": [
+        {
+          "text": "Delay",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "Never",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "કદાચ પછીથી",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "સમયસર પાછા ફરો",
+          "isCorrect": true,
+          "emoji": "⏱️"
+        }
+      ]
+    }
+  ]
+}

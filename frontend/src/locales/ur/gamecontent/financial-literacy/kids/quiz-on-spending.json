@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "خرچ پر کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "خرچ کرنے کی بہترین عادت کیا ہے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "بغیر سوچے سمجھے خریدیں۔",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "موازنہ کریں اور انتخاب کریں۔",
+          "emoji": "🤔",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "تفریح ​​​​کے لئے قرض لیں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "پیسہ خرچ کرنے کا ایک زبردست طریقہ کون سا ہے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "پہلے بجٹ",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "سب ایک ساتھ خرچ کریں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "وہ خریدیں جو مقبول ہو۔",
+          "emoji": "🔥",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "بڑی خریداری سے پہلے آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "کریڈٹ پر خریدیں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "دوستوں سے پوچھیں۔",
+          "emoji": "👥",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "پہلے محفوظ کریں۔",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "خرچ کرنے کی کونسی عادت مستقبل میں آپ کی مدد کرتی ہے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "خواہشات پر خرچ کریں۔",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "ضروریات کے لیے محفوظ کریں۔",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "مہنگی اشیاء خریدیں۔",
+          "emoji": "💎",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "خریداری کا سب سے ہوشیار طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "a",
+          "text": "ایک فہرست بنائیں",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "تسلسل خریدنا",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "رجحانات کی پیروی کریں۔",
+          "emoji": "📈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

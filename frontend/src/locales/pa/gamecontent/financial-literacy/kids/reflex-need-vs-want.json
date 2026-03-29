@@ -1,1 +1,159 @@
-﻿{}
+{
+  "title": "ਰਿਫਲੈਕਸ ਲੋੜ ਬਨਾਮ ਚਾਹੁੰਦੇ ਹਨ",
+  "subtitlePlaying": "ਦੌਰ {{current}}/{{total}}: ਲੋੜਾਂ ਬਨਾਮ ਇੱਛਾਵਾਂ ਬਾਰੇ ਆਪਣੇ ਗਿਆਨ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "subtitleReady": "ਲੋੜਾਂ ਬਨਾਮ ਇੱਛਾਵਾਂ ਬਾਰੇ ਆਪਣੇ ਗਿਆਨ ਦੀ ਜਾਂਚ ਕਰੋ!",
+  "readyEmoji": "📋",
+  "readyTitle": "ਤੁਹਾਡੀਆਂ ਲੋੜਾਂ ਬਨਾਮ ਗਿਆਨ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਤਿਆਰ ਹੋ?",
+  "readyDescription": "ਲੋੜਾਂ ਅਤੇ ਇੱਛਾਵਾਂ ਵਿਚਕਾਰ ਅੰਤਰ ਬਾਰੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦਿਓ।",
+  "readyInfo": "ਤੁਹਾਡੇ ਕੋਲ ਹਰ ਇੱਕ {{seconds}} ਸਕਿੰਟ ਦੇ ਨਾਲ {{total}} ਸਵਾਲ ਹਨ!",
+  "startButton": "ਖੇਡ ਸ਼ੁਰੂ ਕਰੋ",
+  "roundLabel": "ਗੋਲ:",
+  "timeLabel": "ਸਮਾਂ:",
+  "scoreLabel": "ਸਕੋਰ:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultGreatDescription": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ!",
+  "resultGreatLesson": "ਸਬਕ: ਲੋੜਾਂ ਜਿਉਂਦੇ ਰਹਿਣ ਅਤੇ ਸਿੱਖਣ ਲਈ ਜ਼ਰੂਰੀ ਹਨ, ਜਦੋਂ ਕਿ ਲੋੜਾਂ ਉਹ ਚੀਜ਼ਾਂ ਹਨ ਜੋ ਅਸੀਂ ਚਾਹੁੰਦੇ ਹਾਂ ਪਰ ਲੋੜ ਨਹੀਂ ਹੈ!",
+  "resultKeepEmoji": "😔",
+  "resultKeepTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+  "resultKeepDescription": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਲੋੜਾਂ ਜ਼ਰੂਰੀ ਚੀਜ਼ਾਂ ਹਨ ਜਿਵੇਂ ਕਿ ਭੋਜਨ, ਕੱਪੜੇ, ਅਤੇ ਸਕੂਲ ਦੀ ਸਪਲਾਈ!",
+  "resultKeepTip": "ਸੁਝਾਅ: ਲੋੜਾਂ ਉਹ ਚੀਜ਼ਾਂ ਹਨ ਜੋ ਤੁਹਾਨੂੰ ਬਚਣ ਅਤੇ ਸਿੱਖਣ ਲਈ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ, ਜਿਵੇਂ ਕਿ ਭੋਜਨ, ਕੱਪੜੇ ਅਤੇ ਸਕੂਲ ਦੀ ਸਪਲਾਈ।",
+  "tryAgainButton": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ਕਿਸ ਦੀ ਲੋੜ ਹੈ?",
+      "correctAnswer": "ਸਕੂਲ ਲਈ ਜੁੱਤੇ",
+      "options": [
+        {
+          "text": "ਸਕੂਲ ਲਈ ਜੁੱਤੇ",
+          "isCorrect": true,
+          "emoji": "👟"
+        },
+        {
+          "text": "10ਵੀਂ ਖਿਡੌਣਾ ਕਾਰ",
+          "isCorrect": false,
+          "emoji": "🚗"
+        },
+        {
+          "text": "ਵੀਡੀਓ ਗੇਮ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ਸ਼ਾਨਦਾਰ ਸਨਗਲਾਸ",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "ਸਿਹਤਮੰਦ ਰਹਿਣ ਲਈ ਕੀ ਲੋੜ ਹੈ?",
+      "correctAnswer": "ਸਿਹਤਮੰਦ ਭੋਜਨ",
+      "options": [
+        {
+          "text": "ਵਾਧੂ ਕੈਂਡੀ",
+          "isCorrect": false,
+          "emoji": "🍬"
+        },
+        {
+          "text": "ਸਿਹਤਮੰਦ ਭੋਜਨ",
+          "isCorrect": true,
+          "emoji": "🥗"
+        },
+        {
+          "text": "ਆਇਸ ਕਰੀਮ",
+          "isCorrect": false,
+          "emoji": "🍦"
+        },
+        {
+          "text": "Soda",
+          "isCorrect": false,
+          "emoji": "🥤"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "ਸਿੱਖਣ ਲਈ ਕਿਹੜੀ ਚੀਜ਼ ਜ਼ਰੂਰੀ ਹੈ?",
+      "correctAnswer": "ਸਕੂਲ ਦੀਆਂ ਕਿਤਾਬਾਂ",
+      "options": [
+        {
+          "text": "ਵੀਡੀਓ ਗੇਮ",
+          "isCorrect": false,
+          "emoji": "🎮"
+        },
+        {
+          "text": "ਐਕਸ਼ਨ ਚਿੱਤਰ",
+          "isCorrect": false,
+          "emoji": "🤖"
+        },
+        {
+          "text": "ਬੁਝਾਰਤ ਖੇਡ",
+          "isCorrect": false,
+          "emoji": "🧩"
+        },
+        {
+          "text": "ਸਕੂਲ ਦੀਆਂ ਕਿਤਾਬਾਂ",
+          "isCorrect": true,
+          "emoji": "📚"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ਠੰਡੇ ਮੌਸਮ ਵਿੱਚ ਤੁਹਾਨੂੰ ਕੀ ਚਾਹੀਦਾ ਹੈ?",
+      "correctAnswer": "ਵਿੰਟਰ ਜੈਕਟ",
+      "options": [
+        {
+          "text": "ਸ਼ਾਨਦਾਰ ਸਨਗਲਾਸ",
+          "isCorrect": false,
+          "emoji": "🕶️"
+        },
+        {
+          "text": "ਸਵਿਮਿੰਗ ਪੂਲ",
+          "isCorrect": false,
+          "emoji": "🏊"
+        },
+        {
+          "text": "ਵਿੰਟਰ ਜੈਕਟ",
+          "isCorrect": true,
+          "emoji": "🧥"
+        },
+        {
+          "text": "ਬੀਚ ਬਾਲ",
+          "isCorrect": false,
+          "emoji": "🏐"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "ਸਕੂਲ ਜਾਣ ਲਈ ਕੀ ਲੋੜ ਹੈ?",
+      "correctAnswer": "ਬੱਸ ਦਾ ਕਿਰਾਇਆ",
+      "options": [
+        {
+          "text": "ਬੱਸ ਦਾ ਕਿਰਾਇਆ",
+          "isCorrect": true,
+          "emoji": "🚌"
+        },
+        {
+          "text": "ਨਵੇਂ ਹੈੱਡਫੋਨ",
+          "isCorrect": false,
+          "emoji": "🎧"
+        },
+        {
+          "text": "ਸੰਗੀਤ ਪਲੇਅਰ",
+          "isCorrect": false,
+          "emoji": "🎵"
+        },
+        {
+          "text": "ਸਮਾਰਟ ਵਾਚ",
+          "isCorrect": false,
+          "emoji": "⌚"
+        }
+      ]
+    }
+  ]
+}

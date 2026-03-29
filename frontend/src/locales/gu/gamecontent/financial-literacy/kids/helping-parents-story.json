@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "મદદ માતા-પિતા વાર્તા",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમારા માતા-પિતાને કરિયાણા માટે ₹50ની જરૂર છે. તમારી પાસે ₹20 છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "give",
+          "text": "મદદ કરવા માટે તમારા ₹20 આપો",
+          "emoji": "🥕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "તેને કેન્ડી માટે રાખો",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "તેમની વિનંતીને અવગણો",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમે ઘરે બેસીને ₹10 કમાઓ છો. તમારે તેને સાચવવું જોઈએ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "રમકડાં પર ખર્ચો",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "હા, બચતમાં ઉમેરો",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "તે દૂર આપો",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારા માતા-પિતા તમને ₹15માં દૂધ ખરીદવાનું કહે છે. તમારી પાસે ₹20 છે. આગળ શું છે?",
+      "options": [
+        {
+          "id": "change",
+          "text": "દૂધ ખરીદો અને બદલો પરત કરો",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ફેરફાર સાથે કેન્ડી ખરીદો",
+          "emoji": "🍭",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "keep",
+          "text": "બધા ₹20 રાખો",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમને ₹10 મળશે. મા-બાપ કહે છે પ્રમાણિકતા. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "snacks",
+          "text": "તેને નાસ્તા પર ખર્ચો",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "તેને તમારા ખિસ્સામાં છુપાવો",
+          "emoji": "🧥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "find",
+          "text": "માલિકને શોધવાનો પ્રયાસ કરો",
+          "emoji": "🕵️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "માતા-પિતાને પૈસાથી મદદ કરવાથી તમને અનુભવ થાય છે...",
+      "options": [
+        {
+          "id": "proud",
+          "text": "ગર્વ અને જવાબદાર",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ઓછા પૈસા માટે ઉદાસી",
+          "emoji": "😔",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ખાસ કંઈ નથી",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

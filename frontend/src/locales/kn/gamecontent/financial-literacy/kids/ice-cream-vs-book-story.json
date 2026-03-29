@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "ಐಸ್ ಕ್ರೀಮ್ vs ಸ್ಕೂಲ್ ಬುಕ್ ಸ್ಟೋರಿ",
+  "subtitleComplete": "ಕಥೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "stageEmoji": "📘",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನೀವು ಶಾಲೆಯನ್ನು ಮುಗಿಸುತ್ತೀರಿ ಮತ್ತು ಹಸಿದಿರುವಿರಿ, ಆದರೆ ನಿಮಗೆ ಕಾರ್ಯಪುಸ್ತಕವೂ ಬೇಕು. ಉತ್ತಮ ಆಯ್ಕೆ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "ಸದ್ಯಕ್ಕೆ ಐಸ್ ಕ್ರೀಮ್ ಖರೀದಿಸಿ",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "ಕೆಲಸದ ಪುಸ್ತಕವನ್ನು ಖರೀದಿಸಿ",
+          "emoji": "📘",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wait",
+          "text": "ಏನನ್ನೂ ಖರೀದಿಸಿ ಬಿಡಿ",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನೀವು ಇಂದು ಐಸ್ ಕ್ರೀಮ್ ತಿನ್ನುತ್ತೀರಿ ಮತ್ತು ನಾಳೆ ಪುಸ್ತಕಕ್ಕೆ ಹಣವಿಲ್ಲ. ನೀವು ಏನು ಕಲಿಯುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "lesson",
+          "text": "ಯೋಜನೆ ಹಣ ಮುಖ್ಯ",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "ಐಸ್ ಕ್ರೀಮ್ ಯಾವಾಗಲೂ ಉತ್ತಮವಾಗಿದೆ",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "ಮುಂದಿನ ಬಾರಿ ಹಣವನ್ನು ಎರವಲು ಮಾಡಿ",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಪುಸ್ತಕವು ಪರೀಕ್ಷೆಗಳಲ್ಲಿ ಸಹಾಯ ಮಾಡುತ್ತದೆ ಮತ್ತು ಐಸ್ ಕ್ರೀಮ್ ತ್ವರಿತವಾಗಿ ಕರಗುತ್ತದೆ. ಯಾವುದು ಹೆಚ್ಚು ಕಾಲ ಉಳಿಯುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "icecream",
+          "text": "ಐಸ್ ಕ್ರೀಮ್ ಸಂತೋಷ",
+          "emoji": "🍨",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "book",
+          "text": "ಪುಸ್ತಕದಿಂದ ಜ್ಞಾನ",
+          "emoji": "📚",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "both",
+          "text": "ಎರಡೂ ಒಂದೇ ಆಗಿರುತ್ತದೆ",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ಇಂದು ಪುಸ್ತಕವನ್ನು ಖರೀದಿಸಲು ನಿರ್ಧರಿಸುತ್ತೀರಿ ಮತ್ತು ಇನ್ನೊಂದು ದಿನ ಐಸ್ ಕ್ರೀಮ್ ಅನ್ನು ಆನಂದಿಸಿ. ನೀವು ಯಾವ ಕೌಶಲ್ಯವನ್ನು ತೋರಿಸುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "luck",
+          "text": "ಶುಭವಾಗಲಿ",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "speed",
+          "text": "ತ್ವರಿತ ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳುವಿಕೆ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "patience",
+          "text": "Self-control",
+          "emoji": "🧘",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ನೀವು ಪುಸ್ತಕವನ್ನು ಆರಿಸಿದಾಗ ನಿಮ್ಮ ಪೋಷಕರು ನಗುತ್ತಾರೆ. ಅವರು ಏಕೆ ಸಂತೋಷಪಡುತ್ತಾರೆ?",
+      "options": [
+        {
+          "id": "cheap",
+          "text": "ಪುಸ್ತಕಗಳು ಅಗ್ಗವಾಗಿವೆ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "ನೀವು ಜವಾಬ್ದಾರಿಯುತ ಆಯ್ಕೆಯನ್ನು ಮಾಡುತ್ತೀರಿ",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "friends",
+          "text": "ಸ್ನೇಹಿತರು ಪುಸ್ತಕಗಳನ್ನು ಇಷ್ಟಪಡುತ್ತಾರೆ",
+          "emoji": "👫",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

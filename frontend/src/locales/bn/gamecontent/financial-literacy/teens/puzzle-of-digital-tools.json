@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ধাঁধা: ডিজিটাল টুল",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "ফাংশনগুলির সাথে ডিজিটাল সরঞ্জামের সাথে মিল করুন ({{current}}/{{total}} মিলেছে)",
+  "toolsTitle": "ডিজিটাল টুলস",
+  "functionsTitle": "ডিজিটাল ফাংশন",
+  "matchButton": "Match",
+  "selectToolLabel": "একটি ডিজিটাল টুল নির্বাচন করুন",
+  "selectedToolLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি সঠিকভাবে {{total}} ডিজিটাল টুলের মধ্যে {{score}} তাদের ফাংশনগুলির সাথে মিলেছেন!",
+  "resultSuccessLesson": "পাঠ: ডিজিটাল টুল বোঝা আপনাকে নিরাপদ অনলাইন লেনদেন করতে সাহায্য করে!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি {{total}} ডিজিটাল টুলের মধ্যে {{score}}টি সঠিকভাবে মেলেছেন।",
+  "resultTryAgainTip": "টিপ: প্রতিটি ডিজিটাল টুল আসলে কি করে তা নিয়ে ভাবুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "tools": [
+    {
+      "id": 1,
+      "name": "UPI",
+      "emoji": "📱"
+    },
+    {
+      "id": 2,
+      "name": "ডেবিট কার্ড",
+      "emoji": "💳"
+    },
+    {
+      "id": 3,
+      "name": "OTP",
+      "emoji": "🔐"
+    },
+    {
+      "id": 4,
+      "name": "QR কোড",
+      "emoji": "📷"
+    },
+    {
+      "id": 5,
+      "name": "CVV",
+      "emoji": "🔒"
+    }
+  ],
+  "functions": [
+    {
+      "id": 6,
+      "name": "তাত্ক্ষণিক স্থানান্তর",
+      "emoji": "⚡"
+    },
+    {
+      "id": 7,
+      "name": "ব্যাঙ্ক খরচ",
+      "emoji": "🏦"
+    },
+    {
+      "id": 8,
+      "name": "নিরাপত্তা কোড",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 9,
+      "name": "স্ক্যান করুন এবং অর্থ প্রদান করুন",
+      "emoji": "📲"
+    },
+    {
+      "id": 10,
+      "name": "কার্ড সুরক্ষা",
+      "emoji": "🧾"
+    }
+  ]
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "స్కూల్ ఫెయిర్ స్టోరీ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "జాతర త్వరలో ప్రారంభమవుతుంది మరియు మీరు ఉత్సాహంగా ఉన్నారు. మీరు మొదట ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "run",
+          "text": "మొదటి స్టాల్‌కి పరుగెత్తండి",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "shout",
+          "text": "ఉద్వేగంతో అరవండి",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "look",
+          "text": "జాతర చుట్టూ చూడండి",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీరు జనాదరణ పొందిన గేమ్ కోసం సుదీర్ఘ రేఖను చూస్తారు. సరైన ఎంపిక ఏమిటి?",
+      "options": [
+        {
+          "id": "push",
+          "text": "ముందుకి నెట్టండి",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "మీ వంతు కోసం వేచి ఉండండి",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "leave",
+          "text": "కోపంగా వదిలేయండి",
+          "emoji": "😤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "దుకాణదారుడు పొరపాటున మీకు అదనపు మార్పును అందజేస్తాడు. మీరు ఏమి చేస్తారు?",
+      "options": [
+        {
+          "id": "return",
+          "text": "అదనపు డబ్బు తిరిగి ఇవ్వండి",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "అదనపు డబ్బు ఉంచండి",
+          "emoji": "💵",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "నిశ్శబ్దంగా నడవండి",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు చాలా రైడ్‌లను ప్రయత్నించాలనుకుంటున్నారు, కానీ అలసిపోయినట్లు అనిపిస్తుంది. తెలివైన చర్య అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "force",
+          "text": "రైడ్ చేయడానికి మిమ్మల్ని బలవంతం చేయండి",
+          "emoji": "😣",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "ప్రతిదీ దాటవేయి",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "rest",
+          "text": "కొద్దిసేపు విశ్రాంతి తీసుకోండి",
+          "emoji": "🪑",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "జాతర ముగుస్తుంది మరియు మీకు ఒక టిక్కెట్ మిగిలి ఉంది. మీరు దేనిని ఎంచుకుంటారు?",
+      "options": [
+        {
+          "id": "favorite",
+          "text": "మీకు ఇష్టమైన కార్యాచరణను ఎంచుకోండి",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "random",
+          "text": "దీన్ని యాదృచ్ఛికంగా ఉపయోగించండి",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "దూరంగా త్రో",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

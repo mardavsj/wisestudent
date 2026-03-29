@@ -1,1 +1,145 @@
-﻿{}
+﻿{
+    "title": "প্রবৃদ্ধির উপর কুইজ",
+    "subtitleComplete": "কুইজ সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "stageEmoji": "📈",
+    "questions": [
+        {
+            "id": 1,
+            "text": "টাকা বাড়াতে কী সাহায্য করে?",
+            "options": [
+                {
+                    "id": "spend",
+                    "text": "সব খরচ করা",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "waste",
+                    "text": "অপচয় করা",
+                    "emoji": "🗑️",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "savings",
+                    "text": "সঞ্চয় + সুদ",
+                    "emoji": "📈",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "ব্যাংক কীভাবে টাকা বাড়াতে সাহায্য করে?",
+            "options": [
+                {
+                    "id": "toys",
+                    "text": "খেলনা দিয়ে",
+                    "emoji": "🧸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "interest",
+                    "text": "সুদ দিয়ে",
+                    "emoji": "💰",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "hide",
+                    "text": "টাকা লুকিয়ে রেখে",
+                    "emoji": "🫥",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "টাকা বাড়ানোর নিরাপদ উপায় কী?",
+            "options": [
+                {
+                    "id": "candy",
+                    "text": "মিষ্টি কেনা",
+                    "emoji": "🍬",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "home",
+                    "text": "বাড়িতে নগদ রাখা",
+                    "emoji": "🏠",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "bank",
+                    "text": "ব্যাংক সঞ্চয় অ্যাকাউন্ট ব্যবহার করা",
+                    "emoji": "🏦",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "বিনিয়োগ কী করে?",
+            "options": [
+                {
+                    "id": "grows",
+                    "text": "টাকা বাড়ায়",
+                    "emoji": "📊",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "spends",
+                    "text": "টাকা খরচ করে",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "loses",
+                    "text": "সবসময় টাকা হারায়",
+                    "emoji": "📉",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "ব্যাংকে টাকা কেন সঞ্চয় করবে?",
+            "options": [
+                {
+                    "id": "toys",
+                    "text": "সাথে সাথে খেলনা কিনতে",
+                    "emoji": "🧸",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "interest",
+                    "text": "সুদে বাড়তে পারে",
+                    "emoji": "💹",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "fun",
+                    "text": "শুধু মজাদার বলে",
+                    "emoji": "😊",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        }
+    ]
+}

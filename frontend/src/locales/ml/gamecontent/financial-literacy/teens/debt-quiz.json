@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "കടപ്പാട് ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionLabel": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "₹100 കടം വാങ്ങുക, ₹120 തിരിച്ചടക്കുക. 20 രൂപ അധികമായി വിളിക്കുന്നത് എന്താണ്?",
+      "options": [
+        {
+          "id": "principal",
+          "text": "Principal",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "fee",
+          "text": "Fee",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "കടം കൃത്യസമയത്ത് തിരിച്ചടച്ചില്ലെങ്കിൽ എന്ത് സംഭവിക്കും?",
+      "options": [
+        {
+          "id": "nothing",
+          "text": "ഒന്നും സംഭവിക്കുന്നില്ല",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "penalty",
+          "text": "പിഴയും പലിശയും കൂടും",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "കടം സ്വതന്ത്രമാകും",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "കടം വാങ്ങിയ യഥാർത്ഥ തുകയെ എന്താണ് വിളിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "principal",
+          "text": "Principal",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "total",
+          "text": "മൊത്തം കടം",
+          "emoji": "📊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "പണം കടം വാങ്ങുന്നതിന് മുമ്പ് നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "options": [
+        {
+          "id": "plan",
+          "text": "എങ്ങനെ തിരിച്ചടയ്ക്കണം എന്ന് പ്ലാൻ ചെയ്യുക",
+          "emoji": "📋",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow-first",
+          "text": "ആദ്യം കടം വാങ്ങുക, പിന്നീട് ചിന്തിക്കുക",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "തിരിച്ചടവ് അവഗണിക്കുക",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "കടബാധ്യതകൾ ഒഴിവാക്കാനുള്ള ഏറ്റവും നല്ല മാർഗം ഏതാണ്?",
+      "options": [
+        {
+          "id": "borrow-more",
+          "text": "പഴയ കടം വീട്ടാൻ കൂടുതൽ കടം വാങ്ങണം",
+          "emoji": "🔄",
+          "isCorrect": false
+        },
+        {
+          "id": "avoid",
+          "text": "അനാവശ്യമായി കടം വാങ്ങുന്നതും കൃത്യസമയത്ത് തിരിച്ചടയ്ക്കുന്നതും ഒഴിവാക്കുക",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "എല്ലാ കടങ്ങളും അവഗണിക്കുക",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "കടപ്പാട് ക്വിസ് താരം!",
+    "winMessage": "നിങ്ങൾക്ക് {{total}}ൽ {{score}} ലഭിച്ചു! കടവും കടവും നിങ്ങൾ മനസ്സിലാക്കുന്നു!",
+    "coinsEarned": "+{{score}} നാണയങ്ങൾ",
+    "lesson": "പാഠം: കടം വാങ്ങുന്നതിനുള്ള അധിക ചെലവാണ് പലിശ. പിഴകൾ ഒഴിവാക്കാൻ, എങ്ങനെ തിരിച്ചടയ്ക്കണം, അനാവശ്യമായ കടം ഒഴിവാക്കുക, കൃത്യസമയത്ത് തിരിച്ചടയ്ക്കുക എന്നിവ എപ്പോഴും ആസൂത്രണം ചെയ്യുക!",
+    "loseEmoji": "💪",
+    "loseTitle": "പഠിക്കുന്നത് തുടരുക!",
+    "loseMessage": "നിങ്ങൾക്ക് {{total}}ൽ {{score}} ലഭിച്ചു. ഓർക്കുക: പണം കടം വാങ്ങുന്നതിനുള്ള അധിക ചിലവ് പലിശയാണ്!",
+    "tryAgain": "വീണ്ടും ശ്രമിക്കുക",
+    "tip": "നുറുങ്ങ്: കടം വാങ്ങുമ്പോൾ നിങ്ങൾ നൽകുന്ന അധിക തുകയാണ് പലിശ. എല്ലായ്പ്പോഴും തിരിച്ചടവ് ആസൂത്രണം ചെയ്യുക, അനാവശ്യ കടം ഒഴിവാക്കുക, കൃത്യസമയത്ത് തിരിച്ചടയ്ക്കുക!"
+  }
+}

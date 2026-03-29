@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "పజిల్: కుడి vs తప్పు",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "ఫలితాలతో చర్యలను సరిపోల్చండి ({{current}}/{{total}} సరిపోలింది)",
+  "actionsTitle": "ఆర్థిక చర్యలు",
+  "outcomesTitle": "ఆర్థిక ఫలితాలు",
+  "matchButton": "Match",
+  "selectActionLabel": "ఆర్థిక చర్యను ఎంచుకోండి",
+  "selectedActionLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}} ఆర్థిక చర్యలలో {{score}}ని వాటి ఫలితాలతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: నైతిక ఆర్థిక నిర్ణయాలు ప్రతి ఒక్కరికీ సానుకూల ఫలితాలకు దారితీస్తాయి!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}} ఆర్థిక చర్యలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి ఆర్థిక చర్య యొక్క పరిణామాల గురించి ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "actions": [
+    {
+      "id": 1,
+      "name": "ఛారిటీకి విరాళం ఇస్తున్నారు",
+      "emoji": "💝"
+    },
+    {
+      "id": 2,
+      "name": "డబ్బు దోచుకుంటున్నారు",
+      "emoji": "😈"
+    },
+    {
+      "id": 3,
+      "name": "నిజాయితీ రిపోర్టింగ్",
+      "emoji": "✅"
+    },
+    {
+      "id": 4,
+      "name": "లంచాలు ఇస్తున్నారు",
+      "emoji": "💰"
+    },
+    {
+      "id": 5,
+      "name": "ఫెయిర్ డీల్",
+      "emoji": "🤝"
+    }
+  ],
+  "outcomes": [
+    {
+      "id": 6,
+      "name": "సానుకూల ప్రభావం",
+      "emoji": "🌟"
+    },
+    {
+      "id": 7,
+      "name": "చట్టపరమైన పరిణామాలు",
+      "emoji": "⛓️"
+    },
+    {
+      "id": 8,
+      "name": "ట్రస్ట్ బిల్డింగ్",
+      "emoji": "🤝"
+    },
+    {
+      "id": 9,
+      "name": "Corruption",
+      "emoji": "🐍"
+    },
+    {
+      "id": 10,
+      "name": "పరస్పర ప్రయోజనం",
+      "emoji": "🤝"
+    }
+  ]
+}

@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ਬਹਿਸ: ਪੈਸਾ ਅਤੇ ਨੈਤਿਕਤਾ",
+  "subtitleComplete": "ਬਹਿਸ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਦਾ ਦੌਰ {{current}}",
+  "roundLabel": "ਦੌਰ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "ਕੀ ਪੈਸਾ ਚਰਿੱਤਰ ਦੀ ਪਰਖ ਕਰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ਹਾਂ, ਨੈਤਿਕਤਾ ਜ਼ਿਆਦਾ ਮਹੱਤਵ ਰੱਖਦੀ ਹੈ",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ਨਹੀਂ, ਪੈਸੇ ਨਾਲ ਕੋਈ ਫਰਕ ਨਹੀਂ ਪੈਂਦਾ",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਨਿਰਭਰ ਕਰਦਾ ਹੈ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "ਕੀ ਤੁਹਾਨੂੰ ਪੈਸੇ ਲਈ ਨੈਤਿਕਤਾ ਨਾਲ ਸਮਝੌਤਾ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "sometimes",
+          "text": "ਕਈ ਵਾਰ ਠੀਕ ਹੈ",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "ਕਦੇ ਵੀ ਸਮਝੌਤਾ ਨਾ ਕਰੋ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "ਪੈਸਾ ਪਹਿਲ ਹੈ",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "ਹੋਰ ਮਹੱਤਵਪੂਰਨ ਕੀ ਹੈ: ਦੌਲਤ ਜਾਂ ਇਮਾਨਦਾਰੀ?",
+      "options": [
+        {
+          "id": "wealth",
+          "text": "Wealth",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "ਦੋਵੇਂ ਬਰਾਬਰ",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "integrity",
+          "text": "Integrity",
+          "emoji": "💎",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "ਕੀ ਤੁਸੀਂ ਅਮੀਰ ਅਤੇ ਨੈਤਿਕ ਹੋ ਸਕਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "yes2",
+          "text": "ਹਾਂ, ਬਿਲਕੁਲ",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "id": "no2",
+          "text": "ਨਹੀਂ, ਅਸੰਭਵ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "rarely",
+          "text": "ਘੱਟ ਹੀ ਸੰਭਵ ਹੈ",
+          "emoji": "😕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "ਕਿਹੜੀ ਚੀਜ਼ ਸਥਾਈ ਸਫਲਤਾ ਦਾ ਨਿਰਮਾਣ ਕਰਦੀ ਹੈ?",
+      "options": [
+        {
+          "id": "shortcuts",
+          "text": "ਸ਼ਾਰਟਕੱਟ ਅਤੇ ਚਾਲ",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "ethics",
+          "text": "ਨੈਤਿਕਤਾ ਅਤੇ ਇਮਾਨਦਾਰੀ",
+          "emoji": "🏆",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "ਸਿਰਫ ਕਿਸਮਤ",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

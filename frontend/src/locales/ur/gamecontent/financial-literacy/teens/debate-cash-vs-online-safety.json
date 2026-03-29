@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "بحث: نقد بمقابلہ آن لائن سیفٹی",
+  "subtitleComplete": "بحث مکمل!",
+  "subtitleProgress": "راؤنڈ {{current}} از {{total}}",
+  "roundLabel": "راؤنڈ {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "کیا آن لائن پیسہ نقد سے زیادہ خطرناک ہے؟",
+      "options": [
+        {
+          "id": "online-riskier",
+          "text": "آن لائن زیادہ خطرہ ہے۔",
+          "emoji": "💻",
+          "isCorrect": false
+        },
+        {
+          "id": "both-safe",
+          "text": "دونوں کو حفاظت کی ضرورت ہے۔",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "cash-riskier",
+          "text": "نقد زیادہ خطرہ ہے۔",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "بڑی مقدار میں کون سا محفوظ ہے؟",
+      "options": [
+        {
+          "id": "both-safe2",
+          "text": "دونوں احتیاطی تدابیر کے ساتھ",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "only-cash",
+          "text": "صرف نقد",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "only-online",
+          "text": "صرف آن لائن",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "آن لائن پیسے کے ساتھ اہم خطرہ کیا ہے؟",
+      "options": [
+        {
+          "id": "no-risk",
+          "text": "کوئی خطرہ نہیں۔",
+          "emoji": "😓",
+          "isCorrect": false
+        },
+        {
+          "id": "too-easy",
+          "text": "استعمال کرنا بہت آسان ہے۔",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "hacking",
+          "text": "ہیکنگ اور فراڈ",
+          "emoji": "👾",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "آپ آن لائن پیسے کی حفاظت کیسے کر سکتے ہیں؟",
+      "options": [
+        {
+          "id": "strong-password",
+          "text": "مضبوط پاس ورڈ اور OTP",
+          "emoji": "🔐",
+          "isCorrect": true
+        },
+        {
+          "id": "no-protection",
+          "text": "کسی تحفظ کی ضرورت نہیں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "share-details",
+          "text": "تفصیلات آزادانہ طور پر شیئر کریں۔",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "بہترین طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "only-one",
+          "text": "صرف ایک طریقہ استعمال کریں۔",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "دونوں کو محفوظ طریقے سے متوازن رکھیں",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "avoid-all",
+          "text": "تمام پیسے سے بچیں",
+          "emoji": "🚫",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

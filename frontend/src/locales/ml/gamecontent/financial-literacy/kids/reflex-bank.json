@@ -1,1 +1,151 @@
-﻿{}
+{
+  "title": "റിഫ്ലെക്സ് ബാങ്ക് അടിസ്ഥാനങ്ങൾ",
+  "subtitleComplete": "പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "question": "ബാങ്കിൽ പണം നിക്ഷേപിക്കാൻ എന്താണ് ചെയ്യേണ്ടത്?",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "നിങ്ങളുടെ പണം സുരക്ഷിതമായി സൂക്ഷിക്കുന്നതിനുള്ള മികച്ച മാർഗം എന്താണ്?",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "നിങ്ങളുടെ ബാങ്ക് അക്കൗണ്ടിൽ നിന്ന് എങ്ങനെ പണം എടുക്കും?",
+      "correctAnswer": "Withdraw",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Steal",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "Withdraw",
+          "isCorrect": true,
+          "emoji": "🏦"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "ഒരു ബാങ്കിൽ പണം ലാഭിക്കാൻ നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "correctAnswer": "അക്കൗണ്ട് തുറക്കുക",
+      "options": [
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "അക്കൗണ്ട് തുറക്കുക",
+          "isCorrect": true,
+          "emoji": "📝"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "നിങ്ങളുടെ പക്കൽ എത്ര പണമുണ്ടെന്ന് അറിയാൻ എന്താണ് ചെയ്യേണ്ടത്?",
+      "correctAnswer": "ബാലൻസ് പരിശോധിക്കുക",
+      "options": [
+        {
+          "text": "ബാലൻസ് പരിശോധിക്കുക",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "Forget",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    }
+  ],
+  "subtitlePlaying": "റൗണ്ട് {{current}}/{{total}}",
+  "subtitleReady": "തയ്യാറാകൂ!",
+  "readyTitle": "കളിക്കാൻ തയ്യാറാണോ?",
+  "readyDescription": "വേഗത്തിൽ ഉത്തരം നൽകുകയും മികച്ച ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക.",
+  "readyInfo": "നിങ്ങൾക്ക് {{seconds}} സെക്കൻഡ് വീതമുള്ള {{total}} ചോദ്യങ്ങളുണ്ട്!",
+  "startButton": "ഗെയിം ആരംഭിക്കുക",
+  "roundLabel": "റൗണ്ട്:",
+  "timeLabel": "സമയം:"
+}

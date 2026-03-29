@@ -1,1 +1,150 @@
-﻿{}
+﻿{
+    "title": "রিফ্লেক্স সঠিক ধার",
+    "subtitlePlaying": "প্রশ্ন {{current}} / {{total}}: ধারের রিফ্লেক্স পরীক্ষা করো!",
+    "subtitleReady": "ধারের রিফ্লেক্স পরীক্ষা করো!",
+    "readyEmoji": "🤝",
+    "readyTitle": "সঠিকভাবে ধার করা শিখতে প্রস্তুত?",
+    "readyDescription": "ধার করার সময় সঠিক পদক্ষেপ বেছে নাও।",
+    "readyInfo": "তোমার {{total}}টি প্রশ্ন আছে, প্রতিটিতে {{seconds}} সেকেন্ড!",
+    "startButton": "গেম শুরু করো",
+    "roundLabel": "প্রশ্ন:",
+    "timeLabel": "সময়:",
+    "scoreLabel": "স্কোর:",
+    "questions": [
+        {
+            "id": 1,
+            "question": "কিছু ধার করার আগে কী করবে?",
+            "correctAnswer": "অনুমতি নাও",
+            "options": [
+                {
+                    "text": "ছিনিয়ে নাও",
+                    "isCorrect": false,
+                    "emoji": "🤏"
+                },
+                {
+                    "text": "না জিজ্ঞেস করে নাও",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "অনুমতি নাও",
+                    "isCorrect": true,
+                    "emoji": "🙋"
+                },
+                {
+                    "text": "মালিককে উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "question": "কীভাবে কিছু ধার করবে?",
+            "correctAnswer": "ভদ্রভাবে ধার করো",
+            "options": [
+                {
+                    "text": "ভদ্রভাবে ধার করো",
+                    "isCorrect": true,
+                    "emoji": "🤝"
+                },
+                {
+                    "text": "জোর করে নাও",
+                    "isCorrect": false,
+                    "emoji": "💪"
+                },
+                {
+                    "text": "দ্রুত ছিনিয়ে নাও",
+                    "isCorrect": false,
+                    "emoji": "⚡"
+                },
+                {
+                    "text": "চুরি করো",
+                    "isCorrect": false,
+                    "emoji": "😈"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "question": "ধার করা জিনিস দিয়ে কী করবে?",
+            "correctAnswer": "ফেরত দাও",
+            "options": [
+                {
+                    "text": "রেখে দাও",
+                    "isCorrect": false,
+                    "emoji": "🙈"
+                },
+                {
+                    "text": "লুকিয়ে রাখো",
+                    "isCorrect": false,
+                    "emoji": "🫥"
+                },
+                {
+                    "text": "ভুলে যাও",
+                    "isCorrect": false,
+                    "emoji": "😴"
+                },
+                {
+                    "text": "ফেরত দাও",
+                    "isCorrect": true,
+                    "emoji": "↩️"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "question": "ঋণ দিয়ে কী করবে?",
+            "correctAnswer": "ঋণ পরিশোধ করো",
+            "options": [
+                {
+                    "text": "পেমেন্ট উপেক্ষা করো",
+                    "isCorrect": false,
+                    "emoji": "🚫"
+                },
+                {
+                    "text": "ঋণ পরিশোধ করো",
+                    "isCorrect": true,
+                    "emoji": "💰"
+                },
+                {
+                    "text": "এড়িয়ে চলো",
+                    "isCorrect": false,
+                    "emoji": "🏃"
+                },
+                {
+                    "text": "ভুলে যাও",
+                    "isCorrect": false,
+                    "emoji": "🤷"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "question": "ধার করার বিষয়ে কীভাবে আচরণ করবে?",
+            "correctAnswer": "সৎ থাকো",
+            "options": [
+                {
+                    "text": "সৎ থাকো",
+                    "isCorrect": true,
+                    "emoji": "✅"
+                },
+                {
+                    "text": "মিথ্যা বলো",
+                    "isCorrect": false,
+                    "emoji": "🤥"
+                },
+                {
+                    "text": "প্রতারণা করো",
+                    "isCorrect": false,
+                    "emoji": "🎭"
+                },
+                {
+                    "text": "ভান করো",
+                    "isCorrect": false,
+                    "emoji": "😏"
+                }
+            ]
+        }
+    ]
+}

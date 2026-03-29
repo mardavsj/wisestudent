@@ -1,1 +1,144 @@
-﻿{}
+﻿{
+    "title": "দোকানের গল্প ২",
+    "subtitleComplete": "গল্প সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "দোকানে দুটো কলম দেখলে। একটার দাম ৫০ টাকা অন্যটার ১৫ টাকা। দুটোই একইভাবে কাজ করে। কোনটা কিনবে?",
+            "options": [
+                {
+                    "id": "costly",
+                    "text": "দামি কলম",
+                    "emoji": "🖊️",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "compare",
+                    "text": "আগে রিভিউ দেখো",
+                    "emoji": "⭐",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "affordable",
+                    "text": "সাশ্রয়ী কলম",
+                    "emoji": "💸",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "পোশাকের জন্য ১০০ টাকা আছে। পছন্দের শার্ট ৮০ টাকায় এবং একই রকম আরেকটা ৩০ টাকায়। বুদ্ধিমানী কী?",
+            "options": [
+                {
+                    "id": "affordable",
+                    "text": "সস্তা শার্ট কিনো",
+                    "emoji": "👕",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "costly",
+                    "text": "দামি শার্ট কিনো",
+                    "emoji": "💰",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "wait",
+                    "text": "সেলের জন্য অপেক্ষা করো",
+                    "emoji": "🏷️",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "পার্টির জন্য নাস্তা কিনছ। ব্র্যান্ড A ২০০ টাকা আর ব্র্যান্ড B ১২০ টাকা। স্বাদ একই। কোনটা?",
+            "options": [
+                {
+                    "id": "costly",
+                    "text": "ব্র্যান্ড A কিনবো",
+                    "emoji": "📦",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "affordable",
+                    "text": "ব্র্যান্ড B কিনবো",
+                    "emoji": "🛒",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "mix",
+                    "text": "দুটো থেকে কিছু কিছু কিনবো",
+                    "emoji": "➗",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "স্কুলের ব্যাগ দরকার। একটা ৮০০ টাকা অন্যটা ৪০০ টাকা। দুটোরই মান ভালো। বুদ্ধিমানী কী?",
+            "options": [
+                {
+                    "id": "affordable",
+                    "text": "৪০০ টাকার ব্যাগ কিনবো",
+                    "emoji": "🎒",
+                    "description": "",
+                    "isCorrect": true
+                },
+                {
+                    "id": "costly",
+                    "text": "৮০০ টাকার ব্যাগ কিনবো",
+                    "emoji": "💳",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "borrow",
+                    "text": "এখনকার মতো ধার করবো",
+                    "emoji": "🤝",
+                    "description": "",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "সবজি কিনছ। অর্গানিক সবজি ৩০০ টাকা সাধারণ ১৫০ টাকা। দুটোই পুষ্টিকর। কোনটা?",
+            "options": [
+                {
+                    "id": "costly",
+                    "text": "অর্গানিক সবজি কিনবো",
+                    "emoji": "🥦",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "selective",
+                    "text": "দুটো মিশিয়ে কিনবো",
+                    "emoji": "🥕",
+                    "description": "",
+                    "isCorrect": false
+                },
+                {
+                    "id": "affordable",
+                    "text": "সাধারণ সবজি কিনবো",
+                    "emoji": "🧺",
+                    "description": "",
+                    "isCorrect": true
+                }
+            ]
+        }
+    ]
+}

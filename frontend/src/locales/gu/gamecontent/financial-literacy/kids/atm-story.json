@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "એટીએમ સ્ટોરી",
+  "subtitleComplete": "પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમારા માતા-પિતા તમને તેમનું એટીએમ કાર્ડ બતાવે છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "તેને અવગણો",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "તે કેવી રીતે કામ કરે છે તે જાણો",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "તેની સાથે રમો",
+          "emoji": "🎮",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારા માતા-પિતા એટીએમમાં ​​તેમનો પિન દાખલ કરી રહ્યાં છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "memorize",
+          "text": "પિન યાદ રાખવાનો પ્રયાસ કરો",
+          "emoji": "🧠",
+          "isCorrect": false
+        },
+        {
+          "id": "tell",
+          "text": "તેના વિશે મિત્રોને કહો",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "away",
+          "text": "ગોપનીયતા આપવા માટે દૂર જુઓ",
+          "emoji": "👀",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારી પાસે 100 રૂપિયા છે. સૌથી સ્માર્ટ પસંદગી શું છે?",
+      "options": [
+        {
+          "id": "split",
+          "text": "50 રૂપિયા બચાવો, 50 ખર્ચો",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "toys",
+          "text": "બધા રમકડાં પર ખર્ચો",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "friends",
+          "text": "બધા મિત્રોને આપો",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમે એક રમકડું ખરીદવા માંગો છો જેની કિંમત 200 રૂપિયા છે પરંતુ તમારી પાસે 150 છે. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "પહેલા વધુ પૈસા બચાવો",
+          "emoji": "💾",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "મિત્રો પાસેથી ઉધાર લો",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "demand",
+          "text": "માતાપિતા પાસેથી તેની માંગ કરો",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "તમારા મિત્રએ તેમના લંચના પૈસા ગુમાવ્યા. તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "તેમને અવગણો",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "laugh",
+          "text": "તેમના પર હસવું",
+          "emoji": "😆",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "તેમની સાથે તમારું લંચ શેર કરો",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "टॉय वि सेव्हिंग स्टोरी",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "stageEmoji": "🧸",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुमची आवडती खेळणी एका आठवड्यानंतर तुटते. हे तुम्हाला काय शिकवते?",
+      "options": [
+        {
+          "id": "buy",
+          "text": "त्वरीत अधिक खेळणी खरेदी करा",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "पैशाची निवड काही फरक पडत नाही",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "value",
+          "text": "पैसे खर्च करण्यापूर्वी विचार करा",
+          "emoji": "🧠",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्ही दर आठवड्याला नाणी वाचवता आणि रक्कम वाढताना पहा. तुम्ही काय शिकता?",
+      "options": [
+        {
+          "id": "patience",
+          "text": "बचत करण्यासाठी संयम आवश्यक आहे",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "boring",
+          "text": "बचत करणे कंटाळवाणे आहे",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "नाणी निरुपयोगी आहेत",
+          "emoji": "🪙",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्हाला नंतर काहीतरी महाग हवे आहे. सर्वात चांगली सवय काय आहे?",
+      "options": [
+        {
+          "id": "rush",
+          "text": "तुम्ही जे पाहता ते खरेदी करा",
+          "emoji": "🏃",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "योजना करा आणि हळूहळू बचत करा",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "नेहमी पैसे उधार घ्या",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "खरेदी करण्यापूर्वी तुम्ही किंमतींची तुलना करता. तुम्ही कोणते कौशल्य वापरत आहात?",
+      "options": [
+        {
+          "id": "slow",
+          "text": "खूप मंद असणे",
+          "emoji": "🐢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lazy",
+          "text": "खरेदी टाळणे",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "smart",
+          "text": "स्मार्ट मनी विचार",
+          "emoji": "💡",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुम्ही प्रत्येक खेळणी विकत घेण्याऐवजी बचत निवडा. हे काय बांधते?",
+      "options": [
+        {
+          "id": "habit",
+          "text": "बचतीच्या चांगल्या सवयी",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sad",
+          "text": "अजिबात मजा नाही",
+          "emoji": "😢",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fear",
+          "text": "खर्चाची भीती",
+          "emoji": "😨",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "Salary Story",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "A young worker earns ₹2000 per month. What should they do with their salary?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "सर्व खर्च करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "₹400 (20%) वाचवा",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "पैसे वाया घालवतात",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कामगाराला ₹500 बोनस मिळतो. त्यांनी ते कसे हाताळावे?",
+      "options": [
+        {
+          "id": "save",
+          "text": "त्यातील बहुतांश बचत करा",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "चैनीवर सर्व खर्च करा",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "बोनसकडे दुर्लक्ष करा",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "कामगाराचा खर्च दरमहा ₹1800 पर्यंत वाढतो. स्मार्ट दृष्टीकोन काय आहे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "बचत करणे थांबवा",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "जास्त खर्च करा",
+          "emoji": "🛒",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "बचत सांभाळा",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "कामगाराला 10% पगारवाढ मिळते. त्यांनी अतिरिक्त पैशाचे काय करावे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "जीवनशैली अपग्रेड करा",
+          "emoji": "💎",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "बचत वाढवा",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "waste",
+          "text": "ते सर्व वाया घालवा",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "कामगाराला ₹10,000 चे गॅझेट खरेदी करायचे आहे. सर्वोत्तम दृष्टीकोन कोणता आहे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "EMI वर खरेदी करा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "borrow",
+          "text": "पैसे उधार घ्या",
+          "emoji": "🤲",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "वेळेवर बचत करा",
+          "emoji": "⏳",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

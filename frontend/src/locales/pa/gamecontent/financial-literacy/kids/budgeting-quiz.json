@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ਬਜਟ 'ਤੇ ਕਵਿਜ਼",
+  "subtitleComplete": "ਕਵਿਜ਼ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "iconKey": "calculator",
+      "text": "ਇੱਕ ਬਜਟ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "list",
+          "text": "ਇੱਕ ਖਰੀਦਦਾਰੀ ਸੂਚੀ",
+          "emoji": "🛒",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ਇੱਕ ਖਰਚ ਯੋਜਨਾ",
+          "emoji": "🧾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "ਮੁਫ਼ਤ ਪੈਸੇ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "iconKey": "target",
+      "text": "ਬਜਟ ਕਿਉਂ ਬਣਾਓ?",
+      "options": [
+        {
+          "id": "track",
+          "text": "ਖਰਚਿਆਂ ਨੂੰ ਟਰੈਕ ਕਰੋ ਅਤੇ ਬਚਤ ਕਰੋ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ਸਾਰਾ ਪੈਸਾ ਤੇਜ਼ੀ ਨਾਲ ਖਰਚ ਕਰੋ",
+          "emoji": "💥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "fun",
+          "text": "ਸਿਰਫ਼ ਮਨੋਰੰਜਨ ਲਈ",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "iconKey": "trendingUp",
+      "text": "100 ਰੁਪਏ ਕਮਾਓ, 120 ਰੁਪਏ ਖਰਚ ਕਰੋ। ਕੀ ਹੁੰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਤੁਸੀਂ 20 ਰੁਪਏ ਬਚਾ ਸਕਦੇ ਹੋ",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "prize",
+          "text": "ਤੁਸੀਂ ਇਨਾਮ ਜਿੱਤਦੇ ਹੋ",
+          "emoji": "🏆",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "debt",
+          "text": "ਤੁਸੀਂ ਕਰਜ਼ੇ ਵਿੱਚ ਚਲੇ ਜਾਂਦੇ ਹੋ",
+          "emoji": "⚠️",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "iconKey": "checkCircle",
+      "text": "ਇੱਕ ਚੰਗੀ ਬਜਟ ਆਦਤ ਕਿਹੜੀ ਹੈ?",
+      "options": [
+        {
+          "id": "guess",
+          "text": "ਅੰਦਾਜ਼ਾ ਲਗਾਓ ਅਤੇ ਬੇਤਰਤੀਬ ਖਰਚ ਕਰੋ",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "ਖਰਚਿਆਂ ਅਤੇ ਯੋਜਨਾਵਾਂ ਦੀ ਸੂਚੀ ਬਣਾਓ",
+          "emoji": "📝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ਖਰਚ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "iconKey": "piggyBank",
+      "text": "ਜੇਕਰ ਤੁਸੀਂ ਬਜਟ ਦੀ ਪਾਲਣਾ ਕਰਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ...",
+      "options": [
+        {
+          "id": "goals",
+          "text": "ਟੀਚਿਆਂ ਨੂੰ ਤਣਾਅ ਰਹਿਤ ਪ੍ਰਾਪਤ ਕਰੋ",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "unnecessary",
+          "text": "ਬੇਲੋੜੀਆਂ ਚੀਜ਼ਾਂ ਖਰੀਦੋ",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "ਪੈਸੇ ਦਾ ਟਰੈਕ ਗੁਆ ਦਿਓ",
+          "emoji": "🌀",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

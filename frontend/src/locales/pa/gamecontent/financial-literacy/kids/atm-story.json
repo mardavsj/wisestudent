@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ਏਟੀਐਮ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਸੰਪੂਰਨ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਡੇ ਮਾਤਾ-ਪਿਤਾ ਤੁਹਾਨੂੰ ਆਪਣਾ ATM ਕਾਰਡ ਦਿਖਾਉਂਦੇ ਹਨ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "ਇਸ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "learn",
+          "text": "ਜਾਣੋ ਕਿ ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "play",
+          "text": "ਇਸ ਨਾਲ ਖੇਡੋ",
+          "emoji": "🎮",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਹਾਡੇ ਮਾਤਾ-ਪਿਤਾ ATM 'ਤੇ ਆਪਣਾ PIN ਦਾਖਲ ਕਰ ਰਹੇ ਹਨ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "memorize",
+          "text": "ਪਿੰਨ ਨੂੰ ਯਾਦ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+          "emoji": "🧠",
+          "isCorrect": false
+        },
+        {
+          "id": "tell",
+          "text": "ਦੋਸਤਾਂ ਨੂੰ ਇਸ ਬਾਰੇ ਦੱਸੋ",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "away",
+          "text": "ਗੋਪਨੀਯਤਾ ਦੇਣ ਲਈ ਦੂਰ ਦੇਖੋ",
+          "emoji": "👀",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਹਾਡੇ ਕੋਲ 100 ਰੁਪਏ ਹਨ। ਸਭ ਤੋਂ ਚੁਸਤ ਵਿਕਲਪ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "split",
+          "text": "50 ਰੁਪਏ ਬਚਾਓ, 50 ਖਰਚ ਕਰੋ",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "toys",
+          "text": "ਖਿਡੌਣਿਆਂ 'ਤੇ ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "friends",
+          "text": "ਸਭ ਦੋਸਤਾਂ ਨੂੰ ਦਿਓ",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਖਿਡੌਣਾ ਖਰੀਦਣਾ ਚਾਹੁੰਦੇ ਹੋ ਜਿਸਦੀ ਕੀਮਤ 200 ਰੁਪਏ ਹੈ ਪਰ ਤੁਹਾਡੇ ਕੋਲ 150 ਹੈ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "save",
+          "text": "ਪਹਿਲਾਂ ਹੋਰ ਪੈਸੇ ਬਚਾਓ",
+          "emoji": "💾",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "ਦੋਸਤਾਂ ਤੋਂ ਉਧਾਰ ਲਓ",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "demand",
+          "text": "ਮਾਪਿਆਂ ਤੋਂ ਇਸ ਦੀ ਮੰਗ ਕਰੋ",
+          "emoji": "😤",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੁਹਾਡੇ ਦੋਸਤ ਨੇ ਆਪਣੇ ਦੁਪਹਿਰ ਦੇ ਖਾਣੇ ਦੇ ਪੈਸੇ ਗੁਆ ਦਿੱਤੇ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "ignore",
+          "text": "ਉਹਨਾਂ ਨੂੰ ਨਜ਼ਰਅੰਦਾਜ਼ ਕਰੋ",
+          "emoji": "😐",
+          "isCorrect": false
+        },
+        {
+          "id": "laugh",
+          "text": "ਉਨ੍ਹਾਂ 'ਤੇ ਹੱਸੋ",
+          "emoji": "😆",
+          "isCorrect": false
+        },
+        {
+          "id": "share",
+          "text": "ਉਨ੍ਹਾਂ ਨਾਲ ਆਪਣਾ ਦੁਪਹਿਰ ਦਾ ਖਾਣਾ ਸਾਂਝਾ ਕਰੋ",
+          "emoji": "🍱",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

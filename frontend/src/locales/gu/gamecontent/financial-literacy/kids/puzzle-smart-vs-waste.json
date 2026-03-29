@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "પઝલ: સ્માર્ટ વિ વેસ્ટ",
+  "subtitleComplete": "પઝલ પૂર્ણ!",
+  "subtitleProgress": "શ્રેણીઓ સાથે આઇટમ્સ મેળવો ({{matched}}/{{total}} મેળ ખાતી)",
+  "itemsTitle": "ખર્ચની વસ્તુઓ",
+  "categoriesTitle": "Categories",
+  "selectedLabel": "પસંદ કરેલ: {{name}}",
+  "selectItem": "એક આઇટમ પસંદ કરો",
+  "matchButton": "Match",
+  "scoreLabel": "સ્કોર:",
+  "matchedLabel": "મેળ ખાતી:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ગ્રેટ જોબ!",
+  "resultGreatDescription": "તમે {{total}} માંથી {{score}} ને તેમની શ્રેણીઓ સાથે યોગ્ય રીતે મેળ ખાય છે!",
+  "coinsLabel": "Coins",
+  "resultLesson": "પાઠ: જરૂરિયાતો અને ઇચ્છાઓ વચ્ચેના તફાવતને સમજવાથી સ્માર્ટ નાણાકીય નિર્ણયો લેવામાં મદદ મળે છે!",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "પ્રેક્ટિસ ચાલુ રાખો!",
+  "resultKeepDescription": "તમે {{total}} આઇટમ્સમાંથી {{score}} ને યોગ્ય રીતે મેળ ખાય છે.",
+  "resultTip": "ટિપ: દરેક આઇટમ આવશ્યક છે કે સરસ છે તે વિશે વિચારો!",
+  "items": [
+    {
+      "id": 1,
+      "name": "પુસ્તકાલય પુસ્તકો",
+      "emoji": "📖"
+    },
+    {
+      "id": 2,
+      "name": "ફરીથી વાપરી શકાય તેવી પાણીની બોટલ",
+      "emoji": "🥤"
+    },
+    {
+      "id": 3,
+      "name": "કેન્ડી પેક",
+      "emoji": "🍬"
+    },
+    {
+      "id": 4,
+      "name": "પાટો અને પ્રાથમિક સારવાર",
+      "emoji": "🩹"
+    },
+    {
+      "id": 5,
+      "name": "ફળ બાસ્કેટ",
+      "emoji": "🍇"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "સ્માર્ટ બાય",
+      "emoji": "💡",
+      "description": "સમજદાર ખર્ચની પસંદગી"
+    },
+    {
+      "id": 7,
+      "name": "વ્યર્થ ખરીદી",
+      "emoji": "🗑️",
+      "description": "જરૂર નથી કે વ્યર્થ"
+    },
+    {
+      "id": 8,
+      "name": "પૈસા બચાવો",
+      "emoji": "💰",
+      "description": "ભવિષ્ય માટે સારું"
+    },
+    {
+      "id": 9,
+      "name": "આરોગ્ય અગ્રતા",
+      "emoji": "❤️",
+      "description": "સુખાકારી માટે હોવું જોઈએ"
+    },
+    {
+      "id": 10,
+      "name": "પૌષ્ટિક પસંદગી",
+      "emoji": "🍏",
+      "description": "સ્વસ્થ અને ફાયદાકારક"
+    }
+  ]
+}

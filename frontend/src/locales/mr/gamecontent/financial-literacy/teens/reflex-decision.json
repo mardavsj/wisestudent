@@ -1,1 +1,148 @@
-﻿{}
+{
+  "title": "रिफ्लेक्स निर्णय",
+  "subtitlePlaying": "फेरी {{current}}/{{total}}: तुमच्या आर्थिक निर्णय कौशल्याची चाचणी घ्या!",
+  "subtitleReady": "तुमच्या आर्थिक निर्णय कौशल्याची चाचणी घ्या!",
+  "readyHeader": "तुमच्या आर्थिक निर्णयांची चाचणी घेण्यासाठी तयार आहात?",
+  "readyDescription": "स्मार्ट आर्थिक निवडींबद्दल प्रश्नांची उत्तरे द्या.",
+  "readyTip": "आपल्याकडे प्रत्येकी {{time}} सेकंदांसह {{total}} प्रश्न आहेत!",
+  "startButton": "गेम सुरू करा",
+  "roundLabel": "फेरी:",
+  "timeLabel": "वेळ:",
+  "scoreLabel": "स्कोअर:",
+  "greatJob": "ग्रेट जॉब!",
+  "finalScore": "तुम्ही {{total}} पैकी {{score}} गुण मिळवले!",
+  "developingSkills": "तुम्ही मजबूत आर्थिक निर्णय घेण्याची कौशल्ये विकसित करत आहात!",
+  "playAgain": "पुन्हा खेळा",
+  "questions": [
+    {
+      "id": 1,
+      "question": "तुमच्याकडे पैसा आहे. तुम्ही शुल्क भरावे की गॅझेटसाठी वगळावे?",
+      "options": [
+        {
+          "text": "फी भरा",
+          "id": "pay_fees",
+          "emoji": "💰"
+        },
+        {
+          "text": "गॅझेटसाठी वगळा",
+          "id": "skip_gadgets",
+          "emoji": "🎮"
+        },
+        {
+          "text": "सर्व काही जतन करा",
+          "id": "save_everything",
+          "emoji": "🏦"
+        },
+        {
+          "text": "दोन्हीवर खर्च करा",
+          "id": "spend_both",
+          "emoji": "💸"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "अतिरिक्त पैशाचे काय करावे?",
+      "options": [
+        {
+          "text": "खेळ खरेदी करा",
+          "id": "buy_games",
+          "emoji": "🎮"
+        },
+        {
+          "text": "पैसे वाचवा",
+          "id": "save_money",
+          "emoji": "💰"
+        },
+        {
+          "text": "लगेच खर्च करा",
+          "id": "spend_immediately",
+          "emoji": "🛒"
+        },
+        {
+          "text": "मित्रांना कर्ज द्या",
+          "id": "lend_friends",
+          "emoji": "👥"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "तुम्ही तुमचे बजेट कसे व्यवस्थापित करावे?",
+      "options": [
+        {
+          "text": "बजेटचा मागोवा घ्या",
+          "id": "track_budget",
+          "emoji": "📊"
+        },
+        {
+          "text": "बजेटकडे दुर्लक्ष करा",
+          "id": "ignore_budget",
+          "emoji": "🙈"
+        },
+        {
+          "text": "खर्चाचा अंदाज घ्या",
+          "id": "guess_expenses",
+          "emoji": "🎲"
+        },
+        {
+          "text": "कधी कधी ट्रॅक",
+          "id": "track_sometimes",
+          "emoji": "📅"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "तुमच्याकडे बिले असताना प्राधान्य काय आहे?",
+      "options": [
+        {
+          "text": "पार्टीवर खर्च करा",
+          "id": "spend_party",
+          "emoji": "🎉"
+        },
+        {
+          "text": "भाडे द्या",
+          "id": "pay_rent",
+          "emoji": "🏠"
+        },
+        {
+          "text": "कपडे खरेदी करा",
+          "id": "buy_clothes",
+          "emoji": "👕"
+        },
+        {
+          "text": "नंतरसाठी जतन करा",
+          "id": "save_later",
+          "emoji": "💵"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "शिक्षणासाठी पैशाचे काय करायचे?",
+      "options": [
+        {
+          "text": "स्नॅक्स खरेदी करा",
+          "id": "buy_snacks",
+          "emoji": "🍕"
+        },
+        {
+          "text": "मनोरंजनावर खर्च कराल",
+          "id": "spend_entertainment",
+          "emoji": "🎬"
+        },
+        {
+          "text": "पुस्तकांसाठी जतन करा",
+          "id": "save_books",
+          "emoji": "📚"
+        },
+        {
+          "text": "दूर द्या",
+          "id": "give_away",
+          "emoji": "🎁"
+        }
+      ]
+    }
+  ]
+}

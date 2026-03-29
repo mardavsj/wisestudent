@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "हरवलेल्या नाण्याची कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "खेळाच्या मैदानाजवळ तुम्हाला एक चमकदार नाणे सापडते. काय करणे योग्य आहे?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ते स्वतःसाठी ठेवा",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "ask_teacher",
+          "text": "शिक्षकाला द्या",
+          "emoji": "🧑‍🏫",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "जमिनीवर सोडा",
+          "emoji": "🍂",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला लायब्ररीमध्ये ₹15 मिळतात. आजूबाजूला कोणी नाही. आपण काय करावे?",
+      "options": [
+        {
+          "id": "return",
+          "text": "ग्रंथपालांना द्या",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ते तुमच्या पिशवीत लपवा",
+          "emoji": "🎒",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "स्नॅक्स त्वरित खरेदी करा",
+          "emoji": "🍿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "मित्राला ₹20 सापडले आणि त्याला ते ठेवायचे आहे. तुम्ही काय सुचवाल?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "शांतपणे ठेवा",
+          "emoji": "😶",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "खेळांवर खर्च करा",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "एकत्र मालक शोधण्याचा प्रयत्न करा",
+          "emoji": "🕵️‍♂️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्हाला दुकानात चुकून अतिरिक्त बदल मिळतात. प्रामाणिक निवड म्हणजे काय?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "अतिरिक्त पैसे ठेवा",
+          "emoji": "🤑",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ते दुकानदाराला परत करा",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "मित्राला द्या",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "सापडलेल्या पैशाने तुम्ही प्रामाणिकपणे का वागले पाहिजे?",
+      "options": [
+        {
+          "id": "respect",
+          "text": "तो विश्वास निर्माण करतो आणि जबाबदारी दाखवतो",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "buy_more",
+          "text": "आपण अधिक गोष्टी खरेदी करू शकता",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "हे त्वरित भाग्य आणते",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

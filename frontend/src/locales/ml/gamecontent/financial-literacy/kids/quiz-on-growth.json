@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "വളർച്ചയെക്കുറിച്ചുള്ള ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "📈",
+  "questions": [
+    {
+      "id": 1,
+      "text": "പണം വളരാൻ സഹായിക്കുന്നതെന്താണ്?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "അതെല്ലാം ചെലവഴിക്കുന്നു",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "waste",
+          "text": "അത് പാഴാക്കുന്നു",
+          "emoji": "🗑️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "savings",
+          "text": "സേവിംഗ്സ് + പലിശ",
+          "emoji": "📈",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "പണം വളരാൻ ബാങ്ക് എങ്ങനെ സഹായിക്കുന്നു?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "കളിപ്പാട്ടങ്ങൾ നൽകി",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "പലിശ കൊടുത്ത്",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "നിങ്ങളുടെ പണം മറച്ചുവെച്ചുകൊണ്ട്",
+          "emoji": "🫥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "പണം വളർത്താനുള്ള സുരക്ഷിതമായ മാർഗം എന്താണ്?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "മിഠായി വാങ്ങുന്നു",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "home",
+          "text": "വീട്ടിൽ പണം സൂക്ഷിക്കുന്നു",
+          "emoji": "🏠",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bank",
+          "text": "ഒരു ബാങ്ക് സേവിംഗ്സ് അക്കൗണ്ട് ഉപയോഗിക്കുന്നു",
+          "emoji": "🏦",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "നിക്ഷേപം എന്താണ് ചെയ്യുന്നത്?",
+      "options": [
+        {
+          "id": "grows",
+          "text": "നിങ്ങളുടെ പണം വളർത്തുന്നു",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "spends",
+          "text": "നിങ്ങളുടെ പണം ചെലവഴിക്കുന്നു",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "loses",
+          "text": "എല്ലായ്പ്പോഴും നിങ്ങളുടെ പണം നഷ്ടപ്പെടും",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "എന്തുകൊണ്ടാണ് ഒരു ബാങ്കിൽ പണം ലാഭിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "കളിപ്പാട്ടങ്ങൾ ഉടൻ വാങ്ങാൻ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "interest",
+          "text": "ഇത് താൽപ്പര്യത്തോടെ വളരാൻ കഴിയും",
+          "emoji": "💹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "കാരണം അത് രസകരമാണ്",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

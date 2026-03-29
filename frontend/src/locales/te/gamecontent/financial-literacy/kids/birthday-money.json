@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "పుట్టినరోజు డబ్బు కథ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు పుట్టినరోజు డబ్బుగా రూ. 100 పొందుతారు. ఏం చేస్తావు?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "బొమ్మలు మరియు క్యాండీల కోసం అన్నింటినీ ఖర్చు చేయండి",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "భద్రంగా ఉంచుకోవడానికి అన్నీ అమ్మకు ఇవ్వండి",
+          "emoji": "👩",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "విభజించండి: కొన్ని వినోదం కోసం, కొన్ని పొదుపు కోసం",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "'తెలివిగా విడిపోవడం' అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "gifts",
+          "text": "స్నేహితుల బహుమతులకు సగం ఖర్చు చేస్తారు",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "కొన్ని పొదుపు కోసం మరియు కొన్ని వినోదం కోసం ఉంచండి",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "needs",
+          "text": "అవసరాలు మాత్రమే కొనండి, కోరికలు లేవు",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీ బహుమతి డబ్బులో కొంత భాగాన్ని ఆదా చేయడం మీకు సహాయపడుతుంది...",
+      "options": [
+        {
+          "id": "forget",
+          "text": "డబ్బు గురించి మర్చిపో",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ఇప్పుడు మరింత ఖర్చు చేయండి",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bigger",
+          "text": "తర్వాత పెద్ద వస్తువులను కొనండి",
+          "emoji": "🚲",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీరు తర్వాత ఏదైనా పెద్దది కొనాలనుకుంటే, ఏది తెలివైనది?",
+      "options": [
+        {
+          "id": "save",
+          "text": "చిన్న మొత్తాలను క్రమం తప్పకుండా ఆదా చేయండి",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "స్నేహితుల నుండి అప్పు తీసుకుంటారు",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "తదుపరి పుట్టినరోజు కోసం వేచి ఉండండి",
+          "emoji": "🎂",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "సమతుల్య నిర్ణయం అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "all",
+          "text": "ఈరోజు అంతా ఖర్చు చేయండి",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "enjoy",
+          "text": "ఒక ట్రీట్‌ను ఆస్వాదించండి మరియు మిగిలిన వాటిని సేవ్ చేయండి",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "none",
+          "text": "ప్రతిదీ సేవ్ చేయండి, వినోదం లేదు",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

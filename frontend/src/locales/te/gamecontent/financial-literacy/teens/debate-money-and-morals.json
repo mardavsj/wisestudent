@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "చర్చ: డబ్బు & నైతికత",
+  "subtitleComplete": "చర్చ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} రౌండ్",
+  "roundLabel": "రౌండ్ {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "డబ్బు పాత్రను పరీక్షిస్తుందా?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "అవును, నైతికత చాలా ముఖ్యమైనది",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "లేదు, డబ్బు పట్టింపు లేదు",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "బహుశా, ఆధారపడి ఉంటుంది",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "డబ్బు కోసం నైతికతతో రాజీ పడాలా?",
+      "options": [
+        {
+          "id": "sometimes",
+          "text": "కొన్నిసార్లు ఓకే",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "ఎప్పుడూ రాజీపడకు",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "డబ్బు ప్రాధాన్యత",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "మరింత ముఖ్యమైనది ఏమిటి: సంపద లేదా సమగ్రత?",
+      "options": [
+        {
+          "id": "wealth",
+          "text": "Wealth",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "రెండూ సమానంగా",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "integrity",
+          "text": "Integrity",
+          "emoji": "💎",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "మీరు ధనవంతులు మరియు నైతికంగా ఉండగలరా?",
+      "options": [
+        {
+          "id": "yes2",
+          "text": "అవును, ఖచ్చితంగా",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "id": "no2",
+          "text": "లేదు, అసాధ్యం",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "rarely",
+          "text": "అరుదుగా సాధ్యం",
+          "emoji": "😕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "శాశ్వత విజయాన్ని ఏది నిర్మిస్తుంది?",
+      "options": [
+        {
+          "id": "shortcuts",
+          "text": "సత్వరమార్గాలు మరియు ఉపాయాలు",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "ethics",
+          "text": "నీతి మరియు నిజాయితీ",
+          "emoji": "🏆",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "అదృష్టం మాత్రమే",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

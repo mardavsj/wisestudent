@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਟੀਚਿਆਂ ਨੂੰ ਸੰਭਾਲਣਾ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਉਦੇਸ਼ਾਂ ਨਾਲ ਮੇਲ ਕਰੋ ({{current}}/{{total}} ਮੇਲਿਆ)",
+  "goalsTitle": "ਟੀਚਿਆਂ ਨੂੰ ਸੰਭਾਲਣਾ",
+  "purposesTitle": "ਬਚਤ ਦੇ ਮਕਸਦ",
+  "matchButton": "Match",
+  "selectGoalLabel": "ਇੱਕ ਸੇਵਿੰਗ ਟੀਚਾ ਚੁਣੋ",
+  "selectedGoalLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultSuccessSubheader": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਉਹਨਾਂ ਦੇ ਉਦੇਸ਼ਾਂ ਨਾਲ ਸੁਰੱਖਿਅਤ ਕਰਨ ਦੇ ਟੀਚਿਆਂ ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ ਹੈ!",
+  "resultSuccessLesson": "ਸਬਕ: ਸਪਸ਼ਟ ਬੱਚਤ ਟੀਚਿਆਂ ਨੂੰ ਨਿਰਧਾਰਤ ਕਰਨਾ ਵਿੱਤੀ ਸੁਰੱਖਿਆ ਨੂੰ ਪ੍ਰਾਪਤ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "resultTryAgainHeader": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultTryAgainSubheader": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰਨ ਦੇ ਟੀਚਿਆਂ ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTryAgainTip": "ਸੁਝਾਅ: ਹਰੇਕ ਬੱਚਤ ਟੀਚੇ ਦੇ ਮੁੱਖ ਲਾਭ ਬਾਰੇ ਸੋਚੋ!",
+  "coinsEarned": "+{{coins}} ਸਿੱਕੇ",
+  "goals": [
+    {
+      "id": 1,
+      "name": "Education",
+      "emoji": "📚"
+    },
+    {
+      "id": 2,
+      "name": "ਐਮਰਜੈਂਸੀ ਫੰਡ",
+      "emoji": "🚑"
+    },
+    {
+      "id": 3,
+      "name": "Car",
+      "emoji": "🚗"
+    },
+    {
+      "id": 4,
+      "name": "House",
+      "emoji": "🏠"
+    },
+    {
+      "id": 5,
+      "name": "Retirement",
+      "emoji": "🌅"
+    }
+  ],
+  "purposes": [
+    {
+      "id": 6,
+      "name": "ਭਵਿੱਖ ਵਿੱਚ ਵਾਧਾ",
+      "emoji": "📈"
+    },
+    {
+      "id": 7,
+      "name": "ਸੁਰੱਖਿਆ ਜਾਲ",
+      "emoji": "🛡️"
+    },
+    {
+      "id": 8,
+      "name": "Mobility",
+      "emoji": "🛣️"
+    },
+    {
+      "id": 9,
+      "name": "Stability",
+      "emoji": "🏛️"
+    },
+    {
+      "id": 10,
+      "name": "ਮਨ ਦੀ ਸ਼ਾਂਤੀ",
+      "emoji": "🧘"
+    }
+  ]
+}

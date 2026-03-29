@@ -1,1 +1,129 @@
-﻿{}
+﻿{
+    "title": "সঞ্চয়ের উপর কুইজ",
+    "subtitleComplete": "কুইজ সম্পন্ন!",
+    "subtitleProgress": "প্রশ্ন {{current}} / {{total}}",
+    "questionCounter": "প্রশ্ন {{current}}/{{total}}",
+    "scoreLabel": "স্কোর: {{score}}/{{total}}",
+    "questions": [
+        {
+            "id": 1,
+            "text": "সেরা সঞ্চয়কারী কে?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "যে সব টাকা খরচ করে",
+                    "emoji": "💸",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "যে টাকা অপচয় করে",
+                    "emoji": "🗑️",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "যে টাকার একটি অংশ সঞ্চয় করে",
+                    "emoji": "💰",
+                    "isCorrect": true
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "text": "পকেটমানি দিয়ে কী করা উচিত?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "সাথে সাথে সব খরচ করো",
+                    "emoji": "🛍️",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "কিছু সঞ্চয় করো, কিছু খরচ করো",
+                    "emoji": "⚖️",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "লুকিয়ে রাখো এবং কখনো ব্যবহার করো না",
+                    "emoji": "🙈",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "text": "টাকা সঞ্চয় কেন গুরুত্বপূর্ণ?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "পরে দরকারি জিনিস কিনতে পারবে",
+                    "emoji": "🎯",
+                    "isCorrect": true
+                },
+                {
+                    "id": "b",
+                    "text": "বন্ধুদের সামনে দেখাতে পারবে",
+                    "emoji": "😎",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "মোটেই গুরুত্বপূর্ণ নয়",
+                    "emoji": "❌",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "text": "টাকার ব্যাংক কীসের জন্য ব্যবহার হয়?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "খেলনা রাখতে",
+                    "emoji": "🧸",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "টাকা সঞ্চয় করতে",
+                    "emoji": "🏦",
+                    "isCorrect": true
+                },
+                {
+                    "id": "c",
+                    "text": "খাবার রাখতে",
+                    "emoji": "🍕",
+                    "isCorrect": false
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "text": "প্রতি সপ্তাহে ১০ টাকা সঞ্চয় করলে ৪ সপ্তাহে কত হবে?",
+            "options": [
+                {
+                    "id": "a",
+                    "text": "২০ টাকা",
+                    "emoji": "💰",
+                    "isCorrect": false
+                },
+                {
+                    "id": "b",
+                    "text": "৩০ টাকা",
+                    "emoji": "💵",
+                    "isCorrect": false
+                },
+                {
+                    "id": "c",
+                    "text": "৪০ টাকা",
+                    "emoji": "💴",
+                    "isCorrect": true
+                }
+            ]
+        }
+    ]
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ਤੋਹਫ਼ੇ ਦੇ ਪੈਸੇ ਦੀ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionCounter": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਤੁਹਾਨੂੰ ਆਪਣੇ ਜਨਮ ਦਿਨ 'ਤੇ ਤੋਹਫ਼ੇ ਦੀ ਰਕਮ ਮਿਲਦੀ ਹੈ। ਇੱਕ ਸਮਾਰਟ ਪਹਿਲਾ ਕਦਮ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "ਇਸ ਨੂੰ ਤੁਰੰਤ ਖਰਚ ਕਰੋ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "show",
+          "text": "ਦੋਸਤਾਂ ਨੂੰ ਦਿਖਾਓ",
+          "emoji": "👀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "think",
+          "text": "ਲੋੜਾਂ ਅਤੇ ਟੀਚਿਆਂ ਬਾਰੇ ਸੋਚੋ",
+          "emoji": "🤔",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਬੈਕਪੈਕ ਚਾਹੁੰਦੇ ਹੋ ਜਿਸਦੀ ਕੀਮਤ ਤੁਹਾਡੇ ਤੋਹਫ਼ੇ ਦੇ ਪੈਸੇ ਤੋਂ ਵੱਧ ਹੋਵੇ। ਇੱਕ ਬੁੱਧੀਮਾਨ ਚੋਣ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "ਦੋਸਤਾਂ ਤੋਂ ਪੈਸੇ ਉਧਾਰ ਲਓ",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "ਉਡੀਕ ਕਰੋ ਅਤੇ ਹੋਰ ਪੈਸੇ ਬਚਾਓ",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "change",
+          "text": "ਇਸ ਦੀ ਬਜਾਏ ਬੇਤਰਤੀਬ ਕੁਝ ਖਰੀਦੋ",
+          "emoji": "🎲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਤੁਸੀਂ ਇੱਕ ਛੋਟਾ ਜਿਹਾ ਖਿਡੌਣਾ ਅਤੇ ਇੱਕ ਉਪਯੋਗੀ ਚੀਜ਼ ਦੇਖਦੇ ਹੋ। ਕੀ ਫੈਸਲਾ ਕਰਨ ਵਿੱਚ ਤੁਹਾਡੀ ਮਦਦ ਕਰਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "use",
+          "text": "ਉਹ ਚੀਜ਼ ਚੁਣੋ ਜਿਸਦੀ ਤੁਹਾਨੂੰ ਹੋਰ ਲੋੜ ਹੈ",
+          "emoji": "⭐",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "fun",
+          "text": "ਚੁਣੋ ਕਿ ਕੀ ਮਜ਼ੇਦਾਰ ਲੱਗਦਾ ਹੈ",
+          "emoji": "🎉",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "cheap",
+          "text": "ਸਭ ਤੋਂ ਸਸਤੀ ਚੀਜ਼ ਚੁਣੋ",
+          "emoji": "💲",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਹਾਡੇ ਮਾਪੇ ਤੁਹਾਡੇ ਤੋਹਫ਼ੇ ਦੇ ਪੈਸੇ ਦਾ ਕੁਝ ਹਿੱਸਾ ਬਚਾਉਣ ਦਾ ਸੁਝਾਅ ਦਿੰਦੇ ਹਨ। ਤੁਸੀਂ ਕੀ ਕਰਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "ਇਨਕਾਰ ਕਰੋ ਅਤੇ ਸਾਰਾ ਖਰਚ ਕਰੋ",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "agree",
+          "text": "ਇੱਕ ਹਿੱਸਾ ਬਚਾਓ ਅਤੇ ਬਾਕੀ ਦੀ ਯੋਜਨਾ ਬਣਾਓ",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forget",
+          "text": "ਪੈਸੇ ਬਾਰੇ ਭੁੱਲ ਜਾਓ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਤੋਹਫ਼ੇ ਦਾ ਪੈਸਾ ਤੁਹਾਨੂੰ ਕੀ ਸਿਖਾਉਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "showoff",
+          "text": "ਖਰੀਦਦਾਰੀ ਨੂੰ ਕਿਵੇਂ ਦਿਖਾਉਣਾ ਹੈ",
+          "emoji": "😎",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ਬਿਨਾਂ ਸੋਚੇ ਸਮਝੇ ਖਰਚ ਕਿਵੇਂ ਕਰੀਏ",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "manage",
+          "text": "ਪੈਸੇ ਦਾ ਜ਼ਿੰਮੇਵਾਰੀ ਨਾਲ ਪ੍ਰਬੰਧਨ ਕਿਵੇਂ ਕਰਨਾ ਹੈ",
+          "emoji": "🎯",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

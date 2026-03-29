@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ਬੁਝਾਰਤ: ਲੋਨ ਦੀਆਂ ਮੂਲ ਗੱਲਾਂ",
+  "subtitleComplete": "ਬੁਝਾਰਤ ਪੂਰੀ!",
+  "subtitleProgress": "ਸੰਕਲਪਾਂ ਨਾਲ ਲੋਨ ਦੀਆਂ ਸ਼ਰਤਾਂ ਦਾ ਮੇਲ ਕਰੋ ({{current}}/{{total}} ਮੇਲ ਖਾਂਦਾ)",
+  "termsTitle": "ਲੋਨ ਦੀਆਂ ਸ਼ਰਤਾਂ",
+  "conceptsTitle": "ਲੋਨ ਸੰਕਲਪ",
+  "matchButton": "Match",
+  "selectTermLabel": "ਲੋਨ ਦੀ ਮਿਆਦ ਚੁਣੋ",
+  "selectedTermLabel": "ਚੁਣਿਆ ਗਿਆ: {{name}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "matchedLabel": "ਮੇਲ ਖਾਂਦਾ: {{current}}/{{total}}",
+  "resultSuccessHeader": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+  "resultSuccessSubheader": "ਤੁਸੀਂ ਉਹਨਾਂ ਦੇ ਸੰਕਲਪਾਂ ਦੇ ਨਾਲ {{total}} ਕਰਜ਼ੇ ਦੀਆਂ ਸ਼ਰਤਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਮੇਲ ਕੀਤਾ ਹੈ!",
+  "resultSuccessLesson": "ਪਾਠ: ਕਰਜ਼ੇ ਦੀਆਂ ਮੂਲ ਗੱਲਾਂ ਨੂੰ ਸਮਝਣਾ ਸੂਚਿਤ ਉਧਾਰ ਲੈਣ ਦੇ ਫੈਸਲੇ ਲੈਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ!",
+  "resultTryAgainHeader": "ਅਭਿਆਸ ਕਰਦੇ ਰਹੋ!",
+  "resultTryAgainSubheader": "ਤੁਸੀਂ {{total}} ਕਰਜ਼ੇ ਦੀਆਂ ਸ਼ਰਤਾਂ ਵਿੱਚੋਂ {{score}} ਦਾ ਸਹੀ ਢੰਗ ਨਾਲ ਮੇਲ ਕੀਤਾ।",
+  "resultTryAgainTip": "ਸੁਝਾਅ: ਇਸ ਬਾਰੇ ਸੋਚੋ ਕਿ ਹਰੇਕ ਕਰਜ਼ੇ ਦੀ ਮਿਆਦ ਅਸਲ ਵਿੱਚ ਕੀ ਦਰਸਾਉਂਦੀ ਹੈ!",
+  "coinsEarned": "+{{coins}} ਸਿੱਕੇ",
+  "terms": [
+    {
+      "id": 1,
+      "name": "Principal",
+      "emoji": "💵"
+    },
+    {
+      "id": 2,
+      "name": "Interest",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "ਲੋਨ ਦੀ ਮਿਆਦ",
+      "emoji": "📅"
+    },
+    {
+      "id": 4,
+      "name": "EMI",
+      "emoji": "📊"
+    },
+    {
+      "id": 5,
+      "name": "Default",
+      "emoji": "⚠️"
+    }
+  ],
+  "concepts": [
+    {
+      "id": 6,
+      "name": "ਮੂਲ ਰਕਮ",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "ਵਾਧੂ ਲਾਗਤ",
+      "emoji": "➕"
+    },
+    {
+      "id": 8,
+      "name": "ਸਮਾਂ ਮਿਆਦ",
+      "emoji": "⏱️"
+    },
+    {
+      "id": 9,
+      "name": "ਨਿਯਮਤ ਭੁਗਤਾਨ",
+      "emoji": "💳"
+    },
+    {
+      "id": 10,
+      "name": "ਖੁੰਝ ਗਏ ਭੁਗਤਾਨ",
+      "emoji": "🚫"
+    }
+  ]
+}

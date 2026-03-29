@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "બેંકો પર ક્વિઝ",
+  "subtitleComplete": "પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "બેંક શું છે?",
+      "options": [
+        {
+          "id": "toy",
+          "text": "રમકડાની દુકાન",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "safe",
+          "text": "પૈસા સુરક્ષિત રાખવાનું સ્થળ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "icecream",
+          "text": "આઈસ્ક્રીમની દુકાન",
+          "emoji": "🍦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "બેંકનું બચત ખાતું શું કરે છે?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "તમને રમકડાં આપે છે",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "food",
+          "text": "ખોરાક વેચે છે",
+          "emoji": "🍕",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "તમારા પૈસા વધે છે",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમે બેંકના ATMમાં શું કરી શકો?",
+      "options": [
+        {
+          "id": "clothes",
+          "text": "કપડાં ખરીદો",
+          "emoji": "👕",
+          "isCorrect": false
+        },
+        {
+          "id": "withdraw",
+          "text": "પૈસા ઉપાડો",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "રમતો રમો",
+          "emoji": "🎮",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "બેંકો શા માટે લોન આપે છે?",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "તમને નાણાં ઉછીના લેવામાં મદદ કરવા માટે",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "મફત પૈસા આપવા માટે",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "toys",
+          "text": "રમકડાં વેચવા માટે",
+          "emoji": "🧸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "બેંકો પૈસા માટે કેમ સુરક્ષિત છે?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "તેઓ તમને કેન્ડી આપે છે",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "તેઓ પૈસા છુપાવે છે",
+          "emoji": "🫥",
+          "isCorrect": false
+        },
+        {
+          "id": "protect",
+          "text": "તેઓ તમારી બચતનું રક્ષણ કરે છે",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

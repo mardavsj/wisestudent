@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "બર્થડે મની સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમને જન્મદિવસની રકમ તરીકે 100 રૂપિયા મળે છે. તમે શું કરશો?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "બધા રમકડાં અને કેન્ડી પર ખર્ચો",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "સલામતી માટે તે બધું મમ્મીને આપો",
+          "emoji": "👩",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "તેને વિભાજિત કરો: કેટલાક આનંદ માટે, કેટલાક બચત માટે",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "'સમજદારીથી વિભાજન'નો અર્થ શું છે?",
+      "options": [
+        {
+          "id": "gifts",
+          "text": "મિત્રોની ભેટ પર અડધો ખર્ચ કરો",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "balance",
+          "text": "થોડી બચત માટે અને થોડી મનોરંજન માટે રાખો",
+          "emoji": "⚖️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "needs",
+          "text": "માત્ર જરૂરિયાતો જ ખરીદો, કોઈ ઈચ્છા નથી",
+          "emoji": "🧺",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમારા ભેટના પૈસાનો એક ભાગ બચાવવાથી તમને મદદ મળે છે...",
+      "options": [
+        {
+          "id": "forget",
+          "text": "પૈસા વિશે ભૂલી જાઓ",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "હવે વધુ ખર્ચ કરો",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "bigger",
+          "text": "પછીથી મોટી વસ્તુઓ ખરીદો",
+          "emoji": "🚲",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "જો તમે પછીથી કંઈક મોટું ખરીદવા માંગતા હો, તો સ્માર્ટ શું છે?",
+      "options": [
+        {
+          "id": "save",
+          "text": "નિયમિતપણે નાની રકમ બચાવો",
+          "emoji": "🐷",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "મિત્રો પાસેથી ઉધાર લો",
+          "emoji": "🙏",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "આગામી જન્મદિવસની રાહ જુઓ",
+          "emoji": "🎂",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "સંતુલિત નિર્ણય શું છે?",
+      "options": [
+        {
+          "id": "all",
+          "text": "આજે બધો ખર્ચ કરો",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "enjoy",
+          "text": "સારવારનો આનંદ માણો અને બાકીનાને સાચવો",
+          "emoji": "🍦",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "none",
+          "text": "બધું સાચવો, મજા નહીં",
+          "emoji": "🔒",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

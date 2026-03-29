@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "બચત પર ક્વિઝ",
+  "subtitleComplete": "ક્વિઝ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionCounter": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "શ્રેષ્ઠ બચાવનાર કોણ છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "કોઈ વ્યક્તિ જે તેમના બધા પૈસા ખર્ચે છે",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "પૈસા બગાડનાર વ્યક્તિ",
+          "emoji": "🗑️",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "કોઈ વ્યક્તિ જે તેમના પૈસાનો ભાગ બચાવે છે",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારે તમારા પોકેટ મની સાથે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "a",
+          "text": "તે બધું તરત જ ખર્ચ કરો",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "થોડી બચત કરો અને થોડો ખર્ચ કરો",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "તેને છુપાવો અને તેનો ક્યારેય ઉપયોગ કરશો નહીં",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "પૈસા બચાવવા શા માટે મહત્વપૂર્ણ છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "તેથી તમે પછીથી જરૂરી વસ્તુઓ ખરીદી શકો છો",
+          "emoji": "🎯",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "text": "જેથી તમે મિત્રોને બતાવી શકો",
+          "emoji": "😎",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "તે બિલકુલ મહત્વનું નથી",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "મની બેંકનો ઉપયોગ શેના માટે થાય છે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "રમકડાં રાખવા",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "પૈસાની બચત",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "text": "ખોરાકનો સંગ્રહ કરવો",
+          "emoji": "🍕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "જો તમે દર અઠવાડિયે 10 રૂપિયા બચાવો છો, તો તમારી પાસે 4 અઠવાડિયામાં કેટલા હશે?",
+      "options": [
+        {
+          "id": "a",
+          "text": "રૂ. 20",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "text": "રૂ. 30",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "text": "રૂ. 40",
+          "emoji": "💴",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

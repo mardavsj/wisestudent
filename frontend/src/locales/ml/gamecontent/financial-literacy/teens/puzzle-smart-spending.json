@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "പസിൽ: സ്‌മാർട്ട് സ്‌പെൻഡിംഗ്",
+  "subtitleComplete": "പസിൽ പൂർത്തിയായി!",
+  "subtitleProgress": "ആശയങ്ങളുമായി പൊരുത്തപ്പെടുത്തുക ({{current}}/{{total}} പൊരുത്തപ്പെട്ടു)",
+  "conceptsTitle": "ചെലവ് ആശയങ്ങൾ",
+  "meaningsTitle": "സാമ്പത്തിക അർത്ഥങ്ങൾ",
+  "matchButton": "Match",
+  "selectConceptLabel": "ഒരു ചെലവഴിക്കൽ ആശയം തിരഞ്ഞെടുക്കുക",
+  "selectedConceptLabel": "തിരഞ്ഞെടുത്തത്: {{name}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "matchedLabel": "പൊരുത്തപ്പെട്ടു: {{current}}/{{total}}",
+  "resultSuccessHeader": "മികച്ച ജോലി!",
+  "resultSuccessSubheader": "നിങ്ങൾ {{score}}-ൽ {{total}} ചെലവ് ആശയങ്ങൾ അവയുടെ അർത്ഥങ്ങളുമായി ശരിയായി പൊരുത്തപ്പെടുത്തി!",
+  "resultSuccessLesson": "പാഠം: ചെലവ് ആശയങ്ങൾ മനസ്സിലാക്കുന്നത് മികച്ച സാമ്പത്തിക തീരുമാനങ്ങളിലേക്ക് നയിക്കുന്നു!",
+  "resultTryAgainHeader": "പരിശീലിക്കുന്നത് തുടരുക!",
+  "resultTryAgainSubheader": "നിങ്ങൾ {{score}}-ൽ {{total}} ചിലവഴിക്കുന്ന ആശയങ്ങളുമായി ശരിയായി പൊരുത്തപ്പെട്ടു.",
+  "resultTryAgainTip": "നുറുങ്ങ്: ഓരോ ചെലവ് ആശയവും യഥാർത്ഥത്തിൽ പ്രതിനിധീകരിക്കുന്നത് എന്താണെന്ന് ചിന്തിക്കുക!",
+  "coinsEarned": "+{{coins}} നാണയങ്ങൾ",
+  "concepts": [
+    {
+      "id": 1,
+      "name": "Budget",
+      "emoji": "📋"
+    },
+    {
+      "id": 2,
+      "name": "Waste",
+      "emoji": "🗑️"
+    },
+    {
+      "id": 3,
+      "name": "Needs",
+      "emoji": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Wants",
+      "emoji": "🎁"
+    },
+    {
+      "id": 5,
+      "name": "എമർജൻസി ഫണ്ട്",
+      "emoji": "🛡️"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "സാമ്പത്തിക ആസൂത്രണം",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "വിഭവ ദുരുപയോഗം",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "അവശ്യ മുൻഗണനകൾ",
+      "emoji": "⭐"
+    },
+    {
+      "id": 9,
+      "name": "വിവേചനാധികാര ചെലവ്",
+      "emoji": "💎"
+    },
+    {
+      "id": 10,
+      "name": "റിസ്ക് പ്രൊട്ടക്ഷൻ",
+      "emoji": "🔒"
+    }
+  ]
+}

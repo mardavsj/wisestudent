@@ -1,1 +1,136 @@
-﻿{}
+{
+  "title": "ਸਟਾਰਟਅੱਪ ਆਈਡੀਆ ਸਟੋਰੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "perfectScoreTitle": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "perfectScoreMsg": "ਤੁਸੀਂ {{total}} ਵਿੱਚੋਂ {{score}} ਨੂੰ ਸਹੀ ਪਾਇਆ ਹੈ! ਤੁਸੀਂ ਉੱਦਮ ਨੂੰ ਸਮਝਦੇ ਹੋ!",
+  "coinsLabel": "+{{count}} ਸਿੱਕੇ",
+  "lessonLabel": "ਸਬਕ: ਉੱਦਮਤਾ ਇੱਕ ਕਾਰੋਬਾਰ ਬਣਾਉਣਾ ਅਤੇ ਚਲਾਉਣਾ ਹੈ। ਕਿਸ਼ੋਰਾਂ ਸਮੇਤ ਕੋਈ ਵੀ, ਚੰਗੇ ਵਿਚਾਰਾਂ ਅਤੇ ਕੋਸ਼ਿਸ਼ਾਂ ਨਾਲ ਉੱਦਮੀ ਹੋ ਸਕਦਾ ਹੈ!",
+  "keepLearningTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+  "lowScoreMsg": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਹੀ ਮਿਲੇ ਹਨ। ਯਾਦ ਰੱਖੋ, ਉੱਦਮਤਾ ਇੱਕ ਨਵਾਂ ਕਾਰੋਬਾਰ ਬਣਾ ਰਹੀ ਹੈ, ਅਤੇ ਕੋਈ ਵੀ ਇਸਨੂੰ ਕਰ ਸਕਦਾ ਹੈ!",
+  "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+  "tipLabel": "ਸੰਕੇਤ: ਇੱਕ ਉਦਯੋਗਪਤੀ ਉਹ ਹੁੰਦਾ ਹੈ ਜੋ ਇੱਕ ਨਵਾਂ ਕਾਰੋਬਾਰ ਬਣਾਉਂਦਾ ਅਤੇ ਚਲਾਉਂਦਾ ਹੈ। ਹੱਥ ਨਾਲ ਬਣੇ ਸ਼ਿਲਪਕਾਰੀ ਨੂੰ ਆਨਲਾਈਨ ਵੇਚਣਾ ਉੱਦਮਤਾ ਹੈ!",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਟੀਨ ਹੱਥ ਨਾਲ ਬਣੇ ਸ਼ਿਲਪਕਾਰੀ ਆਨਲਾਈਨ ਵੇਚਦਾ ਹੈ। ਕੀ ਇਹ ਉੱਦਮਤਾ ਹੈ?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ਹਾਂ, ਇਹ ਉੱਦਮਤਾ ਹੈ",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ਨਹੀਂ, ਇਹ ਸਿਰਫ਼ ਵਿਕ ਰਿਹਾ ਹੈ",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਨਿਰਭਰ ਕਰਦਾ ਹੈ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਕੀ ਕਿਸੇ ਨੂੰ ਇੱਕ ਉਦਯੋਗਪਤੀ ਬਣਾਉਂਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "spends",
+          "text": "ਸਿਰਫ ਪੈਸਾ ਖਰਚਦਾ ਹੈ",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "creates",
+          "text": "ਨਵਾਂ ਕਾਰੋਬਾਰ ਬਣਾਉਂਦਾ ਹੈ",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "ਕੁਝ ਨਹੀਂ ਕਰਦਾ",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਕੀ ਕਿਸ਼ੋਰ ਉੱਦਮੀ ਹੋ ਸਕਦੇ ਹਨ?",
+      "options": [
+        {
+          "id": "no2",
+          "text": "ਨਹੀਂ, ਸਿਰਫ਼ ਬਾਲਗ",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe2",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਇਜਾਜ਼ਤ ਨਾਲ",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "yes2",
+          "text": "ਹਾਂ, ਉਮਰ ਕੋਈ ਮਾਇਨੇ ਨਹੀਂ ਰੱਖਦੀ",
+          "emoji": "👍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਇੱਕ ਕਾਰੋਬਾਰ ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕੀ ਲੋੜ ਹੈ?",
+      "options": [
+        {
+          "id": "money",
+          "text": "ਬਹੁਤ ਸਾਰਾ ਪੈਸਾ ਸਿਰਫ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "idea",
+          "text": "ਵਧੀਆ ਵਿਚਾਰ ਅਤੇ ਕੋਸ਼ਿਸ਼",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "ਬਸ ਕਿਸਮਤ",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਕੀ ਔਨਲਾਈਨ ਵੇਚਣਾ ਉੱਦਮਤਾ ਦਾ ਇੱਕ ਰੂਪ ਹੈ?",
+      "options": [
+        {
+          "id": "no3",
+          "text": "ਨਹੀਂ, ਅਸਲੀ ਕਾਰੋਬਾਰ ਨਹੀਂ",
+          "emoji": "👎",
+          "isCorrect": false
+        },
+        {
+          "id": "yes3",
+          "text": "ਹਾਂ, ਇਹ ਇੱਕ ਕਾਰੋਬਾਰ ਹੈ",
+          "emoji": "👍",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe3",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਜੇਕਰ ਲਾਭਦਾਇਕ",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

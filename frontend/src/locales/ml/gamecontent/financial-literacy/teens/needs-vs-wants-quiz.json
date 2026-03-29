@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ആവശ്യങ്ങളും ആവശ്യങ്ങളും ക്വിസ്",
+  "subtitleComplete": "ക്വിസ് പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionLabel": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ഏതാണ് വേണ്ടത്?",
+      "options": [
+        {
+          "id": "watch",
+          "text": "ആഡംബര വാച്ച്",
+          "emoji": "⌚",
+          "isCorrect": true
+        },
+        {
+          "id": "medicine",
+          "text": "Medicine",
+          "emoji": "💊",
+          "isCorrect": false
+        },
+        {
+          "id": "clothes",
+          "text": "സ്കൂൾ വസ്ത്രങ്ങൾ",
+          "emoji": "👕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ഏതാണ് ഒരു ആവശ്യം?",
+      "options": [
+        {
+          "id": "game",
+          "text": "വീഡിയോ ഗെയിം",
+          "emoji": "🎮",
+          "isCorrect": false
+        },
+        {
+          "id": "food",
+          "text": "Groceries",
+          "emoji": "🍎",
+          "isCorrect": true
+        },
+        {
+          "id": "phone",
+          "text": "പുതിയ സ്മാർട്ട്ഫോൺ",
+          "emoji": "📱",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ഏതാണ് വേണ്ടത്?",
+      "options": [
+        {
+          "id": "rent",
+          "text": "Rent",
+          "emoji": "🏠",
+          "isCorrect": false
+        },
+        {
+          "id": "books",
+          "text": "Textbooks",
+          "emoji": "📚",
+          "isCorrect": false
+        },
+        {
+          "id": "concert",
+          "text": "കച്ചേരി ടിക്കറ്റ്",
+          "emoji": "🎤",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ഏതാണ് ഒരു ആവശ്യം?",
+      "options": [
+        {
+          "id": "water",
+          "text": "വാട്ടർ ബിൽ",
+          "emoji": "💧",
+          "isCorrect": true
+        },
+        {
+          "id": "shoes",
+          "text": "ഡിസൈനർ ഷൂസ്",
+          "emoji": "👟",
+          "isCorrect": false
+        },
+        {
+          "id": "party",
+          "text": "പാർട്ടി സാധനങ്ങൾ",
+          "emoji": "🎉",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ഏതാണ് വേണ്ടത്?",
+      "options": [
+        {
+          "id": "internet",
+          "text": "ഇൻ്റർനെറ്റ് ബിൽ",
+          "emoji": "🌐",
+          "isCorrect": false
+        },
+        {
+          "id": "headphones",
+          "text": "വയർലെസ് ഹെഡ്ഫോണുകൾ",
+          "emoji": "🎧",
+          "isCorrect": true
+        },
+        {
+          "id": "transport",
+          "text": "ബസ് പാസ്",
+          "emoji": "🚌",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "മികച്ച ജോലി!",
+    "winMessage": "നിങ്ങൾക്ക് {{total}} ചോദ്യങ്ങളിൽ {{score}} ലഭിച്ചു! ആവശ്യങ്ങളും ആഗ്രഹങ്ങളും തമ്മിലുള്ള വ്യത്യാസം നിങ്ങൾ മനസ്സിലാക്കുന്നു!",
+    "coinsEarned": "+{{score}} നാണയങ്ങൾ",
+    "lesson": "പാഠം: നിലനിൽപ്പിനും പഠനത്തിനും ആവശ്യങ്ങൾ അത്യന്താപേക്ഷിതമാണ്, ആഗ്രഹങ്ങൾ നമുക്ക് ലഭിക്കാൻ ആഗ്രഹിക്കുന്നതും എന്നാൽ ആവശ്യമില്ലാത്തതുമായ കാര്യങ്ങളാണ്!",
+    "loseEmoji": "😔",
+    "loseTitle": "പഠിക്കുന്നത് തുടരുക!",
+    "loseMessage": "നിങ്ങൾക്ക് {{total}} ചോദ്യങ്ങളിൽ {{score}} ലഭിച്ചു. ഓർമ്മിക്കുക, ആവശ്യങ്ങൾ ഭക്ഷണം, വസ്ത്രങ്ങൾ, യൂട്ടിലിറ്റികൾ തുടങ്ങിയ അവശ്യ വസ്തുക്കളാണ്!",
+    "tryAgain": "വീണ്ടും ശ്രമിക്കുക",
+    "tip": "നുറുങ്ങ്: ആവശ്യങ്ങൾ നിങ്ങൾ അതിജീവിക്കേണ്ടതും പഠിക്കേണ്ടതുമായ കാര്യങ്ങളാണ്, ആഗ്രഹങ്ങൾ ഐച്ഛികമായ ആഡംബരങ്ങളാണ്."
+  }
+}

@@ -1,1 +1,144 @@
-﻿{}
+{
+  "title": "ಗಳಿಕೆಯ ಮೇಲೆ ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionCounter": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಹಣ ಗಳಿಸುವ ಸರಿಯಾದ ಮಾರ್ಗ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "working",
+          "text": "ಕೆಲಸ ಮಾಡುವ ಮೂಲಕ",
+          "emoji": "💼",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "wasting",
+          "text": "ವ್ಯರ್ಥ ಮಾಡುವ ಮೂಲಕ",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "sleeping",
+          "text": "ಮಲಗುವ ಮೂಲಕ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಒಬ್ಬ ರೈತ ಹೇಗೆ ಹಣ ಸಂಪಾದಿಸುತ್ತಾನೆ?",
+      "options": [
+        {
+          "id": "games",
+          "text": "ಆಟಗಳನ್ನು ಆಡುತ್ತಿದ್ದಾರೆ",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "crops",
+          "text": "ಬೆಳೆಗಳನ್ನು ಮಾರಾಟ ಮಾಡುವುದು",
+          "emoji": "🌾",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "give",
+          "text": "ಆಹಾರವನ್ನು ನೀಡುವುದು",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಬೋಧನೆಯಿಂದ ಯಾವ ಕೆಲಸವು ಹಣವನ್ನು ಗಳಿಸುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "toymaker",
+          "text": "ಆಟಿಕೆ ತಯಾರಕ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "candy",
+          "text": "ಕ್ಯಾಂಡಿ ಮಾರಾಟಗಾರ",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "teacher",
+          "text": "Teacher",
+          "emoji": "👨‍🏫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಮಕ್ಕಳು ಹೇಗೆ ಹಣ ಸಂಪಾದಿಸಬಹುದು?",
+      "options": [
+        {
+          "id": "chores",
+          "text": "ಕೆಲಸಗಳನ್ನು ಮಾಡುವುದು",
+          "emoji": "🧹",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "tv",
+          "text": "ಟಿವಿ ನೋಡುವುದು",
+          "emoji": "📺",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ತಿಂಡಿ ತಿನ್ನುವುದು",
+          "emoji": "🍪",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಹಣ ಸಂಪಾದಿಸುವುದು ಏಕೆ ಮುಖ್ಯ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ನಿಮಗೆ ಉಚಿತ ಆಟಿಕೆಗಳನ್ನು ನೀಡುತ್ತದೆ",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "needs",
+          "text": "ನಿಮ್ಮ ಅಗತ್ಯಗಳನ್ನು ಪೂರೈಸುತ್ತದೆ",
+          "emoji": "😊",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "sleep",
+          "text": "ನೀವು ಚೆನ್ನಾಗಿ ನಿದ್ದೆ ಮಾಡುವಂತೆ ಮಾಡುತ್ತದೆ",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ મની પ્લાન",
+  "subtitlePlaying": "રાઉન્ડ {{current}}/{{total}}: તમારી મની પ્લાનિંગ કૌશલ્યનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારી મની પ્લાનિંગ કૌશલ્યનું પરીક્ષણ કરો!",
+  "readyEmoji": "⚡",
+  "readyTitle": "તમારી મની પ્લાનિંગ કૌશલ્ય ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "સ્માર્ટ મની પ્લાનિંગ અને બજેટિંગ વિશેના પ્રશ્નોના જવાબ આપો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "રાઉન્ડ:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "તમે દુકાન પર એક નવું પેન્સિલ બોક્સ જુઓ છો. તમે તેને ખરીદતા પહેલા શું વિચારો છો?",
+      "correctAnswer": "તમને ખરેખર તેની જરૂર છે કે કેમ તે તપાસો",
+      "options": [
+        {
+          "text": "તેને ખરીદો કારણ કે તે સરસ લાગે છે",
+          "isCorrect": false,
+          "emoji": "✨"
+        },
+        {
+          "text": "તમને ખરેખર તેની જરૂર છે કે કેમ તે તપાસો",
+          "isCorrect": true,
+          "emoji": "🧐"
+        },
+        {
+          "text": "તેમાંથી બે ખરીદો",
+          "isCorrect": false,
+          "emoji": "📦"
+        },
+        {
+          "text": "કિંમત અવગણો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમને દર અઠવાડિયે પોકેટ મની મળે છે. સારી આદત શું છે?",
+      "correctAnswer": "થોડા પૈસા બાજુ પર રાખો",
+      "options": [
+        {
+          "text": "થોડા પૈસા બાજુ પર રાખો",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "તે જ દિવસે ખર્ચ કરો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "તેનો ટ્રેક ગુમાવો",
+          "isCorrect": false,
+          "emoji": "🌀"
+        },
+        {
+          "text": "તે બધું દૂર આપો",
+          "isCorrect": false,
+          "emoji": "🎁"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "તમે આવતા મહિને મોંઘી વસ્તુ ખરીદવા માંગો છો. સૌથી વધુ શું મદદ કરે છે?",
+      "correctAnswer": "તમારા ખર્ચની યોજના બનાવો",
+      "options": [
+        {
+          "text": "દરરોજ નાની વસ્તુઓ ખરીદો",
+          "isCorrect": false,
+          "emoji": "🧁"
+        },
+        {
+          "text": "અન્યને તેને ખરીદવા માટે કહો",
+          "isCorrect": false,
+          "emoji": "🙏"
+        },
+        {
+          "text": "બચત કરવાનું ભૂલી જાઓ",
+          "isCorrect": false,
+          "emoji": "🙃"
+        },
+        {
+          "text": "તમારા ખર્ચની યોજના બનાવો",
+          "isCorrect": true,
+          "emoji": "📝"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "તમે જેના પર પૈસા ખર્ચો છો તે તમે લખો છો. આ શું મદદ કરે છે?",
+      "correctAnswer": "તમારા ખર્ચને સમજવું",
+      "options": [
+        {
+          "text": "વધુ પૈસા ખર્ચવા",
+          "isCorrect": false,
+          "emoji": "💥"
+        },
+        {
+          "text": "ભૂલો છુપાવવી",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "તમારા ખર્ચને સમજવું",
+          "isCorrect": true,
+          "emoji": "📊"
+        },
+        {
+          "text": "ઝડપી ખરીદી",
+          "isCorrect": false,
+          "emoji": "⚡"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "તમે દરરોજ પૈસા પ્રત્યે સાવચેત રહેવા માંગો છો. તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "ખર્ચ કરતા પહેલા વિચારો",
+      "options": [
+        {
+          "text": "વિચાર્યા વગર ખર્ચ કરો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "ખર્ચ કરતા પહેલા વિચારો",
+          "isCorrect": true,
+          "emoji": "🧠"
+        },
+        {
+          "text": "મિત્રોના ખર્ચની નકલ કરો",
+          "isCorrect": false,
+          "emoji": "👥"
+        },
+        {
+          "text": "પૈસાનો ઝડપથી ઉપયોગ કરો",
+          "isCorrect": false,
+          "emoji": "🏃"
+        }
+      ]
+    }
+  ]
+}

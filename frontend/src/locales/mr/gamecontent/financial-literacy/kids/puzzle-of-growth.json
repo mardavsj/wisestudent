@@ -1,1 +1,80 @@
-﻿{}
+{
+  "title": "वाढीचे कोडे",
+  "subtitleComplete": "कोडे पूर्ण!",
+  "subtitleProgress": "परिणामांसह आयटम जुळवा ({{matched}}/{{total}} जुळले)",
+  "itemsTitle": "वाढीच्या वस्तू",
+  "categoriesTitle": "Outcomes",
+  "selectedLabel": "निवडले: {{name}}",
+  "selectItem": "एक आयटम निवडा",
+  "matchButton": "Match",
+  "scoreLabel": "स्कोअर:",
+  "matchedLabel": "जुळले:",
+  "resultGreatEmoji": "🎉",
+  "resultGreatTitle": "ग्रेट जॉब!",
+  "resultGreatDescription": "तुम्ही परिणामांसह {{total}} आयटमपैकी {{score}} बरोबर जुळले!",
+  "coinsLabel": "Coins",
+  "resultLesson": "धडा: वनस्पतींप्रमाणेच बचत आणि गुंतवणूक कालांतराने वाढतात.",
+  "resultKeepEmoji": "💪",
+  "resultKeepTitle": "सराव करत राहा!",
+  "resultKeepDescription": "तुम्ही {{total}} पैकी {{score}} आयटम बरोबर जुळले.",
+  "resultTip": "टीप: प्रत्येक आयटम नैसर्गिकरित्या कशात वाढतो याचा विचार करा.",
+  "items": [
+    {
+      "id": 1,
+      "name": "Seed",
+      "emoji": "🌱"
+    },
+    {
+      "id": 2,
+      "name": "Savings",
+      "emoji": "💰"
+    },
+    {
+      "id": 3,
+      "name": "Plant",
+      "emoji": "🌿"
+    },
+    {
+      "id": 4,
+      "name": "Sapling",
+      "emoji": "🌳"
+    },
+    {
+      "id": 5,
+      "name": "Bulb",
+      "emoji": "🌻"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "Tree",
+      "emoji": "🌲",
+      "description": "बियाणे झाड होऊ शकते"
+    },
+    {
+      "id": 7,
+      "name": "Growth",
+      "emoji": "📈",
+      "description": "बचतीचे मूल्य वाढू शकते"
+    },
+    {
+      "id": 8,
+      "name": "Flower",
+      "emoji": "🌸",
+      "description": "वनस्पती फुलू शकते"
+    },
+    {
+      "id": 9,
+      "name": "Forest",
+      "emoji": "🌲",
+      "description": "अनेक रोपटे एक जंगल बनवू शकतात"
+    },
+    {
+      "id": 10,
+      "name": "Wealth",
+      "emoji": "🏦",
+      "description": "पैशाच्या सवयीमुळे संपत्ती निर्माण होऊ शकते"
+    }
+  ]
+}

@@ -1,1 +1,108 @@
-﻿{}
+{
+  "title": "ਪੋਸਟਰ: ਸਮਾਰਟ ਸ਼ਾਪਿੰਗ",
+  "subtitleComplete": "ਸਰਗਰਮੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stages": [
+    {
+      "question": "ਸਮਾਰਟ ਸ਼ਾਪਿੰਗ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਪੋਸਟਰ ਚੁਣੋ:",
+      "choices": [
+        {
+          "text": "ਜੋ ਤੁਸੀਂ ਚਾਹੁੰਦੇ ਹੋ ਖਰਚ ਕਰੋ",
+          "design": "💸",
+          "correct": false
+        },
+        {
+          "text": "ਖਰਚ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਸੋਚੋ",
+          "design": "🧠",
+          "correct": true
+        },
+        {
+          "text": "ਹੁਣ ਸਭ ਕੁਝ ਖਰੀਦੋ",
+          "design": "🛒",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "ਕਿਹੜਾ ਪੋਸਟਰ ਸਮਾਰਟ ਖਰੀਦਦਾਰੀ ਆਦਤਾਂ ਨੂੰ ਉਤਸ਼ਾਹਿਤ ਕਰਦਾ ਹੈ?",
+      "choices": [
+        {
+          "text": "ਇੱਕ ਖਰੀਦਦਾਰੀ ਸੂਚੀ ਬਣਾਓ",
+          "design": "📝",
+          "correct": true
+        },
+        {
+          "text": "ਬਿਨਾਂ ਸੋਚੇ ਖਰੀਦੋ",
+          "design": "🤦",
+          "correct": false
+        },
+        {
+          "text": "ਤੁਰੰਤ ਖਰਚ ਕਰੋ",
+          "design": "⚡",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "ਸਭ ਤੋਂ ਵਧੀਆ ਖਰੀਦਦਾਰੀ ਪੋਸਟਰ ਚੁਣੋ:",
+      "choices": [
+        {
+          "text": "ਪਹਿਲਾਂ ਖਰੀਦੋ, ਬਾਅਦ ਵਿੱਚ ਸੋਚੋ",
+          "design": "🛍️",
+          "correct": false
+        },
+        {
+          "text": "ਬਿਨਾਂ ਯੋਜਨਾ ਦੇ ਖਰਚ ਕਰੋ",
+          "design": "🙈",
+          "correct": false
+        },
+        {
+          "text": "ਕੀਮਤਾਂ ਦੀ ਤੁਲਨਾ ਕਰੋ",
+          "design": "⚖️",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "question": "ਸਮਾਰਟ ਸ਼ਾਪਿੰਗ ਪੋਸਟਰ ਚੁਣੋ:",
+      "choices": [
+        {
+          "text": "ਵਿਕਰੀ 'ਤੇ ਕੀ ਹੈ ਖਰੀਦੋ",
+          "design": "🏷️",
+          "correct": true
+        },
+        {
+          "text": "ਹਮੇਸ਼ਾ ਪੂਰੀ ਕੀਮਤ ਦਾ ਭੁਗਤਾਨ ਕਰੋ",
+          "design": "💰",
+          "correct": false
+        },
+        {
+          "text": "ਕਦੇ ਵੀ ਪੈਸੇ ਦੀ ਬਚਤ ਨਾ ਕਰੋ",
+          "design": "🚫",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "ਸਮਾਰਟ ਸ਼ਾਪਿੰਗ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਪੋਸਟਰ ਕਿਹੜਾ ਹੈ?",
+      "choices": [
+        {
+          "text": "ਇੰਪਲਸ ਸਭ ਕੁਝ ਖਰੀਦੋ",
+          "design": "💥",
+          "correct": false
+        },
+        {
+          "text": "ਬਿਨਾਂ ਬਜਟ ਦੇ ਖਰਚ ਕਰੋ",
+          "design": "📉",
+          "correct": false
+        },
+        {
+          "text": "ਅੱਗੇ ਤੋਂ ਖਰੀਦਦਾਰੀ ਦੀ ਯੋਜਨਾ ਬਣਾਓ",
+          "design": "🧾",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

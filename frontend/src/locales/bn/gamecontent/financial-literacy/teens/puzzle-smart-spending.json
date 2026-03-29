@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "ধাঁধা: স্মার্ট খরচ",
+  "subtitleComplete": "ধাঁধা সম্পূর্ণ!",
+  "subtitleProgress": "অর্থের সাথে ধারণার মিল করুন ({{current}}/{{total}} মিলে গেছে)",
+  "conceptsTitle": "খরচের ধারণা",
+  "meaningsTitle": "আর্থিক অর্থ",
+  "matchButton": "Match",
+  "selectConceptLabel": "একটি খরচ ধারণা নির্বাচন করুন",
+  "selectedConceptLabel": "নির্বাচিত: {{name}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "matchedLabel": "মিলেছে: {{current}}/{{total}}",
+  "resultSuccessHeader": "দারুণ কাজ!",
+  "resultSuccessSubheader": "আপনি সঠিকভাবে {{score}} এর মধ্যে {{total}} খরচের ধারণাগুলি তাদের অর্থের সাথে মিলেছেন!",
+  "resultSuccessLesson": "পাঠ: ব্যয়ের ধারণাগুলি বোঝা আরও ভাল আর্থিক সিদ্ধান্তের দিকে পরিচালিত করে!",
+  "resultTryAgainHeader": "অনুশীলন চালিয়ে যান!",
+  "resultTryAgainSubheader": "আপনি {{total}} খরচের ধারণার মধ্যে {{score}} সঠিকভাবে মেলেছেন।",
+  "resultTryAgainTip": "টিপ: প্রতিটি ব্যয়ের ধারণাটি আসলে কী উপস্থাপন করে তা নিয়ে চিন্তা করুন!",
+  "coinsEarned": "+{{coins}} কয়েন",
+  "concepts": [
+    {
+      "id": 1,
+      "name": "Budget",
+      "emoji": "📋"
+    },
+    {
+      "id": 2,
+      "name": "Waste",
+      "emoji": "🗑️"
+    },
+    {
+      "id": 3,
+      "name": "Needs",
+      "emoji": "🎯"
+    },
+    {
+      "id": 4,
+      "name": "Wants",
+      "emoji": "🎁"
+    },
+    {
+      "id": 5,
+      "name": "জরুরী তহবিল",
+      "emoji": "🛡️"
+    }
+  ],
+  "meanings": [
+    {
+      "id": 6,
+      "name": "আর্থিক পরিকল্পনা",
+      "emoji": "📝"
+    },
+    {
+      "id": 7,
+      "name": "সম্পদের অপব্যবহার",
+      "emoji": "⚠️"
+    },
+    {
+      "id": 8,
+      "name": "অপরিহার্য অগ্রাধিকার",
+      "emoji": "⭐"
+    },
+    {
+      "id": 9,
+      "name": "বিবেচনামূলক ব্যয়",
+      "emoji": "💎"
+    },
+    {
+      "id": 10,
+      "name": "ঝুঁকি সুরক্ষা",
+      "emoji": "🔒"
+    }
+  ]
+}

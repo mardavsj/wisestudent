@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ਜਾਅਲੀ ਕਾਲ ਕਹਾਣੀ",
+  "subtitleComplete": "ਕਹਾਣੀ ਪੂਰੀ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ",
+  "questionLabel": "ਸਵਾਲ {{current}}/{{total}}",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ਕਾਲਰ ਤੁਹਾਡੇ ਬੈਂਕ ਵੇਰਵੇ ਮੰਗਦਾ ਹੈ। ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "share",
+          "text": "ਵੇਰਵੇ ਸਾਂਝੇ ਕਰੋ",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "ਹੋ ਸਕਦਾ ਹੈ, ਜੇਕਰ ਉਹ ਅਧਿਕਾਰਤ ਆਵਾਜ਼",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "ਇਨਕਾਰ ਕਰੋ, ਕਦੇ ਵੀ ਸਾਂਝਾ ਨਾ ਕਰੋ",
+          "emoji": "🚫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ਫਰਜ਼ੀ ਕਾਲ ਦਾ ਕੀ ਸੰਕੇਤ ਹੈ?",
+      "options": [
+        {
+          "id": "urgent",
+          "text": "ਕਾਰਵਾਈ ਕਰਨ ਲਈ ਤੁਰੰਤ ਦਬਾਅ",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "polite",
+          "text": "ਨਿਮਰ ਅਤੇ ਧੀਰਜਵਾਨ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "normal",
+          "text": "ਆਮ ਗੱਲਬਾਤ",
+          "emoji": "💬",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ਜੇਕਰ ਕੋਈ OTP ਮੰਗਦਾ ਹੈ ਤਾਂ ਤੁਹਾਨੂੰ ਕੀ ਕਰਨਾ ਚਾਹੀਦਾ ਹੈ?",
+      "options": [
+        {
+          "id": "give",
+          "text": "OTP ਦਿਓ",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "OTP ਕਦੇ ਵੀ ਸਾਂਝਾ ਨਾ ਕਰੋ",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe2",
+          "text": "ਸ਼ੇਅਰ ਕਰੋ ਜੇ ਉਹ ਚੰਗੀ ਤਰ੍ਹਾਂ ਪੁੱਛਦੇ ਹਨ",
+          "emoji": "🤷",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ਤੁਸੀਂ ਬੈਂਕ ਕਾਲ ਦੀ ਪੁਸ਼ਟੀ ਕਿਵੇਂ ਕਰ ਸਕਦੇ ਹੋ?",
+      "options": [
+        {
+          "id": "call-back",
+          "text": "ਬੈਂਕ ਨੂੰ ਸਿੱਧਾ ਕਾਲ ਕਰੋ",
+          "emoji": "📞",
+          "isCorrect": true
+        },
+        {
+          "id": "trust",
+          "text": "ਕਾਲਰ 'ਤੇ ਭਰੋਸਾ ਕਰੋ",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-all",
+          "text": "ਸਾਰੀਆਂ ਕਾਲਾਂ ਨੂੰ ਅਣਡਿੱਠ ਕਰੋ",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ਸ਼ੱਕੀ ਕਾਲਾਂ ਲਈ ਸਭ ਤੋਂ ਸੁਰੱਖਿਅਤ ਜਵਾਬ ਕੀ ਹੈ?",
+      "options": [
+        {
+          "id": "engage",
+          "text": "ਗੱਲ ਕਰਦੇ ਰਹੋ",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "share-info",
+          "text": "ਕੁਝ ਜਾਣਕਾਰੀ ਸਾਂਝੀ ਕਰੋ",
+          "emoji": "📝",
+          "isCorrect": false
+        },
+        {
+          "id": "hang-up",
+          "text": "ਰੁਕੋ ਅਤੇ ਰਿਪੋਰਟ ਕਰੋ",
+          "emoji": "📞",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ਬਹੁਤ ਵਧੀਆ ਕੰਮ!",
+    "winMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ! ਤੁਸੀਂ ਜਾਣਦੇ ਹੋ ਕਿ ਸ਼ੱਕੀ ਕਾਲਾਂ ਨੂੰ ਕਿਵੇਂ ਸੰਭਾਲਣਾ ਹੈ!",
+    "coinsEarned": "+{{score}} ਸਿੱਕੇ",
+    "lesson": "ਸਬਕ: ਕਦੇ ਵੀ ਫ਼ੋਨ 'ਤੇ OTP ਜਾਂ ਬੈਂਕ ਵੇਰਵਿਆਂ ਵਰਗੀ ਸੰਵੇਦਨਸ਼ੀਲ ਜਾਣਕਾਰੀ ਸਾਂਝੀ ਨਾ ਕਰੋ। ਹਮੇਸ਼ਾ ਹੈਂਗ ਅੱਪ ਕਰੋ ਅਤੇ ਜੇਕਰ ਸ਼ੱਕੀ ਹੋਵੇ ਤਾਂ ਅਧਿਕਾਰਤ ਬੈਂਕ ਨੰਬਰ 'ਤੇ ਕਾਲ ਕਰੋ।",
+    "loseEmoji": "😔",
+    "loseTitle": "ਸਿੱਖਦੇ ਰਹੋ!",
+    "loseMessage": "ਤੁਹਾਨੂੰ {{total}} ਵਿੱਚੋਂ {{score}} ਸਵਾਲ ਸਹੀ ਮਿਲੇ ਹਨ। ਫ਼ੋਨ ਕਾਲਾਂ ਨਾਲ ਸਾਵਧਾਨ ਰਹਿਣਾ ਯਾਦ ਰੱਖੋ!",
+    "tryAgain": "ਫਿਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "tip": "ਸੰਕੇਤ: ਘੁਟਾਲੇ ਕਰਨ ਵਾਲੇ ਕਾਲਰ ਅਕਸਰ ਨਕਲੀ ਲੋੜ ਪੈਦਾ ਕਰਦੇ ਹਨ। ਕਦੇ ਵੀ OTP ਜਾਂ ਬੈਂਕ ਵੇਰਵੇ ਸਾਂਝੇ ਨਾ ਕਰੋ। ਬੰਦ ਕਰੋ ਅਤੇ ਸਿੱਧੇ ਆਪਣੇ ਬੈਂਕ ਨਾਲ ਸੰਪਰਕ ਕਰੋ।"
+  }
+}

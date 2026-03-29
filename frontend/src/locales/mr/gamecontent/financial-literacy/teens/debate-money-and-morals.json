@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "वादविवाद: पैसा आणि नैतिकता",
+  "subtitleComplete": "वादविवाद पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} फेरी",
+  "roundLabel": "फेरी {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "rounds": [
+    {
+      "id": 1,
+      "statement": "पैशाची चारित्र्य चाचणी होते का?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "होय, नैतिकता अधिक महत्त्वाची आहे",
+          "emoji": "🙂",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "नाही, पैशाने काही फरक पडत नाही",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "कदाचित, अवलंबून आहे",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "statement": "पैशासाठी तुम्ही नैतिकतेशी तडजोड करावी का?",
+      "options": [
+        {
+          "id": "sometimes",
+          "text": "कधी कधी ठीक",
+          "emoji": "🤷",
+          "isCorrect": false
+        },
+        {
+          "id": "never",
+          "text": "कधीही तडजोड करू नका",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "always",
+          "text": "पैशाला प्राधान्य आहे",
+          "emoji": "💰",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "statement": "अधिक महत्त्वाचे काय आहे: संपत्ती की सचोटी?",
+      "options": [
+        {
+          "id": "wealth",
+          "text": "Wealth",
+          "emoji": "💵",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "दोन्ही सारखेच",
+          "emoji": "⚖️",
+          "isCorrect": false
+        },
+        {
+          "id": "integrity",
+          "text": "Integrity",
+          "emoji": "💎",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "statement": "तुम्ही श्रीमंत आणि नैतिक असू शकता का?",
+      "options": [
+        {
+          "id": "yes2",
+          "text": "होय, अगदी",
+          "emoji": "✨",
+          "isCorrect": true
+        },
+        {
+          "id": "no2",
+          "text": "नाही, अशक्य",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "rarely",
+          "text": "क्वचितच शक्य",
+          "emoji": "😕",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "statement": "शाश्वत यश कशामुळे निर्माण होते?",
+      "options": [
+        {
+          "id": "shortcuts",
+          "text": "शॉर्टकट आणि युक्त्या",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "ethics",
+          "text": "नैतिकता आणि प्रामाणिकपणा",
+          "emoji": "🏆",
+          "isCorrect": true
+        },
+        {
+          "id": "luck",
+          "text": "फक्त नशीब",
+          "emoji": "🍀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

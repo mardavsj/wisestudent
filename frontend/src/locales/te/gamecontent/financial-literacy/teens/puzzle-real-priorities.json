@@ -1,1 +1,73 @@
-﻿{}
+{
+  "title": "పజిల్: నిజమైన ప్రాధాన్యతలు",
+  "subtitleComplete": "పజిల్ పూర్తయింది!",
+  "subtitleProgress": "వర్గాలతో ఐటెమ్‌లను సరిపోల్చండి ({{current}}/{{total}} సరిపోలింది)",
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchButton": "Match",
+  "selectItemLabel": "ఒక అంశాన్ని ఎంచుకోండి",
+  "selectedItemLabel": "ఎంచుకోబడింది: {{name}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "matchedLabel": "సరిపోలినది: {{current}}/{{total}}",
+  "resultSuccessHeader": "గ్రేట్ జాబ్!",
+  "resultSuccessSubheader": "మీరు {{total}} అంశాలలో {{score}}ని వాటి వర్గాలతో సరిగ్గా సరిపోల్చారు!",
+  "resultSuccessLesson": "పాఠం: ఆర్థిక ప్రాధాన్యతలను అర్థం చేసుకోవడం తెలివైన నిర్ణయాలు తీసుకోవడంలో సహాయపడుతుంది!",
+  "resultTryAgainHeader": "సాధన కొనసాగించండి!",
+  "resultTryAgainSubheader": "మీరు {{total}} అంశాలలో {{score}}ని సరిగ్గా సరిపోల్చారు.",
+  "resultTryAgainTip": "చిట్కా: ప్రతి అంశం అవసరమా లేదా విచక్షణతో కూడినదా అని ఆలోచించండి!",
+  "coinsEarned": "+{{coins}} నాణేలు",
+  "items": [
+    {
+      "id": 1,
+      "name": "ఆరోగ్యకరమైన అల్పాహారం",
+      "emoji": "🍳"
+    },
+    {
+      "id": 2,
+      "name": "స్టేషనరీ కిట్",
+      "emoji": "✏️"
+    },
+    {
+      "id": 3,
+      "name": "పాఠశాల తర్వాత తరగతులు",
+      "emoji": "📚"
+    },
+    {
+      "id": 4,
+      "name": "విటమిన్ సప్లిమెంట్స్",
+      "emoji": "💊"
+    },
+    {
+      "id": 5,
+      "name": "బస్ పాస్",
+      "emoji": "🚌"
+    }
+  ],
+  "categories": [
+    {
+      "id": 6,
+      "name": "రోజువారీ అవసరం",
+      "emoji": "😅"
+    },
+    {
+      "id": 7,
+      "name": "ఐచ్ఛిక కార్యాచరణ",
+      "emoji": "🎯"
+    },
+    {
+      "id": 8,
+      "name": "స్మార్ట్ ఖర్చు",
+      "emoji": "💰"
+    },
+    {
+      "id": 9,
+      "name": "ఆరోగ్య ప్రాధాన్యత",
+      "emoji": "❤️"
+    },
+    {
+      "id": 10,
+      "name": "రవాణా ఖర్చు",
+      "emoji": "🚌"
+    }
+  ]
+}

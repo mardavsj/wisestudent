@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "अनोळखी कथा",
+  "subtitleComplete": "कथा पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "questionCounter": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "अनोळखी व्यक्ती तुमच्या पत्त्यासाठी एक खेळणी देते. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "refuse",
+          "text": "Refuse",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "accept",
+          "text": "Accept",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "delay",
+          "text": "विलंब निर्णय",
+          "emoji": "⏰",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "कोणीतरी तुमचा बँक तपशील विचारतो. आता काय?",
+      "options": [
+        {
+          "id": "give",
+          "text": "माहिती द्या",
+          "emoji": "💳",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "partial",
+          "text": "अर्धवट माहिती द्या",
+          "emoji": "🤷",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "नाही म्हणा",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "अनोळखी व्यक्ती सौदा ऑफर करते. काय सुरक्षित आहे?",
+      "options": [
+        {
+          "id": "walk",
+          "text": "वॉक अवे",
+          "emoji": "🚶",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "engage",
+          "text": "Engage",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "थांबा आणि पहा",
+          "emoji": "⏳",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्हाला एक संशयास्पद ऑफर दिसते. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "प्रौढांना सांगा",
+          "emoji": "👨‍👩‍👧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "quiet",
+          "text": "शांत राहा",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "त्याकडे दुर्लक्ष करा",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुम्हाला एक विचित्र संदेश मिळतो. सर्वोत्तम काय आहे?",
+      "options": [
+        {
+          "id": "reply",
+          "text": "Reply",
+          "emoji": "💬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "Ignore",
+          "emoji": "🚫",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "forward",
+          "text": "मित्रांना फॉरवर्ड करा",
+          "emoji": "📤",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

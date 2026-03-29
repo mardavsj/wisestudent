@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "ಹಣ ಪ್ರಾಮಾಣಿಕತೆ ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ರಸಪ್ರಶ್ನೆ ಪೂರ್ಣಗೊಂಡಿದೆ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "questionLabel": "ಪ್ರಶ್ನೆ {{current}}/{{total}}",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ನಿಮಗೆ ₹10 ಸಿಕ್ಕರೆ ಪ್ರಾಮಾಣಿಕ ಆಯ್ಕೆ ಯಾವುದು?",
+      "options": [
+        {
+          "id": "keep",
+          "text": "ಅದನ್ನು ಶಾಂತವಾಗಿ ಇರಿಸಿ",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "ಅದನ್ನು ತಿಂಡಿಗಳಿಗೆ ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🍟",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "ಅದನ್ನು ಮಾಲೀಕರಿಗೆ ಹಿಂತಿರುಗಿ",
+          "emoji": "🤝",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ನೀವು ₹5 ಹೆಚ್ಚುವರಿ ಬದಲಾವಣೆಯನ್ನು ಪಡೆಯುತ್ತೀರಿ. ಏನು ಮಾಡುವುದು ಸರಿಯಾದ ಕೆಲಸ?",
+      "options": [
+        {
+          "id": "give",
+          "text": "ಹೆಚ್ಚುವರಿ ವಾಪಸ್ ಕೊಡಿ",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "ಕ್ಯಾಂಡಿ ಖರೀದಿಸಿ",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ಏನನ್ನೂ ಹೇಳಬೇಡ",
+          "emoji": "😶",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ನೀವು ₹20 ಸಾಲ ಮಾಡಿ. ಯಾವುದು ಪ್ರಾಮಾಣಿಕ?",
+      "options": [
+        {
+          "id": "never",
+          "text": "ಎಂದಿಗೂ ಮರುಪಾವತಿ ಮಾಡಬೇಡಿ",
+          "emoji": "😞",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ಮರುಪಾವತಿ ಮಾಡಿ",
+          "emoji": "✅",
+          "isCorrect": true
+        },
+        {
+          "id": "spend",
+          "text": "ಬದಲಾಗಿ ಹೆಚ್ಚು ಖರ್ಚು ಮಾಡಿ",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ನೀವು ₹15 ಆಟಿಕೆ ಒಡೆಯುತ್ತೀರಿ. ನೀವು ಏನು ಮಾಡುತ್ತೀರಿ?",
+      "options": [
+        {
+          "id": "tell",
+          "text": "ಹೇಳಿ ಮತ್ತು ಪಾವತಿಸಲು ಪ್ರಸ್ತಾಪಿಸಿ",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "ಅದನ್ನು ಮರೆಮಾಡಿ",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "ಇನ್ನೊಬ್ಬರನ್ನು ದೂಷಿಸಿ",
+          "emoji": "🙈",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಹಣದೊಂದಿಗೆ ಪ್ರಾಮಾಣಿಕತೆ ಏಕೆ ಮುಖ್ಯ?",
+      "options": [
+        {
+          "id": "trust",
+          "text": "ಇದು ನಂಬಿಕೆಯನ್ನು ಗಳಿಸುತ್ತದೆ",
+          "emoji": "😊",
+          "isCorrect": true
+        },
+        {
+          "id": "money",
+          "text": "ಇದು ನಿಮಗೆ ಹೆಚ್ಚಿನ ಹಣವನ್ನು ಪಡೆಯುತ್ತದೆ",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ಇದು ನಿಮಗೆ ಹೆಚ್ಚು ಖರ್ಚು ಮಾಡಲು ಅನುವು ಮಾಡಿಕೊಡುತ್ತದೆ",
+          "emoji": "🛒",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

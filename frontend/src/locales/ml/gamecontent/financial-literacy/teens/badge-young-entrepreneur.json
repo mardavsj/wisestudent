@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "ബാഡ്ജ്: യുവ സംരംഭകൻ",
+  "subtitleComplete": "ബാഡ്ജ് പൂർത്തിയായി!",
+  "subtitleProgress": "{{current}} / {{total}} വെല്ലുവിളി",
+  "challengeLabel": "വെല്ലുവിളി {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "ഒരു ബിസിനസ്സ് ആരംഭിക്കുന്നു",
+      "question": "ഒരു ബിസിനസ്സ് ആരംഭിക്കുന്നതിനുള്ള ആദ്യപടി എന്താണ്?",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "നല്ല ആശയവും ആസൂത്രണവും ഉണ്ടാക്കുക",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "നിങ്ങളുടെ എല്ലാ പണവും ചെലവഴിക്കുക",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "എന്നേക്കും കാത്തിരിക്കുക",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "മറ്റുള്ളവരെ കൃത്യമായി പകർത്തുക",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ബിസിനസ് പ്ലാനിംഗ്",
+      "question": "ആരംഭിക്കുന്നതിന് മുമ്പ് നിങ്ങൾ എന്താണ് ചെയ്യേണ്ടത്?",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "ഉടൻ ആരംഭിക്കുക",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "ഗവേഷണ വിപണിയും ചെലവും",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ആസൂത്രണം അവഗണിക്കുക",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "ചിന്തിക്കാതെ ചെലവഴിക്കുക",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "പണം കൈകാര്യം ചെയ്യുന്നു",
+      "question": "ബിസിനസ്സ് പണം എങ്ങനെ കൈകാര്യം ചെയ്യണം?",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "എല്ലാം ചെലവഴിക്കുക",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "സാമ്പത്തികം അവഗണിക്കുക",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "വരുമാനവും ചെലവും ട്രാക്ക് ചെയ്യുക",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "ട്രാക്കിംഗ് ആവശ്യമില്ല",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "കസ്റ്റമർ സർവീസ്",
+      "question": "ബിസിനസ്സ് വിജയത്തിന് എന്താണ് പ്രധാനം?",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "ഉപഭോക്താക്കളെ അവഗണിക്കുക",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "ഉപഭോക്താക്കളെ വഞ്ചിക്കുക",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "സേവനം ആവശ്യമില്ല",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "ഉപഭോക്താക്കളെ തൃപ്തിപ്പെടുത്തുക",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "വളരുന്ന ബിസിനസ്സ്",
+      "question": "നിങ്ങളുടെ ബിസിനസ് എങ്ങനെ വളർത്തണം?",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "ചെറുതായി തുടങ്ങി ക്രമേണ വികസിപ്പിക്കുക",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "ഉടൻ തന്നെ വലിയ തോതിൽ ആരംഭിക്കുക",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "ഒരിക്കലും വളരരുത്",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "ആസൂത്രണം ചെയ്യാതെ വളരുക",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "യുവ സംരംഭക ബാഡ്ജ് നേടി!",
+    "winMessage": "നിങ്ങൾക്ക് {{total}} വെല്ലുവിളികളിൽ {{score}} ലഭിച്ചു! നിങ്ങളൊരു യഥാർത്ഥ യുവ സംരംഭക വിദഗ്ദ്ധനാണ്!",
+    "coinsEarned": "+{{score}} നാണയങ്ങൾ",
+    "lesson": "പാഠം: യുവ സംരംഭകർക്ക് നല്ല ആശയങ്ങളുണ്ട്, ശ്രദ്ധാപൂർവ്വം ആസൂത്രണം ചെയ്യുക, സാമ്പത്തിക കാര്യങ്ങൾ ട്രാക്ക് ചെയ്യുക, ഉപഭോക്താക്കളെ തൃപ്തിപ്പെടുത്തുക, ക്രമേണ വളരുക!",
+    "loseEmoji": "💪",
+    "loseTitle": "പഠിക്കുന്നത് തുടരുക!",
+    "loseMessage": "നിങ്ങൾക്ക് {{total}} വെല്ലുവിളികളിൽ {{score}} ലഭിച്ചു. സംരംഭകത്വത്തിനൊപ്പം പരിശീലനം മികച്ചതാക്കുന്നു!",
+    "tryAgain": "വീണ്ടും ശ്രമിക്കുക",
+    "tip": "നുറുങ്ങ്: എല്ലായ്‌പ്പോഴും ഒരു നല്ല ആശയവും പ്ലാനും ഉണ്ടായിരിക്കുക, വിപണിയും ചെലവുകളും ഗവേഷണം ചെയ്യുക, ധനകാര്യങ്ങൾ ട്രാക്കുചെയ്യുക, ഉപഭോക്താക്കളെ തൃപ്തിപ്പെടുത്തുക, ചെറുതായി ആരംഭിക്കുക!"
+  }
+}

@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "ریفلیکس منی چوائس",
+  "subtitlePlaying": "{{total}} میں سے {{current}} سوال: اپنی رقم کے انتخاب کے اضطراب کی جانچ کریں!",
+  "subtitleReady": "اپنے پیسے کے انتخاب کے اضطراب کی جانچ کریں!",
+  "readyTitle": "اپنے پیسے کے انتخاب کو جانچنے کے لیے تیار ہیں؟",
+  "readyDescription": "ہر سوال کے لیے سمارٹ منی کا انتخاب کریں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "questionLabel": "سوال:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "آپ کو اپنے پیسے کو محفوظ رکھنے کے لیے اس کا کیا کرنا چاہیے؟",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "پھینک دو",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "اسے کھو دو",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "📥"
+        },
+        {
+          "text": "اس کے بارے میں بھول جاؤ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "آپ کے پیسے کو سنبھالنے کا سمارٹ طریقہ کیا ہے؟",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "سب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "اسے نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "آپ کو اپنا پیسہ کہاں محفوظ رکھنا چاہیے؟",
+      "correctAnswer": "Bank",
+      "options": [
+        {
+          "text": "Bank",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Hide",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "آپ کے پیسے کو وقت کے ساتھ بڑھنے میں کیا مدد کرتا ہے؟",
+      "correctAnswer": "Invest",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "تیزی سے خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "Invest",
+          "isCorrect": true,
+          "emoji": "📈"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آپ کے پیسے کے لیے بہترین انتخاب کیا ہے؟",
+      "correctAnswer": "محفوظ کریں اور بڑھیں۔",
+      "options": [
+        {
+          "text": "محفوظ کریں اور بڑھیں۔",
+          "isCorrect": true,
+          "emoji": "🌱"
+        },
+        {
+          "text": "سب خرچ کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "پیسہ ضائع کرنا",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "اسے کھو دو",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    }
+  ]
+}

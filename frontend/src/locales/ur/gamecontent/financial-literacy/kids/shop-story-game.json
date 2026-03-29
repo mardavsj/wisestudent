@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "شاپ اسٹوری گیم",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "دکاندار اضافی تبدیلی دیتا ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "return",
+          "text": "اضافی تبدیلی واپس کریں۔",
+          "emoji": "💸",
+          "isCorrect": true
+        },
+        {
+          "id": "keep",
+          "text": "خاموشی سے رکھو",
+          "emoji": "🤫",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "فوری طور پر خرچ کریں۔",
+          "emoji": "🛍️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کو ایک سستی چیز مل جاتی ہے۔ آگے کیا ہے؟",
+      "options": [
+        {
+          "id": "lie",
+          "text": "قیمت کے بارے میں جھوٹ بولنا",
+          "emoji": "🙊",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "اسے نظر انداز کریں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "honest",
+          "text": "ایماندار ہو",
+          "emoji": "🤗",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "بیچنے والا قیمت کا حوالہ دیتا ہے۔ آگے کیا ہے؟",
+      "options": [
+        {
+          "id": "bargain",
+          "text": "غیر منصفانہ سودے بازی",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "ادائیگی سے انکار",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "pay",
+          "text": "منصفانہ ادائیگی کریں۔",
+          "emoji": "⚖️",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ کو رسید مل جاتی ہے۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "check",
+          "text": "رسید چیک کریں۔",
+          "emoji": "🧾",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "بل کو نظر انداز کریں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "throw",
+          "text": "پھینک دو",
+          "emoji": "🗑️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "اسٹور آپ سے زیادہ چارج کرتا ہے۔ اب کیا؟",
+      "options": [
+        {
+          "id": "silent",
+          "text": "خاموش رہو",
+          "emoji": "😶",
+          "isCorrect": false
+        },
+        {
+          "id": "report",
+          "text": "رپورٹ کی خرابی",
+          "emoji": "🗣️",
+          "isCorrect": true
+        },
+        {
+          "id": "accept",
+          "text": "اسے قبول کریں۔",
+          "emoji": "😔",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

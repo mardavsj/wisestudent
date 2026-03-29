@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "ಬ್ಯಾಂಕುಗಳಲ್ಲಿ ರಸಪ್ರಶ್ನೆ",
+  "subtitleComplete": "ಸಂಪೂರ್ಣ!",
+  "subtitleProgress": "{{total}} ರಲ್ಲಿ {{current}} ಪ್ರಶ್ನೆ",
+  "scoreLabel": "ಸ್ಕೋರ್: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ಬ್ಯಾಂಕ್ ಎಂದರೇನು?",
+      "options": [
+        {
+          "id": "toy",
+          "text": "ಆಟಿಕೆ ಅಂಗಡಿ",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "safe",
+          "text": "ಹಣವನ್ನು ಸುರಕ್ಷಿತವಾಗಿಡಲು ಸ್ಥಳ",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "icecream",
+          "text": "ಐಸ್ ಕ್ರೀಮ್ ಅಂಗಡಿ",
+          "emoji": "🍦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "ಬ್ಯಾಂಕಿನ ಉಳಿತಾಯ ಖಾತೆ ಏನು ಮಾಡುತ್ತದೆ?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "ನಿಮಗೆ ಆಟಿಕೆಗಳನ್ನು ನೀಡುತ್ತದೆ",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "food",
+          "text": "ಆಹಾರವನ್ನು ಮಾರಾಟ ಮಾಡುತ್ತಾರೆ",
+          "emoji": "🍕",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "ನಿಮ್ಮ ಹಣವನ್ನು ಬೆಳೆಯುತ್ತದೆ",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ಬ್ಯಾಂಕಿನ ATM ನಲ್ಲಿ ನೀವು ಏನು ಮಾಡಬಹುದು?",
+      "options": [
+        {
+          "id": "clothes",
+          "text": "ಬಟ್ಟೆ ಖರೀದಿಸಿ",
+          "emoji": "👕",
+          "isCorrect": false
+        },
+        {
+          "id": "withdraw",
+          "text": "ಹಣವನ್ನು ಹಿಂತೆಗೆದುಕೊಳ್ಳಿ",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "ಆಟಗಳನ್ನು ಆಡಿ",
+          "emoji": "🎮",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ಬ್ಯಾಂಕ್‌ಗಳು ಏಕೆ ಸಾಲ ನೀಡುತ್ತವೆ?",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "ಹಣವನ್ನು ಎರವಲು ಪಡೆಯಲು ನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "ಉಚಿತ ಹಣವನ್ನು ನೀಡಲು",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "toys",
+          "text": "ಆಟಿಕೆಗಳನ್ನು ಮಾರಾಟ ಮಾಡಲು",
+          "emoji": "🧸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "ಬ್ಯಾಂಕ್‌ಗಳು ಹಣಕ್ಕೆ ಏಕೆ ಸುರಕ್ಷಿತ?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "ಅವರು ನಿಮಗೆ ಕ್ಯಾಂಡಿ ನೀಡುತ್ತಾರೆ",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ಅವರು ಹಣವನ್ನು ಮರೆಮಾಡುತ್ತಾರೆ",
+          "emoji": "🫥",
+          "isCorrect": false
+        },
+        {
+          "id": "protect",
+          "text": "ಅವರು ನಿಮ್ಮ ಉಳಿತಾಯವನ್ನು ರಕ್ಷಿಸುತ್ತಾರೆ",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

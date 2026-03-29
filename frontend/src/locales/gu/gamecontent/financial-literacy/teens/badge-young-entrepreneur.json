@@ -1,1 +1,176 @@
-﻿{}
+{
+  "title": "બેજ: યુવા ઉદ્યોગસાહસિક",
+  "subtitleComplete": "બેજ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પડકાર",
+  "challengeLabel": "પડકાર {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "challenges": [
+    {
+      "id": 1,
+      "title": "વ્યવસાય શરૂ કરી રહ્યા છીએ",
+      "question": "વ્યવસાય શરૂ કરવા માટેનું પ્રથમ પગલું શું છે?",
+      "options": [
+        {
+          "id": "good-idea",
+          "text": "એક સારો વિચાર અને યોજના છે",
+          "emoji": "💡",
+          "isCorrect": true
+        },
+        {
+          "id": "spend-all",
+          "text": "તમારા બધા પૈસા ખર્ચ કરો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "કાયમ રાહ જુઓ",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "copy",
+          "text": "અન્યની બરાબર નકલ કરો",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "બિઝનેસ પ્લાનિંગ",
+      "question": "શરૂ કરતા પહેલા તમારે શું કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "start-now",
+          "text": "તરત જ શરૂ કરો",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "research",
+          "text": "સંશોધન બજાર અને ખર્ચ",
+          "emoji": "🔍",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "આયોજનને અવગણો",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "spend",
+          "text": "વિચાર્યા વગર ખર્ચ કરો",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "નાણાંનું સંચાલન",
+      "question": "તમારે વ્યવસાયના નાણાંને કેવી રીતે હેન્ડલ કરવું જોઈએ?",
+      "options": [
+        {
+          "id": "spend-everything",
+          "text": "બધું ખર્ચો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-finances",
+          "text": "નાણાકીય બાબતોને અવગણો",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "track",
+          "text": "આવક અને ખર્ચ પર નજર રાખો",
+          "emoji": "📊",
+          "isCorrect": true
+        },
+        {
+          "id": "no-tracking",
+          "text": "કોઈ ટ્રેકિંગની જરૂર નથી",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "ગ્રાહક સેવા",
+      "question": "વ્યવસાયિક સફળતા માટે શું મહત્વનું છે?",
+      "options": [
+        {
+          "id": "ignore-customers",
+          "text": "ગ્રાહકોને અવગણો",
+          "emoji": "🚫",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "ગ્રાહકોને છેતરે છે",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "no-service",
+          "text": "કોઈ સેવાની જરૂર નથી",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "satisfy",
+          "text": "ગ્રાહકોને સંતુષ્ટ કરો",
+          "emoji": "😊",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "ગ્રોઇંગ બિઝનેસ",
+      "question": "તમારે તમારો વ્યવસાય કેવી રીતે વધારવો જોઈએ?",
+      "options": [
+        {
+          "id": "start-small",
+          "text": "નાની શરૂઆત કરો અને ધીમે ધીમે વિસ્તૃત કરો",
+          "emoji": "🌱",
+          "isCorrect": true
+        },
+        {
+          "id": "start-huge",
+          "text": "તરત જ વિશાળ પ્રારંભ કરો",
+          "emoji": "🎯",
+          "isCorrect": false
+        },
+        {
+          "id": "never-grow",
+          "text": "કદી વધતા નથી",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grow-no-plan",
+          "text": "પ્લાનિંગ વિના વૃદ્ધિ કરો",
+          "emoji": "🚀",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🏆",
+    "winTitle": "યુવાન ઉદ્યોગસાહસિક બેજ મેળવ્યો!",
+    "winMessage": "તમને {{total}}માંથી {{score}} પડકારો સાચા મળ્યા છે! તમે સાચા યંગ આંત્રપ્રિન્યોર નિષ્ણાત છો!",
+    "coinsEarned": "+{{score}} સિક્કા",
+    "lesson": "પાઠ: યુવાન ઉદ્યોગસાહસિકો પાસે સારા વિચારો હોય છે, કાળજીપૂર્વક આયોજન કરો, નાણાકીય બાબતોને ટ્રેક કરો, ગ્રાહકોને સંતુષ્ટ કરો અને ધીમે ધીમે વિકાસ કરો!",
+    "loseEmoji": "💪",
+    "loseTitle": "શીખતા રહો!",
+    "loseMessage": "તમને {{total}}માંથી {{score}} પડકારો સાચા મળ્યા. પ્રેક્ટિસ ઉદ્યોગસાહસિકતા સાથે સંપૂર્ણ બનાવે છે!",
+    "tryAgain": "ફરી પ્રયાસ કરો",
+    "tip": "ટિપ: હંમેશા સારો વિચાર અને યોજના રાખો, બજાર અને ખર્ચો પર સંશોધન કરો, નાણાકીય બાબતોને ટ્રૅક કરો, ગ્રાહકોને સંતુષ્ટ કરો અને નાની શરૂઆત કરો!"
+  }
+}

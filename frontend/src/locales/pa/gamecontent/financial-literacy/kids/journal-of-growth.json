@@ -1,1 +1,34 @@
-﻿{}
+{
+  "title": "ਜਰਨਲ ਆਫ਼ ਗਰੋਥ",
+  "subtitleComplete": "ਜਰਨਲ ਪੂਰਾ!",
+  "subtitleProgress": "{{total}} ਵਿੱਚੋਂ {{current}} ਸਵਾਲ: ਆਪਣੇ ਪੈਸੇ ਵਧਾਉਣ ਬਾਰੇ ਸੋਚੋ!",
+  "scoreLabel": "ਸਕੋਰ: {{score}}/{{total}}",
+  "stageEmoji": "📝",
+  "minLengthLabel": "ਘੱਟੋ-ਘੱਟ {{count}} ਅੱਖਰ ਲਿਖੋ",
+  "placeholder": "ਆਪਣੀ ਜਰਨਲ ਐਂਟਰੀ ਇੱਥੇ ਲਿਖੋ...",
+  "characterCount": "{{count}}/{{required}} ਅੱਖਰ",
+  "submitContinueButton": "ਸਪੁਰਦ ਕਰੋ ਅਤੇ ਜਾਰੀ ਰੱਖੋ",
+  "submitFinalButton": "ਫਾਈਨਲ ਐਂਟਰੀ ਜਮ੍ਹਾਂ ਕਰੋ",
+  "stages": [
+    {
+      "question": "ਲਿਖੋ: \"ਜੇਕਰ ਮੈਂ ₹100 ਦਾ ਨਿਵੇਸ਼ ਕਰਦਾ ਹਾਂ, ਤਾਂ ਮੈਂ ਚਾਹੁੰਦਾ ਹਾਂ ਕਿ ਇਹ ___ ਵਿੱਚ ਵਧੇ।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਪੈਸੇ ਦਾ ਨਿਵੇਸ਼ ਕਰਨਾ ਮੈਨੂੰ ਮਹਿਸੂਸ ਕਰਦਾ ਹੈ ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਇਕ ਚੀਜ਼ ਜੋ ਮੈਂ ਨਿਵੇਸ਼ ਕਰਨ ਬਾਰੇ ਸਿੱਖਿਆ ਹੈ ਉਹ ਹੈ ___।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਮੈਂ ___ ਦੀ ਮਦਦ ਲਈ ₹100 ਦਾ ਨਿਵੇਸ਼ ਕਰਾਂਗਾ।\"",
+      "minLength": 10
+    },
+    {
+      "question": "ਲਿਖੋ: \"ਵਧ ਰਹੇ ਪੈਸੇ ਨੇ ਮੈਨੂੰ ___ ਸਬਰ ਬਾਰੇ ਸਿਖਾਇਆ।\"",
+      "minLength": 10
+    }
+  ]
+}

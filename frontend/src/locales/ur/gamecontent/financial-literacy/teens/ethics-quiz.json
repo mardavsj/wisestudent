@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "اخلاقیات کوئز",
+  "subtitleComplete": "کوئز مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionLabel": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "کیا نمبروں کے لیے رشوت دینا اخلاقی ہے؟",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ہاں، اگر ضرورت ہو۔",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "no",
+          "text": "نہیں، یہ غلط ہے۔",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "شاید، منحصر ہے",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "رشوت دینے میں کیا حرج ہے؟",
+      "options": [
+        {
+          "id": "unfair",
+          "text": "یہ غیر منصفانہ اور بے ایمانی ہے۔",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "کچھ بھی غلط نہیں۔",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "expensive",
+          "text": "بہت مہنگا",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "آپ کو اچھے نمبر کیسے حاصل کرنے چاہئیں؟",
+      "options": [
+        {
+          "id": "study",
+          "text": "مطالعہ کریں اور محنت کریں۔",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "bribe",
+          "text": "نمبروں کی ادائیگی کریں۔",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat",
+          "text": "امتحانات میں دھوکہ",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "رشوت دینے کے کیا نتائج ہوتے ہیں؟",
+      "options": [
+        {
+          "id": "no-consequences",
+          "text": "کوئی نتیجہ نہیں۔",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-trust",
+          "text": "اعتماد کھو دیں اور سزا کا سامنا کریں۔",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "get-reward",
+          "text": "ثواب حاصل کریں۔",
+          "emoji": "🎁",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "کامیاب ہونے کا اخلاقی طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "honest-effort",
+          "text": "دیانتداری اور دیانتداری",
+          "emoji": "🙂‍↔️",
+          "isCorrect": true
+        },
+        {
+          "id": "shortcuts",
+          "text": "شارٹ کٹس لیں۔",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "cheat-way",
+          "text": "اپنا راستہ دھوکہ",
+          "emoji": "😈",
+          "isCorrect": false
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "بہت اچھا کام!",
+    "winMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ ایک اخلاقی چیمپئن ہیں!",
+    "coinsEarned": "+{{score}} سکے",
+    "lesson": "سبق: دیانتداری اور ایماندارانہ کوشش ہی کامیابی کے حقیقی راستے ہیں۔ رشوت دینے سے اعتماد میں کمی اور نتائج برآمد ہوتے ہیں۔",
+    "loseEmoji": "😔",
+    "loseTitle": "سیکھتے رہیں!",
+    "loseMessage": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، ایمانداری بہترین پالیسی ہے!",
+    "tryAgain": "دوبارہ کوشش کریں۔",
+    "tip": "مشورہ: محنت اور ایمانداری سے حاصل کی گئی کامیابی سب سے زیادہ اجروثواب ہے۔ کبھی بھی غیر اخلاقی شارٹ کٹ نہ لیں۔"
+  }
+}

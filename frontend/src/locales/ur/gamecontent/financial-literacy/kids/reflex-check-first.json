@@ -1,1 +1,167 @@
-﻿{}
+{
+  "title": "اضطراری: پہلے چیک کریں۔",
+  "subtitleComplete": "کھیل مکمل!",
+  "roundLabel": "راؤنڈ {{current}}/{{total}}",
+  "timeUp": "وقت ختم ہو گیا ہے!",
+  "readyEmoji": "🔍",
+  "readyTitle": "تیار ہو جاؤ!",
+  "readyDescription": "خریدنے سے پہلے چیک کرنے کے بارے میں سوالات کے جواب دیں!",
+  "readyTimeInfo": "آپ کے پاس ہر سوال کے لیے {{time}} سیکنڈ ہیں۔",
+  "readyQuestionInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{time}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "gameRoundLabel": "گول:",
+  "gameTimeLabel": "وقت:",
+  "gameScoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "کوئی چیز خریدنے سے پہلے آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "قیمت پوچھیں۔",
+      "options": [
+        {
+          "text": "قیمت پوچھیں۔",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "اندھا اعتماد کریں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "فوری طور پر خریدیں۔",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "لاگت کو نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🚫"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "خریداری کرنے سے پہلے آپ کو کیا چیک کرنا چاہئے؟",
+      "correctAnswer": "لاگت چیک کریں۔",
+      "options": [
+        {
+          "text": "ابھی خریدیں۔",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "چیک کرنا چھوڑ دیں۔",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "لاگت چیک کریں۔",
+          "isCorrect": true,
+          "emoji": "💵"
+        },
+        {
+          "text": "قیمت کا اندازہ لگائیں۔",
+          "isCorrect": false,
+          "emoji": "🎲"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "خریداری کا سمارٹ طریقہ کیا ہے؟",
+      "correctAnswer": "قیمتوں کا موازنہ کریں۔",
+      "options": [
+        {
+          "text": "تیزی سے ادائیگی کریں۔",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "قیمتوں کا موازنہ کریں۔",
+          "isCorrect": true,
+          "emoji": "⚖️"
+        },
+        {
+          "text": "فرسٹ اسٹور خریدیں۔",
+          "isCorrect": false,
+          "emoji": "🏪"
+        },
+        {
+          "text": "موازنہ نہ کریں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "خریدنے سے پہلے آپ کو کیا تصدیق کرنی چاہئے؟",
+      "correctAnswer": "معیار کی تصدیق کریں۔",
+      "options": [
+        {
+          "text": "معیار کی تصدیق کریں۔",
+          "isCorrect": true,
+          "emoji": "🔍"
+        },
+        {
+          "text": "Ignore",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "چیک کیے بغیر خریدیں۔",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "صرف بیچنے والے پر بھروسہ کریں۔",
+          "isCorrect": false,
+          "emoji": "🤝"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آن لائن خریدنے سے پہلے آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "جائزے پڑھیں",
+      "options": [
+        {
+          "text": "Rush",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "جائزے چھوڑ دیں۔",
+          "isCorrect": false,
+          "emoji": "⏭️"
+        },
+        {
+          "text": "فوری طور پر خریدیں۔",
+          "isCorrect": false,
+          "emoji": "🛒"
+        },
+        {
+          "text": "جائزے پڑھیں",
+          "isCorrect": true,
+          "emoji": "⭐"
+        }
+      ]
+    }
+  ],
+  "resultGreat": {
+    "emoji": "🎉",
+    "title": "ہوشیار خریدار!",
+    "description": "حیرت انگیز! آپ نے {{score}}/{{total}} درست سمجھا! آپ ہمیشہ خریدنے سے پہلے چیک کریں!"
+  },
+  "resultGood": {
+    "emoji": "👍",
+    "title": "اچھی عادتیں!",
+    "description": "شاباش! آپ نے اسکور کیا {{score}}/{{total}}! ہوشیار خریداری کی عادات پر عمل کرتے رہیں!"
+  },
+  "resultKeepPracticing": {
+    "emoji": "💪",
+    "title": "مشق کرتے رہیں!",
+    "description": "آپ نے {{score}}/{{total}} اسکور کیا۔ خریدنے سے پہلے ہمیشہ چیک اور موازنہ کرنا یاد رکھیں!"
+  }
+}

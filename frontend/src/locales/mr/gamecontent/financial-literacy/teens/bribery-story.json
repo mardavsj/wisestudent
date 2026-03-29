@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "लाचखोरीची कहाणी",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "अर्जावर प्रक्रिया करण्यासाठी अधिकारी लाच मागतो. तुम्ही काय करता?",
+      "options": [
+        {
+          "id": "pay",
+          "text": "लाच द्या",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "Refuse",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "Maybe",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "जलद सेवेसाठी लिपिक ₹ 500 ची मागणी करतो. तुमची कृती?",
+      "options": [
+        {
+          "id": "refuse2",
+          "text": "Refuse",
+          "emoji": "🛑",
+          "isCorrect": true
+        },
+        {
+          "id": "pay2",
+          "text": "₹500 भरा",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "negotiate",
+          "text": "Negotiate",
+          "emoji": "💬",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "अधिकारी मंजुरीसाठी लाच घेण्याचे संकेत देतात. तुमची निवड काय आहे?",
+      "options": [
+        {
+          "id": "pay3",
+          "text": "लाच द्या",
+          "emoji": "📜",
+          "isCorrect": false
+        },
+        {
+          "id": "wait",
+          "text": "Wait",
+          "emoji": "⏳",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse3",
+          "text": "Refuse",
+          "emoji": "🙅",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "एजंट पेपरवर्क क्लिअर करण्यासाठी अतिरिक्त फी मागतो. तुम्ही पैसे देता का?",
+      "options": [
+        {
+          "id": "refuse4",
+          "text": "Refuse",
+          "emoji": "❌",
+          "isCorrect": true
+        },
+        {
+          "id": "pay4",
+          "text": "फी भरा",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "complain",
+          "text": "नंतर तक्रार करा",
+          "emoji": "📢",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "अधिकृत परवान्यासाठी ₹1000 ची मागणी करतात. तुमची चाल काय आहे?",
+      "options": [
+        {
+          "id": "pay5",
+          "text": "₹1000 भरा",
+          "emoji": "📝",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse5",
+          "text": "Refuse",
+          "emoji": "🚨",
+          "isCorrect": true
+        },
+        {
+          "id": "partial",
+          "text": "अर्धवट पैसे द्या",
+          "emoji": "💵",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

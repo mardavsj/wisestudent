@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "ফেক কল স্টোরি",
+  "subtitleComplete": "গল্প সম্পূর্ণ!",
+  "subtitleProgress": "{{total}} এর {{current}} প্রশ্ন",
+  "questionLabel": "প্রশ্ন {{current}}/{{total}}",
+  "scoreLabel": "স্কোর: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "কলার আপনার ব্যাঙ্কের বিস্তারিত জানতে চায়। আপনার কি করা উচিত?",
+      "options": [
+        {
+          "id": "share",
+          "text": "বিস্তারিত শেয়ার করুন",
+          "emoji": "💳",
+          "isCorrect": false
+        },
+        {
+          "id": "maybe",
+          "text": "হতে পারে, যদি তারা অফিসিয়াল শব্দ করে",
+          "emoji": "🤔",
+          "isCorrect": false
+        },
+        {
+          "id": "refuse",
+          "text": "প্রত্যাখ্যান, ভাগ না",
+          "emoji": "🚫",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "একটি জাল কল একটি চিহ্ন কি?",
+      "options": [
+        {
+          "id": "urgent",
+          "text": "কাজ করার জন্য জরুরী চাপ",
+          "emoji": "⚠️",
+          "isCorrect": true
+        },
+        {
+          "id": "polite",
+          "text": "ভদ্র এবং ধৈর্যশীল",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "normal",
+          "text": "স্বাভাবিক কথোপকথন",
+          "emoji": "💬",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "কেউ ওটিপি চাইলে আপনার কী করা উচিত?",
+      "options": [
+        {
+          "id": "give",
+          "text": "ওটিপি দিন",
+          "emoji": "🔢",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "কখনই OTP শেয়ার করবেন না",
+          "emoji": "🔒",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe2",
+          "text": "তারা সুন্দরভাবে জিজ্ঞাসা করলে শেয়ার করুন",
+          "emoji": "🤷",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "আপনি কিভাবে একটি ব্যাঙ্ক কল যাচাই করতে পারেন?",
+      "options": [
+        {
+          "id": "call-back",
+          "text": "সরাসরি ব্যাঙ্কে কল করুন",
+          "emoji": "📞",
+          "isCorrect": true
+        },
+        {
+          "id": "trust",
+          "text": "কলারকে বিশ্বাস করুন",
+          "emoji": "😊",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore-all",
+          "text": "সমস্ত কল উপেক্ষা করুন",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "সন্দেহজনক কলের সবচেয়ে নিরাপদ প্রতিক্রিয়া কি?",
+      "options": [
+        {
+          "id": "engage",
+          "text": "কথা বলতে থাকুন",
+          "emoji": "💬",
+          "isCorrect": false
+        },
+        {
+          "id": "share-info",
+          "text": "কিছু তথ্য শেয়ার করুন",
+          "emoji": "📝",
+          "isCorrect": false
+        },
+        {
+          "id": "hang-up",
+          "text": "হ্যাং আপ এবং রিপোর্ট",
+          "emoji": "📞",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "দারুণ কাজ!",
+    "winMessage": "আপনি {{total}} প্রশ্নের মধ্যে {{score}}টি সঠিক পেয়েছেন! আপনি জানেন কিভাবে সন্দেহজনক কল পরিচালনা করতে হয়!",
+    "coinsEarned": "+{{score}} কয়েন",
+    "lesson": "পাঠ: কখনই ফোনে ওটিপি বা ব্যাঙ্কের বিবরণের মতো সংবেদনশীল তথ্য শেয়ার করবেন না। সবসময় হ্যাং আপ করুন এবং সন্দেহজনক হলে অফিসিয়াল ব্যাঙ্ক নম্বরে কল করুন।",
+    "loseEmoji": "😔",
+    "loseTitle": "শিখতে থাকুন!",
+    "loseMessage": "আপনি {{total}} প্রশ্নের মধ্যে {{score}}টি সঠিক পেয়েছেন। ফোন কলে সতর্ক হতে ভুলবেন না!",
+    "tryAgain": "আবার চেষ্টা করুন",
+    "tip": "টিপ: স্ক্যাম কলকারীরা প্রায়শই কৃত্রিম জরুরিতা তৈরি করে। কখনই ওটিপি বা ব্যাঙ্কের বিবরণ শেয়ার করবেন না। ফোন বন্ধ করুন এবং সরাসরি আপনার ব্যাঙ্কের সাথে যোগাযোগ করুন।"
+  }
+}

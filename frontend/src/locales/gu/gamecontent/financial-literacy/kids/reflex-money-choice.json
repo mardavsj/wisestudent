@@ -1,1 +1,149 @@
-﻿{}
+{
+  "title": "રિફ્લેક્સ મની ચોઇસ",
+  "subtitlePlaying": "{{total}} માંથી {{current}} પ્રશ્ન: તમારા પૈસાની પસંદગીની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા પૈસાની પસંદગીની પ્રતિક્રિયાઓનું પરીક્ષણ કરો!",
+  "readyTitle": "તમારી મની પસંદગીઓ ચકાસવા માટે તૈયાર છો?",
+  "readyDescription": "દરેક પ્રશ્ન માટે સ્માર્ટ મની પસંદગી પસંદ કરો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "questionLabel": "પ્રશ્ન:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "તમારે તમારા પૈસાને સુરક્ષિત રાખવા માટે શું કરવું જોઈએ?",
+      "correctAnswer": "Deposit",
+      "options": [
+        {
+          "text": "ફેંકી દો",
+          "isCorrect": false,
+          "emoji": "🗑️"
+        },
+        {
+          "text": "તે ગુમાવો",
+          "isCorrect": false,
+          "emoji": "😞"
+        },
+        {
+          "text": "Deposit",
+          "isCorrect": true,
+          "emoji": "📥"
+        },
+        {
+          "text": "તેના વિશે ભૂલી જાઓ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમારા પૈસાને હેન્ડલ કરવાની સ્માર્ટ રીત કઈ છે?",
+      "correctAnswer": "Save",
+      "options": [
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "❌"
+        },
+        {
+          "text": "Save",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "તેને અવગણો",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "તમારે તમારા પૈસા સુરક્ષિત રીતે ક્યાં રાખવા જોઈએ?",
+      "correctAnswer": "Bank",
+      "options": [
+        {
+          "text": "Bank",
+          "isCorrect": true,
+          "emoji": "🏦"
+        },
+        {
+          "text": "Spend",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Hide",
+          "isCorrect": false,
+          "emoji": "🙈"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "તમારા પૈસા સમય સાથે વધવા માટે શું મદદ કરે છે?",
+      "correctAnswer": "Invest",
+      "options": [
+        {
+          "text": "Lose",
+          "isCorrect": false,
+          "emoji": "📉"
+        },
+        {
+          "text": "Waste",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "ઝડપી ખર્ચો",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "Invest",
+          "isCorrect": true,
+          "emoji": "📈"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "તમારા પૈસા માટે શ્રેષ્ઠ પસંદગી શું છે?",
+      "correctAnswer": "સેવ એન્ડ ગ્રો",
+      "options": [
+        {
+          "text": "સેવ એન્ડ ગ્રો",
+          "isCorrect": true,
+          "emoji": "🌱"
+        },
+        {
+          "text": "બધા ખર્ચો",
+          "isCorrect": false,
+          "emoji": "💸"
+        },
+        {
+          "text": "વેસ્ટ મની",
+          "isCorrect": false,
+          "emoji": "🔥"
+        },
+        {
+          "text": "તે ગુમાવો",
+          "isCorrect": false,
+          "emoji": "😞"
+        }
+      ]
+    }
+  ]
+}

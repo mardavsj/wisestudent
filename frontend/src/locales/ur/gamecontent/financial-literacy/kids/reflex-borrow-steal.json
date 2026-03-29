@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "اضطراری قرض/چوری",
+  "subtitlePlaying": "راؤنڈ {{current}}/{{total}}: اپنے قرض لینے کے اضطراب کی جانچ کریں!",
+  "subtitleReady": "اپنے قرض لینے کے اضطراب کی جانچ کریں!",
+  "readyEmoji": "🤝",
+  "readyTitle": "تیار ہو جاؤ!",
+  "readyDescription": "قرض لینے کے بارے میں سوالات کے صحیح جواب دیں۔",
+  "readyInfo": "آپ کے پاس {{total}} سوالات ہیں جن میں سے ہر ایک میں {{seconds}} سیکنڈ ہیں!",
+  "startButton": "کھیل شروع کریں۔",
+  "roundLabel": "گول:",
+  "timeLabel": "وقت:",
+  "scoreLabel": "سکور:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "آپ کو ادھار کی اشیاء کے ساتھ کیا کرنا چاہئے؟",
+      "correctAnswer": "ادھار کی چیزیں واپس کریں۔",
+      "options": [
+        {
+          "text": "ادھار کی چیزیں واپس کریں۔",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "انہیں ہمیشہ کے لیے رکھیں",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "انہیں چھپائیں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "ان کے بارے میں بھول جاؤ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "قرض کے ساتھ کیا کرنا صحیح ہے؟",
+      "correctAnswer": "قرض واپس کریں۔",
+      "options": [
+        {
+          "text": "ادائیگی سے گریز کریں۔",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "قرض واپس کریں۔",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "اسے نظر انداز کریں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "اسے بھول جاؤ",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "جب آپ کچھ ادھار لیتے ہیں تو آپ کو کیا کرنا چاہیے؟",
+      "correctAnswer": "اسے واپس دو",
+      "options": [
+        {
+          "text": "اسے چھپائیں۔",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "رکھ لو",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "اسے واپس دو",
+          "isCorrect": true,
+          "emoji": "↩️"
+        },
+        {
+          "text": "اسے کھو دیں۔",
+          "isCorrect": false,
+          "emoji": "❌"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "قرضے کو سنبھالنے کا ایماندار طریقہ کیا ہے؟",
+      "correctAnswer": "ایماندار ہو",
+      "options": [
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "ایماندار ہو",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "Lie",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "🎭"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "آپ کو ادھار کی چیزیں کب واپس کرنی چاہئیں؟",
+      "correctAnswer": "وقت پر واپس آنا۔",
+      "options": [
+        {
+          "text": "Delay",
+          "isCorrect": false,
+          "emoji": "⏰"
+        },
+        {
+          "text": "Never",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "شاید بعد میں",
+          "isCorrect": false,
+          "emoji": "🤷"
+        },
+        {
+          "text": "وقت پر واپس آنا۔",
+          "isCorrect": true,
+          "emoji": "⏱️"
+        }
+      ]
+    }
+  ]
+}

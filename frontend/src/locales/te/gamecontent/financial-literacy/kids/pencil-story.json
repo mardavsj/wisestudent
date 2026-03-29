@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "పెన్సిల్ కథ",
+  "subtitleComplete": "కథ పూర్తయింది!",
+  "subtitleProgress": "{{total}}లో {{current}} ప్రశ్న",
+  "questionCounter": "ప్రశ్న {{current}}/{{total}}",
+  "scoreLabel": "స్కోర్: {{score}}/{{total}}",
+  "stageEmoji": "✏️",
+  "questions": [
+    {
+      "id": 1,
+      "text": "మీరు స్నేహితుడి నుండి పెన్సిల్ తీసుకుంటారు. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "yes",
+          "text": "ఉపయోగం తర్వాత దాన్ని తిరిగి ఇవ్వండి",
+          "emoji": "✅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "no",
+          "text": "ఉంచుకో",
+          "emoji": "❌",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "lose",
+          "text": "పోగొట్టుకోండి",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "మీకు పెన్సిల్ కావాలి కానీ అది లేదు. ఏది సరైనది?",
+      "options": [
+        {
+          "id": "take",
+          "text": "అడగకుండానే తీసుకోండి",
+          "emoji": "🤫",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ask",
+          "text": "అప్పు చేసి తిరిగి ఇవ్వమని అడగండి",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "skip",
+          "text": "రాయడం దాటవేయండి",
+          "emoji": "✍️",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "మీరు అరువు తెచ్చుకున్న పెన్సిల్‌ను పగలగొట్టారు. నిజాయితీ అంటే ఏమిటి?",
+      "options": [
+        {
+          "id": "replace",
+          "text": "దాన్ని కొత్త దానితో భర్తీ చేయండి",
+          "emoji": "🆕",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "hide",
+          "text": "దాచు",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "blame",
+          "text": "మరొకరిని నిందించండి",
+          "emoji": "😶",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "మీ స్నేహితుడు పెన్సిల్‌కి ₹5 అప్పుగా ఇస్తాడు. మీరు ఏమి చేయాలి?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "మిఠాయి కోసం ఖర్చు చేయండి",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "forget",
+          "text": "తిరిగి చెల్లించడం మరచిపోండి",
+          "emoji": "😕",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "repay",
+          "text": "సకాలంలో ₹5 తిరిగి చెల్లించండి",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "అరువు తెచ్చుకున్న వస్తువులను తిరిగి ఇవ్వడం ఎందుకు ముఖ్యం?",
+      "options": [
+        {
+          "id": "pencils",
+          "text": "మీరు మరిన్ని పెన్సిల్స్ పొందుతారు",
+          "emoji": "✏️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "ఇది నమ్మకాన్ని పెంచుతుంది",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "popular",
+          "text": "ఇది మిమ్మల్ని పాపులర్ చేస్తుంది",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "بچت اکاؤنٹ کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "perfectScoreMsg": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ سمجھتے ہیں کہ بچت اکاؤنٹس کیسے کام کرتے ہیں!",
+  "lowScoreMsg": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، سیونگ اکاؤنٹس سود ادا کرتے ہیں، جس سے آپ کے پیسے بڑھنے میں مدد ملتی ہے!",
+  "lessonLabel": "سبق: بچت اکاؤنٹس آپ کے پیسے کو محفوظ رکھتے ہیں اور سود ادا کرتے ہیں، آپ کے پیسے کو وقت کے ساتھ بڑھنے میں مدد دیتے ہیں!",
+  "tryAgain": "دوبارہ کوشش کریں۔",
+  "tipLabel": "ٹپ: جب آپ بچت اکاؤنٹ میں رقم جمع کرتے ہیں، تو بینک آپ کو سود ادا کرتا ہے، جس سے آپ کی رقم وقت کے ساتھ ساتھ بڑھتی ہے!",
+  "coinsLabel": "+{{count}} سکے",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ ₹1000 جمع کرائیں۔ ایک سال کے بعد، یہ ₹1050 ہو جاتا ہے۔ کیوں؟",
+      "options": [
+        {
+          "id": "interest",
+          "text": "Interest",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "magic",
+          "text": "Magic",
+          "emoji": "✨",
+          "isCorrect": false
+        },
+        {
+          "id": "error",
+          "text": "بینک کی غلطی",
+          "emoji": "❌",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "جب آپ بچت اکاؤنٹ میں رقم رکھتے ہیں تو کیا ہوتا ہے؟",
+      "options": [
+        {
+          "id": "loses",
+          "text": "یہ قدر کھو دیتا ہے۔",
+          "emoji": "📉",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "یہ دلچسپی کے ساتھ بڑھتا ہے۔",
+          "emoji": "📈",
+          "isCorrect": true
+        },
+        {
+          "id": "stays",
+          "text": "یہ وہی رہتا ہے۔",
+          "emoji": "➡️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "بینک بچت پر سود کیوں دیتے ہیں؟",
+      "options": [
+        {
+          "id": "use",
+          "text": "وہ آپ کے پیسے کو قرض دینے کے لیے استعمال کرتے ہیں۔",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "gift",
+          "text": "یہ ایک تحفہ ہے۔",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "rule",
+          "text": "حکومتی حکمرانی۔",
+          "emoji": "📜",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "بچت اکاؤنٹ کا کیا فائدہ ہے؟",
+      "options": [
+        {
+          "id": "safe",
+          "text": "محفوظ اور سود کماتا ہے۔",
+          "emoji": "🛡️",
+          "isCorrect": true
+        },
+        {
+          "id": "quick",
+          "text": "صرف فوری رسائی",
+          "emoji": "⚡",
+          "isCorrect": false
+        },
+        {
+          "id": "free",
+          "text": "مفت پیسے",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "اگر آپ ₹500 جمع کراتے ہیں اور ایک سال کے بعد ₹525 حاصل کرتے ہیں تو اضافی ₹25 کیا ہیں؟",
+      "options": [
+        {
+          "id": "bonus",
+          "text": "بونس کی ادائیگی",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "interest2",
+          "text": "سود کمایا",
+          "emoji": "💵",
+          "isCorrect": true
+        },
+        {
+          "id": "fee",
+          "text": "بینک فیس",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

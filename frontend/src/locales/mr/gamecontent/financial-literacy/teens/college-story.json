@@ -1,1 +1,141 @@
-﻿{}
+{
+  "title": "कॉलेजची गोष्ट",
+  "subtitleComplete": "Story Complete!",
+  "subtitleProgress": "Question {{current}} of {{total}}",
+  "questionLabel": "प्रश्न {{current}}/{{total}}",
+  "scoreLabel": "Score: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "तुम्हाला कॉलेजच्या खर्चासाठी ₹1000 मिळतात. आपण ते कसे व्यवस्थापित करावे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "आउटिंगवर सर्व खर्च करा",
+          "emoji": "🎉",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "आधी गरजांसाठी बजेट",
+          "emoji": "📚",
+          "isCorrect": true
+        },
+        {
+          "id": "save",
+          "text": "सर्व काही जतन करा",
+          "emoji": "🏦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "तुम्हाला पुस्तके हवी आहेत आणि नाश्ता हवा आहे. आपण प्रथम काय करावे?",
+      "options": [
+        {
+          "id": "books",
+          "text": "आधी पुस्तके खरेदी करा",
+          "emoji": "📖",
+          "isCorrect": true
+        },
+        {
+          "id": "snacks",
+          "text": "प्रथम स्नॅक्स खरेदी करा",
+          "emoji": "🍫",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "दोन्ही समान खरेदी करा",
+          "emoji": "⚖️",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "तुम्हाला ₹500 अतिरिक्त पैसे मिळतील. सर्वोत्तम पर्याय कोणता आहे?",
+      "options": [
+        {
+          "id": "clothes",
+          "text": "नवीन कपडे खरेदी कराल",
+          "emoji": "👗",
+          "isCorrect": false
+        },
+        {
+          "id": "party",
+          "text": "पार्टीवर खर्च करा",
+          "emoji": "🎊",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "आणीबाणीसाठी बचत करा",
+          "emoji": "🏦",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "तुम्हाला नवीन फोन हवा आहे पण कॉलेजची फी देय आहे. आपण काय करावे?",
+      "options": [
+        {
+          "id": "fees",
+          "text": "आधी फी भरा",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "phone",
+          "text": "फोन विकत घ्या",
+          "emoji": "📱",
+          "isCorrect": false
+        },
+        {
+          "id": "both",
+          "text": "क्रेडिटवर दोन्ही खरेदी करा",
+          "emoji": "💳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "तुम्हाला ₹2000/महिना कमावणारी अर्धवेळ नोकरी मिळते. आपण ते कसे व्यवस्थापित करावे?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "त्वरित सर्व खर्च करा",
+          "emoji": "🛍️",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "सर्व काही जतन करा",
+          "emoji": "🏦",
+          "isCorrect": false
+        },
+        {
+          "id": "budget",
+          "text": "गरजा आणि बचतीसाठी बजेट",
+          "emoji": "💰",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "result": {
+    "winEmoji": "🎉",
+    "winTitle": "ग्रेट जॉब!",
+    "winMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत! तुम्ही कॉलेजमध्ये स्मार्ट आर्थिक निर्णय घेत आहात!",
+    "coinsEarned": "+{{score}} नाणी",
+    "lesson": "धडा: मनोरंजनासारख्या गरजांपेक्षा पुस्तके आणि फी यासारख्या अत्यावश्यक खर्चांना प्राधान्य द्या!",
+    "loseEmoji": "😔",
+    "loseTitle": "शिकत राहा!",
+    "loseMessage": "तुम्हाला {{total}} पैकी {{score}} प्रश्न बरोबर आहेत. कॉलेजमध्ये गरजांपेक्षा गरजांना प्राधान्य देण्याचे लक्षात ठेवा!",
+    "tryAgain": "पुन्हा प्रयत्न करा",
+    "tip": "टीप: करमणूक आणि इच्छांपेक्षा पुस्तके, फी आणि किराणा सामान यासारख्या अत्यावश्यक खर्चांना नेहमी प्राधान्य द्या."
+  }
+}

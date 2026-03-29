@@ -1,1 +1,38 @@
-﻿{}
+{
+  "title": "પઝલ: બેંક ઉપયોગો",
+  "subtitleComplete": "પૂર્ણ!",
+  "subtitleProgress": "મેચ આઇટમ્સ ({{matched}}/{{total}} મેળ ખાતી)",
+  "scoreLabel": "સ્કોર:",
+  "items": [
+    {
+      "id": 1,
+      "name": "બચત ખાતું",
+      "emoji": "💰"
+    },
+    {
+      "id": 2,
+      "name": "Loan",
+      "emoji": "📝"
+    },
+    {
+      "id": 3,
+      "name": "ATM",
+      "emoji": "🏧"
+    },
+    {
+      "id": 4,
+      "name": "Interest",
+      "emoji": "📈"
+    },
+    {
+      "id": 5,
+      "name": "નાણાકીય શિક્ષણ",
+      "emoji": "📚"
+    }
+  ],
+  "itemsTitle": "Items",
+  "categoriesTitle": "Categories",
+  "matchedLabel": "મેળ ખાતી:",
+  "selectItem": "એક આઇટમ પસંદ કરો",
+  "matchButton": "Match"
+}

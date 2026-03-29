@@ -1,1 +1,128 @@
-﻿{}
+{
+  "title": "बँकांवरील प्रश्नमंजुषा",
+  "subtitleComplete": "पूर्ण!",
+  "subtitleProgress": "{{total}} पैकी {{current}} प्रश्न",
+  "scoreLabel": "स्कोअर: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "बँक म्हणजे काय?",
+      "options": [
+        {
+          "id": "toy",
+          "text": "खेळण्यांचे दुकान",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "safe",
+          "text": "पैसे सुरक्षित ठेवण्याचे ठिकाण",
+          "emoji": "🏦",
+          "isCorrect": true
+        },
+        {
+          "id": "icecream",
+          "text": "आईस्क्रीमचे दुकान",
+          "emoji": "🍦",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "बँकेचे बचत खाते काय करते?",
+      "options": [
+        {
+          "id": "toys",
+          "text": "तुला खेळणी देतो",
+          "emoji": "🧸",
+          "isCorrect": false
+        },
+        {
+          "id": "food",
+          "text": "अन्न विकतो",
+          "emoji": "🍕",
+          "isCorrect": false
+        },
+        {
+          "id": "grows",
+          "text": "तुमचा पैसा वाढतो",
+          "emoji": "📈",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "बँकेच्या एटीएममध्ये तुम्ही काय करू शकता?",
+      "options": [
+        {
+          "id": "clothes",
+          "text": "कपडे खरेदी करा",
+          "emoji": "👕",
+          "isCorrect": false
+        },
+        {
+          "id": "withdraw",
+          "text": "पैसे काढा",
+          "emoji": "💰",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "खेळ खेळा",
+          "emoji": "🎮",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "बँका कर्ज का देतात?",
+      "options": [
+        {
+          "id": "borrow",
+          "text": "तुम्हाला पैसे उधार घेण्यात मदत करण्यासाठी",
+          "emoji": "💳",
+          "isCorrect": true
+        },
+        {
+          "id": "free",
+          "text": "फुकट पैसे देण्यासाठी",
+          "emoji": "🎁",
+          "isCorrect": false
+        },
+        {
+          "id": "toys",
+          "text": "खेळणी विकायची",
+          "emoji": "🧸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "बँका पैशासाठी सुरक्षित का आहेत?",
+      "options": [
+        {
+          "id": "candy",
+          "text": "ते तुम्हाला मिठाई देतात",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "ते पैसे लपवतात",
+          "emoji": "🫥",
+          "isCorrect": false
+        },
+        {
+          "id": "protect",
+          "text": "ते तुमच्या बचतीचे रक्षण करतात",
+          "emoji": "🛡️",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

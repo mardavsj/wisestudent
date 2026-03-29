@@ -1,1 +1,134 @@
-﻿{}
+{
+  "title": "اسکالرشپ کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "perfectScoreMsg": "آپ نے {{total}} میں سے {{score}} کو درست کیا! آپ ایپلی کیشنز میں ایمانداری کی اہمیت کو سمجھتے ہیں!",
+  "lowScoreMsg": "آپ نے {{total}} میں سے {{score}} کو درست کیا ہے۔ یاد رکھیں، دیانت داری اسکالرشپ کے لیے بہترین پالیسی ہے!",
+  "lessonLabel": "سبق: اسکالرشپ اور دیگر مواقع کے لیے درخواست دیتے وقت ایمانداری اور دیانت داری بہت ضروری ہے۔",
+  "tryAgain": "دوبارہ کوشش کریں۔",
+  "tipLabel": "ٹپ: اعتماد پیدا کرنے کے لیے ہمیشہ اپنی اسکالرشپ کی درخواستوں پر درست اور سچی معلومات فراہم کریں۔",
+  "coinsLabel": "+{{count}} سکے",
+  "questions": [
+    {
+      "id": 1,
+      "text": "ایک طالب علم اضافی اسکالرشپ حاصل کرنے کے لیے جھوٹ بولتا ہے۔ صحیح عمل کیا ہے؟",
+      "options": [
+        {
+          "id": "lie",
+          "text": "پیسے حاصل کرنے کے لیے جھوٹ بولتے ہیں۔",
+          "emoji": "😈",
+          "isCorrect": false
+        },
+        {
+          "id": "truthful",
+          "text": "سچے بنو",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "maybe",
+          "text": "شاید، اگر ضرورت ہو",
+          "emoji": "🤔",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "اگر آپ اسکالرشپ کی درخواست پر جھوٹ بولتے ہیں تو کیا ہوتا ہے؟",
+      "options": [
+        {
+          "id": "get-money",
+          "text": "زیادہ پیسے حاصل کریں۔",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "lose-opportunity",
+          "text": "موقع اور اعتماد کھو دیں۔",
+          "emoji": "🚫",
+          "isCorrect": true
+        },
+        {
+          "id": "nothing",
+          "text": "کچھ نہیں ہوتا",
+          "emoji": "😊",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "درخواستوں میں ایمانداری کیوں ضروری ہے؟",
+      "options": [
+        {
+          "id": "builds-trust",
+          "text": "اعتماد اور دیانت پیدا کرتا ہے۔",
+          "emoji": "🤝",
+          "isCorrect": true
+        },
+        {
+          "id": "not-important",
+          "text": "اہم نہیں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        },
+        {
+          "id": "waste-time",
+          "text": "وقت ضائع کرتا ہے۔",
+          "emoji": "⏳",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "اگر آپ کسی درخواست میں غلطی کرتے ہیں تو آپ کو کیا کرنا چاہیے؟",
+      "options": [
+        {
+          "id": "hide-mistake",
+          "text": "غلطی چھپائیں۔",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "correct-it",
+          "text": "ایمانداری سے درست کریں۔",
+          "emoji": "✏️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "اسے نظر انداز کریں۔",
+          "emoji": "😴",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "اسکالرشپ کے لیے بہترین طریقہ کیا ہے؟",
+      "options": [
+        {
+          "id": "honest-application",
+          "text": "ایماندار اور مکمل درخواست",
+          "emoji": "📝",
+          "isCorrect": true
+        },
+        {
+          "id": "exaggerate",
+          "text": "کامیابیوں کو بڑھا چڑھا کر پیش کریں۔",
+          "emoji": "📈",
+          "isCorrect": false
+        },
+        {
+          "id": "copy-others",
+          "text": "دوسروں سے کاپی کریں۔",
+          "emoji": "📋",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

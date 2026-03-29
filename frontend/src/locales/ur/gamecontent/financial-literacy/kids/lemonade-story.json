@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "لیمونیڈ کی کہانی",
+  "subtitleComplete": "کہانی مکمل!",
+  "subtitleProgress": "سوال {{current}} از {{total}}",
+  "questionCounter": "سوال {{current}}/{{total}}",
+  "scoreLabel": "اسکور: {{score}}/{{total}}",
+  "stageEmoji": "🍋",
+  "questions": [
+    {
+      "id": 1,
+      "text": "آپ لیمونیڈ اسٹینڈ سے ₹50 کماتے ہیں۔ ہوشیار انتخاب کیا ہے؟",
+      "options": [
+        {
+          "id": "toys",
+          "text": "کھلونوں پر سارا خرچ کریں۔",
+          "emoji": "🧸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "نمکین خریدیں۔",
+          "emoji": "🍟",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "سپلائی کے لیے نصف بچت کریں۔",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "آپ کو لیموں کے لیے 20 روپے درکار ہیں۔ آپ کے پاس ₹15 ہیں۔ آپ کیا کرتے ہیں؟",
+      "options": [
+        {
+          "id": "save",
+          "text": "مزید ₹5 کی بچت کریں۔",
+          "emoji": "🙂",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "borrow",
+          "text": "₹5 ادھار لیں۔",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "skip",
+          "text": "لیموں خریدنا چھوڑ دیں۔",
+          "emoji": "🍋",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "ایک صارف ₹5 کے بجائے ₹10 ادا کرتا ہے۔ ایماندار کیا ہے؟",
+      "options": [
+        {
+          "id": "keep",
+          "text": "10 روپے رکھیں",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "اضافی ₹5 واپس کریں۔",
+          "emoji": "🤝",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "candy",
+          "text": "اسے کینڈی پر خرچ کریں۔",
+          "emoji": "🍬",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "آپ ₹30 کماتے ہیں۔ کیا آج آپ کو یہ سب خرچ کرنا چاہئے؟",
+      "options": [
+        {
+          "id": "no",
+          "text": "نہیں، اگلے اسٹینڈ کے لیے محفوظ کریں۔",
+          "emoji": "🙅",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "games",
+          "text": "ہاں، کھیل خریدیں۔",
+          "emoji": "🎮",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "give",
+          "text": "دے دو",
+          "emoji": "🎁",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "آپ کی لیمونیڈ اسٹینڈ کی کمائی کی منصوبہ بندی کیوں ہوشیار ہے؟",
+      "options": [
+        {
+          "id": "spend",
+          "text": "آپ کو زیادہ خرچ کرنے دیتا ہے۔",
+          "emoji": "🛍️",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "running",
+          "text": "آپ کا موقف چلتا رہتا ہے۔",
+          "emoji": "☀️",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "customers",
+          "text": "آپ کو مزید گاہک ملتا ہے۔",
+          "emoji": "👥",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

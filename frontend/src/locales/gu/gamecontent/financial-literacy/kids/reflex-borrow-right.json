@@ -1,1 +1,150 @@
-﻿{}
+{
+  "title": "રીફ્લેક્સ ઉધાર અધિકાર",
+  "subtitlePlaying": "{{total}} માંથી {{current}} પ્રશ્ન: તમારા ઉધાર પ્રતિબિંબનું પરીક્ષણ કરો!",
+  "subtitleReady": "તમારા ઉધાર પ્રતિબિંબનું પરીક્ષણ કરો!",
+  "readyEmoji": "🤝",
+  "readyTitle": "ઉધાર અધિકાર વિશે જાણવા માટે તૈયાર છો?",
+  "readyDescription": "વસ્તુઓ અથવા પૈસા ઉધાર લેતી વખતે યોગ્ય પગલાં પસંદ કરો.",
+  "readyInfo": "તમારી પાસે દરેકમાં {{seconds}} સેકન્ડના {{total}} પ્રશ્નો છે!",
+  "startButton": "રમત શરૂ કરો",
+  "roundLabel": "પ્રશ્ન:",
+  "timeLabel": "સમય:",
+  "scoreLabel": "સ્કોર:",
+  "questions": [
+    {
+      "id": 1,
+      "question": "કંઈક ઉધાર લેતા પહેલા તમારે શું કરવું જોઈએ?",
+      "correctAnswer": "પરવાનગી પૂછો",
+      "options": [
+        {
+          "text": "તેને પકડો",
+          "isCorrect": false,
+          "emoji": "🤏"
+        },
+        {
+          "text": "પૂછ્યા વગર લઈ લો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "પરવાનગી પૂછો",
+          "isCorrect": true,
+          "emoji": "🙋"
+        },
+        {
+          "text": "માલિકને અવગણો",
+          "isCorrect": false,
+          "emoji": "😴"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "તમારે કંઈક ઉધાર કેવી રીતે લેવું જોઈએ?",
+      "correctAnswer": "નમ્રતાપૂર્વક ઉધાર લો",
+      "options": [
+        {
+          "text": "નમ્રતાપૂર્વક ઉધાર લો",
+          "isCorrect": true,
+          "emoji": "🤝"
+        },
+        {
+          "text": "બળપૂર્વક લો",
+          "isCorrect": false,
+          "emoji": "💪"
+        },
+        {
+          "text": "ઝડપથી પકડો",
+          "isCorrect": false,
+          "emoji": "⚡"
+        },
+        {
+          "text": "તે ચોરી",
+          "isCorrect": false,
+          "emoji": "😈"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "તમારે ઉધાર લીધેલી વસ્તુ સાથે શું કરવું જોઈએ?",
+      "correctAnswer": "આઇટમ પરત કરો",
+      "options": [
+        {
+          "text": "રાખો",
+          "isCorrect": false,
+          "emoji": "🙈"
+        },
+        {
+          "text": "તેને છુપાવો",
+          "isCorrect": false,
+          "emoji": "🫥"
+        },
+        {
+          "text": "તે વિશે ભૂલી જાઓ",
+          "isCorrect": false,
+          "emoji": "😴"
+        },
+        {
+          "text": "આઇટમ પરત કરો",
+          "isCorrect": true,
+          "emoji": "↩️"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "તમારે લોન સાથે શું કરવું જોઈએ?",
+      "correctAnswer": "લોન ચૂકવો",
+      "options": [
+        {
+          "text": "ચુકવણી અવગણો",
+          "isCorrect": false,
+          "emoji": "🚫"
+        },
+        {
+          "text": "લોન ચૂકવો",
+          "isCorrect": true,
+          "emoji": "💰"
+        },
+        {
+          "text": "તેને ટાળો",
+          "isCorrect": false,
+          "emoji": "🏃"
+        },
+        {
+          "text": "ભૂલી જાવ",
+          "isCorrect": false,
+          "emoji": "🤷"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "તમારે ઉધાર કેવી રીતે હેન્ડલ કરવું જોઈએ?",
+      "correctAnswer": "પ્રમાણિક બનો",
+      "options": [
+        {
+          "text": "પ્રમાણિક બનો",
+          "isCorrect": true,
+          "emoji": "✅"
+        },
+        {
+          "text": "તે વિશે જૂઠું બોલો",
+          "isCorrect": false,
+          "emoji": "🤥"
+        },
+        {
+          "text": "Cheat",
+          "isCorrect": false,
+          "emoji": "🎭"
+        },
+        {
+          "text": "Pretend",
+          "isCorrect": false,
+          "emoji": "😏"
+        }
+      ]
+    }
+  ]
+}

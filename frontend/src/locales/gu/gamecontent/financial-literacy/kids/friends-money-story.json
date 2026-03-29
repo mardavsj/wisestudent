@@ -1,1 +1,129 @@
-﻿{}
+{
+  "title": "મિત્રો મની સ્ટોરી",
+  "subtitleComplete": "વાર્તા પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "questionLabel": "પ્રશ્ન {{current}}/{{total}}",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "questions": [
+    {
+      "id": 1,
+      "text": "તમારો મિત્ર રમકડા માટે પૈસા બચાવે છે. તેઓ સલાહ માટે પૂછે છે. તમે શું સૂચવો છો?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "તમારા બધા પૈસા એકસાથે ખર્ચો",
+          "emoji": "💸",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "તેમની વિનંતીને અવગણો",
+          "emoji": "🙈",
+          "isCorrect": false
+        },
+        {
+          "id": "save",
+          "text": "તેમની બચતની યોજના બનાવવામાં મદદ કરો",
+          "emoji": "📋",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "તમારો મિત્ર નાસ્તો ખરીદવા માંગે છે પરંતુ તેની પાસે પૈસા નથી. તમે જવાબદારીપૂર્વક કેવી રીતે મદદ કરી શકો?",
+      "options": [
+        {
+          "id": "share",
+          "text": "નાના ફેરફાર શેર કરો અને બચત શીખવો",
+          "emoji": "🪙",
+          "isCorrect": true
+        },
+        {
+          "id": "lend",
+          "text": "તમારા બધા પૈસા આપો",
+          "emoji": "💰",
+          "isCorrect": false
+        },
+        {
+          "id": "buy",
+          "text": "દરરોજ તેમના માટે નાસ્તો ખરીદો",
+          "emoji": "🍿",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "તમે અને મિત્રને રમતના મેદાન પર સિક્કા મળ્યા. વાજબી શું છે?",
+      "options": [
+        {
+          "id": "take",
+          "text": "બધું તમારા માટે રાખો",
+          "emoji": "🤑",
+          "isCorrect": false
+        },
+        {
+          "id": "split",
+          "text": "પૈસા સમાન રીતે વહેંચો",
+          "emoji": "⚖️",
+          "isCorrect": true
+        },
+        {
+          "id": "ignore",
+          "text": "ત્યાં સિક્કા છોડી દો",
+          "emoji": "🍂",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "તમારો મિત્ર પ્રોજેક્ટ માટે પૈસા ઉધાર લેવાનું કહે છે. તમારી પાસે માત્ર થોડી છે. જ્ઞાની શું છે?",
+      "options": [
+        {
+          "id": "share_part",
+          "text": "એક નાનો ભાગ ઉછીના આપો અને તમારી મર્યાદા સમજાવો",
+          "emoji": "🤲",
+          "isCorrect": true
+        },
+        {
+          "id": "refuse",
+          "text": "અસંસ્કારી રીતે ના બોલો",
+          "emoji": "😠",
+          "isCorrect": false
+        },
+        {
+          "id": "give_all",
+          "text": "તમારા બધા પૈસા આપો",
+          "emoji": "💸",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "મિત્રો સાથે પ્રમાણિકતાથી પૈસાનું સંચાલન શા માટે મહત્વનું છે?",
+      "options": [
+        {
+          "id": "fun",
+          "text": "તે રમતોને વધુ મનોરંજક બનાવે છે",
+          "emoji": "🎲",
+          "isCorrect": false
+        },
+        {
+          "id": "snacks",
+          "text": "તે વધુ નાસ્તો મેળવવામાં મદદ કરે છે",
+          "emoji": "🍬",
+          "isCorrect": false
+        },
+        {
+          "id": "trust",
+          "text": "તે વિશ્વાસ અને આદર બનાવે છે",
+          "emoji": "🤝",
+          "isCorrect": true
+        }
+      ]
+    }
+  ]
+}

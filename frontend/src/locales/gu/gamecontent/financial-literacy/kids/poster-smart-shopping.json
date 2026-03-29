@@ -1,1 +1,108 @@
-﻿{}
+{
+  "title": "પોસ્ટર: સ્માર્ટ શોપિંગ",
+  "subtitleComplete": "પ્રવૃત્તિ પૂર્ણ!",
+  "subtitleProgress": "{{total}} માંથી {{current}} પ્રશ્ન",
+  "scoreLabel": "સ્કોર: {{score}}/{{total}}",
+  "stages": [
+    {
+      "question": "સ્માર્ટ શોપિંગ માટે શ્રેષ્ઠ પોસ્ટર પસંદ કરો:",
+      "choices": [
+        {
+          "text": "તમે ઇચ્છો તે બધું ખર્ચ કરો",
+          "design": "💸",
+          "correct": false
+        },
+        {
+          "text": "તમે ખર્ચ કરો તે પહેલાં વિચારો",
+          "design": "🧠",
+          "correct": true
+        },
+        {
+          "text": "હવે બધું ખરીદો",
+          "design": "🛒",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "કયું પોસ્ટર સ્માર્ટ શોપિંગ ટેવને પ્રોત્સાહન આપે છે?",
+      "choices": [
+        {
+          "text": "શોપિંગ લિસ્ટ બનાવો",
+          "design": "📝",
+          "correct": true
+        },
+        {
+          "text": "વિચાર્યા વગર ખરીદો",
+          "design": "🤦",
+          "correct": false
+        },
+        {
+          "text": "તરત જ ખર્ચ કરો",
+          "design": "⚡",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "શ્રેષ્ઠ શોપિંગ પોસ્ટર પસંદ કરો:",
+      "choices": [
+        {
+          "text": "પહેલા ખરીદો, પછીથી વિચારો",
+          "design": "🛍️",
+          "correct": false
+        },
+        {
+          "text": "યોજના વિના ખર્ચ કરો",
+          "design": "🙈",
+          "correct": false
+        },
+        {
+          "text": "કિંમતોની સરખામણી કરો",
+          "design": "⚖️",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "question": "સ્માર્ટ શોપિંગ પોસ્ટર પસંદ કરો:",
+      "choices": [
+        {
+          "text": "વેચાણ પર શું છે તે ખરીદો",
+          "design": "🏷️",
+          "correct": true
+        },
+        {
+          "text": "હંમેશા સંપૂર્ણ કિંમત ચૂકવો",
+          "design": "💰",
+          "correct": false
+        },
+        {
+          "text": "પૈસા ક્યારેય બચાવશો નહીં",
+          "design": "🚫",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "question": "સ્માર્ટ શોપિંગ માટે શ્રેષ્ઠ પોસ્ટર કયું છે?",
+      "choices": [
+        {
+          "text": "ઇમ્પલ્સ બધું ખરીદો",
+          "design": "💥",
+          "correct": false
+        },
+        {
+          "text": "બજેટ વિના ખર્ચ કરો",
+          "design": "📉",
+          "correct": false
+        },
+        {
+          "text": "આગળની ખરીદીની યોજના બનાવો",
+          "design": "🧾",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}

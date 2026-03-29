@@ -1,1 +1,145 @@
-﻿{}
+{
+  "title": "മരത്തിൻ്റെ കഥ",
+  "subtitleComplete": "കഥ പൂർത്തിയായി!",
+  "subtitleProgress": "ചോദ്യം {{current}} of {{total}}",
+  "questionCounter": "ചോദ്യം {{current}}/{{total}}",
+  "scoreLabel": "സ്കോർ: {{score}}/{{total}}",
+  "stageEmoji": "🌳",
+  "questions": [
+    {
+      "id": 1,
+      "text": "നിങ്ങൾ ഇന്ന് ഒരു ചെറിയ മരം നടുക. കാലക്രമേണ ശക്തമായി വളരാൻ സഹായിക്കുന്നതെന്താണ്?",
+      "options": [
+        {
+          "id": "care",
+          "text": "പതിവായി വെള്ളവും പരിചരണവും",
+          "emoji": "💧",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "rush",
+          "text": "വേഗത്തിൽ വളരാൻ അത് വലിക്കുക",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "ignore",
+          "text": "അത് ഉപേക്ഷിക്കുക, മറക്കുക",
+          "emoji": "😴",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "പണം ഒരു മരം പോലെയാണ്. അതിനെ സാവധാനത്തിലും സുരക്ഷിതമായും വളരുന്നത് എന്താണ്?",
+      "options": [
+        {
+          "id": "spend",
+          "text": "എല്ലാം വേഗത്തിൽ ചെലവഴിക്കുന്നു",
+          "emoji": "💸",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "hide",
+          "text": "അത് മറയ്ക്കുകയും ഒരിക്കലും ഉപയോഗിക്കാതിരിക്കുകയും ചെയ്യുക",
+          "emoji": "🙈",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "plan",
+          "text": "കാലക്രമേണ വിവേകത്തോടെ ഉപയോഗിക്കുകയും സംരക്ഷിക്കുകയും ചെയ്യുക",
+          "emoji": "📊",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "text": "നിങ്ങൾക്ക് അധിക പോക്കറ്റ് മണി ലഭിക്കും. സ്മാർട്ട് ട്രീ-സ്റ്റൈൽ ചോയ്സ് എന്താണ്?",
+      "options": [
+        {
+          "id": "waste",
+          "text": "ചിന്തിക്കാതെ ചെലവഴിക്കുക",
+          "emoji": "🔥",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "grow",
+          "text": "ഭാഗം സംരക്ഷിക്കുക, അങ്ങനെ അത് പിന്നീട് വളരും",
+          "emoji": "🌱",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "lose",
+          "text": "അശ്രദ്ധമായി സൂക്ഷിക്കുക",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "text": "ഒരു ഫലവൃക്ഷം എല്ലാ വർഷവും ഫലം നൽകുന്നു. പണത്തെക്കുറിച്ച് ഇത് എന്താണ് പഠിപ്പിക്കുന്നത്?",
+      "options": [
+        {
+          "id": "fast",
+          "text": "പണം ഒരു തവണ മാത്രമേ ഉപയോഗിക്കാവൂ",
+          "emoji": "⚡",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "luck",
+          "text": "ഭാഗ്യം മാത്രമാണ് പ്രധാനം",
+          "emoji": "🍀",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "return",
+          "text": "നല്ല തിരഞ്ഞെടുപ്പുകൾ ആവർത്തിച്ചുള്ള പ്രതിഫലം നൽകുന്നു",
+          "emoji": "🍎",
+          "description": "",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "നിങ്ങൾ വളരെ നേരത്തെ ഒരു മരം മുറിച്ചാൽ, എന്ത് സംഭവിക്കും?",
+      "options": [
+        {
+          "id": "loss",
+          "text": "നിങ്ങൾക്ക് ഭാവിയിലെ നേട്ടങ്ങൾ നഷ്ടപ്പെടും",
+          "emoji": "📉",
+          "description": "",
+          "isCorrect": true
+        },
+        {
+          "id": "gain",
+          "text": "നിങ്ങൾ എപ്പോഴും കൂടുതൽ നേടുന്നു",
+          "emoji": "💰",
+          "description": "",
+          "isCorrect": false
+        },
+        {
+          "id": "nothing",
+          "text": "ഒന്നും മാറുന്നില്ല",
+          "emoji": "😐",
+          "description": "",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}
