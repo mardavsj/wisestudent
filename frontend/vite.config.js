@@ -23,9 +23,9 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("node_modules")) {
-            if (id.includes("react/") || id.includes("react-dom/") || id.includes("scheduler")) {
-              return "vendor-react";
-            }
+            // Do not split React into its own chunk: shared modules can create a
+            // vendor-react <-> vendor circular dependency, leaving React undefined
+            // at runtime (Cannot read properties of undefined (reading 'createContext')).
             if (
               id.includes("chart.js") ||
               id.includes("react-chartjs-2") ||
@@ -43,9 +43,8 @@ export default defineConfig({
             if (id.includes("framer-motion") || id.includes("animejs")) {
               return "vendor-motion";
             }
-            if (id.includes("react-router-dom") || id.includes("@remix-run/router")) {
-              return "vendor-router";
-            }
+            // Keep react-router in the main vendor chunk — a separate "vendor-router"
+            // chunk was often empty (~0 kB) while the router code lived in vendor/main.
             return "vendor";
           }
 
