@@ -94,26 +94,24 @@ if (import.meta.env.DEV && !googleClientId) {
   console.log(`📝 Ensure ${currentOrigin} is added to Authorized JavaScript origins in Google Cloud Console`);
 }
 
-const renderApp = async () => {
-  await initI18n;
+initI18n.catch((error) => {
+  console.error("i18n initialization failed:", error);
+});
 
-  ReactDOM.createRoot(document.getElementById("root")).render(
-    <BrowserRouter>
-      <GoogleOAuthProvider clientId={googleClientId}>
-        <AuthProvider>
-          <WalletProvider>
-            <NotificationProvider>
-              <SocketProvider>
-                <SubscriptionProvider>
-                  <App />
-                </SubscriptionProvider>
-              </SocketProvider>
-            </NotificationProvider>
-          </WalletProvider>
-        </AuthProvider>
-      </GoogleOAuthProvider>
-    </BrowserRouter>
-  );
-};
-
-renderApp();
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <BrowserRouter>
+    <GoogleOAuthProvider clientId={googleClientId}>
+      <AuthProvider>
+        <WalletProvider>
+          <NotificationProvider>
+            <SocketProvider>
+              <SubscriptionProvider>
+                <App />
+              </SubscriptionProvider>
+            </SocketProvider>
+          </NotificationProvider>
+        </WalletProvider>
+      </AuthProvider>
+    </GoogleOAuthProvider>
+  </BrowserRouter>
+);

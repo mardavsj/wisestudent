@@ -218,6 +218,16 @@ export const fetchComplianceDashboard = async () => {
   }
 };
 
+export const fetchStudentProgress = async (studentId) => {
+  try {
+    const response = await api.get(`/api/admin/students/${studentId}/progress`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching student progress:', error);
+    throw error;
+  }
+};
+
 export const processDeletionRequest = async (requestData) => {
   try {
     const response = await api.post('/api/admin/process-deletion', requestData);

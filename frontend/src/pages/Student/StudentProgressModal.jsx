@@ -10,7 +10,7 @@ const StudentProgressModal = ({ studentId, onClose }) => {
         const loadProgress = async () => {
             try {
                 const res = await fetchStudentProgress(studentId);
-                setProgress(res.data);
+                setProgress(res?.data ?? res);
             } catch (err) {
                 console.error("Failed to fetch student progress:", err);
             } finally {
