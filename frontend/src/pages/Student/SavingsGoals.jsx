@@ -8,13 +8,18 @@ import {
   AlertCircle, CheckCircle2, Info, Play, Pause, RotateCcw
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../hooks/useAuth';
+import LanguageSelector from '../../components/LanguageSelector';
 import { fetchSavingsGoals, saveSavingsGoals, deleteSavingsGoal } from '../../services/studentService';
 import { logActivity } from '../../services/activityService';
 import { toast } from 'react-hot-toast';
 
 const SavingsGoals = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation('tools');
+  const tt = (key, defaultValue, options = {}) =>
+    t(`financial-literacy.savings-goals.${key}`, { defaultValue, ...options });
   const { user } = useAuth();
   const [goals, setGoals] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -137,7 +142,7 @@ const SavingsGoals = () => {
         });
       } catch (error) {
         console.error('Error loading savings goals:', error);
-        toast.error('Failed to load savings goals');
+        toast.error(tt('toasts.loadFailed', 'Failed to load savings goals'));
       } finally {
         setLoading(false);
       }
@@ -257,13 +262,13 @@ const SavingsGoals = () => {
   // Handle add/edit goal
   const handleSaveGoal = async () => {
     if (!newGoal.name || !newGoal.targetAmount || !newGoal.deadline) {
-      toast.error('Please fill in all required fields');
+      toast.error(tt('toasts.requiredFields', 'Please fill in all required fields'));
       return;
     }
 
     const targetAmount = parseFloat(newGoal.targetAmount);
     if (isNaN(targetAmount) || targetAmount < config.minAmount || targetAmount > config.maxAmount) {
-      toast.error(`Amount must be between $${config.minAmount} and $${config.maxAmount}`);
+      toast.error(tt('toasts.amountRange', 'Amount must be between ${{min}} and ${{max}}', { min: config.minAmount, max: config.maxAmount }));
       return;
     }
 
@@ -282,7 +287,7 @@ const SavingsGoals = () => {
         updatedGoals = goals.map((goal) =>
           goal._id === editingGoalId ? { ...goal, ...goalData, _id: goal._id } : goal
         );
-        toast.success('Goal updated successfully!');
+        toast.success(tt('toasts.goalUpdated', 'Goal updated successfully!'));
         logActivity({
           activityType: 'financial_action',
           description: 'Updated savings goal',
@@ -299,7 +304,7 @@ const SavingsGoals = () => {
       } else {
         const newId = `goal_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
         updatedGoals = [...goals, { ...goalData, _id: newId }];
-        toast.success('New goal created successfully! 🎉');
+        toast.success(tt('toasts.goalCreated', 'New goal created successfully! 🎉'));
         logActivity({
           activityType: 'financial_action',
           description: 'Created new savings goal',
@@ -320,7 +325,7 @@ const SavingsGoals = () => {
       resetForm();
     } catch (error) {
       console.error('Error saving goal:', error);
-      toast.error('Failed to save goal');
+      toast.error(tt('toasts.saveFailed', 'Failed to save goal'));
     }
   };
 
@@ -363,7 +368,7 @@ const SavingsGoals = () => {
       await deleteSavingsGoal(id);
       setGoals(goals.filter((goal) => goal._id !== id));
       setHasUnsavedChanges(true);
-      toast.success('Goal deleted successfully');
+      toast.success(tt('toasts.goalDeleted', 'Goal deleted successfully'));
       
       const deletedGoal = goals.find((goal) => goal._id === id);
       if (deletedGoal) {
@@ -381,19 +386,19 @@ const SavingsGoals = () => {
       }
     } catch (error) {
       console.error('Error deleting goal:', error);
-      toast.error('Failed to delete goal');
+      toast.error(tt('toasts.deleteFailed', 'Failed to delete goal'));
     }
   };
 
   const handleContribute = async () => {
     if (!selectedGoal || !contributionAmount) {
-      toast.error('Please enter a contribution amount');
+      toast.error(tt('toasts.contributionRequired', 'Please enter a contribution amount'));
       return;
     }
 
     const amount = parseFloat(contributionAmount);
     if (isNaN(amount) || amount <= 0) {
-      toast.error('Please enter a valid amount');
+      toast.error(tt('toasts.validAmount', 'Please enter a valid amount'));
       return;
     }
 
@@ -419,17 +424,17 @@ const SavingsGoals = () => {
           
           // Check for milestones
           if (progress >= 100 && (goal.currentAmount || 0) < goal.targetAmount) {
-            toast.success(`🎉 Congratulations! You've reached your goal: ${goal.name}!`, {
+            toast.success(tt('toasts.goalReached', `🎉 Congratulations! You've reached your goal: {{goalName}}!`, { goalName: goal.name }), {
               duration: 5000,
               icon: '🏆',
             });
           } else if (progress >= 75 && (goal.currentAmount || 0) < goal.targetAmount * 0.75) {
-            toast.success(`🌟 Great progress! You're 75% there!`, {
+            toast.success(tt('toasts.progress75', `🌟 Great progress! You're 75% there!`), {
               duration: 3000,
               icon: '⭐',
             });
           } else if (progress >= 50 && (goal.currentAmount || 0) < goal.targetAmount * 0.5) {
-            toast.success(`💪 Halfway there! Keep it up!`, {
+            toast.success(tt('toasts.progress50', `💪 Halfway there! Keep it up!`), {
               duration: 3000,
               icon: '🎯',
             });
@@ -452,7 +457,7 @@ const SavingsGoals = () => {
       setContributionNote('');
       setSelectedGoal(null);
       
-      toast.success(`Added $${amount.toFixed(2)} to ${goalToUpdate.name}! 💰`);
+      toast.success(tt('toasts.contributionAdded', `Added ${{amount}} to {{goalName}}! 💰`, { amount: amount.toFixed(2), goalName: goalToUpdate.name }));
 
       logActivity({
         activityType: 'financial_action',
@@ -470,7 +475,7 @@ const SavingsGoals = () => {
       });
     } catch (error) {
       console.error('Error adding contribution:', error);
-      toast.error('Failed to add contribution');
+      toast.error(tt('toasts.contributionFailed', 'Failed to add contribution'));
     }
   };
 
@@ -517,7 +522,7 @@ const SavingsGoals = () => {
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
             className="w-16 h-16 border-4 border-yellow-500 border-t-transparent rounded-full mx-auto mb-4"
           />
-          <p className="text-gray-600">Loading your savings goals...</p>
+          <p className="text-gray-600">{tt('loading', 'Loading your savings goals...')}</p>
         </div>
       </div>
     );
@@ -532,13 +537,16 @@ const SavingsGoals = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <button
-            onClick={() => navigate('/student/dashboard/financial-literacy')}
-            className="flex items-center text-yellow-600 hover:text-yellow-800 transition-colors mb-4 group"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Back to Financial Literacy
-          </button>
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <button
+              onClick={() => navigate('/student/dashboard/financial-literacy')}
+              className="flex items-center text-yellow-600 hover:text-yellow-800 transition-colors group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              {tt('backButton', 'Back to Financial Literacy')}
+            </button>
+            <LanguageSelector />
+          </div>
           
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
@@ -548,7 +556,7 @@ const SavingsGoals = () => {
                 'text-gray-900'
               }`}>
                 {ageGroup === 'kids' && '🎯 '}
-                Savings Goals
+                {tt('title', 'Savings Goals')}
                 {ageGroup === 'kids' && ' 🎯'}
               </h1>
               <p className={`text-lg ${
@@ -556,9 +564,9 @@ const SavingsGoals = () => {
                 ageGroup === 'teens' ? 'text-blue-600' :
                 'text-gray-600'
               }`}>
-                {ageGroup === 'kids' && "Save up for things you want! 🎉"}
-                {ageGroup === 'teens' && "Plan, save, and achieve your financial goals"}
-                {ageGroup === 'adults' && "Set and track your savings goals with precision"}
+                {ageGroup === 'kids' && tt('subtitle.kids', 'Save up for things you want! 🎉')}
+                {ageGroup === 'teens' && tt('subtitle.teens', 'Plan, save, and achieve your financial goals')}
+                {ageGroup === 'adults' && tt('subtitle.adults', 'Set and track your savings goals with precision')}
               </p>
             </div>
             
@@ -596,7 +604,7 @@ const SavingsGoals = () => {
                 </span>
               )}
             </div>
-            <p className="text-sm text-gray-500 mb-1">Active Goals</p>
+            <p className="text-sm text-gray-500 mb-1">{tt('stats.activeGoals', 'Active Goals')}</p>
             <p className="text-3xl font-black text-gray-800">{stats.activeGoals}</p>
           </motion.div>
 
@@ -607,7 +615,7 @@ const SavingsGoals = () => {
             <div className="p-3 rounded-xl bg-green-100 mb-2">
               <Coins className="w-6 h-6 text-green-600" />
             </div>
-            <p className="text-sm text-gray-500 mb-1">Total Saved</p>
+            <p className="text-sm text-gray-500 mb-1">{tt('stats.totalSaved', 'Total Saved')}</p>
             <p className="text-3xl font-black text-gray-800">
               ${stats.totalSaved.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
             </p>
@@ -623,7 +631,7 @@ const SavingsGoals = () => {
             <div className="p-3 rounded-xl bg-blue-100 mb-2">
               <TrendingUp className="w-6 h-6 text-blue-600" />
             </div>
-            <p className="text-sm text-gray-500 mb-1">Overall Progress</p>
+            <p className="text-sm text-gray-500 mb-1">{tt('stats.overallProgress', 'Overall Progress')}</p>
             <div className="flex items-center gap-2">
               <p className="text-3xl font-black text-gray-800">{stats.overallProgress}%</p>
               <div className="flex-1 h-3 bg-gray-200 rounded-full overflow-hidden">
@@ -644,7 +652,7 @@ const SavingsGoals = () => {
             <div className="p-3 rounded-xl bg-purple-100 mb-2">
               <BarChart3 className="w-6 h-6 text-purple-600" />
             </div>
-            <p className="text-sm text-gray-500 mb-1">Average Progress</p>
+            <p className="text-sm text-gray-500 mb-1">{tt('stats.averageProgress', 'Average Progress')}</p>
             <p className="text-3xl font-black text-gray-800">{stats.avgProgress}%</p>
             <p className="text-xs text-gray-400 mt-1">{getMotivationalMessage()}</p>
           </motion.div>
@@ -676,12 +684,14 @@ const SavingsGoals = () => {
               {showAddForm ? (
                 <>
                   <X className="w-5 h-5" />
-                  Cancel
+                  {tt('form.cancel', 'Cancel')}
                 </>
               ) : (
                 <>
                   <Plus className="w-5 h-5" />
-                  {ageGroup === 'kids' ? 'New Goal 🎯' : 'Add New Goal'}
+                  {ageGroup === 'kids'
+                    ? tt('actions.newGoalKids', 'New Goal 🎯')
+                    : tt('actions.addNewGoal', 'Add New Goal')}
                 </>
               )}
             </button>
@@ -693,7 +703,7 @@ const SavingsGoals = () => {
                   onChange={(e) => setFilterCategory(e.target.value)}
                   className="px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                 >
-                  <option value="all">All Categories</option>
+                  <option value="all">{tt('filters.allCategories', 'All Categories')}</option>
                   {config.categories.map(cat => (
                     <option key={cat} value={cat}>{cat}</option>
                   ))}
@@ -704,17 +714,19 @@ const SavingsGoals = () => {
                   onChange={(e) => setSortBy(e.target.value)}
                   className="px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent"
                 >
-                  <option value="priority">Sort by Priority</option>
-                  <option value="progress">Sort by Progress</option>
-                  <option value="deadline">Sort by Deadline</option>
-                  <option value="amount">Sort by Amount</option>
+                  <option value="priority">{tt('filters.sortPriority', 'Sort by Priority')}</option>
+                  <option value="progress">{tt('filters.sortProgress', 'Sort by Progress')}</option>
+                  <option value="deadline">{tt('filters.sortDeadline', 'Sort by Deadline')}</option>
+                  <option value="amount">{tt('filters.sortAmount', 'Sort by Amount')}</option>
                 </select>
 
                 <button
                   onClick={() => setViewMode(viewMode === 'grid' ? 'list' : 'grid')}
                   className="p-2 border border-gray-300 rounded-xl hover:bg-gray-50"
                 >
-                  {viewMode === 'grid' ? '📋 List' : '🔲 Grid'}
+                  {viewMode === 'grid'
+                    ? tt('view.list', '📋 List')
+                    : tt('view.grid', '🔲 Grid')}
                 </button>
               </>
             )}
@@ -736,12 +748,12 @@ const SavingsGoals = () => {
                   {editingGoalId ? (
                     <>
                       <Edit2 className="w-6 h-6 text-yellow-600" />
-                      Edit Savings Goal
+                      {tt('form.editTitle', 'Edit Savings Goal')}
                     </>
                   ) : (
                     <>
                       <Plus className="w-6 h-6 text-yellow-600" />
-                      Create New Savings Goal
+                      {tt('form.createTitle', 'Create New Savings Goal')}
                     </>
                   )}
                 </h2>
@@ -749,12 +761,14 @@ const SavingsGoals = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">
-                      Goal Name <span className="text-red-500">*</span>
+                      {tt('form.goalName', 'Goal Name')} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
                       className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
-                      placeholder={ageGroup === 'kids' ? "e.g., New Toy 🧸" : "e.g., New Laptop"}
+                      placeholder={ageGroup === 'kids'
+                        ? tt('form.placeholderGoalKids', 'e.g., New Toy 🧸')
+                        : tt('form.placeholderGoal', 'e.g., New Laptop')}
                       value={newGoal.name}
                       onChange={(e) => setNewGoal({ ...newGoal, name: e.target.value })}
                     />
@@ -762,14 +776,17 @@ const SavingsGoals = () => {
 
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">
-                      Target Amount <span className="text-red-500">*</span>
+                      {tt('form.targetAmount', 'Target Amount')} <span className="text-red-500">*</span>
                     </label>
                     <div className="relative">
                       <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                       <input
                         type="number"
                         className="w-full pl-10 pr-3 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
-                        placeholder={`Min: $${config.minAmount}, Max: $${config.maxAmount.toLocaleString()}`}
+                        placeholder={tt('form.amountRangeHint', 'Min: ${{min}}, Max: ${{max}}', {
+                          min: config.minAmount,
+                          max: config.maxAmount.toLocaleString(),
+                        })}
                         value={newGoal.targetAmount}
                         onChange={(e) => setNewGoal({ ...newGoal, targetAmount: e.target.value })}
                         min={config.minAmount}
@@ -780,7 +797,7 @@ const SavingsGoals = () => {
 
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">
-                      Current Amount
+                      {tt('form.currentAmount', 'Current Amount')}
                     </label>
                     <div className="relative">
                       <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
@@ -797,7 +814,7 @@ const SavingsGoals = () => {
 
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">
-                      Target Date <span className="text-red-500">*</span>
+                      {tt('form.targetDate', 'Target Date')} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="date"
@@ -809,7 +826,7 @@ const SavingsGoals = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Category</label>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">{tt('form.category', 'Category')}</label>
                     <select
                       className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
                       value={newGoal.category}
@@ -832,7 +849,7 @@ const SavingsGoals = () => {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Priority</label>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">{tt('form.priority', 'Priority')}</label>
                     <select
                       className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
                       value={newGoal.priority}
@@ -848,10 +865,10 @@ const SavingsGoals = () => {
 
                   {ageGroup !== 'kids' && (
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-bold text-gray-700 mb-2">Notes</label>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">{tt('form.notes', 'Notes')}</label>
                       <textarea
                         className="w-full p-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all"
-                        placeholder="Additional details about your goal..."
+                        placeholder={tt('form.notesPlaceholder', 'Additional details about your goal...')}
                         rows="3"
                         value={newGoal.notes}
                         onChange={(e) => setNewGoal({ ...newGoal, notes: e.target.value })}
@@ -865,7 +882,7 @@ const SavingsGoals = () => {
                     onClick={resetForm}
                     className="px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300 transition-all"
                   >
-                    Cancel
+                    {tt('form.cancel', 'Cancel')}
                   </button>
                   <button
                     onClick={handleSaveGoal}
@@ -878,7 +895,9 @@ const SavingsGoals = () => {
                     }`}
                   >
                     <Check className="w-5 h-5" />
-                    {editingGoalId ? 'Update Goal' : 'Save Goal'}
+                    {editingGoalId
+                      ? tt('form.updateGoal', 'Update Goal')
+                      : tt('form.saveGoal', 'Save Goal')}
                   </button>
                 </div>
               </div>
@@ -1038,7 +1057,7 @@ const SavingsGoals = () => {
                               const history = goal.contributions.slice(-3).reverse().map(c => 
                                 `$${c.amount} - ${new Date(c.date).toLocaleDateString()}`
                               ).join('\n');
-                              toast.success(`Recent contributions:\n${history}`, { duration: 4000 });
+                              toast.success(tt('toasts.recentContributions', `Recent contributions:\n{{history}}`, { history }), { duration: 4000 });
                             }}
                             className="text-xs text-blue-600 hover:text-blue-800 flex items-center gap-1"
                           >
@@ -1087,7 +1106,7 @@ const SavingsGoals = () => {
                               );
                               setGoals(updatedGoals);
                               setHasUnsavedChanges(true);
-                              toast.success(`Added $${amount}! 💰`);
+                              toast.success(tt('toasts.quickContributionAdded', `Added ${{amount}}! 💰`, { amount }));
                             }}
                             className="px-3 py-2 bg-gray-100 text-gray-700 rounded-xl text-xs font-bold hover:bg-gray-200 transition-all"
                           >
@@ -1121,7 +1140,7 @@ const SavingsGoals = () => {
                 {ageGroup === 'kids' ? '🎯' : '💼'}
               </motion.div>
               <h3 className="text-2xl font-black text-gray-800 mb-2">
-                {ageGroup === 'kids' ? "No Goals Yet!" : "No Savings Goals Yet"}
+                {ageGroup === 'kids' ? tt('empty.kids', 'No Goals Yet!') : tt('empty.default', 'No Savings Goals Yet')}
               </h3>
               <p className="text-gray-600 mb-6">
                 {ageGroup === 'kids' 
@@ -1174,7 +1193,7 @@ const SavingsGoals = () => {
               className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6"
             >
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-2xl font-black text-gray-800">Add Contribution</h3>
+                <h3 className="text-2xl font-black text-gray-800">{tt('contribution.title', 'Add Contribution')}</h3>
                 <button
                   onClick={() => {
                     setShowContributionModal(false);
@@ -1251,7 +1270,7 @@ const SavingsGoals = () => {
                   }}
                   className="flex-1 px-4 py-3 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300 transition-all"
                 >
-                  Cancel
+                  {tt('form.cancel', 'Cancel')}
                 </button>
                 <button
                   onClick={handleContribute}
@@ -1263,7 +1282,7 @@ const SavingsGoals = () => {
                       : 'bg-gradient-to-r from-yellow-500 to-orange-500 text-white hover:from-yellow-600 hover:to-orange-600'
                   }`}
                 >
-                  Add Contribution
+                  {tt('contribution.addButton', 'Add Contribution')}
                 </button>
               </div>
             </motion.div>

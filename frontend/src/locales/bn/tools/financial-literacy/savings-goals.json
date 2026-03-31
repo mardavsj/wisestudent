@@ -1,0 +1,76 @@
+﻿{
+  "loading": "আপনার সেভিংস লক্ষ্য লোড হচ্ছে...",
+  "backButton": "আর্থিক সাক্ষরতায় ফিরে যান",
+  "title": "সেভিংস লক্ষ্য",
+  "subtitle": {
+    "kids": "যা চাই তা কিনতে সেভ করো! 🎉",
+    "teens": "প্ল্যান করো, সেভ করো, লক্ষ্য পূরণ করো",
+    "adults": "নির্ভুলভাবে সেভিংস লক্ষ্য সেট ও ট্র্যাক করুন"
+  },
+  "stats": {
+    "activeGoals": "সক্রিয় লক্ষ্য",
+    "totalSaved": "মোট সেভিংস",
+    "overallProgress": "মোট অগ্রগতি",
+    "averageProgress": "গড় অগ্রগতি"
+  },
+  "filters": {
+    "allCategories": "সব ক্যাটাগরি",
+    "sortPriority": "অগ্রাধিকার অনুযায়ী সাজান",
+    "sortProgress": "অগ্রগতি অনুযায়ী সাজান",
+    "sortDeadline": "সময়সীমা অনুযায়ী সাজান",
+    "sortAmount": "পরিমাণ অনুযায়ী সাজান"
+  },
+  "empty": {
+    "kids": "এখনও কোনো লক্ষ্য নেই!",
+    "default": "এখনও কোনো সেভিংস লক্ষ্য নেই"
+  },
+  "contribution": {
+    "title": "অবদান যোগ করুন",
+    "addButton": "অবদান যোগ করুন"
+  },
+  "toasts": {
+    "loadFailed": "সেভিংস লক্ষ্য লোড করতে ব্যর্থ",
+    "requiredFields": "দয়া করে সব প্রয়োজনীয় ঘর পূরণ করুন",
+    "amountRange": "পরিমাণ ${{min}} এবং ${{max}} এর মধ্যে হতে হবে",
+    "goalUpdated": "লক্ষ্য সফলভাবে আপডেট হয়েছে!",
+    "goalCreated": "নতুন লক্ষ্য সফলভাবে তৈরি হয়েছে! 🎉",
+    "saveFailed": "লক্ষ্য সংরক্ষণ করতে ব্যর্থ",
+    "goalDeleted": "লক্ষ্য সফলভাবে মুছে ফেলা হয়েছে",
+    "deleteFailed": "লক্ষ্য মুছতে ব্যর্থ",
+    "contributionRequired": "দয়া করে অবদানের পরিমাণ লিখুন",
+    "validAmount": "দয়া করে সঠিক পরিমাণ লিখুন",
+    "goalReached": "🎉 অভিনন্দন! আপনি আপনার লক্ষ্য পূরণ করেছেন: {{goalName}}!",
+    "progress75": "🌟 দারুণ অগ্রগতি! আপনি 75% পৌঁছেছেন!",
+    "progress50": "💪 আপনি অর্ধেক পথ এসেছেন! এভাবেই চালিয়ে যান!",
+    "contributionAdded": "${{amount}} {{goalName}}-এ যোগ হয়েছে! 💰",
+    "contributionFailed": "অবদান যোগ করতে ব্যর্থ",
+    "recentContributions": "সাম্প্রতিক অবদান:\n{{history}}",
+    "quickContributionAdded": "${{amount}} যোগ হয়েছে! 💰"
+  },
+  "actions": {
+    "addNewGoal": "নতুন লক্ষ্য যোগ করুন",
+    "newGoalKids": "নতুন লক্ষ্য 🎯"
+  },
+  "view": {
+    "list": "📋 তালিকা",
+    "grid": "🔲 গ্রিড"
+  },
+  "form": {
+    "editTitle": "সেভিংস লক্ষ্য সম্পাদনা করুন",
+    "createTitle": "নতুন সেভিংস লক্ষ্য তৈরি করুন",
+    "goalName": "লক্ষ্যের নাম",
+    "placeholderGoalKids": "যেমন: নতুন খেলনা 🧸",
+    "placeholderGoal": "যেমন: নতুন ল্যাপটপ",
+    "targetAmount": "লক্ষ্য পরিমাণ",
+    "amountRangeHint": "সর্বনিম্ন: ${{min}}, সর্বোচ্চ: ${{max}}",
+    "currentAmount": "বর্তমান পরিমাণ",
+    "targetDate": "লক্ষ্য তারিখ",
+    "category": "ক্যাটাগরি",
+    "priority": "অগ্রাধিকার",
+    "notes": "নোটস",
+    "notesPlaceholder": "আপনার লক্ষ্য সম্পর্কে অতিরিক্ত বিস্তারিত...",
+    "cancel": "বাতিল করুন",
+    "updateGoal": "লক্ষ্য আপডেট করুন",
+    "saveGoal": "লক্ষ্য সেভ করুন"
+  }
+}

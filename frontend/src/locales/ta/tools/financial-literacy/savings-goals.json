@@ -1,0 +1,76 @@
+﻿{
+  "loading": "உங்கள் சேமிப்பு இலக்குகள் லோடாகின்றன...",
+  "backButton": "நிதி அறிவுக்கு திரும்பு",
+  "title": "சேமிப்பு இலக்குகள்",
+  "subtitle": {
+    "kids": "வேண்டியதை வாங்க சேமிச்சுக்கோ! 🎉",
+    "teens": "Plan பண்ணு, save பண்ணு, goal அடை",
+    "adults": "சேமிப்பு இலக்குகளை set செய்து track பண்ணு"
+  },
+  "stats": {
+    "activeGoals": "செயலில் உள்ள இலக்குகள்",
+    "totalSaved": "மொத்த சேமிப்பு",
+    "overallProgress": "மொத்த முன்னேற்றம்",
+    "averageProgress": "சராசரி முன்னேற்றம்"
+  },
+  "filters": {
+    "allCategories": "அனைத்து வகைகள்",
+    "sortPriority": "முன்னுரிமைப்படி வரிசை",
+    "sortProgress": "முன்னேற்றப்படி வரிசை",
+    "sortDeadline": "கடைசி தேதிப்படி வரிசை",
+    "sortAmount": "தொகைப்படி வரிசை"
+  },
+  "empty": {
+    "kids": "இன்னும் இலக்கு இல்லை!",
+    "default": "இன்னும் சேமிப்பு இலக்குகள் இல்லை"
+  },
+  "contribution": {
+    "title": "பங்களிப்பு சேர்க்க",
+    "addButton": "பங்களிப்பு சேர்க்க"
+  },
+  "toasts": {
+    "loadFailed": "சேமிப்பு இலக்குகளை லோடு செய்ய முடியவில்லை",
+    "requiredFields": "தேவையான அனைத்து விவரங்களையும் நிரப்பு",
+    "amountRange": "தொகை ${{min}} மற்றும் ${{max}} க்கு நடுவில் இருக்க வேண்டும்",
+    "goalUpdated": "இலக்கு வெற்றிகரமாக அப்டேட் செய்யப்பட்டது!",
+    "goalCreated": "புதிய இலக்கு வெற்றிகரமாக உருவாக்கப்பட்டது! 🎉",
+    "saveFailed": "இலக்கை சேமிக்க முடியவில்லை",
+    "goalDeleted": "இலக்கு வெற்றிகரமாக நீக்கப்பட்டது",
+    "deleteFailed": "இலக்கை நீக்க முடியவில்லை",
+    "contributionRequired": "பங்களிப்பு தொகையை உள்ளிடு",
+    "validAmount": "சரியான தொகையை உள்ளிடு",
+    "goalReached": "🎉 வாழ்த்துகள்! நீ உன் இலக்கை அடைந்துட்டா: {{goalName}}!",
+    "progress75": "🌟 சூப்பர் முன்னேற்றம்! நீ 75% அடைந்துட்டா!",
+    "progress50": "💪 பாதி தூரம் முடிச்சுட்டா! இப்படியே போ!",
+    "contributionAdded": "${{amount}} {{goalName}} க்கு சேர்க்கப்பட்டது! 💰",
+    "contributionFailed": "பங்களிப்பு சேர்க்க முடியவில்லை",
+    "recentContributions": "சமீப பங்களிப்புகள்:\n{{history}}",
+    "quickContributionAdded": "${{amount}} சேர்க்கப்பட்டது! 💰"
+  },
+  "actions": {
+    "addNewGoal": "புதிய இலக்கு சேர்",
+    "newGoalKids": "புதிய இலக்கு 🎯"
+  },
+  "view": {
+    "list": "📋 பட்டியல்",
+    "grid": "🔲 கிரிட்"
+  },
+  "form": {
+    "editTitle": "சேமிப்பு இலக்கை திருத்து",
+    "createTitle": "புதிய சேமிப்பு இலக்கு உருவாக்கு",
+    "goalName": "இலக்கு பெயர்",
+    "placeholderGoalKids": "எ.கா., புதிய பொம்மை 🧸",
+    "placeholderGoal": "எ.கா., புதிய லேப்டாப்",
+    "targetAmount": "இலக்கு தொகை",
+    "amountRangeHint": "குறைந்தது: ${{min}}, அதிகபட்சம்: ${{max}}",
+    "currentAmount": "தற்போதைய தொகை",
+    "targetDate": "இலக்கு தேதி",
+    "category": "வகை",
+    "priority": "முன்னுரிமை",
+    "notes": "குறிப்புகள்",
+    "notesPlaceholder": "உங்கள் இலக்கைப் பற்றிய கூடுதல் விவரங்கள்...",
+    "cancel": "ரத்து செய்",
+    "updateGoal": "இலக்கை புதுப்பி",
+    "saveGoal": "இலக்கை சேமி"
+  }
+}

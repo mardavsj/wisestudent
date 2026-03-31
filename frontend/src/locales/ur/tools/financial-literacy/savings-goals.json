@@ -1,0 +1,76 @@
+﻿{
+  "loading": "آپ کے سیونگز اہداف لوڈ ہو رہے ہیں...",
+  "backButton": "مالی خواندگی پر واپس جائیں",
+  "title": "سیونگز اہداف",
+  "subtitle": {
+    "kids": "جو چیز چاہیے اس کے لیے بچت کرو! 🎉",
+    "teens": "پلان کرو، بچت کرو، ہدف پورا کرو",
+    "adults": "سیونگز اہداف سیٹ کریں اور ٹریک کریں"
+  },
+  "stats": {
+    "activeGoals": "فعال اہداف",
+    "totalSaved": "کل بچت",
+    "overallProgress": "مجموعی پیش رفت",
+    "averageProgress": "اوسط پیش رفت"
+  },
+  "filters": {
+    "allCategories": "تمام کیٹیگریز",
+    "sortPriority": "ترجیح کے مطابق ترتیب دیں",
+    "sortProgress": "پیش رفت کے مطابق ترتیب دیں",
+    "sortDeadline": "ڈیڈ لائن کے مطابق ترتیب دیں",
+    "sortAmount": "رقم کے مطابق ترتیب دیں"
+  },
+  "empty": {
+    "kids": "ابھی کوئی ہدف نہیں!",
+    "default": "ابھی کوئی سیونگز ہدف نہیں"
+  },
+  "contribution": {
+    "title": "کنٹریبیوشن شامل کریں",
+    "addButton": "کنٹریبیوشن شامل کریں"
+  },
+  "toasts": {
+    "loadFailed": "سیونگز اہداف لوڈ کرنے میں ناکامی",
+    "requiredFields": "براہِ کرم تمام ضروری فیلڈز بھریں",
+    "amountRange": "رقم ${{min}} اور ${{max}} کے درمیان ہونی چاہیے",
+    "goalUpdated": "ہدف کامیابی سے اپڈیٹ ہو گیا!",
+    "goalCreated": "نیا ہدف کامیابی سے بن گیا! 🎉",
+    "saveFailed": "ہدف محفوظ کرنے میں ناکامی",
+    "goalDeleted": "ہدف کامیابی سے حذف ہو گیا",
+    "deleteFailed": "ہدف حذف کرنے میں ناکامی",
+    "contributionRequired": "براہِ کرم کنٹریبیوشن رقم درج کریں",
+    "validAmount": "براہِ کرم درست رقم درج کریں",
+    "goalReached": "🎉 مبارک ہو! آپ نے اپنا ہدف حاصل کر لیا: {{goalName}}!",
+    "progress75": "🌟 بہت اچھی پیش رفت! آپ 75% تک پہنچ گئے ہیں!",
+    "progress50": "💪 آپ آدھے راستے پر ہیں! اسی طرح جاری رکھیں!",
+    "contributionAdded": "${{amount}} کو {{goalName}} میں شامل کر دیا گیا! 💰",
+    "contributionFailed": "کنٹریبیوشن شامل کرنے میں ناکامی",
+    "recentContributions": "حالیہ کنٹریبیوشنز:\n{{history}}",
+    "quickContributionAdded": "${{amount}} شامل کر دیا گیا! 💰"
+  },
+  "actions": {
+    "addNewGoal": "نیا ہدف شامل کریں",
+    "newGoalKids": "نیا ہدف 🎯"
+  },
+  "view": {
+    "list": "📋 فہرست",
+    "grid": "🔲 گرڈ"
+  },
+  "form": {
+    "editTitle": "سیونگز ہدف میں ترمیم کریں",
+    "createTitle": "نیا سیونگز ہدف بنائیں",
+    "goalName": "ہدف کا نام",
+    "placeholderGoalKids": "مثال: نیا کھلونا 🧸",
+    "placeholderGoal": "مثال: نیا لیپ ٹاپ",
+    "targetAmount": "ہدف رقم",
+    "amountRangeHint": "کم از کم: ${{min}}, زیادہ سے زیادہ: ${{max}}",
+    "currentAmount": "موجودہ رقم",
+    "targetDate": "ہدف تاریخ",
+    "category": "قسم",
+    "priority": "ترجیح",
+    "notes": "نوٹس",
+    "notesPlaceholder": "اپنے ہدف کے بارے میں اضافی تفصیلات...",
+    "cancel": "منسوخ کریں",
+    "updateGoal": "ہدف اپڈیٹ کریں",
+    "saveGoal": "ہدف محفوظ کریں"
+  }
+}

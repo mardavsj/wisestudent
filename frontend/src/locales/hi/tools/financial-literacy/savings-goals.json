@@ -1,0 +1,76 @@
+﻿{
+  "loading": "आपके बचत लक्ष्य लोड हो रहे हैं...",
+  "backButton": "वित्तीय साक्षरता पर वापस जाएं",
+  "title": "बचत लक्ष्य",
+  "subtitle": {
+    "kids": "जो चीज़ें चाहिए, उनके लिए बचत करो! 🎉",
+    "teens": "योजना बनाओ, बचत करो और अपने वित्तीय लक्ष्य पूरे करो",
+    "adults": "अपने बचत लक्ष्यों को सटीकता से सेट करें और ट्रैक करें"
+  },
+  "stats": {
+    "activeGoals": "सक्रिय लक्ष्य",
+    "totalSaved": "कुल बचत",
+    "overallProgress": "कुल प्रगति",
+    "averageProgress": "औसत प्रगति"
+  },
+  "filters": {
+    "allCategories": "सभी श्रेणियां",
+    "sortPriority": "प्राथमिकता के अनुसार क्रम",
+    "sortProgress": "प्रगति के अनुसार क्रम",
+    "sortDeadline": "समयसीमा के अनुसार क्रम",
+    "sortAmount": "राशि के अनुसार क्रम"
+  },
+  "empty": {
+    "kids": "अभी कोई लक्ष्य नहीं!",
+    "default": "अभी कोई बचत लक्ष्य नहीं"
+  },
+  "contribution": {
+    "title": "योगदान जोड़ें",
+    "addButton": "योगदान जोड़ें"
+  },
+  "toasts": {
+    "loadFailed": "बचत लक्ष्य लोड नहीं हो सके",
+    "requiredFields": "कृपया सभी आवश्यक फ़ील्ड भरें",
+    "amountRange": "राशि ${{min}} और ${{max}} के बीच होनी चाहिए",
+    "goalUpdated": "लक्ष्य सफलतापूर्वक अपडेट हुआ!",
+    "goalCreated": "नया लक्ष्य सफलतापूर्वक बना! 🎉",
+    "saveFailed": "लक्ष्य सहेजा नहीं जा सका",
+    "goalDeleted": "लक्ष्य सफलतापूर्वक हटाया गया",
+    "deleteFailed": "लक्ष्य हटाया नहीं जा सका",
+    "contributionRequired": "कृपया योगदान राशि दर्ज करें",
+    "validAmount": "कृपया मान्य राशि दर्ज करें",
+    "goalReached": "🎉 बधाई हो! आपने अपना लक्ष्य पूरा कर लिया: {{goalName}}!",
+    "progress75": "🌟 बहुत बढ़िया प्रगति! आप 75% तक पहुंच गए हैं!",
+    "progress50": "💪 आप आधे रास्ते पर हैं! ऐसे ही जारी रखें!",
+    "contributionAdded": "${{amount}} {{goalName}} में जोड़ा गया! 💰",
+    "contributionFailed": "योगदान जोड़ने में विफल",
+    "recentContributions": "हाल के योगदान:\n{{history}}",
+    "quickContributionAdded": "${{amount}} जोड़ा गया! 💰"
+  },
+  "actions": {
+    "addNewGoal": "नया लक्ष्य जोड़ें",
+    "newGoalKids": "नया लक्ष्य 🎯"
+  },
+  "view": {
+    "list": "📋 सूची",
+    "grid": "🔲 ग्रिड"
+  },
+  "form": {
+    "editTitle": "बचत लक्ष्य संपादित करें",
+    "createTitle": "नया बचत लक्ष्य बनाएं",
+    "goalName": "लक्ष्य का नाम",
+    "placeholderGoalKids": "जैसे: नया खिलौना 🧸",
+    "placeholderGoal": "जैसे: नया लैपटॉप",
+    "targetAmount": "लक्ष्य राशि",
+    "amountRangeHint": "न्यूनतम: ${{min}}, अधिकतम: ${{max}}",
+    "currentAmount": "वर्तमान राशि",
+    "targetDate": "लक्ष्य तिथि",
+    "category": "श्रेणी",
+    "priority": "प्राथमिकता",
+    "notes": "नोट्स",
+    "notesPlaceholder": "अपने लक्ष्य के बारे में अतिरिक्त विवरण...",
+    "cancel": "रद्द करें",
+    "updateGoal": "लक्ष्य अपडेट करें",
+    "saveGoal": "लक्ष्य सेव करें"
+  }
+}

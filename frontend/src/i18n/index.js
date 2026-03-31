@@ -96,19 +96,40 @@ const loadGamecontentForLanguage = async (manifest, lang) => {
   return gamecontent;
 };
 
+const loadToolsForLanguage = async (manifest, lang) => {
+  const tools = {};
+  const entries = manifest.toolsByLang?.[lang] || [];
+
+  const results = await Promise.all(
+    entries.map(async (entry) => ({
+      entry,
+      data: await loadJsonAsset(entry.path),
+    }))
+  );
+
+  for (const { entry, data } of results) {
+    tools[entry.pillar] = tools[entry.pillar] || {};
+    tools[entry.pillar][entry.slug] = data;
+  }
+
+  return tools;
+};
+
 const loadLanguageResourceData = async (manifest, lang) => {
   if (languageResourceCache.has(lang)) {
     return languageResourceCache.get(lang);
   }
 
-  const [gamesPages, gamecontent] = await Promise.all([
+  const [gamesPages, gamecontent, tools] = await Promise.all([
     loadPagesGamesForLanguage(manifest, lang),
     loadGamecontentForLanguage(manifest, lang),
+    loadToolsForLanguage(manifest, lang),
   ]);
 
   const resourceData = {
     pages: { games: gamesPages },
     gamecontent,
+    tools,
   };
   languageResourceCache.set(lang, resourceData);
   return resourceData;
@@ -126,6 +147,7 @@ const ensureLanguageLoaded = async (lng) => {
   const resourceData = await loadLanguageResourceData(manifest, targetLanguage);
   i18n.addResourceBundle(targetLanguage, "pages", resourceData.pages, true, true);
   i18n.addResourceBundle(targetLanguage, "gamecontent", resourceData.gamecontent, true, true);
+  i18n.addResourceBundle(targetLanguage, "tools", resourceData.tools, true, true);
   loadedLanguages.add(targetLanguage);
 
   return targetLanguage;
@@ -166,7 +188,7 @@ const initI18n = i18n
     resources: {},
     lng: "en",
     fallbackLng: "en",
-    ns: ["pages", "gamecontent"],
+    ns: ["pages", "gamecontent", "tools"],
     defaultNS: "pages",
     interpolation: {
       escapeValue: false,

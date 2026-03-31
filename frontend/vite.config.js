@@ -24,6 +24,7 @@ const generatedLocalesReadmePath = path.join(publicLocalesRoot, "README.generate
 const PAGE_GAMES_RE = /^([^/]+)\/pages\/games\/([^/]+)\/([^/]+)\.json$/;
 const PAGE_CARDS_RE = /^([^/]+)\/pages\/cardcontent\/([^/]+)\/([^/]+)\.json$/;
 const GAMECONTENT_RE = /^([^/]+)\/gamecontent\/([^/]+)\/([^/]+)\/([^/]+)\.json$/;
+const TOOLS_RE = /^([^/]+)\/tools\/([^/]+)\/([^/]+)\.json$/;
 
 const walkJsonFiles = async (dir, root = dir) => {
   let entries;
@@ -58,6 +59,7 @@ const buildLocalesManifest = (localeFiles, pathPrefix) => {
     pageGamesByLang: {},
     pageCardsByLang: {},
     gamecontentByLang: {},
+    toolsByLang: {},
     availableLanguages: [],
   };
   const languageSet = new Set();
@@ -97,6 +99,19 @@ const buildLocalesManifest = (localeFiles, pathPrefix) => {
       manifest.gamecontentByLang[lang].push({
         pillar,
         module,
+        slug,
+        path: `${pathPrefix}/${relativePath}`,
+      });
+      continue;
+    }
+
+    const toolsMatch = relativePath.match(TOOLS_RE);
+    if (toolsMatch) {
+      const [, lang, pillar, slug] = toolsMatch;
+      languageSet.add(lang);
+      manifest.toolsByLang[lang] = manifest.toolsByLang[lang] || [];
+      manifest.toolsByLang[lang].push({
+        pillar,
         slug,
         path: `${pathPrefix}/${relativePath}`,
       });

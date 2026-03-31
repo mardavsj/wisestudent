@@ -1,0 +1,76 @@
+﻿{
+  "loading": "ਤੁਹਾਡੇ ਸੇਵਿੰਗ ਗੋਲ ਲੋਡ ਹੋ ਰਹੇ ਹਨ...",
+  "backButton": "ਵਿੱਤੀ ਸਾਖਰਤਾ ਵੱਲ ਵਾਪਸ ਜਾਓ",
+  "title": "ਸੇਵਿੰਗ ਗੋਲ",
+  "subtitle": {
+    "kids": "ਜੋ ਚਾਹੀਦਾ ਉਸ ਲਈ ਬਚਤ ਕਰੋ! 🎉",
+    "teens": "ਪਲਾਨ ਕਰੋ, ਬਚਤ ਕਰੋ, ਗੋਲ ਪੂਰੇ ਕਰੋ",
+    "adults": "ਸੇਵਿੰਗ ਗੋਲ ਸੈੱਟ ਕਰੋ ਅਤੇ ਟ੍ਰੈਕ ਕਰੋ"
+  },
+  "stats": {
+    "activeGoals": "ਐਕਟਿਵ ਗੋਲ",
+    "totalSaved": "ਕੁੱਲ ਬਚਤ",
+    "overallProgress": "ਕੁੱਲ ਤਰੱਕੀ",
+    "averageProgress": "ਔਸਤ ਤਰੱਕੀ"
+  },
+  "filters": {
+    "allCategories": "ਸਾਰੀਆਂ ਕੈਟੇਗਰੀਆਂ",
+    "sortPriority": "ਤਰਜੀਹ ਅਨੁਸਾਰ ਸੋਰਟ ਕਰੋ",
+    "sortProgress": "ਤਰੱਕੀ ਅਨੁਸਾਰ ਸੋਰਟ ਕਰੋ",
+    "sortDeadline": "ਡੈਡਲਾਈਨ ਅਨੁਸਾਰ ਸੋਰਟ ਕਰੋ",
+    "sortAmount": "ਰਕਮ ਅਨੁਸਾਰ ਸੋਰਟ ਕਰੋ"
+  },
+  "empty": {
+    "kids": "ਹਾਲੇ ਕੋਈ ਗੋਲ ਨਹੀਂ!",
+    "default": "ਹਾਲੇ ਕੋਈ ਸੇਵਿੰਗ ਗੋਲ ਨਹੀਂ"
+  },
+  "contribution": {
+    "title": "ਕੰਟ੍ਰਿਬਿਊਸ਼ਨ ਜੋੜੋ",
+    "addButton": "ਕੰਟ੍ਰਿਬਿਊਸ਼ਨ ਜੋੜੋ"
+  },
+  "toasts": {
+    "loadFailed": "ਸੇਵਿੰਗ ਗੋਲ ਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ",
+    "requiredFields": "ਕਿਰਪਾ ਕਰਕੇ ਸਾਰੇ ਲਾਜ਼ਮੀ ਫੀਲਡ ਭਰੋ",
+    "amountRange": "ਰਕਮ ${{min}} ਅਤੇ ${{max}} ਦੇ ਵਿਚਕਾਰ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ",
+    "goalUpdated": "ਗੋਲ ਸਫਲਤਾਪੂਰਵਕ ਅਪਡੇਟ ਹੋ ਗਿਆ!",
+    "goalCreated": "ਨਵਾਂ ਗੋਲ ਸਫਲਤਾਪੂਰਵਕ ਬਣ ਗਿਆ! 🎉",
+    "saveFailed": "ਗੋਲ ਸੇਵ ਕਰਨ ਵਿੱਚ ਅਸਫਲ",
+    "goalDeleted": "ਗੋਲ ਸਫਲਤਾਪੂਰਵਕ ਹਟਾਇਆ ਗਿਆ",
+    "deleteFailed": "ਗੋਲ ਹਟਾਉਣ ਵਿੱਚ ਅਸਫਲ",
+    "contributionRequired": "ਕਿਰਪਾ ਕਰਕੇ ਕੰਟ੍ਰਿਬਿਊਸ਼ਨ ਰਕਮ ਦਰਜ ਕਰੋ",
+    "validAmount": "ਕਿਰਪਾ ਕਰਕੇ ਸਹੀ ਰਕਮ ਦਰਜ ਕਰੋ",
+    "goalReached": "🎉 ਵਧਾਈ ਹੋ! ਤੁਸੀਂ ਆਪਣਾ ਗੋਲ ਹਾਸਲ ਕਰ ਲਿਆ: {{goalName}}!",
+    "progress75": "🌟 ਸ਼ਾਨਦਾਰ ਤਰੱਕੀ! ਤੁਸੀਂ 75% ਤੱਕ ਪਹੁੰਚ ਗਏ ਹੋ!",
+    "progress50": "💪 ਤੁਸੀਂ ਅੱਧੇ ਰਸਤੇ ਤੇ ਹੋ! ਐਸੇ ਹੀ ਜਾਰੀ ਰੱਖੋ!",
+    "contributionAdded": "${{amount}} {{goalName}} ਵਿੱਚ ਜੋੜਿਆ ਗਿਆ! 💰",
+    "contributionFailed": "ਕੰਟ੍ਰਿਬਿਊਸ਼ਨ ਜੋੜਣ ਵਿੱਚ ਅਸਫਲ",
+    "recentContributions": "ਹਾਲੀਆ ਕੰਟ੍ਰਿਬਿਊਸ਼ਨ:\n{{history}}",
+    "quickContributionAdded": "${{amount}} ਜੋੜਿਆ ਗਿਆ! 💰"
+  },
+  "actions": {
+    "addNewGoal": "ਨਵਾਂ ਗੋਲ ਜੋੜੋ",
+    "newGoalKids": "ਨਵਾਂ ਗੋਲ 🎯"
+  },
+  "view": {
+    "list": "📋 ਸੂਚੀ",
+    "grid": "🔲 ਗ੍ਰਿਡ"
+  },
+  "form": {
+    "editTitle": "ਸੇਵਿੰਗ ਗੋਲ ਸੰਪਾਦਿਤ ਕਰੋ",
+    "createTitle": "ਨਵਾਂ ਸੇਵਿੰਗ ਗੋਲ ਬਣਾਓ",
+    "goalName": "ਗੋਲ ਦਾ ਨਾਮ",
+    "placeholderGoalKids": "ਜਿਵੇਂ: ਨਵਾਂ ਖਿਡੌਣਾ 🧸",
+    "placeholderGoal": "ਜਿਵੇਂ: ਨਵਾਂ ਲੈਪਟਾਪ",
+    "targetAmount": "ਲਕਸ਼ ਰਕਮ",
+    "amountRangeHint": "ਘੱਟੋ-ਘੱਟ: ${{min}}, ਵੱਧ ਤੋਂ ਵੱਧ: ${{max}}",
+    "currentAmount": "ਮੌਜੂਦਾ ਰਕਮ",
+    "targetDate": "ਲਕਸ਼ ਮਿਤੀ",
+    "category": "ਸ਼੍ਰੇਣੀ",
+    "priority": "ਤਰਜੀਹ",
+    "notes": "ਨੋਟਸ",
+    "notesPlaceholder": "ਤੁਹਾਡੇ ਗੋਲ ਬਾਰੇ ਵਾਧੂ ਵੇਰਵੇ...",
+    "cancel": "ਰੱਦ ਕਰੋ",
+    "updateGoal": "ਗੋਲ ਅਪਡੇਟ ਕਰੋ",
+    "saveGoal": "ਗੋਲ ਸੇਵ ਕਰੋ"
+  }
+}

@@ -1,0 +1,76 @@
+﻿{
+  "loading": "ನಿಮ್ಮ ಉಳಿತಾಯ ಗುರಿಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ...",
+  "backButton": "ಹಣಕಾಸು ಸಾಕ್ಷರತೆಗೆ ಹಿಂದಿರುಗಿ",
+  "title": "ಉಳಿತಾಯ ಗುರಿಗಳು",
+  "subtitle": {
+    "kids": "ನಿನಗೆ ಬೇಕಾದದ್ದಕ್ಕೆ ಉಳಿತಾಯ ಮಾಡು! 🎉",
+    "teens": "ಯೋಜನೆ ಮಾಡಿ, ಉಳಿತಾಯ ಮಾಡಿ, ಗುರಿ ತಲುಪಿ",
+    "adults": "ಉಳಿತಾಯ ಗುರಿಗಳನ್ನು ಸೆಟ್ ಮಾಡಿ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ"
+  },
+  "stats": {
+    "activeGoals": "ಸಕ್ರಿಯ ಗುರಿಗಳು",
+    "totalSaved": "ಒಟ್ಟು ಉಳಿತಾಯ",
+    "overallProgress": "ಒಟ್ಟು ಪ್ರಗತಿ",
+    "averageProgress": "ಸರಾಸರಿ ಪ್ರಗತಿ"
+  },
+  "filters": {
+    "allCategories": "ಎಲ್ಲಾ ವರ್ಗಗಳು",
+    "sortPriority": "ಆದ್ಯತೆ ಪ್ರಕಾರ ವಿಂಗಡಿಸಿ",
+    "sortProgress": "ಪ್ರಗತಿ ಪ್ರಕಾರ ವಿಂಗಡಿಸಿ",
+    "sortDeadline": "ಡೆಡ್‌ಲೈನ್ ಪ್ರಕಾರ ವಿಂಗಡಿಸಿ",
+    "sortAmount": "ಮೊತ್ತದ ಪ್ರಕಾರ ವಿಂಗಡಿಸಿ"
+  },
+  "empty": {
+    "kids": "ಇನ್ನೂ ಗುರಿಗಳಿಲ್ಲ!",
+    "default": "ಇನ್ನೂ ಉಳಿತಾಯ ಗುರಿಗಳಿಲ್ಲ"
+  },
+  "contribution": {
+    "title": "ಕೊಡುಗೆ ಸೇರಿಸಿ",
+    "addButton": "ಕೊಡುಗೆ ಸೇರಿಸಿ"
+  },
+  "toasts": {
+    "loadFailed": "ಉಳಿತಾಯ ಗುರಿಗಳನ್ನು ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ",
+    "requiredFields": "ದಯವಿಟ್ಟು ಅಗತ್ಯವಿರುವ ಎಲ್ಲಾ ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ",
+    "amountRange": "ಮೊತ್ತ ${{min}} ಮತ್ತು ${{max}} ನಡುವೆಯಿರಬೇಕು",
+    "goalUpdated": "ಗುರಿ ಯಶಸ್ವಿಯಾಗಿ ನವೀಕರಿಸಲಾಗಿದೆ!",
+    "goalCreated": "ಹೊಸ ಗುರಿ ಯಶಸ್ವಿಯಾಗಿ ರಚಿಸಲಾಗಿದೆ! 🎉",
+    "saveFailed": "ಗುರಿಯನ್ನು ಉಳಿಸಲು ವಿಫಲವಾಗಿದೆ",
+    "goalDeleted": "ಗುರಿ ಯಶಸ್ವಿಯಾಗಿ ಅಳಿಸಲಾಗಿದೆ",
+    "deleteFailed": "ಗುರಿಯನ್ನು ಅಳಿಸಲು ವಿಫಲವಾಗಿದೆ",
+    "contributionRequired": "ದಯವಿಟ್ಟು ಕೊಡುಗೆ ಮೊತ್ತವನ್ನು ನಮೂದಿಸಿ",
+    "validAmount": "ದಯವಿಟ್ಟು ಸರಿಯಾದ ಮೊತ್ತ ನಮೂದಿಸಿ",
+    "goalReached": "🎉 ಅಭಿನಂದನೆಗಳು! ನೀವು ನಿಮ್ಮ ಗುರಿ ತಲುಪಿದ್ದೀರಿ: {{goalName}}!",
+    "progress75": "🌟 ಅದ್ಭುತ ಪ್ರಗತಿ! ನೀವು 75% ತಲುಪಿದ್ದೀರಿ!",
+    "progress50": "💪 ನೀವು ಅರ್ಧ ದಾರಿಯಲ್ಲಿ ಇದ್ದೀರಿ! ಹೀಗೆ ಮುಂದುವರಿಸಿ!",
+    "contributionAdded": "${{amount}} ಅನ್ನು {{goalName}} ಗೆ ಸೇರಿಸಲಾಗಿದೆ! 💰",
+    "contributionFailed": "ಕೊಡುಗೆ ಸೇರಿಸಲು ವಿಫಲವಾಗಿದೆ",
+    "recentContributions": "ಇತ್ತೀಚಿನ ಕೊಡುಗೆಗಳು:\n{{history}}",
+    "quickContributionAdded": "${{amount}} ಸೇರಿಸಲಾಗಿದೆ! 💰"
+  },
+  "actions": {
+    "addNewGoal": "ಹೊಸ ಗುರಿ ಸೇರಿಸಿ",
+    "newGoalKids": "ಹೊಸ ಗುರಿ 🎯"
+  },
+  "view": {
+    "list": "📋 ಪಟ್ಟಿ",
+    "grid": "🔲 ಗ್ರಿಡ್"
+  },
+  "form": {
+    "editTitle": "ಉಳಿತಾಯ ಗುರಿಯನ್ನು ಸಂಪಾದಿಸಿ",
+    "createTitle": "ಹೊಸ ಉಳಿತಾಯ ಗುರಿ ರಚಿಸಿ",
+    "goalName": "ಗುರಿಯ ಹೆಸರು",
+    "placeholderGoalKids": "ಉದಾ., ಹೊಸ ಆಟಿಕೆ 🧸",
+    "placeholderGoal": "ಉದಾ., ಹೊಸ ಲ್ಯಾಪ್‌ಟಾಪ್",
+    "targetAmount": "ಗುರಿ ಮೊತ್ತ",
+    "amountRangeHint": "ಕನಿಷ್ಠ: ${{min}}, ಗರಿಷ್ಠ: ${{max}}",
+    "currentAmount": "ಪ್ರಸ್ತುತ ಮೊತ್ತ",
+    "targetDate": "ಗುರಿ ದಿನಾಂಕ",
+    "category": "ವರ್ಗ",
+    "priority": "ಆದ್ಯತೆ",
+    "notes": "ಟಿಪ್ಪಣಿಗಳು",
+    "notesPlaceholder": "ನಿಮ್ಮ ಗುರಿಯ ಬಗ್ಗೆ ಹೆಚ್ಚುವರಿ ವಿವರಗಳು...",
+    "cancel": "ರದ್ದುಮಾಡಿ",
+    "updateGoal": "ಗುರಿ ನವೀಕರಿಸಿ",
+    "saveGoal": "ಗುರಿ ಉಳಿಸಿ"
+  }
+}

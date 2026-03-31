@@ -12,13 +12,18 @@ import {
   BarChart2, PieChart as PieChartIcon, LineChart as LineChartIcon
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../hooks/useAuth';
+import LanguageSelector from '../../components/LanguageSelector';
 import { fetchInvestmentData, saveInvestmentData } from '../../services/studentService';
 import { logActivity } from '../../services/activityService';
 import { toast } from 'react-hot-toast';
 
 const InvestmentSimulator = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation('tools');
+  const tt = (key, defaultValue, options = {}) =>
+    t(`financial-literacy.investment-simulator.${key}`, { defaultValue, ...options });
   const { user } = useAuth();
   const [portfolio, setPortfolio] = useState({
     cash: 100000,
@@ -336,7 +341,7 @@ const InvestmentSimulator = () => {
   // Simulate market day
   const simulateMarketDay = useCallback(() => {
     if (currentDay >= config.maxDays) {
-      toast.error(`Simulation complete! You've reached the ${config.maxDays}-day limit.`);
+      toast.error(tt('toasts.simulationLimit', `Simulation complete! You've reached the {{days}}-day limit.`, { days: config.maxDays }));
       return;
     }
 
@@ -408,7 +413,7 @@ const InvestmentSimulator = () => {
   // Buy stock
   const buyStock = useCallback(() => {
     if (!selectedStock) {
-      toast.error('Please select a stock');
+      toast.error(tt('toasts.selectStock', 'Please select a stock'));
       return;
     }
     
@@ -422,12 +427,12 @@ const InvestmentSimulator = () => {
     const totalCost = price * quantity;
     
     if (totalCost > portfolio.cash) {
-      toast.error('Insufficient funds! 💰');
+      toast.error(tt('toasts.insufficientFunds', 'Insufficient funds! 💰'));
       return;
     }
     
     if (quantity <= 0) {
-      toast.error('Quantity must be greater than 0');
+      toast.error(tt('toasts.invalidQuantity', 'Quantity must be greater than 0'));
       return;
     }
 
@@ -510,7 +515,7 @@ const InvestmentSimulator = () => {
 
     const shares = sharesToSell || investment.shares;
     if (shares > investment.shares) {
-      toast.error('Cannot sell more shares than you own');
+      toast.error(tt('toasts.sellLimit', 'Cannot sell more shares than you own'));
       return;
     }
 
@@ -662,7 +667,7 @@ const InvestmentSimulator = () => {
               'border-purple-500'
             } border-t-transparent rounded-full mx-auto mb-4`}
           />
-          <p className="text-gray-600">Loading investment simulator...</p>
+          <p className="text-gray-600">{tt('loading', 'Loading investment simulator...')}</p>
         </div>
       </div>
     );
@@ -677,13 +682,16 @@ const InvestmentSimulator = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <button 
-            onClick={() => navigate('/student/dashboard/financial-literacy')}
-            className="flex items-center text-purple-600 hover:text-purple-800 transition-colors mb-4 group"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Back to Financial Literacy
-          </button>
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <button 
+              onClick={() => navigate('/student/dashboard/financial-literacy')}
+              className="flex items-center text-purple-600 hover:text-purple-800 transition-colors group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              {tt('backButton', 'Back to Financial Literacy')}
+            </button>
+            <LanguageSelector />
+          </div>
           
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
@@ -693,7 +701,7 @@ const InvestmentSimulator = () => {
                 'text-gray-900'
               }`}>
                 {ageGroup === 'kids' && '💰 '}
-                Investment Simulator
+                {tt('title', 'Investment Simulator')}
                 {ageGroup === 'kids' && ' 💰'}
               </h1>
               <p className={`text-lg ${
@@ -701,9 +709,9 @@ const InvestmentSimulator = () => {
                 ageGroup === 'teens' ? 'text-blue-600' :
                 'text-gray-600'
               }`}>
-                {ageGroup === 'kids' && "Learn to invest with virtual money! 🎯"}
-                {ageGroup === 'teens' && "Practice investing with virtual money and real-time market simulation"}
-                {ageGroup === 'adults' && "Advanced investment simulator with real-time analytics and portfolio management"}
+                {ageGroup === 'kids' && tt('subtitle.kids', 'Learn to invest with virtual money! 🎯')}
+                {ageGroup === 'teens' && tt('subtitle.teens', 'Practice investing with virtual money and real-time market simulation')}
+                {ageGroup === 'adults' && tt('subtitle.adults', 'Advanced investment simulator with real-time analytics and portfolio management')}
               </p>
             </div>
             
