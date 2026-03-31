@@ -7,16 +7,24 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const analyzeBundle = (import.meta.env?.VITE_ANALYZE || 'false').toLowerCase() === 'true';
+const buildVersion = process.env.VERCEL_GIT_COMMIT_SHA || process.env.npm_package_version || `${Date.now()}`;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Locale architecture:
+// - src/locales: single source of truth (authored files)
+// - public/locales: generated build artifact only (never author here)
+// Dev serves locale JSON from /src/locales via manifest paths.
+// Build copies src/locales -> public/locales before packaging.
 const srcLocalesRoot = path.join(__dirname, "src", "locales");
 const publicLocalesRoot = path.join(__dirname, "public", "locales");
 const localesManifestPath = path.join(__dirname, "public", "locales-manifest.json");
+const generatedLocalesReadmePath = path.join(publicLocalesRoot, "README.generated.txt");
 
 const PAGE_GAMES_RE = /^([^/]+)\/pages\/games\/([^/]+)\/([^/]+)\.json$/;
 const PAGE_CARDS_RE = /^([^/]+)\/pages\/cardcontent\/([^/]+)\/([^/]+)\.json$/;
 const GAMECONTENT_RE = /^([^/]+)\/gamecontent\/([^/]+)\/([^/]+)\/([^/]+)\.json$/;
+const TOOLS_RE = /^([^/]+)\/tools\/([^/]+)\/([^/]+)\.json$/;
 
 const walkJsonFiles = async (dir, root = dir) => {
   let entries;
@@ -51,6 +59,7 @@ const buildLocalesManifest = (localeFiles, pathPrefix) => {
     pageGamesByLang: {},
     pageCardsByLang: {},
     gamecontentByLang: {},
+    toolsByLang: {},
     availableLanguages: [],
   };
   const languageSet = new Set();
@@ -93,6 +102,19 @@ const buildLocalesManifest = (localeFiles, pathPrefix) => {
         slug,
         path: `${pathPrefix}/${relativePath}`,
       });
+      continue;
+    }
+
+    const toolsMatch = relativePath.match(TOOLS_RE);
+    if (toolsMatch) {
+      const [, lang, pillar, slug] = toolsMatch;
+      languageSet.add(lang);
+      manifest.toolsByLang[lang] = manifest.toolsByLang[lang] || [];
+      manifest.toolsByLang[lang].push({
+        pillar,
+        slug,
+        path: `${pathPrefix}/${relativePath}`,
+      });
     }
   }
 
@@ -103,6 +125,21 @@ const buildLocalesManifest = (localeFiles, pathPrefix) => {
 const syncLocalesToPublicForBuild = async () => {
   await rm(publicLocalesRoot, { recursive: true, force: true });
   await mkdir(publicLocalesRoot, { recursive: true });
+  await writeFile(
+    generatedLocalesReadmePath,
+    [
+      "AUTO-GENERATED DIRECTORY",
+      "",
+      "This folder is generated from src/locales during `vite build`.",
+      "Do not edit files here. Any manual changes will be overwritten.",
+      "Source of truth: src/locales",
+      "",
+      `Generated at: ${new Date().toISOString()}`,
+      `Build version: ${buildVersion}`,
+      "",
+    ].join("\n"),
+    "utf8"
+  );
 
   try {
     await access(srcLocalesRoot);
@@ -199,15 +236,14 @@ const localesSyncBuildPlugin = () => ({
   name: "sync-locales-to-public-build",
   apply: "build",
   async buildStart() {
-    try {
-      await syncLocalesToPublicForBuild();
-    } catch (error) {
-      console.warn("[i18n-sync] Locale sync failed during build:", error?.message || error);
-    }
+    await syncLocalesToPublicForBuild();
   },
 });
 
 export default defineConfig({
+  define: {
+    __APP_BUILD_VERSION__: JSON.stringify(buildVersion),
+  },
   plugins: [
     localesManifestDevPlugin(),
     localesSyncBuildPlugin(),

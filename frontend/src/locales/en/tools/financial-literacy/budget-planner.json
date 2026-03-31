@@ -1,0 +1,16 @@
+﻿{
+  "loading": "Loading your budget...",
+  "backButton": "Back to Financial Literacy",
+  "title": "Budget Planner",
+  "subtitle": {
+    "kids": "Plan your money! 🎯",
+    "teens": "Create and manage your personal budget",
+    "adults": "Plan your finances with precision and insight"
+  },
+  "toasts": {
+    "requiredFields": "Please fill in all required fields",
+    "amountRange": "Amount must be between ${{min}} and ${{max}}",
+    "saveIncomeFailed": "Failed to save income",
+    "saveExpenseFailed": "Failed to save expense"
+  }
+}

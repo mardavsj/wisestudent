@@ -7,12 +7,17 @@ import {
   History, X, Check, BarChart3, PieChart, Shield, Award, AlertTriangle
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../hooks/useAuth';
+import LanguageSelector from '../../components/LanguageSelector';
 import { logActivity } from '../../services/activityService';
 import { toast } from 'react-hot-toast';
 
 const CreditManagement = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation('tools');
+  const tt = (key, defaultValue, options = {}) =>
+    t(`financial-literacy.credit-management.${key}`, { defaultValue, ...options });
   const { user } = useAuth();
   const [creditAccounts, setCreditAccounts] = useState([]);
   const [creditScore, setCreditScore] = useState(null);
@@ -138,7 +143,7 @@ const CreditManagement = () => {
         });
       } catch (error) {
         console.error('Error loading credit data:', error);
-        toast.error('Failed to load credit data');
+        toast.error(tt('toasts.loadFailed', 'Failed to load credit data'));
       } finally {
         setLoading(false);
       }
@@ -248,7 +253,7 @@ const CreditManagement = () => {
   // Handle add/edit account
   const handleSaveAccount = () => {
     if (!newAccount.name || !newAccount.creditLimit) {
-      toast.error('Please fill in all required fields');
+      toast.error(tt('toasts.requiredFields', 'Please fill in all required fields'));
       return;
     }
 
@@ -353,7 +358,7 @@ const CreditManagement = () => {
               'border-emerald-500'
             } border-t-transparent rounded-full mx-auto mb-4`}
           />
-          <p className="text-gray-600">Loading your credit information...</p>
+          <p className="text-gray-600">{tt('loading', 'Loading your credit information...')}</p>
         </div>
       </div>
     );
@@ -368,13 +373,16 @@ const CreditManagement = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <button
-            onClick={() => navigate('/student/dashboard/financial-literacy')}
-            className="flex items-center text-emerald-600 hover:text-emerald-800 transition-colors mb-4 group"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Back to Financial Literacy
-          </button>
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <button
+              onClick={() => navigate('/student/dashboard/financial-literacy')}
+              className="flex items-center text-emerald-600 hover:text-emerald-800 transition-colors group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              {tt('backButton', 'Back to Financial Literacy')}
+            </button>
+            <LanguageSelector />
+          </div>
           
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
@@ -384,7 +392,7 @@ const CreditManagement = () => {
                 'text-gray-900'
               }`}>
                 {ageGroup === 'kids' && '💳 '}
-                Credit Management
+                {tt('title', 'Credit Management')}
                 {ageGroup === 'kids' && ' 💳'}
               </h1>
               <p className={`text-lg ${
@@ -392,9 +400,9 @@ const CreditManagement = () => {
                 ageGroup === 'teens' ? 'text-blue-600' :
                 'text-gray-600'
               }`}>
-                {ageGroup === 'kids' && "Learn about credit in a fun way! 🎯"}
-                {ageGroup === 'teens' && "Manage your credit and build a strong credit history"}
-                {ageGroup === 'adults' && "Track and improve your credit score and manage credit accounts"}
+                {ageGroup === 'kids' && tt('subtitle.kids', 'Learn about credit in a fun way! 🎯')}
+                {ageGroup === 'teens' && tt('subtitle.teens', 'Manage your credit and build a strong credit history')}
+                {ageGroup === 'adults' && tt('subtitle.adults', 'Track and improve your credit score and manage credit accounts')}
               </p>
             </div>
             

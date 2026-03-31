@@ -1,0 +1,14 @@
+﻿{
+  "loading": "Loading your credit information...",
+  "backButton": "Back to Financial Literacy",
+  "title": "Credit Management",
+  "subtitle": {
+    "kids": "Learn about credit in a fun way! 🎯",
+    "teens": "Manage your credit and build a strong credit history",
+    "adults": "Track and improve your credit score and manage credit accounts"
+  },
+  "toasts": {
+    "loadFailed": "Failed to load credit data",
+    "requiredFields": "Please fill in all required fields"
+  }
+}

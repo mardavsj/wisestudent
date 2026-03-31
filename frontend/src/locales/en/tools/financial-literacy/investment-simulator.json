@@ -1,0 +1,17 @@
+﻿{
+  "loading": "Loading investment simulator...",
+  "backButton": "Back to Financial Literacy",
+  "title": "Investment Simulator",
+  "subtitle": {
+    "kids": "Learn to invest with virtual money! 🎯",
+    "teens": "Practice investing with virtual money and real-time market simulation",
+    "adults": "Advanced investment simulator with real-time analytics and portfolio management"
+  },
+  "toasts": {
+    "simulationLimit": "Simulation complete! You've reached the {{days}}-day limit.",
+    "selectStock": "Please select a stock",
+    "insufficientFunds": "Insufficient funds! 💰",
+    "invalidQuantity": "Quantity must be greater than 0",
+    "sellLimit": "Cannot sell more shares than you own"
+  }
+}

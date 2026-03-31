@@ -6,8 +6,6 @@ const RUNTIME_CACHE = 'wise-student-runtime-v1.0.0';
 // Assets to cache immediately on install
 const PRECACHE_ASSETS = [
   '/',
-  '/index.html',
-  '/manifest.json',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png',
   '/icons/apple-touch-icon-180x180.png'
@@ -28,6 +26,16 @@ function isApiRequest(url) {
     // If URL parsing fails, check if URL string contains /api/
     return url.includes('/api/');
   }
+}
+
+function isNoCacheAsset(urlObj) {
+  const path = urlObj.pathname || '';
+  return (
+    path === '/index.html' ||
+    path === '/manifest.json' ||
+    path === '/locales-manifest.json' ||
+    path.startsWith('/locales/')
+  );
 }
 
 
@@ -165,10 +173,10 @@ self.addEventListener('fetch', (event) => {
   // Handle navigation requests (HTML pages) - SPA routing
   if (request.mode === 'navigate' || (request.method === 'GET' && request.headers.get('accept').includes('text/html'))) {
     event.respondWith(
-      fetch(request)
+      fetch(request, { cache: 'no-cache' })
         .then((response) => {
-          // Cache successful responses
-          if (response.status === 200) {
+          // Cache successful responses except app shell HTML.
+          if (response.status === 200 && !isNoCacheAsset(url)) {
             const responseClone = response.clone();
             caches.open(RUNTIME_CACHE).then((cache) => {
               cache.put(request, responseClone);
@@ -177,21 +185,19 @@ self.addEventListener('fetch', (event) => {
           return response;
         })
         .catch(() => {
-          // Offline - serve cached index.html for SPA routes
-          return caches.match('/index.html')
-            .then((cachedResponse) => {
-              if (cachedResponse) {
-                return cachedResponse;
-              }
-              // Fallback if index.html not in cache
-              return new Response('Offline', {
-                status: 503,
-                statusText: 'Service Unavailable',
-                headers: { 'Content-Type': 'text/plain' }
-              });
-            });
+          // Offline fallback if network fails
+          return new Response('Offline', {
+            status: 503,
+            statusText: 'Service Unavailable',
+            headers: { 'Content-Type': 'text/plain' }
+          });
         })
     );
+    return;
+  }
+
+  if (isNoCacheAsset(url)) {
+    event.respondWith(fetch(request, { cache: 'no-cache' }));
     return;
   }
 

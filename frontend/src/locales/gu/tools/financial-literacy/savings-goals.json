@@ -1,0 +1,76 @@
+﻿{
+  "loading": "તમારા બચત લક્ષ્યો લોડ થઈ રહ્યા છે...",
+  "backButton": "વિત્તીય સાક્ષરતા પર પાછા જાઓ",
+  "title": "બચત લક્ષ્યો",
+  "subtitle": {
+    "kids": "જે જોઈએ છે તેના માટે બચત કરો! 🎉",
+    "teens": "યોજના બનાવો, બચત કરો અને લક્ષ્ય હાંસલ કરો",
+    "adults": "બચત લક્ષ્યો સેટ કરો અને ટ્રેક કરો"
+  },
+  "stats": {
+    "activeGoals": "સક્રિય લક્ષ્યો",
+    "totalSaved": "કુલ બચત",
+    "overallProgress": "કુલ પ્રગતિ",
+    "averageProgress": "સરેરાશ પ્રગતિ"
+  },
+  "filters": {
+    "allCategories": "બધી કેટેગરી",
+    "sortPriority": "પ્રાથમિકતા મુજબ સૉર્ટ",
+    "sortProgress": "પ્રગતિ મુજબ સૉર્ટ",
+    "sortDeadline": "ડેડલાઇન મુજબ સૉર્ટ",
+    "sortAmount": "રકમ મુજબ સૉર્ટ"
+  },
+  "empty": {
+    "kids": "હજી કોઈ લક્ષ્ય નથી!",
+    "default": "હજી કોઈ બચત લક્ષ્ય નથી"
+  },
+  "contribution": {
+    "title": "યોગદાન ઉમેરો",
+    "addButton": "યોગદાન ઉમેરો"
+  },
+  "toasts": {
+    "loadFailed": "બચત લક્ષ્યો લોડ કરવામાં નિષ્ફળ",
+    "requiredFields": "કૃપા કરીને તમામ જરૂરી વિગતો ભરો",
+    "amountRange": "રકમ ${{min}} અને ${{max}} વચ્ચે હોવી જોઈએ",
+    "goalUpdated": "લક્ષ્ય સફળતાપૂર્વક અપડેટ થયું!",
+    "goalCreated": "નવું લક્ષ્ય સફળતાપૂર્વક બનાવાયું! 🎉",
+    "saveFailed": "લક્ષ્ય સેવ કરવામાં નિષ્ફળ",
+    "goalDeleted": "લક્ષ્ય સફળતાપૂર્વક કાઢી નાખ્યું",
+    "deleteFailed": "લક્ષ્ય કાઢવામાં નિષ્ફળ",
+    "contributionRequired": "કૃપા કરીને યોગદાન રકમ દાખલ કરો",
+    "validAmount": "કૃપા કરીને માન્ય રકમ દાખલ કરો",
+    "goalReached": "🎉 અભિનંદન! તમે તમારું લક્ષ્ય હાંસલ કર્યું: {{goalName}}!",
+    "progress75": "🌟 ખૂબ સારી પ્રગતિ! તમે 75% સુધી પહોંચી ગયા છો!",
+    "progress50": "💪 તમે અડધા રસ્તે છો! આમ જ ચાલુ રાખો!",
+    "contributionAdded": "${{amount}} {{goalName}} માં ઉમેરાયું! 💰",
+    "contributionFailed": "યોગદાન ઉમેરવામાં નિષ્ફળ",
+    "recentContributions": "તાજેતરના યોગદાન:\n{{history}}",
+    "quickContributionAdded": "${{amount}} ઉમેરાયું! 💰"
+  },
+  "actions": {
+    "addNewGoal": "નવું લક્ષ્ય ઉમેરો",
+    "newGoalKids": "નવું લક્ષ્ય 🎯"
+  },
+  "view": {
+    "list": "📋 સૂચિ",
+    "grid": "🔲 ગ્રીડ"
+  },
+  "form": {
+    "editTitle": "બચત લક્ષ્ય સંપાદિત કરો",
+    "createTitle": "નવું બચત લક્ષ્ય બનાવો",
+    "goalName": "લક્ષ્યનું નામ",
+    "placeholderGoalKids": "દા.ત., નવું રમકડું 🧸",
+    "placeholderGoal": "દા.ત., નવો લેપટોપ",
+    "targetAmount": "લક્ષ્ય રકમ",
+    "amountRangeHint": "ન્યૂનતમ: ${{min}}, મહત્તમ: ${{max}}",
+    "currentAmount": "વર્તમાન રકમ",
+    "targetDate": "લક્ષ્ય તારીખ",
+    "category": "કેટેગરી",
+    "priority": "પ્રાથમિકતા",
+    "notes": "નોંધો",
+    "notesPlaceholder": "તમારા લક્ષ્ય વિશેની વધારાની વિગતો...",
+    "cancel": "રદ કરો",
+    "updateGoal": "લક્ષ્ય અપડેટ કરો",
+    "saveGoal": "લક્ષ્ય સેવ કરો"
+  }
+}

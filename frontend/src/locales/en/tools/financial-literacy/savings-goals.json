@@ -1,0 +1,76 @@
+﻿{
+  "loading": "Loading your savings goals...",
+  "backButton": "Back to Financial Literacy",
+  "title": "Savings Goals",
+  "subtitle": {
+    "kids": "Save up for things you want! 🎉",
+    "teens": "Plan, save, and achieve your financial goals",
+    "adults": "Set and track your savings goals with precision"
+  },
+  "stats": {
+    "activeGoals": "Active Goals",
+    "totalSaved": "Total Saved",
+    "overallProgress": "Overall Progress",
+    "averageProgress": "Average Progress"
+  },
+  "filters": {
+    "allCategories": "All Categories",
+    "sortPriority": "Sort by Priority",
+    "sortProgress": "Sort by Progress",
+    "sortDeadline": "Sort by Deadline",
+    "sortAmount": "Sort by Amount"
+  },
+  "empty": {
+    "kids": "No Goals Yet!",
+    "default": "No Savings Goals Yet"
+  },
+  "contribution": {
+    "title": "Add Contribution",
+    "addButton": "Add Contribution"
+  },
+  "toasts": {
+    "loadFailed": "Failed to load savings goals",
+    "requiredFields": "Please fill in all required fields",
+    "amountRange": "Amount must be between ${{min}} and ${{max}}",
+    "goalUpdated": "Goal updated successfully!",
+    "goalCreated": "New goal created successfully! 🎉",
+    "saveFailed": "Failed to save goal",
+    "goalDeleted": "Goal deleted successfully",
+    "deleteFailed": "Failed to delete goal",
+    "contributionRequired": "Please enter a contribution amount",
+    "validAmount": "Please enter a valid amount",
+    "goalReached": "🎉 Congratulations! You've reached your goal: {{goalName}}!",
+    "progress75": "🌟 Great progress! You're 75% there!",
+    "progress50": "💪 Halfway there! Keep it up!",
+    "contributionAdded": "Added ${{amount}} to {{goalName}}! 💰",
+    "contributionFailed": "Failed to add contribution",
+    "recentContributions": "Recent contributions:\n{{history}}",
+    "quickContributionAdded": "Added ${{amount}}! 💰"
+  },
+  "actions": {
+    "addNewGoal": "Add New Goal",
+    "newGoalKids": "New Goal 🎯"
+  },
+  "view": {
+    "list": "📋 List",
+    "grid": "🔲 Grid"
+  },
+  "form": {
+    "editTitle": "Edit Savings Goal",
+    "createTitle": "Create New Savings Goal",
+    "goalName": "Goal Name",
+    "placeholderGoalKids": "e.g., New Toy 🧸",
+    "placeholderGoal": "e.g., New Laptop",
+    "targetAmount": "Target Amount",
+    "amountRangeHint": "Min: ${{min}}, Max: ${{max}}",
+    "currentAmount": "Current Amount",
+    "targetDate": "Target Date",
+    "category": "Category",
+    "priority": "Priority",
+    "notes": "Notes",
+    "notesPlaceholder": "Additional details about your goal...",
+    "cancel": "Cancel",
+    "updateGoal": "Update Goal",
+    "saveGoal": "Save Goal"
+  }
+}

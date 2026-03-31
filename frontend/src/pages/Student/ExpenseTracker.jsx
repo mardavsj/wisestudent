@@ -7,13 +7,18 @@ import {
   Wallet, Target, Lightbulb, Sparkles, Zap, History, X, Check
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../hooks/useAuth';
+import LanguageSelector from '../../components/LanguageSelector';
 import { fetchExpenses, saveExpenses, deleteExpense } from '../../services/studentService';
 import { logActivity } from '../../services/activityService';
 import { toast } from 'react-hot-toast';
 
 const ExpenseTracker = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation('tools');
+  const tt = (key, defaultValue, options = {}) =>
+    t(`financial-literacy.expense-tracker.${key}`, { defaultValue, ...options });
   const { user } = useAuth();
   const [expenses, setExpenses] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -269,13 +274,13 @@ const ExpenseTracker = () => {
   // Handle add/edit expense
   const handleSaveExpense = async () => {
     if (!newExpense.description || !newExpense.amount || !newExpense.category) {
-      toast.error('Please fill in all required fields');
+      toast.error(tt('toasts.requiredFields', 'Please fill in all required fields'));
       return;
     }
 
     const amount = parseFloat(newExpense.amount);
     if (isNaN(amount) || amount < config.minAmount || amount > config.maxAmount) {
-      toast.error(`Amount must be between $${config.minAmount} and $${config.maxAmount.toLocaleString()}`);
+      toast.error(tt('toasts.amountRange', 'Amount must be between ${{min}} and ${{max}}', { min: config.minAmount, max: config.maxAmount.toLocaleString() }));
       return;
     }
 
@@ -332,7 +337,7 @@ const ExpenseTracker = () => {
       resetForm();
     } catch (error) {
       console.error('Error saving expense:', error);
-      toast.error('Failed to save expense');
+      toast.error(tt('toasts.saveFailed', 'Failed to save expense'));
     }
   };
 
@@ -397,7 +402,7 @@ const ExpenseTracker = () => {
   const handleSetBudget = () => {
     const amount = parseFloat(budgetAmount);
     if (!budgetAmount || isNaN(amount) || amount <= 0) {
-      toast.error('Please enter a valid amount');
+      toast.error(tt('toasts.validAmount', 'Please enter a valid amount'));
       return;
     }
 
@@ -532,7 +537,7 @@ const ExpenseTracker = () => {
               'border-indigo-500'
             } border-t-transparent rounded-full mx-auto mb-4`}
           />
-          <p className="text-gray-600">Loading your expenses...</p>
+          <p className="text-gray-600">{tt('loading', 'Loading your expenses...')}</p>
         </div>
       </div>
     );
@@ -547,13 +552,16 @@ const ExpenseTracker = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <button
-            onClick={() => navigate('/student/dashboard/financial-literacy')}
-            className="flex items-center text-indigo-600 hover:text-indigo-800 transition-colors mb-4 group"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Back to Financial Literacy
-          </button>
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <button
+              onClick={() => navigate('/student/dashboard/financial-literacy')}
+              className="flex items-center text-indigo-600 hover:text-indigo-800 transition-colors group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              {tt('backButton', 'Back to Financial Literacy')}
+            </button>
+            <LanguageSelector />
+          </div>
           
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
@@ -563,7 +571,7 @@ const ExpenseTracker = () => {
                 'text-gray-900'
               }`}>
                 {ageGroup === 'kids' && '💰 '}
-                Expense Tracker
+                {tt('title', 'Expense Tracker')}
                 {ageGroup === 'kids' && ' 💰'}
               </h1>
               <p className={`text-lg ${
@@ -571,9 +579,9 @@ const ExpenseTracker = () => {
                 ageGroup === 'teens' ? 'text-blue-600' :
                 'text-gray-600'
               }`}>
-                {ageGroup === 'kids' && "Track what you spend! 🎯"}
-                {ageGroup === 'teens' && "Track and manage your daily expenses"}
-                {ageGroup === 'adults' && "Track and analyze your spending patterns"}
+                {ageGroup === 'kids' && tt('subtitle.kids', 'Track what you spend! 🎯')}
+                {ageGroup === 'teens' && tt('subtitle.teens', 'Track and manage your daily expenses')}
+                {ageGroup === 'adults' && tt('subtitle.adults', 'Track and analyze your spending patterns')}
               </p>
             </div>
             

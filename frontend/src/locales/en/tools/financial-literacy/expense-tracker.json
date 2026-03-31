@@ -1,0 +1,16 @@
+﻿{
+  "loading": "Loading your expenses...",
+  "backButton": "Back to Financial Literacy",
+  "title": "Expense Tracker",
+  "subtitle": {
+    "kids": "Track what you spend! 🎯",
+    "teens": "Track and manage your daily expenses",
+    "adults": "Track and analyze your spending patterns"
+  },
+  "toasts": {
+    "requiredFields": "Please fill in all required fields",
+    "amountRange": "Amount must be between ${{min}} and ${{max}}",
+    "saveFailed": "Failed to save expense",
+    "validAmount": "Please enter a valid amount"
+  }
+}

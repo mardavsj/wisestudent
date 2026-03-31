@@ -1,0 +1,17 @@
+﻿{
+  "loading": "இன்வெஸ்ட்மென்ட் சிமுலேட்டர் லோடாகிறது...",
+  "backButton": "நிதி அறிவுக்கு திரும்பு",
+  "title": "இன்வெஸ்ட்மென்ட் சிமுலேட்டர்",
+  "subtitle": {
+    "kids": "Virtual பணத்தால் முதலீடு கத்துக்கோ! 🎯",
+    "teens": "Virtual பணத்தால் முதலீட்டை practice பண்ணு",
+    "adults": "Real-time analytics உடன் advanced simulator"
+  },
+  "toasts": {
+    "simulationLimit": "சிமுலேஷன் முடிந்தது! நீங்கள் {{days}} நாள் வரம்பை அடைந்துவிட்டீர்கள்.",
+    "selectStock": "ஒரு stock தேர்வு பண்ணு",
+    "insufficientFunds": "போதுமான funds இல்லை! 💰",
+    "invalidQuantity": "Quantity 0 க்கும் மேல் இருக்கணும்",
+    "sellLimit": "உன்னிடம் இருக்கும் அளவை விட அதிக shares விற்க முடியாது"
+  }
+}

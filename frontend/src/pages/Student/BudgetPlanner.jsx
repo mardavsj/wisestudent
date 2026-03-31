@@ -8,13 +8,18 @@ import {
   Receipt, PiggyBank, Gift
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { useAuth } from '../../hooks/useAuth';
+import LanguageSelector from '../../components/LanguageSelector';
 import { fetchBudgetData, saveBudgetData } from '../../services/studentService';
 import { logActivity } from '../../services/activityService';
 import { toast } from 'react-hot-toast';
 
 const BudgetPlanner = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation('tools');
+  const tt = (key, defaultValue, options = {}) =>
+    t(`financial-literacy.budget-planner.${key}`, { defaultValue, ...options });
   const { user } = useAuth();
   const [incomes, setIncomes] = useState([]);
   const [expenses, setExpenses] = useState([]);
@@ -245,13 +250,13 @@ const BudgetPlanner = () => {
   // Handle income
   const handleSaveIncome = () => {
     if (!newIncome.name || !newIncome.amount) {
-      toast.error('Please fill in all required fields');
+      toast.error(tt('toasts.requiredFields', 'Please fill in all required fields'));
       return;
     }
 
     const amount = parseFloat(newIncome.amount);
     if (isNaN(amount) || amount < config.minAmount || amount > config.maxAmount) {
-      toast.error(`Amount must be between $${config.minAmount} and $${config.maxAmount.toLocaleString()}`);
+      toast.error(tt('toasts.amountRange', 'Amount must be between ${{min}} and ${{max}}', { min: config.minAmount, max: config.maxAmount.toLocaleString() }));
       return;
     }
 
@@ -282,7 +287,7 @@ const BudgetPlanner = () => {
       resetIncomeForm();
     } catch (error) {
       console.error('Error saving income:', error);
-      toast.error('Failed to save income');
+      toast.error(tt('toasts.saveIncomeFailed', 'Failed to save income'));
     }
   };
 
@@ -318,13 +323,13 @@ const BudgetPlanner = () => {
   // Handle expenses
   const handleSaveExpense = () => {
     if (!newExpense.name || !newExpense.amount || !newExpense.category) {
-      toast.error('Please fill in all required fields');
+      toast.error(tt('toasts.requiredFields', 'Please fill in all required fields'));
       return;
     }
 
     const amount = parseFloat(newExpense.amount);
     if (isNaN(amount) || amount < config.minAmount || amount > config.maxAmount) {
-      toast.error(`Amount must be between $${config.minAmount} and $${config.maxAmount.toLocaleString()}`);
+      toast.error(tt('toasts.amountRange', 'Amount must be between ${{min}} and ${{max}}', { min: config.minAmount, max: config.maxAmount.toLocaleString() }));
       return;
     }
 
@@ -355,7 +360,7 @@ const BudgetPlanner = () => {
       resetExpenseForm();
     } catch (error) {
       console.error('Error saving expense:', error);
-      toast.error('Failed to save expense');
+      toast.error(tt('toasts.saveExpenseFailed', 'Failed to save expense'));
     }
   };
 
@@ -480,7 +485,7 @@ const BudgetPlanner = () => {
                 'border-green-500'
               } border-t-transparent rounded-full mx-auto mb-4`}
           />
-          <p className="text-gray-600">Loading your budget...</p>
+          <p className="text-gray-600">{tt('loading', 'Loading your budget...')}</p>
         </div>
       </div>
     );
@@ -499,13 +504,16 @@ const BudgetPlanner = () => {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <button
-            onClick={() => navigate('/student/dashboard/financial-literacy')}
-            className="flex items-center text-green-600 hover:text-green-800 transition-colors mb-4 group"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Back to Financial Literacy
-          </button>
+          <div className="mb-4 flex items-center justify-between gap-3">
+            <button
+              onClick={() => navigate('/student/dashboard/financial-literacy')}
+              className="flex items-center text-green-600 hover:text-green-800 transition-colors group"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+              {tt('backButton', 'Back to Financial Literacy')}
+            </button>
+            <LanguageSelector />
+          </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
@@ -514,16 +522,16 @@ const BudgetPlanner = () => {
                   'text-gray-900'
                 }`}>
                 {ageGroup === 'kids' && '💰 '}
-                Budget Planner
+                {tt('title', 'Budget Planner')}
                 {ageGroup === 'kids' && ' 💰'}
               </h1>
               <p className={`text-lg ${ageGroup === 'kids' ? 'text-purple-600' :
                 ageGroup === 'teens' ? 'text-blue-600' :
                   'text-gray-600'
                 }`}>
-                {ageGroup === 'kids' && "Plan your money! 🎯"}
-                {ageGroup === 'teens' && "Create and manage your personal budget"}
-                {ageGroup === 'adults' && "Plan your finances with precision and insight"}
+                {ageGroup === 'kids' && tt('subtitle.kids', 'Plan your money! 🎯')}
+                {ageGroup === 'teens' && tt('subtitle.teens', 'Create and manage your personal budget')}
+                {ageGroup === 'adults' && tt('subtitle.adults', 'Plan your finances with precision and insight')}
               </p>
             </div>
 
