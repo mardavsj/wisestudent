@@ -3,6 +3,7 @@ import { initReactI18next } from "react-i18next";
 
 const LANGUAGE_STORAGE_KEY = "app_language";
 const LOCALES_MANIFEST_URL = "/locales-manifest.json";
+const BUILD_VERSION = typeof __APP_BUILD_VERSION__ !== "undefined" ? __APP_BUILD_VERSION__ : "dev";
 
 const mergePageCards = (pageData = {}, cardData = {}) => ({
   ...pageData,
@@ -12,8 +13,15 @@ const mergePageCards = (pageData = {}, cardData = {}) => ({
   },
 });
 
-const loadJsonAsset = async (url) => {
-  const response = await fetch(url);
+const appendVersion = (url) => {
+  const hasQuery = url.includes("?");
+  return `${url}${hasQuery ? "&" : "?"}v=${encodeURIComponent(BUILD_VERSION)}`;
+};
+
+const loadJsonAsset = async (url, { noStore = false } = {}) => {
+  const response = await fetch(appendVersion(url), {
+    cache: noStore ? "no-store" : "default",
+  });
   if (!response.ok) {
     throw new Error(`Failed to load locale JSON: ${url}`);
   }
@@ -23,7 +31,7 @@ const loadJsonAsset = async (url) => {
 let manifestPromise = null;
 const getLocalesManifest = async () => {
   if (!manifestPromise) {
-    manifestPromise = loadJsonAsset(LOCALES_MANIFEST_URL);
+    manifestPromise = loadJsonAsset(LOCALES_MANIFEST_URL, { noStore: true });
   }
   return manifestPromise;
 };
@@ -175,4 +183,3 @@ const initI18n = i18n
 export { LANGUAGE_STORAGE_KEY };
 export { initI18n };
 export default i18n;
-

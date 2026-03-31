@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
@@ -13,24 +13,36 @@ import { NotificationProvider } from "./context/NotificationContext";
 import { SocketProvider } from "./context/SocketContext";
 import { SubscriptionProvider } from "./context/SubscriptionContext";
 
-// Register Service Worker only in production (dev SW caching can break module resolution)
-if (import.meta.env.PROD && "serviceWorker" in navigator) {
+// Service worker is opt-in to avoid stale-cache issues in production.
+const enableServiceWorker = import.meta.env.PROD && import.meta.env.VITE_ENABLE_SW === "true";
+if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
+    if (enableServiceWorker) {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then((registration) => {
+          console.log("Service Worker registered:", registration.scope);
+        })
+        .catch((error) => {
+          console.error("Service Worker registration failed:", error);
+        });
+      return;
+    }
+
     navigator.serviceWorker
-      .register("/sw.js")
-      .then((registration) => {
-        console.log("✅ Service Worker registered:", registration.scope);
-      })
-      .catch((error) => {
-        console.error("❌ Service Worker registration failed:", error);
-      });
+      .getRegistrations()
+      .then((registrations) =>
+        Promise.all(registrations.map((registration) => registration.unregister()))
+      )
+      .catch(() => {});
   });
 }
+
 
 // Capture beforeinstallprompt event early (before React components mount)
 // This ensures we don't miss the event if it fires before the InstallPWA component loads
 window.addEventListener("beforeinstallprompt", (e) => {
-  console.log("🔔 beforeinstallprompt event captured globally");
+  console.log("ðŸ”” beforeinstallprompt event captured globally");
   e.preventDefault();
   // Store globally so InstallPWA component can access it
   window.deferredInstallPrompt = e;
@@ -86,12 +98,12 @@ toast.loading = wrapToastFn(toast.loading);
 
 // Development warning about Google OAuth configuration
 if (import.meta.env.DEV && !googleClientId) {
-  console.warn("⚠️ VITE_GOOGLE_CLIENT_ID is not set. Google OAuth will not work.");
+  console.warn("âš ï¸ VITE_GOOGLE_CLIENT_ID is not set. Google OAuth will not work.");
 } else if (import.meta.env.PROD && googleClientId) {
   // Production reminder about redirect URI configuration
   const currentOrigin = window.location.origin;
-  console.log(`🔐 Google OAuth configured for: ${currentOrigin}`);
-  console.log(`📝 Ensure ${currentOrigin} is added to Authorized JavaScript origins in Google Cloud Console`);
+  console.log(`ðŸ” Google OAuth configured for: ${currentOrigin}`);
+  console.log(`ðŸ“ Ensure ${currentOrigin} is added to Authorized JavaScript origins in Google Cloud Console`);
 }
 
 initI18n.catch((error) => {
