@@ -1,176 +1,174 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
-import financeGames, { getFinanceGame } from '../pages/Student/Finance';
-import brainGames, { getBrainGame } from '../pages/Student/Brain';
-import uvlsGames, { getUvlsGame } from '../pages/Student/UVLS';
-import dcosGames, { getDcosGame } from '../pages/Student/DCOS';
-import moralValuesGames, { getMoralValuesGame } from '../pages/Student/MoralValues';
-import aiForAllGames, { getAiForAllGame } from '../pages/Student/AiForAll';
-import eheGames, { getEheGame } from '../pages/Student/EHE';
-import crgcGames, { getCrgcGame } from '../pages/Student/CRGC';
-import sustainabilityGames, { getSustainabilityGame } from '../pages/Student/Sustainability';
-import healthMaleGames, { getHealthMaleGame } from '../pages/Student/HealthMale';
-import healthFemaleGames, { getHealthFemaleGame } from '../pages/Student/HealthFemale';
+import { useEffect, useMemo, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
-// registry of all game categories 
-// TODO: add remaning games
-const gameCategories = {
-  finance: {
-    games: financeGames,
-    getGame: getFinanceGame,
-    title: 'Financial Literacy',
-    icon: '💰',
-    color: 'from-green-500 to-emerald-600'
-  },
-  brain: {
-    games: brainGames,
-    getGame: getBrainGame,
-    title: 'Brain Health',
-    icon: '🧠',
-    color: 'from-purple-500 to-pink-500'
-  },
-  uvls: {
-    games: uvlsGames,
-    getGame: getUvlsGame,
-    title: 'Social Values (UVLS)',
-    icon: '🤝',
-    color: 'from-blue-500 to-indigo-600'
-  },
-  dcos: {
-    games: dcosGames,
-    getGame: getDcosGame,
-    title: 'Digital Citizenship',
-    icon: '🛡️',
-    color: 'from-red-500 to-orange-500'
-  },
-  'moral-values': {
-    games: moralValuesGames,
-    getGame: getMoralValuesGame,
-    title: 'Moral Values',
-    icon: '⚖️',
-    color: 'from-amber-500 to-yellow-600'
-  },
-  'ai-for-all': {
-    games: aiForAllGames,
-    getGame: getAiForAllGame,
-    title: 'AI For All',
-    icon: '🤖',
-    color: 'from-cyan-500 to-teal-600'
-  },
-  ehe: {
-    games: eheGames,
-    getGame: getEheGame,
-    title: 'Entrepreneurship & Career',
-    icon: '🚀',
-    color: 'from-violet-500 to-purple-600'
-  },
-  'civic-responsibility': {
-    games: crgcGames,
-    getGame: getCrgcGame,
-    title: 'Civic Responsibility',
-    icon: '🌍',
-    color: 'from-emerald-500 to-green-600'
-  },
-  sustainability: {
-    games: sustainabilityGames,
-    getGame: getSustainabilityGame,
-    title: 'Sustainability',
-    icon: '🌱',
-    color: 'from-green-500 to-teal-600'
-  },
-  'health-male': {
-    games: healthMaleGames,
-    getGame: getHealthMaleGame,
-    title: 'Health - Male',
-    icon: '🛡️',
-    color: 'from-green-500 to-blue-600'
-  },
-  'health-female': {
-    games: healthFemaleGames,
-    getGame: getHealthFemaleGame,
-    title: 'Health - Female',
-    icon: '🌸',
-    color: 'from-pink-500 to-purple-600'
-  }
+const studentGameModules = import.meta.glob("../pages/Student/**/**/*.{jsx,js}");
+
+const categoryFolderMap = {
+  finance: "Finance",
+  "financial-literacy": "Finance",
+  brain: "Brain",
+  "brain-health": "Brain",
+  uvls: "UVLS",
+  dcos: "DCOS",
+  "moral-values": "MoralValues",
+  "ai-for-all": "AiForAll",
+  ehe: "EHE",
+  "civic-responsibility": "CRGC",
+  sustainability: "Sustainability",
+  "health-male": "HealthMale",
+  "health-female": "HealthFemale",
 };
 
-gameCategories["brain-health"] = gameCategories.brain;
-gameCategories["financial-literacy"] = gameCategories.finance;
+const ageFolderMap = {
+  kids: "Kids",
+  teen: "Teen",
+  teens: "Teen",
+  "young-adult": "YoungAdult",
+  adult: "Adult",
+  adults: "Adult",
+  "insurance-pension": "InsurancePension",
+  "business-livelihood-finance": "BusinessLivelihood",
+};
+
+const acronymTokenMap = {
+  ai: ["AI", "Ai"],
+  atm: ["ATM", "Atm"],
+  uvls: ["UVLS", "Uvls"],
+  dcos: ["DCOS", "Dcos"],
+  ehe: ["EHE", "Ehe"],
+  crgc: ["CRGC", "Crgc"],
+};
+
+const normalizeKey = (value) => (value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const toPascal = (word) => {
+  if (!word) return "";
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
+
+const buildNameCandidates = (gameId) => {
+  const tokens = (gameId || "")
+    .split(/[^a-zA-Z0-9]+/)
+    .filter(Boolean)
+    .map((token) => token.toLowerCase());
+
+  if (!tokens.length) {
+    return [];
+  }
+
+  const variants = tokens.map((token) => acronymTokenMap[token] || [toPascal(token)]);
+  const candidateSet = new Set();
+
+  const walk = (index, built) => {
+    if (index === variants.length) {
+      candidateSet.add(built.join(""));
+      return;
+    }
+    for (const option of variants[index]) {
+      walk(index + 1, [...built, option]);
+    }
+  };
+
+  walk(0, []);
+  return [...candidateSet];
+};
+
+const resolveGameImporter = (category, age, gameId) => {
+  const categoryFolder = categoryFolderMap[category];
+  const ageFolder = ageFolderMap[age];
+
+  if (!categoryFolder || !ageFolder || !gameId) {
+    return null;
+  }
+
+  const basePath = `../pages/Student/${categoryFolder}/${ageFolder}/`;
+  const baseEntries = Object.entries(studentGameModules).filter(([filePath]) =>
+    filePath.startsWith(basePath)
+  );
+
+  if (!baseEntries.length) {
+    return null;
+  }
+
+  const candidates = buildNameCandidates(gameId);
+  for (const candidate of candidates) {
+    const exactPathJsx = `${basePath}${candidate}.jsx`;
+    const exactPathJs = `${basePath}${candidate}.js`;
+    const exactEntry =
+      studentGameModules[exactPathJsx] ||
+      studentGameModules[exactPathJs];
+    if (exactEntry) {
+      return exactEntry;
+    }
+  }
+
+  const normalizedGameId = normalizeKey(gameId);
+  const fuzzyEntry = baseEntries.find(([filePath]) => {
+    const filename = filePath.split("/").pop()?.replace(/\.(jsx|js)$/i, "") || "";
+    return normalizeKey(filename) === normalizedGameId;
+  });
+
+  return fuzzyEntry?.[1] || null;
+};
 
 const UniversalGameRenderer = () => {
-  const {category, age, game: gameId} = useParams();
+  const { category, age, game: gameId } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
-
   const [currentGame, setCurrentGame] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [categoryData, setCategoryData] = useState(null);
   const [error, setError] = useState(null);
 
-  // Validate and load game component 
+  const importer = useMemo(
+    () => resolveGameImporter(category, age, gameId),
+    [category, age, gameId]
+  );
+
   useEffect(() => {
-    const stateGameId = location.state?.gameId;
-    console.log('Loading game:', { category, age, gameId, stateGameId });
+    let isCancelled = false;
 
-    // Validate parameters
-    if (!category || !age || !gameId) {
-      setError('Missing required parameters: category, age, and game');
-      setLoading(false);
-      return;
-    }
+    const loadGame = async () => {
+      setLoading(true);
+      setError(null);
+      setCurrentGame(null);
 
-    // Validate category exists
-    const catData = gameCategories[category];
-    if (!catData) {
-      setError(`Unknown category: ${category}`);
-      setLoading(false);
-      return;
-    }
+      if (!category || !age || !gameId) {
+        setError("Missing required parameters: category, age, and game");
+        setLoading(false);
+        return;
+      }
 
-    // Validate age group
-    if (!['kids', 'teen', 'teens', 'young-adult', 'adult', 'adults', 'insurance-pension', 'business-livelihood-finance'].includes(age)) {
-      setError(
-        `Invalid age group: ${age}. Must be 'kids', 'teen', 'teens', 'young-adult', 'adult', 'insurance-pension', or 'business-livelihood-finance'`
-      );
-      setLoading(false);
-      return;
-    }
+      if (!importer) {
+        setError(`Game not found: ${gameId} in ${category}/${age}`);
+        setLoading(false);
+        return;
+      }
 
-    // Get the game component function
-    let GameComponent = catData.getGame(age, gameId);
-    console.log(`🎮 getGame result for ${age}/${gameId}:`, GameComponent);
-    console.log(`🎮 catData.games[${age}]:`, catData.games?.[age]);
-    
-    const normalizedGameKey = gameId?.toLowerCase();
-    if (!GameComponent) {
-      GameComponent =
-        catData.games?.[age]?.[normalizedGameKey] ||
-        catData.games?.[age]?.[gameId];
-      console.log(`🎮 Fallback lookup found:`, GameComponent);
-    }
-    
-    // Special handling for duplicate paths: if gameId is in location.state, 
-    // check if the component matches the expected gameId
-    // This is needed for games like 'sports-story' which has two different games
-    if (GameComponent && stateGameId && gameId === 'sports-story') {
-      // For sports-story, we need to check which component should be used
-      // brain-kids-38 should use SportsStory, brain-kids-98 should use SportsStories
-      // The component itself will check location.state.gameId and return null if it's the wrong one
-      // So we'll just use the first one found and let the component handle the check
-      console.log('⚠️ Duplicate path detected for sports-story, using component with gameId check');
-    }
-    
-    if (!GameComponent) {
-      setError(`Game not found: ${gameId} in ${category} ${age}`);
-      setLoading(false);
-      return;
-    }
+      try {
+        const module = await importer();
+        if (isCancelled) return;
+        const component = module?.default;
+        if (!component) {
+          setError(`Invalid game module: ${gameId}`);
+        } else {
+          setCurrentGame(() => component);
+        }
+      } catch (loadError) {
+        if (!isCancelled) {
+          setError(loadError?.message || `Failed to load game: ${gameId}`);
+        }
+      } finally {
+        if (!isCancelled) {
+          setLoading(false);
+        }
+      }
+    };
 
-    // Set category data and game component
-    setCategoryData(catData);
-    setCurrentGame(() => GameComponent); // Store as function to prevent looping
-    setLoading(false);
-  }, [category, age, gameId, location.state]);
+    loadGame();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [category, age, gameId, importer]);
 
   if (loading) {
     return (
@@ -187,11 +185,10 @@ const UniversalGameRenderer = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-red-50 to-pink-100 flex items-center justify-center p-4">
         <div className="bg-white rounded-lg shadow-lg p-8 max-w-md text-center">
-          <div className="text-6xl mb-4">⚠️</div>
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Game Not Found</h2>
           <p className="text-gray-600 mb-6">{error}</p>
           <button
-            onClick={() => navigate('/student/dashboard')}
+            onClick={() => navigate("/student/dashboard")}
             className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-semibold"
           >
             Back to Dashboard
@@ -201,16 +198,12 @@ const UniversalGameRenderer = () => {
     );
   }
 
-  if (!currentGame || !categoryData) {
+  if (!currentGame) {
     return null;
   }
 
-  // Call the game component function here at top level for resolving issue of infinite rendering
   const GameComponent = currentGame;
-
-  return (
-      <GameComponent />
-  );
+  return <GameComponent />;
 };
 
 export default UniversalGameRenderer;

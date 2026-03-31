@@ -1,47 +1,131 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
-import parentGameCategories, { getParentGame } from './index';
+import { useEffect, useMemo, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { parentEducationGameIdToSlug } from "./ParentEducation/gameSlugMap";
+
+const parentGameModules = import.meta.glob("./ParentEducation/games/*.{jsx,js}");
+const parentCategoryMap = new Set([
+  "parent-education",
+  "mental-health-emotional-regulation",
+]);
+
+const acronymTokenMap = {
+  ai: ["AI", "Ai"],
+  otp: ["OTP", "Otp"],
+};
+
+const normalizeKey = (value) => (value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const toPascal = (word) => {
+  if (!word) return "";
+  return word.charAt(0).toUpperCase() + word.slice(1);
+};
+
+const slugToNameCandidates = (slug) => {
+  const tokens = (slug || "")
+    .split(/[^a-zA-Z0-9]+/)
+    .filter(Boolean)
+    .map((token) => token.toLowerCase());
+
+  if (!tokens.length) return [];
+
+  const variants = tokens.map((token) => acronymTokenMap[token] || [toPascal(token)]);
+  const output = new Set();
+
+  const walk = (idx, built) => {
+    if (idx >= variants.length) {
+      output.add(built.join(""));
+      return;
+    }
+    for (const option of variants[idx]) {
+      walk(idx + 1, [...built, option]);
+    }
+  };
+
+  walk(0, []);
+  return [...output];
+};
+
+const resolveParentImporter = (gameId) => {
+  const resolvedSlug = parentEducationGameIdToSlug[gameId] || gameId;
+  const candidates = slugToNameCandidates(resolvedSlug);
+
+  for (const candidate of candidates) {
+    const pathJsx = `./ParentEducation/games/${candidate}.jsx`;
+    const pathJs = `./ParentEducation/games/${candidate}.js`;
+    if (parentGameModules[pathJsx]) return parentGameModules[pathJsx];
+    if (parentGameModules[pathJs]) return parentGameModules[pathJs];
+  }
+
+  const normalizedSlug = normalizeKey(resolvedSlug);
+  const fuzzyEntry = Object.entries(parentGameModules).find(([filePath]) => {
+    const fileName = filePath.split("/").pop()?.replace(/\.(jsx|js)$/i, "") || "";
+    return normalizeKey(fileName) === normalizedSlug;
+  });
+
+  return fuzzyEntry?.[1] || null;
+};
 
 const UniversalParentGameRenderer = () => {
   const { category, gameId } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
-
   const [currentGame, setCurrentGame] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Validate and load game component
+  const importer = useMemo(() => resolveParentImporter(gameId), [gameId]);
+
   useEffect(() => {
-    console.log('Loading parent game:', { category, gameId });
+    let cancelled = false;
 
-    // Validate parameters
-    if (!category || !gameId) {
-      setError('Missing required parameters: category and game');
-      setLoading(false);
-      return;
-    }
+    const loadGame = async () => {
+      setLoading(true);
+      setError(null);
+      setCurrentGame(null);
 
-    // Validate category exists
-    const catData = parentGameCategories[category];
-    if (!catData) {
-      setError(`Unknown category: ${category}`);
-      setLoading(false);
-      return;
-    }
+      if (!category || !gameId) {
+        setError("Missing required parameters: category and game");
+        setLoading(false);
+        return;
+      }
 
-    // Get the game component function
-    const GameComponent = getParentGame(category, gameId);
+      if (!parentCategoryMap.has(category)) {
+        setError(`Unknown category: ${category}`);
+        setLoading(false);
+        return;
+      }
 
-    if (!GameComponent) {
-      setError(`Game not found: ${gameId} in ${category}`);
-      setLoading(false);
-      return;
-    }
+      if (!importer) {
+        setError(`Game not found: ${gameId} in ${category}`);
+        setLoading(false);
+        return;
+      }
 
-    setCurrentGame(() => GameComponent);
-    setLoading(false);
-  }, [category, gameId]);
+      try {
+        const module = await importer();
+        if (cancelled) return;
+        const component = module?.default;
+        if (!component) {
+          setError(`Invalid game module: ${gameId}`);
+        } else {
+          setCurrentGame(() => component);
+        }
+      } catch (loadError) {
+        if (!cancelled) {
+          setError(loadError?.message || `Failed to load game: ${gameId}`);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
+        }
+      }
+    };
+
+    loadGame();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [category, gameId, importer]);
 
   if (loading) {
     return (
@@ -61,7 +145,7 @@ const UniversalParentGameRenderer = () => {
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Error</h2>
           <p className="text-gray-600 mb-4">{error}</p>
           <button
-            onClick={() => navigate('/parent/games')}
+            onClick={() => navigate("/parent/games")}
             className="text-blue-600 hover:underline"
           >
             Back to Parent Games
@@ -72,23 +156,9 @@ const UniversalParentGameRenderer = () => {
   }
 
   if (!currentGame) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">Game Not Found</h2>
-          <p className="text-gray-600 mb-4">The requested game could not be loaded.</p>
-          <button
-            onClick={() => navigate('/parent/games')}
-            className="text-blue-600 hover:underline"
-          >
-            Back to Parent Games
-          </button>
-        </div>
-      </div>
-    );
+    return null;
   }
 
-  // Render the game component
   const GameComponent = currentGame;
   return <GameComponent />;
 };

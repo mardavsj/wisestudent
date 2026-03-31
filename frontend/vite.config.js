@@ -2,11 +2,215 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { visualizer } from "rollup-plugin-visualizer";
+import { mkdir, readdir, rm, writeFile, copyFile, access } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const analyzeBundle = (import.meta.env?.VITE_ANALYZE || 'false').toLowerCase() === 'true';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const srcLocalesRoot = path.join(__dirname, "src", "locales");
+const publicLocalesRoot = path.join(__dirname, "public", "locales");
+const localesManifestPath = path.join(__dirname, "public", "locales-manifest.json");
+
+const PAGE_GAMES_RE = /^([^/]+)\/pages\/games\/([^/]+)\/([^/]+)\.json$/;
+const PAGE_CARDS_RE = /^([^/]+)\/pages\/cardcontent\/([^/]+)\/([^/]+)\.json$/;
+const GAMECONTENT_RE = /^([^/]+)\/gamecontent\/([^/]+)\/([^/]+)\/([^/]+)\.json$/;
+
+const walkJsonFiles = async (dir, root = dir) => {
+  let entries;
+  try {
+    entries = await readdir(dir, { withFileTypes: true });
+  } catch (error) {
+    if (error?.code === "ENOENT") {
+      console.warn(`[i18n-sync] Locale directory missing, skipping: ${dir}`);
+      return [];
+    }
+    throw error;
+  }
+  const files = [];
+
+  for (const entry of entries) {
+    const absolute = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...(await walkJsonFiles(absolute, root)));
+      continue;
+    }
+    if (entry.isFile() && entry.name.toLowerCase().endsWith(".json")) {
+      files.push(path.relative(root, absolute).replaceAll("\\", "/"));
+    }
+  }
+
+  return files;
+};
+
+const buildLocalesManifest = (localeFiles, pathPrefix) => {
+  const manifest = {
+    generatedAt: new Date().toISOString(),
+    pageGamesByLang: {},
+    pageCardsByLang: {},
+    gamecontentByLang: {},
+    availableLanguages: [],
+  };
+  const languageSet = new Set();
+
+  for (const relativePath of localeFiles) {
+    const pageGameMatch = relativePath.match(PAGE_GAMES_RE);
+    if (pageGameMatch) {
+      const [, lang, pillar, module] = pageGameMatch;
+      languageSet.add(lang);
+      manifest.pageGamesByLang[lang] = manifest.pageGamesByLang[lang] || [];
+      manifest.pageGamesByLang[lang].push({
+        pillar,
+        module,
+        path: `${pathPrefix}/${relativePath}`,
+      });
+      continue;
+    }
+
+    const pageCardMatch = relativePath.match(PAGE_CARDS_RE);
+    if (pageCardMatch) {
+      const [, lang, pillar, module] = pageCardMatch;
+      languageSet.add(lang);
+      manifest.pageCardsByLang[lang] = manifest.pageCardsByLang[lang] || [];
+      manifest.pageCardsByLang[lang].push({
+        pillar,
+        module,
+        path: `${pathPrefix}/${relativePath}`,
+      });
+      continue;
+    }
+
+    const gamecontentMatch = relativePath.match(GAMECONTENT_RE);
+    if (gamecontentMatch) {
+      const [, lang, pillar, module, slug] = gamecontentMatch;
+      languageSet.add(lang);
+      manifest.gamecontentByLang[lang] = manifest.gamecontentByLang[lang] || [];
+      manifest.gamecontentByLang[lang].push({
+        pillar,
+        module,
+        slug,
+        path: `${pathPrefix}/${relativePath}`,
+      });
+    }
+  }
+
+  manifest.availableLanguages = [...languageSet].sort();
+  return manifest;
+};
+
+const syncLocalesToPublicForBuild = async () => {
+  await rm(publicLocalesRoot, { recursive: true, force: true });
+  await mkdir(publicLocalesRoot, { recursive: true });
+
+  try {
+    await access(srcLocalesRoot);
+  } catch (error) {
+    if (error?.code === "ENOENT") {
+      const emptyManifest = buildLocalesManifest([], "/locales");
+      await writeFile(localesManifestPath, `${JSON.stringify(emptyManifest, null, 2)}\n`, "utf8");
+      console.warn("[i18n-sync] src/locales not found. Generated empty locales manifest.");
+      return;
+    }
+    throw error;
+  }
+
+  const localeFiles = await walkJsonFiles(srcLocalesRoot);
+  localeFiles.sort();
+
+  for (const relativePath of localeFiles) {
+    const sourceFile = path.join(srcLocalesRoot, relativePath);
+    const targetFile = path.join(publicLocalesRoot, relativePath);
+    await mkdir(path.dirname(targetFile), { recursive: true });
+    try {
+      await copyFile(sourceFile, targetFile);
+    } catch (error) {
+      if (error?.code === "ENOENT") {
+        console.warn(`[i18n-sync] Missing locale file skipped: ${sourceFile}`);
+      } else {
+        throw error;
+      }
+    }
+  }
+
+  const manifest = buildLocalesManifest(localeFiles, "/locales");
+  await writeFile(localesManifestPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+};
+
+const localesManifestDevPlugin = () => {
+  let manifestCache = null;
+  let manifestDirty = true;
+  let inFlight = null;
+
+  const getManifest = async () => {
+    if (!manifestDirty && manifestCache) {
+      return manifestCache;
+    }
+    if (!inFlight) {
+      inFlight = (async () => {
+        const localeFiles = await walkJsonFiles(srcLocalesRoot);
+        localeFiles.sort();
+        manifestCache = buildLocalesManifest(localeFiles, "/src/locales");
+        manifestDirty = false;
+        inFlight = null;
+        return manifestCache;
+      })().catch((error) => {
+        inFlight = null;
+        throw error;
+      });
+    }
+    return inFlight;
+  };
+
+  return {
+    name: "dev-locales-manifest",
+    apply: "serve",
+    configureServer(server) {
+      server.watcher.on("all", (_, changedPath) => {
+        if (
+          changedPath &&
+          changedPath.includes(`${path.sep}src${path.sep}locales${path.sep}`) &&
+          changedPath.toLowerCase().endsWith(".json")
+        ) {
+          manifestDirty = true;
+        }
+      });
+
+      server.middlewares.use("/locales-manifest.json", async (_req, res) => {
+        try {
+          const manifest = await getManifest();
+          res.setHeader("Content-Type", "application/json; charset=utf-8");
+          res.end(JSON.stringify(manifest));
+        } catch (error) {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json; charset=utf-8");
+          res.end(
+            JSON.stringify(buildLocalesManifest([], "/src/locales"))
+          );
+          console.warn("[i18n-sync] Failed to build dev locales manifest:", error?.message || error);
+        }
+      });
+    },
+  };
+};
+
+const localesSyncBuildPlugin = () => ({
+  name: "sync-locales-to-public-build",
+  apply: "build",
+  async buildStart() {
+    try {
+      await syncLocalesToPublicForBuild();
+    } catch (error) {
+      console.warn("[i18n-sync] Locale sync failed during build:", error?.message || error);
+    }
+  },
+});
 
 export default defineConfig({
   plugins: [
+    localesManifestDevPlugin(),
+    localesSyncBuildPlugin(),
     react(),
     tailwindcss(),
     analyzeBundle &&
@@ -48,11 +252,8 @@ export default defineConfig({
             return "vendor";
           }
 
-          if (id.includes("/src/pages/Admin/")) return "route-admin";
-          if (id.includes("/src/pages/School/")) return "route-school";
-          if (id.includes("/src/pages/Student/")) return "route-student";
-          if (id.includes("/src/pages/Parent/")) return "route-parent";
-          if (id.includes("/src/pages/CSR/")) return "route-csr";
+          // Let Rollup split app code by dynamic-import boundaries.
+          // Forced route-wide chunks were creating massive bundles (e.g. student route).
         },
       },
     },

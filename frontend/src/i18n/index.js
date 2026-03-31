@@ -2,64 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 const LANGUAGE_STORAGE_KEY = "app_language";
-
-const pageGameFiles = import.meta.glob("../locales/*/pages/games/**/*.json", {
-  query: "?url",
-  import: "default",
-  eager: true,
-});
-const pageCardFiles = import.meta.glob("../locales/*/pages/cardcontent/**/*.json", {
-  query: "?url",
-  import: "default",
-  eager: true,
-});
-const gamecontentFiles = import.meta.glob("../locales/*/gamecontent/**/*.json", {
-  query: "?url",
-  import: "default",
-  eager: true,
-});
-
-const pageGamesByLang = new Map();
-const pageCardsByLang = new Map();
-const gamecontentByLang = new Map();
-
-const PAGE_GAMES_RE = /^\.\.\/locales\/([^/]+)\/pages\/games\/([^/]+)\/([^/]+)\.json$/;
-const PAGE_CARDS_RE = /^\.\.\/locales\/([^/]+)\/pages\/cardcontent\/([^/]+)\/([^/]+)\.json$/;
-const GAMECONTENT_RE = /^\.\.\/locales\/([^/]+)\/gamecontent\/([^/]+)\/([^/]+)\/([^/]+)\.json$/;
-
-const ensureLangBucket = (map, lang) => {
-  if (!map.has(lang)) {
-    map.set(lang, []);
-  }
-  return map.get(lang);
-};
-
-for (const [filePath, url] of Object.entries(pageGameFiles)) {
-  const match = filePath.match(PAGE_GAMES_RE);
-  if (!match) continue;
-  const [, lang, pillar, module] = match;
-  ensureLangBucket(pageGamesByLang, lang).push({ pillar, module, url });
-}
-
-for (const [filePath, url] of Object.entries(pageCardFiles)) {
-  const match = filePath.match(PAGE_CARDS_RE);
-  if (!match) continue;
-  const [, lang, pillar, module] = match;
-  ensureLangBucket(pageCardsByLang, lang).push({ pillar, module, url });
-}
-
-for (const [filePath, url] of Object.entries(gamecontentFiles)) {
-  const match = filePath.match(GAMECONTENT_RE);
-  if (!match) continue;
-  const [, lang, pillar, module, slug] = match;
-  ensureLangBucket(gamecontentByLang, lang).push({ pillar, module, slug, url });
-}
-
-const availableLanguages = new Set([
-  ...pageGamesByLang.keys(),
-  ...pageCardsByLang.keys(),
-  ...gamecontentByLang.keys(),
-]);
+const LOCALES_MANIFEST_URL = "/locales-manifest.json";
 
 const mergePageCards = (pageData = {}, cardData = {}) => ({
   ...pageData,
@@ -71,40 +14,72 @@ const mergePageCards = (pageData = {}, cardData = {}) => ({
 
 const loadJsonAsset = async (url) => {
   const response = await fetch(url);
-
   if (!response.ok) {
     throw new Error(`Failed to load locale JSON: ${url}`);
   }
-
   return response.json();
 };
 
-const loadPagesGamesForLanguage = async (lang) => {
-  const games = {};
+let manifestPromise = null;
+const getLocalesManifest = async () => {
+  if (!manifestPromise) {
+    manifestPromise = loadJsonAsset(LOCALES_MANIFEST_URL);
+  }
+  return manifestPromise;
+};
 
-  for (const entry of pageGamesByLang.get(lang) || []) {
-    const data = await loadJsonAsset(entry.url);
+const languageResourceCache = new Map();
+let availableLanguages = new Set(["en"]);
+const loadedLanguages = new Set();
+
+const loadPagesGamesForLanguage = async (manifest, lang) => {
+  const games = {};
+  const pageEntries = manifest.pageGamesByLang?.[lang] || [];
+  const cardEntries = manifest.pageCardsByLang?.[lang] || [];
+
+  const [pageResults, cardResults] = await Promise.all([
+    Promise.all(
+      pageEntries.map(async (entry) => ({
+        entry,
+        data: await loadJsonAsset(entry.path),
+      }))
+    ),
+    Promise.all(
+      cardEntries.map(async (entry) => ({
+        entry,
+        data: await loadJsonAsset(entry.path),
+      }))
+    ),
+  ]);
+
+  for (const { entry, data } of pageResults) {
     games[entry.pillar] = games[entry.pillar] || {};
     games[entry.pillar][entry.module] = data;
   }
 
-  for (const entry of pageCardsByLang.get(lang) || []) {
-    const cardData = await loadJsonAsset(entry.url);
+  for (const { entry, data } of cardResults) {
     games[entry.pillar] = games[entry.pillar] || {};
     games[entry.pillar][entry.module] = mergePageCards(
       games[entry.pillar][entry.module] || {},
-      cardData
+      data
     );
   }
 
   return games;
 };
 
-const loadGamecontentForLanguage = async (lang) => {
+const loadGamecontentForLanguage = async (manifest, lang) => {
   const gamecontent = {};
+  const entries = manifest.gamecontentByLang?.[lang] || [];
 
-  for (const entry of gamecontentByLang.get(lang) || []) {
-    const data = await loadJsonAsset(entry.url);
+  const results = await Promise.all(
+    entries.map(async (entry) => ({
+      entry,
+      data: await loadJsonAsset(entry.path),
+    }))
+  );
+
+  for (const { entry, data } of results) {
     gamecontent[entry.pillar] = gamecontent[entry.pillar] || {};
     gamecontent[entry.pillar][entry.module] = gamecontent[entry.pillar][entry.module] || {};
     gamecontent[entry.pillar][entry.module][entry.slug] = data;
@@ -113,70 +88,91 @@ const loadGamecontentForLanguage = async (lang) => {
   return gamecontent;
 };
 
-const languageResourceCache = new Map();
-
-const loadLanguageResourceData = async (lang) => {
+const loadLanguageResourceData = async (manifest, lang) => {
   if (languageResourceCache.has(lang)) {
     return languageResourceCache.get(lang);
   }
 
   const [gamesPages, gamecontent] = await Promise.all([
-    loadPagesGamesForLanguage(lang),
-    loadGamecontentForLanguage(lang),
+    loadPagesGamesForLanguage(manifest, lang),
+    loadGamecontentForLanguage(manifest, lang),
   ]);
 
   const resourceData = {
     pages: { games: gamesPages },
     gamecontent,
   };
-
   languageResourceCache.set(lang, resourceData);
   return resourceData;
 };
 
-const savedLanguage = typeof window !== "undefined"
-  ? window.localStorage.getItem(LANGUAGE_STORAGE_KEY)
-  : null;
+const ensureLanguageLoaded = async (lng) => {
+  const manifest = await getLocalesManifest();
+  availableLanguages = new Set(manifest.availableLanguages || ["en"]);
+  const targetLanguage = availableLanguages.has(lng) ? lng : "en";
 
-const initialLanguage = availableLanguages.has(savedLanguage) ? savedLanguage : "en";
-
-const initI18n = (async () => {
-  const initialResources = {
-    en: await loadLanguageResourceData("en"),
-  };
-
-  if (initialLanguage !== "en") {
-    initialResources[initialLanguage] = await loadLanguageResourceData(initialLanguage);
+  if (loadedLanguages.has(targetLanguage)) {
+    return targetLanguage;
   }
 
-  await i18n.use(initReactI18next).init({
-    resources: initialResources,
-    lng: initialLanguage,
+  const resourceData = await loadLanguageResourceData(manifest, targetLanguage);
+  i18n.addResourceBundle(targetLanguage, "pages", resourceData.pages, true, true);
+  i18n.addResourceBundle(targetLanguage, "gamecontent", resourceData.gamecontent, true, true);
+  loadedLanguages.add(targetLanguage);
+
+  return targetLanguage;
+};
+
+let wrappedChangeLanguage = false;
+const wrapChangeLanguage = () => {
+  if (wrappedChangeLanguage) return;
+  wrappedChangeLanguage = true;
+
+  const originalChangeLanguage = i18n.changeLanguage.bind(i18n);
+  i18n.changeLanguage = async (lng, ...args) => {
+    const targetLanguage = await ensureLanguageLoaded(lng);
+    return originalChangeLanguage(targetLanguage, ...args);
+  };
+};
+
+const bootstrapLocaleData = async () => {
+  const savedLanguage =
+    typeof window !== "undefined"
+      ? window.localStorage.getItem(LANGUAGE_STORAGE_KEY)
+      : null;
+
+  const manifest = await getLocalesManifest();
+  availableLanguages = new Set(manifest.availableLanguages || ["en"]);
+  const initialLanguage = availableLanguages.has(savedLanguage) ? savedLanguage : "en";
+
+  await ensureLanguageLoaded("en");
+  if (initialLanguage !== "en") {
+    await ensureLanguageLoaded(initialLanguage);
+  }
+  await i18n.changeLanguage(initialLanguage);
+};
+
+const initI18n = i18n
+  .use(initReactI18next)
+  .init({
+    resources: {},
+    lng: "en",
     fallbackLng: "en",
     ns: ["pages", "gamecontent"],
     defaultNS: "pages",
     interpolation: {
       escapeValue: false,
     },
+    react: {
+      useSuspense: false,
+    },
+  })
+  .then(async () => {
+    wrapChangeLanguage();
+    await bootstrapLocaleData();
   });
-
-  const loadedLanguages = new Set(Object.keys(initialResources));
-  const originalChangeLanguage = i18n.changeLanguage.bind(i18n);
-
-  i18n.changeLanguage = async (lng, ...args) => {
-    const targetLanguage = availableLanguages.has(lng) ? lng : "en";
-
-    if (!loadedLanguages.has(targetLanguage)) {
-      const resourceData = await loadLanguageResourceData(targetLanguage);
-      i18n.addResourceBundle(targetLanguage, "pages", resourceData.pages, true, true);
-      i18n.addResourceBundle(targetLanguage, "gamecontent", resourceData.gamecontent, true, true);
-      loadedLanguages.add(targetLanguage);
-    }
-
-    return originalChangeLanguage(targetLanguage, ...args);
-  };
-})();
 
 export { LANGUAGE_STORAGE_KEY };
 export { initI18n };
 export default i18n;
+
