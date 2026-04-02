@@ -124,10 +124,10 @@ const MainFooter = () => {
             <div className="space-y-6 lg:col-span-1">
               <div className="group">
                 <img
-                  src="/icons/icon.png"
+                  src="/icons/trademark.png"
                   alt="WiseStudent logo"
                 />
-                <p className="text-gray-600 leading-relaxed text-sm mb-8">
+                <p className="text-gray-600 leading-relaxed text-sm mt-4">
                   Empowering education with innovative management and wellness
                   solutions for the next generation.
                 </p>
